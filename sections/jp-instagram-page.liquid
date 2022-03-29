@@ -1,0 +1,42 @@
+ <div class="container">  
+ <div class="stamped-instagram-feed-wrapper ">
+        
+    <div id="stamped-reviews-widget" 
+    data-widget-type="instagram-feed" 
+    data-feed-type="feed"
+      data-fill-empty="true"
+      ></div>
+
+      <br>
+
+    </div>
+</div>
+    
+    <script> function myInit(){ StampedFn.init({ apiKey: 'pubkey-3xnWP2H20p2jo09umtnf7m3N4d51T3', storeUrl: 'www.jeunepremier.com' }); }
+      setTimeout(function(){
+        var wrapperPosts = $('.js-tagged-instagram-posts-wrapper');
+        const postWidget = wrapperPosts.find('#stamped-reviews-widget');
+        if(parseInt(postWidget.attr('data-total'))) {
+          wrapperPosts.removeClass('hide')
+        }
+      }, 2000)
+
+    </script>
+    <script async onload="myInit()" type="text/javascript" src="https://cdn-stamped-io.azureedge.net/files/widget.min.js"> </script>
+{% schema %}
+  {
+    "name": "JP Instagram page",
+    "settings": [],
+     "presets":[
+        {
+           "name":"JP Instagram page"
+        }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,109 @@
+.contact-form-wrap {
+    background-color: var(--dd-color-third);
+    padding: 80px 0;
+}
+
+.contact-form-content {
+    width: 489px;
+    margin: 0 auto;
+}
+
+.checkbox{
+	width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.red-btn .checkbox{
+	border: 1px solid red;
+}
+
+.selected .inner-checkbox{
+	width: 10px;
+  height: 10px;
+  background-color: var(--dd-color-first);
+  display: block;
+}
+
+.contact-form-title {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 16px;
+}
+
+.contact-form-desc {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 24px;
+}
+
+.cont-label {
+    display: block;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 1.12px;
+    margin-bottom: 8px;
+}
+
+.cont-input{
+	margin-bottom: 16px;
+}
+
+textarea.cont-input{
+	margin-bottom: 8px;
+  	 resize: none;
+}
+
+.form-condition {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: fit-content;
+    width: -moz-fit-content;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 16px;
+}
+
+.cont-submit-btn{
+	width: 100%;
+  padding: 16px 0;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  background-color: var(--dd-color-second);
+  transition: .4s ease;
+  border: none;
+    cursor: pointer;
+  text-align: center;
+}
+
+.cont-submit-btn:hover{
+	background-color: var(--dd-color-seventh);
+}
+
+@media(max-width:992px){
+  .contact-form-wrap{
+  	padding: 40px 0;
+  }
+  
+  .contact-form-content {
+    width: 100%;
+}
+  
+  .contact-form-title, .contact-form-desc, .form-condition {
+    margin-bottom: 20px;
+}
+  
+  .cont-label {
+    margin-bottom: 4px;
+}
+  
+  .cont-input {
+    margin-bottom: 10px;
+}
+}

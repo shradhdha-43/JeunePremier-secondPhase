@@ -1,0 +1,78 @@
+{% unless list_id %}
+  {% assign list_id = 'Tbrkn8' %}
+{% endunless %}
+{% if request.host contains 'jeune-premier.ru' %}
+  {% assign list_id = 'XCJXhx' %}
+{% endif %}
+
+{% unless button_text %}
+  {% assign button_text = '' %}
+{% endunless %}
+
+{% unless id %}
+  {% assign id = 'newsletter' %}
+{% endunless %}
+
+{{ 'jp-newsletter.css' | asset_url | stylesheet_tag }}
+
+<div class="newsletter-wrapper">
+  <div class="container">
+    <div class="newsletter-content">
+      <div class="title newsletter-title text-center">{{ section.settings.title }}</div>
+      <div class="newsletter-desc light text-center">{{ section.settings.desc }}</div>
+      <div class="newsletter-form-wrap">
+      	<form id="email_signup_{{ id }}" class="klaviyo_gdpr_embed_{{ list_id }} newsletter-form" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
+          <input type="hidden" name="g" value="{{ list_id }}">
+          <input type="hidden" name="$fields" value="$consent">
+          <input type="hidden" name="$list_fields" value="$consent">
+
+
+          <div class="klaviyo_messages">
+            <div class="success_message note note--success success-message text-center" style="display:none;"></div>
+            <div class="error_message note note--error" style="display:none;"></div>
+          </div>
+        	<div class="row mini-row newsletter-row customer-form-wrap">
+            <div class="nl-input-group flex-box">
+              <input id="k_id_email" type="email" placeholder="email@domain.com" name="email" class="nl-input" autocorrect="off" autocapitalize="off" value="{% if customer %}{{ customer.email }}{% endif %}" required>
+              
+                <button type="submit" class="nl-submit-btn" name="commit" id="Subscribe">
+                  {% include "icon-right" %}
+                </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "JP Newsletter",
+    "settings": [
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title",
+			"default": "Like to know what we’re up to?"
+		},
+		{
+			"type": "text",
+			"id": "desc",
+			"label": "Description",
+			"default": "Be the first to discover new products, behind de scene stories and promotions. Subscribe."
+		}
+	],
+	"presets":[
+      {
+         "name":"JP Newsletter"
+      }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

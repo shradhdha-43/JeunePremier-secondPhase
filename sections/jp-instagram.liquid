@@ -1,0 +1,96 @@
+{{ 'jp-instagram.css' | asset_url | stylesheet_tag }}
+
+<div class="instagram-wrap">
+  <div class="container">
+    <div class="insta-title title text-center">{{ 'products.product.our_products_on_instagram' | t }}</div>
+    <div class="insta-imgs flex-box justify-between">
+      {% comment %}
+    	{% for block in section.blocks %}
+      		{% if block.type == 'insta_img' %}
+      		{% assign fl = forloop.index %}
+      			<div class="insta-img insta-img-{{ fl }}">
+                  <a href="{{ block.settings.insta_url }}" class="insta-link-img" target="_blank">
+                    {% assign width = block.settings.in_img.width %}
+                    {% assign height = block.settings.in_img.height %}
+                    {% if height < width %}
+                    {% assign imgw = height %}
+                    {% else %}
+                    {% assign imgw = width %}
+                    {% endif %}
+                  	<img src="{{ block.settings.in_img | image_url: height: imgw }}" loadig="lazy" alt={% if block.settings.in_img.alt != '' %}{{ block.settings.in_img.alt }}{% else %}"Instagram Image"{% endif %}>
+                  </a>
+      			</div>
+      		{% endif %}
+        {% endfor %}
+      {% endcomment %}
+      {% if template contains 'product' %}
+          <div id="stamped-reviews-widget"
+               data-widget-type="instagram-feed"
+               data-feed-type="carousel"
+               data-auto-play="false"
+               data-product-ids="{{ product.id }}" 
+        data-with-photos="true"></div>
+      {% else %}
+      <div id="stamped-reviews-widget" 
+        data-widget-type="instagram-feed" 
+        data-feed-type="carousel" 
+        data-with-photos="true"></div>
+    {% endif %}
+    <a href="{{ section.settings.link_url }}" class="insta-link medium" target="_blank">{{ section.settings.link_txt }}</a>
+  </div>
+</div>
+</div>
+
+{% schema %}
+  {
+    "name": "JP Instagram",
+	"class": "insta-stamped",
+    "settings": [
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		},
+		{
+			"type": "text",
+			"id": "link_txt",
+			"label": "Link Text"
+		},
+		{
+			"type": "url",
+			"id": "link_url",
+			"label": "link URL"
+		}
+	],
+	"blocks": [
+		{
+			"type": "insta_img",
+			"name": "Instagram Image",
+			"limit": 5,
+			"settings": [
+				{
+                  "type": "image_picker",
+                  "id": "in_img",
+                  "label": "Image"
+                },
+				{
+					"type": "url",
+					"id": "insta_url",
+					"label": "Image Link URL"
+				}
+			]
+		}
+	],
+	"presets":[
+      {
+         "name":"JP Instagram"
+      }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

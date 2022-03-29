@@ -1,0 +1,323 @@
+{{ 'jp-reseller.css' | asset_url | stylesheet_tag }}
+
+<div class="reseller-wrap{% if section.settings.marg_top == 'true' %} sec-marg-top{% endif %}">
+  <div class="container">
+    <div class="contact-form-img-wrap flex-box">
+      <div class="reseller-contact-form">
+        <h1 class="title reseller-title">{{ section.settings.title }}</h1>
+        <div class="reseller-desc light">{{ section.settings.desc }}</div>
+        {% form 'contact' %}
+          {% if form.posted_successfully? %} 
+            <div class="success-message text-center">{{ 'templates.contact.form.post_success' | t }}</div>
+            <script>
+              window.location.replace('#contact_form');
+            </script>
+          {% endif %}
+          {{ form.errors | default_errors }}
+        <div class="reseller-contact-info">
+          <div class="reseller-contact-title title">{{ section.settings.contact_info_title }}</div>
+          <div class="reseller-contact-info-wrap form-part-wrap flex-box justify-between">
+          	 <div class="reseller-cont-input-group">
+              <label for="re_contact_fname" class="cont-label medium">{{ 'templates.contact.form.fname' | t }}</label>
+              <input type="text" placeholder="{{ 'templates.contact.form.fname' | t }}" name="contact[fname]" id="re_contact_fname" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+              <div class="reseller-cont-input-group">
+              <label for="re_contact_lname" class="cont-label medium">{{ 'templates.contact.form.lname' | t }}</label>
+              <input type="text" placeholder="{{ 'templates.contact.form.lname' | t }}" name="contact[lname]" id="re_contact_lname" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+            <div class="reseller-cont-input-group">
+              <label for="re_shop_name" class="cont-label medium">{{ 'templates.contact.form.shop_name' | t }}</label>
+              <input type="text" placeholder="{{ 'templates.contact.form.shop_name' | t }}" name="contact[shop_name]" id="re_shop_name" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+            <div class="reseller-cont-input-group">
+              <label for="re_comp_name" class="cont-label medium">{{ 'templates.contact.form.comp_name' | t }}</label>
+              <input type="text" placeholder="{{ 'templates.contact.form.comp_name' | t }}" name="contact[comp_name]" id="re_comp_name" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+            <div class="reseller-cont-input-group">
+              <label for="re_vat_num" class="cont-label medium">{{ 'templates.contact.form.vat' | t }}</label>
+              <input type="text" placeholder="{{ 'templates.contact.form.vat' | t }}" name="contact[vat_num]" id="re_vat_num" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+            <div class="reseller-cont-input-group">
+              <label for="re_email" class="cont-label medium">{{ 'templates.contact.form.email' | t }}</label>
+              <input type="email" placeholder="{{ 'templates.contact.form.email' | t }}" name="contact[email]" id="re_email" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+            <div class="reseller-cont-input-group">
+              <label for="re_tel" class="cont-label medium">{{ 'templates.contact.form.tel' | t }}</label>
+              <input type="tel" placeholder="{{ 'templates.contact.form.tel' | t }}" name="contact[tel]" id="re_tel" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+          </div>
+        </div>
+        
+        <div class="reseller-contact-info">
+          <div class="reseller-contact-title title small-title">{{ section.settings.invoice_addr_title }}</div>
+          <div class="reseller-contact-info-wrap form-part-wrap flex-box justify-between">
+          	 <div class="reseller-cont-input-group">
+              <label for="re_invoice_addr1" class="cont-label medium">{{ 'templates.contact.form.addr1' | t }}</label>
+              <input type="text" placeholder="{{ 'templates.contact.form.addr1' | t }}" name="contact[invoice_addr1]" id="re_invoice_addr1" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+              <div class="reseller-cont-input-group">
+              <label for="re_invoice_addr2" class="cont-label medium">{{ 'templates.contact.form.addr2' | t }}</label>
+              <input type="text" placeholder="{{ 'templates.contact.form.addr2' | t }}" name="contact[invoice_addr2]" id="re_invoice_addr2" class="re-cont-input" autocorrect="off" autocapitalize="off">
+            </div>
+            <div class="reseller-cont-input-group">
+              <label for="re_invoice_city" class="cont-label medium">{{ 'templates.contact.form.city' | t }}</label>
+              <input type="text" placeholder="{{ 'templates.contact.form.city' | t }}" name="contact[invoice_city]" id="re_invoice_city" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+            <div class="reseller-cont-input-group">
+              <label for="re_invoice_state" class="cont-label medium">{{ 'templates.contact.form.state' | t }}</label>
+              <input type="text" placeholder="{{ 'templates.contact.form.state' | t }}" name="contact[invoice_state]" id="re_invoice_state" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+            <div class="reseller-cont-input-group">
+              <label for="re_invoice_zip" class="cont-label medium">{{ 'templates.contact.form.pin' | t }}</label>
+              <input type="text" placeholder="{{ 'templates.contact.form.pin' | t }}" name="contact[invoice_zip]" id="re_invoice_zip" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+            <div class="reseller-cont-input-group">
+              <label for="re_invoice_country" class="cont-label medium">{{ 'templates.contact.form.country' | t }}</label>
+              <input type="text" placeholder="{{ 'templates.contact.form.country' | t }}" name="contact[invoice_country]" id="re_invoice_country" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+            <div class="reseller-cont-input-group">
+              <label for="re_invoice_tel" class="cont-label medium">{{ 'templates.contact.form.tel' | t }}</label>
+              <input type="tel" placeholder="{{ 'templates.contact.form.tel' | t }}" name="contact[invoice_tel]" id="re_invoice_tel" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+          </div>
+        </div>
+        
+        <div class="reseller-contact-info">
+          <div class="reseller-contact-title title small-title">{{ section.settings.shipping_addr_title }}</div>
+          <div class="shipping-same-as-billing light selected"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ 'templates.contact.form.sameaddr' | t }}</div>
+          <div class="reseller-contact-info-wrap shipping-addr form-part-wrap flex-box justify-between no-disp">
+          	 <div class="reseller-cont-input-group">
+              <label for="re_shipping_addr1" class="cont-label medium">{{ 'templates.contact.form.addr1' | t }}</label>
+              <input type="text" placeholder="{{ 'templates.contact.form.addr1' | t }}" name="contact[shipping_addr1]" id="re_shipping_addr1" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+              <div class="reseller-cont-input-group">
+              <label for="re_shipping_addr2" class="cont-label medium">{{ 'templates.contact.form.addr2' | t }}</label>
+              <input type="text" placeholder="{{ 'templates.contact.form.addr2' | t }}" name="contact[shipping_addr2]" id="re_shipping_addr2" class="re-cont-input" autocorrect="off" autocapitalize="off">
+            </div>
+            <div class="reseller-cont-input-group">
+              <label for="re_shipping_city" class="cont-label medium">{{ 'templates.contact.form.city' | t }}</label>
+              <input type="text" placeholder="{{ 'templates.contact.form.city' | t }}" name="contact[shipping_city]" id="re_shipping_city" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+            <div class="reseller-cont-input-group">
+              <label for="re_shipping_state" class="cont-label medium">{{ 'templates.contact.form.state' | t }}</label>
+              <input type="text" placeholder="{{ 'templates.contact.form.state' | t }}" name="contact[shipping_state]" id="re_shipping_state" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+            <div class="reseller-cont-input-group">
+              <label for="re_shipping_zip" class="cont-label medium">{{ 'templates.contact.form.pin' | t }}</label>
+              <input type="text" placeholder="{{ 'templates.contact.form.pin' | t }}" name="contact[shipping_zip]" id="re_shipping_zip" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+            <div class="reseller-cont-input-group">
+              <label for="re_shipping_country" class="cont-label medium">{{ 'templates.contact.form.country' | t }}</label>
+              <input type="text" placeholder="{{ 'templates.contact.form.country' | t }}" name="contact[shipping_country]" id="re_shipping_country" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+            <div class="reseller-cont-input-group">
+              <label for="re_shipping_tel" class="cont-label medium">{{ 'templates.contact.form.tel' | t }}</label>
+              <input type="tel" placeholder="{{ 'templates.contact.form.tel' | t }}" name="contact[shipping_tel]" id="re_shipping_tel" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+          </div>
+        </div>
+        
+        <div class="reseller-contact-info">
+          <div class="reseller-contact-title title small-title">{{ section.settings.your_store }}</div>
+          <div class="reseller-contact-info-wrap form-part-wrap flex-box justify-between">
+          	 <div class="reseller-cont-input-group">
+              <label for="re_website_url" class="cont-label medium">{{ 'templates.contact.form.website' | t }}</label>
+              <input type="text" placeholder="{{ 'templates.contact.form.website' | t }}" name="contact[website_url]" id="re_website_url" class="re-cont-input" autocorrect="off" autocapitalize="off" required>
+            </div>
+          </div>
+        </div>
+        
+        <div class="sales-method">
+          <label for="re_sales_method" class="cont-label medium">{{ 'templates.contact.form.sale_method' | t }}</label>
+          <input type="text" name="contact[sales_method]" id="re_sales_method" class="re-cont-input no-disp">
+          <div class="sales-methods">
+            <div class="s-method light selected"><span class="radio-btn"><span class="radio-inner"></span></span>Online</div>
+            <div class="s-method light"><span class="radio-btn"><span class="radio-inner"></span></span>Offline</div>
+            <div class="s-method light"><span class="radio-btn"><span class="radio-inner"></span></span>Online und offline</div>
+          </div>
+        </div>
+        
+        <div class="types-of-products">
+          <label for="re_prod_types" class="cont-label medium">{{ 'templates.contact.form.sale_product' | t }}</label>
+          <input type="text" name="contact[prod_types]" id="re_prod_types" class="re-cont-input no-disp">
+          <div class="product-types">
+            <div class="prod-type light"><span class="checkbox"><span class="inner-checkbox"></span></span>Stationär</div>
+            <div class="prod-type light"><span class="checkbox"><span class="inner-checkbox"></span></span>Lederwaren</div>
+            <div class="prod-type light"><span class="checkbox"><span class="inner-checkbox"></span></span>Spielzeuge</div>
+            <div class="prod-type light"><span class="checkbox"><span class="inner-checkbox"></span></span>Schuhabnutzung</div>
+            <div class="prod-type light"><span class="checkbox"><span class="inner-checkbox"></span></span>Möbel</div>
+            <div class="prod-type light"><span class="checkbox"><span class="inner-checkbox"></span></span>Dekoration</div>
+            <div class="prod-type light"><span class="checkbox"><span class="inner-checkbox"></span></span>Bücher</div>
+            <div class="prod-type light"><span class="checkbox"><span class="inner-checkbox"></span></span>Kinderkleidung</div>
+          </div>
+        </div>
+        
+        <div class="age-range-wrap">
+          <label for="re_age_range" class="cont-label medium">{{ 'templates.contact.form.age' | t }}</label>
+          <input type="text" name="contact[age_range]" id="re_age_range" class="re-cont-input no-disp">
+          <div class="age-ranges">
+            <div class="age-range light"><span class="checkbox"><span class="inner-checkbox"></span></span>3-24 Monate</div>
+            <div class="age-range light"><span class="checkbox"><span class="inner-checkbox"></span></span>2-12 Jahre</div>
+            <div class="age-range light"><span class="checkbox"><span class="inner-checkbox"></span></span>12-16 Jahre</div>
+          </div>
+        </div>
+        
+        <div class="found-date">
+          <label for="re_found_date" class="cont-label medium">{{ 'templates.contact.form.founded' | t }}</label>
+          <input type="date" name="contact[found_date]" id="re_found_date" class="re-cont-input">
+        </div>
+        
+        <div class="form-condition light"><span class="checkbox"><span class="inner-checkbox"></span></span><span class="condition-text">{{ 'templates.contact.form.agree' | t }}</span></div>
+        
+        <div class="cont-submit-btn re-cont-submit title" name="commit" id="re_contact">
+                  {{ 'templates.contact.form.send' | t }}
+                </div>
+        {% endform %}
+      </div>
+      <div class="reseller-img"><img src="{{ section.settings.img | img_url: "400x" }}"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('.shipping-same-as-billing').click(function() {
+  	$(this).toggleClass('selected');
+    if($(this).hasClass('selected')){
+    	$('.shipping-addr').addClass('no-disp');
+    }
+    else{
+    	$('.shipping-addr').removeClass('no-disp');
+    }
+  });
+  
+  $('.s-method').click(function() {
+  	$('.s-method').removeClass('selected');
+    $(this).addClass('selected');
+  });
+  
+  $('.prod-type, .age-range, .form-condition').click(function() {
+  	$(this).toggleClass('selected');
+  });
+  
+  
+  $('.re-cont-submit').click(function() {
+    if($('.form-condition').hasClass('selected')){
+    
+      if($('.shipping-same-as-billing').hasClass('selected')){
+    	var addr1 = $('#re_invoice_addr1').val();
+        var addr2 = $('#re_invoice_addr2').val();
+        var city = $('#re_invoice_city').val();
+        var state = $('#re_invoice_state').val();
+        var zip = $('#re_invoice_zip').val();
+        var country = $('#re_invoice_country').val();
+        var tel = $('#re_invoice_tel').val();
+      
+      $('#re_shipping_addr1').val(addr1);
+      $('#re_shipping_addr2').val(addr2);
+      $('#re_shipping_city').val(city);
+      $('#re_shipping_state').val(state);
+      $('#re_shipping_zip').val(zip);
+      $('#re_shipping_country').val(country);
+      $('#re_shipping_tel').val(tel);
+    }
+    
+    var prod_type = '';
+    $('.prod-type.selected').each(function() {
+    	var p_type = $(this).text();
+      	prod_type = p_type +', '+prod_type;
+    });
+    $('#re_prod_types').val(prod_type);
+    
+    var age_range = '';
+    $('.age-range.selected').each(function() {
+    	var a_range = $(this).text();
+      	age_range = a_range +', '+age_range;
+    });
+    $('#re_age_range').val(age_range);
+    
+    
+    
+  	var s_method = $('.s-method.selected').text();
+    $('#re_sales_method').val(s_method);
+      
+      $('.reseller-wrap form').submit();
+      
+    }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "JP Reseller",
+    "settings": [
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title",
+			"default": "Become a reseller"
+		},
+		{
+			"type": "text",
+			"id": "desc",
+			"label": "Description",
+			"default": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna"
+		},
+		{
+			"type": "image_picker",
+			"id": "img",
+			"label": "Image"
+		},
+		{
+			"type": "text",
+			"id": "contact_info_title",
+			"label": "Contact Info Title",
+			"default": "Contact information"
+		},
+		{
+			"type": "text",
+			"id": "invoice_addr_title",
+			"label": "Invoice Address Title",
+			"default": "Invoice address"
+		},
+		{
+			"type": "text",
+			"id": "shipping_addr_title",
+			"label": "Shipping Address Title",
+			"default": "Shipping address"
+		},
+		{
+			"type": "text",
+			"id": "your_store",
+			"label": "Your Store Title",
+			"default": "Your store"
+		},
+		{
+          "type": "select",
+          "id": "marg_top",
+          "label": "Margin Top",
+          "options": [
+            {
+              "value": "true",
+              "label": "True"
+            },
+            {
+              "value": "false",
+              "label": "False"
+            }
+          ],
+          "default": "true"
+        }
+	],
+	"presets": [
+		{
+			"name":"JP Reseller"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

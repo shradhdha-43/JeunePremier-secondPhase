@@ -1,0 +1,311 @@
+{{ 'jp-main-collection.css' | asset_url | stylesheet_tag }}
+{{ 'jp-product-slider.css' | asset_url | stylesheet_tag }}
+{% assign phandle = product.handle %}
+
+  {%- for product_collection in product.collections -%}
+    {%- for link in linklists.main-design-collections.links -%}
+      {%- assign link_handle = link.title | handleize -%}
+
+      {%- if product_collection.handle == link_handle -%}
+
+        {%- assign coll = product_collection.handle -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if coll -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+{% assign a = 0 %}
+{% for product in collections[coll].products limit:24 %}
+      		{% unless product.type == "File Folder" or product.type == "Alle" or product.type == "Wrapping paper" or product.type == "Name label" or product.type == "Fun Label" %}
+      			{% continue %}
+      		{% endunless %}
+      		{% if product.handle == phandle %}
+      			{% continue %}
+      		{% endif %}
+	{% assign a = a | plus: 1 %}
+{% endfor %}
+
+<div id="to-related-2" class="jp-prouduct-slider-wrap {% if a == 0 %}no-disp{% endif %} related-blk">
+  <div class="container rel">
+    <div class="product-slider-first justify-center no-d">
+        <div class="product-slider-title title">{{ 'sections.upsell.upsell3_heading' | t }}</div>
+        <div class="product-slider-desc light">{{ 'sections.upsell.upsell3_description' | t }}</div>
+      </div>
+    <div class="jp-product-slider no-d">
+      {% for product in collections[coll].products limit:24 %}
+      		{% unless product.type == "File Folder" or product.type == "Alle" or product.type == "Wrapping paper" or product.type == "Name label" or product.type == "Fun Label" %}
+      			{% continue %}
+      		{% endunless %}
+      		{% if product.handle == phandle %}
+      			{% continue %}
+      		{% endif %}
+      	<div class="product-card">
+        	<div class="product-images-block rel">
+            <a href="{{ product.url }}">
+              
+              {% assign collection_is_bestellers = false %}
+              {% assign is_bestseller = false %}
+              {% assign last_items = false %}
+              {% if product.first_available_variant.inventory_quantity <= 10 and product.first_available_variant.inventory_policy != "continue" %}
+                {% assign last_items = true %}
+              {% endif %}
+              {% if product.tags contains 'bestseller' %}
+                {% assign is_bestseller = true %}
+              {% endif %}
+              {% if collection.handle == 'bestseller' or collection.handle == 'bestsellers'  %}
+                {% assign collection_is_bestellers = true %}
+              {% endif %}
+              
+              {% if last_items and collection.handle != 'last-items' and collection.handle != 'letzte-artikel' %}
+                  <div class="prod-tag product-tag-last medium">{{ 'products.product.last_item' | t }}</div>
+              {% elsif is_bestseller %}
+                  {% unless collection_is_bestellers %}
+                    <div class="prod-tag medium">{{ 'products.product.bestseller' | t }}</div>
+                  {% endunless %}
+              {% endif %} 
+              {% unless collection.handle == 'neu' %}
+                {% for collectionx in product.collections %}{% if collectionx.handle contains "neu" %}
+                <div class="prod-neu-tag medium">{{ 'products.product.new' | t }}</div>{% break %}
+                {% endif %}{% endfor %}    
+              {% endunless %}
+              
+              {% for image in product.images limit: 2 %}              
+              {% if forloop.first and forloop.last %}
+              <img src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+              {% endif %}
+              <img class="{% if forloop.last %}no-t-m{% endif %}" src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+              {% endfor %}  
+            </a>
+              {% assign noAddToCartFromCollection = false %}
+              {% if product.type == 'Ludilabel' or product.type == 'Goedgemerkt' or product.type == 'Keychain letter' or product.type == 'Keychain charm' %}
+                {% assign noAddToCartFromCollection = true %}
+              {% endif %}
+              {% unless product.selected_or_first_available_variant.available %}
+                {% assign noAddToCartFromCollection = true %}
+              {% endunless %}
+              {%- unless noAddToCartFromCollection -%}
+              <div class="coll-add-to-cart-btn" data-variant="{{ product.first_available_variant.id }}">+</div>
+              {%- endunless -%}
+          </div>
+          <div class="product-details">
+            <div class="product-name-price-col justify-between">
+            	<div class="product-title medium">
+                  {% assign remove_word = product.title | truncatewords: 1, "" %}
+                  
+                  <a href="{{ product.url }}">
+                  {% if product.type == "Goedgemerkt" or product.type == "goedgemerkt" %}Persönliche Etiketten{% else %}{{ product.type }}{% endif %}
+                  </a>
+                </div>
+              	<div class="product-pirce medium">                  
+                  <a href="{{ product.url }}">
+                    {{ product.price | times: 1.21 | money_without_trailing_zeros | strip_html }}
+                  </a>
+              </div>
+             
+            </div>
+            <div class="product-price-col">
+               <div class="product-sub-title light">
+                 <a href="{{ product.url }}">
+                   {{ product.metafields.descriptors.subtitle }}
+                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="no-t-m jp-prod-slider-wrapper">
+      <div class="product-slider-first justify-center">
+        <div class="product-slider-title title">{{ 'sections.upsell.upsell3_heading' | t }}</div>
+        <div class="product-slider-desc light">{{ 'sections.upsell.upsell3_description' | t }}</div>
+      </div>
+      <div class="abs no-t-m jp-product-slider-wrapper">
+    <div class="jp-product-slider">
+      
+      {% for product in collections[coll].products limit:24 %}
+      		{% unless product.type == "File Folder" or product.type == "Alle" or product.type == "Wrapping paper" or product.type == "Name label" or product.type == "Fun Label" %}
+      			{% continue %}
+      		{% endunless %}
+      		{% if product.handle == phandle %}
+      			{% continue %}
+      		{% endif %}
+      
+      	<div class="product-card">
+        	<div class="product-images-block rel">
+            <a href="{{ product.url }}">
+              
+              {% assign collection_is_bestellers = false %}
+              {% assign is_bestseller = false %}
+              {% assign last_items = false %}
+              {% if product.first_available_variant.inventory_quantity <= 10 and product.first_available_variant.inventory_policy != "continue" %}
+                {% assign last_items = true %}
+              {% endif %}
+              {% if product.tags contains 'bestseller' %}
+                {% assign is_bestseller = true %}
+              {% endif %}
+              {% if collection.handle == 'bestseller' or collection.handle == 'bestsellers'  %}
+                {% assign collection_is_bestellers = true %}
+              {% endif %}
+              
+              {% if last_items and collection.handle != 'last-items' and collection.handle != 'letzte-artikel' %}
+                  <div class="prod-tag product-tag-last medium">{{ 'products.product.last_item' | t }}</div>
+              {% elsif is_bestseller %}
+                  {% unless collection_is_bestellers %}
+                    <div class="prod-tag medium">{{ 'products.product.bestseller' | t }}</div>
+                  {% endunless %}
+              {% endif %} 
+              {% unless collection.handle == 'neu' %}
+                {% for collectionx in product.collections %}{% if collectionx.handle contains "neu" %}
+                <div class="prod-neu-tag medium">{{ 'products.product.new' | t }}</div>{% break %}
+                {% endif %}{% endfor %}    
+              {% endunless %}
+              
+              {% for image in product.images limit: 2 %}
+              {% if forloop.first and forloop.last %}
+              <img src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+              {% endif %}
+              <img class="{% if forloop.last %}no-t-m{% endif %}" src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+              {% endfor %}  
+            </a>
+              {% assign noAddToCartFromCollection = false %}
+              {% if product.type == 'Ludilabel' or product.type == 'Goedgemerkt' or product.type == 'Keychain letter' or product.type == 'Keychain charm' %}
+                {% assign noAddToCartFromCollection = true %}
+              {% endif %}
+              {% unless product.selected_or_first_available_variant.available %}
+                {% assign noAddToCartFromCollection = true %}
+              {% endunless %}
+              {%- unless noAddToCartFromCollection -%}
+              <div class="coll-add-to-cart-btn" data-variant="{{ product.first_available_variant.id }}">+</div>
+              {%- endunless -%}
+          </div>
+          <div class="product-details">
+            <div class="product-name-price-col justify-between">
+            	<div class="product-title medium">
+                  {% assign remove_word = product.title | truncatewords: 1, "" %}                  
+                  <a href="{{ product.url }}">
+                    {% if product.type == "Goedgemerkt" or product.type == "goedgemerkt" %}Persönliche Etiketten{% else %}{{ product.type }}{% endif %}
+                  </a>
+                </div>
+              	<div class="product-pirce medium">                  
+                  <a href="{{ product.url }}">
+                    {{ product.price | times: 1.21 | money_without_trailing_zeros | strip_html }}
+                  </a>
+              </div>
+             
+            </div>
+            <div class="product-price-col">
+               <div class="product-sub-title light">                 
+                 <a href="{{ product.url }}">
+                   {{ product.metafields.descriptors.subtitle }}
+                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% if a == 0 %}
+<script>
+  window.keep2 = false;
+</script>
+{% else %}
+<script>
+  window.keep2 = true;
+</script>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "JP Product Slider 4",
+	"class": "related-block-4",
+    "settings": [
+		{
+          "type": "select",
+          "id": "bg_color",
+          "label": "Background Color",
+          "options": [
+            {
+              "value": "white",
+              "label": "White"
+            },
+            {
+              "value": "light",
+              "label": "Light"
+            }
+          ],
+          "default": "white"
+        },
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		},
+		{
+			"type": "text",
+			"id": "desc",
+			"label": "Description"
+		},
+		{
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+		{
+			"type": "text",
+			"id": "btn_txt",
+			"label": "Button Text"
+		},
+		{
+			"type": "url",
+			"id": "btn_url",
+			"label": "Button URL"
+		},
+		{
+			"type": "checkbox",
+			"id": "related",
+			"label": "product related box"
+		},
+		{
+          "type": "select",
+          "id": "upsell_type",
+          "label": "Upsell Type",
+          "options": [
+            {
+              "value": "bag",
+              "label": "Bags"
+            },
+            {
+              "value": "accessories",
+              "label": "Accessories"
+            },
+            {
+              "value": "paper",
+              "label": "Paper"
+            }
+          ],
+          "default": "bag"
+        }
+	],
+	"presets":[
+      {
+         "name":"JP Product Slider 4"
+      }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

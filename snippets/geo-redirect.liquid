@@ -1,0 +1,302 @@
+{%- comment -%}
+    Geolocation
+  {%- endcomment -%}
+  {% assign isAdmin = false %}
+  {% capture CFH %}{{ content_for_header  }}{% endcapture %}
+  {% if CFH contains 'Shopify.AdminBarInjector' or CFH contains 'Shopify.PreviewBarInjector' or request.design_mode %}
+    {% assign isAdmin = true %}
+  {% endif %}
+
+  {%- comment -%}
+    GeoIp text
+  {%- endcomment -%}
+  <script>
+    var geoText = function(country) {
+      $('.js-geo-text').each(function() {
+        var $el = $(this);
+        var $countryItem = $el.find('[data-country="' + country + '"]');
+
+        if ($countryItem.length === 0) {
+          $el.find('[data-country="default"]').show();
+        } else {
+          $countryItem.show();
+        }
+      });
+    };
+  </script>
+  {%- unless isAdmin == true -%}
+  <script>
+    var alternateLinks = document.querySelectorAll('link[rel="alternate"]');
+    var redirectViaAlternativeLink = function(hostname, hostDomain, countryCode, newDomain) {
+      var documentLang = document.documentElement.lang;
+      var countryCodeWithDash = '-' + countryCode.toLowerCase();
+      var langCountryCode = documentLang + countryCodeWithDash;
+      var redirectUrl;
+
+      // Find alternative link in combination with the current language
+      for (var i = 0; i < alternateLinks.length; i += 1) {
+        var link = alternateLinks[i];
+        var hreflang = link.hreflang.toLowerCase();
+        if (hreflang === langCountryCode) {
+          redirectUrl = link.href;
+          break;
+        }
+      }
+
+      // Any other alternative link with the same country code
+      for (var i = 0; i < alternateLinks.length; i += 1) {
+        var link = alternateLinks[i];
+        var hreflang = link.hreflang.toLowerCase();
+        if (hreflang.indexOf(countryCodeWithDash) > -1) {
+          redirectUrl = link.href;
+          break;
+        }
+      }
+
+      if (redirectUrl) {
+        window.top.location.href = redirectUrl;
+      } else {
+        // Backup
+        var newHostname = hostname.replace('.' + hostDomain, newDomain).replace('jeune-premier', 'jeunepremier');
+        var redirectUrl = window.top.location.href.replace(hostname, newHostname);
+
+        window.top.location.href = redirectUrl;
+      }
+    };
+
+    // redirect function
+    var redirectByGeoCountry = function(countryCode) {
+      var hostname = window.location.hostname;
+      var hostDomain = hostname.replace(/^.*\./,"");
+
+      // don't redirect when hostname is myshopify.com
+      if (hostname.indexOf('myshopify.com') > -1) {
+        return false;
+      }
+
+      // don't redirect when parameter redirect=false
+      if (location.search.indexOf('redirect=false') !== -1) {
+        return false;
+      }
+
+      if (window.location.pathname === '/a/find-a-shop') {
+        if (hostDomain !== 'be') {
+          window.top.location.href = 'https://www.jeunepremier.be/a/find-a-shop' + window.location.search;
+        }
+      } else if (countryCode === 'ru' || countryCode === 'kz' || countryCode === 'by' || countryCode === 'bel' ) {
+        // check if Russia
+
+        if (hostDomain === 'ru') {
+          // if host domain is 'ru' do nothing
+          return false;
+        } else {
+          // redirect to .ru
+          var newHostname = hostname.replace('.' + hostDomain, '.ru').replace('jeunepremier', 'jeune-premier');
+          var redirectUrl = window.top.location.href.replace(hostname, newHostname);
+
+          window.top.location.href = redirectUrl;
+        }
+      } else if (countryCode === 'nl') {
+        // check if Netherlands
+
+        if (hostDomain === 'nl') {
+          // if host domain is 'nl' do nothing
+          return false;
+        } else {
+          // redirect to .nl
+          redirectViaAlternativeLink(hostname, hostDomain, countryCode, '.nl');
+        }
+      } else if (countryCode === 'es') {
+        // check if Spain
+
+        if (hostDomain === 'es') {
+          // if host domain is 'es' do nothing
+          return false;
+        } else {
+          // redirect to .es
+          redirectViaAlternativeLink(hostname, hostDomain, countryCode, '.es');
+        }
+      } else if (countryCode === 'fr') {
+        // check if France
+
+        if (hostDomain === 'fr') {
+          // if host domain is 'fr' do nothing
+          return false;
+        } else {
+          // redirect to .fr
+          redirectViaAlternativeLink(hostname, hostDomain, countryCode, '.fr');
+        }
+      } else if (countryCode === 'it') {
+        // check if Italy
+
+        if (hostDomain === 'it') {
+          // if host domain is 'it' do nothing
+          return false;
+        } else {
+          // redirect to .it
+          redirectViaAlternativeLink(hostname, hostDomain, countryCode, '.it');
+        }
+      } else if (countryCode === 'lu') {
+        // check if Luxembourg
+
+        if (hostDomain === 'lu') {
+          // if host domain is 'lu' do nothing
+          return false;
+        } else {
+          // redirect to .lu
+          redirectViaAlternativeLink(hostname, hostDomain, countryCode, '.lu');
+        }
+      } else if (countryCode === 'pl') {
+        // check if Poland
+
+        if (hostDomain === 'pl') {
+          // if host domain is 'pl' do nothing
+          return false;
+        } else {
+          // redirect to .pl
+          redirectViaAlternativeLink(hostname, hostDomain, countryCode, '.pl');
+        }
+      } else if (countryCode === 'pt') {
+        // check if Portugal
+
+        if (hostDomain === 'pt') {
+          // if host domain is 'pt' do nothing
+          return false;
+        } else {
+          // redirect to .pt
+          redirectViaAlternativeLink(hostname, hostDomain, countryCode, '.pt');
+        }
+      } else if (countryCode === 'cz') {
+        // check if Czechia
+
+        if (hostDomain === 'cz') {
+          // if host domain is 'cz' do nothing
+          return false;
+        } else {
+          // redirect to .cz
+          redirectViaAlternativeLink(hostname, hostDomain, countryCode, '.cz');
+        }
+      } else if (countryCode === 'uk' || countryCode === 'gb') {
+        // check if United Kingdom
+
+        if (hostDomain === 'uk' || hostDomain === 'co.uk') {
+          // if host domain is 'uk' do nothing
+          return false;
+        } else {
+          // redirect to .co.uk
+          redirectViaAlternativeLink(hostname, hostDomain, countryCode, '.co.uk');
+        }
+      } else if (countryCode === 'de') {
+        // check if Germany
+
+        if (hostDomain === 'de') {
+          // if host domain is 'de' do nothing
+          return false;
+        } else {
+          // redirect to .de
+          redirectViaAlternativeLink(hostname, hostDomain, countryCode, '.de');
+        }
+      } else if (countryCode === 'ch') {
+        // check if Switzerland
+
+        if (hostDomain === 'ch') {
+          // if host domain is 'ch' do nothing
+          return false;
+        } else {
+          // redirect to .ch
+          redirectViaAlternativeLink(hostname, hostDomain, countryCode, '.ch');
+        }
+      } else if (countryCode === 'dk') {
+        // check if Denmark
+
+        if (hostDomain === 'dk') {
+          // if host domain is 'dk' do nothing
+          return false;
+        } else {
+          // redirect to .dk
+          redirectViaAlternativeLink(hostname, hostDomain, countryCode, '.dk');
+        }
+      }  else if (countryCode === 'at') {
+        // check if Austria
+
+        if (hostDomain === 'at') {
+          // if host domain is 'at' do nothing
+          return false;
+        } else {
+          // redirect to .at
+          redirectViaAlternativeLink(hostname, hostDomain, countryCode, '.at');
+        }
+      } else if (countryCode === 'be') {
+        // basedomain is be
+        if (hostDomain === 'be') {
+          return false;
+        }
+        // redirect to .be
+        redirectViaAlternativeLink(hostname, hostDomain, countryCode, '.be');
+      } else {
+        // basedomain is com
+        if (hostDomain === 'com') {
+          return false;
+        }
+
+        // go to .com
+        var newHostname = hostname.replace('.' + hostDomain, '.com').replace('jeune-premier', 'jeunepremier');
+        var redirectUrl = window.top.location.href.replace(hostname, newHostname);
+
+        window.top.location.href = redirectUrl;
+      }
+    }
+
+    var isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent);
+    // check localstorage
+    var geoCountry = localStorage.getItem('geoCountry3');
+    // don't redirect when userAgent is a bot
+    if (!isBot) {
+      if (geoCountry && geoCountry !== '') {
+        redirectByGeoCountry(geoCountry);
+        geoText(geoCountry);
+      } else {
+        // get geo data
+        jQuery.ajax({
+          url: 'https://geoip.apps.esign.eu/api/v1/location',
+          type: 'GET',
+          dataType: 'json',
+          headers: {
+            'Authorization': 'Bearer 0m3vU7W2wqNEdrYQbGElq4mQCHeUnf25f2lkn20H638ysTo4tMnRl5g3BHHRb1vrBCCXzVKqBCUrmrhm',
+            'Accept': 'application/json'
+          },
+          success: function(response) {
+            if (response && response.iso_code) {
+              var code = response.iso_code.toLowerCase();
+              localStorage.setItem('geoCountry3', code);
+              redirectByGeoCountry(code);
+              geoText(code);
+            }
+          }
+        });
+
+      }
+    }
+  </script>
+  {% else %}
+  {%- comment -%}
+    Get Ip for GeoIp text preview
+  {%- endcomment -%}
+  <script>
+    jQuery.ajax({
+      url: 'https://geoip.apps.esign.eu/api/v1/location',
+      type: 'GET',
+      dataType: 'json',
+      headers: {
+        'Authorization': 'Bearer 0m3vU7W2wqNEdrYQbGElq4mQCHeUnf25f2lkn20H638ysTo4tMnRl5g3BHHRb1vrBCCXzVKqBCUrmrhm',
+        'Accept': 'application/json'
+      },
+      success: function(response) {
+        if (response && response.iso_code) {
+          var code = response.iso_code.toLowerCase();
+          geoText(code);
+        }
+      }
+    });
+  </script>
+  {%- endunless -%}

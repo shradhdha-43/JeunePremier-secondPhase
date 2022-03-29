@@ -1,0 +1,193 @@
+{{ 'jp-image-with-text.css' | asset_url | stylesheet_tag }}
+{{ 'jp-img-txt-ergo.css' | asset_url | stylesheet_tag }}
+{% if product.metafields.my_fields.product_details_block_image != blank and product.metafields.my_fields.product_details_block_text != blank %}
+<div class="img-with-text-wrapper img-txt-ergo">
+  <div class="container">
+    
+    <div class="img-with-text-content flex-box justify-between row-rev">
+      
+      <div class="img-w-txt-text-wrap">
+        {{ product.metafields.my_fields.product_details_block_text }}
+        <div class="ergos no-t-m">   
+          {% if product.metafields.my_fields.product_details_block_image_1 != blank %}
+        		<div class="ergo-wrap">
+                  <div class="ergo-img-wrap rel">
+                  	<img src="{{ product.metafields.my_fields.product_details_block_image_1 | img_url: "200x" }}" loading="lazy">
+                    <div class="img-scribble">{% include 'img-scribble' %}</div>
+                    <div class="ergo-num ergo-num-1">1</div>
+                  </div>
+                  {{ product.metafields.my_fields.product_details_block_text_1 }}
+                  
+          		</div>
+          {% endif %}
+          {% if product.metafields.my_fields.product_details_block_image_2 != blank %}
+        		<div class="ergo-wrap fl-end row-rev">
+                  <div class="ergo-img-wrap rel">
+                  	<img src="{{ product.metafields.my_fields.product_details_block_image_2 | img_url: "200x" }}" loading="lazy">
+                    <div class="img-scribble">{% include 'img-scribble' %}</div>
+                    <div class="ergo-num ergo-num-2">2</div>
+                  </div>
+                  {{ product.metafields.my_fields.product_details_block_text_2 }}
+          		</div>
+          {% endif %}
+          {% if product.metafields.my_fields.product_details_block_image_3 != blank %}
+        		<div class="ergo-wrap fl-end">
+                  <div class="ergo-img-wrap rel">
+                  	<img src="{{ product.metafields.my_fields.product_details_block_image_3 | img_url: "200x" }}" loading="lazy">
+                    <div class="img-scribble">{% include 'img-scribble' %}</div>
+                    <div class="ergo-num ergo-num-3">3</div>
+                  </div>
+                  {{ product.metafields.my_fields.product_details_block_text_3 }}
+          		</div>
+          {% endif %}
+          {% if product.metafields.my_fields.product_details_block_image_4 != blank %}
+        		<div class="ergo-wrap fl-end row-rev">
+                  <div class="ergo-img-wrap rel">
+                  	<img src="{{ product.metafields.my_fields.product_details_block_image_4 | img_url: "200x" }}" loading="lazy">
+                    <div class="img-scribble">{% include 'img-scribble' %}</div>
+                    <div class="ergo-num ergo-num-4">4</div>
+                  </div>
+                  {{ product.metafields.my_fields.product_details_block_text_4 }}
+          		</div>
+          {% endif %}
+        </div>
+        
+        <div class="ergos ergos-mob no-d">  
+          {% if product.metafields.my_fields.product_details_block_image_1 != blank %}	
+        		<div class="ergo-wrap">
+                  <div class="ergo-img-wrap rel">
+                  	<img src="{{ product.metafields.my_fields.product_details_block_image_1 | img_url: "200x" }}" loading="lazy">
+                    <div class="img-scribble">{% include 'img-scribble' %}</div>
+                    <div class="ergo-num ergo-num-1">1</div>
+                  </div>
+                  {{ product.metafields.my_fields.product_details_block_text_1 }}
+          		</div>
+          {% endif %}
+          {% if product.metafields.my_fields.product_details_block_image_2 != blank %}        		
+        		<div class="ergo-wrap">
+                  <div class="ergo-img-wrap rel">
+                  	<img src="{{ product.metafields.my_fields.product_details_block_image_2 | img_url: "200x" }}" loading="lazy">
+                    <div class="img-scribble">{% include 'img-scribble' %}</div>
+                    <div class="ergo-num ergo-num-2">2</div>
+                  </div>
+                  {{ product.metafields.my_fields.product_details_block_text_2 }}
+          		</div>
+          {% endif %}
+          {% if product.metafields.my_fields.product_details_block_image_3 != blank %}
+        		
+        		<div class="ergo-wrap">
+                  <div class="ergo-img-wrap rel">
+                  	<img src="{{ product.metafields.my_fields.product_details_block_image_3 | img_url: "200x" }}" loading="lazy">
+                    <div class="img-scribble">{% include 'img-scribble' %}</div>
+                    <div class="ergo-num ergo-num-3">3</div>
+                  </div>
+                  {{ product.metafields.my_fields.product_details_block_text_3 }}
+          		</div>
+          {% endif %}
+          {% if product.metafields.my_fields.product_details_block_image_4 != blank %}
+        		
+        		<div class="ergo-wrap">
+                  <div class="ergo-img-wrap rel">
+                  	<img src="{{ product.metafields.my_fields.product_details_block_image_4 | img_url: "200x" }}" loading="lazy">
+                    <div class="img-scribble">{% include 'img-scribble' %}</div>
+                    <div class="ergo-num ergo-num-4">4</div>
+                  </div>
+                  {{ product.metafields.my_fields.product_details_block_text_4 }}
+          		</div>
+          {% endif %}
+        </div>
+      </div>
+      
+      <div class="img-w-txt-image-wrap rel">
+      	<img src="{{ product.metafields.my_fields.product_details_block_image | img_url: "600x" }}" loading="lazy">
+        <div class="text-over-img title">{{ product.metafields.my_fields.p_details_block_image_text }}</div>
+        {% if product.metafields.my_fields.p_details_block_image_text != '' %}
+        <div class="scribble-over-img">{% include 'scribble-over-img' %}</div>
+        {% endif %}
+      </div>
+      
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "JP Img Txt Ergo",
+	"class": "detailed-product",
+    "settings": [
+		
+		{
+          "type": "radio",
+          "id": "img_aligment",
+          "label": "Media alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "right"
+        },
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		},
+		{
+			"type": "text",
+			"id": "desc",
+			"label": "Description"
+		},
+		{
+			"type": "image_picker",
+			"id": "img",
+			"label": "Image Main"
+		},
+		{
+			"type": "text",
+			"id": "text_over_img",
+			"label": "Text Over Image"
+		}
+	],
+	"blocks": [
+		{
+			"type": "ergo",
+			"name": "Ergo",
+			"limit": 4,
+			"settings": [
+				{
+					"type": "text",
+					"id": "ergo_title",
+					"label": "Title"
+				},
+				{
+                  "type": "text",
+                  "id": "ergo_desc",
+                  "label": "Description"
+                },
+				{
+                  "type": "image_picker",
+                  "id": "ergo_img",
+                  "label": "Image"
+                }
+			]
+		}
+	],
+	"presets":[
+      {
+         "name":"JP Img Txt Ergo"
+      }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

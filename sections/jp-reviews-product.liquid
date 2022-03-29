@@ -1,0 +1,46 @@
+<div id="to-reviews">
+<!--Stamped - Begin Main Widget -->
+<div 
+id="stamped-main-widget"   
+data-product-id="{{ product.id }}"   
+data-name="{{ product.title | escape }}"   
+data-url="{{ shop.url }}{{ product.url }}"   
+data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}" 
+data-description="{{ product.description | escape }}"   
+data-product-sku="{{product.handle}}"
+data-product-title="{{product.title}}" 
+data-product-type="{{product.type}}">   
+{{product.metafields.stamped.reviews}}   
+</div>
+<!-- Stamped - End Main Widget -->
+</div>
+
+  <script> function myInit(){ StampedFn.init({ apiKey: 'pubkey-3xnWP2H20p2jo09umtnf7m3N4d51T3', storeUrl: 'www.jeunepremier.com' }); }
+  setTimeout(function(){
+    var wrapperPosts = $('.js-tagged-instagram-posts-wrapper');
+    const postWidget = wrapperPosts.find('#stamped-reviews-widget');
+    if(parseInt(postWidget.attr('data-total'))) {
+      wrapperPosts.removeClass('hide')
+    }
+  }, 2000)
+
+  </script>
+<script async onload="myInit()" type="text/javascript" src="https://cdn-stamped-io.azureedge.net/files/widget.min.js"> </script>
+{% schema %}
+  {
+    "name": "JP Reviews Product",
+	"class": "reviews-stamped",
+    "settings": [],
+	"presets":[
+      {
+         "name":"JP Reviews Product"
+      }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

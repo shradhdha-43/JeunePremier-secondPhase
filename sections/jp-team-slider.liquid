@@ -1,0 +1,100 @@
+
+{{ 'jp-product-slider.css' | asset_url | stylesheet_tag }}
+{{ 'jp-team-slider.css' | asset_url | stylesheet_tag }}
+
+{% assign coll = section.settings.collection %}
+
+<div class="jp-prouduct-slider-wrap jp-team-slider-wrap">
+  <div class="container rel">
+    <div class="product-slider-first justify-center no-d">
+        <div class="product-slider-title title">{{ section.settings.title }}</div>
+        <div class="product-slider-desc light">{{ section.settings.desc }}</div>
+      
+      </div>
+    <div class="jp-team-slider no-d">
+      {% for block in section.blocks %}
+      		{% if block.type == 'team_member' %}
+      	<div class="team-card">
+          <div class="member-img">
+          	<img src="{{ block.settings.img | img_url: "300x" }}" alt="member image">
+          </div>
+          <div class="member-name medium">{{ block.settings.name }}</div>
+          <div class="member-department light">{{ block.settings.department }}</div>
+        </div>
+          {% endif %}
+      {% endfor %}
+    </div>
+    <div class="abs no-t-m">
+    <div class="jp-team-slider">
+      <div class="product-slider-first justify-center">
+        <div class="product-slider-title title">{{ section.settings.title }}</div>
+        <div class="product-slider-desc light">{{ section.settings.desc }}</div>
+        
+      </div>
+      {% for block in section.blocks %}
+      		{% if block.type == 'team_member' %}
+      	<div class="team-card">
+          <div class="member-img">
+          	<img src="{{ block.settings.img | img_url: "300x" }}" alt="member image">
+          </div>
+          <div class="member-name medium">{{ block.settings.name }}</div>
+          <div class="member-department light">{{ block.settings.department }}</div>
+        </div>
+          {% endif %}
+      {% endfor %}
+    </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "JP Team Slider",
+    "settings": [
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		},
+		{
+			"type": "text",
+			"id": "desc",
+			"label": "Description"
+		}
+	],
+	"blocks":[
+		{
+			"type": "team_member",
+			"name": "Team Member",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "img",
+					"label": "Member Image"
+				},
+				{
+					"type": "text",
+					"id": "name",
+					"label": "Member Name"
+				},
+				{
+					"type": "text",
+					"id": "department",
+					"label": "Member Department"
+				}
+			]
+		}
+	],
+	"presets":[
+      {
+         "name":"JP Team Slider"
+      }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

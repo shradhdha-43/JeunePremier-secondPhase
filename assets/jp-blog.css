@@ -1,0 +1,167 @@
+.sec-marg-top{
+	margin-top: 80px;
+}
+
+.blog-latest-article{
+	margin-bottom: 128px;
+}
+
+.blogs-filter-title-wrap, .blogs-title-wrap{
+	display: flex;
+}
+
+.blogs-filter-title-wrap {
+    width: 350px;
+    padding-bottom: 10px;
+  border-bottom: 1px solid var(--dd-color-second);
+  cursor: pointer;
+}
+
+.blogs-title {
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.blogs-title-wrap{
+	margin-bottom: 40px;
+}
+
+.blogs-filter-title {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1.28px;
+  text-transform: uppercase;
+}
+
+.blog-filters {
+    position: absolute;
+    background-color: #fff;
+    width: 110%;
+    left: -5%;
+    padding: 0 5%;
+    visibility: hidden;
+    transition: .4s ease;
+}
+
+.blog-filters.visible{
+	visibility: visible;
+}
+
+.blog-filter {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--dd-color-second);
+  cursor: pointer;
+      text-transform: uppercase;
+}
+
+.blogs {
+    flex-wrap: wrap;
+    width: calc(100% + 16px);
+    margin: 0 -8px;
+}
+
+.blog-card {
+    width: calc(33.3333% - 16px);
+    margin: 0 8px;
+  display: block;
+  margin-bottom: 40px;
+}
+
+.blog-img{
+	width: 100%;
+  height: 388px;
+  margin-bottom: 16px;
+}
+
+.blog-img img{
+	width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.blog-title {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 16px;
+}
+
+.blog-author {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1.28px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.article-excerpt {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 16px;
+}
+
+.filter-tag-close{
+	width: 12px;
+  display: none;
+}
+
+.selected-filter{
+	display: flex;
+  justify-content: space-between;
+}
+
+.selected-filter .filter-tag-close{
+	display: block;
+}
+
+@media(max-width: 992px){
+  .sec-marg-top{
+	margin-top: 40px;
+}
+  
+	.blog-latest-article {
+    margin-bottom: 67px;
+}
+  
+  .blogs-title-wrap {
+    flex-direction: column;
+}
+  
+  .blogs-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+  
+  .blogs-filter-title-wrap {
+    width: 100%;
+}
+  
+  .blogs {
+    width: 100%;
+    margin: 0;
+}
+  
+  .blog-card {
+    width: 100%;
+    margin: 0 0 40px;
+}
+  
+  .blog-img {
+    height: calc(100vw - 40px);
+    margin-bottom: 10px;
+}
+  
+  .blog-title {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 10px;
+}
+  
+  .blog-author {
+    margin-bottom: 10px;
+}
+  
+  .article-excerpt {
+    margin-bottom: 10px;
+}
+}

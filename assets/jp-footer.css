@@ -1,0 +1,156 @@
+footer{
+	border-top: 1px solid var(--dd-color-second);
+  padding: 40px 0;
+}
+
+.footer-menu-title {
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.footer-link {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 16px;
+    display: block;
+    transition: .4s ease;
+}
+
+.footer-link:last-child{
+	margin-bottom: 0;
+}
+
+.footer-link:hover{
+	text-decoration: underline;
+}
+
+.footer-part{
+	border-bottom: 1px solid var(--dd-color-second);
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+}
+
+.lang-flag svg{
+	width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.lang-flag {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  border-radius: 50%;
+}
+
+.lang-name {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 1.12px;
+}
+
+.footer-lang-wrap {
+    margin-bottom: 10px;
+}
+
+.selected .lang-name{
+	font-weight: 500;
+  text-decoration: underline;
+}
+
+.selected .lang-flag{
+	border: 1px solid;
+  padding: 1px 2px;
+}
+
+.selected .lang-flag svg{
+	width: 18px;
+  height: 18px;
+}
+
+.sm_logo {
+    margin-right: 24px;
+    height: fit-content;
+    height: -moz-fit-content;
+}
+
+.footer-part-inner{
+	width: 33.33333%;
+}
+
+.shipping-companies-svgs, .payment-companies-svgs {
+    flex-wrap: wrap;
+    max-width: 260px;
+  display: flex;
+}
+
+.shipping-logo {
+    height: 40px;
+  margin-right: 30px;
+}
+
+.payment-logo{
+	height: 40px;
+  margin-right: 8px;
+}
+
+.shipping-logo:first-child, .payment-logo:first-child {
+  margin-bottom: 12px;
+}
+
+.shipping-logo img, .payment-logo img{
+  max-height: 100%;
+}
+
+.company-address, .showroom-address, .copyright-text {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.company-address a, .showroom-address a{
+	text-decoration: underline;
+}
+
+.footer-brand-logo:first-child {
+    margin-right: 25px;
+}
+
+.footer-four{
+	border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 36px;
+}
+
+
+
+@media(max-width: 992px){
+	.footer-menu-title {
+    font-size: 18px;
+}
+  
+  .footer-part{
+  	flex-direction: column;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+  }
+  
+  .footer-part-inner {
+    width: 100%;
+    margin-bottom: 20px;
+}
+  
+  .selected .lang-flag {
+    padding: 2px 2px;
+}
+  
+  .footer-four{
+  	margin-bottom: 0;
+  }
+  
+  footer{
+  padding: 20px 0;
+}
+}

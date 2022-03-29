@@ -1,0 +1,40 @@
+{% for productTag in product.tags %}
+    {% if productTag contains 'back-in-stock-' %}
+    <div class="back-in-stock-info">
+        {{ 'products.product.back_in_stock_in' | t }}
+            {% assign split = productTag | split: 'back-in-stock-' %}
+            {% assign month = split[1] %}
+            {% case month %}
+                {% when 'january' %}
+                    {{ 'products.product.months.january' | t }}
+                {% when 'february' %}
+                    {{ 'products.product.months.february' | t }}
+                {% when 'march' %}
+                    {{ 'products.product.months.march' | t }}
+                {% when 'april' %}
+                    {{ 'products.product.months.april' | t }}
+                {% when 'may' %}
+                    {{ 'products.product.months.may' | t }}
+                {% when 'june' %}
+                    {{ 'products.product.months.june' | t }}
+                {% when 'july' %}
+                    {{ 'products.product.months.july' | t }}
+                {% when 'august' %}
+                    {{ 'products.product.months.august' | t }}
+                {% when 'september' %}
+                    {{ 'products.product.months.september' | t }}
+                {% when 'october' %}
+                    {{ 'products.product.months.october' | t }}
+                {% when 'november' %}
+                    {{ 'products.product.months.november' | t }}
+                {% when 'december' %}
+                    {{ 'products.product.months.december' | t }}
+                {% else %}
+                    
+            {% endcase %}
+            </div>
+        {% endif %}
+    
+    
+        
+{% endfor %}

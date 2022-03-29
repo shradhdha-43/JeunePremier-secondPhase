@@ -1,0 +1,54 @@
+.jp-team-slider.slick-slider.slick-dotted {
+    margin-bottom: 48px;
+}
+
+.jp-prouduct-slider-wrap .team-card {
+    width: 98% !important;
+    margin: 0 8px;
+}
+
+.member-img {
+    height: 287px;
+    margin-bottom: 12px;
+}
+
+.member-img img{
+	width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.member-name {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+.member-department {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.jp-team-slider-wrap .product-slider-first {
+    height: 340px;
+}
+
+.jp-prouduct-slider-wrap.jp-team-slider-wrap .slick-dots {
+    bottom: 0;
+}
+
+.jp-prouduct-slider-wrap.jp-team-slider-wrap .slick-next, .jp-prouduct-slider-wrap.jp-team-slider-wrap .slick-prev {
+    bottom: -30px;
+}
+
+.jp-prouduct-slider-wrap.jp-team-slider-wrap .slick-list {
+    min-height: unset;
+}
+
+
+@media(max-width: 992px){
+	.jp-team-slider-wrap .product-slider-first {
+    height: auto;
+}
+}

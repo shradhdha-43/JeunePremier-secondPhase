@@ -1,0 +1,119 @@
+{% if product.images.size > 1 %}
+              <div class="product-slider">
+                <div class="slider__slide">
+                  <a href="{{ featured_image | img_url: '1300x' }}" data-fancybox="{{ product.title }}" class="slider__item">
+                    <img id="ProductPhotoImg"
+                        src="{{ featured_image | img_url: '15x15' }}"
+                        data-src="{{ featured_image | img_url: '300x300' }}"
+                        data-srcset="{{ featured_image | img_url: '300x300' }} 300w,
+                          {{ featured_image | img_url: '450x450' }} 768w,
+                          {{ featured_image | img_url: '650x650' }} 1024w,
+                          {{ featured_image | img_url: '1300x1300' }} 2048w"
+                        class="lazyload blur-up"
+                        alt="{{ featured_image.alt | escape }}"/>
+                  </a>
+                </div>
+
+                {% if video_split and video_split|length %}
+                  {% assign video_split = video_split | strip_html %}
+                  <div class="slider__slide">
+                    <a href="{{ video_split | strip }}" data-fancybox="{{ product.title }}" class=" ">
+                      <video autoplay muted loop playsinline preload="none">
+                        <source src="{{ video_split | strip }}" type="video/mp4">
+                      </video>
+                    </a>
+                  </div>
+                {% endif %}
+
+                {%- for media in product.media -%}
+                  {% if forloop.index > 1 %}
+                    {% case media.media_type %}
+                      {% when 'image' %}
+                        {%- assign alt_format = media.alt | strip | plus: 0 -%}
+
+                        {% unless media.alt contains 'social_' %}
+                        {%- if alt_format == 0 -%}
+                            <div class="slider__slide">
+                            <a href="{{ media | img_url: '1300x' }}" data-fancybox="{{ product.title }}" class="slider__item">
+                              <img src="{{ media | img_url: '15x15' }}"
+                                  data-src="{{ media | img_url: '300x300' }}"
+                                  data-srcset="{{ media | img_url: '300x300' }} 300w,
+                                              {{ media | img_url: '450x450' }} 768w,
+                                              {{ media | img_url: '650x650' }} 1024w,
+                                              {{ media | img_url: '1300x1300' }} 2048w"
+                                  class="lazyload blur-up"
+                                  alt="{{ media.alt | escape }}"/>
+                            </a>
+                          </div>
+                        {%- endif -%}
+                        {% endunless %}
+
+                      {% when 'external_video' %}
+                        <div class="slider__slide">
+                          {{ media | external_video_url: controls: "0", playsinline: "0", rel: "0" | external_video_tag }}
+                        </div>
+                      {% when 'video' %}
+                        <div class="slider__slide">
+                          <div class="slider__item slider__item--video">
+                            {{ media| video_tag: controls: true, mute: true, loop: true, image_size: '1024x1024' }}
+                          </div>
+                        </div>
+                    {% endcase %}
+                  {% endif %}
+                {%- endfor -%}
+              </div>
+
+              <div class="product-single__preview-image">
+                <img src="{{ product.featured_image | img_url: 'large' }}" alt="">
+              </div>
+
+              {% comment %}
+                Create thumbnails if we have more than one product image
+              {% endcomment %}
+              <div class="thumbs-wrapper">
+                <div class="product-single__thumbnails grid-uniform slick-center" id="ProductThumbs">
+                  {%- for media in product.media -%}
+                    {% case media.media_type %}
+                      {% when 'image' %}
+                        {%- assign alt_format = media.alt | strip | plus: 0 -%}
+
+                        {% unless media.alt contains 'social_' %}
+                          {%- if alt_format == 0 -%}
+                            <div>
+                              <div  class="product-single__thumbnail">
+                                <img src="{{ media | img_url: '200x' }}"
+                                  srcset="{{ media | img_url: '200x' }} 1x,{{ media | img_url: '400x' }} 2x"
+                                  alt="{{ media.alt | escape }}">
+                              </div>
+                            </div>
+                          {%- endif -%}
+                        {% endunless %}
+                      {% when 'external_video' %}
+                        <div class="product-single__thumbnail product-single__thumbnail-video-external">
+                          {{ media | external_video_url: controls: "0" | external_video_tag }}
+                        </div>
+                      {% when 'video' %}
+                        <div class="product-single__thumbnail product-single__thumbnail-video">
+                          {{ media | video_tag: mute: true, image_size: '400x' }}
+                          <div class="play-button">
+                            <div class="triangle-right"></div>
+                          </div>
+                        </div>
+                    {% endcase %}
+                  {%- endfor -%}
+                </div>
+              </div>
+            {% else %}
+              <a href="{{ featured_image | img_url: '1300x' }}" data-fancybox="{{ product.title }}"
+                class="slider__item active">
+                <img id="ProductPhotoImg"
+                    src="{{ featured_image | img_url: '15x15' }}"
+                    data-src="{{ featured_image | img_url: '300x300' }}"
+                    data-srcset="{{ featured_image | img_url: '300x300' }} 300w,
+                          {{ featured_image | img_url: '450x450' }} 768w,
+                          {{ featured_image | img_url: '650x650' }} 1024w,
+                          {{ featured_image | img_url: '1300x1300' }} 2048w"
+                    class="lazyload blur-up"
+                    alt="{{ featured_image.alt | escape }}"/>
+              </a>
+            {% endif %}

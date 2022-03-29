@@ -1,0 +1,266 @@
+.reseller-wrap{
+	margin-bottom: 120px;
+}
+
+.sec-marg-top{
+	margin-top: 80px;
+}
+
+.reseller-contact-form {
+    width: calc(100% - 404px);
+  margin-top: 145px;
+}
+
+.reseller-img {
+    width: 388px;
+    height: 388px;
+    margin-left: 16px;
+  position: sticky;
+    top: 120px;
+}
+
+.reseller-img img{
+	width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reseller-cont-input-group {
+    width: 49%;
+}
+
+.reseller-contact-form label{
+	font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 1.12px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.reseller-contact-form input{
+	background-color: var(--dd-color-fourth);
+  margin-bottom: 24px;
+}
+
+.reseller-title {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+
+.reseller-desc {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 144px;
+    width: 489px;
+}
+
+.form-part-wrap{
+	flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.reseller-contact-title {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 40px;
+}
+
+.reseller-contact-title.small-title {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 24px;
+}
+
+.checkbox{
+	width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected .inner-checkbox{
+	width: 10px;
+  height: 10px;
+  background-color: var(--dd-color-first);
+  display: block;
+}
+
+.shipping-same-as-billing {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    width: -moz-fit-content;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.s-method {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: fit-content;
+  width: -moz-fit-content;
+}
+
+.radio-btn {
+    width: 16px;
+    height: 16px;
+    border: 1px solid;
+    display: flex;
+    border-radius: 50%;
+  margin-right: 10px;
+  transition: .4s ease;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected .radio-btn{
+	background-color: var(--dd-color-fourth);
+}
+
+.selected .radio-inner{
+	width: 10px;
+  height: 10px;
+  background-color: var(--dd-color-first);
+  border-radius: 50%;
+}
+
+.sales-method {
+    margin-bottom: 40px;
+}
+
+.cont-submit-btn{
+	width: 49%;
+  padding: 16px 0;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  background-color: var(--dd-color-second);
+  transition: .4s ease;
+  border: none;
+    cursor: pointer;
+  text-align: center;
+}
+
+.cont-submit-btn:hover{
+	background-color: var(--dd-color-seventh);
+}
+
+.prod-type, .age-range {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    width: -moz-fit-content;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.types-of-products {
+    margin-bottom: 24px;
+}
+
+.found-date {
+    width: 49%;
+}
+
+.form-condition {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    cursor: pointer;
+    width: fit-content;
+    width: moz-fit-content;
+  font-size: 14px;
+    line-height: 20px;
+}
+
+.age-range-wrap {
+    margin-bottom: 24px;
+}
+
+.condition-text {
+    width: calc(100% - 24px);
+}
+
+@media(max-width: 992px){
+	.contact-form-img-wrap {
+    flex-direction: column-reverse;
+}
+  
+  .sec-marg-top{
+	margin-top: 40px;
+}
+  
+  .reseller-img {
+    width: 100%;
+    height: calc(100vw - 40px);
+    margin-left: 0;
+    position: unset;
+}
+  
+  .reseller-contact-form {
+    width: 100%;
+    margin-top: 24px;
+}
+  
+  .reseller-title {
+    margin-bottom: 10px;
+    text-align: center;
+}
+  
+  .reseller-desc {
+    margin-bottom: 40px;
+    width: 100%;
+}
+  
+  .reseller-contact-title {
+    margin-bottom: 16px;
+    text-align: center;
+}
+  
+  .reseller-cont-input-group {
+    width: 100%;
+}
+  
+  .reseller-contact-form input {
+    margin-bottom: 10px;
+}
+  
+  .form-part-wrap {
+    margin-bottom: 30px;
+}
+  
+  .reseller-contact-title.small-title {
+    margin-bottom: 20px;
+    text-align: left;
+}
+  
+  .sales-method, .age-range-wrap, .types-of-products {
+    margin-bottom: 20px;
+}
+  
+  .found-date {
+    width: 100%;
+    margin-bottom: 10px;
+}
+  
+  .cont-submit-btn {
+    width: 100%;
+}
+  
+  .reseller-wrap {
+    margin-bottom: 80px;
+}
+  
+  .condition-text{
+  	width: calc(100% - 26px);
+  }
+}

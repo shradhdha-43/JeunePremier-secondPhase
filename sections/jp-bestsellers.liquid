@@ -1,0 +1,146 @@
+{{ 'jp-main-collection.css' | asset_url | stylesheet_tag }}
+{{ 'jp-bestsellers.css' | asset_url | stylesheet_tag }}
+
+<style>
+  
+  .jp-best .product-images-block img {
+  	object-fit: cover;
+  }
+</style>
+
+<div class="bestsellers-wrap{% if section.settings.space_above == 'true' %} space-above{% endif %}">
+  <div class="container">
+    <div class="bestsellers-title title text-center">{{ section.settings.title }}</div>
+    {{ product_handle }}
+    <div class="bestseller-products">
+    	{% for product in collections['bestsellers'].products limit:12 %}
+        <div class="product-card">
+        	<div class="product-images-block rel">
+            <a href="{{ product.url }}">
+              
+              {% assign collection_is_bestellers = false %}
+              {% assign is_bestseller = false %}
+              {% assign last_items = false %}
+              {% if product.first_available_variant.inventory_quantity <= 10 and product.first_available_variant.inventory_policy != "continue" %}
+                {% assign last_items = true %}
+              {% endif %}
+              {% if product.tags contains 'bestseller' %}
+                {% assign is_bestseller = true %}
+              {% endif %}
+              {% if collection.handle == 'bestseller' or collection.handle == 'bestsellers'  %}
+                {% assign collection_is_bestellers = true %}
+              {% endif %}
+              
+              {% if last_items and collection.handle != 'last-items' and collection.handle != 'letzte-artikel' %}
+                  <div class="prod-tag product-tag-last medium">{{ 'products.product.last_item' | t }}</div>
+              {% elsif is_bestseller %}
+                  {% unless collection_is_bestellers %}
+                    
+                  {% endunless %}
+              {% endif %} 
+              {% unless collection.handle == 'neu' %}
+                {% for collectionx in product.collections %}{% if collectionx.handle contains "neu" %}
+                <div class="prod-neu-tag medium">{{ 'products.product.new' | t }}</div>{% break %}
+                {% endif %}{% endfor %}    
+              {% endunless %}
+              
+              {% for image in product.images limit: 2 %}
+              {% if forloop.first and forloop.last %}
+                <img src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+                <img class="no-t-m" src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+              {% else %}
+                {% if forloop.first %}
+                {% capture first %}
+                <img class="no-t-m" src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+                {% endcapture %}
+                {% else %}
+              	<img src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+              	{{ first }}
+                {% endif %}
+              {% endif %}              
+              {% endfor %}  
+            </a>
+              {% assign noAddToCartFromCollection = false %}
+              {% if product.type == 'Ludilabel' or product.type == 'Goedgemerkt' or product.type == 'Keychain letter' or product.type == 'Keychain charm' %}
+                {% assign noAddToCartFromCollection = true %}
+              {% endif %}
+              {% unless product.selected_or_first_available_variant.available %}
+                {% assign noAddToCartFromCollection = true %}
+              {% endunless %}
+              {%- unless noAddToCartFromCollection -%}
+              <div class="coll-add-to-cart-btn" data-variant="{{ product.first_available_variant.id }}">+</div>
+              {%- endunless -%}
+          </div>
+          <div class="product-details">
+            <div class="product-name-price-col justify-between">
+            	<div class="product-title medium">
+                  <a href="{{ product.url }}">
+                  {% assign remove_word = product.title | truncatewords: 1, "" %}
+                  {{ product.type }}
+                  </a>
+                </div>
+              	<div class="product-pirce medium">
+                  <a href="{{ product.url }}">{{ product.price | times: 1.21 | money_without_trailing_zeros | strip_html }}</a>
+              </div>
+             
+            </div>
+            <div class="product-price-col">
+               <div class="product-sub-title light">
+                 <a href="{{ product.url }}">{{ product.metafields.descriptors.subtitle }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="/collections/all" class="btn bestsellers-btn">{{ section.settings.btn_text }}</a>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "JP Bestsellers",
+	"class": "jp-best",
+    "settings": [
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title",
+			"default": "SHOP BESTSELLERS"
+		},
+		{
+			"type": "text",
+			"id": "btn_text",
+			"label": "Button Text",
+			"default": "ALLE TASCHEN SHOPPEN"
+		},
+		{
+          "type": "select",
+          "id": "space_above",
+          "label": "Spacing Above",
+          "options": [
+            {
+              "value": "true",
+              "label": "True"
+            },
+            {
+              "value": "false",
+              "label": "False"
+            }
+          ],
+          "default": "false"
+        }
+	],
+	"presets": [
+		{
+			"name":"JP Bestsellers"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

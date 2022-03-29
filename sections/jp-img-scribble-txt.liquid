@@ -1,0 +1,120 @@
+{{ 'jp-image-with-text.css' | asset_url | stylesheet_tag }}
+{{ 'jp-img-scribble-txt.css' | asset_url | stylesheet_tag }}
+
+{% if product.metafields.my_fields.product_info_upsell_image != blank and product.metafields.my_fields.product_info_upsell_title != blank and product.metafields.my_fields.product_info_upsell_desc != blank %}
+<div class="img-with-text-wrapper img-scribble-txt">
+  <div class="container">
+    
+    <div class="img-with-text-content flex-box align-center justify-between row-rev">
+      
+      <div class="img-w-txt-text-wrap">
+        <div class="img-w-txt-title title">{{ product.metafields.my_fields.product_info_upsell_title }}</div>
+        <div class="img-w-txt-desc light">{{ product.metafields.my_fields.product_info_upsell_desc }}</div>
+        {% if product.metafields.my_fields.product_info_upsell_prod != blank %}
+        {% assign prod = product.metafields.my_fields.product_info_upsell_prod.value %}
+        <div class="add-to-cart title coll-add-to-cart-btn button prod-info-upsell-btn no-t-m" data-variant="{{prod.selected_or_first_available_variant.id}}"><span class="original-text">{{ product.metafields.my_fields.product_info_upsell_button }}</span></div>
+        {% endif %}
+        
+      </div>
+      
+      <div class="img-w-txt-image-wrap rel">
+      	<img src="{{ product.metafields.my_fields.product_info_upsell_image | img_url: "600x" }}" loading="lazy">
+        {% if product.metafields.my_fields.product_info_upsell_prod != blank %}
+        <div class="scrib-img"><img class="metafield-product_reference" src="{{ product.metafields.my_fields.product_info_upsell_image_2 | img_url: "300x" }}" loading="lazy"></div>
+        {% endif %}
+      </div>
+      {% if product.metafields.my_fields.product_info_upsell_prod != blank %}
+      <div class="add-to-cart coll-add-to-cart-btn title button prod-info-upsell-btn no-d" data-variant="{{prod.selected_or_first_available_variant.id}}"><span class="original-text">{{ product.metafields.my_fields.product_info_upsell_button }}</span></div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "JP Img Scribble Text",
+	"class": "info-upsell",
+    "settings": [
+        
+		{
+          "type": "select",
+          "id": "link_type",
+          "label": "Link Type",
+          "options": [
+          {
+          "value": "btn",
+          "label": "Button"
+          },
+          {
+          "value": "link",
+          "label": "Link"
+          }
+          ],
+          "default": "link"
+        },
+		{
+          "type": "radio",
+          "id": "img_aligment",
+          "label": "Media alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "right"
+        },
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		},
+		{
+			"type": "html",
+			"id": "desc",
+			"label": "Description"
+		},
+		{
+			"type": "text",
+			"id": "link_txt",
+			"label": "Link Text"
+		},
+		{
+			"type": "text",
+			"id": "link_hover_txt",
+			"label": "Link Hover Text"
+		},
+		{
+			"type": "url",
+			"id": "link",
+			"label": "Link"
+		},
+		{
+			"type": "image_picker",
+			"id": "img",
+			"label": "Image Main"
+		},
+		{
+			"type": "image_picker",
+			"id": "img2",
+			"label": "Image Small"
+		}
+	],
+	"presets":[
+      {
+         "name":"JP Img Scribble Text"
+      }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

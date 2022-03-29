@@ -1,0 +1,70 @@
+{% assign personalize_option = false %}
+  {% if product.variants.size > 1 %}
+  {% for option in product.options_with_values %}
+        {% if option.name == 'Personalized' %}
+          {% assign personalize_option = true %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+      
+  
+    {% if personalize_option %}
+        {% if product.variants[0].option1 == 'yes' %}
+          {% assign personalizedVariant = product.variants[0] %}
+          {% elsif product.variants[0].option1 == 'no' %}
+          {% assign notPersonalizedVariant = product.variants[0] %}
+        {% endif %}
+
+        {% if product.variants[1].option1 == 'yes' %}
+          {% assign personalizedVariant = product.variants[1] %}
+          {% elsif product.variants[1].option1 == 'no' %}
+          {% assign notPersonalizedVariant = product.variants[1] %}
+        {% endif %}
+
+        <div class="product-personalize-wrap">
+          <div class="checkbox">
+            <input type="checkbox" {% if current_variant.option1 == "yes" %}checked {% endif %}
+                    class="product-personalize__checkbox "
+                    id="personalize-item-checkbox"/>
+            <label for="personalize-item-checkbox">
+              {{ 'products.product.personalize_label' | t }}
+              <strong>
+                {{ personalizedVariant.price | minus: notPersonalizedVariant.price | money }}
+              </strong>
+              <a href="{% unless routes.root_url == '/' %}{{ routes.root_url }}{% endunless %}/blogs/stories/lets-get-personal">
+                {{ 'products.product.personalize_info' | t }}
+              </a>
+            </label>
+          </div>
+
+          <input type="text" class="product-personalize__text" id="personalize-text"
+            {% unless current_variant.option1 == "yes" %} style="display:none;" {% endunless %}
+            name="properties[Personalized]" placeholder="{{ 'products.product.personalize_placeholder' | t }}"
+          >
+        </div>
+        
+        <div class="hide">
+          <div class="hide do-not-show">
+            <select name="id" id="productSelect" class="js-variant-select product-single__variants hide">
+              {% for variant in product.variants %}
+                {% if variant.available %}
+
+                  <option 
+                  {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} 
+                  data-sku="{{ variant.sku }}" 
+                  value="{{ variant.id }}">
+                    {{ variant.title }}
+                    - {{ variant_price | money_with_currency }}
+                  </option>
+
+                {% else %}
+                  <option disabled="disabled">
+                    {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+  
+{% endif %}

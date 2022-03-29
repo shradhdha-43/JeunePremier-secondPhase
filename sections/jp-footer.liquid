@@ -1,0 +1,263 @@
+{{ 'jp-footer.css' | asset_url | stylesheet_tag }}
+
+<footer>
+
+  <div class="container">
+    <div class="footer-part footer-one flex-box justify-between">
+    	{% for block in section.blocks %}
+      		{% if block.type == 'menu' %}
+      			<div class="footer-menu-wrap footer-part-inner">
+                  <div class="footer-menu-title title">{{ block.settings.menu_title }}</div>
+      			{% for link in linklists[block.settings.menu].links %}
+                  <a href="{{ link.url }}" class="footer-link light">{{ link.title }}</a>
+      			{% endfor %}
+      			</div>
+      		{% endif %}
+      	{% endfor %}
+    </div>
+    <div class="footer-part footer-two flex-box justify-between">
+    	{% for block in section.blocks %}
+      		{% if block.type == 'privacy_menu' %}
+      			<div class="footer-menu-wrap footer-part-inner">
+                  <div class="footer-menu-title title">{{ block.settings.menu_title }}</div>
+      			{% for link in linklists[block.settings.menu].links %}
+                  <a href="{{ link.url }}" class="footer-link light">{{ link.title }}</a>
+      			{% endfor %}
+      			</div>
+      		{% endif %}
+      	{% endfor %}
+      <div class="footer-languages-wrap footer-part-inner">
+        <div class="footer-menu-title title">{{ section.settings.lang_title }}</div>
+        <div class="footer-languages">
+          {% if settings.german %}
+          <a class="footer-lang-wrap flex-box align-center selected" href="#"><span class="lang-flag">{% include 'flag-germany' %}</span><span class="lang-name light">DEUTSCH</span></a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="footer-sm-wrap footer-part-inner">
+      	<div class="footer-menu-title title">{{ section.settings.sm_title }}</div>
+        <div class="sm-logos flex-box">
+        	{% for block in section.blocks %}
+      		{% if block.type == 'sm' %}
+          		<a href="{{ block.settings.sm_link }}" class="sm_logo" target="_blank">{{ block.settings.sm_logo }}</a>
+      		{% endif %}
+      	{% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="footer-part footer-three flex-box justify-between">
+      <div class="footer-shipping footer-part-inner">
+      	<div class="footer-menu-title title">{{ section.settings.shipping_title }}</div>
+        <div class="shipping-companies-svgs">
+        	{% for block in section.blocks %}
+      		{% if block.type == 'shipping_logo' %}
+          <div class="shipping-logo"><img src="{{ block.settings.shipping_logo | img_url: "120x" }}"></div>
+          	{% endif %}
+      		{% endfor %}
+        </div>
+      </div>
+      <div class="footer-payment footer-part-inner">
+      	<div class="footer-menu-title title">{{ section.settings.payment_title }}</div>
+        <div class="payment-companies-svgs">     
+          <div class="payment-logo">                
+          {%- for type in shop.enabled_payment_types -%}
+            {% unless type == "klarna-slice-it" %}
+            {{ type | payment_type_svg_tag: class: 'pay-icon' }}
+            {% endunless %}
+          {%- endfor -%}
+            </div>
+        </div>
+      </div>
+      <div class="footer-secure footer-part-inner">
+      	<div class="footer-menu-title title">{{ section.settings.secure_title }}</div>
+          <div class="secure-logo"><img src="{{ section.settings.secure_logo | img_url: "180x" }}" alt="logo"></div>
+          	
+      </div>
+    </div>
+    <div class="footer-part footer-four flex-box justify-between">
+      <div class="footer-company footer-part-inner">
+      	<div class="footer-menu-title title">{{ section.settings.company_title }}</div>
+        <div class="company-address light">{{ section.settings.company_addr }}</div>
+      </div>
+      <div class="footer-brands footer-part-inner">
+      	<div class="footer-menu-title title">{{ section.settings.brands_title }}</div>
+        <div class="footer-brands-logos flex-box">
+        	<div class="footer-brand-logo"><img src="{{ section.settings.brand1_logo_2 | img_url: "80x" }}" alt="logo"></div>
+          	<div class="footer-brand-logo"><img src="{{ section.settings.brand2_logo_2 | img_url: "80x" }}" alt="logo"></div>
+        </div>
+      </div>
+      <div class="footer-showroom footer-part-inner">
+      	<div class="footer-menu-title title">{{ section.settings.showroom_title }}</div>
+        <div class="showroom-address light">{{ section.settings.showroom_addr }}</div>
+      </div>
+    </div>
+    <div class="copyright-text light">{{ section.settings.copyright }}</div> 
+  </div>
+  
+</footer>
+
+{% schema %}
+  {
+    "name": "JP Footer",
+    "settings": [
+		{
+			"type": "text",
+			"id": "lang_title",
+			"label": "Languages Title"
+		},
+		{
+			"type": "text",
+			"id": "sm_title",
+			"label": "Social Media Title"
+		},
+		{
+			"type": "text",
+			"id": "shipping_title",
+			"label": "Shipping Title"
+		},
+		{
+			"type": "text",
+			"id": "payment_title",
+			"label": "Payment Title"
+		},
+		{
+			"type": "text",
+			"id": "secure_title",
+			"label": "Secure Shopping Title"
+		},
+		{
+			"type": "image_picker",
+			"id": "secure_logo",
+			"label": "Secure Shopping Logo"
+		},
+		{
+			"type": "text",
+			"id": "company_title",
+			"label": "Company Title"
+		},
+		{
+          "type": "html",
+          "id": "company_addr",
+          "label": "Company Address"
+        },
+		{
+			"type": "text",
+			"id": "brands_title",
+			"label": "Brands Title"
+		},
+		{
+			"type": "image_picker",
+			"id": "brand1_logo_2",
+			"label": "Brand One Image"
+		},
+		{
+			"type": "image_picker",
+			"id": "brand2_logo_2",
+			"label": "Brand Two Image"
+		},
+		{
+			"type": "text",
+			"id": "showroom_title",
+			"label": "Showroom Title"
+		},
+		{
+          "type": "html",
+          "id": "showroom_addr",
+          "label": "Showroom Address"
+        },
+		{
+			"type": "text",
+			"id": "copyright",
+			"label": "Copyright Text"
+		}
+	],
+	"blocks": [
+		{
+			"type": "menu",
+			"name": "Footer Menu",
+			"limit": 3,
+			"settings": [
+				{
+					"type": "text",
+					"id": "menu_title",
+					"label": "Menu Title"
+				},
+				{
+                  "type": "link_list",
+                  "id": "menu",
+                  "label": "Menu"
+                }
+			]
+		},
+		{
+			"type": "privacy_menu",
+			"name": "Privacy Menu",
+			"limit": 1,
+			"settings": [
+				{
+					"type": "text",
+					"id": "menu_title",
+					"label": "Menu Title"
+				},
+				{
+                  "type": "link_list",
+                  "id": "menu",
+                  "label": "Menu"
+                }
+			]
+		},
+		{
+			"type": "sm",
+			"name": "Social Media",
+			"limit": 4,
+			"settings": [
+				{
+					"type": "text",
+					"id": "sm_logo",
+					"label": "Social Media SVG"
+				},
+				{
+                  "type": "url",
+                  "id": "sm_link",
+                  "label": "Social Media Link"
+                }
+			]
+		},
+		{
+			"type": "shipping_logo",
+			"name": "Shipping Logo",
+			"limit": 4,
+			"settings": [
+				{
+                  "type": "image_picker",
+                  "id": "shipping_logo",
+                  "label": "Shipping Logo"
+                }
+			]
+		},
+		{
+			"type": "payment_logo",
+			"name": "Payment Method Logo",
+			"limit": 8,
+			"settings": [
+				{
+                  "type": "image_picker",
+                  "id": "payment_logo",
+                  "label": "Payment Method Logo"
+                }
+			]
+		}
+	],
+	"presets":[
+      {
+         "name":"JP Footer"
+      }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

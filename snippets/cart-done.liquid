@@ -1,0 +1,44 @@
+          var $content = $(data["jp-cart"]);
+          if($('.cart-body').hasClass('c-empty') && !$content.find('.cart-body').hasClass('c-empty')) {
+            $('.additional-checkout-buttons').appendTo($content.find('.cart-body'));
+            $('.drawer-cart').html('');
+            $($content.find('.drawer-cart-header')).appendTo('.drawer-cart');
+            $($content.find('.drawer-cart-main-sec')).appendTo('.drawer-cart');
+            $($content.find('.drawer-cart-footer')).appendTo('.drawer-cart');
+            $('.close-cart').click(function() {
+                  $('.drawer-cart').removeClass('drawn');
+                  $('.background-drawer-cart').removeClass('drawn');
+            });
+            $('.additional-checkout-buttons').removeClass('no-disp');
+            $('.remove-scripts').html($content.find('.remove-scripts').html());
+          } else {
+            if(!$('.cart-body').hasClass('c-empty') && $content.find('.cart-body').hasClass('c-empty')) {
+              $('.additional-checkout-buttons').appendTo($content.find('.cart-body'));
+              $('.drawer-cart').html('');
+              $($content.find('.drawer-cart-header')).appendTo('.drawer-cart');
+              $($content.find('.drawer-cart-main-sec')).appendTo('.drawer-cart');
+              $('.close-cart').click(function() {
+                    $('.drawer-cart').removeClass('drawn');
+                    $('.background-drawer-cart').removeClass('drawn');
+              });
+              $('.additional-checkout-buttons').addClass('no-disp');
+              $('.remove-scripts').html($content.find('.remove-scripts').html());
+            } else {
+              if($content.find('.cart-body').hasClass('c-empty')) {
+                $('.cart-body').html($content.find('.cart-body').html());
+                $('.cart-body').removeClass('upsell');
+              } else {
+                $('.drawer-cart-checkout').html($content.find('.drawer-cart-checkout').html());
+                $('.product-wrapper-container').html($content.find('.product-wrapper-container').html());
+                $('.drawer-cart-footer').html($content.find('.drawer-cart-footer').html());
+                $('.remove-scripts').html($content.find('.remove-scripts').html());
+                $('.cart-body').removeClass('c-empty');
+                if($content.find('.cart-body').hasClass('upsell')) {
+                  $('.cart-body').addClass('c-empty');
+                } else {
+                  $('.cart-body').removeClass('c-empty');
+                }
+              }
+            }
+          }
+          $('.load-container').remove();

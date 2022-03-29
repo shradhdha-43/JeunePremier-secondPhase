@@ -1,0 +1,1126 @@
+{{ 'jp-main-collection.css' | asset_url | stylesheet_tag }}
+{% assign coll = section.settings.collection %}
+<div class="jp-main-collection">
+  <div class="container">
+    <div class="jp-main-collection-content flex-box justify-between">
+      <div class="collection-filters rel">
+        <div class="filter-title-wrap justify-between">
+          <div class="filter-title medium">FILTER</div>
+          <div class="filter-total-products light no-t-m">(<span class="no-of-prods">{{ collection.products | size }}</span> PRODUKTE)</div>
+          <div class="down-chev no-d">{% include 'icon-black-down-chev' %}</div>
+        </div>
+        <div class="all-filter-wrap">
+          <div class="all-filter-inner-wrap">
+          <div class="filter-title-inner no-d">
+          <div class="filter-title-inner-wrap justify-between">
+            <div class="filter-title medium">FILTER</div>
+            <div class="reset-link medium">Alle zurücksetzen</div>
+          </div>
+          </div>
+        <div class="filter-wrap">
+          <div class="filter-sort-title-wrap accordion flex-box justify-between active" role="button">
+            <div class="filter-sort-title medium">SORTIEREN NACH</div>
+            <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+          </div>
+          <div class="sorts filter-panel light">
+            <div class="filter-type sort bestsellers" data-value="best-selling">{{ 'sections.collection_template.bestseller' | t }}</div>
+            <div class="filter-type sort new-first" data-value="created-descending">{{ 'sections.collection_template.new' | t }}</div>
+            <div class="filter-type sort ltoh" data-value="price-ascending">{{ 'sections.collection_template.ascending' | t }}</div>
+            <div class="filter-type sort htol" data-value="price-descending">{{ 'sections.collection_template.descending' | t }}</div>
+          </div>
+        </div>
+            
+            {% for block in section.blocks %}   
+            {% case block.type %}
+            {% when 'age' %}
+            <div class="filter-wrap coll-filter">
+              <div class="filter-sort-title-wrap accordion flex-box justify-between active" role="button">
+                <div class="filter-sort-title medium">{{ block.settings.age_title }}</div>
+                <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+              </div>
+              <div class="filters filter-panel other-filters light">
+                {% if block.settings.age_tag1 != '' %}
+                <div class="filter-type filter" data-value="{{ block.settings.age_tag1 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age1 }}</div>
+                {% endif %}
+                {% if block.settings.age_tag2 != '' %}
+                <div class="filter-type filter" data-value="{{ block.settings.age_tag2 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age2 }}</div>
+                {% endif %}
+                {% if block.settings.age_tag3 != '' %}
+                <div class="filter-type filter" data-value="{{ block.settings.age_tag3 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age3 }}</div>
+                {% endif %}
+                {% if block.settings.age_tag4 != '' %}
+                <div class="filter-type filter" data-value="{{ block.settings.age_tag4 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age4 }}</div>
+                {% endif %}
+                {% if block.settings.age_tag5 != '' %}
+                <div class="filter-type filter" data-value="{{ block.settings.age_tag5 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age5 }}</div>
+                {% endif %}
+                {% if block.settings.age_tag6 != '' %}
+                <div class="filter-type filter" data-value="{{ block.settings.age_tag6 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age6 }}</div>
+                {% endif %}
+                {% if block.settings.age_tag7 != '' %}
+                <div class="filter-type filter" data-value="{{ block.settings.age_tag7 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age7 }}</div>
+                {% endif %}
+                {% if block.settings.age_tag8 != '' %}
+                <div class="filter-type filter" data-value="{{ block.settings.age_tag8 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age8 }}</div>
+                {% endif %}
+                {% if block.settings.age_tag9 != '' %}
+                <div class="filter-type filter" data-value="{{ block.settings.age_tag9 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age9 }}</div>
+                {% endif %}
+                {% if block.settings.age_tag10 != '' %}
+                <div class="filter-type filter" data-value="{{ block.settings.age_tag10 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age10 }}</div>
+                {% endif %}
+              </div>
+            </div>
+            {% when 'color' %}
+            <div class="filter-wrap">
+              <div class="filter-sort-title-wrap accordion flex-box justify-between active" role="button">
+                <div class="filter-sort-title medium">{{ block.settings.color_title }}</div>
+                <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+              </div>
+              <div class="color-filters filter-panel light">
+                  {% if block.settings.color_tag1 != '' %}
+                  <div class="filter-type filter" data-value={{ block.settings.color_tag1 }}><span class="color-swatch" {% if block.settings.color_swatch1 != blank %}style="background-color: {{ block.settings.color_swatch1 }};"{% endif %}>{% if block.settings.image_swatch1 != blank %}<img src="{{ block.settings.image_swatch1 | img_url: "16x" }}" alt="{{ block.settings.color1 }}">{% endif %}</span>{{ block.settings.color1 }}</div>
+                  {% endif %}
+                  {% if block.settings.color_tag2 != '' %}
+                  <div class="filter-type filter" data-value={{ block.settings.color_tag2 }}><span class="color-swatch" {% if block.settings.color_swatch2 != blank %}style="background-color: {{ block.settings.color_swatch2 }};"{% endif %}>{% if block.settings.image_swatch2 != blank %}<img src="{{ block.settings.image_swatch2 | img_url: "16x" }}" alt="{{ block.settings.color2 }}">{% endif %}</span>{{ block.settings.color2 }}</div>
+                  {% endif %}
+                  {% if block.settings.color_tag3 != '' %}
+                  <div class="filter-type filter" data-value={{ block.settings.color_tag3 }}><span class="color-swatch" {% if block.settings.color_swatch3 != blank %}style="background-color: {{ block.settings.color_swatch3 }};"{% endif %}>{% if block.settings.image_swatch3 != blank %}<img src="{{ block.settings.image_swatch3 | img_url: "16x" }}" alt="{{ block.settings.color3 }}">{% endif %}</span>{{ block.settings.color3 }}</div>
+                  {% endif %}
+                  {% if block.settings.color_tag4 != '' %}
+                  <div class="filter-type filter" data-value={{ block.settings.color_tag4 }}><span class="color-swatch" {% if block.settings.color_swatch4 != blank %}style="background-color: {{ block.settings.color_swatch4 }};"{% endif %}>{% if block.settings.image_swatch4 != blank %}<img src="{{ block.settings.image_swatch4 | img_url: "16x" }}" alt="{{ block.settings.color4 }}">{% endif %}</span>{{ block.settings.color4 }}</div>
+                  {% endif %}
+                  {% if block.settings.color_tag5 != '' %}
+                  <div class="filter-type filter" data-value={{ block.settings.color_tag5 }}><span class="color-swatch" {% if block.settings.color_swatch5 != blank %}style="background-color: {{ block.settings.color_swatch5 }};"{% endif %}>{% if block.settings.image_swatch5 != blank %}<img src="{{ block.settings.image_swatch5 | img_url: "16x" }}" alt="{{ block.settings.color5 }}">{% endif %}</span>{{ block.settings.color5 }}</div>
+                  {% endif %}
+                  {% if block.settings.color_tag6 != '' %}
+                  <div class="filter-type filter" data-value={{ block.settings.color_tag6 }}><span class="color-swatch" {% if block.settings.color_swatch6 != blank %}style="background-color: {{ block.settings.color_swatch6 }};"{% endif %}>{% if block.settings.image_swatch6 != blank %}<img src="{{ block.settings.image_swatch6 | img_url: "16x" }}" alt="{{ block.settings.color6 }}">{% endif %}</span>{{ block.settings.color6 }}</div>
+                  {% endif %}
+                  {% if block.settings.color_tag7 != '' %}
+                  <div class="filter-type filter" data-value={{ block.settings.color_tag7 }}><span class="color-swatch" {% if block.settings.color_swatch7 != blank %}style="background-color: {{ block.settings.color_swatch7 }};"{% endif %}>{% if block.settings.image_swatch7 != blank %}<img src="{{ block.settings.image_swatch7 | img_url: "16x" }}" alt="{{ block.settings.color7 }}">{% endif %}</span>{{ block.settings.color7 }}</div>
+                  {% endif %}
+                  {% if block.settings.color_tag8 != '' %}
+                  <div class="filter-type filter" data-value={{ block.settings.color_tag8 }}><span class="color-swatch" {% if block.settings.color_swatch8 != blank %}style="background-color: {{ block.settings.color_swatch8 }};"{% endif %}>{% if block.settings.image_swatch8 != blank %}<img src="{{ block.settings.image_swatch8 | img_url: "16x" }}" alt="{{ block.settings.color8 }}">{% endif %}</span>{{ block.settings.color8 }}</div>
+                  {% endif %}
+                  {% if block.settings.color_tag9 != '' %}
+                  <div class="filter-type filter" data-value={{ block.settings.color_tag9 }}><span class="color-swatch" {% if block.settings.color_swatch9 != blank %}style="background-color: {{ block.settings.color_swatch9 }};"{% endif %}>{% if block.settings.image_swatch9 != blank %}<img src="{{ block.settings.image_swatch9 | img_url: "16x" }}" alt="{{ block.settings.color9 }}">{% endif %}</span>{{ block.settings.color9 }}</div>
+                  {% endif %}
+                  {% if block.settings.color_tag10 != '' %}
+                  <div class="filter-type filter" data-value={{ block.settings.color_tag10 }}><span class="color-swatch" {% if block.settings.color_swatch10 != blank %}style="background-color: {{ block.settings.color_swatch10 }};"{% endif %}>{% if block.settings.image_swatch10 != blank %}<img src="{{ block.settings.image_swatch10 | img_url: "16x" }}" alt="{{ block.settings.color10 }}">{% endif %}</span>{{ block.settings.color10 }}</div>
+                  {% endif %}
+                  {% if block.settings.color_tag11 != '' %}
+                  <div class="filter-type filter" data-value={{ block.settings.color_tag11 }}><span class="color-swatch" {% if block.settings.color_swatch11 != blank %}style="background-color: {{ block.settings.color_swatch11 }};"{% endif %}>{% if block.settings.image_swatch11 != blank %}<img src="{{ block.settings.image_swatch11 | img_url: "16x" }}" alt="{{ block.settings.color11 }}">{% endif %}</span>{{ block.settings.color11 }}</div>
+                  {% endif %}
+                  {% if block.settings.color_tag12 != '' %}
+                  <div class="filter-type filter" data-value={{ block.settings.color_tag12 }}><span class="color-swatch" {% if block.settings.color_swatch12 != blank %}style="background-color: {{ block.settings.color_swatch12 }};"{% endif %}>{% if block.settings.image_swatch12 != blank %}<img src="{{ block.settings.image_swatch12 | img_url: "16x" }}" alt="{{ block.settings.color12 }}">{% endif %}</span>{{ block.settings.color12 }}</div>
+                  {% endif %}
+                  {% if block.settings.color_tag13 != '' %}
+                  <div class="filter-type filter" data-value={{ block.settings.color_tag13 }}><span class="color-swatch" {% if block.settings.color_swatch13 != blank %}style="background-color: {{ block.settings.color_swatch13 }};"{% endif %}>{% if block.settings.image_swatch13 != blank %}<img src="{{ block.settings.image_swatch13 | img_url: "16x" }}" alt="{{ block.settings.color13 }}">{% endif %}</span>{{ block.settings.color13 }}</div>
+                  {% endif %}
+                  {% if block.settings.color_tag14 != '' %}
+                  <div class="filter-type filter" data-value={{ block.settings.color_tag14 }}><span class="color-swatch" {% if block.settings.color_swatch14 != blank %}style="background-color: {{ block.settings.color_swatch14 }};"{% endif %}>{% if block.settings.image_swatch14 != blank %}<img src="{{ block.settings.image_swatch14 | img_url: "16x" }}" alt="{{ block.settings.color14 }}">{% endif %}</span>{{ block.settings.color14 }}</div>
+                  {% endif %}
+                  {% if block.settings.color_tag15 != '' %}
+                  <div class="filter-type filter" data-value={{ block.settings.color_tag15 }}><span class="color-swatch" {% if block.settings.color_swatch15 != blank %}style="background-color: {{ block.settings.color_swatch15 }};"{% endif %}>{% if block.settings.image_swatch15 != blank %}<img src="{{ block.settings.image_swatch15 | img_url: "16x" }}" alt="{{ block.settings.color15 }}">{% endif %}</span>{{ block.settings.color15 }}</div>
+                  {% endif %}
+              </div>              
+            </div>
+              {% else %}              
+              <div class="filter-wrap coll-filter">
+                <div class="filter-sort-title-wrap accordion flex-box justify-between active" role="button">
+                  <div class="filter-sort-title medium">{{ block.settings.collection_title }}</div>
+                  <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+                </div>
+                <div class="filters filter-panel light">
+                  {% if block.settings.collection_tag1 != '' %}
+                  <div class="filter-type collection" data-value="{{ block.settings.collection_tag1 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection1 }}</div>
+                  {% endif %}
+                  {% if block.settings.collection_tag2 != '' %}
+                  <div class="filter-type collection" data-value="{{ block.settings.collection_tag2 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection2 }}</div>
+                  {% endif %}
+                  {% if block.settings.collection_tag3 != '' %}
+                  <div class="filter-type collection" data-value="{{ block.settings.collection_tag3 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection3 }}</div>
+                  {% endif %}
+                  {% if block.settings.collection_tag4 != '' %}
+                  <div class="filter-type collection" data-value="{{ block.settings.collection_tag4 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection4 }}</div>
+                  {% endif %}
+                  {% if block.settings.collection_tag5 != '' %}
+                  <div class="filter-type collection" data-value="{{ block.settings.collection_tag5 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection5 }}</div>
+                  {% endif %}
+                  {% if block.settings.collection_tag6 != '' %}
+                  <div class="filter-type collection" data-value="{{ block.settings.collection_tag6 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection6 }}</div>
+                  {% endif %}
+                  {% if block.settings.collection_tag7 != '' %}
+                  <div class="filter-type collection" data-value="{{ block.settings.collection_tag7 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection7 }}</div>
+                  {% endif %}
+                  {% if block.settings.collection_tag8 != '' %}
+                  <div class="filter-type collection" data-value="{{ block.settings.collection_tag8 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection8 }}</div>
+                  {% endif %}
+                  {% if block.settings.collection_tag9 != '' %}
+                  <div class="filter-type collection" data-value="{{ block.settings.collection_tag9 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection9 }}</div>
+                  {% endif %}
+                  {% if block.settings.collection_tag10 != '' %}
+                  <div class="filter-type collection" data-value="{{ block.settings.collection_tag10 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection10 }}</div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endcase %}
+            {% endfor %}
+        </div>
+          <div class="filter-lower-part no-d">
+            <div class="button apply-filter-btn">ZEIGE ALLE ERGEBNISSE</div>
+          	<div class="close-filter-drawer-button"><span class="close-text light">Close</span><span class="close-icon">{% include 'icon-close' %}</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="collection-products flex-box prod-coll-page">
+        {% paginate collection.products by 500 %}
+        {% for product in collection.products %}
+        {% if product.id != 7381981921448 %}
+        <div class="product-card{% for tag in product.tags %} tag-{{ tag }}{% endfor %}">
+        	<div class="product-images-block rel">
+            <a href="{{ product.url }}">
+              
+              {% assign collection_is_bestellers = false %}
+              {% assign is_bestseller = false %}
+              {% assign last_items = false %}
+              {% if product.first_available_variant.inventory_quantity <= 10 and product.first_available_variant.inventory_policy != "continue" %}
+                {% assign last_items = true %}
+              {% endif %}
+              {% if product.tags contains 'bestseller' %}
+                {% assign is_bestseller = true %}
+              {% endif %}
+              {% if collection.handle == 'bestseller' or collection.handle == 'bestsellers'  %}
+                {% assign collection_is_bestellers = true %}
+              {% endif %}
+              
+              {% if last_items and collection.handle != 'last-items' and collection.handle != 'letzte-artikel' %}
+                  <div class="prod-tag product-tag-last medium">{{ 'products.product.last_item' | t }}</div>
+              {% elsif is_bestseller %}
+                  {% unless collection_is_bestellers %}
+                    <div class="prod-tag medium">{{ 'products.product.bestseller' | t }}</div>
+                  {% endunless %}
+              {% endif %} 
+              {% unless collection.handle == 'neu' %}
+                {% for collectionx in product.collections %}{% if collectionx.handle contains "neu" %}
+                <div class="prod-neu-tag medium">{{ 'products.product.new' | t }}</div>{% break %}
+                {% endif %}{% endfor %}    
+              {% endunless %}
+              
+              {% for image in product.images limit: 2 %}
+              {% if forloop.first and forloop.last %}
+              <img src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" class="" loading="lazy">
+              {% endif %}
+              <img class="{% if forloop.last %}no-t-m{% endif %}" src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+              {% endfor %}  
+            </a>
+              {% assign noAddToCartFromCollection = false %}
+              {% if product.type == 'Ludilabel' or product.type == 'Keychain letter' or product.type == 'Keychain charm' %}
+                {% assign noAddToCartFromCollection = true %}
+              {% endif %}
+              {% unless product.selected_or_first_available_variant.available %}
+                {% assign noAddToCartFromCollection = true %}
+              {% endunless %}
+              {%- unless noAddToCartFromCollection -%}
+              <div class="coll-add-to-cart-btn" data-variant="{{ product.first_available_variant.id }}">+</div>
+              {%- endunless -%}
+          </div>
+          <div class="product-details">
+            <div class="product-name-price-col justify-between">
+            	<div class="product-title medium">
+                  {% assign remove_word = product.title | truncatewords: 1, "" %}
+                  {% if product.type == "Goedgemerkt" or product.type == "goedgemerkt" %}Persönliche Etiketten{% else %}{{ product.type }}{% endif %}
+                </div>
+              	<div class="product-pirce medium">
+              	{{ product.price | times: 1.21 | money_without_trailing_zeros | strip_html }}
+              </div>
+             
+            </div>
+            <div class="product-price-col">
+               <div class="product-sub-title light">
+              	{{ product.metafields.descriptors.subtitle }}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endpaginate %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+	///----- Auto-Close Accordion
+$(document).ready(function() {
+  //--- initial state of elements
+//   $('.panel').hide()
+    //----- click function
+  $(".filter-wrap").find("div[role|='button']").click(function() { //---- tabs or buttons
+    //---- active class
+//     $(".faq-wrap").find("div[role|='button']").removeClass('active');
+//     $('.filter-panel').slideUp();
+    var selected = $(this).next('.filter-panel');
+    if (selected.is(":hidden")) {
+      $(this).next('.filter-panel').slideDown();
+      $(this).toggleClass('active');
+      
+    }
+    else{
+    	$(this).next('.filter-panel').slideUp();
+      $(this).toggleClass('active');
+    }
+    $(this).find('.down-chev').toggleClass('rotate');
+  });
+});
+  
+  function addApply() { 
+
+    $('.coll-add-to-cart-btn:not(.added)').click(function() {
+      $('.drawer-cart').addClass('drawn');
+      $('.background-drawer-cart').addClass('drawn');
+      $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
+      var formData;
+        formData = {
+          'items': [{
+            'id': parseInt($(this).data('variant')),
+            'quantity': 1
+          }]
+        };
+      $.ajax({
+        url: "/cart/add.js",
+        method: "POST",
+        dataType: "json",
+        data: formData,
+      })
+      .done(function( data ) {    
+        $.ajax({
+          url: '/?sections=jp-cart',
+          method: "GET",
+          dataType: "json"
+        })
+        .done(function( data ) {
+          {% include "cart-done" %}
+        })
+        .fail(function(error) {
+          console.log( error );
+          $('.load-container').remove();
+        });
+      })
+      .fail(function(error) {
+        console.log( error );
+        $('.load-container').remove();
+      });
+    });
+    $('.coll-add-to-cart-btn:not(.added)').addClass('added');
+  }
+  
+  
+ 
+  $(document).ready(function() {
+
+    var getUrlParameter = function getUrlParameter(sParam) {
+      var sPageURL = window.location.search.substring(1),
+          sURLVariables = sPageURL.split('&'),
+          sParameterName,
+          i;
+
+      for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+          return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+      }
+    };
+
+    var filtervar = getUrlParameter('filters');
+    var sortvar = getUrlParameter('sort_by');
+
+    if(typeof filtervar !== "undefined") {        
+      var array = filtervar.split(",");
+      $.each(array,function(i){
+
+          $('.filter-type.filter').each(function() {
+            if($(this).data('value') == array[i]) {
+              $(this).addClass('medium');
+            }
+          });
+
+      });
+    }
+    
+    if(typeof sortvar !== "undefined") {
+    $('.filter-type.sort').removeClass('medium');        
+      var array = sortvar.split(",");
+      $.each(array,function(i){
+
+          $('.filter-type.sort').each(function() {
+            if($(this).data('value') == array[i]) {
+              $(this).addClass('medium');
+            }
+          });
+
+      });
+    }
+  var collex = window.location.href.split('/').pop().split('?')[0];
+  $('.filter-type.collection').each(function() {console.log($(this).data('value'));console.log(collex);
+    if($(this).data('value') == collex) {
+      $(this).addClass('medium');
+    }
+  });
+
+    
+      runFilter();
+
+  });
+  
+    
+  function runFilter() {
+    var classString = "";
+    var i;
+    $('.product-card').addClass('no-disp');
+
+    $('.product-card').addClass('fop');
+
+
+    if($('.filter-type.filter.medium').length > 0) {
+      var arrClass = [];
+      $('.product-card').data('iteration',0);
+      $('.filter-type.filter.medium').each(function() {
+        arrClass.push($(this).data('value'));
+      });
+      $.each(arrClass , function(index, val) {
+        $('.product-card').each(function(i,v) {            
+          if($(this).hasClass('tag-'+val)) {
+            $(this).data('iteration',(parseInt($(this).data('iteration')) || 0)+1);
+          }
+        });
+        $('.product-card').each(function(i,v) {            
+          if($(this).data('iteration') == $('.filter-type.filter.medium').length && $(this).hasClass('fop')) {
+            $(this).removeClass('no-disp');
+          }
+        });
+      });
+    } else {
+      $('.product-card').removeClass('no-disp');
+    }
+    
+    $('.fop').removeClass('fop');   
+    $('.no-of-prods').text($('.product-card:not(.no-disp)').length);
+  }
+  runFilter();
+  
+  
+  $('.filter-type.sort').click(function() {
+    var sortx = '';
+    if($(this).hasClass('medium')) {
+      $('.filter-type.sort').removeClass('medium');
+      sortx = '?';
+    } else {
+      $('.filter-type.sort').removeClass('medium');
+      $(this).addClass('medium');
+      sortx = '?sort_by='+$(this).data('value');
+    }
+    var filtersx = '';
+    if($('.filter-type.filter.medium').length > 0) {
+      if($('.filter-type.sort.medium').length > 0) {
+        filtersx = '&filters=';      
+      } else {      
+        filtersx = 'filters=';    
+      }
+      $('.filter-type.filter.medium').each(function(index) {
+        if(index > 0) {
+          filtersx += ','+$(this).data('value');
+        } else {
+          filtersx += $(this).data('value');        
+        }
+      });
+    }
+    var url = '{{ shop.url }}{%- unless routes.root_url == '/' -%}{{ routes.root_url }}{%- endunless -%}/collections/'+window.location.href.split('/').pop().split('?')[0]+sortx+filtersx;
+    window.history.pushState({}, null, url);
+    $.ajax({
+      url: url,
+      method: "GET"
+    })
+    .done(function( data ) {
+      var placeholder = document.createElement('div');
+      placeholder.innerHTML = data;
+      var divx = $(placeholder).find('.prod-coll-page');
+      $('.prod-coll-page').first().replaceWith(placeholder.querySelector('.prod-coll-page'));
+      addApply();
+      runFilter();
+    })
+    .fail(function(error) {
+      console.log( error );
+    });
+  });
+  
+  
+  $('.filter-type.filter').click(function() {
+  	$(this).toggleClass('medium'); 
+    
+    var filtersx = '';
+    if($('.filter-type.filter.medium').length > 0) {
+      if($('.filter-type.sort.medium').length > 0) {
+        filtersx = '&filters=';      
+      } else {      
+        filtersx = 'filters=';    
+      }   
+      $('.filter-type.filter.medium').each(function(index) {
+        if(index > 0) {
+          filtersx += ','+$(this).data('value');
+        } else {
+          filtersx += $(this).data('value');        
+        }
+      });
+    }
+    var sortx = '?';
+    if($('.filter-type.sort.medium').length > 0) {
+      sortx = '?sort_by='+$('.filter-type.sort.medium').data('value');
+    }
+    var url = '{{ shop.url }}{%- unless routes.root_url == '/' -%}{{ routes.root_url }}{%- endunless -%}/collections/'+window.location.href.split('/').pop().split('?')[0]+sortx+filtersx;
+    window.history.pushState({}, null, url);
+    runFilter();
+  });
+  
+  
+  $('.filter-type.collection').click(function() {
+    var collx;
+    if($(this).hasClass('medium')) {
+      	$('.filter-type.collection').removeClass('medium');
+    	collx = 'all';
+    } else {
+        $('.filter-type.collection').removeClass('medium');    
+        $(this).addClass('medium');
+    	collx = $(this).data('value');
+    }    
+    var filtersx = '';
+    if($('.filter-type.filter.medium').length > 0) {
+      if($('.filter-type.sort.medium').length > 0) {
+        filtersx = '&filters=';      
+      } else {      
+        filtersx = 'filters=';    
+      }    
+      $('.filter-type.filter.medium').each(function(index) {
+        if(index > 0) {
+          filtersx += ','+$(this).data('value');
+        } else {
+          filtersx += $(this).data('value');        
+        }
+      });
+    }
+    var sortx = '?';
+    if($('.filter-type.sort.medium').length > 0) {
+      sortx = '?sort_by='+$('.filter-type.sort').data('value');
+    }    
+    var url = '{{ shop.url }}{%- unless routes.root_url == '/' -%}{{ routes.root_url }}{%- endunless -%}/collections/'+collx+sortx+filtersx;
+    window.history.pushState({}, null, url);
+    $.ajax({
+      url: url,
+      method: "GET"
+    })
+    .done(function( data ) {
+      var placeholder = document.createElement('div');
+      placeholder.innerHTML = data;
+      var divx = $(placeholder).find('.prod-coll-page');
+      $('.prod-coll-page').first().replaceWith(placeholder.querySelector('.prod-coll-page'));
+      addApply();
+      runFilter();
+    })
+    .fail(function(error) {
+      console.log( error );
+    });
+  });
+  
+  $('.reset-link').click(function() {
+  	 $('.filter-type.filter').removeClass('medium');    
+    runFilter();
+  });
+  
+  $('.filter-title-wrap').click(function() {
+  	$('.all-filter-wrap').addClass('drawn');
+    $('html').addClass('no-scroll');
+    $('body').addClass('no-scroll');
+    
+  });
+  
+  $('.apply-filter-btn, .close-filter-drawer-button').click(function() {
+  	$('.all-filter-wrap').removeClass('drawn');
+    $('html').removeClass('no-scroll');
+    $('body').removeClass('no-scroll');
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "JP Main Collection",
+    "settings": [
+		{
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+	],
+	"blocks": [
+		{
+			"type": "color",
+			"name": "Colours Filter",
+			"settings": [
+				{
+					"type": "text",
+					"id": "color_title",
+					"label": "Colour Main Title",
+					"default": "Color"
+				},
+				{
+					"type": "text",
+					"id": "color1",
+					"label": "Colour Name 1",
+					"default": "Pink"
+				},
+				{
+					"type": "text",
+					"id": "color_tag1",
+					"label": "Colour Tag 1",
+					"default": "Pink"
+				},
+				{
+					"type": "color",
+					"id": "color_swatch1",
+					"label": "Color Code 1",
+					"default": "#F6D5D0"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_swatch1",
+					"label": "Image Code 1"
+				},
+				{
+					"type": "text",
+					"id": "color2",
+					"label": "Colour Name 2",
+					"default": "Navy blue"
+				},
+				{
+					"type": "text",
+					"id": "color_tag2",
+					"label": "Colour Tag 2",
+					"default": "blue"
+				},
+				{
+					"type": "color",
+					"id": "color_swatch2",
+					"label": "Color Code 2",
+					"default": "#3D5280"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_swatch2",
+					"label": "Image Code 2"
+				},
+				{
+					"type": "text",
+					"id": "color3",
+					"label": "Colour Name 3",
+					"default": "Royal blue"
+				},
+				{
+					"type": "text",
+					"id": "color_tag3",
+					"label": "Colour Tag 3",
+					"default": "royalblue"
+				},
+				{
+					"type": "color",
+					"id": "color_swatch3",
+					"label": "Color Code 3",
+					"default": "#6B97E9"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_swatch3",
+					"label": "Image Code 3"
+				},
+				{
+					"type": "text",
+					"id": "color4",
+					"label": "Colour Name 4"
+				},
+				{
+					"type": "text",
+					"id": "color_tag4",
+					"label": "Colour Tag 4"
+				},
+				{
+					"type": "color",
+					"id": "color_swatch4",
+					"label": "Color Code 4"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_swatch4",
+					"label": "Image Code 4"
+				},
+				{
+					"type": "text",
+					"id": "color5",
+					"label": "Colour Name 5"
+				},
+				{
+					"type": "text",
+					"id": "color_tag5",
+					"label": "Colour Tag 5"
+				},
+				{
+					"type": "color",
+					"id": "color_swatch5",
+					"label": "Color Code 5"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_swatch5",
+					"label": "Image Code 5"
+				},
+				{
+					"type": "text",
+					"id": "color6",
+					"label": "Colour Name 6"
+				},
+				{
+					"type": "text",
+					"id": "color_tag6",
+					"label": "Colour Tag 6"
+				},
+				{
+					"type": "color",
+					"id": "color_swatch6",
+					"label": "Color Code 6"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_swatch6",
+					"label": "Image Code 6"
+				},
+				{
+					"type": "text",
+					"id": "color7",
+					"label": "Colour Name 7"
+				},
+				{
+					"type": "text",
+					"id": "color_tag7",
+					"label": "Colour Tag 7"
+				},
+				{
+					"type": "color",
+					"id": "color_swatch7",
+					"label": "Color Code 7"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_swatch7",
+					"label": "Image Code 7"
+				},
+				{
+					"type": "text",
+					"id": "color8",
+					"label": "Colour Name 8"
+				},
+				{
+					"type": "text",
+					"id": "color_tag8",
+					"label": "Colour Tag 8"
+				},
+				{
+					"type": "color",
+					"id": "color_swatch8",
+					"label": "Color Code 8"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_swatch8",
+					"label": "Image Code 8"
+				},
+				{
+					"type": "text",
+					"id": "color9",
+					"label": "Colour Name 9"
+				},
+				{
+					"type": "text",
+					"id": "color_tag9",
+					"label": "Colour Tag 9"
+				},
+				{
+					"type": "color",
+					"id": "color_swatch9",
+					"label": "Color Code 9"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_swatch9",
+					"label": "Image Code 9"
+				},
+				{
+					"type": "text",
+					"id": "color10",
+					"label": "Colour Name 10"
+				},
+				{
+					"type": "text",
+					"id": "color_tag10",
+					"label": "Colour Tag 10"
+				},
+				{
+					"type": "color",
+					"id": "color_swatch10",
+					"label": "Color Code 10"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_swatch10",
+					"label": "Image Code 10"
+				},
+				{
+					"type": "text",
+					"id": "color11",
+					"label": "Colour Name 11"
+				},
+				{
+					"type": "text",
+					"id": "color_tag11",
+					"label": "Colour Tag 11"
+				},
+				{
+					"type": "color",
+					"id": "color_swatch11",
+					"label": "Color Code 11"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_swatch11",
+					"label": "Image Code 11"
+				},
+				{
+					"type": "text",
+					"id": "color12",
+					"label": "Colour Name 12"
+				},
+				{
+					"type": "text",
+					"id": "color_tag12",
+					"label": "Colour Tag 12"
+				},
+				{
+					"type": "color",
+					"id": "color_swatch12",
+					"label": "Color Code 12"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_swatch12",
+					"label": "Image Code 12"
+				},
+				{
+					"type": "text",
+					"id": "color13",
+					"label": "Colour Name 13"
+				},
+				{
+					"type": "text",
+					"id": "color_tag13",
+					"label": "Colour Tag 13"
+				},
+				{
+					"type": "color",
+					"id": "color_swatch13",
+					"label": "Color Code 13"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_swatch13",
+					"label": "Image Code 13"
+				},
+				{
+					"type": "text",
+					"id": "color14",
+					"label": "Colour Name 14"
+				},
+				{
+					"type": "text",
+					"id": "color_tag14",
+					"label": "Colour Tag 14"
+				},
+				{
+					"type": "color",
+					"id": "color_swatch14",
+					"label": "Color Code 14"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_swatch14",
+					"label": "Image Code 14"
+				},
+				{
+					"type": "text",
+					"id": "color15",
+					"label": "Colour Name 15"
+				},
+				{
+					"type": "text",
+					"id": "color_tag15",
+					"label": "Colour Tag 15"
+				},
+				{
+					"type": "color",
+					"id": "color_swatch15",
+					"label": "Color Code 15"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_swatch15",
+					"label": "Image Code 15"
+				}
+			]
+		},
+		{
+			"type": "age",
+			"name": "Age Filter",
+			"settings": [
+				{
+					"type": "text",
+					"id": "age_title",
+					"label": "Main Title",
+					"default": "Title"
+				},
+				{
+					"type": "text",
+					"id": "age1",
+					"label": "Title 1"
+				},
+				{
+					"type": "text",
+					"id": "age_tag1",
+					"label": "Tag 1"
+				},
+				{
+					"type": "text",
+					"id": "age2",
+					"label": "Title 2"
+				},
+				{
+					"type": "text",
+					"id": "age_tag2",
+					"label": "Tag 2"
+				},
+				{
+					"type": "text",
+					"id": "age3",
+					"label": "Title 3"
+				},
+				{
+					"type": "text",
+					"id": "age_tag3",
+					"label": "Tag 3"
+				},
+				{
+					"type": "text",
+					"id": "age4",
+					"label": "Title 4"
+				},
+				{
+					"type": "text",
+					"id": "age_tag4",
+					"label": "Tag 4"
+				},
+				{
+					"type": "text",
+					"id": "age5",
+					"label": "Title 5"
+				},
+				{
+					"type": "text",
+					"id": "age_tag5",
+					"label": "Tag 5"
+				},
+				{
+					"type": "text",
+					"id": "age6",
+					"label": "Title 6"
+				},
+				{
+					"type": "text",
+					"id": "age_tag6",
+					"label": "Tag 6"
+				},
+				{
+					"type": "text",
+					"id": "age7",
+					"label": "Title 7"
+				},
+				{
+					"type": "text",
+					"id": "age_tag7",
+					"label": "Tag 7"
+				},
+				{
+					"type": "text",
+					"id": "age8",
+					"label": "Title 8"
+				},
+				{
+					"type": "text",
+					"id": "age_tag8",
+					"label": "Tag 8"
+				},
+				{
+					"type": "text",
+					"id": "age9",
+					"label": "Title 9"
+				},
+				{
+					"type": "text",
+					"id": "age_tag9",
+					"label": "Tag 9"
+				},
+				{
+					"type": "text",
+					"id": "age10",
+					"label": "Title 10"
+				},
+				{
+					"type": "text",
+					"id": "age_tag10",
+					"label": "Tag 10"
+				}
+			]
+		},
+		{
+			"type": "collection",
+			"name": "Collection Filter",
+			"settings": [
+				{
+					"type": "text",
+					"id": "collection_title",
+					"label": "Main Title",
+					"default": "Title"
+				},
+				{
+					"type": "text",
+					"id": "collection1",
+					"label": "Title 1"
+				},
+				{
+					"type": "text",
+					"id": "collection_tag1",
+					"label": "Tag 1"
+				},
+				{
+					"type": "text",
+					"id": "collection2",
+					"label": "Title 2"
+				},
+				{
+					"type": "text",
+					"id": "collection_tag2",
+					"label": "Tag 2"
+				},
+				{
+					"type": "text",
+					"id": "collection3",
+					"label": "Title 3"
+				},
+				{
+					"type": "text",
+					"id": "collection_tag3",
+					"label": "Tag 3"
+				},
+				{
+					"type": "text",
+					"id": "collection4",
+					"label": "Title 4"
+				},
+				{
+					"type": "text",
+					"id": "collection_tag4",
+					"label": "Tag 4"
+				},
+				{
+					"type": "text",
+					"id": "collection5",
+					"label": "Title 5"
+				},
+				{
+					"type": "text",
+					"id": "collection_tag5",
+					"label": "Tag 5"
+				},
+				{
+					"type": "text",
+					"id": "collection6",
+					"label": "Title 6"
+				},
+				{
+					"type": "text",
+					"id": "collection_tag6",
+					"label": "Tag 6"
+				},
+				{
+					"type": "text",
+					"id": "collection7",
+					"label": "Title 7"
+				},
+				{
+					"type": "text",
+					"id": "collection_tag7",
+					"label": "Tag 7"
+				},
+				{
+					"type": "text",
+					"id": "collection8",
+					"label": "Title 8"
+				},
+				{
+					"type": "text",
+					"id": "collection_tag8",
+					"label": "Tag 8"
+				},
+				{
+					"type": "text",
+					"id": "collection9",
+					"label": "Title 9"
+				},
+				{
+					"type": "text",
+					"id": "collection_tag9",
+					"label": "Tag 9"
+				},
+				{
+					"type": "text",
+					"id": "collection10",
+					"label": "Title 10"
+				},
+				{
+					"type": "text",
+					"id": "collection_tag10",
+					"label": "Tag 10"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name":"JP Main Collection"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

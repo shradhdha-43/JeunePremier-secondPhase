@@ -1,0 +1,178 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+{{ 'jp-hero.css' | asset_url | stylesheet_tag }}
+
+<div class="account-wrapper">
+  <div class="container">
+    <div class="customer account">
+      <div class="text-center rel">
+        <h1>{{ 'customer.custom.welcome' | t }}</h1>
+        <a href="{{ routes.account_url }}/logout" class="logout-link">{{ 'customer.custom.logout' | t }}</a>
+      </div>
+      <div class="text-center big-btn-wrapper no-t-m">
+        <a class="big-btn active" href="#">{{ 'customer.custom.orders' | t }}</a>
+        <a class="big-btn" href="{{ routes.account_url }}/addresses">{{ 'customer.custom.info' | t }}</a>
+      </div>
+      
+      <div class="no-d">
+        <div class="account-pages-wrapper">
+          <div class="account-accordion">
+            <div class="account-titles medium">{{ 'customer.custom.order' | t }}</div>
+            <div class="down-chev"><svg xmlns="http://www.w3.org/2000/svg" width="10.121" height="5.81" viewBox="0 0 10.121 5.81"><defs><style>.a-icon-down-black-chevron{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="a-icon-down-black-chevron" d="M7431,3152l4,4,2.333-2.333L7439,3152" transform="translate(-7429.939 -3150.939)"></path></svg>
+            </div>
+          </div>
+          <div class="account-panel"><a href="{{ routes.account_url }}/addresses">{{ 'customer.custom.contact' | t }}</a></div>
+        </div>
+      </div>
+      
+      <a href="" class="btn order-cancel-btn no-d">{{ 'customer.custom.cancel' | t }}</a>
+
+      <div class="account-info flex-box justify-between">
+        <div class="larger-div">
+         
+          {% paginate customer.orders by 20 %}
+          {%- if customer.orders.size > 0 -%}
+          
+            {%- for order in customer.orders -%}
+              <div class="order-accordion">
+                <div class="order-wrapper" data-order-id="{{ order.id }}">
+                  <div class="order-title medium">{{ 'customer.custom.order' | t }} {{ order.name }}</div>
+                  <div class="order-icon">+</div>
+                </div>
+                <div class="order-data light" style="display: none;">
+                  <div class="order-date">
+                    <span class="light">{{ 'customer.orders.date' | t }}</span>
+                    <span class="medium">{{ order.created_at | time_tag: format: 'date' }}</span>
+                  </div>
+                  <div class="order-address">
+                    <span class="light">{{ 'customer.order.shipping_address' | t }}</span>
+                    <span class="medium">{{ order.shipping_address | format_address }}</span>
+                  </div>
+                  <div class="order-price">
+                    <span class="light">{{ 'customer.custom.order' | t }}</span>
+                    <span class="medium">{{ order.total_price | money }} <span class="light">Incl. VAT</span></span>
+                  </div>
+                  
+                  <div class="order-details-accordion-m no-d">
+                    <div class="order-details-title-m">
+                      <div class="light">{{ 'customer.custom.order_details' | t }}</div>
+                      <div class="down-chev"><svg xmlns="http://www.w3.org/2000/svg" width="10.121" height="5.81" viewBox="0 0 10.121 5.81"><defs><style>.a-icon-down-black-chevron{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="a-icon-down-black-chevron" d="M7431,3152l4,4,2.333-2.333L7439,3152" transform="translate(-7429.939 -3150.939)"></path></svg>
+                      </div>
+                    </div>
+                    <div class="order-details-m light" style="display: none;">
+                      {% include "order-details" %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          
+          {%- else -%}
+          <p class="text-center">{{ 'customer.orders.none' | t }}</p>
+          {%- endif -%}
+          {% endpaginate %}
+        </div>
+
+        <div class="smaller-div no-t-m">
+          <div class="order-details-accordion no-t-m">
+            <div class="order-details-title">
+              <div class="light">{{ 'customer.custom.order_details' | t }}</div>
+              <div class="down-chev"><svg xmlns="http://www.w3.org/2000/svg" width="10.121" height="5.81" viewBox="0 0 10.121 5.81"><defs><style>.a-icon-down-black-chevron{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="a-icon-down-black-chevron" d="M7431,3152l4,4,2.333-2.333L7439,3152" transform="translate(-7429.939 -3150.939)"></path></svg>
+              </div>
+            </div>
+            <div class="order-details light" style="display: none;">
+              {%- for order in customer.orders -%}
+              {% include "order-details" %}
+              {% endfor %}
+            </div>
+          </div>
+          <a href="" class="btn order-cancel-btn no-t no-m">{{ 'customer.custom.cancel' | t }}</a>
+        </div>
+      </div>
+      
+    </div>
+
+    {% render "account-faq" %}
+
+  </div>
+</div>
+
+<script>
+
+  ///----- Auto-Close Accordion
+  $(document).ready(function() {
+    //--- initial state of elements
+    $('.account-panel').hide();
+    $('.order-data').hide();
+    $('.order-details').hide();
+    $('.order-details-m').hide();
+    
+    //----- click function
+    $(".account-accordion").click(function() { //---- tabs or buttons
+      //---- active class
+      $(".account-accordion").removeClass('active');
+      $('.account-panel').slideUp();
+      var selected = $(this).next('.account-panel');
+      if (selected.is(":hidden")) {
+        $(this).next('.account-panel').slideDown();
+        $(this).toggleClass('active');
+      }
+    });
+    
+    $(".order-wrapper").click(function() { //---- tabs or buttons
+      //---- active class
+      $(".order-wrapper").removeClass('active');
+      $('.order-data').slideUp();
+      var selected = $(this).next('.order-data');
+      if (selected.is(":hidden")) {
+        $(this).next('.order-data').slideDown();
+        $(this).toggleClass('active');
+      }
+    });
+    
+    $(".order-details-title").click(function() { //---- tabs or buttons
+      //---- active class
+      $(".order-details-title").removeClass('active');
+      $('.order-details').slideUp();
+      if($(".order-wrapper").hasClass("active")) {
+        var selected = $(this).next('.order-details');
+        if (selected.is(":hidden")) {
+          $(this).next('.order-details').slideDown();
+          $(this).toggleClass('active');
+        }
+      }
+    });
+    
+    $(".order-details-title-m").click(function() { //---- tabs or buttons
+      //---- active class
+      $(".order-details-title-m").removeClass('active');
+      $('.order-details-m').slideUp();
+      var selected = $(this).next('.order-details-m');
+      if (selected.is(":hidden")) {
+        $(this).next('.order-details-m').slideDown();
+        $(this).toggleClass('active');
+      }
+    });
+    
+    $(".order-wrapper").click(function() {
+      var orderId = $(this).data("order-id");
+      
+      $(".order-details-accordion .order-details .cart-product-wrapper").each(function() {
+        if($(this).data("order-id") != orderId) {
+          $(this).addClass("no-disp");
+        }
+        else {
+          $(this).removeClass("no-disp");
+        }
+      });
+      
+      if($(".order-details-title").hasClass("active")) {
+      
+      }
+      else {
+      	$(".order-details-title").trigger("click");
+      }
+    });
+    
+  });
+
+</script>

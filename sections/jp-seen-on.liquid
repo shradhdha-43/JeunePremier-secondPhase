@@ -1,0 +1,123 @@
+{{ 'jp-seen-on.css' | asset_url | stylesheet_tag }}
+
+<div class="seen-on-wrapper">
+  <div class="seen-on-title title text-center">{{ section.settings.title }}</div>
+  <div class="marquee" style="height: {{ section.settings.marquee_height }}px">
+    <div class="marquee-wrap featured-banner__wrapper" id="maindiv">
+      <span class="marquee-items featured-banner__container" id="div1">
+      
+        {% for block in section.blocks %}
+        	{% if block.type == 'marquee' %}
+        		{% if block.settings.img_1 != blank %}
+        			<div class="marquee-item marquee-txt light featured-banner__item" style="width: {{ section.settings.marquee_item_width }}px; height: {{ section.settings.marquee_height }}px">
+                      <img class="marquee-img" src="{{ block.settings.img_1 | img_url: '200x' }}">
+        			</div>
+        		{% endif %}
+        		{% if block.settings.img_2 != blank %}
+        			<div class="marquee-item marquee-txt light featured-banner__item" style="width: {{ section.settings.marquee_item_width }}px; height: {{ section.settings.marquee_height }}px">
+                      <img class="marquee-img" src="{{ block.settings.img_2 | img_url: '200x' }}">
+        			</div>
+        		{% endif %}
+        		{% if block.settings.img_3 != blank %}
+        			<div class="marquee-item marquee-txt light featured-banner__item" style="width: {{ section.settings.marquee_item_width }}px; height: {{ section.settings.marquee_height }}px">
+                      <img class="marquee-img" src="{{ block.settings.img_3 | img_url: '200x' }}">
+        			</div>
+        		{% endif %}
+        	{% endif %}
+        {% endfor %}
+      </span>
+      <span class="marquee-items featured-banner__container" id="div2">
+        {% for block in section.blocks %}
+        	{% if block.type == 'marquee' %}
+        		{% if block.settings.img_1 != blank %}
+        			<div class="marquee-item marquee-txt light featured-banner__item" style="width: {{ section.settings.marquee_item_width }}px; height: {{ section.settings.marquee_height }}px">
+                      <img class="marquee-img" src="{{ block.settings.img_1 | img_url: '200x' }}">
+        			</div>
+        		{% endif %}
+        		{% if block.settings.img_2 != blank %}
+        			<div class="marquee-item marquee-txt light featured-banner__item" style="width: {{ section.settings.marquee_item_width }}px; height: {{ section.settings.marquee_height }}px">
+                      <img class="marquee-img" src="{{ block.settings.img_2 | img_url: '200x' }}">
+        			</div>
+        		{% endif %}
+        		{% if block.settings.img_3 != blank %}
+        			<div class="marquee-item marquee-txt light featured-banner__item" style="width: {{ section.settings.marquee_item_width }}px; height: {{ section.settings.marquee_height }}px">
+                      <img class="marquee-img" src="{{ block.settings.img_3 | img_url: '200x' }}">
+        			</div>
+        		{% endif %}
+        	{% endif %}
+        {% endfor %}
+      </span>
+    </div>
+  </div>
+</div>
+
+<script>
+	
+</script>
+
+{% schema %}
+  {
+    "name": "JP Seen On",
+    "settings": [
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		},
+		{
+          "type": "range",
+          "id": "marquee_height",
+          "min": 12,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Slider Height",
+          "default": 28
+        },
+		{
+          "type": "range",
+          "id": "marquee_item_width",
+          "min": 100,
+          "max": 500,
+          "step": 20,
+          "unit": "px",
+          "label": "Slider Height",
+          "default": 280
+        }
+	],
+	"blocks": [
+		{
+			"type": "marquee",
+			"name": "Marquee Logo",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "img_1",
+					"label": "Logo Image 1"
+				},
+				{
+					"type": "image_picker",
+					"id": "img_2",
+					"label": "Logo Image 2"
+				},
+				{
+					"type": "image_picker",
+					"id": "img_3",
+					"label": "Logo Image 3"
+				}
+			]
+		}
+	],
+	"presets":[
+      {
+         "name":"JP Seen On"
+      }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

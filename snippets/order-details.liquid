@@ -1,0 +1,21 @@
+{%- assign vat = 1.21 -%}
+
+{% for item in order.line_items %}
+  <div class="cart-product-wrapper" data-order-id="{{ order.id }}">
+    <div class="cart-product-image">
+      <a href="{{ item.url }}"><img src="{{ item.variant.image.src | default: item.product.featured_image | img_url: '590x' }}"></a>
+    </div>
+    <div class="cart-product-infos justify-between">
+      <div class="cart-product-info flex-box justify-between">
+        <div class="title-wrapper">
+          <div class="product-name">{{ item.product.title | split: " " | first }}</div>            
+          <div class="product-color">{% unless item.variant.title contains "Default Title" %}{{ item.variant.title }}{% else %}{% assign half_name = item.product.title | split: " " | first %}{{ item.product.title | remove: half_name }}{% endunless %}</div>
+          <div class="product-color">{{ item.quantity }} {% if item.quantity > 1 %}items{% else %}item{% endif %}</div>
+        </div>
+      </div>
+      <div class="cart-product-qty-del justify-between">
+        <div class="product-price"><span class="product-selling-price">{{ item.final_price | times: vat | money_without_trailing_zeros }}</span></div>
+      </div>
+    </div>
+  </div>
+{% endfor %}

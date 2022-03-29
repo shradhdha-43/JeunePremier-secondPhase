@@ -1,0 +1,219 @@
+{{ 'jp-faq.css' | asset_url | stylesheet_tag }}
+
+<div class="faq-wrapper-blank {% if template contains 'product' %}faq-wrapper{% endif %}">
+  <div class="container">
+    <div class="faq-content">
+      <div class="faq-title title text-center">Häufig gestellte Fragen</div>
+      <div class="faq-wrap">
+        
+        {% if settings.question1 != '' %}
+        <div class="faq-qa-wrap">
+          <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+            <div class="faq-question medium">{{ settings.question1 }}</div>
+            <div class="down-chev"><svg xmlns="http://www.w3.org/2000/svg" width="10.121" height="5.81" viewBox="0 0 10.121 5.81"><defs><style>.a-icon-down-black-chevron{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="a-icon-down-black-chevron" d="M7431,3152l4,4,2.333-2.333L7439,3152" transform="translate(-7429.939 -3150.939)"></path></svg>
+            </div>
+          </div>
+          <div class="faq-answer panel light" style="">
+            {{ settings.answer1 }}
+          </div>
+        </div>
+        {% endif %}
+
+        
+		{% if settings.question2 != '' %}
+        <div class="faq-qa-wrap">
+          <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+            <div class="faq-question medium">{{ settings.question2 }}</div>
+            <div class="down-chev"><svg xmlns="http://www.w3.org/2000/svg" width="10.121" height="5.81" viewBox="0 0 10.121 5.81"><defs><style>.a-icon-down-black-chevron{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="a-icon-down-black-chevron" d="M7431,3152l4,4,2.333-2.333L7439,3152" transform="translate(-7429.939 -3150.939)"></path></svg>
+            </div>
+          </div>
+          <div class="faq-answer panel light" style="display: none;">
+            {{ settings.answer2 }}
+          </div>
+        </div>
+		{% endif %}
+
+		{% if settings.question3 != '' %}
+        <div class="faq-qa-wrap">
+          <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+            <div class="faq-question medium">{{ settings.question3 }}</div>
+            <div class="down-chev"><svg xmlns="http://www.w3.org/2000/svg" width="10.121" height="5.81" viewBox="0 0 10.121 5.81"><defs><style>.a-icon-down-black-chevron{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="a-icon-down-black-chevron" d="M7431,3152l4,4,2.333-2.333L7439,3152" transform="translate(-7429.939 -3150.939)"></path></svg>
+            </div>
+          </div>
+          <div class="faq-answer panel light" style="display: none;">
+            {{ settings.answer3 }}
+          </div>
+        </div>
+        {% endif %}
+
+
+		{% if settings.question4 != '' %}
+        <div class="faq-qa-wrap">
+          <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+            <div class="faq-question medium">{{ settings.question4 }}</div>
+            <div class="down-chev"><svg xmlns="http://www.w3.org/2000/svg" width="10.121" height="5.81" viewBox="0 0 10.121 5.81"><defs><style>.a-icon-down-black-chevron{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="a-icon-down-black-chevron" d="M7431,3152l4,4,2.333-2.333L7439,3152" transform="translate(-7429.939 -3150.939)"></path></svg>
+            </div>
+          </div>
+          <div class="faq-answer panel light" style="display: none;">
+            {{ settings.answer4 }}
+          </div>
+        </div>
+		{% endif %}
+
+		{% if settings.question5 != '' %}
+        <div class="faq-qa-wrap">
+          <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+            <div class="faq-question medium">{{ settings.question5 }}</div>
+            <div class="down-chev"><svg xmlns="http://www.w3.org/2000/svg" width="10.121" height="5.81" viewBox="0 0 10.121 5.81"><defs><style>.a-icon-down-black-chevron{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="a-icon-down-black-chevron" d="M7431,3152l4,4,2.333-2.333L7439,3152" transform="translate(-7429.939 -3150.939)"></path></svg>
+            </div>
+          </div>
+          <div class="faq-answer panel light" style="display: none;">
+            {{ settings.answer5 }}
+          </div>
+        </div>
+        {% endif %}
+
+
+		{% if settings.question6 != '' %}
+        <div class="faq-qa-wrap">
+          <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+            <div class="faq-question medium">{{ settings.question6 }}</div>
+            <div class="down-chev"><svg xmlns="http://www.w3.org/2000/svg" width="10.121" height="5.81" viewBox="0 0 10.121 5.81"><defs><style>.a-icon-down-black-chevron{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="a-icon-down-black-chevron" d="M7431,3152l4,4,2.333-2.333L7439,3152" transform="translate(-7429.939 -3150.939)"></path></svg>
+            </div>
+          </div>
+          <div class="faq-answer panel light" style="display: none;">
+            {{ settings.answer6 }}
+          </div>
+        </div>
+        {% endif %}
+        
+        
+        {% if settings.question7 != '' %}
+        <div class="faq-qa-wrap">
+          <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+            <div class="faq-question medium">{{ settings.question7 }}</div>
+            <div class="down-chev"><svg xmlns="http://www.w3.org/2000/svg" width="10.121" height="5.81" viewBox="0 0 10.121 5.81"><defs><style>.a-icon-down-black-chevron{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="a-icon-down-black-chevron" d="M7431,3152l4,4,2.333-2.333L7439,3152" transform="translate(-7429.939 -3150.939)"></path></svg>
+            </div>
+          </div>
+          <div class="faq-answer panel light" style="display: none;">
+            {{ settings.answer7 }}
+          </div>
+        </div>
+        {% endif %}
+
+        
+        {% if settings.question8 != '' %}
+        <div class="faq-qa-wrap">
+          <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+            <div class="faq-question medium">{{ settings.question8 }}</div>
+            <div class="down-chev"><svg xmlns="http://www.w3.org/2000/svg" width="10.121" height="5.81" viewBox="0 0 10.121 5.81"><defs><style>.a-icon-down-black-chevron{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="a-icon-down-black-chevron" d="M7431,3152l4,4,2.333-2.333L7439,3152" transform="translate(-7429.939 -3150.939)"></path></svg>
+            </div>
+          </div>
+          <div class="faq-answer panel light" style="display: none;">
+            {{ settings.answer8 }}
+          </div>
+        </div>
+        {% endif %}
+        
+        
+        {% if settings.question9 != '' %}
+        <div class="faq-qa-wrap">
+          <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+            <div class="faq-question medium">{{ settings.question9 }}</div>
+            <div class="down-chev"><svg xmlns="http://www.w3.org/2000/svg" width="10.121" height="5.81" viewBox="0 0 10.121 5.81"><defs><style>.a-icon-down-black-chevron{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="a-icon-down-black-chevron" d="M7431,3152l4,4,2.333-2.333L7439,3152" transform="translate(-7429.939 -3150.939)"></path></svg>
+            </div>
+          </div>
+          <div class="faq-answer panel light" style="display: none;">
+            {{ settings.answer9 }}
+          </div>
+        </div>
+        {% endif %}
+        
+        {% if settings.question10 != '' %}
+        <div class="faq-qa-wrap">
+          <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+            <div class="faq-question medium">{{ settings.question10 }}</div>
+            <div class="down-chev"><svg xmlns="http://www.w3.org/2000/svg" width="10.121" height="5.81" viewBox="0 0 10.121 5.81"><defs><style>.a-icon-down-black-chevron{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="a-icon-down-black-chevron" d="M7431,3152l4,4,2.333-2.333L7439,3152" transform="translate(-7429.939 -3150.939)"></path></svg>
+            </div>
+          </div>
+          <div class="faq-answer panel light" style="display: none;">
+            {{ settings.answer10 }}
+          </div>
+        </div>
+        {% endif %}
+        {% if template contains 'product' %}
+        {% if product.metafields.my_fields.product_faq_question_1 != blank %}
+        <div class="faq-qa-wrap">
+          <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+            <div class="faq-question medium">{{ product.metafields.my_fields.product_faq_question_1 }}</div>
+            <div class="down-chev"><svg xmlns="http://www.w3.org/2000/svg" width="10.121" height="5.81" viewBox="0 0 10.121 5.81"><defs><style>.a-icon-down-black-chevron{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="a-icon-down-black-chevron" d="M7431,3152l4,4,2.333-2.333L7439,3152" transform="translate(-7429.939 -3150.939)"></path></svg>
+            </div>
+          </div>
+          <div class="faq-answer panel light" style="display: none;">
+            {{ product.metafields.my_fields.product_faq_answer_1 }}
+          </div>
+        </div>
+        {% endif %}
+        {% if product.metafields.my_fields.product_faq_question_2 != blank %}
+        <div class="faq-qa-wrap">
+          <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+            <div class="faq-question medium">{{ product.metafields.my_fields.product_faq_question_2 }}</div>
+            <div class="down-chev"><svg xmlns="http://www.w3.org/2000/svg" width="10.121" height="5.81" viewBox="0 0 10.121 5.81"><defs><style>.a-icon-down-black-chevron{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="a-icon-down-black-chevron" d="M7431,3152l4,4,2.333-2.333L7439,3152" transform="translate(-7429.939 -3150.939)"></path></svg>
+            </div>
+          </div>
+          <div class="faq-answer panel light" style="display: none;">
+            {{ product.metafields.my_fields.product_faq_answer_2 }}
+          </div>
+        </div>
+        {% endif %}
+        {% if product.metafields.my_fields.product_faq_question_3 != blank %}
+        <div class="faq-qa-wrap">
+          <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+            <div class="faq-question medium">{{ product.metafields.my_fields.product_faq_question_3 }}</div>
+            <div class="down-chev"><svg xmlns="http://www.w3.org/2000/svg" width="10.121" height="5.81" viewBox="0 0 10.121 5.81"><defs><style>.a-icon-down-black-chevron{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="a-icon-down-black-chevron" d="M7431,3152l4,4,2.333-2.333L7439,3152" transform="translate(-7429.939 -3150.939)"></path></svg>
+            </div>
+          </div>
+          <div class="faq-answer panel light" style="display: none;">
+            {{ product.metafields.my_fields.product_faq_answer_3 }}
+          </div>
+        </div>
+        {% endif %}
+        {% if product.metafields.my_fields.product_faq_question_4 != blank %}
+        <div class="faq-qa-wrap">
+          <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+            <div class="faq-question medium">{{ product.metafields.my_fields.product_faq_question_4 }}</div>
+            <div class="down-chev"><svg xmlns="http://www.w3.org/2000/svg" width="10.121" height="5.81" viewBox="0 0 10.121 5.81"><defs><style>.a-icon-down-black-chevron{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><path class="a-icon-down-black-chevron" d="M7431,3152l4,4,2.333-2.333L7439,3152" transform="translate(-7429.939 -3150.939)"></path></svg>
+            </div>
+          </div>
+          <div class="faq-answer panel light" style="display: none;">
+            {{ product.metafields.my_fields.product_faq_answer_4 }}
+          </div>
+        </div>
+        {% endif %}
+        {% endif %}
+      </div>
+      
+      <a href="/pages/faqs" class="faq-link medium">Andere Fragen</a>
+    </div>
+  </div>
+</div>
+<script>
+
+  ///----- Auto-Close Accordion
+  $(document).ready(function() {
+    //--- initial state of elements
+    $('.panel').hide()
+    //----- click function
+    $(".faq-wrap").find("div[role|='button']").click(function() { //---- tabs or buttons
+      //---- active class
+      $(".faq-wrap").find("div[role|='button']").removeClass('active');
+      $('.panel').slideUp();
+      var selected = $(this).next('.panel');
+      if (selected.is(":hidden")) {
+        $(this).next('.panel').slideDown();
+        $(this).toggleClass('active');
+      }
+    });
+  });
+
+</script>

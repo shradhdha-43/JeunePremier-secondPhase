@@ -1,0 +1,169 @@
+.img-with-text-wrapper{
+	margin-bottom: 120px;
+}
+
+.sec-marg-top{
+	margin-top: 80px;
+}
+
+.img-w-txt-text-wrap {
+    width: 40.9%;
+}
+
+.img-w-txt-image-wrap {
+    width: 49.3%;
+  height: 590px;
+}
+
+.img-w-txt-image-wrap img{
+	width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.img-w-txt-title {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 24px;
+}
+
+.img-w-txt-desc {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 24px;
+}
+
+.read-more-btn{
+	transition: .4s ease;
+}
+
+.read-more-btn:hover{
+	text-decoration: underline;
+}
+
+.video-wrapper {
+    padding: 80px 0;
+    background-color: var(--dd-color-third);
+}
+
+.video-sec-btn.button {
+    color: var(--dd-color-sixth);
+    background-color: var(--dd-color-first);
+    display: flex;
+    width: 83%;
+    text-align: center;
+    font-size: 20px;
+    line-height: 24px;
+    padding: 16px 0;
+    font-weight: 400;
+  max-height: 56px;
+  transition: .4s ease;
+  justify-content: center;
+}
+
+.video-cover {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    object-fit: cover;
+  z-index: 2;
+}
+
+.play-btn {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: .4s ease;
+  cursor: pointer;
+}
+
+.play-btn svg {
+    width: 150px;
+}
+
+.no-dis{
+	display: none!important;
+}
+
+.hover-text{
+	display: none;
+}
+
+.video-sec-btn:hover{
+	color: var(--dd-color-first);
+  background-color: var(--dd-color-second);
+}
+
+.video-sec-btn:hover .original-text{
+	display: none;
+}
+
+.video-sec-btn:hover .hover-text{
+	display: block;
+}
+
+.img-w-txt-desc-link a{
+	font-weight: 500;
+  text-decoration: underline;
+}
+
+.subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1.28px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+
+@media(max-width: 992px){
+  
+  .sec-marg-top{
+	margin-top: 40px;
+}
+  
+  .img-with-text-content{
+  	flex-direction: column-reverse;
+  }
+  
+  .img-w-txt-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+  
+  .img-w-txt-text-wrap {
+    width: 100%;
+}
+  
+  .img-w-txt-image-wrap {
+    width: 100%;
+    height: calc(100vw - 40px);
+    margin-bottom: 20px;
+}
+  
+  .img-w-txt-desc {
+    margin-bottom: 20px;
+}
+  
+  .read-more-btn {
+    text-decoration: underline;
+}
+  
+  .img-with-text-wrapper {
+    margin-bottom: 80px;
+}
+  
+  .video-wrapper {
+    padding: 40px 0;
+}
+  
+  .video-sec-btn.button {
+    width: 100%;
+}
+}

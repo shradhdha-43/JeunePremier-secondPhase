@@ -1,0 +1,145 @@
+.seen-on-wrapper {
+    background-color: var(--dd-color-fourth);
+    padding: 40px 0;
+      overflow: hidden;
+      margin-bottom: 120px;
+}
+
+.seen-on-title {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 40px;
+}
+
+.marquee-txt {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 1.92px;
+    text-transform: uppercase;
+}
+
+.marquee {
+  height: 28px;
+/*   width: 500%; */
+	white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+.featured-banner__wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-between;
+}
+
+.featured-banner__container {
+  display: flex;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media(min-width: 1680px){
+	.featured-banner__container {
+    animation-duration: 50s;
+}
+}
+
+.featured-banner__item {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 0 40px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+/* .marquee-wrap {
+    display: flex;
+    width: 200%;
+    height: 30px;
+    position: absolute;
+    overflow: hidden;
+    animation: marquee 60s linear infinite;
+    white-space: nowrap;
+}
+
+.marquee-items {
+  float: left;
+  width: 50%;
+  display: flex;
+    justify-content: space-around;
+} */
+
+
+/* @keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
+} */
+
+/* @media(max-width: 1260px){
+	.marquee {
+    width: 700%;
+}
+} */
+
+@media(max-width: 992px){
+/*   .marquee-items {
+  width: 50%;
+} */
+  
+  .marquee-txt {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1.28px;
+}
+  
+  .seen-on-title {
+    margin-bottom: 20px;
+}
+  
+  .featured-banner__item {
+  padding: 0 20px;
+}
+  
+  .seen-on-wrapper {
+      margin-bottom: 80px;
+}
+}
+
+/* @media(max-width: 590px){
+	.marquee {
+    width: 900%;
+}
+}
+
+@media(max-width: 450px){
+	.marquee {
+    width: 1200%;
+}
+}
+
+@media(max-width: 360px){
+	.marquee {
+    width: 1400%;
+}
+}
+
+@media(min-width: 2300px){
+	.marquee {
+    width: 300%;
+}
+} */
+

@@ -1,0 +1,41 @@
+.scrib-img {
+    position: absolute;
+    width: 15vw;
+    height: 15vw;
+    bottom: -40px;
+    right: -10%;
+}
+
+.add-to-cart.prod-info-upsell-btn {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    transition: .4s ease;
+    position: unset;
+    padding: 16px;
+    border: none;
+    line-height: 24px;
+}
+
+.add-to-cart.prod-info-upsell-btn:hover{
+	background-color: var(--dd-color-second);
+      color: #333;
+}
+
+@media(max-width: 992px){
+	.img-scribble-txt .img-with-text-content {
+    flex-direction: column;
+}
+  
+  .scrib-img {
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    bottom: -80px;
+    right: -1px;
+}
+  
+  .img-scribble-txt .img-w-txt-image-wrap {
+    margin-bottom: 100px;
+}
+}

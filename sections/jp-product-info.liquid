@@ -1,0 +1,226 @@
+{{ 'jp-image-with-text.css' | asset_url | stylesheet_tag }}
+{{ 'jp-product-info.css' | asset_url | stylesheet_tag }}
+
+{% assign keychain_letter_type_name = 'Keychain letter' %}
+{% assign keychain_charm_type_name = 'Keychain charm' %}
+{% assign wrapping_paper_type_name = 'Wrapping paper' %}
+
+{% capture content %}{{ product.description }}{% endcapture %}
+{% assign section_split = content | split: '<h2>' %}
+
+{% assign video_split = content | split: '<h2>Video</h2>' %}
+{% assign video_split = video_split[1] %}
+
+{%- comment -%}
+  New split based on paragraphs with -split-item in it
+{%- endcomment -%}
+{% assign product_description = product.description | remove: ' data-mce-fragment="1"' %}
+{%- if product_description contains '<p>-split-item' -%}
+  {%- assign split_items_array = product_description | split: '<p>-split-item' -%}
+  {%- for split_item in split_items_array -%}
+    {%- if split_item contains '-content-</p>' -%}
+      {%- assign split_items_content = split_item | remove_first: '-content-</p>' -%}
+    {%- elsif split_item contains '-readmore-</p>' -%}
+      {%- assign split_items_content_readmore = split_item | remove_first: '-readmore-</p>' -%}
+    {%- elsif split_item contains '-reviewtitle-</p>' -%}
+      {%- assign split_items_content_review_title = split_item | remove_first: '-reviewtitle-</p>' -%}
+    {%- elsif split_item contains '-reviewbody-</p>' -%}
+      {%- assign split_items_content_review_body = split_item | remove_first: '-reviewbody-</p>' -%}
+    {%- elsif split_item contains '-reviewauthor-</p>' -%}
+      {%- assign split_items_content_review_author = split_item | remove_first: '-reviewauthor-</p>' -%}
+    {%- elsif split_item contains '-reviewdate-</p>' -%}
+      {%- assign split_items_content_review_date = split_item | remove_first: '-reviewdate-</p>' -%}
+    {%- elsif split_item contains '-reviewplace-</p>' -%}
+      {%- assign split_items_content_review_place = split_item | remove_first: '-reviewplace-</p>' -%}
+    {%- elsif split_item contains '-design-</p>' -%}
+      {%- assign split_items_design = split_item | remove_first: '-design-</p>' | strip_html -%}
+    {%- elsif split_item contains '-accordion-</p>' -%}
+      {%- assign split_items_accordion = split_item | remove_first: '-accordion-</p>' -%}
+      {%- assign split_items_accordion = split_items_accordion | prepend: '<p></p>' -%}
+      {%- comment -%}
+        Section_split is being used by accordions
+      {%- endcomment -%}
+      {% assign section_split = split_items_accordion | split: '<h2>' %}
+    {%- elsif split_item contains '-features-</p>' -%}
+      {%- assign split_items_features = split_item | remove_first: '-features-</p>' -%}
+    {%- else -%}
+      {%- assign split_items_subtitle = split_items_subtitle | append: split_item -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+
+
+
+
+
+<div class="img-with-text-wrapper">
+  <div class="container">
+
+    <div class="img-with-text-content flex-box align-center justify-between">
+
+      <div class="img-w-txt-text-wrap">
+        <div class="img-w-txt-title title no-t-m">{{ 'products.product.meet' | t }} {% if product.type %}{{ product.type }}{% else %}{{ product.title }}{% endif %}</div>
+
+        <div class="img-w-txt-desc light">
+          {%- if split_items_subtitle -%}
+          <div class="product-single__subtitle">
+            {{ split_items_subtitle }}
+          </div>
+          {%- endif -%}
+
+
+          <div class="product-single__description rte">
+            {%- if split_items_content -%}
+            {{ split_items_content }}
+
+            {% if split_items_content_readmore %}
+            <div class="readmore">
+              <div class="readmore__content">
+                {{ split_items_content_readmore }}
+              </div>
+            </div>
+
+            {% endif %}
+            {%- else -%}
+            {{ section_split | first }}
+            {%- endif -%}
+          </div>
+
+          <div class="product-single__accordions">
+            {%- for item in section_split -%}
+            {%- assign accordion_split = item | split: '</h2>' -%}
+            {%- assign accordion_title = accordion_split[0] | strip -%}
+            {%- assign accordion_text = accordion_split[1] | strip_html -%}
+
+            {% if accordion_text != '' %}
+            {% if accordion_title == 'Why we love it' %}
+            <div class="product-single-accordion ">
+              <div class="product-faq-question-wrap accordion flex-box justify-between" role="button">
+                <h2 class="product-single-accordion__title " role="button">{{ accordion_title }}</h2>
+                <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+              </div>
+              {% if accordion_split[1] != blank %}
+              <div class="rte product-single-accordion__content" >
+                {{ accordion_split[1] | remove: '<p> </p>' }}
+              </div>
+              {% endif %}
+            </div>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+
+            {%- for item in section_split -%}
+            {%- assign accordion_split = item | split: '</h2>' -%}
+            {%- assign accordion_title = accordion_split[0] | strip -%}
+            {%- assign accordion_text = accordion_split[1] | strip_html -%}
+
+            {% unless accordion_title == 'Why we love it' %}
+            {% if accordion_text != '' %}
+            {% if accordion_title != 'Video' and accordion_title != '' %}
+            <div class="product-single-accordion ">
+
+              <div class="product-faq-question-wrap accordion flex-box justify-between" role="button">
+                <h2 class="product-single-accordion__title " role="button">{{ accordion_title }}</h2>
+                <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+              </div>
+              {% if accordion_split[1] != blank %}
+              <div class="rte product-single-accordion__content" >
+                {{ accordion_split[1] | remove: '<p> </p>' }}
+                {% if accordion_title contains 'Size ' %}
+                <span>
+                  <a class="size-chart" data-vid="no" href="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/size-chart.png?v=1645923400" data-caption="Size chart" data-width="2000" data-height="1402" itemprop="contentUrl" data-index="{{ product.media | size }}" target="_blank">
+                    {{ 'products.product.size_chart' | t }}
+                  </a>
+                </span>
+                {% endif %}
+              </div>
+              {% endif %}
+            </div>
+            {% endif %}
+            {% endif %}
+            {% endunless %}
+            {%- endfor -%}
+            {% if accordion_text == '' %}
+            <p>{{ 'products.product.no_info' | t }}</p>
+            {% endif %}
+          </div>
+        </div>
+
+      </div>
+
+      {% if product.metafields.my_fields.product_info_video != blank %}
+          <div class="img-w-txt-image-wrap img-w-txt-video-wrap rel custom-video">
+            <img  class="video-cover" src="{% if product.metafields.my_fields.product_info_block_image != blank %}{{ product.metafields.my_fields.product_info_block_image | img_url: '600x' }}{% else %}{{ product.featured_image | img_url: '600x' }}{% endif %}" loading="lazy" alt="Video title">
+            <video class="cust-video" width="100%" height="100%" controls>
+              <source src="{{ product.metafields.my_fields.product_info_video }}" type="video/mp4">
+            </video>
+            <div id="play" class="play-btn">
+              {% include 'icon-play-button' %}
+            </div>
+          </div>
+      	{% elsif product.metafields.my_fields.product_info_youtube != blank %}
+          <div class="img-w-txt-image-wrap img-w-txt-video-wrap rel">
+            <img  class="video-cover" src="{% if product.metafields.my_fields.product_info_block_image != blank %}{{ product.metafields.my_fields.product_info_block_image | img_url: '600x' }}{% else %}{{ product.featured_image | img_url: '600x' }}{% endif %}" loading="lazy" alt="Video title">
+            <iframe class="no-disp yt-video" width="100%" height="100%" src="https://www.youtube.com/embed/{{ product.metafields.my_fields.product_info_youtube }}" frameborder="0">
+            </iframe>
+            <div id="play" class="play-btn">
+              {% include 'icon-play-button' %}
+            </div>
+          </div>
+      	{% else %}
+          <div class="img-w-txt-image-wrap">
+            <img src="{% if product.metafields.my_fields.product_info_block_image != blank %}{{ product.metafields.my_fields.product_info_block_image | img_url: '600x' }}{% else %}{{ product.featured_image | img_url: '600x' }}{% endif %}" loading="lazy">
+          </div>
+		{% endif %}
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<script>
+
+	///----- Auto-Close Accordion
+$(document).ready(function() {
+  //--- initial state of elements
+  $('.product-single-accordion__content').hide()
+    //----- click function
+  $(".product-single__accordions").find(".product-faq-question-wrap").click(function() { //---- tabs or buttons
+    //---- active class
+    $(".product-single__accordions").find(".product-faq-question-wrap").removeClass('active');
+    $(this).closest('.product-single__accordions').find('.product-single-accordion__content').slideUp();
+    var selected = $(this).next('.product-single-accordion__content');
+    if (selected.is(":hidden")) {
+      $(this).next('.product-single-accordion__content').slideDown();
+      $(this).toggleClass('active');
+    }
+  });
+});
+  
+</script>
+
+
+
+
+{% schema %}
+  {
+    "name": "JP product info",
+	"class": "jp-info-prod",
+    "settings": [
+	],
+   "presets":[
+      {
+         "name":"JP product info"
+      }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

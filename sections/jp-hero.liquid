@@ -1,0 +1,55 @@
+{{ 'jp-hero.css' | asset_url | stylesheet_tag }}
+
+<div class="hero" style="{% if section.settings.image %}background-image: url({{ section.settings.image | img_url: "2000x" }}){% else %}background: #375D54{% endif %}">
+  <div class="container flex-box justify-end">
+    <span class="header-inner-wrapper">
+      <h1 class="hero-text">
+        <span>
+          {% if section.settings.design2 %}<span class="sub-head">{{ section.settings.subheading }}</span>{% endif %}
+          {{ section.settings.heading }}
+        </span>
+      </h1>
+      {% if section.settings.headinglink != blank %}<a class="btn hero-btn btn-center" href="{{ section.settings.headinglink }}">{{ section.settings.headinglinktext }}</a>{% endif %}
+    </span>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "JP Hero",
+    "settings": [
+	  {
+         "type":"image_picker",
+         "id":"image",
+         "label":"Image"
+      },
+      {
+        "type": "html",
+        "id": "heading",
+        "label": "Heading",
+		"default": "Welcome to store"
+      },
+      {
+        "type": "url",
+        "id": "headinglink",
+        "label": "Heading Button"
+      },
+      {
+        "type": "text",
+        "id": "headinglinktext",
+        "label": "Heading Button Text"
+      }
+	],
+   "presets":[
+      {
+         "name":"JP Hero"
+      }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

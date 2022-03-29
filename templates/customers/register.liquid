@@ -1,0 +1,110 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+<div class="customer-wrapper">
+  <div class="customer register">
+    <h2 id="register" class="register-heading">
+      Create account
+    </h2>
+    {%- form 'create_customer', novalidate: 'novalidate' -%}
+    {%- if form.errors -%}
+    <h3 class="form__message" tabindex="-1" autofocus>
+      {{ 'templates.contact.form.error_heading' | t }}
+    </h3>
+    <ul> 
+      {%- for field in form.errors -%}
+      <li>
+        {%- if field == 'form' -%}
+        {{ form.errors.messages[field] }}
+        {%- else -%}
+        <a href="#RegisterForm-{{ field }}">
+          {{ form.errors.translated_fields[field] | capitalize }}
+          {{ form.errors.messages[field] }}
+        </a>
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+    {%- endif -%}
+    <div class="field">      
+      <label for="RegisterForm-FirstName">
+        Full name
+      </label>
+      <input
+             type="text"
+             name="customer[name]"
+             id="RegisterForm-FirstName"
+             {% if form.first_name %}value="{{ form.first_name }}"{% endif %}
+             autocomplete="given-name"
+             placeholder="First & last name"
+             >
+
+    </div>
+    <div class="field"> 
+      <label for="RegisterForm-email">
+        email
+      </label>
+      <input
+             type="email"
+             name="customer[email]"
+             id="RegisterForm-email"
+             {% if form.email %} value="{{ form.email }}"{% endif %}
+             spellcheck="false"
+             autocapitalize="off"
+             autocomplete="email"
+             aria-required="true"
+             {% if form.errors contains 'email' %}
+             aria-invalid="true"
+             aria-describedby="RegisterForm-email-error"
+             {% endif %}
+             placeholder="Email"
+             >
+
+    </div>
+    {%- if form.errors contains 'email' -%}
+    <span id="RegisterForm-email-error" class="form__message">
+      {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.
+    </span>
+    {%- endif -%}
+    <div class="field pwd-field rel">
+      <label for="RegisterForm-password">
+        Password
+      </label>
+      <input
+             class="pwd-input"
+             type="password"
+             name="customer[password]"
+             id="RegisterForm-password"
+             aria-required="true"
+             {% if form.errors contains 'password' %}
+             aria-invalid="true"
+             aria-describedby="RegisterForm-password-error"
+             {% endif %}
+             placeholder="password"
+             >
+      <div class="show-pwd">show</div>
+    </div>
+    {%- if form.errors contains 'password' -%}
+    <span id="RegisterForm-password-error" class="form__message">
+      {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}.
+    </span>
+    {%- endif -%}
+    <button>
+      CREATE ACCOUNT
+    </button>
+    {%- endform -%}
+    <a href="{{ routes.account_login_url }}">Log in</a>
+  </div>
+</div>
+
+<script>
+
+  $('.show-pwd').click(function(){
+    if('password' == $('.pwd-input').attr('type')){
+      $('.pwd-input').prop('type', 'text');
+      $(this).text('hide');
+    }else{
+      $('.pwd-input').prop('type', 'password');
+      $(this).text('show');
+    }
+  });
+
+</script>

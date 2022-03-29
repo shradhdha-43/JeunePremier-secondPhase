@@ -1,0 +1,167 @@
+{{ 'jp-image-with-text.css' | asset_url | stylesheet_tag }}
+{{ 'jp-blog.css' | asset_url | stylesheet_tag }}
+
+<div class="blogs-wrap{% if section.settings.marg_top == 'true' %} sec-marg-top{% endif %}">
+  <div class="container">
+    
+    <div class="blog-latest-article">
+      {% for article in blog.articles limit:1 %}
+      <div class="img-with-text-content flex-box align-center justify-between">
+      	<div class="img-w-txt-text-wrap">
+        <div class="img-w-txt-title title">{{ article.title }}</div>
+        
+        <div class="subtitle medium">{{ article.author }}</div>
+        
+        <div class="img-w-txt-desc light">{{ article.excerpt_or_content | strip_html | truncatewords: 30 }}</div>
+        
+        <a href="{{ article.url }}" class="read-more-btn medium">{{ 'blogs.article.keep_reading' | t }}</a>
+        
+      </div>
+      
+      <div class="img-w-txt-image-wrap">
+      	<img src="{{ article.image.src | img_url: "600x" }}">
+      </div>
+      </div>
+      {% endfor %}
+    </div>
+    
+    <div class="all-blogs">
+    <div class="blogs-title-wrap justify-between">
+      <div class="blogs-title title">{{ section.settings.title }}</div>
+      <div class="blogs-filter rel">
+      	<div class="blogs-filter-title-wrap justify-between" role="button">
+        	<div class="blogs-filter-title light">{{ 'blogs.article.filter' | t }}</div>
+          	<div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+        </div>
+        <div class="blog-filters light">
+          {% for tag in blog.tags %}
+          {% if tag contains "RelProd:" or tag contains "Upsell:" %}{% else %} <div class="blog-filter" data-tag="{{ tag }}"><div class="filter-tag-name">{{ tag }}</div><div class="filter-tag-close">{% include 'icon-close' %}</div></div>{% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="blogs flex-box">
+    	{% for article in blog.articles %}
+      <a href="{{ article.url }}" class="blog-card{% for tag in article.tags %}{% if tag contains "RelProd:" or tag contains "Upsell:" %}{% else %} {{ tag }}{% endif %}{% endfor %}">
+        <div class="blog-img"><img src="{{ article.image.src | image_url: height: 400 }}" loading="lazy"></div>
+        <div class="blog-title title">{{ article.title }}</div>
+        <div class="blog-author medium">{{ article.author }}</div>
+        <div class="article-excerpt light">{{ article.excerpt_or_content | strip_html | truncatewords: 20 }}</div>
+        <span class="article-link read-more-btn medium">{{ 'blogs.article.keep_reading' | t }}</span>
+      </a>
+    
+{% endfor %}
+    </div>
+      </div>
+  </div>
+</div>
+
+<script>
+  
+  $('.blogs-filter-title-wrap').click(function() {
+  	  $('.blog-filters').toggleClass('visible');
+  		
+  });
+  
+  $('.blog-filter').click(function() {
+    
+  	$('.blog-filters').removeClass('visible');
+    
+    if($(this).hasClass('selected-filter')){
+    	$(this).removeClass('selected-filter');
+      $('.blog-card').removeClass('no-disp');
+      $('.blog-card').removeClass('selected-blog');
+      $(".blog-card").hide();
+      $(".blog-card:lt(6)").show();
+      console.log('has');
+    }
+    else{
+      $('.blog-filter').removeClass('selected-filter');
+      $(this).addClass('selected-filter');
+      var selected_tag = $(this).data('tag');
+      $('.blog-card').addClass('no-disp');
+      console.log(selected_tag);
+      $('.blog-card').each(function() {
+        if($(this).hasClass(selected_tag)){
+          $(this).addClass('selected-blog');
+          $(this).removeClass('no-disp');
+        }
+      });
+      $(".blog-card").hide();
+      $(".blog-card.selected-blog:lt(6)").show();
+      console.log('dont');
+    } 
+    
+  });
+  
+  var total_visible = 6;
+  var vis = 6;
+  var scrollTimer = null;
+   $(".blog-card").hide();
+ $(".blog-card:lt("+ total_visible +")").show();
+  
+  $(window).on('scroll', function() {
+            var s_top = $(window).scrollTop();
+            var bottom = Math.round($('.blogs').offset().top + $('.blogs').outerHeight() - window.innerHeight + 25);
+            if (scrollTimer) {
+              clearTimeout(scrollTimer);   // clear any previous pending timer
+            }
+            if (s_top >= bottom) {
+              scrollTimer = setTimeout(load_m, 0);
+            }
+            
+            
+        });
+  
+  function load_m(){
+    scrollTimer = null;
+    total_visible = total_visible + 6;
+    if($('.blogs-filter-title-wrap').hasClass('filter-applied')){
+    	$(".blog-card.selected-blog:lt("+ total_visible +")").delay(100).show(0);
+    }
+    else{
+    	$(".blog-card:lt("+ total_visible +")").delay(0).show(0);
+    }
+  }
+  
+</script>
+
+{% schema %}
+  {
+    "name": "JP Blog",
+    "settings": [
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Heading"
+		},
+		{
+          "type": "select",
+          "id": "marg_top",
+          "label": "Margin Top",
+          "options": [
+            {
+              "value": "true",
+              "label": "True"
+            },
+            {
+              "value": "false",
+              "label": "False"
+            }
+          ],
+          "default": "true"
+        }
+	],
+	"presets":[
+      {
+         "name":"JP Blog"
+      }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

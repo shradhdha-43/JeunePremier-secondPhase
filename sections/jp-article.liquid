@@ -1,0 +1,101 @@
+{{ 'jp-article.css' | asset_url | stylesheet_tag }}
+
+<div class="article-wrap">
+  <div class="container rel">
+    <div class="article-main-img"><img src="{{ article.image.src | img_url: "1200x" }}"></div>
+    <a class="back-btn light" href="/blogs/stories"><span class="arrow-prev">{% include 'arrow-next' %}</span>{{ section.settings.back_txt }}</a>
+    <div class="article-content-wrap">
+      <h1 class="article-title title">{{ article.title }}</h1>
+      <div class="article-author medium">{{ article.author }}</div>
+      <div class="article-content">
+        {{ article.content }}
+      </div>
+      <div class="article-content-upsell">
+      	{% capture upsell1 %}
+        {% for tag in article.tags %}
+        {% if tag contains "Upsell:" %}
+        {% assign uptag = tag | replace: "Upsell:","" | strip%}
+        {% assign product = all_products[uptag] %}
+        <div class="upsell-product rel">
+          <div class="upsell-prod-img">
+          	<a href="{{ product.url }}">
+                <img src="{{ product.featured_image | img_url: "80x" }}" alt="{{ product.title }}">
+              </a>
+          </div>
+          <div class="upsell-prod-info">
+          	<a href="{{ product.url }}" class="title upsell-prod-title">
+                    {{ product.title | escape }}
+                  </a>
+            <div class="upsell-prod-variant light">{{ product.title }}</div>
+            <div class="upsell-prod-price light">{{ product.price | money_without_trailing_zeros }}</div>
+          </div>
+          <div class="upsell-add-to-cart">+</div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endcapture %}
+        {{ upsell1 }}
+      </div>
+      <div class="article-content-upsell-2">
+      	{% capture rel_prod %}
+        {% for tag in article.tags %}
+        {% if tag contains "RelProd:" %}
+        {% assign uptag = tag | replace: "RelProd:","" | strip%}
+        {% assign product = all_products[uptag] %}
+        <div class="upsell-product-2">
+          <div class="upsell-prod-imgs rel">
+          		{% for image in product.images limit: 2 %}
+            	
+            <div class="upsell2-prod-img{% if forloop.index == 2 %} upsell-prod-round-img{% endif %}">
+            	<img src="{% if forloop.index == 2 %}{{ image | img_url: "190x" }}{% else %}{{ image | img_url: "590x" }}{% endif %}" alt="{{ product.title }}">
+            </div>
+            {% endfor %} 
+          </div>
+          <a href="{{ product.url }}" class="upsell2-prod-btn title">
+          	{{ 'blogs.article.shop_btn' | t: title: product.title }}
+          </a>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endcapture %}
+        {{ rel_prod }}
+      </div>
+    </div>
+    <div class="article-content-height no-t-m"></div>
+    <div class="article-next-prev justify-between">
+      <a href="{{ blog.previous_article }}" class="light article-nav-link"><span class="arrow-prev">{% include 'arrow-next' %}</span>{{ 'general.pagination.previous' | t }}</a>
+      <a href="{{ blog.next_article }}" class="light article-nav-link">{{ 'general.pagination.next' | t }} <span class="arrow-next">{% include 'arrow-next' %}</span></a>
+    </div>
+  </div>
+</div>
+
+<script>
+	var ac_height = $(".article-content-wrap").height();
+  	ac_height = ac_height - 70;
+  	$('.article-content-height').height(ac_height);
+</script>
+
+{% schema %}
+  {
+    "name": "JP Article",
+    "settings": [
+		{
+			"type": "text",
+			"id": "back_txt",
+			"label": "Back button Text",
+			"default": "Zurück"
+		}
+	],
+	"presets":[
+      {
+         "name":"JP Article"
+      }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

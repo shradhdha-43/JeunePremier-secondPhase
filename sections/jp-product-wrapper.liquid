@@ -1,0 +1,617 @@
+{{ 'jp-product.css' | asset_url | stylesheet_tag }}
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign featured_image = current_variant.featured_image | default: product.featured_image %}
+
+{% comment %} Check keychain-letter-select snippet for documentation {% endcomment %}
+{% assign keychain_letter_type_name = 'Keychain letter' %}
+{% assign keychain_charm_type_name = 'Keychain charm' %}
+{% assign wrapping_paper_type_name = 'Wrapping paper' %}
+
+{% capture content %}{{ product.description }}{% endcapture %}
+{% assign section_split = content | split: '<h2>' %}
+
+{% assign video_split = content | split: '<h2>Video</h2>' %}
+{% assign video_split = video_split[1] %}
+
+{%- comment -%}
+  New split based on paragraphs with -split-item in it
+{%- endcomment -%}
+{% assign product_description = product.description | remove: ' data-mce-fragment="1"' %}
+{%- if product_description contains '<p>-split-item' -%}
+  {%- assign split_items_array = product_description | split: '<p>-split-item' -%}
+  {%- for split_item in split_items_array -%}
+    {%- if split_item contains '-content-</p>' -%}
+      {%- assign split_items_content = split_item | remove_first: '-content-</p>' -%}
+    {%- elsif split_item contains '-readmore-</p>' -%}
+      {%- assign split_items_content_readmore = split_item | remove_first: '-readmore-</p>' -%}
+    {%- elsif split_item contains '-reviewtitle-</p>' -%}
+      {%- assign split_items_content_review_title = split_item | remove_first: '-reviewtitle-</p>' -%}
+    {%- elsif split_item contains '-reviewbody-</p>' -%}
+      {%- assign split_items_content_review_body = split_item | remove_first: '-reviewbody-</p>' -%}
+    {%- elsif split_item contains '-reviewauthor-</p>' -%}
+      {%- assign split_items_content_review_author = split_item | remove_first: '-reviewauthor-</p>' -%}
+    {%- elsif split_item contains '-reviewdate-</p>' -%}
+      {%- assign split_items_content_review_date = split_item | remove_first: '-reviewdate-</p>' -%}
+    {%- elsif split_item contains '-reviewplace-</p>' -%}
+      {%- assign split_items_content_review_place = split_item | remove_first: '-reviewplace-</p>' -%}
+    {%- elsif split_item contains '-design-</p>' -%}
+      {%- assign split_items_design = split_item | remove_first: '-design-</p>' | strip_html -%}
+    {%- elsif split_item contains '-accordion-</p>' -%}
+      {%- assign split_items_accordion = split_item | remove_first: '-accordion-</p>' -%}
+      {%- assign split_items_accordion = split_items_accordion | prepend: '<p></p>' -%}
+      {%- comment -%}
+        Section_split is being used by accordions
+      {%- endcomment -%}
+      {% assign section_split = split_items_accordion | split: '<h2>' %}
+    {%- elsif split_item contains '-features-</p>' -%}
+      {%- assign split_items_features = split_item | remove_first: '-features-</p>' -%}
+    {%- else -%}
+      {%- assign split_items_subtitle = split_items_subtitle | append: split_item -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- assign add_to_cart_text = "Add to Cart" -%}
+{%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}
+  {%- assign add_to_cart_text = "Preorder" -%}
+{%- endif -%}
+
+{%- assign vat = 1.21 -%}
+    
+{%- assign product_price = product.price | times: vat -%}
+{%- assign product_compare_at_price = product.compare_at_price | times: vat -%}
+
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign current_variant_price = current_variant.price | times: vat -%}
+{%- assign current_variant_compare_at_price = current_variant.compare_at_price | times: vat -%}
+
+{%- assign product_type = product.type -%}
+{%- assign product_type_handle = product_type | handleize -%}
+{%- for col in product.collections -%}
+  {%- if col.title == product_type or col.handle contains product_type_handle -%}
+    {%- assign type_collection = col -%}
+    {% break %}
+{%- endif -%}
+{%- endfor -%}
+
+<style>
+  .slider-nav img, .slider-nav video {
+    object-fit: contain;
+  }
+</style>
+
+  <div class="product-wrapper">
+
+    <div class="product-single container" data-rv-handle="{{ product.handle }}">
+      <div class="product-row">
+        <div class="product-image" id="ProductPhoto">
+          <div class="no-d">
+            <a class="back-btn" href="/collections/all">{% render "svg-arrow" %} {{ 'products.product.back' | t }}</a>
+            <h1>{% if product.type %}{% if product.type == "Goedgemerkt" or product.type == "goedgemerkt" %}Persönliche Etiketten{% else %}{{ product.type }}{% endif %}{% else %}{{ product.title }}{% endif %}</h1>    
+
+            <div class="review-box">
+              {% assign no_of_rev = 0 %}
+              {% assign avg_rev = 0.0 %}
+              {%- for type_product in type_collection.products -%}
+
+              {% if type_product.metafields.stamped.reviews_count %}
+              {% assign no_of_rev = no_of_rev | plus: type_product.metafields.stamped.reviews_count %}
+              {% if avg_rev != 0 %}
+              {% assign avg_rev = avg_rev | plus: type_product.metafields.stamped.reviews_average | divided_by: 2.0 %}
+              {% else %}
+              {% assign avg_rev = type_product.metafields.stamped.reviews_average %}
+              {% endif %}
+              {% endif %}
+              {%- endfor -%}
+
+              {% assign avg_rev_loop = avg_rev | round %}
+              {%for i in (1..product.metafields.stamped.reviews_average) %}
+              {% include 'icon-black-star' %}
+              {% endfor %}
+              <a href="#to-reviews" class="no-of-ratings">
+                {% if product.metafields.stamped.reviews_count != blank %}{{ product.metafields.stamped.reviews_count }} {{ 'products.product.reviews' | t }}{% endif %}
+              </a>
+            </div>
+
+
+            <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
+              {{ current_variant_price | money_without_trailing_zeros }} <span class="price-incl">{{ 'products.product.include_taxes' | t }}</span>
+            </span>
+          </div>
+            <span class="product-wishlist"></span>
+          <div class="product-image-content">
+
+            <div class="no-t-m slider-nav {% if product.media.size < 6 %}no-transform{% endif %}">
+              {%- for media in product.media -%}       
+              {% case media.media_type %}
+              {% when 'image' %}
+                {%- assign alt_format = media.alt | strip | plus: 0 -%}
+                {% unless media.alt contains 'social_' %}
+                {%- if alt_format == 0 -%}              
+                  <div class="product-single__thumbnail">
+                    <img  src="{{ media | img_url: '200x' }}"
+                                  srcset="{{ media | img_url: '200x' }} 1x,{{ media | img_url: '400x' }} 2x"
+                                  alt="{{ media.alt | escape }}">
+                  </div>
+                {%- endif -%}
+                {% endunless %}
+              {% when 'external_video' %}
+                <div class="product-single__thumbnail product-single__thumbnail-video-external">
+                  {{ media | external_video_url: controls: "0" | external_video_tag }}
+                </div>
+              {% when 'video' %}
+                <div class="product-single__thumbnail product-single__thumbnail-video">
+                  {{ media | video_tag: mute: true, image_size: '400x' }}
+                  <div class="play-button">
+                    <div class="triangle-right"></div>
+                  </div>
+                </div>
+              {% endcase %}
+              {%- endfor -%}
+            </div>
+            <div class="slider-for no-t-m">
+              {% for media in product.media %}
+              {% case media.media_type %}
+              {% when 'image' %}
+              {%- assign alt_format = media.alt | strip | plus: 0 -%}
+              {% unless media.alt contains 'social_' %}
+              {%- if alt_format == 0 -%}
+              <div class="slider__slide">
+                  <img src="{{ media | img_url: '600x' }}"
+                       srcset="{{ media | img_url: '350x' }} 350w,
+                                    {{ media | img_url: '600x' }} 600w"
+                       sizes="(max-width: 400px) 350px, 100vw"
+                       {% unless forloop.first %}loading="lazy"{% endunless %}
+                       alt="{{ media.alt | escape }}"/>
+              </div>
+              {%- endif -%}
+              {% endunless %}
+
+              {% when 'external_video' %}
+              <div class="slider__slide">
+                {{ media | external_video_url: controls: "0", playsinline: "0", rel: "0" | external_video_tag }}
+              </div>
+              {% when 'video' %}
+              <div class="slider__slide">
+                <div class="slider__item slider__item--video">
+                  {{ media| video_tag: controls: false, mute: true, loop: true, autoplay: true, image_size: '1024x1024' }}
+                </div>
+              </div>
+              {% endcase %}
+              {% endfor %}
+            </div>
+            <div class="slider-for-2 no-d">
+              {% for media in product.media %}
+              {% case media.media_type %}
+              {% when 'image' %}
+              {%- assign alt_format = media.alt | strip | plus: 0 -%}
+              {% unless media.alt contains 'social_' %}
+              {%- if alt_format == 0 -%}
+              <div class="slider__slide">
+                  <img src="{{ media | img_url: '600x' }}"
+                       srcset="{{ media | img_url: '350x' }} 350w,
+                                    {{ media | img_url: '600x' }} 600w"
+                       sizes="(max-width: 400px) 350px, 100vw"
+                       {% unless forloop.first %}loading="lazy"{% endunless %}
+                       alt="{{ media.alt | escape }}"/>
+              </div>
+              {%- endif -%}
+              {% endunless %}
+
+              {% when 'external_video' %}
+              <div class="slider__slide">
+                {{ media | external_video_url: controls: "0", playsinline: "0", rel: "0" | external_video_tag }}
+              </div>
+              {% when 'video' %}
+              <div class="slider__slide">
+                <div class="slider__item slider__item--video">
+                  {{ media| video_tag: controls: false, mute: true, loop: true, autoplay: true, image_size: '1024x1024' }}
+                </div>
+              </div>
+              {% endcase %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <div class="product-data">
+          <div class="product-single__content-wrap">
+            <div class="product-single__content--mobile product-single__content product">
+              <div class="final--order">
+                
+                <div class="no-t-m">
+                <a class="back-btn" href="/collections/all">{% render "svg-arrow" %} {{ 'products.product.back_short' | t }}</a>
+                <h1>{% if product.type %}{% if product.type == "Goedgemerkt" or product.type == "goedgemerkt" %}Persönliche Etiketten{% else %}{{ product.type }}{% endif %}{% else %}{{ product.title }}{% endif %}</h1>    
+                
+				<div class="review-box">
+                    {% assign no_of_rev = 0 %}
+                    {% assign avg_rev = 0.0 %}
+                    {%- for type_product in type_collection.products -%}
+
+                        {% if type_product.metafields.stamped.reviews_count %}
+                            {% assign no_of_rev = no_of_rev | plus: type_product.metafields.stamped.reviews_count %}
+                            {% if avg_rev != 0 %}
+                                {% assign avg_rev = avg_rev | plus: type_product.metafields.stamped.reviews_average | divided_by: 2.0 %}
+                            {% else %}
+                                {% assign avg_rev = type_product.metafields.stamped.reviews_average %}
+                            {% endif %}
+                          {% endif %}
+                    {%- endfor -%}
+
+                    {% assign avg_rev_loop = avg_rev | round %}
+                    {%for i in (1..product.metafields.stamped.reviews_average) %}
+                    {% include 'icon-black-star' %}
+                    {% endfor %}
+                    <a href="#to-reviews" class="no-of-ratings">
+                      {% if product.metafields.stamped.reviews_count != blank %}{{ product.metafields.stamped.reviews_count }} {{ 'products.product.reviews' | t }}{% endif %}
+                    </a>
+                </div>
+                
+
+                <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
+                  {{ current_variant_price | money_without_trailing_zeros }} <span class="price-incl">{{ 'products.product.include_taxes' | t }}</span>
+                </span>
+                </div>
+                
+                
+                {% if product.type == wrapping_paper_type_name %}
+
+                      {% assign namelabel = collections["name-labels"] %}
+                      {% assign namelabelmonte = collections["name-labels-monte-carlo"] %}
+                      {% assign namelabelunicorn = collections["name-labels-unicorn-universe"] %}
+                      {% assign namelabelmiss = collections["name-labels-miss-daisy"] %}
+                      {% assign wrappers = collections["umschlagpapier"] %}
+
+                {% endif %}
+                
+                <div class="keychains-wrapper">
+                  
+                  <div class="keychain-charm">  
+                    {% assign first_of_type = true %}
+                    <div class="product-single__design">
+                      {% if product.tags contains "unicornuniverse" %}
+                      {% for productx in namelabelunicorn.products %}
+                      {% if first_of_type %}{{ productx.title }}{% break %}{% endif %}
+                      {% if product.handle == productx.handle %}{{ productx.title }}{% break %}{% endif %}
+                      {% endfor %}
+                      <script>
+                        $( document ).ready(function() {
+                          $('.keychain-charm-select').slick('slickFilter','.charm-gold');
+                        });
+                      </script>
+                      {% elsif product.tags contains "montecarlo" %}
+                      {% for productx in namelabelmonte.products %}
+                      {% if first_of_type %}{{ productx.title }}{% break %}{% endif %}
+                      {% if product.handle == productx.handle %}{{ productx.title }}{% break %}{% endif %}
+                      {% endfor %}
+                      <script>
+                        $( document ).ready(function() {
+                          $('.keychain-charm-select').slick('slickFilter','.charm-black');
+                        });
+                      </script>
+                      {% else %}
+                      {% for productx in namelabelmiss.products %}
+                      {% if first_of_type %}{{ productx.title }}{% break %}{% endif %}
+                      {% if product.handle == productx.handle %}{{ productx.title }}{% break %}{% endif %}
+                      {% endfor %}
+                      <script>
+                        $( document ).ready(function() {
+                          $('.keychain-charm-select').slick('slickFilter','.charm-rose');
+                        });
+                      </script>
+                      {% endif %}
+                    </div>
+                    <div class="keychain-charm-select">
+                      {% for productx in namelabelunicorn.products %}   
+                      {% assign last_items = false %}
+                      {% if productx.variants.first.inventory_management == "shopify" %}
+                      {% if productx.variants.first.inventory_quantity <= 10 and productx.variants.first.inventory_quantity > 0 %}
+                      {% assign last_items = true %}
+                      {% endif %}
+                      {% endif %}                    
+                      <div class="charm-gold {% if product.handle == productx.handle %}active{% elsif first_of_type and forloop.first and product.tags contains "unicornuniverse" %}active{% endif %}" data-url="{{productx.url}}" data-name="{{productx.title}}" data-images="{% for media in productx.media %}{% case media.media_type %}{% when 'image' %}{{ media | img_url: '600x' }}{% endcase %}{% unless forloop.last %},{% endunless %}{% endfor %}" data-variant="{{productx.selected_or_first_available_variant.id}}" data-price="{{ productx.selected_or_first_available_variant.price | times: vat }}" data-availabe="{% if last_items %}last{% else %}yes{% endif %}">
+                        <img src="{{ productx.featured_image | img_url: "50x50" }}" alt="{{ productx.title }}" height="48" width="48">
+                      </div>
+                      {% endfor %}
+                      {% for productx in namelabelmonte.products %}     
+                      {% assign last_items = false %}
+                      {% if productx.variants.first.inventory_management == "shopify" %}
+                      {% if productx.variants.first.inventory_quantity <= 10 and productx.variants.first.inventory_quantity > 0 %}
+                      {% assign last_items = true %}
+                      {% endif %}
+                      {% endif %}                  
+                      <div class="charm-black {% if product.handle == productx.handle %}active{% elsif first_of_type and forloop.first and product.tags contains "montecarlo" %}active{% endif %}" data-url="{{productx.url}}" data-name="{{productx.title}}" data-images="{% for media in productx.media %}{% case media.media_type %}{% when 'image' %}{{ media | img_url: '600x' }}{% endcase %}{% unless forloop.last %},{% endunless %}{% endfor %}" data-variant="{{productx.selected_or_first_available_variant.id}}" data-price="{{ productx.selected_or_first_available_variant.price | times: vat }}" data-availabe="{% if last_items %}last{% else %}yes{% endif %}">
+                        <img src="{{ productx.featured_image | img_url: "50x50" }}" alt="{{ productx.title }}" height="48" width="48">
+                      </div>
+                      {% endfor %}
+                      {% for productx in namelabelmiss.products %}      
+                      {% assign last_items = false %}
+                      {% if productx.variants.first.inventory_management == "shopify" %}
+                      {% if productx.variants.first.inventory_quantity <= 10 and productx.variants.first.inventory_quantity > 0 %}
+                      {% assign last_items = true %}
+                      {% endif %}
+                      {% endif %}                 
+                      <div class="charm-rose {% if product.handle == productx.handle %}active{% elsif first_of_type and forloop.first and product.tags contains "missdaisy" %}active{% endif %}" data-url="{{productx.url}}" data-name="{{productx.title}}" data-images="{% for media in productx.media %}{% case media.media_type %}{% when 'image' %}{{ media | img_url: '600x' }}{% endcase %}{% unless forloop.last %},{% endunless %}{% endfor %}" data-variant="{{productx.selected_or_first_available_variant.id}}" data-price="{{ productx.selected_or_first_available_variant.price | times: vat }}" data-availabe="{% if last_items %}last{% else %}yes{% endif %}">
+                        <img src="{{ productx.featured_image | img_url: "50x50" }}" alt="{{ productx.title }}" height="48" width="48">
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                  
+                  <div class="keychain-letter">  
+                    {% assign first_of_type_letter = false %}
+                    <div class="product-single__design">{{ product.title }}
+                    </div>
+                    <div class="keychain-letter-select">      
+                      {% assign last_items = false %}
+                      {% if product.variants.first.inventory_management == "shopify" %}
+                      {% if product.variants.first.inventory_quantity <= 10 and product.variants.first.inventory_quantity > 0 %}
+                      {% assign last_items = true %}
+                      {% endif %}
+                      {% endif %}              
+                      <div class="letter-gold {% if product.handle == product.handle %}active{% elsif first_of_type_letter and forloop.first and product.tags contains "Gold" %}active{% endif %}" data-url="{{product.url}}" data-name="{{product.title}}" data-images="{% for media in product.media %}{% case media.media_type %}{% when 'image' %}{{ media | img_url: '600x' }}{% endcase %}{% unless forloop.last %},{% endunless %}{% endfor %}" data-variant="{{product.selected_or_first_available_variant.id}}" data-price="{{ product.selected_or_first_available_variant.price | times: vat }}" data-availabe="{% if last_items %}last{% else %}yes{% endif %}">
+                        <img src="{{ product.featured_image | img_url: "50x50" }}" alt="{{ product.title }}" height="48" width="48">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+
+                <script>
+                  $( document ).ready(function() {
+                    function resetImages() {
+                      $('.slider-nav .slick-slide').each(function(index){
+                        $('.slider-nav').slick('slickRemove',0);
+                      });
+
+                      $('.slider-for .slick-slide').each(function(index){
+                        $('.slider-for').slick('slickRemove',0);
+                      });
+
+                      $('.slider-for-2 .slick-slide').each(function(index){
+                        $('.slider-for-2').slick('slickRemove',0);
+                      });
+                      var $imagesCharm = $('.keychain-charm .active').first().data('images').split(",");
+                      var i;
+                      for (i = 0; i < $imagesCharm.length; ++i) {
+                        $('.slider-nav').slick('slickAdd',`<div class="product-single__thumbnail"><img  src="`+$imagesCharm[i]+`"></div>`);
+                        $('.slider-for').slick('slickAdd',`<div class="slider__slide"><img  src="`+$imagesCharm[i]+`"></div>`);
+                        $('.slider-for-2').slick('slickAdd',`<div class="slider__slide"><img  src="`+$imagesCharm[i]+`"></div>`);
+                      }
+                      var $imagesLetter = $('.keychain-letter .active').first().data('images').split(",");                    
+                      for (i = 0; i < $imagesLetter.length; ++i) {
+                        $('.slider-nav').slick('slickAdd',`<div class="product-single__thumbnail"><img src="`+$imagesLetter[i]+`"></div>`);
+                        $('.slider-for').slick('slickAdd',`<div class="slider__slide"><img src="`+$imagesLetter[i]+`"></div>`);
+                        $('.slider-for-2').slick('slickAdd',`<div class="slider__slide"><img src="`+$imagesLetter[i]+`"></div>`);
+                      }
+                      
+                      var $priceCharm = $('.keychain-charm .active').first().data('price');
+                      var $priceLetter = $('.keychain-letter .active').first().data('price');
+                      $('#ProductPrice').html(`€`+(($priceCharm+$priceLetter)/100).toFixed(2).replace(/\.0+$/,'').replace('.',',')+` <span class="price-incl">{{ 'products.product.include_taxes' | t }}</span>`)
+                      
+                      
+                      var $titleCharm = $('.keychain-charm .active').first().data('name');
+                      var $titleLetter = $('.keychain-letter .active').first().data('name');
+                      $('.keychain-charm .product-single__design').text($titleCharm);
+                      $('.keychain-letter .product-single__design').text($titleLetter);
+                      
+                      if($('.keychain-charm .active').first().data('availabe') == "last" || $('.keychain-letter .active').first().data('availabe') == "last") {
+                        $('.product-single__label--last-items').removeClass('no-disp');
+                      } else {
+                        $('.product-single__label--last-items').addClass('no-disp');
+                      }
+                      
+                    $('.keychains-wrapper .slick-slide:not(.active.added)').click(function(){
+                      if(!$(this).hasClass('active')) {
+                        $(this).parent().find('.active').removeClass('active');
+                        $(this).addClass('active');
+                        resetImages();
+                        $(this).addClass('added');       
+                      }
+                    });
+                    }
+                    resetImages();
+                    
+                    
+                    
+                    
+                    $('.color-gold').click(function(){
+                      $('.keychain-charm-select').slick('slickUnfilter').slick('slickFilter','.charm-gold');
+                      $('.keychain-letter-select').slick('slickUnfilter').slick('slickFilter','.letter-gold');
+                      $('.keychain-charm-select .charm-gold').removeClass('active').first().addClass('active');
+                      $('.keychain-letter-select .letter-gold').removeClass('active').first().addClass('active');
+                      $('.keychain-color-select .active').removeClass('active');
+                      $(this).addClass('active');                      
+                      var $titleColor = $(this).data('name');
+                      $('.keychain-color .product-single__design').text($titleColor);
+                      resetImages();
+                    });
+                    $('.color-rose').click(function(){
+                      $('.keychain-charm-select').slick('slickUnfilter').slick('slickFilter','.charm-rose');
+                      $('.keychain-letter-select').slick('slickUnfilter').slick('slickFilter','.letter-rose');
+                      $('.keychain-charm-select .charm-rose').removeClass('active').first().addClass('active');
+                      $('.keychain-letter-select .letter-rose').removeClass('active').first().addClass('active');
+                      $('.keychain-color-select .active').removeClass('active');
+                      $(this).addClass('active');
+                      var $titleColor = $(this).data('name');
+                      $('.keychain-color .product-single__design').text($titleColor);
+                      resetImages();
+                    });
+                    $('.color-black').click(function(){
+                      $('.keychain-charm-select').slick('slickUnfilter').slick('slickFilter','.charm-black');
+                      $('.keychain-letter-select').slick('slickUnfilter').slick('slickFilter','.letter-black');
+                      $('.keychain-charm-select .charm-black').removeClass('active').first().addClass('active');
+                      $('.keychain-letter-select .letter-black').removeClass('active').first().addClass('active');
+                      $('.keychain-color-select .active').removeClass('active');
+                      $(this).addClass('active');
+                      var $titleColor = $(this).data('name');
+                      $('.keychain-color .product-single__design').text($titleColor);
+                      resetImages();
+                    });
+                  });
+                  
+                  
+                </script>
+                {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}
+                  <div class="jumbotron mb20">
+                    {{ 'products.product.preorder_info_html' | t }}
+                  </div>
+                {%- endif -%}
+                {% if product.metafields.my_fields.product_text_line != blank %}<div class="info-line">{{ product.metafields.my_fields.product_text_line }}</div>{% endif %}
+                {%- assign add_to_cart_text = 'products.product.add_to_cart' | t -%}
+                {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}
+                {%- assign add_to_cart_text = 'products.product.preorder' | t -%}
+                {%- endif -%}
+                <button class="add-to-cart btn add-this-multi {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%}>{{add_to_cart_text}}</button>
+                {% if current_variant_price > 14900 %}
+                <span class="free-shipping">{{ 'products.product.free_shipping' | t }} <img src="//cdn.shopify.com/s/files/1/0334/1100/6595/files/Check_gold_2x_999c4ca6-c15a-478a-8f63-31f5d4d14ccc_22x.png?v=1644228290" alt="tick" width="22" height="16">{% comment %}{% if section.settings.tick %}<img src="{{ section.settings.tick | img_url: "22x" }}" alt="tick" width="22" height="16">{% endif %}{% endcomment %}</span>
+                {% endif %}
+                
+                
+
+                  {% if product.variants.first.inventory_management == "shopify" %}
+                      {% if product.variants.first.inventory_quantity <= 0 %}
+                        <script>
+                          $('.add-to-cart').addClass('out-of-stock');
+                          $('.add-to-cart').text('{{ 'products.product.sold_out' | t }}');
+                		</script>
+                      {% endif %}
+                  {% endif %}
+
+                  {% assign last_items = false %}
+                  {% if product.first_available_variant.inventory_quantity <= 10 %}
+                    {% assign last_items = true %}
+                  {% endif %}
+
+                    <p class="product-single__label product-single__label--last-items {% unless last_items %}no-disp{% endunless %}">
+                        <span>
+                        {{ 'products.product.last_item' | t }}
+                        </span>
+                      </p>
+                
+                {% for productTag in product.tags %}
+                {% if productTag contains 'back-in-stock-' %}
+                <div class="back-in-stock-info">
+                  {{ 'products.product.back_in_stock_in' | t }}
+                  {% assign split = productTag | split: 'back-in-stock-' %}
+                  {% assign month = split[1] %}
+                  {% case month %}
+                  {% when 'january' %}
+                  {{ 'products.product.months.january' | t }}
+                  {% when 'february' %}
+                  {{ 'products.product.months.february' | t }}
+                  {% when 'march' %}
+                  {{ 'products.product.months.march' | t }}
+                  {% when 'april' %}
+                  {{ 'products.product.months.april' | t }}
+                  {% when 'may' %}
+                  {{ 'products.product.months.may' | t }}
+                  {% when 'june' %}
+                  {{ 'products.product.months.june' | t }}
+                  {% when 'july' %}
+                  {{ 'products.product.months.july' | t }}
+                  {% when 'august' %}
+                  {{ 'products.product.months.august' | t }}
+                  {% when 'september' %}
+                  {{ 'products.product.months.september' | t }}
+                  {% when 'october' %}
+                  {{ 'products.product.months.october' | t }}
+                  {% when 'november' %}
+                  {{ 'products.product.months.november' | t }}
+                  {% when 'december' %}
+                  {{ 'products.product.months.december' | t }}
+                  {% else %}
+
+                  {% endcase %}
+                </div>
+                {% endif %}
+                {% endfor %}
+                
+                <div class="product-services">
+                  <div class="product-service">
+                    <div class="product-icon">
+
+                      <img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/Balloon_2x_5b85fbf2-2e74-4f2e-93e5-fd3e457d7a84.png?v=1646067947">
+
+                    </div>
+                    <div class="product-service-text">
+                      {{ 'products.product.service_text.first_html' | t }}
+                    </div>
+                  </div>
+                  <div class="product-service">
+                    <div class="product-icon">
+
+                      <img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/Returns2_2x_c5c95c08-9a64-4165-b72b-efe804a88a15.png?v=1646068021">
+
+                    </div>
+                    <div class="product-service-text">
+                      {{ 'products.product.service_text.second_html' | t }}
+                    </div>
+                  </div>
+                  <div class="product-service">
+                    <div class="product-icon">
+
+                      <img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/shipping_rocket_2x_9bb866c5-482e-4bb4-b4c5-193ba5af5733.png?v=1646068125">
+
+                    </div>
+                    <div class="product-service-text">
+                      {{ 'products.product.service_text.third_html' | t }}
+                      <span class="product-service-image">
+                        <img src="//cdn.shopify.com/s/files/1/0334/1100/6595/files/Image_1_2x_547d5440-281c-4b80-a282-29345fd89818_54x.png?v=1644309668" alt="courier">
+                      </span></div>
+                  </div>
+                  <div class="product-service">
+                    <div class="product-icon">
+
+                      <img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/Returns2_2x_94194c04-a351-4a1e-b63e-106e6605c184.png?v=1646068203">
+
+                    </div>
+                    <div class="product-service-text">
+                      {{ 'products.product.service_text.fourth_html' | t }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {% if shipping_from_belgium %}
+                <div id="shipping-from-belgium-info">
+                  {{ 'products.product.shipping_from' | t }}
+                </div>
+              {% endif %}
+
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+<script>
+$(document).ready(function(){
+  
+});
+</script>
+
+{% schema %}
+  {
+    "name": "JP Product keychain",
+    "settings": [    
+	  {
+         "type":"image_picker",
+         "id":"tick",
+         "label":"Tick Image"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

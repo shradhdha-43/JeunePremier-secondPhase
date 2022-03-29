@@ -1,0 +1,680 @@
+{{ 'jp-cart.css' | asset_url | stylesheet_tag }}
+{% assign upsell = "added" %}
+{% for upsellx in section.settings.upsell.products  %}
+	{% assign found = "no" %}
+  {% for item in cart.items %}
+	{% if upsellx.available %}
+    {% if upsellx.id == item.product.id %}
+    	{% assign found = "yes" %}
+    {% endif %}
+	{% endif %}
+  {% endfor %}
+{% if upsellx.available %}
+	{% if found == "no" %}
+	{% assign upsell = "nadded" %}
+	{% endif %}
+{% endif %}
+{% endfor %}
+
+{%- assign vat = 1.21 -%}
+{% assign keyChainLetter = 0 %}
+{% assign keyChainCharm = 0 %}
+
+{% if section.settings.free_product.id %}
+  {% assign free_added = false %}
+  <script>console.log("free added: "+{{ free_added }});</script>
+  {% assign free_product_id = section.settings.free_product.id %}
+  <script>console.log("free product: "+{{ section.settings.free_product.id }});</script>
+  {% for item in cart.items %}
+    <script>console.log("cart product: "+{{ item.product.id }});</script>
+    {% if item.product.id == free_product_id %}
+      {% assign free_added = true %}
+      <script>console.log("same product found");</script>
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<script>
+  function addFreeProduct() {
+  	  var formData;
+      formData = {
+          'items': [{
+            'id': parseInt("{{ section.settings.free_product.variants.first.id }}"),
+            'quantity': 1
+          }]
+        };
+      $.ajax({
+        url: "/cart/add.js",
+        method: "POST",
+        dataType: "json",
+        data: formData,
+      })
+      .done(function( data ) {
+        $('.cart-items-total').text(data.item_count);
+        $.ajax({
+          url: '/?sections=jp-cart',
+          method: "GET",
+          dataType: "json"
+        })
+        .done(function( data ) {
+          {% include "cart-done" %}
+        })
+        .fail(function(error) {
+          console.log( error );
+        });
+      })
+      .fail(function(error) {
+        console.log( error );
+      });
+  }
+  
+  $(document).ready(function() {
+
+	{% if section.settings.free_product.id and free_added == false %}
+    addFreeProduct();
+    {% endif %}  
+  });
+  
+</script>
+
+<div class="background-drawer-cart"></div>
+<div class="drawer-cart">
+  <div class="drawer-cart-header">
+    <span class="close-cart light">{% include 'svg-arrow' %} {{ 'general.cart.back' | t }}</span>
+    <h2 class="cart-headign">{{ 'general.cart.cart_title' | t }}</h2>
+  </div>
+  {% if cart.item_count == 0 %}
+  <div class="drawer-cart-main-sec">
+    <div class="cart-body c-empty">
+      <div class="cart-empty">{{ section.settings.fill_text }} <a href="/collections/all">{{ section.settings.cart_text }}</a></div>  
+      {% if additional_checkout_buttons %}
+      <div class="additional-checkout-buttons no-disp">
+        {{ content_for_additional_checkout_buttons }}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% else %}
+  <div class="drawer-cart-main-sec">
+    <div class="cart-body {% if upsell == "added" %}upsell-added{% endif %}">
+      <div class="product-wrapper-container">
+      {% for item in cart.items %}
+      {% assign featured_image = item.variant.image.src | default: item.product.featured_image %}
+      
+	  {% if item.product.type == "Keychain letter" or item.product.type == "keychain letter" %}
+        {% assign keyChainLetter = keyChainLetter | plus: item.quantity %}
+      {% elsif item.product.type == "Keychain charm" or item.product.type == "keychain charm" %}
+        {% assign keyChainCharm = keyChainCharm | plus: item.quantity %}
+      {% endif %}
+      
+      <div class="cart-product-wrapper">
+        <div class="cart-product-image">
+          <a href="{{ item.url }}"><img src="{{ featured_image | product_img_url: '590x' }}"></a>
+        </div>
+        <div class="cart-product-infos justify-between">
+          <div class="cart-product-info flex-box justify-between">
+            <div class="title-wrapper">
+              <a href="{{ item.url }}" class="product-name">{{ item.product.title | split: " " | first }}</a>            
+              <div class="product-color">{% unless item.variant.title contains "Default Title" %}{{ item.variant.title }}{% else %}{% assign half_name = item.product.title | split: " " | first %}{{ item.product.title | remove: half_name }}{% endunless %}</div>
+              {% unless item.properties == empty %}
+              <div class="cart-properties">
+                {% for property in item.properties %}
+                {% unless property.first == '_sku' %}
+                <span>{{ property.first }}: {{ property.last }}</span>
+                {% endunless %}
+                {% endfor %}
+              </div>
+              {% endunless %}
+            </div>
+            {% if item.product.id != free_product_id %}
+            <div class="cart-product-qty" data-quantity="1">
+              <div class="qty-manipulation-symbol minus-symbol cart-minus" data-variant="{{ item.variant.id }}" data-value="{{item.quantity}}">-</div>
+              <div class="cart-qty" value="{{item.quantity}}">{{item.quantity}}</div>
+              <div class="qty-manipulation-symbol plus-symbol cart-plus" data-variant="{{ item.variant.id }}" data-value="{{item.quantity}}">+</div>
+            </div>
+            {% endif %}
+          </div>
+          <div class="cart-product-qty-del justify-between">
+            {% if item.product.id != free_product_id %}
+            <div class="delete-cart-product" data-variant="{{ forloop.index }}">
+              <div class="delete-text">{{ section.settings.delete_text }}</div>
+            </div>
+            {% endif %}
+            <div class="product-price">{% if item.variant.compare_at_price > item.variant.price %}<span class="product-discount-price">{{- item.variant.compare_at_price | times: vat | money_without_trailing_zeros | replace: " ","" -}}</span>{% endif %}<span class="product-selling-price">{{ item.final_price | times: vat | money_without_trailing_zeros }}</span></div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      </div>
+      <div class="drawer-cart-checkout">
+        <div class="checkout-subtotal justify-between">
+          <div class="checkout-title">{{ section.settings.subtotal_text }}</div>
+          <div class="subtotal">{{ cart.total_price | times: vat | money_without_trailing_zeros }} incl. VAT</div>
+        </div>
+        <div class="checkout-shipping justify-between">
+          <div class="shipping-title">{{ section.settings.shipping_text }}</div>
+          <div class="shipping-price">{{ section.settings.calc_text }}</div>
+        </div>
+        {% if keyChainLetter != keyChainCharm %}
+        <div class="keychain-error-note">
+          <p>You have to buy the same amount of <a href="/collections/keychain-charms">keychain charms </a> as <a href="/collections/keychain-letters">keychain letters</a>.</p>
+        </div>
+        {% endif %}
+        <a 
+           {% if free_product_id %}
+             {% if cart.item_count > 1 and keyChainLetter == keyChainCharm %}href="/checkout"{% endif %}
+           {% else %}
+             {% if keyChainLetter == keyChainCharm %}href="/checkout"{% endif %}
+           {% endif %} 
+           class="checkout-btn 
+           {% if free_product_id %}
+		   	 {% if cart.item_count <= 1 or keyChainLetter != keyChainCharm %}checkout-disabled {% endif %}
+           {% else %}
+             {% if keyChainLetter != keyChainCharm %}checkout-disabled {% endif %}
+		   {% endif %}">{{ section.settings.checkout_text }}</a>
+        
+        <span class="cont-shopping">{{ section.settings.continue_text }}</span>
+        {%- unless shop.enabled_payment_types == empty -%}
+        <div class="pay-wrapper">
+          {%- for type in shop.enabled_payment_types -%}
+          {% unless type == "klarna-slice-it" or type == "google_pay" or type == "paypal" or type == "shopify_pay" %}
+            {{ type | payment_type_svg_tag: class: 'pay-icon' }}
+          {% endunless %}
+          {%- endfor -%}
+          
+        </div>
+        {%- endunless -%}
+      </div>
+
+      {% if additional_checkout_buttons %}
+      <div class="additional-checkout-buttons">
+        {{ content_for_additional_checkout_buttons }}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="drawer-cart-footer">
+    {% unless upsell == "added" %}
+    <div class="drawer-cart-upsell">
+      <div class="upsell-title">{{ section.settings.people_text }}</div>  
+      <div class="upsell-inner-carousel">
+        {% for upsellx in section.settings.upsell.products %}
+        {% if upsellx.available %}
+        {% assign featured_image = upsellx.featured_image %}
+        
+        {% assign foundx = "no" %}
+        {% for item in cart.items %}
+        {% if upsellx.id == item.product.id %}
+        {% assign foundx = "yes" %}
+        {% endif %}
+        {% endfor %}
+        
+        {% if foundx == "no" %}
+        
+        <div class="upsell-product-wrap">
+          <a href="{{ upsellx.url }}" class="upsell-product-image">
+            <img src="{{ featured_image | product_img_url: '100x' }}">
+          </a>
+          <div class="upsell-product-infos rel">
+            <div class="upsell-product-title-price">
+              <a href="{{ upsellx.url }}" class="product-name">{{ upsellx.title | split: " " | first }}</a>
+              <div class="product-color">{% assign half_name = upsellx.title | split: " " | first %}{{ upsellx.title | remove: half_name }}</div>
+              <div class="product-price upsell-price">{% if upsellx.compare_at_price > upsellx.price %}<span class="product-compare-price upsell-compare-price">{{ upsellx.compare_at_price | times: vat | money_without_trailing_zeros }}</span>{% endif %}<span class="product-selling-price">{{ upsellx.price | times: vat | money_without_trailing_zeros }}</span></div>
+            </div>
+
+            <div class="add-upsell-prod" data-variant="{{ upsellx.variants.first.id }}"><span class="icon-plus">{% include 'icon-plus-new' %}</span></div>
+          </div>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endunless %}
+  </div>
+  {% endif %}
+</div>
+<div class="remove-scripts">
+<script>
+  {% if cart.item_count == 0 %}
+  $('#draw_cart').addClass('empty-c');
+  {% else %}
+  $('#draw_cart').removeClass('empty-c');
+  {% endif %}
+  $('.cart-items-total').text('{{ cart.item_count }}');
+  
+  $(document).ready(function() {
+                              
+    $('.delete-cart-product').click(function() {
+      $('.drawer-cart').addClass('drawn');
+      $('.background-drawer-cart').addClass('drawn');
+      $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
+      var formData = {
+        'line': parseInt($(this).data('variant')),
+        'quantity': 0
+      };
+      $.ajax({
+        url: "/cart/change.js",
+        method: "POST",
+        dataType: "json",
+        data: formData,
+      })
+      .done(function( data ) {  
+        $('.cart-items-total').text(data.item_count);   
+        $.ajax({
+          url: '/?sections=jp-cart',
+          method: "GET",
+          dataType: "json"
+        })
+        .done(function( data ) {
+          {% include "cart-done" %}
+        })
+        .fail(function(error) {
+          console.log( error );
+          $('.load-container').remove();
+        });
+      })
+      .fail(function(error) {
+        console.log( error );
+          $('.load-container').remove();
+      });
+    });
+
+    $('.cart-minus').click(function() {
+      $('.drawer-cart').addClass('drawn');
+      $('.background-drawer-cart').addClass('drawn');
+      $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
+      var formData = {
+        'line': parseInt($(this).closest('.cart-product-wrapper').find('.delete-cart-product').data('variant')),
+        'quantity': $(this).data('value')-1
+      };
+      $.ajax({
+        url: "/cart/change.js",
+        method: "POST",
+        dataType: "json",
+        data: formData,
+      })
+      .done(function( data ) {
+        $('.cart-items-total').text(data.item_count);  
+        $.ajax({
+          url: '/?sections=jp-cart',
+          method: "GET",
+          dataType: "json"
+        })
+        .done(function( data ) {
+          {% include "cart-done" %}
+        })
+        .fail(function(error) {
+          console.log( error );
+          $('.load-container').remove();
+        });
+      })
+      .fail(function(error) {
+        console.log( error );
+          $('.load-container').remove();
+      });
+    });
+
+    $('.cart-plus').click(function() {
+      $('.drawer-cart').addClass('drawn');
+      $('.background-drawer-cart').addClass('drawn');
+      $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
+      var formData = {
+        'line': parseInt($(this).closest('.cart-product-wrapper').find('.delete-cart-product').data('variant')),
+        'quantity': $(this).data('value')+1
+      };
+      $.ajax({
+        url: "/cart/change.js",
+        method: "POST",
+        dataType: "json",
+        data: formData,
+      })
+      .done(function( data ) {
+        $('.cart-items-total').text(data.item_count);   
+        $.ajax({
+          url: '/?sections=jp-cart',
+          method: "GET",
+          dataType: "json"
+        })
+        .done(function( data ) {
+          {% include "cart-done" %}
+        })
+        .fail(function(error) {
+          console.log( error );
+          $('.load-container').remove();
+        });
+      })
+      .fail(function(error) {
+        console.log( error );
+          $('.load-container').remove();
+      });
+    });
+    
+    if(!$('.upsell-inner-carousel').hasClass('slick-initialized')) {
+      $('.upsell-inner-carousel').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true
+      });
+    }
+  });
+      $('.add-upsell-prod:not(.added)').click(function() {
+      $('.drawer-cart').addClass('drawn');
+      $('.background-drawer-cart').addClass('drawn');
+      $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
+      var formData;
+        formData = {
+          'items': [{
+            'id': parseInt($(this).data('variant')),
+            'quantity': 1
+          }]
+        };
+      $.ajax({
+        url: "/cart/add.js",
+        method: "POST",
+        dataType: "json",
+        data: formData,
+      })
+      .done(function( data ) {         
+        $.ajax({
+          url: '/?sections=jp-cart',
+          method: "GET",
+          dataType: "json"
+        })
+        .done(function( data ) {
+          {% include "cart-done" %}
+        })
+        .fail(function(error) {
+          console.log( error );
+          $('.load-container').remove();
+        });
+      })
+      .fail(function(error) {
+        console.log( error );
+        $('.load-container').remove();
+      });
+    });
+    $('.add-upsell-prod').addClass('added');
+</script>
+</div>
+
+<script>
+ 
+
+
+  $(document).ready(function() {
+
+    var getUrlParameter = function getUrlParameter(sParam) {
+      var sPageURL = window.location.search.substring(1),
+          sURLVariables = sPageURL.split('&'),
+          sParameterName,
+          i;
+
+      for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+          return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+      }
+    };
+
+    var opencart = getUrlParameter('cartopen');
+
+    if(opencart == 'true') {        
+      $(".drawer-cart").addClass("drawn");
+      $(".background-drawer-cart").addClass("drawn");
+      $('body').addClass('no-scroll');
+    }
+
+    $('.coll-add-to-cart-btn:not(.added)').click(function() {
+      $('.drawer-cart').addClass('drawn');
+      $('.background-drawer-cart').addClass('drawn');
+      $('body').addClass('no-scroll');
+      hideChatBtn();
+      $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
+      var formData;
+        formData = {
+          'items': [{
+            'id': parseInt($(this).data('variant')),
+            'quantity': 1
+          }]
+        };
+      $.ajax({
+        url: "/cart/add.js",
+        method: "POST",
+        dataType: "json",
+        data: formData,
+      })
+      .done(function( data ) {         
+        $.ajax({
+          url: '/?sections=jp-cart',
+          method: "GET",
+          dataType: "json"
+        })
+        .done(function( data ) {
+          {% include "cart-done" %}
+        })
+        .fail(function(error) {
+          console.log( error );
+          $('.load-container').remove();
+        });
+      })
+      .fail(function(error) {
+        console.log( error );
+        $('.load-container').remove();
+      });
+    });
+    $('.coll-add-to-cart-btn').addClass('added');
+
+    $('.add-this:not(.added)').click(function() {
+      if($(this).hasClass('out-of-stock') || $(this).hasClass('stop-prop')) {
+        return 0;
+      }
+      $('.drawer-cart').addClass('drawn');
+      $('.background-drawer-cart').addClass('drawn');
+      $('body').addClass('no-scroll');
+      hideChatBtn();
+      $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
+      var formData;
+      if($(this).hasClass('label-type')){
+        if($(this).hasClass('stop-prop')) {
+          return 0;
+        }
+        if($(this).hasClass('preorder')) {
+          formData = {
+            'items': [{
+              'id': parseInt($(this).data('variant')),
+              'quantity': 1,
+              'properties': {
+                'Nachname': $('.label-input.label-last').val(),
+                'Vorname': $('.label-input.label-first').val(),
+                '_sku': '{{ product.selected_or_first_available_variant.sku }}',
+                '{{ 'products.product.preorder_property_label' | t }}': $(this).data('preorder')
+              }
+            }]
+          };
+        } else {
+          formData = {
+            'items': [{
+              'id': parseInt($(this).data('variant')),
+              'quantity': 1,
+              'properties': {
+                'Nachname': $('.label-input.label-last').val(),
+                'Vorname': $('.label-input.label-first').val(),
+                '_sku': '{{ product.selected_or_first_available_variant.sku }}'
+              }
+            }]
+          };
+        }
+      } else {
+        if($(this).hasClass('preorder')) {
+          formData = {
+            'items': [{
+              'id': parseInt($(this).data('variant')),
+              'quantity': 1,
+              'properties': {
+                '{{ 'products.product.preorder_property_label' | t }}': $(this).data('preorder')
+              }
+            }]
+          };
+        } else {
+          formData = {
+            'items': [{
+              'id': parseInt($(this).data('variant')),
+              'quantity': 1
+            }]
+          };
+        }
+      }
+      $.ajax({
+        url: "/cart/add.js",
+        method: "POST",
+        dataType: "json",
+        data: formData,
+      })
+      .done(function( data ) {     
+        $.ajax({
+          url: '/?sections=jp-cart',
+          method: "GET",
+          dataType: "json"
+        })
+        .done(function( data ) {
+          {% include "cart-done" %}
+        })
+        .fail(function(error) {
+          console.log( error );
+          $('.load-container').remove();
+        });
+      })
+      .fail(function(error) {
+        console.log( error );
+          $('.load-container').remove();
+      });
+    });
+    $('.add-this').addClass('added');
+
+    $('.add-this-multi:not(.added)').click(function() {
+      $('.drawer-cart').addClass('drawn');
+      $('.background-drawer-cart').addClass('drawn');
+      $('body').addClass('no-scroll');
+      hideChatBtn();
+      $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
+      var formData = {
+        'items': [{
+          'id': parseInt($('.keychain-charm .active').data('variant')),
+          'quantity': 1
+        },{
+          'id': parseInt($('.keychain-letter .active').data('variant')),
+          'quantity': 1
+        }]
+      };
+      $.ajax({
+        url: "/cart/add.js",
+        method: "POST",
+        dataType: "json",
+        data: formData,
+      })
+      .done(function( data ) {     
+        $.ajax({
+          url: '/?sections=jp-cart',
+          method: "GET",
+          dataType: "json"
+        })
+        .done(function( data ) {
+          {% include "cart-done" %}
+        })
+        .fail(function(error) {
+          console.log( error );
+          $('.load-container').remove();
+        });
+      })
+      .fail(function(error) {
+        console.log( error );
+          $('.load-container').remove();
+      });
+    });
+    $('.add-this-multi').addClass('added');
+   
+  });
+</script>
+
+{% schema %}
+{
+"name": "Ajax Cart",
+"class": "cart-remover",
+"settings": [
+{
+"id": "free_product",
+"type": "product",
+"label": "Free Product"
+},
+{
+"id": "upsell",
+"type": "collection",
+"label": "Upsell Product"
+},
+{
+"type": "text",
+"id": "fill_text",
+"label": "Fill text",
+"default": "Fill up your"
+},
+{
+"type": "text",
+"id": "cart_text",
+"label": "Cart text",
+"default": "cart"
+},
+{
+"type": "text",
+"id": "delete_text",
+"label": "Delete text",
+"default": "delete"
+},
+{
+"type": "text",
+"id": "people_text",
+"label": "People text",
+"default": "DAS KÖNNTE DIR AUCH GEFALLEN"
+},
+{
+"type": "text",
+"id": "subtotal_text",
+"label": "Subtotal text",
+"default": "Zwischensumme"
+},
+{
+"type": "text",
+"id": "shipping_text",
+"label": "Shipping text",
+"default": "Versand"
+},
+{
+"type": "text",
+"id": "calc_text",
+"label": "Calc text",
+"default": "Berechnet in nächster Sta"
+},
+{
+"type": "text",
+"id": "checkout_text",
+"label": "Checkout text",
+"default": "ZUR KASSE"
+},
+{
+"type": "text",
+"id": "continue_text",
+"label": "Continue text",
+"default": "Wir akzeptieren"
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

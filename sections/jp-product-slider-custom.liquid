@@ -1,0 +1,319 @@
+{{ 'jp-main-collection.css' | asset_url | stylesheet_tag }}
+{{ 'jp-product-slider.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .jp-product-slider-2 .product-images-block img {
+    height: 300px;
+  }
+  .slider-block-custom .jp-prouduct-slider-wrap .slick-list {
+    min-height: 400px;
+  }
+  .slider-block-custom .product-images-block img {
+  	object-fit: cover;
+  }
+  @media(max-width: 992px) {
+    .slider-block-custom .jp-prouduct-slider-wrap .slick-list {
+      min-height: 400px;
+      padding-right: 0 !important;
+    }
+  }
+</style>
+
+<div class="jp-prouduct-slider-wrap{% if section.settings.bg_color == 'light' %} light-bg{% endif %} ">
+  <div class="container rel">
+    <div class="product-slider-first justify-center no-d">
+        <div class="product-slider-title title">{{ section.settings.title }}</div>
+        <div class="product-slider-desc light">{{ section.settings.desc }}</div>
+      {% if section.settings.btn_txt != '' %}
+        <a href="{{ section.settings.btn_url }}" class="btn title product-slider-btn no-t-m">{{ section.settings.btn_txt }}</a>
+      {% endif %}
+      </div>
+    <div class="jp-product-slider-2 no-d">
+      {% for block in section.blocks %}
+      {% assign product = block.settings.product %}
+      	<div class="product-card">
+        	<div class="product-images-block rel">
+            <a href="{{ product.url }}">
+              
+              {% assign collection_is_bestellers = false %}
+              {% assign is_bestseller = false %}
+              {% assign last_items = false %}
+              {% if product.first_available_variant.inventory_quantity <= 10 and product.first_available_variant.inventory_policy != "continue" %}
+                {% assign last_items = true %}
+              {% endif %}
+              {% if product.tags contains 'bestseller' %}
+                {% assign is_bestseller = true %}
+              {% endif %}
+              {% if collection.handle == 'bestseller' or collection.handle == 'bestsellers'  %}
+                {% assign collection_is_bestellers = true %}
+              {% endif %}
+              
+              {% if last_items and collection.handle != 'last-items' and collection.handle != 'letzte-artikel' %}
+                  <div class="prod-tag product-tag-last medium">{{ 'products.product.last_item' | t }}</div>
+              {% elsif is_bestseller %}
+                  {% unless collection_is_bestellers %}
+                    <div class="prod-tag medium">{{ 'products.product.bestseller' | t }}</div>
+                  {% endunless %}
+              {% endif %} 
+              {% unless collection.handle == 'neu' %}
+                {% for collectionx in product.collections %}{% if collectionx.handle contains "neu" %}
+                <div class="prod-neu-tag medium">{{ 'products.product.new' | t }}</div>{% break %}
+                {% endif %}{% endfor %}    
+              {% endunless %}
+              
+              
+              
+              {% if block.settings.image1 != blank and block.settings.image2 != blank %}
+                <img src="{{ block.settings.image1 | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+                <img class="no-t-m" src="{{ block.settings.image2 | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+              {% else %}
+                {% for image in product.images limit: 2 %}              
+                {% if forloop.first and forloop.last %}
+                <img src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+                {% endif %}
+                <img class="{% if forloop.last %}no-t-m{% endif %}" src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+                {% endfor %}  
+              {% endif %}
+            </a>
+              {% assign noAddToCartFromCollection = false %}
+              {% if product.type == 'Ludilabel' or product.type == 'Goedgemerkt' or product.type == 'Keychain letter' or product.type == 'Keychain charm' %}
+                {% assign noAddToCartFromCollection = true %}
+              {% endif %}
+              {% unless product.selected_or_first_available_variant.available %}
+                {% assign noAddToCartFromCollection = true %}
+              {% endunless %}
+              {%- unless noAddToCartFromCollection -%}
+              <div class="coll-add-to-cart-btn" data-variant="{{ product.first_available_variant.id }}">+</div>
+              {%- endunless -%}
+          </div>
+          <div class="product-details">
+            <div class="product-name-price-col justify-between">
+            	<div class="product-title medium">
+                  {% assign remove_word = product.title | truncatewords: 1, "" %}
+                  
+                  <a href="{{ product.url }}">
+                  {% if product.type == "Goedgemerkt" or product.type == "goedgemerkt" %}Persönliche Etiketten{% else %}{{ product.type }}{% endif %}
+                  </a>
+                </div>
+              	<div class="product-pirce medium">                  
+                  <a href="{{ product.url }}">
+                    {{ product.price | times: 1.21 | money_without_trailing_zeros | strip_html }}
+                  </a>
+              </div>
+             
+            </div>
+            <div class="product-price-col">
+               <div class="product-sub-title light">
+                 <a href="{{ product.url }}">
+                   {{ product.metafields.descriptors.subtitle }}
+                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="no-t-m jp-prod-slider-wrapper">
+      <div class="product-slider-first justify-center">
+        <div class="product-slider-title title">{{ section.settings.title }}</div>
+        <div class="product-slider-desc light">{{ section.settings.desc }}</div>
+        {% if section.settings.btn_txt != '' %}
+        <a href="{{ section.settings.btn_url }}" class="btn title product-slider-btn">{{ section.settings.btn_txt }}</a>
+        {% endif %}
+      </div>
+      <div class="abs no-t-m jp-product-slider-wrapper">
+    <div class="jp-product-slider-2">
+      
+      {% for block in section.blocks %}
+      {% assign product = block.settings.product %}
+      	<div class="product-card">
+        	<div class="product-images-block rel">
+            <a href="{{ product.url }}">
+              
+              {% assign collection_is_bestellers = false %}
+              {% assign is_bestseller = false %}
+              {% assign last_items = false %}
+              {% if product.first_available_variant.inventory_quantity <= 10 and product.first_available_variant.inventory_policy != "continue" %}
+                {% assign last_items = true %}
+              {% endif %}
+              {% if product.tags contains 'bestseller' %}
+                {% assign is_bestseller = true %}
+              {% endif %}
+              {% if collection.handle == 'bestseller' or collection.handle == 'bestsellers'  %}
+                {% assign collection_is_bestellers = true %}
+              {% endif %}
+              
+              {% if last_items and collection.handle != 'last-items' and collection.handle != 'letzte-artikel' %}
+                  <div class="prod-tag product-tag-last medium">{{ 'products.product.last_item' | t }}</div>
+              {% elsif is_bestseller %}
+                  {% unless collection_is_bestellers %}
+                    <div class="prod-tag medium">{{ 'products.product.bestseller' | t }}</div>
+                  {% endunless %}
+              {% endif %} 
+              {% unless collection.handle == 'neu' %}
+                {% for collectionx in product.collections %}{% if collectionx.handle contains "neu" %}
+                <div class="prod-neu-tag medium">{{ 'products.product.new' | t }}</div>{% break %}
+                {% endif %}{% endfor %}    
+              {% endunless %}
+              
+              {% if block.settings.image1 != blank and block.settings.image2 != blank %}
+                <img src="{{ block.settings.image1 | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+                <img class="no-t-m" src="{{ block.settings.image2 | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+              {% else %}
+                {% for image in product.images limit: 2 %}
+                {% if forloop.first and forloop.last %}
+                <img src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+                {% endif %}
+                <img class="{% if forloop.last %}no-t-m{% endif %}" src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+                {% endfor %} 
+              {% endif %}
+            </a>
+              {% assign noAddToCartFromCollection = false %}
+              {% if product.type == 'Ludilabel' or product.type == 'Goedgemerkt' or product.type == 'Keychain letter' or product.type == 'Keychain charm' %}
+                {% assign noAddToCartFromCollection = true %}
+              {% endif %}
+              {% unless product.selected_or_first_available_variant.available %}
+                {% assign noAddToCartFromCollection = true %}
+              {% endunless %}
+              {%- unless noAddToCartFromCollection -%}
+              <div class="coll-add-to-cart-btn" data-variant="{{ product.first_available_variant.id }}">+</div>
+              {%- endunless -%}
+          </div>
+          <div class="product-details">
+            <div class="product-name-price-col justify-between">
+            	<div class="product-title medium">
+                  {% assign remove_word = product.title | truncatewords: 1, "" %}                  
+                  <a href="{{ product.url }}">
+                    {% if product.type == "Goedgemerkt" or product.type == "goedgemerkt" %}Persönliche Etiketten{% else %}{{ product.type }}{% endif %}
+                  </a>
+                </div>
+              	<div class="product-pirce medium">                  
+                  <a href="{{ product.url }}">
+                    {{ product.price | times: 1.21 | money_without_trailing_zeros | strip_html }}
+                  </a>
+              </div>
+             
+            </div>
+            <div class="product-price-col">
+               <div class="product-sub-title light">                 
+                 <a href="{{ product.url }}">
+                   {{ product.metafields.descriptors.subtitle }}
+                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+      </div>
+    </div>
+    
+      {% if section.settings.btn_txt != '' %}
+        <a href="{{ section.settings.btn_url }}" class="btn title product-slider-btn no-d">{{ section.settings.btn_txt }}</a>
+      {% endif %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "JP Product Slider Custom",
+	"class": "slider-block-custom",
+    "settings": [
+		{
+          "type": "select",
+          "id": "bg_color",
+          "label": "Background Color",
+          "options": [
+            {
+              "value": "white",
+              "label": "White"
+            },
+            {
+              "value": "light",
+              "label": "Light"
+            }
+          ],
+          "default": "white"
+        },
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		},
+		{
+			"type": "text",
+			"id": "desc",
+			"label": "Description"
+		},
+		{
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+		{
+			"type": "text",
+			"id": "btn_txt",
+			"label": "Button Text"
+		},
+		{
+			"type": "url",
+			"id": "btn_url",
+			"label": "Button URL"
+		},
+		{
+          "type": "select",
+          "id": "upsell_type",
+          "label": "Upsell Type",
+          "options": [
+            {
+              "value": "bag",
+              "label": "Bags"
+            },
+            {
+              "value": "accessories",
+              "label": "Accessories"
+            },
+            {
+              "value": "paper",
+              "label": "Paper"
+            }
+          ],
+          "default": "bag"
+        }
+	],
+	"blocks": [
+		{
+			"type": "product",
+			"name": "Product",
+			"settings": [
+				{
+                    "type": "product",
+                    "id": "product",
+                    "label": "Select Product"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image1",
+                    "label": "Custom Image 1"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image2",
+                    "label": "Custom Image 2"
+                }
+			]
+		}
+	],
+	"presets":[
+      {
+         "name":"JP Product Slider Custom"
+      }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

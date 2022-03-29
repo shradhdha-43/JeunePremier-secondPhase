@@ -1,0 +1,130 @@
+.bestsellers-title {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 22px;
+}
+
+.bestsellers-wrap .product-card {
+    width: auto;
+/*     margin: 0 10px; */
+}
+.bestsellers-wrap .slick-track {
+  display: flex !important;
+}
+.bestsellers-wrap .slick-slide {
+  height: inherit !important;
+}
+.bestsellers-wrap .slick-slide>div {
+  height: 100%;
+}
+.bestsellers-wrap .product-card {
+  height: 100%;
+  margin-bottom: 0;
+}
+
+.bestsellers-wrap .slick-slide {
+    margin: 0 8px;
+}
+
+.bestsellers-wrap .slick-dots{
+	bottom: 19px
+}
+
+.bestsellers-wrap .slick-dots li button:before {
+    background-color: var(--dd-color-sixth);
+    border: 1px solid;
+}
+
+.bestsellers-wrap .slick-dots li.slick-active button:before {
+    background-color: var(--dd-color-first);
+  border: none;
+}
+
+.bestsellers-wrap .slick-next, .bestsellers-wrap .slick-prev {
+    bottom: -9px;
+}
+
+.bestseller-products.slick-slider.slick-dotted {
+    margin-bottom: 40px;
+}
+
+.bestsellers-wrap .slick-list{
+	min-height: 489px;
+}
+
+.btn {
+    font-family: Hero;
+    font-size: 20px;
+    margin-top: 16px!important;
+    background-color: var(--dd-color-first);
+    border: 0;
+    color: var(--dd-color-sixth);
+    padding: 15px 32px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: .4s ease;
+    line-height: 24px;
+    text-align: center;
+}
+
+.btn.bestsellers-btn {
+    display: block;
+    text-align: center;
+    max-width: 388px;
+    margin: 0 auto;
+}
+
+.btn:hover {
+    background-color: var(--dd-color-second);
+    color: var(--dd-color-first);
+}
+
+.bestsellers-wrap {
+    margin-bottom: 120px;
+}
+
+.space-above{
+	padding-top: 80px;
+}
+
+@media(max-width:992px){
+	.bestsellers-wrap .product-card {
+    width: auto;
+/*     margin: 0 5px; */
+}
+  
+  .bestsellers-wrap .slick-slide {
+    margin: 0 5px;
+}
+  
+  .bestsellers-wrap .product-images-block img {
+    height: 380px;
+}
+  
+  .bestsellers-wrap .slick-list {
+    min-height: 500px;
+    padding-right: 20%;
+}
+  
+  .bestsellers-wrap .slick-dots {
+    bottom: -4px;
+}
+  
+  .bestseller-products.slick-slider.slick-dotted {
+    margin-bottom: 48px;
+}
+  
+  .btn.bestsellers-btn {
+    max-width: unset;
+}
+  
+  .bestsellers-wrap {
+    margin-bottom: 80px;
+}
+  
+  .space-above{
+	padding-top: 40px;
+}
+}

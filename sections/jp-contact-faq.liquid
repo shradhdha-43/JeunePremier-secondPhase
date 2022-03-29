@@ -1,0 +1,347 @@
+{{ 'jp-faq.css' | asset_url | stylesheet_tag }}
+{{ 'jp-contact-faq.css' | asset_url | stylesheet_tag }}
+
+<div class="faq-page-wrapper">
+  <div class="container">
+    <div class="faq-page-content flex-box justify-between">
+      <div class="faq-left no-t-m">
+        <div class="faq-left-title-wrap">
+        <div class="faq-left-title medium">{{ 'sections.contact.topic' | t }}</div>
+        </div>
+        <div class="faq-types">
+      	{% for block in section.blocks %}
+        {% if block.type == 'faq_left_heading' %}
+        <a href="#{{ block.settings.faq_left_id }}" class="faq-left-link justify-between">
+          <span class="faq-link-text medium">{{ block.settings.faq_left_heading }}</span>
+          <span class="right-chev"></span>
+        </a>
+        {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+      <div class="faq-left no-d">
+        <div class="faq-left-title-wrap justify-between" role="button">
+        	<div class="faq-left-title medium">{{ 'sections.contact.topic' | t }}</div>
+          	<div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+        </div>
+        <div class="faq-types title-panel">
+      	{% for block in section.blocks %}
+        {% if block.type == 'faq_left_heading' %}
+        <a href="#{{ block.settings.faq_left_id }}" class="faq-left-link justify-between">
+          <span class="faq-link-text medium">{{ block.settings.faq_left_heading }}</span>
+          <span class="right-chev"></span>
+        </a>
+        {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+      <div class="faq-right">
+        {% for block in section.blocks %}
+        {% if block.type == 'faq' %}
+        		<div class="faq-right-title title" id="{{ block.settings.faq_id }}">{{ block.settings.faq_right_heading }}</div>
+        		<div class="faq-wrap">
+                  {% if block.settings.question != "" %}
+                    <div class="faq-qa-wrap">
+                      <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+                        <div class="faq-question medium">{{ block.settings.question }}</div>
+                        <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+                      </div>
+                      <div class="faq-answer panel light">
+                        {{ block.settings.answer }}
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.question2 != "" %}
+                    <div class="faq-qa-wrap">
+                      <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+                        <div class="faq-question medium">{{ block.settings.question2 }}</div>
+                        <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+                      </div>
+                      <div class="faq-answer panel light">
+                        {{ block.settings.answer2 }}
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.question3 != "" %}
+                    <div class="faq-qa-wrap">
+                      <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+                        <div class="faq-question medium">{{ block.settings.question3 }}</div>
+                        <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+                      </div>
+                      <div class="faq-answer panel light">
+                        {{ block.settings.answer3 }}
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.question4 != "" %}
+                    <div class="faq-qa-wrap">
+                      <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+                        <div class="faq-question medium">{{ block.settings.question4 }}</div>
+                        <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+                      </div>
+                      <div class="faq-answer panel light">
+                        {{ block.settings.answer4 }}
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.question5 != "" %}
+                    <div class="faq-qa-wrap">
+                      <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+                        <div class="faq-question medium">{{ block.settings.question5 }}</div>
+                        <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+                      </div>
+                      <div class="faq-answer panel light">
+                        {{ block.settings.answer5 }}
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.question6 != "" %}
+                    <div class="faq-qa-wrap">
+                      <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+                        <div class="faq-question medium">{{ block.settings.question6 }}</div>
+                        <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+                      </div>
+                      <div class="faq-answer panel light">
+                        {{ block.settings.answer6 }}
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.question7 != "" %}
+                    <div class="faq-qa-wrap">
+                      <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+                        <div class="faq-question medium">{{ block.settings.question7 }}</div>
+                        <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+                      </div>
+                      <div class="faq-answer panel light">
+                        {{ block.settings.answer7 }}
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.question8 != "" %}
+                    <div class="faq-qa-wrap">
+                      <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+                        <div class="faq-question medium">{{ block.settings.question8 }}</div>
+                        <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+                      </div>
+                      <div class="faq-answer panel light">
+                        {{ block.settings.answer8 }}
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.question9 != "" %}
+                    <div class="faq-qa-wrap">
+                      <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+                        <div class="faq-question medium">{{ block.settings.question9 }}</div>
+                        <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+                      </div>
+                      <div class="faq-answer panel light">
+                        {{ block.settings.answer9 }}
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.question10 != "" %}
+                    <div class="faq-qa-wrap">
+                      <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+                        <div class="faq-question medium">{{ block.settings.question10 }}</div>
+                        <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+                      </div>
+                      <div class="faq-answer panel light">
+                        {{ block.settings.answer10 }}
+                      </div>
+                    </div>
+                  {% endif %}
+                  </div>
+        {% endif %}
+        {% endfor %}
+      	
+        
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  
+  $(document).ready(function() {
+  $('.title-panel').hide()
+  $(".faq-left.no-d").find("div[role|='button']").click(function() {
+    $(".faq-left.no-d").find("div[role|='button']").removeClass('active');
+    $('.title-panel').slideUp();
+    var selected = $(this).next('.title-panel');
+    if (selected.is(":hidden")) {
+      $(this).next('.title-panel').slideDown();
+      $(this).toggleClass('active');
+    }
+  });
+});
+
+$(document).ready(function() {
+  $('.panel').hide()
+  $(".faq-wrap").find("div[role|='button']").click(function() {
+    $(".faq-wrap").find("div[role|='button']").removeClass('active');
+    $(this).closest('.faq-wrap').find('.panel').slideUp();
+    var selected = $(this).next('.panel');
+    if (selected.is(":hidden")) {
+      $(this).next('.panel').slideDown();
+      $(this).toggleClass('active');
+    }
+  });
+});
+  
+</script>
+
+
+{% schema %}
+  {
+    "name": "JP Contact FAQ",
+    "settings": [
+		
+	],
+	"blocks": [
+		{
+			"type": "faq_left_heading",
+			"name": "FAQ Left Heading",
+			"settings": [
+				{
+					"type": "text",
+					"id": "faq_left_heading",
+					"label": "FAQ Left Heading"
+				},
+				{
+					"type": "number",
+					"id": "faq_left_id",
+					"label": "FAQ ID"
+				}
+			]
+		},
+		{
+			"type": "faq",
+			"name": "FAQ QA",
+			"settings": [
+				{
+					"type": "number",
+					"id": "faq_id",
+					"label": "FAQ Parent ID"
+				},
+				{
+					"type": "text",
+					"id": "faq_right_heading",
+					"label": "FAQ Right Heading"
+				},
+				{
+					"type": "text",
+					"id": "question",
+					"label": "Question"
+				},
+				{
+					"type": "html",
+					"id": "answer",
+					"label": "Answer"
+				},
+				{
+					"type": "text",
+					"id": "question2",
+					"label": "Question 2"
+				},
+				{
+					"type": "html",
+					"id": "answer2",
+					"label": "Answer 2"
+				},
+				{
+					"type": "text",
+					"id": "question3",
+					"label": "Question 3"
+				},
+				{
+					"type": "html",
+					"id": "answer3",
+					"label": "Answer 3"
+				},
+				{
+					"type": "text",
+					"id": "question4",
+					"label": "Question 4"
+				},
+				{
+					"type": "html",
+					"id": "answer4",
+					"label": "Answer 4"
+				},
+				{
+					"type": "text",
+					"id": "question5",
+					"label": "Question 5"
+				},
+				{
+					"type": "html",
+					"id": "answer5",
+					"label": "Answer 5"
+				},
+				{
+					"type": "text",
+					"id": "question6",
+					"label": "Question 6"
+				},
+				{
+					"type": "html",
+					"id": "answer6",
+					"label": "Answer 6"
+				},
+				{
+					"type": "text",
+					"id": "question7",
+					"label": "Question 7"
+				},
+				{
+					"type": "html",
+					"id": "answer7",
+					"label": "Answer 7"
+				},
+				{
+					"type": "text",
+					"id": "question8",
+					"label": "Question 8"
+				},
+				{
+					"type": "html",
+					"id": "answer8",
+					"label": "Answer 8"
+				},
+				{
+					"type": "text",
+					"id": "question9",
+					"label": "Question 9"
+				},
+				{
+					"type": "html",
+					"id": "answer9",
+					"label": "Answer 9"
+				},
+				{
+					"type": "text",
+					"id": "question10",
+					"label": "Question 10"
+				},
+				{
+					"type": "html",
+					"id": "answer10",
+					"label": "Answer 10"
+				}
+			]
+		}
+	],
+	"presets":[
+      {
+         "name":"JP Contact FAQ"
+      }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
