@@ -84,7 +84,7 @@
 
           <div class="no-d">
             <a class="back-btn" href="/collections/all">{% render "svg-arrow" %} {{ 'products.product.back' | t }}</a>
-            <h1>{% if product.type %}{% if product.type == "Goedgemerkt" or product.type == "goedgemerkt" %}Persönliche Etiketten{% else %}{{ product.type }}{% endif %}{% else %}{{ product.title }}{% endif %}</h1>    
+            <h1>{{ product.title | split: " - " | first }}</h1>    
 
             <div class="review-box">
               {% assign no_of_rev = 0 %}
@@ -227,7 +227,7 @@
               <div class="final--order">
                 <div class="no-t-m">
                 <a class="back-btn" href="/collections/all">{% render "svg-arrow" %} {{ 'products.product.back_short' | t }}</a>
-                <h1>{% if product.type %}{% if product.type == "Goedgemerkt" or product.type == "goedgemerkt" %}Persönliche Etiketten{% else %}{{ product.type }}{% endif %}{% else %}{{ product.title }}{% endif %}</h1>    
+                <h1>{{ product.title | split: " - " | first }}</h1>    
                 
 				<div class="review-box">
                     {% assign no_of_rev = 0 %}
@@ -267,7 +267,8 @@
                 {%- if split_items_design -%}
                   <div class="product-single__design">
                     <a href="#products-related-by-design">
-                      {{ split_items_design | remove: 'Design:' }}
+                      {{ product.title | split: " - " | last }}
+                      {% comment %}{{ split_items_design | remove: 'Design:' }}{% endcomment %}
                     </a>
                   </div>
                 {%- endif -%}
