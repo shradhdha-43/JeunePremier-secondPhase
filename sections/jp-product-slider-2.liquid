@@ -98,7 +98,7 @@
                   {% assign remove_word = product.title | truncatewords: 1, "" %}
                   
                   <a href="{{ product.url }}">
-                  {% if product.type == "Goedgemerkt" or product.type == "goedgemerkt" %}Persönliche Etiketten{% else %}{{ product.type }}{% endif %}
+                  {{ product.title | split: " - " | first }}
                   </a>
                 </div>
               	<div class="product-pirce medium">                  
@@ -111,7 +111,7 @@
             <div class="product-price-col">
                <div class="product-sub-title light">
                  <a href="{{ product.url }}">
-                   {{ product.metafields.descriptors.subtitle }}
+                   {{ product.title | split: " - " | last }}
                  </a>
               </div>
             </div>
@@ -188,7 +188,7 @@
             	<div class="product-title medium">
                   {% assign remove_word = product.title | truncatewords: 1, "" %}                  
                   <a href="{{ product.url }}">
-                    {% if product.type == "Goedgemerkt" or product.type == "goedgemerkt" %}Persönliche Etiketten{% else %}{{ product.type }}{% endif %}
+                    {{ product.title | split: " - " | first }}
                   </a>
                 </div>
               	<div class="product-pirce medium">                  
@@ -201,7 +201,7 @@
             <div class="product-price-col">
                <div class="product-sub-title light">                 
                  <a href="{{ product.url }}">
-                   {{ product.metafields.descriptors.subtitle }}
+                   {{ product.title | split: " - " | last }}
                  </a>
               </div>
             </div>
