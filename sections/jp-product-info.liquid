@@ -60,7 +60,7 @@
     <div class="img-with-text-content flex-box align-center justify-between">
 
       <div class="img-w-txt-text-wrap">
-        <div class="img-w-txt-title title no-t-m">{{ 'products.product.meet' | t }} {% if product.type %}{{ product.type }}{% else %}{{ product.title }}{% endif %}</div>
+        <div class="img-w-txt-title title no-t-m">{{ 'products.product.meet' | t }} {{ product.title | split: " - " | first }}</div>
 
         <div class="img-w-txt-desc light">
           {%- if split_items_subtitle -%}
