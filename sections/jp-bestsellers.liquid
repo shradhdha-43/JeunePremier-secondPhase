@@ -76,7 +76,7 @@
             	<div class="product-title medium">
                   <a href="{{ product.url }}">
                   {% assign remove_word = product.title | truncatewords: 1, "" %}
-                  {{ product.type }}
+                  {{ product.title | split: " - " | first }}
                   </a>
                 </div>
               	<div class="product-pirce medium">
@@ -86,7 +86,7 @@
             </div>
             <div class="product-price-col">
                <div class="product-sub-title light">
-                 <a href="{{ product.url }}">{{ product.metafields.descriptors.subtitle }}</a>
+                 <a href="{{ product.url }}">{{ product.title | split: " - " | last }}</a>
               </div>
             </div>
           </div>
