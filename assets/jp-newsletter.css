@@ -56,6 +56,19 @@
   color: var(--dd-color-first);
 }
 
+.policies-text {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 24px 0 0;
+}
+.policies-text a {
+  text-decoration: underline;
+  font-weight: 400;
+}
+
 @media(max-width: 992px){
   .newsletter-form-wrap{
   	width: 100%;
