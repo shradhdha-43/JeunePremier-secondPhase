@@ -2,7 +2,7 @@
 
 <footer>
 
-  <div class="container" {% if template == "product" or template == "product.keychain" or template == "product.wrapper" %}style="margin-bottom: 82px;"{% endif %}>
+  <div class="container {% if template == "product" or template == "product.keychain" or template == "product.wrapper" %}product-cta-marg-m{% endif %}">
     <div class="footer-part footer-one flex-box justify-between">
     	{% for block in section.blocks %}
       		{% if block.type == 'menu' %}
