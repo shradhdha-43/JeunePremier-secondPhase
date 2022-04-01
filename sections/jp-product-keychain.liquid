@@ -552,9 +552,13 @@
                       if( $availCharm == "no" || $availLetter == "no" ) {
                         $('.add-to-cart').addClass('out-of-stock');
                         $('.add-to-cart').text('{{ 'products.product.sold_out' | t }}');
+                        $('#AddToCartCta').addClass('out-of-stock');
+                        $('#AddToCartCta').text('{{ 'products.product.sold_out' | t }}');
                       } else {                        
                         $('.add-to-cart').removeClass('out-of-stock');
                         $('.add-to-cart').text('{{ 'products.product.add_to_cart' | t }}');
+                        $('#AddToCartCta').removeClass('out-of-stock');
+                        $('#AddToCartCta').text('{{ 'products.product.add_to_cart' | t }}');
                       }
                       
                       if($('.keychain-charm .active').first().data('availabe') == "last" || $('.keychain-letter .active').first().data('availabe') == "last") {
