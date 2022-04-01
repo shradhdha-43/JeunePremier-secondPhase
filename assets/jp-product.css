@@ -181,7 +181,7 @@ span.related-products-preview__link.active::after, .keychain-charm-select .activ
 }
 .add-to-cart {
   border: 0;
-  background-color: var(--dd-color-second);
+  background-color: var(--dd-color-first);
   display: block;
   width: 100%;
   padding: 16px;
@@ -189,9 +189,13 @@ span.related-products-preview__link.active::after, .keychain-charm-select .activ
   font-size: 20px;
   line-height: 24px;
   font-family: 'Hero';
-  color: #333;
+  color: var(--dd-color-sixth);
   cursor: pointer;
   margin-bottom: 8px;
+}
+.add-to-cart:hover {
+  background-color: var(--dd-color-second);
+  color: var(--dd-color-first);
 }
 .free-shipping {
   display: block;
