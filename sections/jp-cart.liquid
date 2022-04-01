@@ -556,7 +556,7 @@
     $('.add-this').addClass('added');
     $('.addcart-cta').addClass('added');
 
-    $('.add-this-multi:not(.added)').click(function() {
+    $('.add-this-multi:not(.added), .addcart-cta:not(.added)').click(function() {
       $('.drawer-cart').addClass('drawn');
       $('.background-drawer-cart').addClass('drawn');
       $('body').addClass('no-scroll');
@@ -597,6 +597,7 @@
       });
     });
     $('.add-this-multi').addClass('added');
+    $('.addcart-cta').addClass('added');
    
   });
 </script>
