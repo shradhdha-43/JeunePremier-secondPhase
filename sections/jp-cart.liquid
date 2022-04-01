@@ -115,8 +115,8 @@
         <div class="cart-product-infos justify-between">
           <div class="cart-product-info flex-box justify-between">
             <div class="title-wrapper">
-              <a href="{{ item.url }}" class="product-name">{{ item.product.title | split: " " | first }}</a>            
-              <div class="product-color">{% unless item.variant.title contains "Default Title" %}{{ item.variant.title }}{% else %}{% assign half_name = item.product.title | split: " " | first %}{{ item.product.title | remove: half_name }}{% endunless %}</div>
+              <a href="{{ item.url }}" class="product-name">{{ item.product.title | split: " - " | first }}</a>            
+              <div class="product-color">{% unless item.variant.title contains "Default Title" %}{{ item.variant.title }}{% else %}{{ item.product.title | split: " - " | last }}{% endunless %}</div>
               {% unless item.properties == empty %}
               <div class="cart-properties">
                 {% for property in item.properties %}
@@ -219,7 +219,7 @@
           <div class="upsell-product-infos rel">
             <div class="upsell-product-title-price">
               <a href="{{ upsellx.url }}" class="product-name">{{ upsellx.title | split: " - " | first }}</a>
-              <div class="product-color">{% assign half_name = upsellx.title | split: " - " | first %}{{ upsellx.title | remove: half_name }}</div>
+              <div class="product-color">{{ upsellx.title | split: " - " | last }}</div>
               <div class="product-price upsell-price">{% if upsellx.compare_at_price > upsellx.price %}<span class="product-compare-price upsell-compare-price">{{ upsellx.compare_at_price | times: vat | money_without_trailing_zeros }}</span>{% endif %}<span class="product-selling-price">{{ upsellx.price | times: vat | money_without_trailing_zeros }}</span></div>
             </div>
 
