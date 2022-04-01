@@ -475,6 +475,8 @@
                         <script>
                           $('.add-to-cart').addClass('out-of-stock');
                           $('.add-to-cart').text('{{ 'products.product.sold_out' | t }}');
+                          $('#AddToCartCta').addClass('out-of-stock');
+                          $('#AddToCartCta').text('{{ 'products.product.sold_out' | t }}');
                 		</script>
                       {% endif %}
                   {% endif %}
