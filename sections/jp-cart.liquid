@@ -468,7 +468,7 @@
     });
     $('.coll-add-to-cart-btn').addClass('added');
 
-    $('.add-this:not(.added), .addcart-cta:not(.added)').click(function() {
+    $('.add-this:not(.added)').click(function() {
       if($(this).hasClass('out-of-stock') || $(this).hasClass('stop-prop')) {
         return 0;
       }
@@ -554,9 +554,8 @@
       });
     });
     $('.add-this').addClass('added');
-    $('.addcart-cta').addClass('added');
 
-    $('.add-this-multi:not(.added), .addcart-cta:not(.added)').click(function() {
+    $('.add-this-multi:not(.added)').click(function() {
       $('.drawer-cart').addClass('drawn');
       $('.background-drawer-cart').addClass('drawn');
       $('body').addClass('no-scroll');
@@ -597,7 +596,6 @@
       });
     });
     $('.add-this-multi').addClass('added');
-    $('.addcart-cta').addClass('added');
    
   });
 </script>
