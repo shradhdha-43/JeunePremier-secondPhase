@@ -668,7 +668,7 @@ $(document).ready(function(){
         }));
         
 
-        $('.add-this').click(function() {
+        $('.add-this, #AddToCartCta').click(function() {
           if($(this).hasClass('out-of-stock') || $(this).hasClass('stop-prop')) {
           	return 0;
           }
