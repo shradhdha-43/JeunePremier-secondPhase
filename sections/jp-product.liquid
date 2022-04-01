@@ -510,6 +510,97 @@
   $(document).scroll(function() {
     checkHeaderCta();
   });
+  
+  $(document).ready(function() {
+
+    $('.addcart-cta:not(.added)').click(function() {
+      if($(this).hasClass('out-of-stock') || $(this).hasClass('stop-prop')) {
+        return 0;
+      }
+      $('.drawer-cart').addClass('drawn');
+      $('.background-drawer-cart').addClass('drawn');
+      $('body').addClass('no-scroll');
+      hideChatBtn();
+      $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
+      var formData;
+      if($(this).hasClass('label-type')){
+        if($(this).hasClass('stop-prop')) {
+          return 0;
+        }
+        if($(this).hasClass('preorder')) {
+          formData = {
+            'items': [{
+              'id': parseInt($(this).data('variant')),
+              'quantity': 1,
+              'properties': {
+                'Nachname': $('.label-input.label-last').val(),
+                'Vorname': $('.label-input.label-first').val(),
+                '_sku': '{{ product.selected_or_first_available_variant.sku }}',
+                '{{ 'products.product.preorder_property_label' | t }}': $(this).data('preorder')
+              }
+            }]
+          };
+        } else {
+          formData = {
+            'items': [{
+              'id': parseInt($(this).data('variant')),
+              'quantity': 1,
+              'properties': {
+                'Nachname': $('.label-input.label-last').val(),
+                'Vorname': $('.label-input.label-first').val(),
+                '_sku': '{{ product.selected_or_first_available_variant.sku }}'
+              }
+            }]
+          };
+        }
+      } else {
+        if($(this).hasClass('preorder')) {
+          formData = {
+            'items': [{
+              'id': parseInt($(this).data('variant')),
+              'quantity': 1,
+              'properties': {
+                '{{ 'products.product.preorder_property_label' | t }}': $(this).data('preorder')
+              }
+            }]
+          };
+        } else {
+          formData = {
+            'items': [{
+              'id': parseInt($(this).data('variant')),
+              'quantity': 1
+            }]
+          };
+        }
+      }
+      $.ajax({
+        url: "/cart/add.js",
+        method: "POST",
+        dataType: "json",
+        data: formData,
+      })
+      .done(function( data ) {     
+        $.ajax({
+          url: '/?sections=jp-cart',
+          method: "GET",
+          dataType: "json"
+        })
+        .done(function( data ) {
+          {% include "cart-done" %}
+        })
+        .fail(function(error) {
+          console.log( error );
+          $('.load-container').remove();
+        });
+      })
+      .fail(function(error) {
+        console.log( error );
+        $('.load-container').remove();
+      });
+    });
+    $('.addcart-cta').addClass('added');
+
+  });
 
 $(document).ready(function(){
   
