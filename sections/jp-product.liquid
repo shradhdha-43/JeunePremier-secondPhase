@@ -487,7 +487,7 @@
   <div class="product-header-cta come-in no-d">
     <div class="header-cta-container">
       <div class="cta-left">
-        <span class="product-price">{{ product.price | money  }}</span>
+        <span class="product-price">{{ current_variant_price | money_without_trailing_zeros  }}</span>
       </div>
       <div class="cta-right">
         <span class="addcart-cta {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %} {% if product.type == 'Goedgemerkt' or product.type == 'Ludilabel' %}label-type stop-prop{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%} id="AddToCartCta">{{ add_to_cart_text }}</span>
