@@ -8,6 +8,7 @@
             $('.close-cart').click(function() {
                   $('.drawer-cart').removeClass('drawn');
                   $('.background-drawer-cart').removeClass('drawn');
+				  $('body').removeClass('no-scroll');
             });
             $('.additional-checkout-buttons').removeClass('no-disp');
             $('.remove-scripts').html($content.find('.remove-scripts').html());
@@ -20,6 +21,7 @@
               $('.close-cart').click(function() {
                     $('.drawer-cart').removeClass('drawn');
                     $('.background-drawer-cart').removeClass('drawn');
+					$('body').removeClass('no-scroll');
               });
               $('.additional-checkout-buttons').addClass('no-disp');
               $('.remove-scripts').html($content.find('.remove-scripts').html());
