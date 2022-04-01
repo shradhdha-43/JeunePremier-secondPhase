@@ -617,6 +617,52 @@
   $(document).scroll(function() {
     checkHeaderCta();
   });
+  
+  $(document).ready(function() {
+  	
+    $('.addcart-cta:not(.added)').click(function() {
+      $('.drawer-cart').addClass('drawn');
+      $('.background-drawer-cart').addClass('drawn');
+      $('body').addClass('no-scroll');
+      hideChatBtn();
+      $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
+      var formData = {
+        'items': [{
+          'id': parseInt($('.keychain-charm .active').data('variant')),
+          'quantity': 1
+        },{
+          'id': parseInt($('.keychain-letter .active').data('variant')),
+          'quantity': 1
+        }]
+      };
+      $.ajax({
+        url: "/cart/add.js",
+        method: "POST",
+        dataType: "json",
+        data: formData,
+      })
+      .done(function( data ) {     
+        $.ajax({
+          url: '/?sections=jp-cart',
+          method: "GET",
+          dataType: "json"
+        })
+        .done(function( data ) {
+          {% include "cart-done" %}
+        })
+        .fail(function(error) {
+          console.log( error );
+          $('.load-container').remove();
+        });
+      })
+      .fail(function(error) {
+        console.log( error );
+          $('.load-container').remove();
+      });
+    });
+    $('.addcart-cta').addClass('added');
+  });
+  
 </script>
 
 {% schema %}
