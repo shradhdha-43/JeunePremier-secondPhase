@@ -389,7 +389,7 @@
                       var $priceCharm = $('.keychain-charm .active').first().data('price');
                       var $priceLetter = $('.keychain-letter .active').first().data('price');
                       $('#ProductPrice').html(`€`+(($priceCharm+$priceLetter)/100).toFixed(2).replace(/\.0+$/,'').replace('.',',')+` <span class="price-incl">{{ 'products.product.include_taxes' | t }}</span>`)
-                      
+                      $('.product-price').html(`€`+(($priceCharm+$priceLetter)/100).toFixed(2).replace(/\.0+$/,'').replace('.',','))
                       
                       var $titleCharm = $('.keychain-charm .active').first().data('name');
                       var $titleLetter = $('.keychain-letter .active').first().data('name');
