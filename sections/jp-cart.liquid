@@ -218,8 +218,8 @@
           </a>
           <div class="upsell-product-infos rel">
             <div class="upsell-product-title-price">
-              <a href="{{ upsellx.url }}" class="product-name">{{ upsellx.title | split: " " | first }}</a>
-              <div class="product-color">{% assign half_name = upsellx.title | split: " " | first %}{{ upsellx.title | remove: half_name }}</div>
+              <a href="{{ upsellx.url }}" class="product-name">{{ upsellx.title | split: " - " | first }}</a>
+              <div class="product-color">{% assign half_name = upsellx.title | split: " - " | first %}{{ upsellx.title | remove: half_name }}</div>
               <div class="product-price upsell-price">{% if upsellx.compare_at_price > upsellx.price %}<span class="product-compare-price upsell-compare-price">{{ upsellx.compare_at_price | times: vat | money_without_trailing_zeros }}</span>{% endif %}<span class="product-selling-price">{{ upsellx.price | times: vat | money_without_trailing_zeros }}</span></div>
             </div>
 
