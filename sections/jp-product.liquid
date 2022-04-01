@@ -336,6 +336,8 @@
                         <script>
                           $('.add-to-cart').addClass('out-of-stock');
                           $('.add-to-cart').text('{{ 'products.product.sold_out' | t }}');
+						  $('#AddToCartCta').addClass('out-of-stock');
+                          $('#AddToCartCta').text('{{ 'products.product.sold_out' | t }}');
                 		</script>
                   {% endunless %}
 
@@ -478,6 +480,17 @@
         </div>
 
 
+      </div>
+    </div>
+  </div>
+
+  <div class="product-header-cta come-in">
+    <div class="header-cta-container">
+      <div class="cta-left">
+        <span class="product-price">{{ product.price | money  }}</span>
+      </div>
+      <div class="cta-right">
+        <span class="addcart {% if current_variant.available %} {% endif %}" id="AddToCartCta">{{ add_to_cart_text }}</span>
       </div>
     </div>
   </div>
