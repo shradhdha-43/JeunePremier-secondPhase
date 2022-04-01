@@ -490,7 +490,7 @@
         <span class="product-price">{{ product.price | money  }}</span>
       </div>
       <div class="cta-right">
-        <span class="addcart {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %} {% if product.type == 'Goedgemerkt' or product.type == 'Ludilabel' %}label-type stop-prop{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%} id="AddToCartCta">{{ add_to_cart_text }}</span>
+        <span class="addcart-cta {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %} {% if product.type == 'Goedgemerkt' or product.type == 'Ludilabel' %}label-type stop-prop{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%} id="AddToCartCta">{{ add_to_cart_text }}</span>
       </div>
     </div>
   </div>
@@ -668,7 +668,7 @@ $(document).ready(function(){
         }));
         
 
-        $('.add-this, .addcart').click(function() {
+        $('.add-this, .addcart-cta').click(function() {
           if($(this).hasClass('out-of-stock') || $(this).hasClass('stop-prop')) {
           	return 0;
           }
