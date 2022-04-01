@@ -468,7 +468,7 @@
     });
     $('.coll-add-to-cart-btn').addClass('added');
 
-    $('.add-this:not(.added)').click(function() {
+    $('.add-this:not(.added), .addcart-cta').click(function() {
       if($(this).hasClass('out-of-stock') || $(this).hasClass('stop-prop')) {
         return 0;
       }
@@ -554,6 +554,7 @@
       });
     });
     $('.add-this').addClass('added');
+    $('.addcart-cta').addClass('added');
 
     $('.add-this-multi:not(.added)').click(function() {
       $('.drawer-cart').addClass('drawn');
