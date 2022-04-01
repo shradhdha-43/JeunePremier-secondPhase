@@ -48,6 +48,9 @@
       #zonos {
         display: none;
       }
+      .scroll-to-top {
+        bottom: {% if template == "product" or template == "product.keychain" or template == "product.wrapper" %}90px{% else %}20px{% endif %};
+      }
     </style>
 
   {%- comment -%}
@@ -468,7 +471,7 @@
     {% endcomment %}
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
-      <div onclick="topFunction()" id="to-top" style="display:none;" class="scroll-to-top no-d"><div class="top-chev">{% include 'icon-black-down-chev' %}</div></div>
+      <div onclick="topFunction();" id="to-top" style="display:none;" class="scroll-to-top no-d"><div class="top-chev">{% include 'icon-black-down-chev' %}</div></div>
     </main>
 	{% comment %}
     {% section 'footer' %}
@@ -480,28 +483,6 @@
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
     </ul>
     
-    <script>
-//Get the button
-var mybutton = document.getElementById("to-top");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "flex";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-</script>
-
     <script>
       window.shopUrl = '{{ shop.url }}';
       window.routes = {
@@ -562,8 +543,17 @@ function topFunction() {
 <script>
   var chatbutton;
   
+  //Get the button
+  var mybutton = document.getElementById("to-top");
+  
   function hideChatBtn() {
 	$("#chat-button").css("z-index","8");
+  }
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
   
   $(document).ready(function() {
@@ -592,6 +582,17 @@ function topFunction() {
     
   window.onscroll = function() {chatShowFunction()};
   
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "flex";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+    
   });
 </script>
     
