@@ -232,8 +232,8 @@
         "settings": {
           "logo_svg_desktop": "<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0334\/1100\/6595\/files\/LOGO.svg?v=1645594144\" alt=\"jeune premier\">",
           "logo_svg_mobile": "<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0334\/1100\/6595\/files\/logo_1.svg?v=1645594157\" alt=\"jeune premier\">",
-          "upper_menu": "",
-          "lower_menu": ""
+          "upper_menu": "header-upper-menu",
+          "lower_menu": "header-lower-menu"
         }
       },
       "jp-cart": {
