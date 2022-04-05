@@ -153,21 +153,25 @@
           "862c031d-e477-43b8-a6f1-221ca4bdabae": {
             "type": "shipping_logo",
             "settings": {
+              "shipping_logo": "shopify:\/\/shop_images\/FedEx-Logo.webp"
             }
           },
           "25f5a94f-6153-4a52-b948-40293e39dc0a": {
             "type": "shipping_logo",
             "settings": {
+              "shipping_logo": "shopify:\/\/shop_images\/GLS-logo.png"
             }
           },
           "d540d28b-63f7-4b01-a7cb-c8460b7b3001": {
             "type": "shipping_logo",
             "settings": {
+              "shipping_logo": "shopify:\/\/shop_images\/DPD_logo.png"
             }
           },
           "fdf33f29-46b3-4c93-a933-8a18f9450474": {
             "type": "shipping_logo",
             "settings": {
+              "shipping_logo": "shopify:\/\/shop_images\/UPS.png"
             }
           }
         },
