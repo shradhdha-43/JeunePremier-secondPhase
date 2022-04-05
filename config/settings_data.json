@@ -105,28 +105,28 @@
             "type": "menu",
             "settings": {
               "menu_title": "SERVICE",
-              "menu": ""
+              "menu": "footer-service-menu"
             }
           },
           "90c5983a-b982-40cb-8100-60ccee4db15e": {
             "type": "menu",
             "settings": {
               "menu_title": "PRODUKTE",
-              "menu": ""
+              "menu": "footer-products-menu"
             }
           },
           "940cf9e7-d26c-4d13-939d-fad508a9627d": {
             "type": "menu",
             "settings": {
               "menu_title": "JEUNE PREMIER",
-              "menu": ""
+              "menu": "footer-jp-menu"
             }
           },
           "84cc30d4-40ff-404d-a912-8c985fccef44": {
             "type": "privacy_menu",
             "settings": {
               "menu_title": "PRIVACY",
-              "menu": ""
+              "menu": "footer-privacy-menu"
             }
           },
           "2b45fb41-7153-4f4f-9c9a-0ce02dbabc28": {
