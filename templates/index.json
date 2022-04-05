@@ -114,19 +114,25 @@
         "ea91c1e3-e679-4dfe-81bb-3a11be116bb7": {
           "type": "product",
           "settings": {
-            "product": "ergomaxx-cherry-pompon"
+            "product": "ergomaxx-cherry-pompon",
+            "image1": "shopify:\/\/shop_images\/product-image-2.webp",
+            "image2": "shopify:\/\/shop_images\/product-image-2.webp"
           }
         },
         "3801cabb-732f-4ef8-bef4-b9fdcd992177": {
           "type": "product",
           "settings": {
-            "product": "schultasche-midi-cavalerie-florale"
+            "product": "schultasche-midi-cavalerie-florale",
+            "image1": "shopify:\/\/shop_images\/product-image-3.webp",
+            "image2": "shopify:\/\/shop_images\/product-image-3.webp"
           }
         },
         "170b19cf-96c4-4070-a616-0f4063fcfd1d": {
           "type": "product",
           "settings": {
-            "product": "ergomaxx-twin-rex"
+            "product": "ergomaxx-twin-rex",
+            "image1": "shopify:\/\/shop_images\/product-image-4.webp",
+            "image2": "shopify:\/\/shop_images\/product-image-4.webp"
           }
         }
       },
