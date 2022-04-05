@@ -106,7 +106,9 @@
         "4074ea81-67d7-42fe-bc7c-a19ed0cd0543": {
           "type": "product",
           "settings": {
-            "product": "ergomaxx-fc-jeune-premier"
+            "product": "ergomaxx-fc-jeune-premier",
+            "image1": "shopify:\/\/shop_images\/product-image-1_5b7569a6-dd8b-4021-85e7-ac15a9130b7d.webp",
+            "image2": "shopify:\/\/shop_images\/product-image-1_5b7569a6-dd8b-4021-85e7-ac15a9130b7d.webp"
           }
         },
         "ea91c1e3-e679-4dfe-81bb-3a11be116bb7": {
