@@ -32,6 +32,7 @@
 
 .down-chev{
 	transition: .4s ease;
+  	height: fit-content;
 }
 
 .active .down-chev{
