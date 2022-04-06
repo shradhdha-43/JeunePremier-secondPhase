@@ -54,6 +54,7 @@
 @media(max-width: 992px){
 	.faq-page-content {
     flex-direction: column;
+    word-break: break-word;
 }
   
   .faq-right{
