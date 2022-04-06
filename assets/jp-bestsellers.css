@@ -27,7 +27,7 @@
 }
 
 .bestsellers-wrap .slick-dots{
-	bottom: 19px
+	bottom: 0px
 }
 
 .bestsellers-wrap .slick-dots li button:before {
@@ -41,7 +41,7 @@
 }
 
 .bestsellers-wrap .slick-next, .bestsellers-wrap .slick-prev {
-    bottom: -9px;
+    bottom: -25px;
 }
 
 .bestseller-products.slick-slider.slick-dotted {
