@@ -15,7 +15,7 @@
   height: inherit !important;
 }
 .bestsellers-wrap .slick-slide>div {
-  height: auto;
+  height: 100%;
 }
 .bestsellers-wrap .product-card {
   height: 100%;
