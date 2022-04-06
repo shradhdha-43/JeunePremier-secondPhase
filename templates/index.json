@@ -292,6 +292,8 @@
         "0003294c-790a-43ce-b876-cab0d1c87c21": {
           "type": "marquee",
           "settings": {
+            "img_1": "shopify:\/\/shop_images\/tele_Tekengebied_1-01_2x_48cd188f-cc07-435b-bb80-9c08c4fe8313.png",
+            "img_2": "shopify:\/\/shop_images\/voici_Tekengebied_1_2x_18159af2-6caa-4ee8-b319-f5f99264d729.png"
           }
         }
       },
