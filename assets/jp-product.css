@@ -398,11 +398,11 @@ span.product-compare {
     justify-content: center;
     align-items: center;
     height: 56px;
-    border: 2px solid var(--dd-color-second);
+    border: 2px solid var(--dd-color-first);
     font-weight: 600;
     margin-top: 0;
-    color: #1e2d51;
-    background-color: var(--dd-color-second);
+    color: var(--dd-color-sixth);
+    background-color: var(--dd-color-first);
     margin-bottom: 0;
 }
 
