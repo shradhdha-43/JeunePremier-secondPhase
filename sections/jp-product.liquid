@@ -276,7 +276,11 @@
                 <div class="related-products-preview">
                   <div class="related-products-preview__item">
                     <span href="{{ product.url }}" class="related-products-preview__link active new-variant" data-url="{{ product.url }}">
+                      {% if product.type  == 'Goedgemerkt' %}
+                      <img src="{{ product.media[1] | default: product.featured_image | img_url: '200x200' }}" alt="{{ product.title }}">
+                      {% else %}
                       <img src="{{ product.featured_image | img_url: '200x200' }}" alt="{{ product.title }}">
+                      {% endif %}
                     </span>
                   </div>
 
@@ -284,7 +288,11 @@
                   {%- unless type_product.handle == product.handle -%}
                   <div class="related-products-preview__item">
                     <span href="{{ type_product.url }}" class="related-products-preview__link js-product-preview-hover new-variant inactive" data-url="{{ type_product.url }}" data-image={{ type_product.featured_image | img_url: '600x' }}>
+                      {% if type_product.type  == 'Goedgemerkt' %}
+                      <img src="{{ type_product.media[1] | default: type_product.featured_image | img_url: '200x200' }}" alt="{{ type_product.title }}">
+                      {% else %}
                       <img src="{{ type_product.featured_image | img_url: '200x200' }}" alt="{{ type_product.title }}">
+                      {% endif %}
                     </span>
                   </div>
                   {%- endunless -%}
