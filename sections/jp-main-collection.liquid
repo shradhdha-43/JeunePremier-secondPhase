@@ -238,7 +238,8 @@
             </div>
             <div class="product-price-col">
                <div class="product-sub-title light">
-              	{{ product.title | split: " - " | last }}
+                 {{ product.title | split: " - " | last }}
+              	{% comment %}{{ product.metafields.descriptors.subtitle }}{% endcomment %}
               </div>
             </div>
           </div>

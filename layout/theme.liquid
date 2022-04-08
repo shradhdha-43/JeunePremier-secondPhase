@@ -49,7 +49,7 @@
         display: none;
       }
       .scroll-to-top {
-        bottom: {% if template == "product" or template == "product.keychain" or template == "product.wrapper" %}120px{% else %}20px{% endif %};
+        bottom: {% if template == "product" or template == "product.keychain" or template == "product.wrapper" %}130px{% else %}20px{% endif %};
       }
     </style>
 
@@ -545,7 +545,7 @@
   
   //Get the button
   var mybutton = document.getElementById("to-top");
-  
+
   function hideChatBtn() {
 	$("#chat-button").css("z-index","8");
   }
@@ -592,9 +592,11 @@
 
   // When the user scrolls down 20px from the top of the document, show the button
   window.onscroll = function() {scrollFunction()};
-    
+  
   });
 </script>
+    
+    {% include "geo-redirect" %}
     
 </body>
 </html>

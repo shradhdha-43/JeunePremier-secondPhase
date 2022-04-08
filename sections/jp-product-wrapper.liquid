@@ -463,9 +463,9 @@
                 {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}
                 {%- assign add_to_cart_text = 'products.product.preorder' | t -%}
                 {%- endif -%}
-                <button class="add-to-cart btn add-this-multi {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%}>{{add_to_cart_text}}</button>
+                <button class="add-to-cart btn add-this-multi no-t-m {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%}>{{add_to_cart_text}}</button>
                 {% if current_variant_price > 14900 %}
-                <span class="free-shipping">{{ 'products.product.free_shipping' | t }} <img src="//cdn.shopify.com/s/files/1/0334/1100/6595/files/Check_gold_2x_999c4ca6-c15a-478a-8f63-31f5d4d14ccc_22x.png?v=1644228290" alt="tick" width="22" height="16">{% comment %}{% if section.settings.tick %}<img src="{{ section.settings.tick | img_url: "22x" }}" alt="tick" width="22" height="16">{% endif %}{% endcomment %}</span>
+                <span class="free-shipping no-t-m">{{ 'products.product.free_shipping' | t }} <img src="//cdn.shopify.com/s/files/1/0334/1100/6595/files/Check_gold_2x_999c4ca6-c15a-478a-8f63-31f5d4d14ccc_22x.png?v=1644228290" alt="tick" width="22" height="16">{% comment %}{% if section.settings.tick %}<img src="{{ section.settings.tick | img_url: "22x" }}" alt="tick" width="22" height="16">{% endif %}{% endcomment %}</span>
                 {% endif %}
                 
                 
@@ -475,8 +475,8 @@
                         <script>
                           $('.add-to-cart').addClass('out-of-stock');
                           $('.add-to-cart').text('{{ 'products.product.sold_out' | t }}');
-                          $('#AddToCartCta').addClass('out-of-stock');
-                          $('#AddToCartCta').text('{{ 'products.product.sold_out' | t }}');
+                          $('.addcart-cta').addClass('out-of-stock');
+                          $('.addcart-cta').text('{{ 'products.product.sold_out' | t }}');
                 		</script>
                       {% endif %}
                   {% endif %}
@@ -598,12 +598,32 @@
         <span class="product-price">{{ current_variant_price | money_without_trailing_zeros  }}</span>
       </div>
       <div class="cta-right">
-        <span class="addcart-cta {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%} id="AddToCartCta">{{ add_to_cart_text }}</span>
+        <span class="addcart-cta addcta-multi {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%} id="AddToCartCta">{{ add_to_cart_text }}</span>
       </div>
     </div>
+    <span class="sticky-free-shipping">
+    {% if current_variant_price > 14900 %}
+      {{ 'products.product.free_shipping' | t }} <img src="//cdn.shopify.com/s/files/1/0334/1100/6595/files/Check_gold_2x_999c4ca6-c15a-478a-8f63-31f5d4d14ccc_22x.png?v=1644228290" alt="tick" width="22" height="16">
+    {% else %}
+      {{ section.settings.free_shipping_from }}
+    {% endif %}
+    </span>
+    
+    {% if product.variants.first.inventory_management == "shopify" %}
+        {% if product.variants.first.inventory_quantity <= 0 %}
+          <script>
+            $('.add-to-cart').addClass('out-of-stock');
+            $('.add-to-cart').text('{{ 'products.product.sold_out' | t }}');
+            $('.addcart-cta').addClass('out-of-stock');
+            $('.addcart-cta').text('{{ 'products.product.sold_out' | t }}');
+          </script>
+        {% endif %}
+    {% endif %}
   </div>
 
 <script>
+  
+  {% comment %}
   function checkHeaderCta() {
     var y = $(document).scrollTop();
     if (y < $(".product-wrapper").innerHeight()) {
@@ -620,48 +640,8 @@
   
   $(document).ready(function() {
   	
-    $('.addcart-cta:not(.added)').click(function() {
-      $('.drawer-cart').addClass('drawn');
-      $('.background-drawer-cart').addClass('drawn');
-      $('body').addClass('no-scroll');
-      hideChatBtn();
-      $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
-      var formData = {
-        'items': [{
-          'id': parseInt($('.keychain-charm .active').data('variant')),
-          'quantity': 1
-        },{
-          'id': parseInt($('.keychain-letter .active').data('variant')),
-          'quantity': 1
-        }]
-      };
-      $.ajax({
-        url: "/cart/add.js",
-        method: "POST",
-        dataType: "json",
-        data: formData,
-      })
-      .done(function( data ) {     
-        $.ajax({
-          url: '/?sections=jp-cart',
-          method: "GET",
-          dataType: "json"
-        })
-        .done(function( data ) {
-          {% include "cart-done" %}
-        })
-        .fail(function(error) {
-          console.log( error );
-          $('.load-container').remove();
-        });
-      })
-      .fail(function(error) {
-        console.log( error );
-          $('.load-container').remove();
-      });
-    });
-    $('.addcart-cta').addClass('added');
   });
+  {% endcomment %}
   
 </script>
 
@@ -673,6 +653,12 @@
          "type":"image_picker",
          "id":"tick",
          "label":"Tick Image"
+      },
+	  {
+         "type":"text",
+         "id":"free_shipping_from",
+         "label":"Free Shipping From text",
+		 "default": "Kostenloser Versand vanaf 150€"
       }
     ]
   }

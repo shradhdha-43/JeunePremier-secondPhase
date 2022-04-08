@@ -111,6 +111,7 @@
                <div class="product-sub-title light">
                  <a href="{{ product.url }}">
                    {{ product.title | split: " - " | last }}
+                   {% comment %}{{ product.metafields.descriptors.subtitle }}{% endcomment %}
                  </a>
               </div>
             </div>
@@ -201,6 +202,7 @@
                <div class="product-sub-title light">                 
                  <a href="{{ product.url }}">
                    {{ product.title | split: " - " | last }}
+                   {% comment %}{{ product.metafields.descriptors.subtitle }}{% endcomment %}
                  </a>
               </div>
             </div>

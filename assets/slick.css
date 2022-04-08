@@ -183,15 +183,15 @@
 }
 .slick-prev:before
 {
-  content: url(//cdn.shopify.com/s/files/1/0334/1100/6595/t/37/assets/Pijltje_onder.svg?v=4914117478590472551);
+  content: url(//cdn.shopify.com/s/files/1/0334/1100/6595/t/25/assets/Pijltje_onder.svg?v=4914117478590472551);
 }
 .product-info-left .slick-prev:before
 {
-  content: url(//cdn.shopify.com/s/files/1/0334/1100/6595/t/37/assets/Pijltje_onder.svg?v=4914117478590472551);
+  content: url(//cdn.shopify.com/s/files/1/0334/1100/6595/t/25/assets/Pijltje_onder.svg?v=4914117478590472551);
 }
 [dir='rtl'] .slick-prev:before
 {
-  content: url(//cdn.shopify.com/s/files/1/0334/1100/6595/t/37/assets/Pijltje_onder.svg?v=4914117478590472551);
+  content: url(//cdn.shopify.com/s/files/1/0334/1100/6595/t/25/assets/Pijltje_onder.svg?v=4914117478590472551);
 }
 
 .slick-next
@@ -212,11 +212,11 @@
 
 .slick-next:before
 {
-  content: url(//cdn.shopify.com/s/files/1/0334/1100/6595/t/37/assets/Pijltje_onder.svg?v=4914117478590472551);
+  content: url(//cdn.shopify.com/s/files/1/0334/1100/6595/t/25/assets/Pijltje_onder.svg?v=4914117478590472551);
 }
 [dir='rtl'] .slick-next:before
 {
-  content: url(//cdn.shopify.com/s/files/1/0334/1100/6595/t/37/assets/Pijltje_onder.svg?v=4914117478590472551);
+  content: url(//cdn.shopify.com/s/files/1/0334/1100/6595/t/25/assets/Pijltje_onder.svg?v=4914117478590472551);
   -webkit-transform: rotate(270deg) translate(85%,50%);
   -ms-transform: rotate(270deg) translate(85%,50%);
   transform: rotate(270deg) translate(85%,50%);
@@ -224,12 +224,12 @@
 
 .product-info-left .slick-next:before
 {
-  content: url(//cdn.shopify.com/s/files/1/0334/1100/6595/t/37/assets/Pijltje_onder.svg?v=4914117478590472551);
+  content: url(//cdn.shopify.com/s/files/1/0334/1100/6595/t/25/assets/Pijltje_onder.svg?v=4914117478590472551);
 }
 
 [dir='rtl'] .product-info-left .slick-next:before
 {
-  content: url(//cdn.shopify.com/s/files/1/0334/1100/6595/t/37/assets/Pijltje_onder.svg?v=4914117478590472551);
+  content: url(//cdn.shopify.com/s/files/1/0334/1100/6595/t/25/assets/Pijltje_onder.svg?v=4914117478590472551);
   -webkit-transform: rotate(270deg) translate(85%,50%);
   -ms-transform: rotate(270deg) translate(85%,50%);
   transform: rotate(270deg) translate(85%,50%);
