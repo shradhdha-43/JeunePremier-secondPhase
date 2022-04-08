@@ -393,17 +393,22 @@ span.product-compare {
 }
 .product-header-cta .addcart-cta {
     cursor: pointer;
-    width: 234px;
+    width: fit-content;
+  	width: -moz-fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 56px;
-    border: 2px solid var(--dd-color-first);
-    font-weight: 600;
+    border: 1px solid var(--dd-color-first);
+    font-weight: 400;
+    line-height: 24px;
     margin-top: 0;
     color: var(--dd-color-sixth);
     background-color: var(--dd-color-first);
     margin-bottom: 0;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 16px;
 }
 
 @media(max-width: 992px) {
@@ -445,5 +450,15 @@ span.product-compare {
   .header-cta-container {
     max-width: none;
     padding: 0 20px;
+  }
+  .product-price {
+    font-size: 16px;
+  }
+}
+
+@media(max-width: 320px) {
+  .product-header-cta .addcart-cta {
+    width: 240px;
+    padding: 8px;
   }
 }
