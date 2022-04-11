@@ -438,6 +438,7 @@ span.product-compare {
     padding: 8px;
     display: flex;
     flex-wrap: wrap;
+  	margin-bottom: 0.25em;
 }
 .product-services__icons-list li + li {
     margin-left: 10px;
