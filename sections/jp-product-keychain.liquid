@@ -748,6 +748,38 @@
                       {{ 'products.product.service_text.fourth_html' | t }}
                     </div>
                   </div>
+                  <div class="product-service">
+                    <div class="product-icon">
+
+                      <img src="https://cdn.shopify.com/s/files/1/0077/6565/5629/t/37/assets/payments-icon.png?v=17638508258846057926">
+
+                    </div>
+                    <div class="product-service-text">
+                      {{ 'products.product.service_text.fifth_html' | t }}
+                      
+                      {%- if section.settings.show_payment_icons -%}
+                        <ul class="product-services__icons-list">
+                          {% if section.settings.icon_cartebleue %}
+                            {%- if request.host contains 'jeunepremier.fr' -%}
+                              <li>
+                                <img src="{{ 'logo-cartebleue.svg' | asset_url }}" alt="Carte Bleue">
+                              </li>
+                            {%- endif -%}
+                          {% endif %}
+                          {%- assign payment_methods = 'visa,mastercard,paypal,americanexpress,maestro,ideal,bancontact,sofort,klarna,kbc,belfius,giropay' | split: ',' -%}
+                          {%- for method in payment_methods -%}
+                            {%- capture setting -%}icon_{{ method }}{%- endcapture -%}
+                            {%- if section.settings[setting] -%}
+                              <li>
+                                {%- capture src -%}logo-{{ method }}.svg{%- endcapture -%}
+                                <img src="{{ src | asset_url }}" alt="{{ method }}">
+                              </li>
+                            {%- endif -%}
+                          {%- endfor -%}
+                        </ul>
+                      {%- endif -%}
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -823,6 +855,118 @@
          "id":"free_shipping_from",
          "label":"Free Shipping From text",
 		 "default": "Kostenloser Versand vanaf 150€"
+      },
+	  {
+        "type": "checkbox",
+        "id": "show_payment_icons",
+        "label": {
+          "en": "Show payment icons"
+        },
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_bancontact",
+        "label": {
+          "en": "Bancontact"
+        },
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_mastercard",
+        "label": {
+          "en": "Mastercard"
+        },
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_visa",
+        "label": {
+          "en": "Visa"
+        },
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_maestro",
+        "label": {
+          "en": "Maestro"
+        },
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_americanexpress",
+        "label": {
+          "en": "American Express"
+        },
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_paypal",
+        "label": {
+          "en": "Paypal"
+        },
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_ideal",
+        "label": {
+          "en": "Ideal"
+        },
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_sofort",
+        "label": {
+          "en": "Sofort"
+        },
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_klarna",
+        "label": {
+          "en": "Klarna"
+        },
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_belfius",
+        "label": {
+          "en": "Belfius"
+        },
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_kbc",
+        "label": {
+          "en": "KBC"
+        },
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_giropay",
+        "label": {
+          "en": "Giropay"
+        },
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_cartebleue",
+        "label": {
+          "en": "Carte Bleue"
+        },
+        "default": false
       }
     ]
   }
