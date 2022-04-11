@@ -457,21 +457,21 @@
                       {%- if section.settings.show_payment_icons -%}
                         <ul class="product-services__icons-list">
                           {% if section.settings.icon_cartebleue %}
-                          {%- if request.host contains 'jeunepremier.fr' -%}
-                          <li>
-                            <img src="{{ 'logo-cartebleue.svg' | asset_url }}" alt="Carte Bleue">
-                          </li>
-                          {%- endif -%}
+                            {%- if request.host contains 'jeunepremier.fr' -%}
+                              <li>
+                                <img src="{{ 'logo-cartebleue.svg' | asset_url }}" alt="Carte Bleue">
+                              </li>
+                            {%- endif -%}
                           {% endif %}
                           {%- assign payment_methods = 'visa,mastercard,paypal,americanexpress,maestro,ideal,bancontact,sofort,klarna,kbc,belfius,giropay' | split: ',' -%}
                           {%- for method in payment_methods -%}
-                          {%- capture setting -%}icon_{{ method }}{%- endcapture -%}
-                          {%- if section.settings[setting] -%}
-                          <li>
-                            {%- capture src -%}logo-{{ method }}.svg{%- endcapture -%}
-                            <img src="{{ src | asset_url }}" alt="{{ method }}">
-                          </li>
-                          {%- endif -%}
+                            {%- capture setting -%}icon_{{ method }}{%- endcapture -%}
+                            {%- if section.settings[setting] -%}
+                              <li>
+                                {%- capture src -%}logo-{{ method }}.svg{%- endcapture -%}
+                                <img src="{{ src | asset_url }}" alt="{{ method }}">
+                              </li>
+                            {%- endif -%}
                           {%- endfor -%}
                         </ul>
                       {%- endif -%}
