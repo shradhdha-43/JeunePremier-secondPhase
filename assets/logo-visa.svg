@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48.241" height="15.592" viewBox="0 0 48.241 15.592">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_3551" data-name="Path 3551" d="M14.229.278,10.163,10.529,8.522,1.805A1.8,1.8,0,0,0,6.729.278H.088L0,.707A16.974,16.974,0,0,1,3.851,1.995,1.662,1.662,0,0,1,4.772,3.32L7.878,15.352h4.128L18.319.278Zm5.77,0L16.766,15.34h3.9L23.887.278ZM42.345,4.343,43.532,10H40.287ZM41.764.278a1.78,1.78,0,0,0-1.654,1.111L34.265,15.34h4.091l.808-2.247h5l.467,2.247h3.611L45.1.278ZM31.538,0c-3.851,0-6.565,2.045-6.59,4.987-.025,2.172,1.932,3.384,3.409,4.1s2.033,1.212,2.02,1.869c-.013,1.01-1.212,1.452-2.336,1.477a8.3,8.3,0,0,1-4-.947L23.332,14.8a11.709,11.709,0,0,0,4.33.8c4.091,0,6.767-2.02,6.792-5.151.013-3.977-5.5-4.192-5.467-5.972.013-.543.53-1.111,1.654-1.263a7.373,7.373,0,0,1,3.838.669L35.161.682A10.441,10.441,0,0,0,31.538,0Z" transform="translate(0 0)" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.024" y1="0.75" x2="0.026" y2="0.75" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#222357"/>
+      <stop offset="1" stop-color="#254aa5"/>
+    </linearGradient>
+  </defs>
+  <g id="Visa" transform="translate(191.05 61.75)">
+    <g id="Visa-2" data-name="Visa" transform="translate(-191.05 -61.75)" clip-path="url(#clip-path)">
+      <rect id="Rectangle_324" data-name="Rectangle 324" width="50.665" height="31.142" transform="matrix(0.94, -0.342, 0.342, 0.94, -5.011, 1.83)" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>
