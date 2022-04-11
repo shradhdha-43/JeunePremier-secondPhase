@@ -1,0 +1,14 @@
+<svg id="iDeal" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23.097" height="20.358" viewBox="0 0 23.097 20.358">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_334" data-name="Rectangle 334" width="23.097" height="20.358" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="iDeal-2" data-name="iDeal" transform="translate(0 0)" clip-path="url(#clip-path)">
+    <path id="Path_3569" data-name="Path 3569" d="M0,0V20.358H11.862c7.837,0,11.219-4.388,11.219-10.2S19.7,0,11.862,0Z" fill="#fff"/>
+    <path id="Path_3570" data-name="Path 3570" d="M9.908,9.825V25.564h9.569c5.774,0,8.909-2.689,8.909-7.886s-3.4-7.853-8.909-7.853ZM19.477,9c8.463,0,9.734,5.428,9.734,8.661,0,5.609-3.448,8.711-9.734,8.711H9.1V9.016Z" transform="translate(-7.599 -7.515)"/>
+    <rect id="Rectangle_333" data-name="Rectangle 333" width="3.069" height="5.448" transform="translate(3.597 11.318)"/>
+    <path id="Path_3571" data-name="Path 3571" d="M23.395,42.314a1.9,1.9,0,1,1-.55-1.352,1.9,1.9,0,0,1,.55,1.352" transform="translate(-16.367 -33.735)"/>
+    <path id="Path_3572" data-name="Path 3572" d="M49.7,25.891v1.765h.544c.379,0,.726-.115.726-.907s-.4-.858-.726-.858ZM58.79,25h.874v2.656h1.3c-.346-4.817-4.141-5.857-7.589-5.857H49.7V25h.544a1.571,1.571,0,0,1,1.617,1.749,1.6,1.6,0,0,1-1.617,1.8H49.7v6.418h3.679c5.609,0,7.556-2.607,7.622-6.418H58.79Zm-2.458,1.98h.643l-.3-1.006h-.049Zm-1.369,1.567L56.019,25h1.254l1.072,3.547h-.924l-.2-.693H56.068l-.2.693Zm-.429-.891v.874H52.356V25h2.112v.874H53.231v.412h1.155v.874H53.231v.478Z" transform="translate(-41.501 -18.203)" fill="#c06"/>
+  </g>
+</svg>
