@@ -3,10 +3,12 @@
   {%- endcomment -%}
   {% assign isAdmin = false %}
   {% capture CFH %}{{ content_for_header  }}{% endcapture %}
+{{CFH}} - {{request.design_mode}}
+  <script>console.log({{CFH}});console.log({{request.design_mode}});</script>
   {% if CFH contains 'Shopify.AdminBarInjector' or CFH contains 'Shopify.PreviewBarInjector' or request.design_mode %}
     {% assign isAdmin = true %}
   {% endif %}
-<script>console.log({{CFH}});console.log({{request.design_mode}});</script>
+
   {%- comment -%}
     GeoIp text
   {%- endcomment -%}
