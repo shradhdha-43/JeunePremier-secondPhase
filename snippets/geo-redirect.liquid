@@ -6,7 +6,7 @@
   {% if CFH contains 'Shopify.AdminBarInjector' or CFH contains 'Shopify.PreviewBarInjector' or request.design_mode %}
     {% assign isAdmin = true %}
   {% endif %}
-
+<script>console.log({{CFH}});console.log({{request.design_mode}});</script>
   {%- comment -%}
     GeoIp text
   {%- endcomment -%}
