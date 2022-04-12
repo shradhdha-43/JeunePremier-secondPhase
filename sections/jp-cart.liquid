@@ -37,84 +37,80 @@
 {% endif %}
 
 <script>
-  
-  $(document).ready(function() {
-    
-    function addFreeProduct() {
-      var formData;
-      formData = {
-          'items': [{
-            'id': parseInt("{{ section.settings.free_product.variants.first.id }}"),
-            'quantity': 1,
-            'discounts': [{"TESTFREEPRODUCT"}],
-          }]
-        };
-      console.log(formData)
+  function addFreeProduct() {
+    var formData;
+    formData = {
+        'items': [{
+          'id': parseInt("{{ section.settings.free_product.variants.first.id }}"),
+          'quantity': 1,
+          'discounts': [{"TESTFREEPRODUCT"}],
+        }]
+      };
+    console.log(formData)
+    $.ajax({
+      url: "/cart/add.js",
+      method: "POST",
+      dataType: "json",
+      data: formData,
+    })
+    .done(function( data ) {
+      $('.cart-items-total').text(data.item_count);
+      console.log(data)
       $.ajax({
-        url: "/cart/add.js",
-        method: "POST",
-        dataType: "json",
-        data: formData,
-      })
-      .done(function( data ) {
-        $('.cart-items-total').text(data.item_count);
-        console.log(data)
-        $.ajax({
-          url: '/?sections=jp-cart',
-          method: "GET",
-          dataType: "json"
-        })
-        .done(function( data ) {
-          {% include "cart-done" %}
-        })
-        .fail(function(error) {
-          console.log( error );
-        });
-      })
-      .fail(function(error) {
-        console.log( error );
-      });
-    }
-
-    function checkFreeProduct() {
-      console.log("inside checkFreeProduct()");
-      var isFreeProduct = false;
-      var freeProdId = {{free_product_id}};
-      console.log(freeProdId+" : "+isFreeProduct);
-      $.ajax({
-        url: "/cart.js",
+        url: '/?sections=jp-cart',
         method: "GET",
-        dataType: "json",
-        async: false
+        dataType: "json"
       })
       .done(function( data ) {
-        for(var i=0; i<data.item_count; i++) {
-          if(data.items[i].product_id == freeProdId) {
-            isFreeProduct = true
-          }
-        }
-
-        if(isFreeProduct == false) {
-          addFreeProduct();
-        }
-
-        $.ajax({
-          url: '/?sections=jp-cart',
-          method: "GET",
-          dataType: "json"
-        })
-        .done(function( data ) {
-          {% include "cart-done" %}
-        })
-        .fail(function(error) {
-          console.log( error );
-        });
+        {% include "cart-done" %}
       })
       .fail(function(error) {
         console.log( error );
       });
-    }
-  });
+    })
+    .fail(function(error) {
+      console.log( error );
+    });
+  }
+
+  function checkFreeProduct() {
+    console.log("inside checkFreeProduct()");
+    var isFreeProduct = false;
+    var freeProdId = {{free_product_id}};
+    console.log(freeProdId+" : "+isFreeProduct);
+    $.ajax({
+      url: "/cart.js",
+      method: "GET",
+      dataType: "json",
+      async: false
+    })
+    .done(function( data ) {
+      for(var i=0; i<data.item_count; i++) {
+        if(data.items[i].product_id == freeProdId) {
+          isFreeProduct = true
+        }
+      }
+
+      if(isFreeProduct == false) {
+        addFreeProduct();
+      }
+
+      $.ajax({
+        url: '/?sections=jp-cart',
+        method: "GET",
+        dataType: "json"
+      })
+      .done(function( data ) {
+        {% include "cart-done" %}
+      })
+      .fail(function(error) {
+        console.log( error );
+      });
+    })
+    .fail(function(error) {
+      console.log( error );
+    });
+  }
   
 </script>
 
