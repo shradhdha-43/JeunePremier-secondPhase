@@ -447,17 +447,17 @@
         data: formData,
       })
       .done(function( data ) {
-        console.log(data);
-        if(data.items_count >= 1) {
-          console.log(1);
-          addFreeProduct();
-        }
         $.ajax({
           url: '/?sections=jp-cart',
           method: "GET",
           dataType: "json"
         })
         .done(function( data ) {
+          console.log(data);
+          if(data.items_count >= 1) {
+            console.log(1);
+            addFreeProduct();
+          }
           {% include "cart-done" %}
         })
         .fail(function(error) {
