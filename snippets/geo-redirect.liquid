@@ -296,8 +296,6 @@
       $('.js-geo-text').each(function() {
         var $el = $(this);
         var $countryItem = $el.find('[data-country="' + country + '"]');
-        console.log("{{request.design_mode}}");
-		console.log("{{CFH}}");
         if ($countryItem.length === 0) {
           $el.find('[data-country="default"]').show();
         } else {
