@@ -30,7 +30,7 @@
     var alternateLinks = document.querySelectorAll('link[rel="alternate"]');
     var redirectViaAlternativeLink = function(hostname, hostDomain, countryCode, newDomain) {
       var documentLang = document.documentElement.lang;
-      var countryCodeWithDash = '-' + countryCode.toLowerCase();
+      var countryCodeWithDash = '-' + countryCode;
       var langCountryCode = documentLang + countryCodeWithDash;
       var redirectUrl;
       console.log(documentLang+" : "+countryCode.toLowerCase()+" : "+langCountryCode);
