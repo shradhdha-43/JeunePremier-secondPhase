@@ -70,13 +70,6 @@
       });
   }
   
-  $(document).ready(function() {
-
-	{% if section.settings.free_product.id and cart.item_count >= 1 and free_added == false %}
-    addFreeProduct();
-    {% endif %}  
-  });
-  
 </script>
 
 <div class="background-drawer-cart"></div>
@@ -453,7 +446,10 @@
         dataType: "json",
         data: formData,
       })
-      .done(function( data ) {         
+      .done(function( data ) {
+        if(data.items_count >= 1) {
+          addFreeProduct();
+        }
         $.ajax({
           url: '/?sections=jp-cart',
           method: "GET",
