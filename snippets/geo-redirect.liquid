@@ -285,7 +285,9 @@
         if (response && response.iso_code) {
           var code = response.iso_code.toLowerCase();
           console.log(code);
-          geoText(code);
+          console.log("{{request.design_mode}}");
+                      console.log("{{CFH}}");
+//           geoText(code);
         }
       }
     });
