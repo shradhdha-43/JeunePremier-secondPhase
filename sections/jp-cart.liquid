@@ -43,8 +43,7 @@
     formData = {
         'items': [{
           'id': parseInt("{{ section.settings.free_product.variants.first.id }}"),
-          'quantity': 1,
-          'line_level_discount_allocations': ["TESTFREEPRODUCT"],
+          'quantity': 1
         }]
       };
     console.log(formData)
@@ -56,7 +55,6 @@
     })
     .done(function( data ) {
       $('.cart-items-total').text(data.item_count);
-      console.log(data)
       $.ajax({
         url: '/?sections=jp-cart',
         method: "GET",
