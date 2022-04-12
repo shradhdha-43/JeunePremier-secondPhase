@@ -273,24 +273,24 @@
     Get Ip for GeoIp text preview
   {%- endcomment -%}
   <script>
-    jQuery.ajax({
-      url: 'https://geoip.apps.esign.eu/api/v1/location',
-      type: 'GET',
-      dataType: 'json',
-      headers: {
-        'Authorization': 'Bearer 0m3vU7W2wqNEdrYQbGElq4mQCHeUnf25f2lkn20H638ysTo4tMnRl5g3BHHRb1vrBCCXzVKqBCUrmrhm',
-        'Accept': 'application/json'
-      },
-      success: function(response) {
-        if (response && response.iso_code) {
-          var code = response.iso_code.toLowerCase();
-          console.log(code);
-          console.log({{request.design_mode}});
-                      console.log({{CFH}});
-//           geoText(code);
-        }
-      }
-    });
+//     jQuery.ajax({
+//       url: 'https://geoip.apps.esign.eu/api/v1/location',
+//       type: 'GET',
+//       dataType: 'json',
+//       headers: {
+//         'Authorization': 'Bearer 0m3vU7W2wqNEdrYQbGElq4mQCHeUnf25f2lkn20H638ysTo4tMnRl5g3BHHRb1vrBCCXzVKqBCUrmrhm',
+//         'Accept': 'application/json'
+//       },
+//       success: function(response) {
+//         if (response && response.iso_code) {
+//           var code = response.iso_code.toLowerCase();
+//           console.log(code);
+//           console.log(request.design_mode);
+//                       console.log(CFH);
+//            geoText(code);
+//         }
+//       }
+//     });
   </script>
   <script>
     $(document).ready(function() {
