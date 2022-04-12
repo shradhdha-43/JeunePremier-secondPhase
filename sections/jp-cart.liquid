@@ -20,7 +20,7 @@
 {% assign keyChainLetter = 0 %}
 {% assign keyChainCharm = 0 %}
 
-{% comment %}
+{% comment %}{% endcomment %}
 {% if section.settings.free_product.id %}
   {% assign free_added = false %}
   <script>console.log("free added: "+{{ free_added }});</script>
@@ -72,13 +72,12 @@
   
   $(document).ready(function() {
 
-	{% if section.settings.free_product.id and free_added == false %}
+	{% if section.settings.free_product.id and cart.item_count == 1 %}
     addFreeProduct();
     {% endif %}  
   });
   
 </script>
-{% endcomment %}
 
 <div class="background-drawer-cart"></div>
 <div class="drawer-cart">
