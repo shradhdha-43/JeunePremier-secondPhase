@@ -52,7 +52,7 @@
       data: formData,
     })
     .done(function( data ) {
-      console.log("free add reponse: "+data.toString());
+      console.log("free add reponse: "+data.json());
       $('.cart-items-total').text(data.item_count);
       $.ajax({
         url: '/?sections=jp-cart',
