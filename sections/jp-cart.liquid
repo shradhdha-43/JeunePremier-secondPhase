@@ -52,8 +52,8 @@
       data: formData,
     })
     .done(function( data ) {
-      console.log("free add reponse: "+data.item_count);
       $('.cart-items-total').text(data.item_count);
+      console.log(data)
       $.ajax({
         url: '/?sections=jp-cart',
         method: "GET",
