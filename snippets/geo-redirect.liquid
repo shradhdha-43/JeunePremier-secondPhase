@@ -298,6 +298,7 @@
       success: function(response) {
         if (response && response.iso_code) {
           var code = response.iso_code.toLowerCase();
+          console.log(code);
           geoText(code);
         }
       }
