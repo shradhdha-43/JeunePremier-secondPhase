@@ -32,6 +32,7 @@
       var countryCodeWithDash = '-' + countryCode.toLowerCase();
       var langCountryCode = documentLang + countryCodeWithDash;
       var redirectUrl;
+      console.log(documentLang+" : "+countryCode.toLowerCase()+" : "+langCountryCode);
 
       // Find alternative link in combination with the current language
       for (var i = 0; i < alternateLinks.length; i += 1) {
@@ -54,13 +55,14 @@
       }
 
       if (redirectUrl) {
-        window.top.location.href = redirectUrl;
+        console.log("redirectUrl if : "+redirectUrl);
+//         window.top.location.href = redirectUrl;
       } else {
         // Backup
         var newHostname = hostname.replace('.' + hostDomain, newDomain).replace('jeune-premier', 'jeunepremier');
         var redirectUrl = window.top.location.href.replace(hostname, newHostname);
-
-        window.top.location.href = redirectUrl;
+		console.log("redirectUrl else : "+redirectUrl);
+//         window.top.location.href = redirectUrl;
       }
     };
 
@@ -194,6 +196,7 @@
           return false;
         } else {
           // redirect to .de
+          console.log(1);
           redirectViaAlternativeLink(hostname, hostDomain, countryCode, '.de');
         }
       } else if (countryCode === 'ch') {
