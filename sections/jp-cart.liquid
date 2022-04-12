@@ -44,7 +44,7 @@
         'items': [{
           'id': parseInt("{{ section.settings.free_product.variants.first.id }}"),
           'quantity': 1,
-          'discounts': ["TESTFREEPRODUCT"],
+          'line_level_discount_allocations': ["TESTFREEPRODUCT"],
         }]
       };
     console.log(formData)
