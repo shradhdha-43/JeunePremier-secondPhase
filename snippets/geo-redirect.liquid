@@ -10,23 +10,7 @@
   {%- comment -%}
     GeoIp text
   {%- endcomment -%}
-  <script>
-    $(document).ready(function() {
-    var geoText = function(country) {
-      $('.js-geo-text').each(function() {
-        var $el = $(this);
-        var $countryItem = $el.find('[data-country="' + country + '"]');
-        console.log("{{request.design_mode}}");
-		console.log("{{CFH}}");
-        if ($countryItem.length === 0) {
-          $el.find('[data-country="default"]').show();
-        } else {
-          $countryItem.show();
-        }
-      });
-    };
-    });
-  </script>
+  
   {%- unless isAdmin == true -%}
   <script>
     var alternateLinks = document.querySelectorAll('link[rel="alternate"]');
@@ -304,6 +288,23 @@
           geoText(code);
         }
       }
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+    var geoText = function(country) {
+      $('.js-geo-text').each(function() {
+        var $el = $(this);
+        var $countryItem = $el.find('[data-country="' + country + '"]');
+        console.log("{{request.design_mode}}");
+		console.log("{{CFH}}");
+        if ($countryItem.length === 0) {
+          $el.find('[data-country="default"]').show();
+        } else {
+          $countryItem.show();
+        }
+      });
+    };
     });
   </script>
   {%- endunless -%}
