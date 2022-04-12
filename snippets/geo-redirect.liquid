@@ -11,6 +11,7 @@
     GeoIp text
   {%- endcomment -%}
   <script>
+    $(document).ready(function() {
     var geoText = function(country) {
       $('.js-geo-text').each(function() {
         var $el = $(this);
@@ -24,6 +25,7 @@
         }
       });
     };
+    });
   </script>
   {%- unless isAdmin == true -%}
   <script>
