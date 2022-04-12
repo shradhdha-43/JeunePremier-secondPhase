@@ -499,6 +499,9 @@ span.product-compare {
     min-width: 220px;
     padding: 8px;
   }
+  .product-services {
+  	padding: 20px;
+  }
 }
 
 @media (min-width: 993px) {
