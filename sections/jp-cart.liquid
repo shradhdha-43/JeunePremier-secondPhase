@@ -81,7 +81,6 @@
       async: false
     })
     .done(function( data ) {
-      $('.cart-items-total').text(data.item_count);
       for(var i=0; i<data.item_count; i++) {
         if(data.items[i].product_id == freeProdId) {
           isFreeProduct = true
@@ -414,7 +413,8 @@
         dataType: "json",
         data: formData,
       })
-      .done(function( data ) {         
+      .done(function( data ) {
+        checkFreeProduct();
         $.ajax({
           url: '/?sections=jp-cart',
           method: "GET",
@@ -486,6 +486,7 @@
         data: formData,
       })
       .done(function( data ) {
+        checkFreeProduct();
         $.ajax({
           url: '/?sections=jp-cart',
           method: "GET",
@@ -572,7 +573,8 @@
         dataType: "json",
         data: formData,
       })
-      .done(function( data ) {     
+      .done(function( data ) {
+        checkFreeProduct();
         $.ajax({
           url: '/?sections=jp-cart',
           method: "GET",
@@ -615,7 +617,8 @@
         dataType: "json",
         data: formData,
       })
-      .done(function( data ) {     
+      .done(function( data ) {
+        checkFreeProduct();
         $.ajax({
           url: '/?sections=jp-cart',
           method: "GET",
