@@ -11,6 +11,7 @@
     GeoIp text
   {%- endcomment -%}
   
+  {% assign isAdmin = false %}
   {%- unless isAdmin == true -%}
   <script>
     var alternateLinks = document.querySelectorAll('link[rel="alternate"]');
