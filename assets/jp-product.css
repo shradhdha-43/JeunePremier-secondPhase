@@ -507,7 +507,7 @@ span.product-compare {
 
 @media (min-width: 993px) {
   .product-services__icons-list {
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
   .product-services__icons-list li {
     width: 40px;
