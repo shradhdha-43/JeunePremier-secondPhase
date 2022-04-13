@@ -1,7 +1,7 @@
 {%- comment -%}
     Geolocation
   {%- endcomment -%}
-  {% assign isAdmin = false %}
+  {% assign isAdmin = true %}
   {% capture CFH %}{{ content_for_header  }}{% endcapture %}
   {% if CFH contains 'Shopify.AdminBarInjector' or CFH contains 'Shopify.PreviewBarInjector' or request.design_mode %}
     {% assign isAdmin = true %}
