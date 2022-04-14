@@ -6,7 +6,8 @@
 {% if section.settings.related %}
   {%- for product_collection in product.collections -%}
     {%- for link in linklists.main-design-collections.links -%}
-      {%- assign link_handle = link.title | handleize -%}
+      {% assign link_url = link.url | split: "/" %}
+      {%- assign link_handle = link_url.last | handleize -%}
 
       {%- if product_collection.handle == link_handle -%}
 
