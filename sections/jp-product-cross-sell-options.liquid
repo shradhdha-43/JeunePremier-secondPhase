@@ -12,7 +12,7 @@
     {% assign link_handle = link_url.last | handleize %}
 
     {%- if product_collection.handle == link_handle -%}
-		<script>console.log("{{product_collection.type}} - {{ product_collection.title }}")</script>
+		<script>console.log("{{ product_collection.title }}")</script>
 		<script>console.log("link: {{link.url}}")</script>
 		<script>console.log("link handle: {{link_handle}}")</script>
       {% assign coll = product_collection.handle %}
