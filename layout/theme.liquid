@@ -594,6 +594,26 @@
   window.onscroll = function() {scrollFunction()};
   
   });
+  
+  GorgiasChat.init().then(function() {
+
+    GorgiasChat.on('ready', function() {
+      var isWindowStyleAppended = false
+      setTimeout(() => {
+        var container = document.querySelector('#gorgias-chat-container');
+        var chatButtonHead = container?.querySelector('#chat-button')?.contentWindow.document.querySelector('head');
+
+        if (chatButtonHead?.children.length && !isWindowStyleAppended) {
+            var buttonStyle = document.createElement('style');
+            buttonStyle.textContent = '#gorgias-chat-messenger-button {background-color: orange; transition: background-color 200ms ease;}'; // the custom CSS for the chat button
+            chatButtonHead.appendChild(buttonStyle);     
+            isWindowStyleAppended = true;
+        }
+      
+      }, 800);
+      
+    });
+  });
 </script>
     {%- comment -%}
     {% include "geo-redirect" %}
