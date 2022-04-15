@@ -284,11 +284,16 @@
         "94d56e59-3b23-4355-8638-393060759fd1": {
           "type": "marquee",
           "settings": {
+            "img_1": "shopify:\/\/shop_images\/milkkids_Tekengebied_1_2x_497a0587-5e1b-4c4a-b410-ef85202a91d1.png",
+            "img_2": "shopify:\/\/shop_images\/modesettraveaux_Tekengebied_1_2x_c61767d4-bf59-46d3-ace3-889f4eec93b3.png",
+            "img_3": "shopify:\/\/shop_images\/prima_Tekengebied_1_2x_3213844b-50de-4386-a367-b5c67d95feb5.png"
           }
         },
         "0003294c-790a-43ce-b876-cab0d1c87c21": {
           "type": "marquee",
           "settings": {
+            "img_1": "shopify:\/\/shop_images\/tele_Tekengebied_1-01_2x_48cd188f-cc07-435b-bb80-9c08c4fe8313.png",
+            "img_2": "shopify:\/\/shop_images\/voici_Tekengebied_1_2x_18159af2-6caa-4ee8-b319-f5f99264d729.png"
           }
         }
       },
