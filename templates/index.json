@@ -236,16 +236,25 @@
         "a2fcf5c9-0314-4edf-90c4-febd13c4b73a": {
           "type": "marquee",
           "settings": {
+            "img_1": "shopify:\/\/shop_images\/doolittle_Tekengebied_1_2x_c8b6aa87-cc4b-43f4-8239-3661ec5e22e0.png",
+            "img_2": "shopify:\/\/shop_images\/elle_Tekengebied_1_2x_ba47de8b-defe-43c2-b78b-91b31309079f.png",
+            "img_3": "shopify:\/\/shop_images\/femina_Tekengebied_1_2x_aacc886b-7120-422f-8343-49284922fe9c.png"
           }
         },
         "e816bf69-e3a0-45d1-840a-f58c75187e35": {
           "type": "marquee",
           "settings": {
+            "img_1": "shopify:\/\/shop_images\/femmes_Tekengebied_1_2x_24b4abe9-6824-434c-9dcf-85014629920a.png",
+            "img_2": "shopify:\/\/shop_images\/grazia_Tekengebied_1-01_2x_e8864b73-7b9f-4b51-8b49-20c948ea6404.png",
+            "img_3": "shopify:\/\/shop_images\/home_Tekengebied_1-01_2x_dd27c317-f299-4859-9eb2-b935e2e4e5d7.png"
           }
         },
         "b305d929-e8d8-4a54-9449-f65048c39140": {
           "type": "marquee",
           "settings": {
+            "img_1": "shopify:\/\/shop_images\/ideat_Tekengebied_1-01_2x_71ee2f30-4919-49a2-940d-2cd2840440f8.png",
+            "img_2": "shopify:\/\/shop_images\/jdlm_Tekengebied_1-01_2x_a83a8914-1587-4ace-ac0f-ba1ad602ca85.png",
+            "img_3": "shopify:\/\/shop_images\/lejdd_Tekengebied_1-01_2x_fcbfc33c-7414-4e73-b600-557d7fdc89d6.png"
           }
         },
         "a01be33c-b005-4f6e-bc1a-ad2ece479dfd": {
