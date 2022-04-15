@@ -601,11 +601,11 @@
       var isWindowStyleAppended = false
       setTimeout(() => {
         var container = document.querySelector('#gorgias-chat-container');
-        var chatButtonHead = container?.querySelector('#chat-button')?.contentWindow.document.querySelector('head');
+        var chatButtonHead = container?.querySelector('#chat-button');
 
         if (chatButtonHead?.children.length && !isWindowStyleAppended) {
             var buttonStyle = document.createElement('style');
-            buttonStyle.textContent = '#gorgias-chat-messenger-button {background-color: orange; transition: background-color 200ms ease;}'; // the custom CSS for the chat button
+            buttonStyle.textContent = '#chat-button {left: 22px; transition: left 200ms ease;}'; // the custom CSS for the chat button
             chatButtonHead.appendChild(buttonStyle);     
             isWindowStyleAppended = true;
         }
