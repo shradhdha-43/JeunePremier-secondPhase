@@ -260,16 +260,25 @@
         "a01be33c-b005-4f6e-bc1a-ad2ece479dfd": {
           "type": "marquee",
           "settings": {
+            "img_1": "shopify:\/\/shop_images\/lesechos_Tekengebied_1-01_2x_b9becc4c-c837-4b42-8409-549392552188.png",
+            "img_2": "shopify:\/\/shop_images\/l_officiele_Tekengebied_1_2x_e08448d1-58fd-4869-afa0-c58ec95b2448.png",
+            "img_3": "shopify:\/\/shop_images\/madame_figaro_Tekengebied_1_2x_c8b7f2aa-8531-4829-bc8c-63dadc11c9c0.png"
           }
         },
         "7e1692dd-0c87-4b45-b067-a571944133ba": {
           "type": "marquee",
           "settings": {
+            "img_1": "shopify:\/\/shop_images\/magicmama_Tekengebied_1_2x_e8f8a8ea-d44d-433b-9176-3649699d2f8b.png",
+            "img_2": "shopify:\/\/shop_images\/maisondematernelles_Tekengebied_1_2x_3ea5c6e7-eb5c-4991-a7c8-82999658235a.png",
+            "img_3": "shopify:\/\/shop_images\/marie_claire_idees_Tekengebied_1_2x_57ace3f3-f116-4381-a99a-993b2bbd3347.png"
           }
         },
         "d562d84a-0f02-449a-b00f-ea67e20dc517": {
           "type": "marquee",
           "settings": {
+            "img_1": "shopify:\/\/shop_images\/marieclaire_Tekengebied_1_2x_8a076a52-048e-4358-949b-6876541fdbae.png",
+            "img_2": "shopify:\/\/shop_images\/marieclaireenfants_Tekengebied_1_2x_cd45288b-5231-48dc-a726-37b46f4e51e3.png",
+            "img_3": "shopify:\/\/shop_images\/marieclairemaison_Tekengebied_1_2x_2261bb6f-b238-49a0-8064-d988a3bdcb27.png"
           }
         },
         "94d56e59-3b23-4355-8638-393060759fd1": {
