@@ -597,28 +597,28 @@
 </script>
     
 <script>
-  GorgiasChat.init().then(function() {
+  $(document).ready(function() {
+    GorgiasChat.init().then(function() {
 
-    GorgiasChat.on('ready', function() {
-      var isWindowStyleAppended = false;
-      setTimeout(() => {
-        var container = document.querySelector('#gorgias-chat-container');
-        var chatButtonHead = container?.querySelector('#chat-button');
+      GorgiasChat.on('ready', function() {
+        setTimeout(() => {
+		var container = document.querySelector('#gorgias-chat-container');
         var chatWindowHead = container?.querySelector('#chat-window');
+        var chatButtonHead = container?.querySelector('#chat-button');
 
-        if (chatButtonHead?.children.length > 0 && chatWindowHead?.children.length > 0 && !isWindowStyleAppended) {
-        	console.log("In");
-            var buttonStyle = document.createElement('style');
-        	var WindowStyle = document.createElement('style');
-            buttonStyle.textContent = '#chat-button {left: 22px; transition: left 200ms ease;}'; // the custom CSS for the chat button
-        	WindowStyle.textContent = '#chat-window {left: 0px; transition: left 200ms ease;}'; // the custom CSS for the chat window
-            chatButtonHead.appendChild(buttonStyle);
-        	chatWindowHead.appendChild(WindowStyle);
-//             isWindowStyleAppended = true;
+        if (chatButtonHead?.children.length > 0 && chatWindowHead?.children.length > 0) {
+        console.log("In");
+        var buttonStyle = document.createElement('style');
+        var WindowStyle = document.createElement('style');
+        buttonStyle.textContent = '#chat-button {left: 22px; transition: left 200ms ease;}'; // the custom CSS for the chat button
+        WindowStyle.textContent = '#chat-window {left: 0px; transition: left 200ms ease;}'; // the custom CSS for the chat window
+        chatButtonHead.appendChild(buttonStyle);
+        chatWindowHead.appendChild(WindowStyle);
         }
-      
-      }, 800);
-      
+
+        }, 200);
+
+      });
     });
   });
 </script>
