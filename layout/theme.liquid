@@ -607,6 +607,7 @@
         var chatWindowHead = container?.querySelector('#chat-window');
 
         if (chatButtonHead?.children.length > 0 && chatWindowHead?.children.length > 0 && !isWindowStyleAppended) {
+        	console.log("In");
             var buttonStyle = document.createElement('style');
         	var WindowStyle = document.createElement('style');
             buttonStyle.textContent = '#chat-button {left: 22px; transition: left 200ms ease;}'; // the custom CSS for the chat button
