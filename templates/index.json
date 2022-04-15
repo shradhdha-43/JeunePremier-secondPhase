@@ -15,18 +15,21 @@
         "5fb7d523-3f2c-4918-a725-415a099f5ace": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/tick.webp",
             "description": "2 Jahre <strong><u>Garantie<\/u><\/strong>"
           }
         },
         "827e64c5-68c3-4179-97d2-a75429496477": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/returns2.webp",
             "description": "14 Tage recht op <strong><u>retour<\/u><\/strong>"
           }
         },
         "13e5a933-ce12-4b7c-8b96-0e0e637bf33a": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/payments2.webp",
             "description": "Jetzt kaufen, <strong><u>später bezahlen<\/u><\/strong>"
           }
         }
