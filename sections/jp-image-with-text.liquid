@@ -17,12 +17,13 @@
         <div class="img-w-txt-desc img-w-txt-desc-link light">{{ section.settings.desc }}</div>
         {% else %}
         <div class="img-w-txt-desc light">{{ section.settings.desc }}</div>
+        {% endif %}
         {% if section.settings.link_type == 'btn' %}
         <a href="{{ section.settings.link }}" class="video-sec-btn title button"><span class="original-text">{{ section.settings.link_txt }}</span><span class="hover-text">{{ section.settings.link_hover_txt }}</span></a>
         {% else %}
         <a href="{{ section.settings.link }}" class="read-more-btn medium">{{ section.settings.link_txt }}</a>
         {% endif %}
-        {% endif %}
+        
         
       </div>
       {% if section.settings.section_type == 'video' %}
