@@ -601,7 +601,7 @@
     GorgiasChat.init().then(function() {
 
       GorgiasChat.on('ready', function() {
-        setTimeout(() => {
+        setInterval(() => {
 		var container = document.querySelector('#gorgias-chat-container');
         var chatWindowHead = container?.querySelector('#chat-window');
         var chatButtonHead = container?.querySelector('#chat-button');
