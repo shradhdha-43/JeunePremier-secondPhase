@@ -606,7 +606,7 @@
         var chatWindowHead = container?.querySelector('#chat-window');
         var chatButtonHead = container?.querySelector('#chat-button');
 
-        if (chatButtonHead?.children.length > 0 && chatWindowHead?.children.length > 0) {
+        if (chatButtonHead && chatWindowHead) {
         console.log("In");
         var buttonStyle = document.createElement('style');
         var WindowStyle = document.createElement('style');
