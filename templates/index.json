@@ -386,6 +386,17 @@
         "link_txt": "Mehr sehen",
         "link_url": "shopify:\/\/pages\/shop-instagram"
       }
+    },
+    "16502824973f476e50": {
+      "type": "jp-labels-slider-custom",
+      "settings": {
+        "bg_color": "light",
+        "title": "LABELS KOLLEKTION",
+        "desc": "5 Uhr morgens in der Serengeti, ein wunderschöner Ort südlich des Äquators... Eine Löwin streckt sich und macht sich bereit für die Jagd..",
+        "labels_collection": "wrapping-paper-labels",
+        "btn_txt": "ENTDECKEN",
+        "btn_url": "shopify:\/\/collections\/wrapping-paper-labels"
+      }
     }
   },
   "order": [
@@ -400,6 +411,7 @@
     "16437127436c75ae35",
     "16437837659a2daced",
     "16493243714634c848",
-    "164563766038f711c3"
+    "164563766038f711c3",
+    "16502824973f476e50"
   ]
 }
