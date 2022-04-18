@@ -604,22 +604,25 @@
     GorgiasChat.init().then(function() {
 
       GorgiasChat.on('ready', function() {
-        setInterval(() => {
+        setTimeout(() => {
 		var container = document.querySelector('#gorgias-chat-container');
         var chatWindowHead = container?.querySelector('#chat-window');
         var chatButtonHead = container?.querySelector('#chat-button');
+        var chatCampaignHead = container?.querySelector('#chat-campaigns');
 
-        if (chatButtonHead && chatWindowHead) {
-        console.log("In");
+        if (chatButtonHead && chatWindowHead || chatCampaignHead) {
         var buttonStyle = document.createElement('style');
         var WindowStyle = document.createElement('style');
-        buttonStyle.textContent = '#chat-button {left: 22px; transition: left 200ms ease;}'; // the custom CSS for the chat button
-        WindowStyle.textContent = '#chat-window {left: 0px; transition: left 200ms ease;}'; // the custom CSS for the chat window
+        var CampaignStyle = document.createElement('style');
+        buttonStyle.textContent = '#chat-button {left: 22px; transition: left 200ms ease;}';
+        WindowStyle.textContent = '#chat-window {left: 0px; transition: left 200ms ease;}';
+        CampaignStyle.textContent = '#chat-campaigns {left: 0px; transition: left 200ms ease;}';
         chatButtonHead.appendChild(buttonStyle);
         chatWindowHead.appendChild(WindowStyle);
+        chatCampaignHead.appendChild(CampaignStyle);
         }
 
-        }, 200);
+        }, 800);
 
       });
     });
