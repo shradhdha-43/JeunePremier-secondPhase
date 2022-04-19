@@ -18,11 +18,20 @@
             "img_2": "shopify:\/\/shop_images\/lesechos_Tekengebied_1-01_2x_b9becc4c-c837-4b42-8409-549392552188.png",
             "img_3": "shopify:\/\/shop_images\/maisondematernelles_Tekengebied_1_2x_3ea5c6e7-eb5c-4991-a7c8-82999658235a.png"
           }
+        },
+        "ad416ad5-d01f-418e-9fc1-4bcebe1f3302": {
+          "type": "marquee",
+          "settings": {
+            "img_1": "shopify:\/\/shop_images\/magicmama_Tekengebied_1_2x_e8f8a8ea-d44d-433b-9176-3649699d2f8b.png",
+            "img_2": "shopify:\/\/shop_images\/marie_claire_idees_Tekengebied_1_2x_57ace3f3-f116-4381-a99a-993b2bbd3347.png",
+            "img_3": "shopify:\/\/shop_images\/marieclairemaison_Tekengebied_1_2x_2261bb6f-b238-49a0-8064-d988a3bdcb27.png"
+          }
         }
       },
       "block_order": [
         "2ec22d25-2a4a-419b-85fd-6b098274bd00",
-        "0cda5b22-0dad-4b23-9682-9128e66414c4"
+        "0cda5b22-0dad-4b23-9682-9128e66414c4",
+        "ad416ad5-d01f-418e-9fc1-4bcebe1f3302"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/hero.png",
