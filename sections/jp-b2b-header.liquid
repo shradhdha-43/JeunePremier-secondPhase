@@ -92,6 +92,18 @@
     var mybutton = document.getElementById("to-top");
     mybutton.style.display = "flex";
   });
+  
+  $('.jp-b2b-header-wrapper').click(function() {
+  	$('.drawer-menu-b2b').addClass('drawn');
+    $('html').addClass('no-scroll');
+    $('body').addClass('no-scroll');
+  });
+  
+  $('.drawer-menu-close-btn').click(function() {
+  	$('.drawer-menu-b2b').removeClass('drawn');
+    $('html').removeClass('no-scroll');
+    $('body').removeClass('no-scroll');
+  });
 
 </script>
 
