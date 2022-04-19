@@ -34,3 +34,8 @@
 	background-color: var(--dd-color-first);
     color: var(--dd-color-sixth);
 }
+
+.jp-b2b-hero-wrap {
+    height: 66.66666667vw;
+    max-height: calc(100vh - 150px);
+}
