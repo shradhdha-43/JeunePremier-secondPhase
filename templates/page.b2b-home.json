@@ -1,10 +1,5 @@
 {
   "sections": {
-    "1644996717ac0333a4": {
-      "type": "jp-page",
-      "settings": {
-      }
-    },
     "1650370907f3c868da": {
       "type": "jp-b2b-hero",
       "settings": {
@@ -17,7 +12,6 @@
     }
   },
   "order": [
-    "1644996717ac0333a4",
     "1650370907f3c868da"
   ]
 }
