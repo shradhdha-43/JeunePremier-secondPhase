@@ -283,8 +283,8 @@
           "txt_below_logo": "BUSINESS",
           "left_drawer_menu": "",
           "left_menu": "b2b-header-left-menu",
-          "right_menu_btn_txt": "",
-          "right_menu_btn_url": ""
+          "right_menu_btn_txt": "LOG IN",
+          "right_menu_btn_url": "#"
         }
       }
     },
