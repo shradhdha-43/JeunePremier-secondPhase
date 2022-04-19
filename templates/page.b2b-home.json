@@ -10,10 +10,19 @@
             "img_2": "shopify:\/\/shop_images\/ideat_Tekengebied_1-01_2x_71ee2f30-4919-49a2-940d-2cd2840440f8.png",
             "img_3": "shopify:\/\/shop_images\/l_officiele_Tekengebied_1_2x_e08448d1-58fd-4869-afa0-c58ec95b2448.png"
           }
+        },
+        "0cda5b22-0dad-4b23-9682-9128e66414c4": {
+          "type": "marquee",
+          "settings": {
+            "img_1": "shopify:\/\/shop_images\/madame_figaro_Tekengebied_1_2x_c8b7f2aa-8531-4829-bc8c-63dadc11c9c0.png",
+            "img_2": "shopify:\/\/shop_images\/lesechos_Tekengebied_1-01_2x_b9becc4c-c837-4b42-8409-549392552188.png",
+            "img_3": "shopify:\/\/shop_images\/maisondematernelles_Tekengebied_1_2x_3ea5c6e7-eb5c-4991-a7c8-82999658235a.png"
+          }
         }
       },
       "block_order": [
-        "2ec22d25-2a4a-419b-85fd-6b098274bd00"
+        "2ec22d25-2a4a-419b-85fd-6b098274bd00",
+        "0cda5b22-0dad-4b23-9682-9128e66414c4"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/hero.png",
