@@ -29,3 +29,8 @@
     color: var(--dd-color-first);
     text-transform: uppercase;
 }
+
+.b2b-hero-btn:hover{
+	background-color: var(--dd-color-first);
+    color: var(--dd-color-sixth);
+}
