@@ -38,7 +38,9 @@
         <div class="drawer-menu-title">MENU</div>
       </div>
       <div class="drawer-menu-content">
-        
+        {% for link in section.settings.left_drawer_menu.links %}
+            <a href="{{ link.url }}" class="header-left-link">{{ link.title }}</a>
+          {% endfor %}
         
       </div>
     </div>
