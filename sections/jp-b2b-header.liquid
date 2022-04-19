@@ -39,7 +39,7 @@
       </div>
       <div class="drawer-menu-content">
         {% for link in section.settings.left_drawer_menu.links %}
-            <a href="{{ link.url }}" class="header-left-link">{{ link.title }}</a>
+            <a href="{{ link.url }}" class="header-drawer-link{% if forloop.first %} btn b2b-header-right-btn{% endif %}">{{ link.title }}</a>
           {% endfor %}
         
       </div>
