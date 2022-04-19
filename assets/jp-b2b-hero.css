@@ -2,4 +2,6 @@
     background-color: var(--dd-color-sixth);
     padding: 40px;
     width: 50%;
+      height: fit-content;
+    height: -moz-fit-content;
 }
