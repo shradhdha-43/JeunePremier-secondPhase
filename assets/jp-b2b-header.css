@@ -37,6 +37,11 @@
     position: fixed;
     top: 0;
     left: -600px;
+  transition: .4s ease;
+}
+
+.drawer-menu-b2b.drawn{
+	left: 0;
 }
 
 .drawer-menu-close-btn {
