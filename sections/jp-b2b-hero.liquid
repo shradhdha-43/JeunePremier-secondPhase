@@ -1,6 +1,7 @@
 {{ 'jp-hero.css' | asset_url | stylesheet_tag }}
 {{ 'jp-b2b-hero.css' | asset_url | stylesheet_tag }}
 
+<div class="jp-b2b-hero-wrap">
 <div class="hero" style="{% if section.settings.image %}background-image: url({{ section.settings.image | img_url: "2000x" }}){% else %}background: #375D54{% endif %}">
   <div class="container flex-box justify-end">
     <span class="header-inner-wrapper">
@@ -13,6 +14,7 @@
       {% if section.settings.headinglink != blank %}<a class="btn hero-btn btn-center" href="{{ section.settings.headinglink }}">{{ section.settings.headinglinktext }}</a>{% endif %}
     </span>
   </div>
+</div>
 </div>
 
 {% schema %}
