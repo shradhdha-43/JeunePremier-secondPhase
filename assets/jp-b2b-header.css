@@ -48,3 +48,10 @@
 .drawer-menu-title {
     text-align: center;
 }
+
+.header-drawer-link {
+    display: block;
+    margin-bottom: 40px;
+    width: fit-content;
+    width: -moz-fit-content;
+}
