@@ -28,3 +28,13 @@
 	padding: 32px 0 28px;
   border-bottom: 1px solid;
 }
+
+.drawer-menu-b2b {
+    width: 610px;
+    background-color: #fff;
+    z-index: 10;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
