@@ -71,6 +71,10 @@
 }
 
 .jp-header-wrapper.jp-b2b-header-wrapper{
-	height: 134.8px;
-  min-height: 134.8px;
+	height: 126.8px;
+  min-height: 126.8px;
+}
+
+.jp-b2b-header-wrapper .header-content {
+    padding: 24px 0 16px;
 }
