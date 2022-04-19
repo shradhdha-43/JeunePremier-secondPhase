@@ -2,12 +2,28 @@
   "sections": {
     "1650370907f3c868da": {
       "type": "jp-b2b-hero",
+      "blocks": {
+        "2ec22d25-2a4a-419b-85fd-6b098274bd00": {
+          "type": "marquee",
+          "settings": {
+            "img_1": "shopify:\/\/shop_images\/lejdd_Tekengebied_1-01_2x_fcbfc33c-7414-4e73-b600-557d7fdc89d6.png",
+            "img_2": "shopify:\/\/shop_images\/ideat_Tekengebied_1-01_2x_71ee2f30-4919-49a2-940d-2cd2840440f8.png",
+            "img_3": "shopify:\/\/shop_images\/l_officiele_Tekengebied_1_2x_e08448d1-58fd-4869-afa0-c58ec95b2448.png"
+          }
+        }
+      },
+      "block_order": [
+        "2ec22d25-2a4a-419b-85fd-6b098274bd00"
+      ],
       "settings": {
         "image": "shopify:\/\/shop_images\/hero.png",
         "heading": "WELCOME TO OUR JEUNE PREMIER B2B PLATFORM",
         "subtitle": "Unique and Colorful School Backpacks",
         "link": "shopify:\/\/collections",
-        "headinglinktext": "BECOME A RESELLER"
+        "headinglinktext": "BECOME A RESELLER",
+        "title": "As seen on",
+        "marquee_height": 28,
+        "marquee_item_width": 280
       }
     }
   },
