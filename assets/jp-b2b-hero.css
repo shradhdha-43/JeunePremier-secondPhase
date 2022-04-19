@@ -21,3 +21,11 @@
     line-height: 24px;
     margin-bottom: 16px;
 }
+
+.b2b-hero-btn {
+    width: 100%;
+    display: block;
+    background-color: var(--dd-color-second);
+    color: var(--dd-color-first);
+    text-transform: uppercase;
+}
