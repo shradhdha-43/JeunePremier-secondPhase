@@ -6,7 +6,7 @@
   <div class="container flex-box">
     <div class="hero-txt-container">
       <h1 class="title b2b-hero-title">{{ section.settings.heading }}</h1>
-      <div class="subtitle">{{ section.settings.subtitle }}</div>
+      <div class="subtitle light">{{ section.settings.subtitle }}</div>
       <a class="btn b2b-hero-btn" href="{{ section.settings.link }}">{{ section.settings.headinglinktext }}</a>
     </div>
   </div>
@@ -28,6 +28,11 @@
         "label": "Heading",
 		"default": "WELCOME TO OUR JEUNE PREMIER B2B PLATFORM"
       },
+		{
+			"type": "text",
+			"id": "subtitle",
+			"label": "Sub Heading"
+		},
       {
         "type": "url",
         "id": "link",
