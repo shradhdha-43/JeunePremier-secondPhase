@@ -5,3 +5,7 @@
       height: fit-content;
     height: -moz-fit-content;
 }
+
+.jp-b2b-hero-wrap .hero .flex-box.container{
+	align-items: center;
+}
