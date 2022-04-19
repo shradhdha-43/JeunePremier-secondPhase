@@ -6,3 +6,9 @@
     margin-right: 40px;
   cursor: pointer;
 }
+
+.desktop-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
