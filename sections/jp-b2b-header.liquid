@@ -20,7 +20,10 @@
             </div>
         </div>
         <div class="header-middle">
-        	<a href="{{ routes.root_url }}" class="desktop-logo">{{ section.settings.logo_svg_desktop }}</a>
+        	<a href="{{ routes.root_url }}" class="desktop-logo">
+              <div class="desktop-logo-inner">{{ section.settings.logo_svg_desktop }}</div>
+              <div class="desdktop-logo-txt">{{ section.settings.txt_below_logo }}</div>
+          </a>
         </div>
         <div class="header-right no-t-m">
           
