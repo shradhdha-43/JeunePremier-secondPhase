@@ -44,3 +44,7 @@
     left: 40px;
     cursor: pointer;
 }
+
+.drawer-menu-title {
+    text-align: center;
+}
