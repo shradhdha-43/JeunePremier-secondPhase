@@ -13,10 +13,14 @@
             <span class="icon-bar bar3"></span>
           </div>
           </div>
+          <div class="header-left-menu">
+          {% for link in section.settings.lower_menu.links %}
+            <a href="{{ link.url }}" class="header-left-link">{{ link.title }}</a>
+          {% endfor %}
+            </div>
         </div>
         <div class="header-middle">
-        	<a href="{{ routes.root_url }}" class="desktop-logo no-t-m">{{ section.settings.logo_svg_desktop }}</a>
-          <a href="{{ routes.root_url }}" class="mobile-logo no-d">{{ section.settings.logo_svg_mobile }}</a>
+        	<a href="{{ routes.root_url }}" class="desktop-logo">{{ section.settings.logo_svg_desktop }}</a>
         </div>
         <div class="header-right no-t-m">
           
