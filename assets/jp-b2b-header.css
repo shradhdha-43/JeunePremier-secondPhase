@@ -12,3 +12,14 @@
     flex-direction: column;
     align-items: center;
 }
+
+.btn.b2b-header-right-btn {
+    padding: 16px 24px;
+    background-color: var(--dd-color-second);
+    color: var(--dd-color-first);
+}
+
+.btn.b2b-header-right-btn:hover{
+	background-color: var(--dd-color-first);
+      color: var(--dd-color-sixth);
+}
