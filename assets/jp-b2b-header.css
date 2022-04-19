@@ -23,3 +23,8 @@
 	background-color: var(--dd-color-first);
       color: var(--dd-color-sixth);
 }
+
+.drawer-menu-header{
+	padding: 32px 0 28px;
+  border-bottom: 1px solid;
+}
