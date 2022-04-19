@@ -43,9 +43,27 @@
         "marquee_height": 28,
         "marquee_item_width": 280
       }
+    },
+    "16503735538213c0b3": {
+      "type": "jp-image-with-text",
+      "settings": {
+        "section_type": "img_txt",
+        "link_type": "link",
+        "img_aligment": "right",
+        "title": "Our story",
+        "sub_title": "",
+        "desc": "“From Paris to Seoul, Jeune Premier is the coolest satchel right now!” was the headline of a newspaper article in De Tijd.<br><br> When I couldn’t find a nice backpack for my son Ralph in 2012, I sat down at the kitchen table and quickly designed one myself. Ralph loved color and I value aesthetics and quality. With that in mind, I wanted to design something colorful and strong at the same time, moving away from the brightly colored polyester…",
+        "link_txt": "Read more",
+        "link_hover_txt": "",
+        "link": "shopify:\/\/collections",
+        "img": "shopify:\/\/shop_images\/Schermafbeelding.webp",
+        "video_link": "",
+        "marg_top": "false"
+      }
     }
   },
   "order": [
-    "1650370907f3c868da"
+    "1650370907f3c868da",
+    "16503735538213c0b3"
   ]
 }
