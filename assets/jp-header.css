@@ -248,9 +248,7 @@ span.nav-arrow svg {
   text-decoration: underline;
 }
 
-
-@media(max-width:992px){
-	.icon-bar {
+.icon-bar {
     width: 24px;
     background-color: var(--dd-color-first);
     display: block;
@@ -259,6 +257,9 @@ span.nav-arrow svg {
   
   .bar2 {
     margin: 5px 0; }
+
+@media(max-width:992px){
+	
   
   .drawer-menu {
     display: flex;
