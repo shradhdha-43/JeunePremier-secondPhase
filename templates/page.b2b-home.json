@@ -4,9 +4,19 @@
       "type": "jp-page",
       "settings": {
       }
+    },
+    "1650370907f3c868da": {
+      "type": "jp-b2b-hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/hero.png",
+        "heading": "WELCOME TO OUR JEUNE PREMIER B2B PLATFORM",
+        "link": "",
+        "headinglinktext": ""
+      }
     }
   },
   "order": [
-    "1644996717ac0333a4"
+    "1644996717ac0333a4",
+    "1650370907f3c868da"
   ]
 }
