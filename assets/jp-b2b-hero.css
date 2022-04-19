@@ -1,0 +1,5 @@
+.hero-txt-container {
+    background-color: var(--dd-color-sixth);
+    padding: 40px;
+    width: 50%;
+}
