@@ -39,3 +39,7 @@
     height: 66.66666667vw;
     max-height: calc(100vh - 150px);
 }
+
+.jp-b2b-hero-wrap .hero {
+    height: calc(100% - 188px);
+}
