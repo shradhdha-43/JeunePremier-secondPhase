@@ -38,6 +38,7 @@
 .jp-b2b-hero-wrap {
     height: 66.66666667vw;
     max-height: calc(100vh - 150px);
+  margin-bottom: 73px;
 }
 
 .jp-b2b-hero-wrap .hero {
