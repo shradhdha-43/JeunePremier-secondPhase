@@ -32,83 +32,15 @@
         <div class="header-right no-d"><div class="header-cart"><span class="cart-items-total medium">{{ cart.item_count }}</span></div></div>
       </div>
     </div>
-    <div class="drawer-menu no-d">
-      <div class="drawer-menu-content">
-        <a href="/collections/all" class="shop-all-prods-btn title">{{ 'sections.header.all_products' | t }}</a>
-        <div class="header-lower-menu justify-between">
-          {% for link in section.settings.lower_menu.links %}
-          	{% if forloop.first %}
-          		{% assign opt = 4 %}
-          	{% else %}
-          		{% assign opt = 5 %}
-          	{% endif %}
-          <div class="menu-link-wrap menu-link-wrap-mobile">
-            <div class="medium lower-menu-link" role="button">{{ link.title | escape }}</div>
-            <div class="panel">
-              <div class="header-menu-dropdown-wrap flex-box justify-between{% if forloop.first != true %} five-cards{% endif %}">
-                {%- for childlink in link.links -%}
-                {% assign handlesxn = childlink.url | split: "/" %}
-                {% assign colxn = collections[handlesxn.last] %}
-                {% if colxn.url == blank %}
-                {% assign colxn = all_products[handlesxn.last] %}
-                {% endif %}
-                {% if childlink.title == "(black-card)" %}
-                {% else %}
-                {% endif %}
-
-                {% if opt == 5 %}
-                {% if childlink.title == "(black-card)" %}
-                <div class="nav-card">
-                  <a href="{{ colxn.url }}" class="nav-title light">{{ 'sections.header.all_collection' | t: title: link.title }}</a>
-                </div>
-                {% else %}
-                <div class="nav-card">
-
-                  <a href="{{ colxn.url }}" class="nav-card-link">
-                    <div class="nav-title light">{{ colxn.title }}</div>
-                  </a>
-                </div>
-
-                {% endif %}
-                {% else %}
-                {% if forloop.first %}
-                	<a href="{{ colxn.url }}" class="nav-card black-card four-cards">
-                      <div class="nav-card-link medium">{{ 'sections.header.all_collection' | t: title: link.title }}</div>
-                      <div class="nav-title light">{{ 'sections.header.all_collection' | t: title: link.title }}</div>
-                    </a>
-                {% else %}
-                <div class="nav-card four-cards">
-
-                  <a href="{{ colxn.url }}" class="nav-card-link">
-                    <img src="{{ colxn.featured_image | image_url: height: 500 }}" alt="{{ colxn.title }}" loading="lazy" {% if colxn.featured_image.height >= colxn.featured_image.width %}style="object-fit: contain;"{% endif %}>
-                    <div class="nav-title light">{{ colxn.title }}</div>
-                  </a>
-                </div>
-                {% endif %}
-                {% endif %}
-                {%- endfor -%}
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-        <div class="header-upper-menu justify-between align-center">
-          {% for link in section.settings.upper_menu.links %}
-          <a href="{{ link.url }}" class="light upper-menu-link">{{ link.title | escape }}</a>
-          {% endfor %}	
-          <div class="langs rel">
-            <a href="#" class="light">DE</a>
-            {% include 'icon-down-chev' %}
-            <ul class="header-sub-lang-list">
-              <li>
-                <a href="#" class="light">NL</a>
-                <a href="#" class="light">FR</a>
-              </li>
-            </ul>
-          </div>
-        </div>
+    <div class="drawer-menu">
+      <div class="drawer-menu-header rel">
+        <div class="drawer-menu-close-btn">Back</div>
+        <div class="drawer-menu-title">MENU</div>
       </div>
-      <div class="close-menu-drawer-button"><span class="close-text light">Close</span><span class="close-icon">{% include 'icon-close' %}</span></div>
+      <div class="drawer-menu-content">
+        
+        
+      </div>
     </div>
   </header>
 </div>
