@@ -55,3 +55,7 @@
     width: fit-content;
     width: -moz-fit-content;
 }
+
+.drawer-menu-content {
+    padding: 80px;
+}
