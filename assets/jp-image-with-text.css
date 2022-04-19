@@ -62,6 +62,16 @@
   justify-content: center;
 }
 
+.video-sec-btn.button.yellow-btn{
+	color: var(--dd-color-first);
+      background-color: var(--dd-color-second);
+}
+
+.video-sec-btn.button.yellow-btn:hover{
+	background-color: var(--dd-color-first);
+      color: var(--dd-color-sixth);
+}
+
 .video-cover {
     position: absolute;
     width: 100%;

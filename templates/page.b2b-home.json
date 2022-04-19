@@ -60,10 +60,27 @@
         "video_link": "",
         "marg_top": "false"
       }
+    },
+    "1650373849c7b91265": {
+      "type": "jp-image-with-text",
+      "settings": {
+        "section_type": "img_txt",
+        "link_type": "btn",
+        "img_aligment": "left",
+        "title": "Lorem ipsum dolor sit amet",
+        "sub_title": "",
+        "desc": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea<br><br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
+        "link_txt": "BECOME A RESELLER",
+        "link_hover_txt": "",
+        "link": "shopify:\/\/collections",
+        "video_link": "",
+        "marg_top": "false"
+      }
     }
   },
   "order": [
     "1650370907f3c868da",
-    "16503735538213c0b3"
+    "16503735538213c0b3",
+    "1650373849c7b91265"
   ]
 }
