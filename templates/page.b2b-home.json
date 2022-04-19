@@ -81,11 +81,30 @@
         "video_link": "",
         "marg_top": "false"
       }
+    },
+    "1650374631b618a5a9": {
+      "type": "jp-image-with-text",
+      "settings": {
+        "section_type": "video",
+        "link_type": "link",
+        "btn_color": "black",
+        "img_aligment": "left",
+        "title": "New: ergomaxx",
+        "sub_title": "",
+        "desc": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea<br><br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea",
+        "link_txt": "",
+        "link_hover_txt": "",
+        "link": "",
+        "cover_img": "shopify:\/\/shop_images\/image1.jpg",
+        "video_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0077\/6565\/5629\/files\/BANNERWEBSITE.mp4?v=1619694065",
+        "marg_top": "false"
+      }
     }
   },
   "order": [
     "1650370907f3c868da",
     "16503735538213c0b3",
-    "1650373849c7b91265"
+    "1650373849c7b91265",
+    "1650374631b618a5a9"
   ]
 }
