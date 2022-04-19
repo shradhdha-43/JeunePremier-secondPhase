@@ -78,3 +78,11 @@
 .jp-b2b-header-wrapper .header-content {
     padding: 24px 0 16px;
 }
+
+.header-left-link {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1.88px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
