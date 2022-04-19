@@ -3,16 +3,12 @@
 
 <div class="jp-b2b-hero-wrap">
 <div class="hero" style="{% if section.settings.image %}background-image: url({{ section.settings.image | img_url: "2000x" }}){% else %}background: #375D54{% endif %}">
-  <div class="container flex-box justify-end">
-    <span class="header-inner-wrapper">
-      <h1 class="hero-text">
-        <span>
-          {% if section.settings.design2 %}<span class="sub-head">{{ section.settings.subheading }}</span>{% endif %}
-          {{ section.settings.heading }}
-        </span>
-      </h1>
-      {% if section.settings.headinglink != blank %}<a class="btn hero-btn btn-center" href="{{ section.settings.headinglink }}">{{ section.settings.headinglinktext }}</a>{% endif %}
-    </span>
+  <div class="container flex-box">
+    <div class="hero-txt-container">
+      <h1 class="title b2b-hero-title">{{ section.settings.heading }}</h1>
+      <div class="subtitle">{{ section.settings.subtitle }}</div>
+      <a class="btn b2b-hero-btn" href="{{ section.settings.link }}">{{ section.settings.headinglinktext }}</a>
+    </div>
   </div>
 </div>
 </div>
@@ -30,12 +26,12 @@
         "type": "html",
         "id": "heading",
         "label": "Heading",
-		"default": "Welcome to store"
+		"default": "WELCOME TO OUR JEUNE PREMIER B2B PLATFORM"
       },
       {
         "type": "url",
-        "id": "headinglink",
-        "label": "Heading Button"
+        "id": "link",
+        "label": "Heading Button Link"
       },
       {
         "type": "text",
