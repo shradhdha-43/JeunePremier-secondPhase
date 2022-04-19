@@ -59,3 +59,8 @@
 .drawer-menu-content {
     padding: 80px;
 }
+
+.header-drawer-link.btn.b2b-header-right-btn {
+    width: 100%;
+    margin-top: 0 !important;
+}
