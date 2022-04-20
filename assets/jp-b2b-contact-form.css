@@ -16,3 +16,9 @@
 .b2b-contact-wrapper{
 	margin: 40px 0;
 }
+
+@media(max-width: 992px){
+	.b2b-contact-inner {
+    flex-direction: column;
+}
+}
