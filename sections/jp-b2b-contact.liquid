@@ -1,7 +1,87 @@
+{{ 'jp-contact-form.css' | asset_url | stylesheet_tag }}
+<div class="b2b-contact-wrapper">
+  <div class="container">
+    <div class="b2b-contact-inner justify-between">
+      <div class="b2b-contact-left">
+        <h1 class="title b2b-contact-title">{{ section.settings.title }}</h1>
+        <div class="b2b-contact-desc light">{{ section.settings.desc }}</div>
+      </div>
+      <div class="b2b-contact-form-wrap b2b-contact-right">
+        {% form 'contact' %}
+        {% if form.posted_successfully? %} 
+        <div class="success-message text-center">{{ 'templates.contact.form.post_success' | t }}</div>
+        <script>
+          window.location.replace('#contact_form');
+        </script>
+        {% endif %}
+        {{ form.errors | default_errors }}
+        <div class="row mini-row newsletter-row customer-form-wrap">
+          <div class="cont-input-group">
+            <label for="contact_fname" class="cont-label medium">{{ 'templates.contact.form.fname' | t }}</label>
+            <input type="text" placeholder="{{ 'templates.contact.form.fname' | t }}" name="contact[fname]" id="contact_fname" class="cont-input" autocorrect="off" autocapitalize="off" required>
+          </div>
+          <div class="cont-input-group">
+            <label for="contact_lname" class="cont-label medium">{{ 'templates.contact.form.lname' | t }}</label>
+            <input type="text" placeholder="{{ 'templates.contact.form.lname' | t }}" name="contact[lname]" id="contact_lname" class="cont-input" autocorrect="off" autocapitalize="off" required>
+          </div>
+          <div class="cont-input-group">
+            <label for="contact_email" class="cont-label medium">{{ 'templates.contact.form.email' | t }}</label>
+            <input type="email" placeholder="{{ 'templates.contact.form.email' | t }}" name="contact[email]" id="contact_email" class="cont-input" autocorrect="off" autocapitalize="off" required>
+          </div>
+          <div class="cont-input-group">
+            <label for="contact_message" class="cont-label medium">{{ 'templates.contact.form.message' | t }}</label>
+            <textarea type="text" placeholder="{{ 'templates.contact.form.message' | t }}" name="contact[message]" id="contact_message" class="cont-input" rows="4" cols="50" autocorrect="off" autocapitalize="off"></textarea>
+          </div>
+          <div class="form-condition light"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ 'templates.contact.form.tnc' | t }}</div>
+          <div class="cont-submit-btn title" name="commit" id="Contact">
+            {{ 'templates.contact.form.send' | t }}
+          </div>
+        </div>
+        {% endform %}
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  
+  $('.form-condition').click(function() {
+  	$(this).toggleClass('selected');
+    $(this).removeClass('red-btn');
+  });
+
+  $('.cont-submit-btn').click(function() {
+    if($('.form-condition').hasClass('selected')){
+    	$('form').submit();
+    }
+    else{
+    	$('.form-condition').addClass('red-btn');
+    }
+  });
+  
+</script>
+
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "JP B2B Contact",
+    "settings": [
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		},
+		{
+			"type": "text",
+			"id": "desc",
+			"label": "Description"
+		}
+],
+	"presets":[
+      {
+         "name":"JP B2B Contact"
+      }
+   ]
   }
 {% endschema %}
 
