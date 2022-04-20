@@ -103,6 +103,19 @@
     },
     "165042082401ae5e68": {
       "type": "jp-b2b-product-slider",
+      "blocks": {
+        "45ba6250-6a95-4375-bac4-8e587bbc5a5a": {
+          "type": "product",
+          "settings": {
+            "product": "backpack-kids",
+            "image1": "shopify:\/\/shop_images\/image1.jpg",
+            "image2": "shopify:\/\/shop_images\/image1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "45ba6250-6a95-4375-bac4-8e587bbc5a5a"
+      ],
       "settings": {
         "bg_color": "white",
         "title": "Join the adventure!",
@@ -110,7 +123,6 @@
         "collection": "it-bags",
         "btn_txt": "BECOME A RESELLER",
         "btn_url": "shopify:\/\/collections",
-        "related": false,
         "upsell_type": "bag"
       }
     }

@@ -49,13 +49,7 @@
                 {% assign collection_is_bestellers = true %}
               {% endif %}
               
-              {% if last_items and collection.handle != 'last-items' and collection.handle != 'letzte-artikel' %}
-                  <div class="prod-tag product-tag-last medium">{{ 'products.product.last_item' | t }}</div>
-              {% elsif is_bestseller %}
-                  {% unless collection_is_bestellers %}
-                    <div class="prod-tag medium">{{ 'products.product.bestseller' | t }}</div>
-                  {% endunless %}
-              {% endif %} 
+               
               {% unless collection.handle == 'neu' %}
                 {% for collectionx in product.collections %}{% if collectionx.handle contains "neu" %}
                 <div class="prod-neu-tag medium">{{ 'products.product.new' | t }}</div>{% break %}
@@ -145,13 +139,7 @@
                 {% assign collection_is_bestellers = true %}
               {% endif %}
               
-              {% if last_items and collection.handle != 'last-items' and collection.handle != 'letzte-artikel' %}
-                  <div class="prod-tag product-tag-last medium">{{ 'products.product.last_item' | t }}</div>
-              {% elsif is_bestseller %}
-                  {% unless collection_is_bestellers %}
-                    <div class="prod-tag medium">{{ 'products.product.bestseller' | t }}</div>
-                  {% endunless %}
-              {% endif %} 
+               
               {% unless collection.handle == 'neu' %}
                 {% for collectionx in product.collections %}{% if collectionx.handle contains "neu" %}
                 <div class="prod-neu-tag medium">{{ 'products.product.new' | t }}</div>{% break %}
