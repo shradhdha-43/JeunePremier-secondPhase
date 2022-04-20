@@ -91,11 +91,25 @@
         "title": "Meet the team",
         "desc": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita"
       }
+    },
+    "1650426219d33bed04": {
+      "type": "jp-product-slider",
+      "settings": {
+        "bg_color": "white",
+        "title": "a",
+        "desc": "asdfasdf",
+        "collection": "backpack-kids",
+        "btn_txt": "",
+        "btn_url": "",
+        "related": false,
+        "upsell_type": "bag"
+      }
     }
   },
   "order": [
     "16503735538213c0b3",
     "1650424977fe7d2f0d",
-    "1650425088a817ece5"
+    "1650425088a817ece5",
+    "1650426219d33bed04"
   ]
 }
