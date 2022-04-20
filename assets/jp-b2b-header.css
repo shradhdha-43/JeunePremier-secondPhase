@@ -96,3 +96,10 @@
 .header-right .langs{
 	margin-right: 24px;
 }
+
+@media(max-width: 992px){
+	.drawer-menu-b2b {
+    width: 100vw;
+    left: -100vw;
+}
+}
