@@ -466,6 +466,13 @@
   </head>
 
   <body class="gradient">
+    <script type="text/javascript">
+      $(document).ready(function() {
+        if (window.location.href.indexOf("b2b") > -1) {
+          alert("your url contains the name b2b");
+        }
+      });
+    </script>
     {% comment %}
     {% section 'jp-header' %}
     {% endcomment %}
