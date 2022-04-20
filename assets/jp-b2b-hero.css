@@ -44,3 +44,9 @@
 .jp-b2b-hero-wrap .hero {
     height: calc(100% - 188px);
 }
+
+@media(max-width: 992px){
+	.jp-b2b-hero-wrap {
+    height: 100vh;
+}
+}
