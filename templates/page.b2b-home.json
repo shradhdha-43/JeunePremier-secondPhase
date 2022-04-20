@@ -111,10 +111,19 @@
             "image1": "shopify:\/\/shop_images\/image1.jpg",
             "image2": "shopify:\/\/shop_images\/image1.jpg"
           }
+        },
+        "e1a04116-acc9-40a1-9e9e-e2567b8bdfc1": {
+          "type": "product",
+          "settings": {
+            "product": "alpaca",
+            "image1": "shopify:\/\/shop_images\/product-image-2.webp",
+            "image2": "shopify:\/\/shop_images\/product-image-2.webp"
+          }
         }
       },
       "block_order": [
-        "45ba6250-6a95-4375-bac4-8e587bbc5a5a"
+        "45ba6250-6a95-4375-bac4-8e587bbc5a5a",
+        "e1a04116-acc9-40a1-9e9e-e2567b8bdfc1"
       ],
       "settings": {
         "bg_color": "white",
