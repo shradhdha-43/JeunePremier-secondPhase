@@ -17,6 +17,7 @@
     padding: 16px 24px;
     background-color: var(--dd-color-second);
     color: var(--dd-color-first);
+      margin-top: 0;
 }
 
 .btn.b2b-header-right-btn:hover{
