@@ -102,4 +102,11 @@
     width: 100vw;
     left: -100vw;
 }
+  
+  .header-left-link {
+    margin-bottom: 40px;
+    display: block;
+    width: fit-content;
+    width: -moz-fit-content;
+}
 }
