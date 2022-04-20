@@ -1,3 +1,8 @@
 .coll-site {
     margin-right: 40px;
 }
+
+.collections-links {
+    display: flex;
+    align-items: center;
+}
