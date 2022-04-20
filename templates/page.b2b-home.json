@@ -119,11 +119,29 @@
             "image1": "shopify:\/\/shop_images\/product-image-2.webp",
             "image2": "shopify:\/\/shop_images\/product-image-2.webp"
           }
+        },
+        "bef5396a-d415-46c5-93ec-70db7c6b1e62": {
+          "type": "product",
+          "settings": {
+            "product": "backpack-kids-backpack-girl",
+            "image1": "shopify:\/\/shop_images\/Banner2.webp",
+            "image2": "shopify:\/\/shop_images\/Banner2.webp"
+          }
+        },
+        "3f0d614c-7244-45c4-b798-d5ee67d1f7cd": {
+          "type": "product",
+          "settings": {
+            "product": "new-ralphie",
+            "image1": "shopify:\/\/shop_images\/product-image-1_5b7569a6-dd8b-4021-85e7-ac15a9130b7d.webp",
+            "image2": "shopify:\/\/shop_images\/product-image-1_5b7569a6-dd8b-4021-85e7-ac15a9130b7d.webp"
+          }
         }
       },
       "block_order": [
         "45ba6250-6a95-4375-bac4-8e587bbc5a5a",
-        "e1a04116-acc9-40a1-9e9e-e2567b8bdfc1"
+        "e1a04116-acc9-40a1-9e9e-e2567b8bdfc1",
+        "bef5396a-d415-46c5-93ec-70db7c6b1e62",
+        "3f0d614c-7244-45c4-b798-d5ee67d1f7cd"
       ],
       "settings": {
         "bg_color": "white",
