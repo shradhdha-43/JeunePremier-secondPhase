@@ -208,6 +208,10 @@
   	$(this).toggleClass('selected');
   });
   
+  $('.upload-img-btn').click(function() {
+  	$('#re_store_pictures').trigger('click');
+  });
+  
   
   $('.re-cont-submit').click(function() {
     if($('.form-condition').hasClass('selected')){
