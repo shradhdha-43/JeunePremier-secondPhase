@@ -124,7 +124,7 @@
       {% assign product = block.settings.product %}
       	<div class="product-card">
         	<div class="product-images-block rel">
-            <a href="{{ product.url }}">
+            <div>
               
               {% assign collection_is_bestellers = false %}
               {% assign is_bestseller = false %}
@@ -157,7 +157,7 @@
                 <img class="{% if forloop.last %}no-t-m{% endif %}" src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
                 {% endfor %} 
               {% endif %}
-            </a>
+            </div>
               {% assign noAddToCartFromCollection = false %}
               {% if product.type == 'Ludilabel' or product.type == 'Goedgemerkt' or product.type == 'Keychain letter' or product.type == 'Keychain charm' %}
                 {% assign noAddToCartFromCollection = true %}
