@@ -25,12 +25,13 @@
       {% endfor %}
     </div>
     <div class="abs no-t-m">
-    <div class="jp-team-slider">
       <div class="product-slider-first justify-center">
         <div class="product-slider-title title">{{ section.settings.title }}</div>
         <div class="product-slider-desc light">{{ section.settings.desc }}</div>
         
       </div>
+    <div class="jp-team-slider">
+      
       {% for block in section.blocks %}
       		{% if block.type == 'team_member' %}
       	<div class="team-card">
