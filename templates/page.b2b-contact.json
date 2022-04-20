@@ -18,9 +18,17 @@
         "video_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0077\/6565\/5629\/files\/BANNERWEBSITE.mp4?v=1619694065",
         "marg_top": "false"
       }
+    },
+    "1650429645a05d2eb1": {
+      "type": "jp-b2b-contact",
+      "settings": {
+        "title": "Have a question?",
+        "desc": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna"
+      }
     }
   },
   "order": [
-    "1650374631b618a5a9"
+    "1650374631b618a5a9",
+    "1650429645a05d2eb1"
   ]
 }
