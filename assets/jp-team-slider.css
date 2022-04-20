@@ -30,7 +30,9 @@
     line-height: 20px;
 }
 
-
+.jp-team-slider-wrap .product-slider-first {
+    min-width: 300px;
+}
 
 .jp-prouduct-slider-wrap.jp-team-slider-wrap .slick-dots {
     bottom: 0;
