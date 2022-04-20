@@ -55,4 +55,8 @@
 	.jp-team-slider-wrap .product-slider-first {
     height: auto;
 }
+  
+  .member-img {
+    height: 80vw;
+}
 }
