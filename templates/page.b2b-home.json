@@ -149,7 +149,7 @@
         "desc": "Be one of 1000+ undaunted Premiers retailers around the world.",
         "collection": "it-bags",
         "btn_txt": "BECOME A RESELLER",
-        "btn_url": "shopify:\/\/collections",
+        "btn_url": "shopify:\/\/pages\/b2b-register",
         "upsell_type": "bag"
       }
     }
