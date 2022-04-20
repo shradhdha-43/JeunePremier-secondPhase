@@ -13,7 +13,7 @@
             <span class="icon-bar bar3"></span>
           </div>
           </div>
-          <div class="header-left-menu">
+          <div class="header-left-menu no-t-m">
           {% for link in section.settings.left_menu.links %}
             <a href="{{ link.url }}" class="header-left-link">{{ link.title }}</a>
           {% endfor %}
@@ -26,7 +26,7 @@
           </a>
         </div>
         <div class="header-right">
-          <div class="langs rel">
+          <div class="langs rel no-t-m">
               <a href="#" class="light">DE</a>
             </div>
           <a href="{{ section.settings.right_menu_btn_url }}" class="btn b2b-header-right-btn">{{ section.settings.right_menu_btn_txt }}</a>
@@ -43,6 +43,14 @@
         {% for link in section.settings.left_drawer_menu.links %}
             <a href="{{ link.url }}" class="header-drawer-link{% if forloop.first %} btn b2b-header-right-btn{% endif %}">{{ link.title }}</a>
           {% endfor %}
+        <div class="no-d">
+        	{% for link in section.settings.left_menu.links %}
+            <a href="{{ link.url }}" class="header-left-link">{{ link.title }}</a>
+          {% endfor %}
+          <div class="langs rel">
+              <a href="#" class="light">DE</a>
+            </div>
+        </div>
         
       </div>
     </div>
