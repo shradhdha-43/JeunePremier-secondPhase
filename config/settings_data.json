@@ -295,10 +295,17 @@
             "settings": {
               "shipping_logo": "shopify:\/\/shop_images\/FedEx-Logo.webp"
             }
+          },
+          "9345d08f-f6dd-4f64-b828-a6f5ade153ff": {
+            "type": "shipping_logo",
+            "settings": {
+              "shipping_logo": "shopify:\/\/shop_images\/GLS-logo.png"
+            }
           }
         },
         "block_order": [
-          "274666be-d8b2-49f8-8b1f-4e58b21737ff"
+          "274666be-d8b2-49f8-8b1f-4e58b21737ff",
+          "9345d08f-f6dd-4f64-b828-a6f5ade153ff"
         ],
         "settings": {
           "lang_title": "SPRACHE",
