@@ -9,9 +9,7 @@
         <div class="reseller-desc light">{{ section.settings.desc }}</div>
         {% form 'contact' %}
           {% if form.posted_successfully? %} 
-            <script>
-              window.location = '/pages/b2b-register-success';
-            </script>
+            
           {% endif %}
           {{ form.errors | default_errors }}
         <div class="reseller-contact-info">
