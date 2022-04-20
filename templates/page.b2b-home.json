@@ -95,9 +95,23 @@
         "link_txt": "",
         "link_hover_txt": "",
         "link": "",
+        "product_video": "",
         "cover_img": "shopify:\/\/shop_images\/image1.jpg",
         "video_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0077\/6565\/5629\/files\/BANNERWEBSITE.mp4?v=1619694065",
         "marg_top": "false"
+      }
+    },
+    "165042082401ae5e68": {
+      "type": "jp-b2b-product-slider",
+      "settings": {
+        "bg_color": "white",
+        "title": "Join the adventure!",
+        "desc": "Be one of 1000+ undaunted Premiers retailers around the world.",
+        "collection": "it-bags",
+        "btn_txt": "BECOME A RESELLER",
+        "btn_url": "shopify:\/\/collections",
+        "related": false,
+        "upsell_type": "bag"
       }
     }
   },
@@ -105,6 +119,7 @@
     "1650370907f3c868da",
     "16503735538213c0b3",
     "1650373849c7b91265",
-    "1650374631b618a5a9"
+    "1650374631b618a5a9",
+    "165042082401ae5e68"
   ]
 }
