@@ -475,7 +475,11 @@
         }
       });
     </script> -->
-    {{ page.url }}
+    {% if page.url contains "b2b" %}
+    b2b
+    {% else %}
+    not b2b
+    {% endif %}
     {% section 'jp-b2b-header' %}
     {% comment %}
     {% section 'jp-header' %}
