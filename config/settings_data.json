@@ -313,13 +313,21 @@
             "settings": {
               "shipping_logo": "shopify:\/\/shop_images\/UPS.png"
             }
+          },
+          "f9ade39c-baa9-4dd2-b8f0-4236b8a4cf79": {
+            "type": "menu",
+            "settings": {
+              "menu_title": "PREMIERS",
+              "menu": ""
+            }
           }
         },
         "block_order": [
           "274666be-d8b2-49f8-8b1f-4e58b21737ff",
           "9345d08f-f6dd-4f64-b828-a6f5ade153ff",
           "80512e10-33eb-4b89-b003-f71a587f7708",
-          "32231b58-abc0-478b-83d4-ccb4c2a5221c"
+          "32231b58-abc0-478b-83d4-ccb4c2a5221c",
+          "f9ade39c-baa9-4dd2-b8f0-4236b8a4cf79"
         ],
         "settings": {
           "lang_title": "SPRACHE",
