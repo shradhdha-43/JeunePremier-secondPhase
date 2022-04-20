@@ -466,11 +466,24 @@
   </head>
 
   <body class="gradient">
-    
-    {% comment %}
-    {% section 'jp-header' %}
-    {% endcomment %}
+    {% assign b2b = false %}
+    <script type="text/javascript">
+      $(document).ready(function() {
+        if (window.location.href.indexOf("b2b") > -1) {
+          {% assign b2b = true %}
+        }
+        else{
+          {% assign b2b = false %}
+        }
+      });
+    </script>
+    {% if b2b %}
     {% section 'jp-b2b-header' %}
+    {% else %}
+    {% section 'jp-header' %}
+    {% endif %}
+    
+    
     {% section 'jp-cart' %}
     {% comment %}
     {% section 'announcement-bar' %}
