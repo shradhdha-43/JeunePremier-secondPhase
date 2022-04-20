@@ -286,6 +286,33 @@
           "right_menu_btn_txt": "LOG IN",
           "right_menu_btn_url": "#"
         }
+      },
+      "jp-b2b-footer": {
+        "type": "jp-b2b-footer",
+        "blocks": {
+          "274666be-d8b2-49f8-8b1f-4e58b21737ff": {
+            "type": "shipping_logo",
+            "settings": {
+              "shipping_logo": "shopify:\/\/shop_images\/FedEx-Logo.webp"
+            }
+          }
+        },
+        "block_order": [
+          "274666be-d8b2-49f8-8b1f-4e58b21737ff"
+        ],
+        "settings": {
+          "lang_title": "SPRACHE",
+          "sm_title": "",
+          "shipping_title": "",
+          "payment_title": "",
+          "secure_title": "",
+          "company_title": "",
+          "company_addr": "",
+          "brands_title": "",
+          "showroom_title": "",
+          "showroom_addr": "",
+          "copyright": ""
+        }
       }
     },
     "content_for_index": [
