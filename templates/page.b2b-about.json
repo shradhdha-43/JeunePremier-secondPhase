@@ -18,9 +18,48 @@
         "video_link": "",
         "marg_top": "true"
       }
+    },
+    "1650424977fe7d2f0d": {
+      "type": "jp-image-with-text",
+      "settings": {
+        "section_type": "img_txt",
+        "link_type": "link",
+        "btn_color": "black",
+        "img_aligment": "left",
+        "title": "Lorem ipsum dolor sit amet",
+        "sub_title": "",
+        "desc": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea<br><br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
+        "link_txt": "",
+        "link_hover_txt": "",
+        "link": "",
+        "video_link": "",
+        "marg_top": "false"
+      }
+    },
+    "1650425088a817ece5": {
+      "type": "jp-team-slider",
+      "blocks": {
+        "38baa122-7545-47a1-ad63-df2b104a6fc0": {
+          "type": "team_member",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/product-image-2.webp",
+            "name": "First & last name",
+            "department": "Department"
+          }
+        }
+      },
+      "block_order": [
+        "38baa122-7545-47a1-ad63-df2b104a6fc0"
+      ],
+      "settings": {
+        "title": "Meet the team",
+        "desc": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita"
+      }
     }
   },
   "order": [
-    "16503735538213c0b3"
+    "16503735538213c0b3",
+    "1650424977fe7d2f0d",
+    "1650425088a817ece5"
   ]
 }
