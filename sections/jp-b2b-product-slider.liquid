@@ -34,7 +34,7 @@
       {% assign product = block.settings.product %}
       	<div class="product-card">
         	<div class="product-images-block rel">
-            <a href="{{ product.url }}">
+            <div class="b2b-coll-img">
               
               {% assign collection_is_bestellers = false %}
               {% assign is_bestseller = false %}
@@ -69,7 +69,7 @@
                 <img class="{% if forloop.last %}no-t-m{% endif %}" src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
                 {% endfor %}  
               {% endif %}
-            </a>
+            </div>
               {% assign noAddToCartFromCollection = false %}
               {% if product.type == 'Ludilabel' or product.type == 'Goedgemerkt' or product.type == 'Keychain letter' or product.type == 'Keychain charm' %}
                 {% assign noAddToCartFromCollection = true %}
@@ -86,15 +86,11 @@
             	<div class="product-title medium">
                   {% assign remove_word = product.title | truncatewords: 1, "" %}
                   
-                  <a href="{{ product.url }}">
+                  <div class="b2b-coll-title">
                   {{ product.title | split: " - " | first }}
-                  </a>
+                  </div>
                 </div>
-              	<div class="product-pirce medium">                  
-                  <a href="{{ product.url }}">
-                    {{ product.price | times: 1.21 | money_without_trailing_zeros | strip_html }}
-                  </a>
-              </div>
+              	
              
             </div>
             <div class="product-price-col">
@@ -124,7 +120,7 @@
       {% assign product = block.settings.product %}
       	<div class="product-card">
         	<div class="product-images-block rel">
-            <div>
+            <div class="b2b-coll-img">
               
               {% assign collection_is_bestellers = false %}
               {% assign is_bestseller = false %}
@@ -173,15 +169,11 @@
             <div class="product-name-price-col justify-between">
             	<div class="product-title medium">
                   {% assign remove_word = product.title | truncatewords: 1, "" %}                  
-                  <a href="{{ product.url }}">
+                  <div class="b2b-coll-title">
                     {{ product.title | split: " - " | first }}
-                  </a>
+                  </div>
                 </div>
-              	<div class="product-pirce medium">                  
-                  <a href="{{ product.url }}">
-                    {{ product.price | times: 1.21 | money_without_trailing_zeros | strip_html }}
-                  </a>
-              </div>
+              	
              
             </div>
             <div class="product-price-col">
