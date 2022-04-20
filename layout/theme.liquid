@@ -476,15 +476,10 @@
       });
     </script> -->
     {% if page.url contains "b2b" %}
-    b2b
-    {% else %}
-    not b2b
-    {% endif %}
     {% section 'jp-b2b-header' %}
-    {% comment %}
+    {% else %}
     {% section 'jp-header' %}
-    {% endcomment %}
-    
+    {% endif %}
     
     {% section 'jp-cart' %}
     {% comment %}
@@ -495,15 +490,18 @@
       {{ content_for_layout }}
       <div onclick="topFunction();" id="to-top" style="display:none;" class="scroll-to-top no-d"><div class="top-chev">{% include 'icon-black-down-chev' %}</div></div>
     </main>
+    
+    {% if page.url contains "b2b" %}
+    {% section 'jp-b2b-footer' %}
+    {% else %}
+    {% section "jp-newsletter" %}
+    {% section 'jp-footer' %}
+    {% endif %}
 	{% comment %}
     {% section 'footer' %}
 	{% endcomment %}
-	{% section 'jp-b2b-footer' %}
-    {% comment %}
-    {% section "jp-newsletter" %}
+	
     
-    {% endcomment %}
-    {% section 'jp-footer' %}
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
     </ul>
