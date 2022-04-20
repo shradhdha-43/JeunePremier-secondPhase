@@ -54,11 +54,20 @@
             "name": "First & last name",
             "department": "Department"
           }
+        },
+        "a129fde2-aa5a-49a4-b6c2-f59f1ae06f91": {
+          "type": "team_member",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/image1.jpg",
+            "name": "First & last name",
+            "department": "department"
+          }
         }
       },
       "block_order": [
         "38baa122-7545-47a1-ad63-df2b104a6fc0",
-        "4e4ef22e-a56b-4a44-9e24-1e204bf88b62"
+        "4e4ef22e-a56b-4a44-9e24-1e204bf88b62",
+        "a129fde2-aa5a-49a4-b6c2-f59f1ae06f91"
       ],
       "settings": {
         "title": "Meet the team",
