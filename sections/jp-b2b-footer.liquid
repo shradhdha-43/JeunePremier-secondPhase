@@ -15,34 +15,12 @@
       			</div>
       		{% endif %}
       	{% endfor %}
-    </div>
-    <div class="footer-part footer-two flex-box justify-between">
-    	{% for block in section.blocks %}
-      		{% if block.type == 'privacy_menu' %}
-      			<div class="footer-menu-wrap footer-part-inner">
-                  <div class="footer-menu-title title">{{ block.settings.menu_title }}</div>
-      			{% for link in linklists[block.settings.menu].links %}
-                  <a href="{{ link.url }}" class="footer-link light">{{ link.title }}</a>
-      			{% endfor %}
-      			</div>
-      		{% endif %}
-      	{% endfor %}
       <div class="footer-languages-wrap footer-part-inner">
         <div class="footer-menu-title title">{{ section.settings.lang_title }}</div>
         <div class="footer-languages">
           {% if settings.german %}
           <a class="footer-lang-wrap flex-box align-center selected" href="#"><span class="lang-flag">{% include 'flag-germany' %}</span><span class="lang-name light">DEUTSCH</span></a>
           {% endif %}
-        </div>
-      </div>
-      <div class="footer-sm-wrap footer-part-inner">
-      	<div class="footer-menu-title title">{{ section.settings.sm_title }}</div>
-        <div class="sm-logos flex-box">
-        	{% for block in section.blocks %}
-      		{% if block.type == 'sm' %}
-          		<a href="{{ block.settings.sm_link }}" class="sm_logo" target="_blank">{{ block.settings.sm_logo }}</a>
-      		{% endif %}
-      	{% endfor %}
         </div>
       </div>
     </div>
