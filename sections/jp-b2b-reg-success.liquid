@@ -1,7 +1,209 @@
+{{ 'jp-image-with-text.css' | asset_url | stylesheet_tag }}
+
+
+<div class="img-with-text-wrapper{% if section.settings.section_type == 'video' %} video-wrapper{% endif %}{% if section.settings.marg_top == 'true' %} sec-marg-top{% endif %}">
+  <div class="container">
+    {% if section.settings.section_type != 'link_within_text' %}
+    <div class="img-w-txt-title title no-d">{{ section.settings.title }}</div>
+    {% endif %}
+    <div class="img-with-text-content flex-box align-center justify-between{% if section.settings.img_aligment == 'left' %} row-rev{% endif %}">
+      
+      <div class="img-w-txt-text-wrap">
+        <div class="img-w-txt-title title{% if section.settings.section_type != 'link_within_text' %} no-t-m{% endif %}">{{ section.settings.title }}</div>
+        {% if section.settings.sub_title %}
+        <div class="subtitle medium">{{ section.settings.sub_title }}</div>
+        {% endif %}
+        {% if section.settings.section_type == 'link_within_text' %}
+        <div class="img-w-txt-desc img-w-txt-desc-link light">{{ section.settings.desc }}</div>
+        {% else %}
+        <div class="img-w-txt-desc light">{{ section.settings.desc }}</div>
+        {% endif %}
+        {% if section.settings.link_type == 'btn' %}
+        <a href="{{ section.settings.link }}" class="video-sec-btn title button{% if section.settings.btn_color == 'yellow' %} yellow-btn{% endif %}"><span class="original-text">{{ section.settings.link_txt }}</span><span class="hover-text">{{ section.settings.link_hover_txt }}</span></a>
+        {% else %}
+        <a href="{{ section.settings.link }}" class="read-more-btn medium">{{ section.settings.link_txt }}</a>
+        {% endif %}
+        
+        
+      </div>
+      {% if section.settings.section_type == 'video' %}
+      <div class="img-w-txt-image-wrap img-w-txt-video-wrap rel{% if section.settings.video_link != '' %} custom-video{% endif %}">
+          <img  class="video-cover" src="{{ section.settings.cover_img | image_url: height: 600 }}" loading="lazy" alt="Video title">
+        	{% if section.settings.video_link != '' %}
+              <video class="cust-video" width="100%" height="100%" controls>
+                <source src="{{ section.settings.video_link }}" type="video/mp4">
+              </video>
+        	{% else %}
+          <iframe class="no-disp yt-video" width="100%" height="100%" src="https://www.youtube.com/embed/{{ section.settings.product_video.id }}" frameborder="0">
+			</iframe>
+          	{% endif %}
+          <div id="play" class="play-btn">
+        {% include 'icon-play-button' %}
+      </div>
+      </div>
+      {% else %}
+      <div class="img-w-txt-image-wrap">
+      	<img src="{{ section.settings.img | img_url: "600x" }}" loading="lazy">
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script>
+
+ 
+  
+</script>
+
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "JP B2B Register Success",
+    "settings": [
+        {
+          "type": "select",
+          "id": "section_type",
+          "label": "Section Type",
+          "options": [
+          {
+          "value": "img_txt",
+          "label": "Image Text"
+          },
+          {
+          "value": "video",
+          "label": "Video Text"
+          },
+          {
+          "value": "link_within_text",
+          "label": "Link within Text"
+          }
+          ],
+          "default": "img_txt"
+        },
+		{
+          "type": "select",
+          "id": "link_type",
+          "label": "Link Type",
+          "options": [
+          {
+          "value": "btn",
+          "label": "Button"
+          },
+          {
+          "value": "link",
+          "label": "Link"
+          }
+          ],
+          "default": "link"
+        },
+		{
+          "type": "select",
+          "id": "btn_color",
+          "label": "Button Color",
+          "options": [
+          {
+          "value": "black",
+          "label": "Black"
+          },
+          {
+          "value": "yellow",
+          "label": "Yellow"
+          }
+          ],
+          "default": "black"
+        },
+		{
+          "type": "radio",
+          "id": "img_aligment",
+          "label": "Media alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "right"
+        },
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		},
+		{
+			"type": "text",
+			"id": "sub_title",
+			"label": "Sub Title"
+		},
+		{
+			"type": "html",
+			"id": "desc",
+			"label": "Description"
+		},
+		{
+			"type": "text",
+			"id": "link_txt",
+			"label": "Link Text"
+		},
+		{
+			"type": "text",
+			"id": "link_hover_txt",
+			"label": "Link Hover Text"
+		},
+		{
+			"type": "url",
+			"id": "link",
+			"label": "Link"
+		},
+		{
+			"type": "image_picker",
+			"id": "img",
+			"label": "Image"
+		},
+		{
+          "type": "video_url",
+          "id": "product_video",
+          "label": "Video URL",
+          "accept": [
+            "youtube",
+            "vimeo"
+          ]
+        },
+		{
+			"type": "image_picker",
+			"id": "cover_img",
+			"label": "Video Cover Image"
+		},
+		{
+			"type": "text",
+			"id": "video_link",
+			"label": "Custom Video Link"
+		},
+		{
+          "type": "select",
+          "id": "marg_top",
+          "label": "Margin Top",
+          "options": [
+            {
+              "value": "true",
+              "label": "True"
+            },
+            {
+              "value": "false",
+              "label": "False"
+            }
+          ],
+          "default": "false"
+        }
+	],
+	"presets":[
+      {
+         "name":"JP B2B Register Success"
+      }
+   ]
   }
 {% endschema %}
 
