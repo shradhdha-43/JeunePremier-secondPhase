@@ -1,47 +1,26 @@
 {{ 'jp-main-collection.css' | asset_url | stylesheet_tag }}
 {{ 'jp-product-slider.css' | asset_url | stylesheet_tag }}
+{{ 'jp-b2b-product-slider.css' | asset_url | stylesheet_tag }}
 
+<style>
+  .jp-product-slider-2 .product-images-block img {
+    height: 300px;
+  }
+  .slider-block-custom .jp-prouduct-slider-wrap .slick-list {
+    min-height: 400px;
+  }
+  .slider-block-custom .product-images-block img {
+  	object-fit: cover;
+  }
+  @media(max-width: 992px) {
+    .slider-block-custom .jp-prouduct-slider-wrap .slick-list {
+      min-height: 400px;
+      padding-right: 0 !important;
+    }
+  }
+</style>
 
-
-{% if section.settings.related %}
-  {%- for product_collection in product.collections -%}
-    {%- for link in linklists.main-design-collections.links -%}
-      {% assign link_url = link.url | split: "/" %}
-      {%- assign link_handle = link_url.last | handleize -%}
-
-      {%- if product_collection.handle == link_handle -%}
-
-        {%- assign coll = product_collection.handle -%}
-        {%- break -%}
-      {%- endif -%}
-    {%- endfor -%}
-
-    {%- if coll -%}
-      {%- break -%}
-    {%- endif -%}
-  {%- endfor -%}
-
-{% assign a = 0 %}
-{% for product in collections[coll].products limit:24 %}
-      {% if section.settings.related %}
-        {% if section.settings.upsell_type == "bag" %}
-      		{% unless product.type == "City Bag" or product.type == "Box Filled" or product.type == "Box" or product.type == "Drinking Bottle" or product.type == "Girls" %}
-      			{% continue %}
-      		{% endunless %}
-        {% endif %}
-        {% if section.settings.upsell_type == "accessories" %}
-      		{% unless product.type == "Keychain" or product.type == "Keychain charm" or product.type == "Name label"%}
-      			{% continue %}
-      		{% endunless %}
-        {% endif %}
-      {% endif %}
-	{% assign a = a | plus: 1 %}
-{% endfor %}
-{% else %}
-	{% assign coll = section.settings.collection %}
-{% endif %}
-
-<div {% if section.settings.related %}id="to-related"{% endif %} class="jp-prouduct-slider-wrap{% if section.settings.bg_color == 'light' %} light-bg{% endif %} {% if section.settings.related and a == 0 %}no-disp{% endif %} {% if section.settings.related %}related-blk{% endif %}">
+<div class="jp-prouduct-slider-wrap{% if section.settings.bg_color == 'light' %} light-bg{% endif %} ">
   <div class="container rel">
     <div class="product-slider-first justify-center no-d">
         <div class="product-slider-title title">{{ section.settings.title }}</div>
@@ -50,21 +29,9 @@
         <a href="{{ section.settings.btn_url }}" class="btn title product-slider-btn no-t-m">{{ section.settings.btn_txt }}</a>
       {% endif %}
       </div>
-    <div class="jp-product-slider no-d">
-      {% for product in collections[coll].products limit:24 %}
-      {% if section.settings.related %}
-        {% if section.settings.upsell_type == "bag" %}
-      		{% unless product.type == "City Bag" or product.type == "Box Filled" or product.type == "Box" or product.type == "Drinking Bottle" or product.type == "Girls" %}
-      			{% continue %}
-      		{% endunless %}
-        {% endif %}
-        {% if section.settings.upsell_type == "accessories" %}
-      		{% unless product.type == "Keychain" or product.type == "Keychain charm" or product.type == "Name label"%}
-      			{% continue %}
-      		{% endunless %}
-        {% endif %}
-      {% endif %}
-      
+    <div class="jp-product-slider-2 no-d">
+      {% for block in section.blocks %}
+      {% assign product = block.settings.product %}
       	<div class="product-card">
         	<div class="product-images-block rel">
             <a href="{{ product.url }}">
@@ -95,12 +62,19 @@
                 {% endif %}{% endfor %}    
               {% endunless %}
               
-              {% for image in product.images limit: 2 %}              
-              {% if forloop.first and forloop.last %}
-              <img src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+              
+              
+              {% if block.settings.image1 != blank and block.settings.image2 != blank %}
+                <img src="{{ block.settings.image1 | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+                <img class="no-t-m" src="{{ block.settings.image2 | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+              {% else %}
+                {% for image in product.images limit: 2 %}              
+                {% if forloop.first and forloop.last %}
+                <img src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+                {% endif %}
+                <img class="{% if forloop.last %}no-t-m{% endif %}" src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+                {% endfor %}  
               {% endif %}
-              <img class="{% if forloop.last %}no-t-m{% endif %}" src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
-              {% endfor %}  
             </a>
               {% assign noAddToCartFromCollection = false %}
               {% if product.type == 'Ludilabel' or product.type == 'Goedgemerkt' or product.type == 'Keychain letter' or product.type == 'Keychain charm' %}
@@ -150,21 +124,10 @@
         {% endif %}
       </div>
       <div class="abs no-t-m jp-product-slider-wrapper">
-    <div class="jp-product-slider">
+    <div class="jp-product-slider-2">
       
-      {% for product in collections[coll].products limit:24 %}
-      {% if section.settings.related %}
-        {% if section.settings.upsell_type == "bag" %}
-      		{% unless product.type == "City Bag" or product.type == "Box Filled" or product.type == "Box" or product.type == "Drinking Bottle" or product.type == "Girls" %}
-      			{% continue %}
-      		{% endunless %}
-        {% endif %}
-        {% if section.settings.upsell_type == "accessories" %}
-      		{% unless product.type == "Keychain" or product.type == "Keychain charm" or product.type == "Name label"%}
-      			{% continue %}
-      		{% endunless %}
-        {% endif %}
-      {% endif %}
+      {% for block in section.blocks %}
+      {% assign product = block.settings.product %}
       	<div class="product-card">
         	<div class="product-images-block rel">
             <a href="{{ product.url }}">
@@ -195,12 +158,17 @@
                 {% endif %}{% endfor %}    
               {% endunless %}
               
-              {% for image in product.images limit: 2 %}
-              {% if forloop.first and forloop.last %}
-              <img src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+              {% if block.settings.image1 != blank and block.settings.image2 != blank %}
+                <img src="{{ block.settings.image1 | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+                <img class="no-t-m" src="{{ block.settings.image2 | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+              {% else %}
+                {% for image in product.images limit: 2 %}
+                {% if forloop.first and forloop.last %}
+                <img src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+                {% endif %}
+                <img class="{% if forloop.last %}no-t-m{% endif %}" src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+                {% endfor %} 
               {% endif %}
-              <img class="{% if forloop.last %}no-t-m{% endif %}" src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
-              {% endfor %}  
             </a>
               {% assign noAddToCartFromCollection = false %}
               {% if product.type == 'Ludilabel' or product.type == 'Goedgemerkt' or product.type == 'Keychain letter' or product.type == 'Keychain charm' %}
@@ -252,7 +220,7 @@
 {% schema %}
   {
     "name": "JP B2B Product Slider",
-	"class": "related-block",
+	"class": "slider-block-custom",
     "settings": [
 		{
           "type": "select",
@@ -296,11 +264,6 @@
 			"label": "Button URL"
 		},
 		{
-			"type": "checkbox",
-			"id": "related",
-			"label": "product related box"
-		},
-		{
           "type": "select",
           "id": "upsell_type",
           "label": "Upsell Type",
@@ -320,6 +283,29 @@
           ],
           "default": "bag"
         }
+	],
+	"blocks": [
+		{
+			"type": "product",
+			"name": "Product",
+			"settings": [
+				{
+                    "type": "product",
+                    "id": "product",
+                    "label": "Select Product"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image1",
+                    "label": "Custom Image 1"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image2",
+                    "label": "Custom Image 2"
+                }
+			]
+		}
 	],
 	"presets":[
       {
