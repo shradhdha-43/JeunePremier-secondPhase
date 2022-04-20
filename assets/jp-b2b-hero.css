@@ -49,4 +49,8 @@
 	.jp-b2b-hero-wrap {
     height: 100vh;
 }
+  
+  .hero-txt-container {
+    width: 100%;
+}
 }
