@@ -53,4 +53,9 @@
   .hero-txt-container {
     width: 100%;
 }
+  
+  .jp-b2b-hero-wrap .hero .flex-box.container {
+    align-items: flex-end;
+    padding-bottom: 40px;
+}
 }
