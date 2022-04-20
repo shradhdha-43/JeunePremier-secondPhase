@@ -301,24 +301,41 @@
             "settings": {
               "shipping_logo": "shopify:\/\/shop_images\/GLS-logo.png"
             }
+          },
+          "80512e10-33eb-4b89-b003-f71a587f7708": {
+            "type": "shipping_logo",
+            "settings": {
+              "shipping_logo": "shopify:\/\/shop_images\/DPD_logo.png"
+            }
+          },
+          "32231b58-abc0-478b-83d4-ccb4c2a5221c": {
+            "type": "shipping_logo",
+            "settings": {
+              "shipping_logo": "shopify:\/\/shop_images\/UPS.png"
+            }
           }
         },
         "block_order": [
           "274666be-d8b2-49f8-8b1f-4e58b21737ff",
-          "9345d08f-f6dd-4f64-b828-a6f5ade153ff"
+          "9345d08f-f6dd-4f64-b828-a6f5ade153ff",
+          "80512e10-33eb-4b89-b003-f71a587f7708",
+          "32231b58-abc0-478b-83d4-ccb4c2a5221c"
         ],
         "settings": {
           "lang_title": "SPRACHE",
           "sm_title": "",
-          "shipping_title": "",
-          "payment_title": "",
-          "secure_title": "",
-          "company_title": "",
-          "company_addr": "",
-          "brands_title": "",
-          "showroom_title": "",
-          "showroom_addr": "",
-          "copyright": ""
+          "shipping_title": "SHIPPING",
+          "payment_title": "PAYMENTS",
+          "secure_title": "SECURE SHOPPING",
+          "secure_logo": "shopify:\/\/shop_images\/SSL-Logo.png",
+          "company_title": "COMPANY",
+          "company_addr": "Premiers bv <br>Vogelzangdreef 2, 8400 Oostende, Belgium <br>Contact: <a href=\"mailto:info@jeunepremier.be\">info@jeunepremier.be<\/a>",
+          "brands_title": "BRANDS",
+          "brand1_logo_2": "shopify:\/\/shop_images\/logo_1.png",
+          "brand2_logo_2": "shopify:\/\/shop_images\/Logo_Bird_Jack_Piers.png",
+          "showroom_title": "SHOWROOM",
+          "showroom_addr": "Rogierlaan 9, 8400 Oostende, Belgium.<br> Contact: <a href=\"mailto:b2b@jeunepremier.be\">b2b@jeunepremier.be<\/a>",
+          "copyright": "© 2022, Premiers bv - BE 0502 478 410"
         }
       }
     },
