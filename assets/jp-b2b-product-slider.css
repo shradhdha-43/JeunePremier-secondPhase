@@ -1,0 +1,9 @@
+.jp-b2b-product-slider-wrap .product-slider-btn{
+	background-color: var(--dd-color-second);
+      color: var(--dd-color-first);
+}
+
+.jp-b2b-product-slider-wrap .product-slider-btn:hover{
+	background-color: var(--dd-color-first);
+      color: var(--dd-color-sixth);
+}
