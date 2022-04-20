@@ -466,10 +466,18 @@
   </head>
 
   <body class="gradient">
+    <script type="text/javascript">
+      $(document).ready(function() {
+        if (window.location.href.indexOf("b2b") > -1) {
+          {% section 'jp-b2b-header' %}
+        } else{
+        	{% section 'jp-header' %}
+        }
+      });
+    </script>
     
-    {% section 'jp-b2b-header' %}
     {% comment %}
-    {% section 'jp-header' %}
+    
     {% endcomment %}
     
     
