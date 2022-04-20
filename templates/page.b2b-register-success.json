@@ -1,24 +1,5 @@
 {
   "sections": {
-    "16503735538213c0b3": {
-      "type": "jp-image-with-text",
-      "settings": {
-        "section_type": "img_txt",
-        "link_type": "link",
-        "btn_color": "black",
-        "img_aligment": "right",
-        "title": "Thank you for your registration, we’ll be in touch soon.",
-        "sub_title": "",
-        "desc": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo du.\n<br><br>\n<strong>In the mean time, check out our collections:<\/strong><br>",
-        "link_txt": "",
-        "link_hover_txt": "",
-        "link": "shopify:\/\/collections",
-        "img": "shopify:\/\/shop_images\/Schermafbeelding.webp",
-        "product_video": "",
-        "video_link": "",
-        "marg_top": "false"
-      }
-    },
     "1650431723304aaf1d": {
       "type": "jp-b2b-reg-success",
       "settings": {
@@ -43,7 +24,6 @@
     }
   },
   "order": [
-    "16503735538213c0b3",
     "1650431723304aaf1d"
   ]
 }
