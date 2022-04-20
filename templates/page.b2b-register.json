@@ -1,0 +1,110 @@
+{
+  "sections": {
+    "1650370907f3c868da": {
+      "type": "jp-b2b-hero",
+      "blocks": {
+        "2ec22d25-2a4a-419b-85fd-6b098274bd00": {
+          "type": "marquee",
+          "settings": {
+            "img_1": "shopify:\/\/shop_images\/lejdd_Tekengebied_1-01_2x_fcbfc33c-7414-4e73-b600-557d7fdc89d6.png",
+            "img_2": "shopify:\/\/shop_images\/ideat_Tekengebied_1-01_2x_71ee2f30-4919-49a2-940d-2cd2840440f8.png",
+            "img_3": "shopify:\/\/shop_images\/l_officiele_Tekengebied_1_2x_e08448d1-58fd-4869-afa0-c58ec95b2448.png"
+          }
+        },
+        "0cda5b22-0dad-4b23-9682-9128e66414c4": {
+          "type": "marquee",
+          "settings": {
+            "img_1": "shopify:\/\/shop_images\/madame_figaro_Tekengebied_1_2x_c8b7f2aa-8531-4829-bc8c-63dadc11c9c0.png",
+            "img_2": "shopify:\/\/shop_images\/lesechos_Tekengebied_1-01_2x_b9becc4c-c837-4b42-8409-549392552188.png",
+            "img_3": "shopify:\/\/shop_images\/maisondematernelles_Tekengebied_1_2x_3ea5c6e7-eb5c-4991-a7c8-82999658235a.png"
+          }
+        },
+        "ad416ad5-d01f-418e-9fc1-4bcebe1f3302": {
+          "type": "marquee",
+          "settings": {
+            "img_1": "shopify:\/\/shop_images\/magicmama_Tekengebied_1_2x_e8f8a8ea-d44d-433b-9176-3649699d2f8b.png",
+            "img_2": "shopify:\/\/shop_images\/marie_claire_idees_Tekengebied_1_2x_57ace3f3-f116-4381-a99a-993b2bbd3347.png",
+            "img_3": "shopify:\/\/shop_images\/marieclairemaison_Tekengebied_1_2x_2261bb6f-b238-49a0-8064-d988a3bdcb27.png"
+          }
+        }
+      },
+      "block_order": [
+        "2ec22d25-2a4a-419b-85fd-6b098274bd00",
+        "0cda5b22-0dad-4b23-9682-9128e66414c4",
+        "ad416ad5-d01f-418e-9fc1-4bcebe1f3302"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/hero.png",
+        "heading": "WELCOME TO OUR JEUNE PREMIER B2B PLATFORM",
+        "subtitle": "Unique and Colorful School Backpacks",
+        "link": "shopify:\/\/collections",
+        "headinglinktext": "BECOME A RESELLER",
+        "title": "As seen on",
+        "marquee_height": 28,
+        "marquee_item_width": 280
+      }
+    },
+    "16503735538213c0b3": {
+      "type": "jp-image-with-text",
+      "settings": {
+        "section_type": "img_txt",
+        "link_type": "link",
+        "btn_color": "black",
+        "img_aligment": "right",
+        "title": "Our story",
+        "sub_title": "",
+        "desc": "“From Paris to Seoul, Jeune Premier is the coolest satchel right now!” was the headline of a newspaper article in De Tijd.<br><br> When I couldn’t find a nice backpack for my son Ralph in 2012, I sat down at the kitchen table and quickly designed one myself. Ralph loved color and I value aesthetics and quality. With that in mind, I wanted to design something colorful and strong at the same time, moving away from the brightly colored polyester…",
+        "link_txt": "Read more",
+        "link_hover_txt": "",
+        "link": "shopify:\/\/collections",
+        "img": "shopify:\/\/shop_images\/Schermafbeelding.webp",
+        "product_video": "",
+        "video_link": "",
+        "marg_top": "false"
+      }
+    },
+    "1650373849c7b91265": {
+      "type": "jp-image-with-text",
+      "settings": {
+        "section_type": "img_txt",
+        "link_type": "btn",
+        "btn_color": "yellow",
+        "img_aligment": "left",
+        "title": "Lorem ipsum dolor sit amet",
+        "sub_title": "",
+        "desc": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea<br><br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
+        "link_txt": "BECOME A RESELLER",
+        "link_hover_txt": "BECOME A RESELLER",
+        "link": "shopify:\/\/collections",
+        "img": "shopify:\/\/shop_images\/Schermafbeelding.webp",
+        "product_video": "",
+        "video_link": "",
+        "marg_top": "false"
+      }
+    },
+    "1650374631b618a5a9": {
+      "type": "jp-image-with-text",
+      "settings": {
+        "section_type": "video",
+        "link_type": "link",
+        "btn_color": "black",
+        "img_aligment": "left",
+        "title": "New: ergomaxx",
+        "sub_title": "",
+        "desc": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea<br><br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea",
+        "link_txt": "",
+        "link_hover_txt": "",
+        "link": "",
+        "cover_img": "shopify:\/\/shop_images\/image1.jpg",
+        "video_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0077\/6565\/5629\/files\/BANNERWEBSITE.mp4?v=1619694065",
+        "marg_top": "false"
+      }
+    }
+  },
+  "order": [
+    "1650370907f3c868da",
+    "16503735538213c0b3",
+    "1650373849c7b91265",
+    "1650374631b618a5a9"
+  ]
+}
