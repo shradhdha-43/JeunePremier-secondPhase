@@ -1,7 +1,177 @@
+{{ 'jp-lang-select.css' | asset_url | stylesheet_tag }}
+{{ 'jp-hero.css' | asset_url | stylesheet_tag }}
+
+<div class="container flex-box">
+  <div class="modal">
+    <div class="modal-marg rel">
+      <span class="close-lang">{% include "close-icon" %}</span>
+      <div class="justify-content flex-center modal-div">
+        <h2 id="modal-welcome" class="modal-content no-t-m">{{ section.settings.section_title }} <span class="current-lang no-disp">{{ localization.language.name }}</span></h2>
+        <div id="modal-div">        
+          <div class="flex-box justify-center">
+            <select class="modal-buttons no-disp" id="country-selector">
+            {% for block in section.blocks %}
+              <option class="country-options" data-lang="{{ block.settings.block_lang }}" data-href="{{ block.settings.block_redirect_url }}"
+				data-country="{{ block.settings.block_country }}" {% if forloop.first %}selected="selected"{% endif %}>{{ block.settings.block_country }}</option>
+            {% endfor %}
+            </select>            
+          </div>
+        </div>
+        <a href="" class="btn btn-center" id="suggested" style="margin-bottom: 12px !important;">{{ section.settings.section_btn_text }}</a>
+        <span class="modal-text change-lang-link">{{ section.settings.section_text }}</span>
+      </div>
+    </div>
+    <span class="modal-span">
+    </span>
+  </div>
+</div>
+
+<script>  
+  var country = localStorage.getItem("cont");
+  var language = localStorage.getItem("lang");
+  var countryh = localStorage.getItem("conth");
+  var languageh = localStorage.getItem("langh");
+  if( !country && !language ) {
+    $('.modal').css("display","flex");
+      $.ajax({
+        url: "/browsing_context_suggestions.json?source=geolocation_recommendation&country[enabled]=true&language[enabled]=true",
+        method: "GET",
+        dataType: "json"
+      })
+      .done(function( data ) {
+        console.log(data);
+        if(data.suggestions[0].parts.country) {
+          $('.current-lang').text(data.suggestions[0].parts.language.name);
+          var lang = '/'+data.suggestions[0].parts.language.handle.toLowerCase();
+          if(data.suggestions[0].parts.country.handle.toLowerCase() == 'be') {
+            if(data.suggestions[0].parts.language.handle.toLowerCase() == 'nl') {
+              lang = '/nl';
+            }
+          }
+          else if(data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
+            lang = '/';
+          }
+          $('#suggested').attr('href',lang);
+          localStorage.setItem("cont", data.suggestions[0].parts.country.name);
+          localStorage.setItem("lang", data.suggestions[0].parts.language.name);
+          localStorage.setItem("conth", data.suggestions[0].parts.country.handle.toLowerCase());
+          localStorage.setItem("langh", data.suggestions[0].parts.language.handle.toLowerCase());
+        } else {
+          var lang = '/';
+          if(data.suggestions[0].parts.language.handle.toLowerCase() != "en") {
+            lang = lang + data.suggestions[0].parts.language.handle.toLowerCase();
+          }
+          $('.current-lang').text(data.suggestions[0].parts.language.name);
+          $('#suggested').attr('href',lang);
+          localStorage.setItem("cont", data.detected_values.country.name);
+          localStorage.setItem("lang", data.suggestions[0].parts.language.name);
+          localStorage.setItem("conth", data.detected_values.country.handle.toLowerCase());
+          localStorage.setItem("langh", data.suggestions[0].parts.language.handle.toLowerCase());
+        }
+        $('.current-lang').removeClass('no-disp');
+      })
+      .fail(function(error) {
+        console.log( error );
+      });
+  } else {
+	$('.current-lang').text(language);
+    var lang = '/'+languageh;
+    if(languageh == 'en') {
+        lang = '/';
+    }
+    $('#suggested').attr('href',lang);
+	$('.current-lang').removeClass('no-disp');
+  }
+  
+
+  $( document ).ready(function() {
+    
+    $('.change-lang-link').click(function() {
+      $('#country-selector').removeClass('no-disp');
+      var suggestedLang = localStorage.getItem("langh");
+      $('#country-selector option').each(function() {
+        if($(this).data("lang") == suggestedLang) {
+        	$(this).prop('selected','selected');
+        }
+      });
+    });
+    
+    $('#country-selector').change(function() {
+      var lang = "/"+$(this).find("option:selected").data("lang");
+      var redirectUrl = $(this).find("option:selected").data("href");
+      
+      if(redirectUrl != '' && redirectUrl != undefined) {
+      	$('#suggested').attr('href',redirectUrl);	
+      }
+      else {
+        if(lang == "/en") {
+          lang = "/"
+        }
+      	$('#suggested').attr('href',lang);
+      }
+    });
+    
+    $('.close-lang').click(function() {
+      $('.modal').css("display","none");
+    });
+  });
+  
+</script>
+
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "JP Language Selector",
+    "settings": [
+		{
+			"type": "text",
+			"id": "section_title",
+			"label": "Section Title",
+			"default": "Your language is set to"
+		},
+		{
+			"type": "text",
+			"id": "section_text",
+			"label": "Section Text",
+			"default": "Change Language"
+		},
+		{
+			"type": "text",
+			"id": "section_btn_text",
+			"label": "Section Button Text",
+			"default": "Continue Shopping"
+		}
+	],
+	"blocks": [
+      {
+        "type": "languages",
+        "name": "Language and Country",
+        "settings": [
+          {
+            "type": "text",
+            "id": "block_lang",
+            "label": "Enter language in iso format",
+            "info": "Eg: nl, fr"
+          },
+          {
+            "type": "text",
+            "id": "block_country",
+            "label": "Enter Country name",
+            "info": "Eg: Netherlands, French"
+          },
+		  {
+            "type": "url",
+            "id": "block_redirect_url",
+            "label": "Enter Hard Redirect URL",
+            "info": "Manually redirect to specific store"
+          }
+        ]
+      }
+    ],
+	"presets": [
+      {
+		"name":"JP Language Selector"
+      }
+	]
   }
 {% endschema %}
 
