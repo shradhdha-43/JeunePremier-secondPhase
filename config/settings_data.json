@@ -353,6 +353,54 @@
           "showroom_addr": "Rogierlaan 9, 8400 Oostende, Belgium.<br> Contact: <a href=\"mailto:b2b@jeunepremier.be\">b2b@jeunepremier.be<\/a>",
           "copyright": "© 2022, Premiers bv - BE 0502 478 410"
         }
+      },
+      "jp-language-selector": {
+        "type": "jp-language-selector",
+        "blocks": {
+          "10f24754-b769-4ddd-a1b3-fb49c7891224": {
+            "type": "languages",
+            "settings": {
+              "block_lang": "en",
+              "block_country": "Default",
+              "block_redirect_url": ""
+            }
+          },
+          "1ecd102d-8d86-4828-af52-0f12dda6c6d5": {
+            "type": "languages",
+            "settings": {
+              "block_lang": "nl",
+              "block_country": "Netherlands",
+              "block_redirect_url": ""
+            }
+          },
+          "7740c593-bde9-4c33-b004-84a16712ed8f": {
+            "type": "languages",
+            "settings": {
+              "block_lang": "fr",
+              "block_country": "French",
+              "block_redirect_url": ""
+            }
+          },
+          "b69e574d-b232-496f-83d6-399a3b790e4c": {
+            "type": "languages",
+            "settings": {
+              "block_lang": "de",
+              "block_country": "Germany",
+              "block_redirect_url": "https:\/\/www.jeunepremier.de\/"
+            }
+          }
+        },
+        "block_order": [
+          "10f24754-b769-4ddd-a1b3-fb49c7891224",
+          "1ecd102d-8d86-4828-af52-0f12dda6c6d5",
+          "7740c593-bde9-4c33-b004-84a16712ed8f",
+          "b69e574d-b232-496f-83d6-399a3b790e4c"
+        ],
+        "settings": {
+          "section_title": "Your language is set to",
+          "section_text": "Change Language",
+          "section_btn_text": "Continue Shopping"
+        }
       }
     },
     "content_for_index": [
