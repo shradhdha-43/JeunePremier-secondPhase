@@ -173,8 +173,41 @@
     </script>
     
     {%- comment -%}
+    jeunepremier.be scripts
+    {%- endcomment -%}
+    {% if request.host contains 'jeunepremier.be' or request.host contains 'jeunepremier.nl' or request.host contains 'jeunepremier.es' or request.host contains 'jeunepremier.pl' or request.host contains 'jeunepremier.pt' or request.host contains 'jeunepremier.cz' or request.host contains 'jeunepremier.com' or request.host contains 'jeunepremier.fr' or request.host contains 'jeunepremier.it' or request.host contains 'jeunepremier.co.uk' or request.host contains 'jeunepremier.lu' or request.host contains 'jeunepremier.dk' or request.host contains 'jeunepremier.se' %}
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                                                          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                                })(window,document,'script','dataLayer','GTM-TC3LGCM');</script>
+    <!-- End Google Tag Manager -->
+
+    {% comment %} yotpo {% endcomment %}
+    <script type="text/javascript" id="yotpo">
+      (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/PDsIBbkA25fPRxUVugbUBTmNTj9MR35RSXyi9RgE/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+    </script>
+    {% endif %}
+    
+    {%- comment -%}
+    jeunepremier.com scripts
+    {%- endcomment -%}
+    {% comment %} {% if request.host contains 'jeunepremier.com' %}
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                                                          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                                })(window,document,'script','dataLayer','GTM-PZ7FN4P');</script>
+    <!-- End Google Tag Manager -->
+    {% endif %} {% endcomment %}
+    
+    {%- comment -%}
     jeunepremier.de scripts
     {%- endcomment -%}
+    
     {% if request.host contains 'jeunepremier.de' or request.host contains 'jeunepremier.ch' or request.host contains 'jeunepremier.at' %}
     <script src="https://hello.zonos.com/hello.js?siteKey=CBZ7PA9Z1W5C"></script>
 
@@ -225,6 +258,19 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
                                 })(window,document,'script','dataLayer','GTM-TG6KNRQ');</script>
+    <!-- End Google Tag Manager -->
+    {% endif %}
+    
+    {%- comment -%}
+    jeune-premier.ru scripts
+    {%- endcomment -%}
+    {% if request.host contains 'jeune-premier.ru' %}
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                                                          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                                })(window,document,'script','dataLayer','GTM-W7GJ2GW');</script>
     <!-- End Google Tag Manager -->
     {% endif %}
 
@@ -538,6 +584,46 @@
       }
     </script>
 
+    {%- comment -%}
+    jeunepremier.be scripts
+    {%- endcomment -%}
+    {% if request.host contains 'jeunepremier.be' or request.host contains 'jeunepremier.nl' or request.host contains 'jeunepremier.es' or request.host contains 'jeunepremier.pl' or request.host contains 'jeunepremier.pt' or request.host contains 'jeunepremier.cz' or request.host contains 'jeunepremier.dk' or request.host contains 'jeunepremier.se' %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TC3LGCM"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    {% endif %}
+    
+    {%- comment -%}
+    jeunepremier.com scripts
+    {%- endcomment -%}
+    {% if request.host contains 'jeunepremier.com' %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZ7FN4P"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    {% endif %}
+
+    {%- comment -%}
+    jeunepremier.de scripts
+    {%- endcomment -%}
+    {% if request.host contains 'jeunepremier.de' or request.host contains 'jeunepremier.ch' or request.host contains 'jeunepremier.at' %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TG6KNRQ"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    {% endif %}
+
+    {%- comment -%}
+    jeune-premier.ru scripts
+    {%- endcomment -%}
+    {% if request.host contains 'jeune-premier.ru' %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7GJ2GW"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    {% endif %}
+    
     {%- if settings.predictive_search_enabled -%}
     <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
