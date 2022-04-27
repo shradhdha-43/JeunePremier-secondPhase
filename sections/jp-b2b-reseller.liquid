@@ -5,6 +5,8 @@
   <div class="container">
     <div class="contact-form-img-wrap flex-box">
       <div class="reseller-contact-form">
+        <div style="margin:0 auto;" class="pxFormGenerator" id="JPoJGfR_kCLzQbBJeDbIuQ"></div>
+        {% comment %}
         <h1 class="title reseller-title">{{ section.settings.title }}</h1>
         <div class="reseller-desc light">{{ section.settings.desc }}</div>
         {% form 'contact' %}
@@ -182,6 +184,7 @@
                   {{ 'templates.contact.form.send' | t }}
                 </div>
         {% endform %}
+        {% endcomment %}
       </div>
       <div class="reseller-img"><img src="{{ section.settings.img | img_url: "400x" }}"></div>
     </div>
