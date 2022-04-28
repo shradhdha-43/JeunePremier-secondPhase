@@ -181,15 +181,15 @@
         "0766d5de-4996-403d-be37-4e865ffe646a": {
           "type": "faq",
           "settings": {
-            "question": "Was kan ich machen, wenn ein artikel defekt ist?",
-            "answer": "Wir bitten Sie, die Ware unverzüglich nach Erhalt auf eventuelle sichtbare Defekte zu prüfen. Reklamationen über nicht konforme Waren oder Liefermängel müssen innerhalb von fünf Tagen nach der Lieferung mittels eines begründeten Schreibens erfolgen; entweder per Post an den Hauptsitz von Premiers oder per E-Mail an info@jeunepremier.be. Im Falle eines defekten Artikels werden wir diesen kostenlos reparieren bzw. nicht konforme Waren ersetzen."
+            "question": "When the item is defective",
+            "answer": "<strong> Legal warranty<\/strong>\n<br><br>\nGoods are considered defective if received damaged, or if a manufacturing defect occurs within two years of purchase. Please note that items damaged due to wear and tear, improper use, fall, fire or water damage are not considered defective. If you have received the goods damaged ('visible defect') Jeune Premier asks that you report this defect along with a photo of the defect and the proof of purchase within two months of delivery. Jeune Premier will then contact the Customer regarding the free replacement and\/or repair of the defective item. If a manufacturing defect occurs within two years of purchase that could not reasonably have been known at the time of delivery (\"hidden defect\"), Jeune Premier asks that this defect be reported as soon as possible, and at least within 2 months of its discovery, along with a photograph of the defect and proof of purchase. In such a case, the Customer may invoke our warranty policy and Jeune Premier will contact the Customer regarding the free replacement and\/or repair of the defective item.\n\n<br><br>The normal cost of return in these cases shall be borne by Jeune Premier.\"\n\n<br><br>For more information on exercising the legal right to warranty, please refer to our B2C general terms and conditions of sale.\""
           }
         },
         "0bb26110-446f-4642-b24d-b434bee24ae7": {
           "type": "faq",
           "settings": {
-            "question": "Was geschieht, wenn ich bei der zustellung nicht zuhause war?",
-            "answer": "Die Zustelldienste der Post, DPD, GLS oder UPS liefern die Bestellung an die angegebene Lieferadresse. Sollten Sie dort beim ersten Zustellversuch nicht erreichbar gewesen sein, erhalten Sie eine Benachrichtigung. Dies geschieht in Form eines Zettels in Ihrem Briefkasten, per E-Mail oder per Track &amp; Trace-Link.<br><br> Der Zusteller informiert Sie mit den folgenden 3 Optionen, wo sich Ihre Bestellung befindet:\n<ul>\n<li>An dem darauf folgenden Werktag findet erneut ein Zustellversuch statt. Bei dem zweiten Zustellversuch kann Ihre Bestellung von einem anderen Lieferdienst zugestellt werden;<\/li>\n<li>Ihre Bestellung wurde bei einem Nachbarn abgegeben;<\/li>\n<li>Die Bestellung wurde an einem Pickup-Point abgegeben.<\/li>\n<\/ul>"
+            "question": "What happens if I'm not home during delivery",
+            "answer": "The delivery person of bpost, DPD, GLS or UPS will deliver the order to the indicated delivery address. If you are not at home during the first delivery attempt, you will receive a notice of absence. This may be in the form of a note in the letterbox, an email or a Track &amp; Trace link.<br><br> With this notice of absence, the delivery person inform you where your order is located, with the following three options:\n<ul>\n<li>•\tA new delivery attempt will be made on the subsequent working day. During a second delivery attempt, your order may be delivered by a different courier;<\/li>\n<li>•\tThe order has been delivered to one of your neighbours;<\/li>\n<li>•\tThe order is waiting for you at a collection point.<\/li>\n<\/ul>"
           }
         },
         "95f663a1-c32e-460f-94bc-b35700367269": {
