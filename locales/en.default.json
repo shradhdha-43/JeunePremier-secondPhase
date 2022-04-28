@@ -188,49 +188,49 @@
       "preorder_property_value": "Shipping from July 1.",
       "back_in_stock_in": "Back in stock in",
       "months": {
-        "january": "Januar",
-        "february": "Februar",
-        "march": "März",
+        "january": "January",
+        "february": "February",
+        "march": "March",
         "april": "April",
-        "may": "Mai",
+        "may": "May",
         "june": "June",
         "july": "July",
         "august": "August",
         "september": "September",
         "october": "October",
         "november": "November",
-        "december": "Dezember "
+        "december": "December"
       }
     },
     "modal": {
-      "label": "Medien-Galerie"
+      "label": "Media Gallery"
     },
     "facets": {
-      "apply": "Anwenden",
-      "clear": "Löschen",
-      "clear_all": "Alles löschen",
-      "from": "Von",
-      "filter_and_sort": "Filtern und sortieren",
+      "apply": "Apply",
+      "clear": "Clear",
+      "clear_all": "Clear all",
+      "from": "From",
+      "filter_and_sort": "Filter and sort",
       "filter_by_label": "Filter:",
       "filter_button": "Filter",
       "filters_selected": {
-        "one": "{{ count }} ausgewählt",
-        "other": "{{ count }} ausgewählt"
+        "one": "{{ count }} selected",
+        "other": "{{ count }} selected"
       },
-      "max_price": "Der höchste Preis ist {{ price }}",
+      "max_price": "Max price {{ price }}",
       "product_count": {
-        "one": "{{ product_count }} von {{ count }} Produkt",
-        "other": "{{ product_count }} von {{ count }} Produkten"
+        "one": "{{ product_count }} von {{ count }} Product",
+        "other": "{{ product_count }} von {{ count }} Products"
       },
       "product_count_simple": {
-        "one": "{{ count }} Produkt",
-        "other": "{{ count }} Produkte"
+        "one": "{{ count }} Product",
+        "other": "{{ count }} Product"
       },
-      "reset": "Zurücksetzen",
-      "sort_button": "Sortieren",
-      "sort_by_label": "Sortieren nach:",
-      "to": "Bis",
-      "clear_filter": "Filter löschen"
+      "reset": "Reset",
+      "sort_button": "Sort button",
+      "sort_by_label": "Sort by:",
+      "to": "To",
+      "clear_filter": "Clear filter"
     }
   },
   "templates": {
