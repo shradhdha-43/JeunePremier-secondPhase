@@ -376,10 +376,10 @@
     }
   },
   "localization": {
-    "country_label": "Land\/Region",
-    "language_label": "Sprache",
-    "update_language": "Sprache aktualisieren",
-    "update_country": "Land\/Region aktualisieren"
+    "country_label": "Country\/Region",
+    "language_label": "Language",
+    "update_language": "Update language",
+    "update_country": "Update country\/region"
   },
   "customer": {
     "account": {
