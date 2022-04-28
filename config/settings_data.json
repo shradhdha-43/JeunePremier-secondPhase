@@ -211,7 +211,7 @@
           "d02097eb-1b1a-4f05-8528-92915a2f4d2c": {
             "type": "announcement",
             "settings": {
-              "announcement_text": "<p>Kostenloser Versand ab <strong>€150 <\/strong>nach <strong>DE, AT & DK<\/strong><\/p>",
+              "announcement_text": "<p><strong>Free shipping<\/strong> from <strong>€150<\/strong> to Europe<\/p>",
               "announcement_url": ""
             }
           },
