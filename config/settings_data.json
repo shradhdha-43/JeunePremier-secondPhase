@@ -218,7 +218,7 @@
           "e79fe88c-b445-4810-a3c2-9522a1a4c696": {
             "type": "announcement",
             "settings": {
-              "announcement_text": "<p><strong>Abonnieren <\/strong>Sie unseren Newsletter!<\/p>",
+              "announcement_text": "<p><strong>Subscribe<\/strong> to our newsletter!<\/p>",
               "announcement_url": ""
             }
           },
