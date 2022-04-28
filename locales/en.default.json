@@ -355,19 +355,19 @@
       "descending": "Highest price"
     },
     "video": {
-      "load_video": "Video laden: {{ description }}"
+      "load_video": "Load video: {{ description }}"
     },
     "slideshow": {
-      "load_slide": "Folie laden",
-      "previous_slideshow": "Vorherige Folie",
-      "next_slideshow": "Nächste Folie",
-      "pause_slideshow": "Slideshow pausieren",
-      "play_slideshow": "Slideshow abspielen",
-      "carousel": "Karussell",
-      "slide": "Folie"
+      "load_slide": "Load slide",
+      "previous_slideshow": "Previous slide",
+      "next_slideshow": "Next slideshow",
+      "pause_slideshow": "Pause slideshow",
+      "play_slideshow": "Play slideshow",
+      "carousel": "Carousel",
+      "slide": "Slide"
     },
     "upsell": {
-      "upsell1_heading": "Mit Sack und Pack",
+      "upsell1_heading": "Fully packed",
       "upsell1_description": "Mit diesen tollen Schulsachen bist du der König oder die Königin auf dem Spielplatz. Originelle Brotdosen, ausgefallene Wasserflaschen, Schlüsselanhänger mit deinem Namen, coole Sportbeutel, schöne Schulmäppchen... Schaue dir direkt das gesamte Sortiment an. Magst du gerne alles einheitlich oder lieber von allem etwas? Du bist der Boss!",
       "upsell2_heading": "Je tas is uniek en jij ook",
       "upsell2_description": "Tunes, games, music, fast cars, trainers, skateboards, .... Everything little boys dream of is united in one print, and how!",
