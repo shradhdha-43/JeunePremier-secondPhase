@@ -291,11 +291,11 @@
   },
   "sections": {
     "contact": {
-      "topic": "DAS THEMA"
+      "topic": "Theme"
     },
     "header": {
-      "announcement": "Ankündigung",
-      "menu": "Menü",
+      "announcement": "Announcement",
+      "menu": "Menu",
       "cart_count": {
         "one": "{{ count }} Artikel",
         "other": "{{ count }} Artikel"
