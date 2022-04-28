@@ -23,10 +23,10 @@
     "1648025119633f453c": {
       "type": "jp-product-cross-sell-options",
       "settings": {
-        "cross_sell_header": "GEPAKT & GEZAKT",
+        "cross_sell_header": "Fully Packed",
         "more_info": "More info",
-        "cross_sell_add_to_cart": "JETZT KAUFEN +",
-        "cross_sell_added_to_cart": "IM WARENKORB ✔"
+        "cross_sell_add_to_cart": "SHOP NOW +",
+        "cross_sell_added_to_cart": "ADD TO SHOPPING CART ✔"
       }
     },
     "product-recommendations": {
