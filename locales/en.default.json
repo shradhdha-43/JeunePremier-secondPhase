@@ -81,21 +81,21 @@
   "blogs": {
     "article": {
       "blog": "Blog",
-      "read_more_title": "Weiterlesen: {{ title }}",
+      "read_more_title": "Read more: {{ title }}",
       "comments": {
-        "one": "{{ count }} Kommentar",
-        "other": "{{ count }} Kommentare"
+        "one": "{{ count }} Comments",
+        "other": "{{ count }} Comments"
       },
-      "moderated": "Bitte beachte, dass Kommentare vor der Veröffentlichung freigegeben werden müssen.",
-      "comment_form_title": "Hinterlasse einen Kommentar",
+      "moderated": "Please note that comments must be approved before publication.",
+      "comment_form_title": "Leave a comment",
       "name": "Name",
       "email": "E-Mail",
-      "message": "Kommentar",
-      "post": "Kommentar posten",
-      "back_to_blog": "Zurück zum Blog",
-      "share": "Diesen Artikel teilen",
-      "success": "Dein Kommentar wurde erfolgreich gepostet! Vielen Dank!",
-      "success_moderated": "Dein Kommentar wurde erfolgreich gepostet. Da unser Blog moderiert wird, werden wir ihn erst kurze Zeit später veröffentlichen.",
+      "message": "Comment",
+      "post": "Post comment",
+      "back_to_blog": "Back to blog",
+      "share": "Share",
+      "success": "Your comment was posted successfully! Thank you very much!",
+      "success_moderated": "Your comment has been posted successfully. Since our blog is moderated, we will publish it only a short time later.",
       "shop_btn": "SHOP THE {{ title }}",
       "keep_reading": "Keep reading",
       "filter": "FILTER"
