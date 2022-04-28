@@ -4,9 +4,9 @@
       "type": "jp-hero",
       "settings": {
         "image": "shopify:\/\/shop_images\/Banner2.webp",
-        "heading": "EINZIGARTIGE &amp; FARBENFROHE SCHULRANZEN",
-        "headinglink": "shopify:\/\/collections\/s22",
-        "headinglinktext": "NEUE KOLLEKTION ENTDECKEN"
+        "heading": "UNIQUE &amp; COLOURFUL SCHOOL BAGS",
+        "headinglink": "shopify:\/\/pages\/gdpr-compliance",
+        "headinglinktext": "DISCOVER NEW COLLECTION"
       }
     },
     "164498288980aebb7d": {
@@ -55,6 +55,7 @@
       "settings": {
         "section_type": "img_txt",
         "link_type": "link",
+        "btn_color": "black",
         "img_aligment": "right",
         "title": "Unsere Story",
         "sub_title": "",
@@ -73,6 +74,7 @@
       "settings": {
         "section_type": "video",
         "link_type": "btn",
+        "btn_color": "black",
         "img_aligment": "left",
         "title": "LERNEN SIE DEN ERGOMAXX KENNEN",
         "sub_title": "",
@@ -228,6 +230,7 @@
       "settings": {
         "section_type": "img_txt",
         "link_type": "link",
+        "btn_color": "black",
         "img_aligment": "right",
         "title": "HILFE! Welche Tasche eignet sich für mein Kind?",
         "sub_title": "",
