@@ -336,23 +336,23 @@
     "featured_blog": {
       "view_all": "View all",
       "onboarding_title": "Blog post",
-      "onboarding_content": "Verschaffe deinen Kunden eine Übersicht über deinen Blog-Beitrag"
+      "onboarding_content": "Give your customers an overview of your blog post"
     },
     "featured_collection": {
-      "view_all": "Alle anzeigen",
-      "view_all_label": "Alle Produkte in der Kategorie {{ collection_name }} anzeigen"
+      "view_all": "View all",
+      "view_all_label": "View all products from the {{ collection_name }} category"
     },
     "collection_list": {
-      "view_all": "Alle anzeigen"
+      "view_all": "View all"
     },
     "collection_template": {
-      "title": "Kategorie",
-      "empty": "Keine Produkte gefunden",
-      "use_fewer_filters_html": "Verwende weniger Filter oder <a class=\"{{ class }}\" href=\"{{ link }}\">lösche alle<\/a>",
-      "bestseller": "Beliebteste",
-      "new": "Neuerscheinungen",
-      "ascending": "Niedrigster Preis",
-      "descending": "Höchster Preis"
+      "title": "Category",
+      "empty": "No products found",
+      "use_fewer_filters_html": "Use less filters or <a class=\"{{ class }}\" href=\"{{ link }}\">delete all<\/a>",
+      "bestseller": "Most popular",
+      "new": "New releases",
+      "ascending": "Lowest price",
+      "descending": "Highest price"
     },
     "video": {
       "load_video": "Video laden: {{ description }}"
