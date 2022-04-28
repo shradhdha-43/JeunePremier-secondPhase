@@ -218,11 +218,11 @@
       "type": "jp-labels-slider-custom",
       "settings": {
         "bg_color": "light",
-        "title": "Personalized name labels",
+        "title": "Personalized Name Labels",
         "desc": "Discover the Goed Gemerkt x Jeune Premier capsule collection of labels with prints from the new BTS'22 collection",
-        "labels_collection": "wrapping-paper-labels",
-        "btn_txt": "ENTDECKEN",
-        "btn_url": "shopify:\/\/collections\/wrapping-paper-labels"
+        "labels_collection": "personalized-name-labels",
+        "btn_txt": "DISCOVER",
+        "btn_url": "shopify:\/\/collections\/personalized-name-labels"
       }
     },
     "16437127436c75ae35": {
