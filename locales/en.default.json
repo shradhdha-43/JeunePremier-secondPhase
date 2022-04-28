@@ -7,8 +7,8 @@
       "login_form_password_placeholder": "Your password",
       "login_form_error": "Wrong password!",
       "login_form_submit": "Enter",
-      "admin_link_html": "Bist du der Shop-Inhaber? <a href=\"\/admin\" class=\"link underlined-link\">Hier einloggen<\/a>",
-      "powered_by_shopify_html": "Dieser Shop wird unterstützt von {{ shopify }}"
+      "admin_link_html": "Are you the store owner? <a href=\"\/admin\" class=\"link underlined-link\">Log in<\/a>",
+      "powered_by_shopify_html": "This store is supported by {{ shopify }}"
     },
     "social": {
       "alt_text": {
