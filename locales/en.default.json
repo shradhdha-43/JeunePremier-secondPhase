@@ -159,21 +159,21 @@
       "free_shipping": "Free shipping",
       "last_item": "LAST ITEM",
       "label_info": {
-        "info": "verwendete Zeichen aus 24",
-        "error1": "Gesamtzeichengrenze erreicht (max. 24 Zeichen)",
-        "error2": "Individuelle Zeilengrenze erreicht (max. 16 Zeichen)",
-        "error3": "Vornamen und \/ oder Nachnamen eingeben",
-        "inst": "Jede Zeile ist auf 16 Zeichen begrenzt. Beide Zeilen zusammen sind auf 24 Zeichen begrenzt.",
-        "name": "Name des Kindes:"
+        "info": "characters used from 24",
+        "error1": "Total character limit reached (max. 24 characters)",
+        "error2": "Individual line limit reached (max. 16 characters)",
+        "error3": "Enter first name and \/ or last name",
+        "inst": "Each line is limited to 16 characters. Both lines together are limited to 24 characters.",
+        "name": "Name of the child:"
       },
       "service_text": {
-        "first_html": "Bestellung <strong>vor 16 Uhr<\/strong>, Versand am selben Tag",
-        "second_html": "Standardlieferzeit <strong>2-4 Werktage<\/strong>",
-        "third_html": "<strong>Premium-lieferung<\/strong> möglich 1-2 Werktage",
-        "fourth_html": "14 Tage recht op <strong>retour<\/strong>",
+        "first_html": "Order <strong>before 4pm<\/strong>, same day shipping.",
+        "second_html": "Standard delivery time <strong>2-4 business days<\/strong>.",
+        "third_html": "<strong>Premium delivery<\/strong> possible 1-2 business days",
+        "fourth_html": "14 days of<strong>return<\/strong>",
         "fifth_html": "Safe payments",
         "name": "The Child’s name:",
-        "inst": "Jede Zeile ist auf 16 Zeichen begrenzt. Beide Zeilen zusammen sind auf 24 Zeichen begrenzt."
+        "inst": "Each line is limited to 16 characters. Both lines together are limited to 24 characters."
       },
       "shipping_from": "Shipping from belgium",
       "meet": "Meet the",
