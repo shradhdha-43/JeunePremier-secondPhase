@@ -45,15 +45,15 @@
       "cart_title": "SHOPPING CART"
     },
     "share": {
-      "copy_to_clipboard": "Link kopieren",
+      "copy_to_clipboard": "Copy link",
       "share_url": "Link",
-      "success_message": "Link in die Zwischenablage kopiert",
-      "close": "Teilen schließen"
+      "success_message": "Link copied to clipboard",
+      "close": "Close share"
     },
     "slider": {
-      "of": "von",
-      "next_slide": "Nach rechts schieben",
-      "previous_slide": "Nach links schieben"
+      "of": "From",
+      "next_slide": "Slide to the right",
+      "previous_slide": "Slide to the left"
     }
   },
   "newsletter": {
