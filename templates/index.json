@@ -30,7 +30,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/payments2.webp",
-            "description": "Jetzt kaufen, <strong><u>später bezahlen<\/u><\/strong>"
+            "description": "Buy now, <strong><u>pay later<\/u><\/strong>"
           }
         }
       },
