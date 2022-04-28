@@ -62,21 +62,21 @@
     "button_label": "Subscribe"
   },
   "accessibility": {
-    "skip_to_text": "Direkt zum Inhalt",
-    "close": "Schließen",
+    "skip_to_text": "Directly to the content",
+    "close": "Close",
     "unit_price_separator": "pro",
-    "vendor": "Anbieter:",
-    "error": "Fehler",
-    "refresh_page": "Wenn du dich für eine Auswahl entscheidest, wird die Seite komplett aktualisiert.",
+    "vendor": "Vendor",
+    "error": "Error",
+    "refresh_page": "If you decide to make a selection, the page will be completely updated.",
     "link_messages": {
-      "new_window": "Wird in einem neuen Fenster geöffnet.",
-      "external": "Öffnet externe Webseite."
+      "new_window": "New window",
+      "external": "Opens external web page."
     },
-    "loading": "Wird geladen ...",
-    "skip_to_product_info": "Zu Produktinformationen springen",
-    "total_reviews": "Bewertungen insgesamt",
-    "star_reviews_info": "{{ rating_value }} von {{ rating_max }} Sternen",
-    "collapsible_content_title": "Einklappbarer Inhalt"
+    "loading": "Loading ...",
+    "skip_to_product_info": "Skip to product info",
+    "total_reviews": "Total reviews",
+    "star_reviews_info": "{{ rating_value }} of {{ rating_max }} stars",
+    "collapsible_content_title": "Collapsible content"
   },
   "blogs": {
     "article": {
