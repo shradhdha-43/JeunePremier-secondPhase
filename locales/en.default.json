@@ -321,21 +321,21 @@
       "headings": {
         "product": "Product",
         "price": "Price",
-        "total": "Gesamtsumme",
-        "quantity": "Anzahl"
+        "total": "Total",
+        "quantity": "Quantity"
       },
-      "update": "Aktualisieren",
+      "update": "Update",
       "login": {
-        "title": "Hast du ein Konto?",
+        "title": "Do you have an account?",
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Logge dich ein<\/a>, damit es beim Checkout schneller geht."
       }
     },
     "footer": {
-      "payment": "Zahlungsmethoden"
+      "payment": "Payment options"
     },
     "featured_blog": {
-      "view_all": "Alle anzeigen",
-      "onboarding_title": "Blog-Beitrag",
+      "view_all": "View all",
+      "onboarding_title": "Blog post",
       "onboarding_content": "Verschaffe deinen Kunden eine Übersicht über deinen Blog-Beitrag"
     },
     "featured_collection": {
