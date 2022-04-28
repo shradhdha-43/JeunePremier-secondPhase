@@ -160,8 +160,8 @@
         "6680475d-2160-43ce-80e7-15b3a5cfd613": {
           "type": "faq",
           "settings": {
-            "question": "Wie kann ich einen Artikel zurückschicken?",
-            "answer": "<strong>Möglichkeit 1<\/strong>\n<br><br>\nHaben Sie Ihre Meinung geändert und möchten Sie Ihre Artikel zurückschicken? Kein Problem. Innerhalb von 14 Tagen ab dem ersten Tag nach der Zustellung können Sie das Produkt zurückschicken. Wir werden Ihnen den Kaufbetrag vollständig erstatten, abzüglich der Zustellungskosten, die Sie bei der Bestellung gezahlt haben.\n<br><br>\nDie Rücksendung ist nicht kostenlos, diese Kosten werden von dem zu erstattenden Betrag abgezogen. Dieser <a href=\"\/\">link<\/a> gibt Ihnen eine ausführliche Übersicht über die Preise für die Rücksendung in die verschiedenen Länder, die wir beliefern.\n<br><br>\nBeachten Sie volgende Schritte:\n<br>\n<ol>\n<li>Klicken Sie auf den <a href=\"https:\/\/jpgermany.returnscenter.com\">Link<\/a> unten, um eine Rücksendung anzumelden ODER  loggen Sie sich in Ihrem Konto ein und  klicken Sie auf \"einen Artikel zurückschicken”.\n<\/li>\n<li>Kontrollieren Sie Ihre Mailbox und laden Sie Ihr Rücksendeformular herunter, das Sie bitte in das Paket legen sowie Ihr Prepaid-Etikett, das Sie auf das Paket kleben.<\/li>\n<li>Verschicken Sie Ihr Paket.<\/li>\n<\/ol>\n<br>\nSobald Ihre Rücksendung von uns in Empfang genommen und von unserem Kundenservice geprüft wurde, überweisen wir den Kaufbetrag innerhalb von 3 bis 5 Werktagen direkt auf das Konto, das Sie für die Bestellung genutzt haben.\n<br>\nSobald die Erstattung erfolgt ist, wird der Betrag nach ungefähr 3 Tagen auf Ihrem Konto verbucht. Je nach Bank kann die Zeitspanne variieren.\n<br><br>\n<strong>Möglichkeit 2<\/strong>\n<ol>\n<li>Klicken Sie auf den <a href=\"https:\/\/jpgermany.returnscenter.com\">link<\/a>\n<\/li>\n<li>Überprüfen Sie Ihre Mailbox und befolgen Sie die Anweisungen für die Rücksendung Ihres Pakets.<\/li>\n<\/ol>"
+            "question": "YOU'VE CHANGED YOUR MIND - RIGHT OF WITHDRAWAL",
+            "answer": "<br><br>\nNo problem. As soon as the order is delivered, you have 14 days to request your return. From the moment we receive the request, there is a second period of 14 days where you have time to send the item back. All returned items are examined carefully. If an article is impaired due to the use of the Customer, this will be charged to the Customer. Upon receipt of the returned items, Premiers will refund the price and initial delivery charges to the Customer. If the Customer has chosen a delivery method that differs from the cheapest standard delivery, all additional costs will be borne by the Customer.\n<br><br>\nAll direct return costs are to be borne by the Customer.\n<br><br>\nFor more information on exercising the right of withdrawal, please refer to our general sales conditions B2C.\n<br><br>"
           }
         },
         "9abe91b3-ee4d-4040-a189-54e6dfde6a39": {
@@ -209,8 +209,8 @@
         "95f663a1-c32e-460f-94bc-b35700367269"
       ],
       "settings": {
-        "title": "Haufig Gestellte Fragen",
-        "link_text": "Andere Fragen",
+        "title": "FAQ",
+        "link_text": "Other questions",
         "link": "shopify:\/\/pages\/faqs"
       }
     },
