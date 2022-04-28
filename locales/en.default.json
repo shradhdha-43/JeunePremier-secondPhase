@@ -445,24 +445,24 @@
       "none": "Du hast noch keine Bestellungen aufgegeben."
     },
     "recover_password": {
-      "title": "Setze dein Passwort zurück",
-      "subtext": "Wir werden dir eine E-Mail zum Zurücksetzen deines Passworts schicken",
-      "success": "Wir haben dir eine E-Mail mit einem Link zum Aktualisieren deines Passworts geschickt."
+      "title": "Reset your password",
+      "subtext": "We will send you an email to reset your password",
+      "success": "We have sent you an email with a link to update your password."
     },
     "register": {
-      "title": "Konto erstellen",
-      "first_name": "Vorname",
-      "last_name": "Nachname",
+      "title": "Create account",
+      "first_name": "First name",
+      "last_name": "Last name",
       "email": "E-Mail",
-      "password": "Passwort",
-      "submit": "Erstellen"
+      "password": "Password",
+      "submit": "Submit"
     },
     "reset_password": {
-      "title": "Passwort für Konto zurücksetzen",
-      "subtext": "Gib ein neues Passwort für {{ email }} ein",
-      "password": "Passwort",
-      "password_confirm": "Passwort bestätigen",
-      "submit": "Passwort zurücksetzen"
+      "title": "Reset password for account",
+      "subtext": "nter a new password for {{ email }}",
+      "password": "Password",
+      "password_confirm": "Password confirm",
+      "submit": "Reset password"
     },
     "order": {
       "title": "Order {{ name }}",
