@@ -5,19 +5,19 @@
       "settings": {
         "free_shipping_from": "Kostenloser Versand vanaf 150€",
         "show_payment_icons": true,
-        "icon_bancontact": false,
+        "icon_bancontact": true,
         "icon_mastercard": true,
         "icon_visa": true,
         "icon_maestro": false,
         "icon_americanexpress": false,
         "icon_paypal": true,
-        "icon_ideal": true,
-        "icon_sofort": true,
+        "icon_ideal": false,
+        "icon_sofort": false,
         "icon_klarna": true,
         "icon_belfius": false,
         "icon_kbc": false,
         "icon_giropay": false,
-        "icon_cartebleue": true
+        "icon_cartebleue": false
       }
     },
     "1648025119633f453c": {
