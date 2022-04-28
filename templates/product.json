@@ -3,7 +3,7 @@
     "main": {
       "type": "jp-product",
       "settings": {
-        "free_shipping_from": "Kostenloser Versand vanaf 150€",
+        "free_shipping_from": "Free shipping from €150",
         "show_payment_icons": true,
         "icon_bancontact": true,
         "icon_mastercard": true,
