@@ -511,11 +511,11 @@
       "shop_link": "Continue shopping",
       "remaining_html": "{{ balance }} remaining",
       "add_to_apple_wallet": "Add to apple wallet",
-      "qr_image_alt": "QR-Code – Scannen, um Geschenkgutschein einzulösen",
-      "copy_code": "Code kopieren",
-      "expired": "Abgelaufen",
-      "copy_code_success": "Code erfolgreich kopiert",
-      "print_gift_card": "Drucken"
+      "qr_image_alt": "QR code - scan to redeem gift certificate",
+      "copy_code": "Copy code",
+      "expired": "Expired",
+      "copy_code_success": "Copy code success",
+      "print_gift_card": "Print"
     }
   }
 }
