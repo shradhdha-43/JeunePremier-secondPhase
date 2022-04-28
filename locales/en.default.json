@@ -393,9 +393,9 @@
       "title": "Activate account",
       "subtext": "Create a password to activate your account.",
       "password": "Passwort",
-      "password_confirm": "Passwort bestätigen",
-      "submit": "Konto aktivieren",
-      "cancel": "Einladung ablehnen"
+      "password_confirm": "Confirm password",
+      "submit": "Activate account",
+      "cancel": "Decline invitation"
     },
     "addresses": {
       "title": "Adressen",
