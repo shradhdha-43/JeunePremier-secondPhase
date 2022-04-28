@@ -12,9 +12,9 @@
     },
     "social": {
       "alt_text": {
-        "share_on_facebook": "Auf Facebook teilen",
-        "share_on_twitter": "Auf Twitter twittern",
-        "share_on_pinterest": "Auf Pinterest pinnen"
+        "share_on_facebook": "Share on Facebook",
+        "share_on_twitter": "Share on Twitter",
+        "share_on_pinterest": "Share on Pinterest"
       },
       "links": {
         "twitter": "Twitter",
@@ -28,21 +28,21 @@
         "tiktok": "TikTok"
       }
     },
-    "continue_shopping": "Weiter shoppen",
+    "continue_shopping": "Continue shopping",
     "pagination": {
-      "label": "Seitennummerierung",
-      "page": "Seite {{ number }}",
-      "next": "Nächste Seite",
-      "previous": "Vorherige Seite"
+      "label": "Page numbering",
+      "page": "Page {{ number }}",
+      "next": "Next page",
+      "previous": "Previous page"
     },
     "search": {
-      "search": "Suchen"
+      "search": "Search"
     },
     "cart": {
       "view": "Meinen Warenkorb ({{ count }}) anzeigen",
-      "item_added": "Artikel wurde in den Warenkorb gelegt",
-      "back": "Zurück",
-      "cart_title": "WARENKORB"
+      "item_added": "Item was added to the shopping cart",
+      "back": "Back",
+      "cart_title": "SHOPPING CART"
     },
     "share": {
       "copy_to_clipboard": "Link kopieren",
