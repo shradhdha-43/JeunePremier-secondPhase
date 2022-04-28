@@ -245,8 +245,8 @@
       "products": "Products",
       "search_for": "Search for \"{{ terms }}",
       "results_with_count_and_term": {
-        "one": "{{ count }} Ergebnis für \"{{ terms }}\" gefunden",
-        "other": "{{ count }} Ergebnisse für \"{{ terms }}\" gefunden"
+        "one": "{{ count }} Result found for \"{{ terms }}\".",
+        "other": "{{ count }} Results found for \"{{ ter{ count }} Results found for \"{{ terms }}\"."
       }
     },
     "cart": {
