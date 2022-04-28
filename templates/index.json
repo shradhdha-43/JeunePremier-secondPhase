@@ -146,11 +146,11 @@
       ],
       "settings": {
         "bg_color": "white",
-        "title": "SAFARI KOLLEKTION",
-        "desc": "5 Uhr morgens in der Serengeti, ein wunderschöner Ort südlich des Äquators... Eine Löwin streckt sich und macht sich bereit für die Jagd..",
-        "collection": "safari",
-        "btn_txt": "ENTDECKEN",
-        "btn_url": "shopify:\/\/collections\/safari",
+        "title": "SAFARI COLLECTION",
+        "desc": "5AM in the Serengeti Savanna, a wonderful place south of the equator…. A lionessstretches, ready to go hunting...",
+        "collection": "s22",
+        "btn_txt": "DISCOVER",
+        "btn_url": "shopify:\/\/collections\/s22",
         "upsell_type": "bag"
       }
     },
