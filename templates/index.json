@@ -195,8 +195,8 @@
         "95f663a1-c32e-460f-94bc-b35700367269": {
           "type": "faq",
           "settings": {
-            "question": "Fehlt ein artikel in ihrer bestelling?",
-            "answer": "Wenn Sie einen oder mehrere Artikel bestellt haben und einen bzw. mehrere Artikel nicht erhalten haben, bitten wir Sie, mit unserem Kundenservice Kontakt aufzunehmen."
+            "question": "Missing an item with your order?",
+            "answer": "In the event that you ordered one or more items, but have not received them, please contact our customer service as soon as possible. We will be happy to assist you.\n<br><br> Please contact info@jeunepremier.be"
           }
         }
       },
