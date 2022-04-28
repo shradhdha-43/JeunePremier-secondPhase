@@ -57,10 +57,10 @@
         "97dba447-d7b6-41ec-a2ad-eda47f7b80bd": {
           "type": "age",
           "settings": {
-            "age_title": "GESCHLECHT",
-            "age1": "Mädchen",
+            "age_title": "Collection",
+            "age1": "Girls",
             "age_tag1": "Girl",
-            "age2": "Jungen",
+            "age2": "Boys",
             "age_tag2": "Boy",
             "age3": "Kindergarten",
             "age_tag3": "Mini",
