@@ -505,12 +505,12 @@
   },
   "gift_cards": {
     "issued": {
-      "title": "Hier ist dein Geschenkgutschein im Wert von {{ value }} für {{ shop }}!",
-      "subtext": "Dein Geschenkgutschein",
-      "gift_card_code": "Gutscheincode",
-      "shop_link": "Weiter shoppen",
-      "remaining_html": "{{ balance }} verbleibend",
-      "add_to_apple_wallet": "Zu Apple Wallet hinzufügen",
+      "title": "Here is your {{ value }} gift certificate for {{ store }}!",
+      "subtext": "Your gift certificate",
+      "gift_card_code": "Gift card code",
+      "shop_link": "Continue shopping",
+      "remaining_html": "{{ balance }} remaining",
+      "add_to_apple_wallet": "Add to apple wallet",
       "qr_image_alt": "QR-Code – Scannen, um Geschenkgutschein einzulösen",
       "copy_code": "Code kopieren",
       "expired": "Abgelaufen",
