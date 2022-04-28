@@ -261,9 +261,9 @@
       "jp-newsletter": {
         "type": "jp-newsletter",
         "settings": {
-          "title": "Möchten Sie wissen, was wir vorhaben?",
-          "desc": "Seien Sie der Erste, der neue Produkte, Geschichten hinter den Kulissen und Werbeaktionen entdeckt. Abonnieren.",
-          "policies_text": "<p>Hinweis: Sie können den Newsletter jederzeit abbestellen. Siehe unser <a href=\"\/policies\/privacy-policy\" target=\"_blank\" title=\"Privacy Policy\">Datenschutzbestimmungen<\/a> und unser <a href=\"\/policies\/terms-of-service\" target=\"_blank\" title=\"Terms of Service\">Allgemeine Geschäftsbedingungen<\/a>.<\/p>"
+          "title": "Would you like to know what we are up to?",
+          "desc": "Be the first to discover new products, behind-the-scenes stories and promotions.",
+          "policies_text": "<p>Note: You can unsubscribe from the newsletter at any time. See our privacy policy and our general terms and conditions.<\/p>"
         }
       },
       "jp-product-cross-sell-options": {
