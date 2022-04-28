@@ -39,7 +39,7 @@
       "search": "Search"
     },
     "cart": {
-      "view": "Meinen Warenkorb ({{ count }}) anzeigen",
+      "view": "Show my shopping cart ({{ count }})",
       "item_added": "Item was added to the shopping cart",
       "back": "Back",
       "cart_title": "SHOPPING CART"
