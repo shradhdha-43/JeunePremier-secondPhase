@@ -147,8 +147,8 @@
         "gallery_viewer": "Gallery viewer",
         "load_image": "Load {{ index }} image",
         "load_model": "3D-Modell {{ index }} in Galerieansicht laden",
-        "load_video": "Video {{ index }} in Galerieansicht abspielen",
-        "image_available": "Bild {{ index }} ist nun in der Galerieansicht verfügbar"
+        "load_video": "Video {{ index }} play",
+        "image_available": "Image {{ index }} play"
       },
       "view_full_details": "View full details",
       "include_taxes": "Incl. VAT",
