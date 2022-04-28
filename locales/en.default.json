@@ -383,15 +383,15 @@
   },
   "customer": {
     "account": {
-      "title": "Konto",
-      "details": "Kontodetails",
-      "view_addresses": "Adressen anzeigen",
-      "return": "Zurück zu Kontodetails"
+      "title": "Account",
+      "details": "Account details",
+      "view_addresses": "View addresses",
+      "return": "Return"
     },
-    "account_fallback": "Konto",
+    "account_fallback": "Account",
     "activate_account": {
-      "title": "Konto aktivieren",
-      "subtext": "Erstelle ein Passwort, um dein Konto zu aktiveren.",
+      "title": "Activate account",
+      "subtext": "Create a password to activate your account.",
       "password": "Passwort",
       "password_confirm": "Passwort bestätigen",
       "submit": "Konto aktivieren",
@@ -420,8 +420,8 @@
       "delete": "Löschen",
       "delete_confirm": "Bist du sicher, dass du diese Adresse löschen möchtest?"
     },
-    "log_in": "Einloggen",
-    "log_out": "Abmelden",
+    "log_in": "Log in",
+    "log_out": "Log out",
     "login_page": {
       "cancel": "Abbrechen",
       "create_account": "Create account",
