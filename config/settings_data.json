@@ -247,15 +247,15 @@
         "settings": {
           "free_product": "tote-bag-green-l",
           "upsell": "ergomaxx",
-          "fill_text": "Füllen Sie Ihr",
-          "cart_text": "Warenkorb",
-          "delete_text": "löschen",
-          "people_text": "DAS KÖNNTE DIR AUCH GEFALLEN",
-          "subtotal_text": "Zwischensumme",
-          "shipping_text": "Versand",
-          "calc_text": "Berechnet in nächster Sta",
-          "checkout_text": "ZUR KASSE",
-          "continue_text": "Wir akzeptieren"
+          "fill_text": "Fill your",
+          "cart_text": "cart",
+          "delete_text": "delete",
+          "people_text": "YOU MIGHT ALSO LIKE THIS",
+          "subtotal_text": "Subtotal",
+          "shipping_text": "Shipping",
+          "calc_text": "Cal. in next step",
+          "checkout_text": "CHECKOUT",
+          "continue_text": "We accept"
         }
       },
       "jp-newsletter": {
