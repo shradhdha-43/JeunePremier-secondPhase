@@ -365,6 +365,7 @@
         "1314d3a4-6a8c-47be-b63e-02a52c9dffe8": {
           "type": "insta_img",
           "settings": {
+            "in_img": "shopify:\/\/shop_images\/Nur_midi.jpg",
             "insta_url": ""
           }
         },
@@ -378,6 +379,7 @@
         "8579e408-6f8a-4bad-a935-ff0092b71b96": {
           "type": "insta_img",
           "settings": {
+            "in_img": "shopify:\/\/shop_images\/ITD3.jpg",
             "insta_url": ""
           }
         },
