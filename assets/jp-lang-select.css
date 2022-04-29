@@ -105,3 +105,10 @@
   top: 12px;
   right: 12px;
 }
+
+@media (max-width: 560px) {
+  .modal-marg {
+  	margin-left: 20px;
+    margin-right: 20px;
+  }
+}
