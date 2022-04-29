@@ -7,14 +7,14 @@
         "link_type": "link",
         "btn_color": "black",
         "img_aligment": "right",
-        "title": "Oft gestellte Frage",
+        "title": "FAQ",
         "sub_title": "",
-        "desc": "Willkommen auf unserer Seite mit den häufig gestellten Fragen. Wir hoffen, dass Sie hier Antworten auf Ihre Fragen finden, und falls nicht, können Sie sich gerne an uns wenden. Wir werden Ihnen gerne so schnell wie möglich antworten.",
+        "desc": "Welcome to our frequently asked questions page. We hope that you will find answers to your questions here, and if not, feel free to contact us. We will be happy to answer you as soon as possible.",
         "link_txt": "",
         "link_hover_txt": "",
         "link": "",
-        "img": "shopify:\/\/shop_images\/Test3.jpg",
-        "product_video": "https:\/\/www.youtube.com\/watch?v=Ks0k3YQRu90",
+        "product_video": "https:\/\/youtu.be\/VmuXhM-1xTs",
+        "cover_img": "shopify:\/\/shop_images\/MIDI_MEISJE_THUMBNAIL_9d3644e9-56eb-4ff2-a8cf-9dfe228f74da.jpg",
         "video_link": "",
         "marg_top": "true"
       }
