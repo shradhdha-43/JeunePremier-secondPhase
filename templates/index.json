@@ -133,8 +133,8 @@
           "type": "product",
           "settings": {
             "product": "ergomaxx-unicorn-gold-1",
-            "image1": "shopify:\/\/shop_images\/product-image-4.webp",
-            "image2": "shopify:\/\/shop_images\/product-image-4.webp"
+            "image1": "shopify:\/\/shop_images\/3_banner.jpg",
+            "image2": "shopify:\/\/shop_images\/3_banner.jpg"
           }
         }
       },
