@@ -97,8 +97,11 @@ footer{
   margin-right: 8px;
 }
 
-.shipping-logo:first-child, .payment-logo:first-child {
+.shipping-logo:first-child {
   margin-bottom: 12px;
+}
+.payment-logo:first-child {
+  margin-bottom: 0px;
 }
 
 .shipping-logo img, .payment-logo img{
