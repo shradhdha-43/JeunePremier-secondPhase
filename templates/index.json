@@ -345,7 +345,7 @@
             "category": "",
             "product_brand": "",
             "tags": "",
-            "min_rating": "none",
+            "min_rating": "4",
             "fill_empty": false,
             "random": false,
             "with_photos": false
