@@ -122,6 +122,7 @@
         data: formData,
       })
       .done(function( data ) {
+        checkFreeProduct();
         $.ajax({
           url: '/?sections=jp-cart',
           method: "GET",
