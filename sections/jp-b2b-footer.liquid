@@ -61,8 +61,8 @@
       <div class="footer-brands footer-part-inner">
       	<div class="footer-menu-title title">{{ section.settings.brands_title }}</div>
         <div class="footer-brands-logos flex-box">
-        	<div class="footer-brand-logo"><img src="{{ section.settings.brand1_logo_2 | img_url: "80x" }}" alt="logo"></div>
-          	<div class="footer-brand-logo"><img src="{{ section.settings.brand2_logo_2 | img_url: "80x" }}" alt="logo"></div>
+        	<a href="{{ section.settings.brand1_url }}" class="footer-brand-logo"><img src="{{ section.settings.brand1_logo_2 | img_url: "80x" }}" alt="logo"></a>
+          	<a href="{{ section.settings.brand2_url }}" class="footer-brand-logo"><img src="{{ section.settings.brand2_logo_2 | img_url: "80x" }}" alt="logo"></a>
         </div>
       </div>
       <div class="footer-showroom footer-part-inner">
@@ -130,9 +130,19 @@
 			"label": "Brand One Image"
 		},
 		{
+			"type": "url",
+			"id": "brand1_url",
+			"label": "Brand One Link"
+		},
+		{
 			"type": "image_picker",
 			"id": "brand2_logo_2",
 			"label": "Brand Two Image"
+		},
+		{
+			"type": "url",
+			"id": "brand2_url",
+			"label": "Brand Two Link"
 		},
 		{
 			"type": "text",
