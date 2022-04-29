@@ -43,28 +43,28 @@
         "6de0b424-d10f-4a8e-bd98-e4f083ba6a96": {
           "type": "faq_left_heading",
           "settings": {
-            "faq_left_heading": "Zahlungsmöglichkeiten",
+            "faq_left_heading": "Payment options",
             "faq_left_id": 1
           }
         },
         "409bd05f-2843-4645-a3b4-f4c8ede6a92d": {
           "type": "faq_left_heading",
           "settings": {
-            "faq_left_heading": "Versanddienstleistungen",
+            "faq_left_heading": "Shipping services",
             "faq_left_id": 2
           }
         },
         "08946793-c351-471f-951b-0daf8ab4d458": {
           "type": "faq_left_heading",
           "settings": {
-            "faq_left_heading": "Rückgabe & Umtausch",
+            "faq_left_heading": "Return & Exchange",
             "faq_left_id": 3
           }
         },
         "40505c33-5f18-46de-9526-de9d1cf84b42": {
           "type": "faq_left_heading",
           "settings": {
-            "faq_left_heading": "Produktpflege",
+            "faq_left_heading": "Product maintenance",
             "faq_left_id": 4
           }
         },
@@ -72,19 +72,19 @@
           "type": "faq",
           "settings": {
             "faq_id": 1,
-            "faq_right_heading": "ZAHLUNGSMÖGLICHKEITEN",
-            "question": "WIE KANN ICH BEZAHLEN?",
-            "answer": "Bei Jeune Premier haben wir folgende Zahlungsmöglichkeiten: Banküberweisung, Visa, Mastercard, Maestro, PayPal und IDEAL.",
-            "question2": "WAS IST WENN MEINE ONLINE-ZAHLUNG FEHLSCHLÄGT?",
-            "answer2": "Manchmal kommt es vor, dass Ihre Online-Zahlung fehlschlägt oder Sie ihre Karte nicht zur Hand hatten. Keine Sorge, Sie können Ihre Zahlung immer noch per Banküberweisung vornehmen. Dies sind unsere Bankdetails: IBAN - BE 53 3631 1493 6653. Denken Sie daran: Vergessen Sie bei der Bezahlung nicht, Ihren Namen und Ihre Bestellnummer anzugeben.",
-            "question3": "WIE LANGE DAUERT EINE BANKÜBERWEISUNG?",
-            "answer3": "Es kann zwischen einem und fünf Tagen dauern, bis die Überweisungen auf unserem Konto eingehen.",
-            "question4": "KANN ICH SPÄTER BEZAHLEN?",
-            "answer4": "Nein. Leider bieten wir diese Möglichkeit nicht an. Sie könne können online mit Kreditkarte bezahlen (Maestro, Visa), Banküberweisung, IDEAL und PayPal.",
-            "question5": "IST ES SICHER, AUF DER WEBSITE VON JEUNE PREMIER ZU BEZAHLEN?",
-            "answer5": "Ja, für unsere Online-Zahlungen arbeiten wir mit dem internationalen Unternehmen Mollie zusammen. Als Marktführer bei Online-Zahlungslösungen für e-Commerce garantiert Ihnen Mollie eine 100% sichere Abwicklung. Die Transaktion wird über eine sichere Website mit verschiedenen Firewalls zwischen Mollie und dem Käufer durchgeführt. Weder wir noch Dritte erhalten Ihre Kartennummer oder andere Informationen Mollie überprüft die Gültigkeit Ihrer Karte, die Karennummer und die Zugriffsrechte Ihrer Kreditkarte und teilt uns mit, ob alles in Ordnung ist und die Zahlung durchgeführt wird. Dann wird Ihre Bestellung bestätigt und sofort zum Versand gebracht.",
-            "question6": "KANN ICH EINE RECHNUNG IM NAMEN MEINES UNTERNEHMENS ERHALTEN?",
-            "answer6": "Ja. Schauen Sie unter Ihren persönlichen Daten nach, wählen Sie „Rechnung anfordern“ und füllen Sie alle erforderlichen Informationen aus.",
+            "faq_right_heading": "PAYMENT OPTIONS",
+            "question": "HOW CAN I PAY?",
+            "answer": "At Jeune Premier we have the following payment options: Bank transfer, Visa, Mastercard, Maestro, PayPal and IDEAL.",
+            "question2": "WHAT IF MY ONLINE PAYMENT FAILS?",
+            "answer2": "Sometimes it happens that your online payment fails or you didn't have your card on hand. Don't worry, you can still do your payment by banktransfer. These are our bankdetails: \n\n<p><br>Premiers BV\n<\/p><p><br>IBAN: BE 53 3631 1493 6653.\n<\/p><p><br>Bank: ING\n<\/p><p><br>BIC: BBRUBEBB\n\n<\/p><p><br>Remember: when you pay don't forget to mention your name and order number.<\/p><p><\/p><p><\/p>",
+            "question3": "HOW LONG DOES A BANK TRANSFER TAKE?",
+            "answer3": "Transfers can take between 1 and 5 days to be on our account.",
+            "question4": "CAN I PAY LATER",
+            "answer4": "Certainly you can! Thanks to our collaboration with Klarna, you have the option to pay only when your order has been delivered and when you are completely satisfied. Your order will be shipped in the same way as with any other payment method. With Klarna you always have 0% interest and no extra costs if you pay on time within 35 days.\nAnd you only pay for the items you wish to keep, of course.",
+            "question5": "IS IT SAFE TO PAY ON THE WEBSITE OF JEUNE PREMIER?",
+            "answer5": "Yes, for secure online payment we work together with the International company Mollie. As a market leader in online payment solutions for e -commerce Mollie guarantees you a 100 % safe handling. The transaction is made via a secure site with different firewalls between Mollie and the buyer. Neither we nor any third parties get your card number or other information to see. Mollie verify the validity of your card, card number and access rights of your credit card and give message to us if everything is in order and the payment will be made. So your order will be confirmed and immediately proceeded to dispatch.",
+            "question6": "CAN I RECEIVE AN INVOICE ON BEHALF OF MY COMPANY?",
+            "answer6": "Yes. Please send an email to info@jeunepremier.be to request your invoice.erforderlichen Informationen aus.",
             "question7": "",
             "answer7": "",
             "question8": "",
