@@ -729,7 +729,7 @@ $(document).ready(function(){
         }));
         
 
-        $('.add-this').click(function() {
+        $('.add-this, .addcart-cta').click(function() {
           if($(this).hasClass('out-of-stock') || $(this).hasClass('stop-prop')) {
           	return 0;
           }
@@ -913,7 +913,8 @@ $(document).ready(function(){
             dataType: "json",
             data: formData,
           })
-          .done(function( data ) { 
+          .done(function( data ) {
+            checkFreeProduct();
             $('.cart-items-total').text(data.item_count);    
             $.ajax({
               url: '/?sections=jp-cart',
@@ -1020,7 +1021,8 @@ $(document).ready(function(){
             dataType: "json",
             data: formData,
           })
-          .done(function( data ) {    
+          .done(function( data ) {
+            checkFreeProduct();
             $.ajax({
               url: '/?sections=jp-cart',
               method: "GET",
@@ -1086,7 +1088,8 @@ $(document).ready(function(){
             dataType: "json",
             data: formData,
           })
-          .done(function( data ) {    
+          .done(function( data ) {
+            checkFreeProduct();
             $.ajax({
               url: '/?sections=jp-cart',
               method: "GET",
@@ -1152,7 +1155,8 @@ $(document).ready(function(){
             dataType: "json",
             data: formData,
           })
-          .done(function( data ) {    
+          .done(function( data ) {
+            checkFreeProduct();
             $.ajax({
               url: '/?sections=jp-cart',
               method: "GET",
