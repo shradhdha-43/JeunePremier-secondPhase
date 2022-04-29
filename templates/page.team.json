@@ -65,12 +65,14 @@
         "14283eb5-d1e3-461c-940a-aa38c9de078d": {
           "type": "team_member",
           "settings": {
+            "img": "shopify:\/\/shop_images\/Lore.jpg",
             "name": "Lore",
-            "department": "Produktionsleiterin"
+            "department": "Poduction Manager"
           }
         },
         "f4d2edd9-e219-492d-84e6-88f989c7218f": {
           "type": "team_member",
+          "disabled": true,
           "settings": {
             "name": "Niels",
             "department": "Leiter der Logistik"
