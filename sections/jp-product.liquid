@@ -793,7 +793,8 @@ $(document).ready(function(){
             dataType: "json",
             data: formData,
           })
-          .done(function( data ) {    
+          .done(function( data ) {
+            checkFreeProduct();
             $.ajax({
               url: '/?sections=jp-cart',
               method: "GET",
