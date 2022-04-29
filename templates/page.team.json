@@ -38,18 +38,19 @@
             "department": "CEO"
           }
         },
+        "3672b134-e9c4-4ae2-8562-8b2ce6a80e8b": {
+          "type": "team_member",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/helene.jpg",
+            "name": "Hélène",
+            "department": "Creative Director"
+          }
+        },
         "b4cdd3e6-3871-42da-a74c-f9d6156da02b": {
           "type": "team_member",
           "settings": {
             "name": "Caroline",
             "department": "E-Commerce-Leiterin"
-          }
-        },
-        "3672b134-e9c4-4ae2-8562-8b2ce6a80e8b": {
-          "type": "team_member",
-          "settings": {
-            "name": "Hélène",
-            "department": "Kreativdirektorin"
           }
         },
         "319cfe95-2f47-4298-8ac3-4e10a9c61989": {
@@ -76,8 +77,8 @@
       },
       "block_order": [
         "c6effd63-a330-4588-8469-fd7e1c1b73b6",
-        "b4cdd3e6-3871-42da-a74c-f9d6156da02b",
         "3672b134-e9c4-4ae2-8562-8b2ce6a80e8b",
+        "b4cdd3e6-3871-42da-a74c-f9d6156da02b",
         "319cfe95-2f47-4298-8ac3-4e10a9c61989",
         "14283eb5-d1e3-461c-940a-aa38c9de078d",
         "f4d2edd9-e219-492d-84e6-88f989c7218f"
