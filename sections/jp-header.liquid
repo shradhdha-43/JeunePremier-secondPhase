@@ -31,7 +31,7 @@
             {% for link in section.settings.upper_menu.links %}
             {% if forloop.index == 3 %}
             <div class="langs rel">
-              <a href="#" class="light">DE</a>
+              <a href="#" class="light">EN</a>
             </div>
             <a href="{{ link.url }}" class="light upper-menu-link {% if request.path == link.url %}underline{% endif %}">{{ link.title | escape }}</a>
             {% else %}
