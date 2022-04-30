@@ -162,7 +162,11 @@
       "preorder_property_value": "Verzending vanaf 1. Juli",
       "service_text": {
         "second_html": "Standaard levertijd <strong>2-4 werkdagen<\/strong>.",
-        "third_html": "<strong>Premium levering<\/strong> mogelijk 1-2 werkdagen"
+        "third_html": "<strong>Premium levering<\/strong> mogelijk 1-2 werkdagen",
+        "fourth_html": "14 dagen van<strong>terugkeer<\/strong>",
+        "fifth_html": "Veilige betalingen",
+        "name": "De naam van het kind:",
+        "inst": "Elke regel is beperkt tot 16 tekens. Beide regels samen zijn beperkt tot 24 tekens."
       }
     },
     "modal": {
