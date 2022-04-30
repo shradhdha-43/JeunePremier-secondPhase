@@ -159,7 +159,11 @@
       "new": "NIEUW",
       "no_info": "Geen info",
       "preorder_property_label": "Preorder",
-      "preorder_property_value": "Verzending vanaf 1. Juli"
+      "preorder_property_value": "Verzending vanaf 1. Juli",
+      "service_text": {
+        "second_html": "Standaard levertijd <strong>2-4 werkdagen<\/strong>.",
+        "third_html": "<strong>Premium levering<\/strong> mogelijk 1-2 werkdagen"
+      }
     },
     "modal": {
       "label": "Mediagalerij"
