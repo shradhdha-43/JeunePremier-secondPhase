@@ -269,7 +269,9 @@
     "collection_template": {
       "title": "Collectie",
       "empty": "Geen producten gevonden",
-      "use_fewer_filters_html": "Minder filters gebruiken of <a class=\"{{ class }}\" href=\"{{ link }}\">alles wissen<\/a>"
+      "use_fewer_filters_html": "Minder filters gebruiken of <a class=\"{{ class }}\" href=\"{{ link }}\">alles wissen<\/a>",
+      "bestseller": "Meest populair",
+      "new": "Nieuwe releases"
     },
     "video": {
       "load_video": "Video laden: {{ description }}"
