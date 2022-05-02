@@ -27,7 +27,14 @@
         </div>
         <div class="header-right">
           <div class="langs rel no-t-m">
-              <a href="#" class="light">EN</a>
+              <a href="#" class="light"><span id="main-lang">{{ localization.language.iso_code | upcase }}</span> {% include 'icon-down-chev' %}</a>
+              <ul class="header-sub-lang-list">
+                <li id="lang-en"><a href="https://www.jeunepremier.com" class="light">EN</a></li>
+                <li id="lang-it"><a href="https://www.jeunepremier.it" class="light">IT</a></li>
+                <li id="lang-de"><a href="https://www.jeunepremier.de" class="light">DE</a></li>
+                <li id="lang-nl"><a href="https://www.jeunepremier.be" class="light">NL</a></li>
+                <li id="lang-fr"><a href="https://www.jeunepremier.fr" class="light">FR</a></li>
+              </ul>
             </div>
           <a href="{{ section.settings.right_menu_btn_url }}" class="btn b2b-header-right-btn">{{ section.settings.right_menu_btn_txt }}</a>
           
@@ -48,8 +55,12 @@
             <a href="{{ link.url }}" class="header-left-link">{{ link.title }}</a>
           {% endfor %}
           <div class="langs rel">
-              <a href="#" class="light">EN</a>
-            </div>
+            <a href="https://www.jeunepremier.com" class="light">EN</a>
+            <a href="https://www.jeunepremier.it" class="light">IT</a>
+            <a href="https://www.jeunepremier.de" class="light">DE</a>
+            <a href="https://www.jeunepremier.be" class="light">NL</a>
+            <a href="https://www.jeunepremier.fr" class="light">FR</a>
+          </div>
         </div>
         
       </div>
@@ -74,7 +85,44 @@
   });
 
   
+  $(document).ready(function() {
   
+    var full = window.location.host;
+    var parts = full.split('.');
+    var subDomain = parts[2];
+    if(subDomain == 'be') {
+      $('#main-lang').text('NL');
+      $('#lang-nl').remove();
+      console.log('Lang nl');
+      window.lang = "nl";
+    } 
+    else if(subDomain == 'fr') {
+      $('#main-lang').text('FR');
+      $('#lang-fr').remove();
+      console.log('Lang FR');
+      window.lang = "fr";
+      $('.header-upper-menu').css("width","auto");
+    }
+    else if(subDomain == 'de') {
+      $('#main-lang').text('DE');
+      $('#lang-de').remove();
+      console.log('Lang DE');
+      window.lang = "de";
+    }
+    else if(subDomain == 'it') {
+      $('#main-lang').text('IT');
+      $('#lang-it').remove();
+      console.log('Lang IT');
+      window.lang = "it";
+    }
+    else {
+      $('#main-lang').text('EN');
+      $('#lang-en').remove();
+      console.log('Lang EN');
+      window.lang = "en";
+    }
+    
+  });
 
 </script>
 
