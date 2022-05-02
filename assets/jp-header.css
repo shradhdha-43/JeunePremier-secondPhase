@@ -51,19 +51,42 @@ header{
     display: block;
     position: absolute;
     opacity: 0;
+    z-index: 1;
+    width: min-content;
+    min-width: 68px;
+    text-align: left;
+    top: 24px;
     max-height: 0;
-  transition: .4s ease;
-  transition-delay: 0s;
+    -webkit-transition: all .2s ease;
+    transition: .2s ease;
+    transition-delay: 0s;
     overflow: hidden;
-  padding: 8px;
+  	padding: 10px 16px 10px 16px;
     background-color: var(--dd-color-sixth);
     margin: 0;
-    left: -8px;
+    left: -14px;
+}
+.header-sub-lang-list li, .header-sub-lang-list li a {
+	display: inline-block;
+  	width: 100%;
 }
 
 .langs:hover .header-sub-lang-list{
 	max-height:999px;
-  opacity: 1;
+  	opacity: 1;
+}
+
+.langs:hover svg {
+    transform: rotate(180deg);
+}
+
+.langs svg {
+    height: 15px;
+    fill: #3c3c3b;
+    transform: rotate(0);
+    transition: transform .4s;
+    vertical-align: middle;
+    margin-left: 0px;
 }
 
 .header-cart{
@@ -418,6 +441,16 @@ span.nav-arrow svg {
     align-items: center;
     display: flex;
     justify-content: center;
+  }
+  
+  .langs a {
+  	margin: 0 6px;
+  }
+  .langs a:first-child {
+  	margin-left: 0;
+  }
+  .langs a:last-child {
+  	margin-right: 0;
   }
 }
 
