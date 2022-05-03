@@ -440,7 +440,7 @@ $(document).ready(function() {
         }
       });
     }
-    var url = '{{ shop.url }}{%- unless routes.root_url == '/' -%}{{ routes.root_url }}{%- endunless -%}/collections/'+window.location.href.split('/').pop().split('?')[0]+sortx+filtersx;
+    var url = 'https://'+window.location.hostname+'{%- unless routes.root_url == '/' -%}{{ routes.root_url }}{%- endunless -%}/collections/'+window.location.href.split('/').pop().split('?')[0]+sortx+filtersx;
     window.history.pushState({}, null, url);
     $.ajax({
       url: url,
@@ -517,7 +517,7 @@ $(document).ready(function() {
     if($('.filter-type.sort.medium').length > 0) {
       sortx = '?sort_by='+$('.filter-type.sort').data('value');
     }    
-    var url = '{{ shop.url }}{%- unless routes.root_url == '/' -%}{{ routes.root_url }}{%- endunless -%}/collections/'+collx+sortx+filtersx;
+    var url = 'https://'+window.location.hostname+'{%- unless routes.root_url == '/' -%}{{ routes.root_url }}{%- endunless -%}/collections/'+collx+sortx+filtersx;
     window.history.pushState({}, null, url);
     $.ajax({
       url: url,
