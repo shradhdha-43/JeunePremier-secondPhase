@@ -39,7 +39,8 @@ header{
 }
 
 .header-upper-menu {
-    width: 276px;
+/*     width: 276px; */
+  width: 366px;
   display: flex;
   margin-right: 0;
     margin-left: auto;
