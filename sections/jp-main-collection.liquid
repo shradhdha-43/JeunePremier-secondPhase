@@ -5,21 +5,21 @@
     <div class="jp-main-collection-content flex-box justify-between">
       <div class="collection-filters rel">
         <div class="filter-title-wrap justify-between">
-          <div class="filter-title medium">FILTER</div>
-          <div class="filter-total-products light no-t-m">(<span class="no-of-prods">{{ collection.products | size }}</span> PRODUCTS)</div>
+          <div class="filter-title medium">{{ section.settings.filter_text }}</div>
+          <div class="filter-total-products light no-t-m">(<span class="no-of-prods">{{ collection.products | size }}</span> {{ section.settings.products_text }})</div>
           <div class="down-chev no-d">{% include 'icon-black-down-chev' %}</div>
         </div>
         <div class="all-filter-wrap">
           <div class="all-filter-inner-wrap">
           <div class="filter-title-inner no-d">
           <div class="filter-title-inner-wrap justify-between">
-            <div class="filter-title medium">FILTER</div>
-            <div class="reset-link medium">Reset all</div>
+            <div class="filter-title medium">{{ section.settings.filter_text }}</div>
+            <div class="reset-link medium">{{ section.settings.reset_text }}</div>
           </div>
           </div>
         <div class="filter-wrap">
           <div class="filter-sort-title-wrap accordion flex-box justify-between active" role="button">
-            <div class="filter-sort-title medium">SORT BY</div>
+            <div class="filter-sort-title medium">{{ section.settings.sort_text }}</div>
             <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
           </div>
           <div class="sorts filter-panel light">
@@ -168,8 +168,8 @@
             {% endfor %}
         </div>
           <div class="filter-lower-part no-d">
-            <div class="button apply-filter-btn">SHOW ALL RESULTS</div>
-          	<div class="close-filter-drawer-button"><span class="close-text light">Close</span><span class="close-icon">{% include 'icon-close' %}</span></div>
+            <div class="button apply-filter-btn">{{ section.settings.show_all }}</div>
+          	<div class="close-filter-drawer-button"><span class="close-text light">{{ section.settings.close_text }}</span><span class="close-icon">{% include 'icon-close' %}</span></div>
           </div>
         </div>
       </div>
@@ -563,6 +563,42 @@ $(document).ready(function() {
           "type": "collection",
           "id": "collection",
           "label": "Collection"
+        },
+		{
+          "type": "text",
+          "id": "filter_text",
+          "label": "Filter Text",
+		  "default": "FILTER"
+        },
+		{
+          "type": "text",
+          "id": "products_text",
+          "label": "Products Text",
+		  "default": "PRODUCTS"
+        },
+		{
+          "type": "text",
+          "id": "reset_text",
+          "label": "Reset Text",
+		  "default": "Reset all"
+        },
+		{
+          "type": "text",
+          "id": "sort_text",
+          "label": "Sort By Text",
+		  "default": "SORT BY"
+        },
+		{
+          "type": "text",
+          "id": "show_all",
+          "label": "Show All Results Text",
+		  "default": "SHOW ALL RESULTS"
+        },
+		{
+          "type": "text",
+          "id": "close_text",
+          "label": "Close Text",
+		  "default": "Close"
         }
 	],
 	"blocks": [
