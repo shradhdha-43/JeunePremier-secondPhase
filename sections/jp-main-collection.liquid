@@ -6,7 +6,7 @@
       <div class="collection-filters rel">
         <div class="filter-title-wrap justify-between">
           <div class="filter-title medium">FILTER</div>
-          <div class="filter-total-products light no-t-m">(<span class="no-of-prods">{{ collection.products | size }}</span> PRODUKTE)</div>
+          <div class="filter-total-products light no-t-m">(<span class="no-of-prods">{{ collection.products | size }}</span> PRODUCTS)</div>
           <div class="down-chev no-d">{% include 'icon-black-down-chev' %}</div>
         </div>
         <div class="all-filter-wrap">
@@ -14,12 +14,12 @@
           <div class="filter-title-inner no-d">
           <div class="filter-title-inner-wrap justify-between">
             <div class="filter-title medium">FILTER</div>
-            <div class="reset-link medium">Alle zurücksetzen</div>
+            <div class="reset-link medium">Reset all</div>
           </div>
           </div>
         <div class="filter-wrap">
           <div class="filter-sort-title-wrap accordion flex-box justify-between active" role="button">
-            <div class="filter-sort-title medium">SORTIEREN NACH</div>
+            <div class="filter-sort-title medium">SORT BY</div>
             <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
           </div>
           <div class="sorts filter-panel light">
@@ -168,7 +168,7 @@
             {% endfor %}
         </div>
           <div class="filter-lower-part no-d">
-            <div class="button apply-filter-btn">ZEIGE ALLE ERGEBNISSE</div>
+            <div class="button apply-filter-btn">SHOW ALL RESULTS</div>
           	<div class="close-filter-drawer-button"><span class="close-text light">Close</span><span class="close-icon">{% include 'icon-close' %}</span></div>
           </div>
         </div>
