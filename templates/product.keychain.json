@@ -1,1 +1,124 @@
-{"sections":{"main":{"type":"jp-product-keychain","settings":{"tick":"shopify:\/\/shop_images\/Check_gold_2x_999c4ca6-c15a-478a-8f63-31f5d4d14ccc.png"}},"product-recommendations":{"type":"product-recommendations","disabled":true,"settings":{"heading":"You may also like","color_scheme":"background-1","image_ratio":"adapt","show_secondary_image":false,"show_vendor":false,"show_rating":false,"padding_top":36,"padding_bottom":36}},"1645352523c5f0e4b8":{"type":"jp-product-info","settings":{}},"164578655952e95609":{"type":"jp-bestsellers","settings":{"title":"SHOP BESTSELLERS","btn_text":"ALLE TASCHEN SHOPPEN","space_above":"false"}},"16462079713cf266b1":{"type":"jp-product-faq","settings":{}},"1645442399a142c9b8":{"type":"jp-instagram","blocks":{"9cfd7868-4dd7-486f-8086-bbb8fe75a3d3":{"type":"insta_img","settings":{"in_img":"shopify:\/\/shop_images\/kerstbannerz.jpg","insta_url":"https:\/\/www.instagram.com\/p\/CZyTPFmOZ0T\/"}},"f8ebaf8c-95ec-4908-a948-fe0c1addd4c8":{"type":"insta_img","settings":{"in_img":"shopify:\/\/shop_images\/bannerkerst2.jpg","insta_url":"https:\/\/www.instagram.com\/p\/CZtJpO9O6pe\/"}},"2ed9366f-6e89-4019-bad6-c5dd57d6d776":{"type":"insta_img","settings":{"in_img":"shopify:\/\/shop_images\/teqt.jpg","insta_url":"https:\/\/www.instagram.com\/p\/CZoADbdIFfk\/"}},"f9862fb4-5a4f-4ee7-a03d-a273d7817b23":{"type":"insta_img","settings":{"in_img":"shopify:\/\/shop_images\/ultimate3.jpg","insta_url":"https:\/\/www.instagram.com\/p\/CZi2e6UIYqB\/"}},"7277bb8a-4be0-43fc-bcf8-023435996f75":{"type":"insta_img","settings":{"in_img":"shopify:\/\/shop_images\/AOTS2.jpg","insta_url":"https:\/\/www.instagram.com\/p\/CZds25nOiHJ\/"}}},"block_order":["9cfd7868-4dd7-486f-8086-bbb8fe75a3d3","f8ebaf8c-95ec-4908-a948-fe0c1addd4c8","2ed9366f-6e89-4019-bad6-c5dd57d6d776","f9862fb4-5a4f-4ee7-a03d-a273d7817b23","7277bb8a-4be0-43fc-bcf8-023435996f75"],"settings":{"title":"Get inspired & shop the look","link_txt":"View more","link_url":"https:\/\/www.instagram.com\/jeunepremier_official\/"}},"1645786214e1057d96":{"type":"jp-reviews-product","settings":{}}},"order":["main","product-recommendations","1645352523c5f0e4b8","164578655952e95609","16462079713cf266b1","1645442399a142c9b8","1645786214e1057d96"]}
+{
+  "sections": {
+    "main": {
+      "type": "jp-product-keychain",
+      "settings": {
+        "free_shipping_from": "Kostenloser Versand vanaf 150€",
+        "show_payment_icons": true,
+        "icon_bancontact": false,
+        "icon_mastercard": true,
+        "icon_visa": true,
+        "icon_maestro": false,
+        "icon_americanexpress": false,
+        "icon_paypal": true,
+        "icon_ideal": true,
+        "icon_sofort": true,
+        "icon_klarna": true,
+        "icon_belfius": false,
+        "icon_kbc": false,
+        "icon_giropay": false,
+        "icon_cartebleue": false
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1645352523c5f0e4b8": {
+      "type": "jp-product-info",
+      "settings": {
+      }
+    },
+    "164578655952e95609": {
+      "type": "jp-bestsellers",
+      "settings": {
+        "title": "SHOP BESTSELLERS",
+        "btn_text": "ALLE TASCHEN SHOPPEN",
+        "space_above": "false"
+      }
+    },
+    "16462079713cf266b1": {
+      "type": "jp-product-faq",
+      "settings": {
+        "faq_title": "Frequently Asked Questions",
+        "faq_link_text": "Other questions",
+        "faq_url": "shopify:\/\/pages\/faqs"
+      }
+    },
+    "1645442399a142c9b8": {
+      "type": "jp-instagram",
+      "blocks": {
+        "9cfd7868-4dd7-486f-8086-bbb8fe75a3d3": {
+          "type": "insta_img",
+          "settings": {
+            "in_img": "shopify:\/\/shop_images\/kerstbannerz.jpg",
+            "insta_url": "https:\/\/www.instagram.com\/p\/CZyTPFmOZ0T\/"
+          }
+        },
+        "f8ebaf8c-95ec-4908-a948-fe0c1addd4c8": {
+          "type": "insta_img",
+          "settings": {
+            "insta_url": "https:\/\/www.instagram.com\/p\/CZtJpO9O6pe\/"
+          }
+        },
+        "2ed9366f-6e89-4019-bad6-c5dd57d6d776": {
+          "type": "insta_img",
+          "settings": {
+            "in_img": "shopify:\/\/shop_images\/teqt.jpg",
+            "insta_url": "https:\/\/www.instagram.com\/p\/CZoADbdIFfk\/"
+          }
+        },
+        "f9862fb4-5a4f-4ee7-a03d-a273d7817b23": {
+          "type": "insta_img",
+          "settings": {
+            "in_img": "shopify:\/\/shop_images\/ultimate3.jpg",
+            "insta_url": "https:\/\/www.instagram.com\/p\/CZi2e6UIYqB\/"
+          }
+        },
+        "7277bb8a-4be0-43fc-bcf8-023435996f75": {
+          "type": "insta_img",
+          "settings": {
+            "in_img": "shopify:\/\/shop_images\/AOTS2.jpg",
+            "insta_url": "https:\/\/www.instagram.com\/p\/CZds25nOiHJ\/"
+          }
+        }
+      },
+      "block_order": [
+        "9cfd7868-4dd7-486f-8086-bbb8fe75a3d3",
+        "f8ebaf8c-95ec-4908-a948-fe0c1addd4c8",
+        "2ed9366f-6e89-4019-bad6-c5dd57d6d776",
+        "f9862fb4-5a4f-4ee7-a03d-a273d7817b23",
+        "7277bb8a-4be0-43fc-bcf8-023435996f75"
+      ],
+      "settings": {
+        "title": "Get inspired & shop the look",
+        "link_txt": "View more",
+        "link_url": "https:\/\/www.instagram.com\/jeunepremier_official\/"
+      }
+    },
+    "1645786214e1057d96": {
+      "type": "jp-reviews-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations",
+    "1645352523c5f0e4b8",
+    "164578655952e95609",
+    "16462079713cf266b1",
+    "1645442399a142c9b8",
+    "1645786214e1057d96"
+  ]
+}
