@@ -103,6 +103,7 @@
   "products": {
     "product": {
       "add_to_cart": "Aan winkelwagen toevoegen",
+      "bis_trigger": "E-mail wanneer beschikbaar",
       "description": "Beschrijving",
       "on_sale": "Aanbieding",
       "product_variants": "Productvarianten",
