@@ -148,6 +148,9 @@
     "16462080425b9e4234": {
       "type": "jp-product-faq",
       "settings": {
+        "faq_title": "Frequently Asked Questions",
+        "faq_link_text": "Other questions",
+        "faq_url": "shopify:\/\/pages\/faqs"
       }
     },
     "1645442399a142c9b8": {
