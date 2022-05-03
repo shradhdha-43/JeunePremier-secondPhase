@@ -1,13 +1,13 @@
 {
   "general": {
     "password_page": {
-      "login_form_heading": "Accéder à la boutique à l'aide d'un mot de passe :",
+      "login_form_heading": "Accéder à la boutique à l'aide d'un mot de passe :",
       "login_password_button": "Saisir avec un mot de passe",
       "login_form_password_label": "Mot de passe",
       "login_form_password_placeholder": "Votre mot de passe",
-      "login_form_error": "Mot de passe incorrect !",
+      "login_form_error": "Mot de passe incorrect !",
       "login_form_submit": "Saisir",
-      "admin_link_html": "La boutique vous appartient-elle ? <a href=\"\/admin\" class=\"link underlined-link\">Se connecter ici<\/a>",
+      "admin_link_html": "La boutique vous appartient-elle ? <a href=\"\/admin\" class=\"link underlined-link\">Se connecter ici<\/a>",
       "powered_by_shopify_html": "Cette boutique sera propulsée par {{ shopify }}"
     },
     "social": {
@@ -40,7 +40,9 @@
     },
     "cart": {
       "view": "Afficher mon panier ({{ count }})",
-      "item_added": "Article ajouté au panier"
+      "item_added": "Article ajouté au panier",
+      "back": "Retour",
+      "cart_title": "PANIER"
     },
     "share": {
       "copy_to_clipboard": "Copier le lien",
@@ -63,7 +65,7 @@
     "skip_to_text": "Ignorer et passer au contenu",
     "close": "Fermer",
     "unit_price_separator": "par",
-    "vendor": "Distributeur :",
+    "vendor": "Distributeur :",
     "error": "Erreur",
     "refresh_page": "Le choix d'une sélection entraîne l'actualisation de la page entière.",
     "link_messages": {
@@ -79,10 +81,10 @@
   "blogs": {
     "article": {
       "blog": "Blog",
-      "read_more_title": "Lire la suite : {{ title }}",
+      "read_more_title": "Lire la suite : {{ title }}",
       "comments": {
-        "one": "{{ count }} commentaire",
-        "other": "{{ count }} commentaires"
+        "one": "{{ count }} commentaire",
+        "other": "{{ count }} commentaires"
       },
       "moderated": "Veuillez noter que les commentaires doivent être approuvés avant d'être publiés.",
       "comment_form_title": "Laisser un commentaire",
@@ -92,7 +94,7 @@
       "post": "Publier le commentaire",
       "back_to_blog": "Retour au blog",
       "share": "Partager cet article",
-      "success": "Votre commentaire a bien été publié ! Merci !",
+      "success": "Votre commentaire a bien été publié ! Merci !",
       "success_moderated": "Votre commentaire a bien été publié. Nous le publierons sous peu, conformément au processus de modération de notre blog."
     }
   },
@@ -155,7 +157,10 @@
         "info": "caractères utilisés parmi 24",
         "error1": "Limite totale de caractères atteinte (max. 24 caractères)",
         "error2": "Limite de ligne individuelle atteinte (max. 16 caractères)"
-      }
+      },
+      "our_products_on_instagram": "Inspirez-vous et achetez ce look",
+      "back": "Retour à la collection",
+      "reviews": "Critiques"
     },
     "modal": {
       "label": "Galerie de supports multimédias"
@@ -228,8 +233,8 @@
       "announcement": "Annonce",
       "menu": "Menu",
       "cart_count": {
-        "one": "{{ count }} article",
-        "other": "{{ count }} articles"
+        "one": "{{ count }} article",
+        "other": "{{ count }} articles"
       }
     },
     "cart": {
@@ -255,7 +260,7 @@
       },
       "update": "Mettre à jour",
       "login": {
-        "title": "Vous possédez un compte ?",
+        "title": "Vous possédez un compte ?",
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Connectez-vous<\/a> pour payer plus vite."
       }
     },
@@ -277,10 +282,14 @@
     "collection_template": {
       "title": "Collection",
       "empty": "Aucun produit trouvé",
-      "use_fewer_filters_html": "Utiliser moins de filtres ou <a class=\"{{ class }}\" href=\"{{ link }}\">tout effacer<\/a>"
+      "use_fewer_filters_html": "Utiliser moins de filtres ou <a class=\"{{ class }}\" href=\"{{ link }}\">tout effacer<\/a>",
+      "bestseller": "Les plus populaires",
+      "new": "Nouveautés",
+      "ascending": "Prix le plus bas",
+      "descending": "Prix le plus élevé"
     },
     "video": {
-      "load_video": "Charger la vidéo : {{ description }}"
+      "load_video": "Charger la vidéo : {{ description }}"
     },
     "slideshow": {
       "load_slide": "Charger la diapositive",
@@ -290,6 +299,14 @@
       "play_slideshow": "Lire le diaporama",
       "carousel": "Carrousel",
       "slide": "Diapositive"
+    },
+    "upsell": {
+      "upsell1_heading": "Emballé & prêt",
+      "upsell1_description": "Soyez le roi ou la reine du terrain de jeu avec cette gamme de fournitures scolaires super cool. Des boîtes à lunch uniques, des bouteilles d'eau folles, des porte-clés personnalisés, des sacs de sport sympas, les plus beaux étuis à crayons remplis, etc. Jetez un coup d'œil à notre gamme complète. Vous préférez tout assorti ou vous êtes adepte du mix & match? Le choix est entièrement vôtre!",
+      "upsell2_heading": "Votre sac est unique, et vous l'êtes aussi ",
+      "upsell2_description": "Tout est dans les détails ! Reconnaissez vos fournitures scolaires entre mille. Pimpez-les avec une étiquette de nom assortie ou accrochez-y vos initiales pour montrer fièrement à tout le monde qu'ils sont à vous!",
+      "upsell3_heading": "Papeterie",
+      "upsell3_description": "L'artisanat et le design s'unissent dans cette collaboration unique avec Lannoo Graphics."
     }
   },
   "localization": {
@@ -419,6 +436,164 @@
       "expired": "Expiré",
       "copy_code_success": "Le code a bien été copié",
       "print_gift_card": "Imprimer"
+    }
+  },
+  "shopify": {
+    "sentence": {
+      "words_connector": ",",
+      "two_words_connector": "et",
+      "last_word_connector": "et"
+    },
+    "checkout": {
+      "delivery_options": {
+        "pick_up_in_one_hour": "Habituellement prête en 1 heure",
+        "pick_up_in_two_hours": "Habituellement prête en 2 heures",
+        "pick_up_in_four_hours": "Habituellement prête en 4 heures",
+        "pick_up_in_twenty_four_hours": "Habituellement prête en 24 heures",
+        "pick_up_in_two_to_four_days": "Habituellement prête en 2 à 4 jours",
+        "pick_up_in_five_or_more_days": "Habituellement prête en 5 jours ou plus"
+      },
+      "customer_account": {
+        "not_user_label": "Vous n'êtes pas %{first_name} ?",
+        "have_an_account_label": "Vous avez déjà un compte ?"
+      },
+      "order_summary": {
+        "confirmation_number_label": "Confirmation n° %{confirmation_number}",
+        "percent_off_shipping": "%{percent} % de réduction sur les frais d'expédition"
+      },
+      "shipping": {
+        "estimated_delivery_date": {
+          "one": "%{count} jour ouvrable"
+        },
+        "other_method": {
+          "one": "%{count} autre moyen disponible à",
+          "other": "%{count} autres méthodes disponibles à partir de"
+        },
+        "subscription_delivery_description": {
+          "prepaid_delivery_frequency": {
+            "one": "pour %{count} livraison",
+            "other": "pour %{count} livraisons"
+          },
+          "subscription_delivery_frequency": {
+            "day": {
+              "other": "tous les %{count} jours"
+            },
+            "week": {
+              "other": "toutes les %{count} semaines"
+            },
+            "month": {
+              "other": "tous les %{count} mois"
+            },
+            "year": {
+              "other": "tous les %{count} ans"
+            }
+          },
+          "first_n_order_free": {
+            "other": "%{count} premières commandes gratuites"
+          },
+          "free_for_first_n_order": {
+            "other": "Pour les %{count} premières commandes"
+          }
+        }
+      },
+      "payment": {
+        "delete_customer_mandate_modal_title": "Supprimer cette carte de paiement ?",
+        "subscription_agreement_label_html": "Je comprends que je suis en train d'accepter un abonnement. Celui-ci se renouvellera au prix et à la fréquence indiqués, et ce, jusqu'à ce qu'il prenne fin ou soit <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">annulé<\/a>.",
+        "email_connected": "Compte connecté :",
+        "mor_disclaimer_html": "En cliquant ci–dessous et en finalisant votre commande, vous acceptez d’acheter vos articles auprès de Flow.io en tant que Merchant of Record pour cette transaction, conformément aux <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">Conditions générales d’utilisation<\/a> et à la <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">Politique de confidentialité<\/a> de Flow.io. Flow.io est un fournisseur international de services de traitement des commandes pour %{shop_name}"
+      },
+      "field_errors": {
+        "address_first_name_too_long": "Le prénom est trop long (le maximum est de 255 caractères)",
+        "address_last_name_too_long": "Le nom de famille est trop long (le maximum est de 255 caractères)",
+        "address_address1_too_long": "La première ligne d’adresse est trop longue (le maximum est de 255 caractères)",
+        "address_address1_contains_emojis": "Le champ d’adresse 1 ne peut pas contenir d’emojis",
+        "address_address2_too_long": "La deuxième ligne d’adresse est trop longue (le maximum est de 255 caractères)",
+        "address_address2_contains_emojis": "Le champ d’adresse 2 ne peut pas contenir d’emojis",
+        "address_city_too_long": "Le nom de la ville est trop long (le maximum est de 255 caractères)",
+        "address_company_too_long": "Le nom de l’entreprise est trop long (le maximum est de 255 caractères)"
+      },
+      "payment_errors": {
+        "three_d_secure_throttled": "Trop d'essais ; veuillez patienter avant d'essayer à nouveau"
+      },
+      "processing": {
+        "wait": {
+          "medium": {
+            "one": "Votre commande est en cours de traitement. Le temps d'attente est estimé à %{count} minutes.",
+            "other": "Votre commande est en cours de traitement. Le temps d'attente est estimé à %{count} minutes."
+          }
+        }
+      },
+      "thank_you": {
+        "estimated_arrival": "Date de livraison estimée :",
+        "estimated_delivery": "Date de livraison estimée",
+        "order_updates_current_step_prefix": "Étape actuelle :",
+        "order_updates_past_step_prefix": "Étape passée :",
+        "order_updates_upcoming_step_prefix": "Étape à venir :",
+        "in_transit_description_days": "Vous devriez recevoir votre commande dans les %{number} prochains jours.",
+        "out_for_delivery_description_html": "Votre commande est en route. Vous la recevrez aujourd'hui. Si elle n'est pas livrée dans les 2 prochains jours, %{contact_us}.",
+        "delivered_local_description_html": "Vous n'avez pas reçu votre commande ? %{let_us_know}.",
+        "contact_us_html": "Besoin d'aide ? %{contact_us}",
+        "login_not_customer_html": "Vous n'êtes pas %{name} ? Vous pouvez %{link}",
+        "delivery_information_label": "Informations sur la livraison :"
+      },
+      "tips": {
+        "message": "Merci beaucoup !",
+        "preset_label": "%{tip_percent} %"
+      },
+      "subscriptions": {
+        "recurring_total_intervals": {
+          "day": {
+            "other": "%{count} jours"
+          },
+          "week": {
+            "other": "%{count} semaines"
+          },
+          "month": {
+            "other": "%{count} mois"
+          },
+          "year": {
+            "other": "%{count} ans"
+          }
+        },
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "other": "Pour commencer, %{count} paiements de %{total_price} chacun"
+          }
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": ", puis %{count} paiement de %{total_price}",
+            "other": ", puis %{count} paiements de %{total_price} chacun"
+          }
+        }
+      }
+    },
+    "addresses": {
+      "confirm": "Souhaitez-vous vraiment supprimer cette adresse ?"
+    },
+    "search": {
+      "sorting": {
+        "price_ascending": "Prix : faible à élevé",
+        "price_descending": "Prix : élevé à faible"
+      }
+    },
+    "page_titles": {
+      "search_results": {
+        "one": "Recherche : %{count} résultat trouvé pour « %{terms} »",
+        "other": "Recherche : %{count} résultats trouvés pour « %{terms} »"
+      }
+    },
+    "store_availability": {
+      "pick_up_time": {
+        "one_hour": "Habituellement prête en 1 heure",
+        "two_hours": "Habituellement prête en 2 heures",
+        "four_hours": "Habituellement prête en 4 heures",
+        "twenty_four_hours": "Habituellement prête en 24 heures",
+        "two_to_four_days": "Habituellement prête en 2 à 4 jours",
+        "five_or_more_days": "Habituellement prête en 5 jours ou plus",
+        "zero_to_two_hours": "Habituellement prête en 2 heures",
+        "two_to_four_hours": "Habituellement prête en 4 heures"
+      }
     }
   }
 }
