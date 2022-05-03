@@ -334,6 +334,16 @@
                 {%- assign add_to_cart_text = 'products.product.preorder' | t -%}
                 {%- endif -%}
                 <button class="add-to-cart btn add-this no-t-m {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %} {% if product.type == 'Goedgemerkt' or product.type == 'Ludilabel' %}label-type stop-prop{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%}>{{add_to_cart_text}}</button>
+                
+                <div id="BIS_wrap"  style="display: none">
+                  <button id="BIS_trigger" type="button" class="btn mb20 mt0">
+                    {{ 'products.product.bis_trigger' | t }}
+                  </button>
+                  <div class="js-out-of-stock ">
+                    {% include 'product-back-in-stock' %}
+                  </div>
+                </div>
+                
                 {% if current_variant_price > 14900 %}
                 <span class="free-shipping no-t-m">{{ 'products.product.free_shipping' | t }} <img src="//cdn.shopify.com/s/files/1/0334/1100/6595/files/Check_gold_2x_999c4ca6-c15a-478a-8f63-31f5d4d14ccc_22x.png?v=1644228290" alt="tick" width="22" height="16">{% comment %}{% if section.settings.tick %}<img src="{{ section.settings.tick | img_url: "22x" }}" alt="tick" width="22" height="16">{% endif %}{% endcomment %}</span>
                 {% endif %}
@@ -346,6 +356,7 @@
                           $('.add-to-cart').text('{{ 'products.product.sold_out' | t }}');
                           $('.addcart-cta').addClass('out-of-stock');	
                           $('.addcart-cta').text('{{ 'products.product.sold_out' | t }}');
+                          $('#BIS_wrap').css('display','block');
                 		</script>
                   {% endunless %}
 
@@ -547,6 +558,7 @@
       $('.add-to-cart').text('{{ 'products.product.sold_out' | t }}');
       $('.addcart-cta').addClass('out-of-stock');	
       $('.addcart-cta').text('{{ 'products.product.sold_out' | t }}');
+	  $('#BIS_wrap').css('display','block');
     </script>
     {% endunless %}
   </div>
