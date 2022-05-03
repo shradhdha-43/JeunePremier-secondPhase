@@ -179,7 +179,7 @@ span.related-products-preview__link.active::after, .keychain-charm-select .activ
 .accessories:hover .h-rotate {
   transform: rotate(180deg);
 }
-.add-to-cart {
+.add-to-cart, .out-of-stock-notify-btn {
   border: 0;
   background-color: var(--dd-color-first);
   display: block;
