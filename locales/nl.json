@@ -40,7 +40,9 @@
     },
     "cart": {
       "view": "Winkelwagen bekijken ({{ count }})",
-      "item_added": "Artikel toegevoegd aan winkelwagen"
+      "item_added": "Artikel toegevoegd aan winkelwagen",
+      "back": "Terug",
+      "cart_title": "WINKELMAND"
     },
     "share": {
       "copy_to_clipboard": "Link kopiëren",
@@ -148,7 +150,7 @@
       "view_full_details": "Alle details bekijken",
       "include_taxes": "Inclusief btw.",
       "shipping_policy_html": "<a href=\"{{ link }}\">Verzendkosten<\/a> worden berekend bij de checkout.",
-      "our_products_on_instagram": "Laat je inspireren!",
+      "our_products_on_instagram": "Inspireer & shop de look",
       "back": "Terug naar collectie",
       "reviews": "Reviews",
       "back_short": "Terug",
@@ -315,7 +317,7 @@
       "upsell2_heading": "Jij bent uniek en jouw tas ook!",
       "upsell2_description": "Personaliseer je schooltas met jouw initialen en een charm naar keuze!",
       "upsell3_heading": "Papierwaren",
-      "upsell1_description": "Val op in het verkeer met deze veiligheidslampjes die je makkelijk in het slot van de Ergomaxx kan klikken.  Jeune Premier verlicht de weg naar school met deze veilige en leuke led-verlichting. De lampjes branden telkens 50 uren en doordat ze eenvoudig oplaadbaar zijn via USB, zijn ze nog eens duurzaam op de koop toe.",
+      "upsell1_description": "Val op in het verkeer met deze veiligheidslampjes die je makkelijk in het slot van de Ergomaxx kan klikken. Jeune Premier verlicht de weg naar school met deze veilige en leuke led-verlichting. De lampjes branden telkens 50 uren en doordat ze eenvoudig oplaadbaar zijn via USB, zijn ze nog eens duurzaam op de koop toe.",
       "upsell3_description": "Vakmanschap en design komen samen in deze unieke samenwerking met Lannoo Graphics."
     }
   },
@@ -446,6 +448,34 @@
       "expired": "Verlopen",
       "copy_code_success": "Code gekopieerd",
       "print_gift_card": "Afdrukken"
+    }
+  },
+  "shopify": {
+    "sentence": {
+      "words_connector": ",",
+      "two_words_connector": "en",
+      "last_word_connector": ", en"
+    },
+    "checkout": {
+      "shipping": {
+        "other_method": {
+          "one": "%{count} andere methode beschikbaar vanaf",
+          "other": "%{count} andere methodes beschikbaar vanaf"
+        }
+      },
+      "payment": {
+        "subscription_agreement_label_html": "Ik begrijp dat ik akkoord ga met een abonnement. Het zal worden vernieuwd tegen de vermelde prijs en frequentie totdat het afloopt of wordt <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">geannuleerd<\/a>.",
+        "email_connected": "Account gekoppeld:",
+        "mor_disclaimer_html": "Als je hieronder klikt en je bestelling voltooit, ga je ermee akkoord je artikel(en) van Flow.io te kopen als geregistreerde merchant voor deze transactie volgens hun <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">Algemene voorwaarden<\/a> en <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">Privacybeleid<\/a>. Flow.io is een internationale fulfilmentserviceaanbieder voor %{shop_name}"
+      },
+      "thank_you": {
+        "estimated_arrival": "Geschatte afleverdatum:",
+        "estimated_delivery": "Verwachte bezorging",
+        "order_updates_current_step_prefix": "Huidige stap:",
+        "order_updates_past_step_prefix": "Vorige stap:",
+        "order_updates_upcoming_step_prefix": "Volgende stap:",
+        "customer_information_hidden_fields_message": "Log in om alle klantinformatie te bekijken."
+      }
     }
   }
 }
