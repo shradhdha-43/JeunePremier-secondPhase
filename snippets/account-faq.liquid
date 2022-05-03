@@ -3,7 +3,7 @@
 <div class="faq-wrapper-blank {% if template contains 'product' %}faq-wrapper{% endif %}">
   <div class="container">
     <div class="faq-content">
-      <div class="faq-title title text-center">Frequently Asked Questions</div>
+      <div class="faq-title title text-center">{{ section.settings.faq_title }}</div>
       <div class="faq-wrap">
         
         {% if settings.question1 != '' %}
@@ -193,7 +193,7 @@
         {% endif %}
       </div>
       
-      <a href="/pages/faqs" class="faq-link medium">Other questions</a>
+      <a href="/pages/faqs" class="faq-link medium">{{ section.settings.faq_link_text }}</a>
     </div>
   </div>
 </div>
