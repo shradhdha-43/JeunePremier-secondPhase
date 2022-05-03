@@ -1,5 +1,4 @@
 {{ 'jp-product.css' | asset_url | stylesheet_tag }}
-{{ 'jp-hero.css' | asset_url | stylesheet_tag }}
 
 {% assign current_variant = product.selected_or_first_available_variant %}
 {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
@@ -337,7 +336,7 @@
                 <button class="add-to-cart btn add-this no-t-m {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %} {% if product.type == 'Goedgemerkt' or product.type == 'Ludilabel' %}label-type stop-prop{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%}>{{add_to_cart_text}}</button>
                 
                 <div id="BIS_wrap"  style="display: none">
-                  <button id="BIS_trigger" type="button" class="btn">
+                  <button id="BIS_trigger" type="button" class="out-of-stock-notify-btn">
                     {{ 'products.product.bis_trigger' | t }}
                   </button>
                   <div class="js-out-of-stock ">
