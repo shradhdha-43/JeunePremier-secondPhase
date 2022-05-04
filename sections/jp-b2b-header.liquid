@@ -91,7 +91,7 @@
   
     var full = window.location.href;
     var parts = full.split('.');
-    var subDomain = parts[2];
+    var subDomain = parts[2].split('/')[1];
     if(subDomain == 'nl') {
       $('#main-lang').text('NL');
       $('#lang-nl').remove();
