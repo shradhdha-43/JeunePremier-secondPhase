@@ -2,7 +2,7 @@
 {{ 'jp-b2b-header.css' | asset_url | stylesheet_tag }}
 
 <div class="jp-header-wrapper jp-b2b-header-wrapper">
-  <header class="topheader">
+  <header class="topheader ovr-hidden">
     <div class="container">
       <div class="header-content justify-between align-center">
         <div class="header-left align-center">
@@ -176,7 +176,11 @@
   });
 
   $(".menu-link-wrap").hover(function () {
-//     $('.topheader.active').toggleClass("ovr-hidden");
+    $('.topheader.active').toggleClass("ovr-hidden");
+  });
+  
+  $(".langs").hover(function () {
+    $('.topheader').toggleClass("ovr-hidden");
   });
 
     </script>
