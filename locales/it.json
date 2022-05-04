@@ -148,7 +148,40 @@
       "view_full_details": "Visualizza dettagli completi",
       "include_taxes": "Imposte incluse.",
       "shipping_policy_html": "<a href=\"{{ link }}\">Spese di spedizione<\/a> calcolate al check-out.",
-      "our_products_on_instagram": "Lasciati ispirare & acquista il look"
+      "our_products_on_instagram": "Lasciati ispirare & acquista il look",
+      "back": "Torna alla collezione",
+      "reviews": "Recensioni",
+      "back_short": "Indietro",
+      "free_shipping": "Spedizione gratuita",
+      "last_item": "ULTIMO ARTICOLO",
+      "label_info": {
+        "info": "personaggi utilizzati da 24",
+        "error1": "Limite di caratteri totali raggiunto (max. 24 caratteri)",
+        "error2": "Limite di riga individuale raggiunto (max. 16 caratteri)",
+        "error3": "Inserire il nome e\/o il cognome",
+        "inst": "Ogni linea è limitata a 16 caratteri. Le due linee insieme sono limitate a 24 caratteri.",
+        "name": "Nome del bambino:"
+      },
+      "service_text": {
+        "first_html": "Ordina <strong>prima delle 16<\/strong>, spedizione il giorno stesso.",
+        "second_html": "Tempo di consegna standard <strong>2-4 giorni lavorativi<\/strong>.",
+        "third_html": "<strong>Premium consegna<\/strong> possibile 1-2 giorni lavorativi",
+        "fourth_html": "14 giorni di<strong>ritorno<\/strong>",
+        "fifth_html": "Pagamenti sicuri",
+        "name": "Il nome del bambino:",
+        "inst": "Ogni riga è limitata a 16 caratteri. Both lines together are limited to 24 characters."
+      },
+      "shipping_from": "Spedizione dal Belgio",
+      "meet": "Incontrare il",
+      "more": "MOSTRA ACCESSORI",
+      "new": "NUOVO",
+      "bestseller": "Bestseller",
+      "no_info": "Nessuna informazione",
+      "size_chart": "Check size and fit",
+      "preorder": "Preordina",
+      "preorder_property_label": "Preordine",
+      "preorder_property_value": "Spedizione dal 1 luglio.",
+      "back_in_stock_in": "Di nuovo in magazzino in"
     },
     "modal": {
       "label": "Galleria contenuti multimediali"
@@ -208,7 +241,28 @@
         "comment": "Commenta",
         "send": "Invia",
         "post_success": "Grazie per averci contattato. Risponderemo il prima possibile.",
-        "error_heading": "Si prega di regolare il seguente:"
+        "error_heading": "Si prega di regolare il seguente:",
+        "tnc": "Accetto i termini e le condizioni",
+        "message": "MESSAGGIO",
+        "lname": "COGNOME",
+        "fname": "NOME",
+        "shop_name": "NOME DEL NEGOZIO",
+        "comp_name": "NOME AZIENDA",
+        "vat": "NUMERO IVA",
+        "tel": "TEL",
+        "addr1": "INDIRIZZO 01",
+        "addr2": "INDIRIZZO 02",
+        "city": "CITTÀ",
+        "state": "STATO\/PROVINCIA",
+        "pin": "CAP\/CODICE POSTALE",
+        "country": "PAESE",
+        "sameaddr": "Lo stesso dell'indirizzo della fattura",
+        "website": "URL SITO WEB",
+        "sale_method": "METODO DI VENDITA",
+        "sale_product": "CHE TIPO DI PRODOTTI VENDI?",
+        "age": "PER QUALE FASCIA DI ETÀ?",
+        "founded": "DATA FONDAZIONE",
+        "agree": "Accetto che i miei dati siano trattati in conformità con l'informativa sulla privacy"
       }
     },
     "404": {
@@ -398,6 +452,20 @@
       "password": "Password",
       "password_confirm": "Conferma password",
       "submit": "Reimposta password"
+    },
+    "custom": {
+      "welcome": "Welcome back",
+      "logout": "Logout",
+      "orders": "YOUR ORDERS",
+      "info": "YOUR INFORMATION",
+      "contact": "Contact Information",
+      "order": "Order",
+      "personal_info": "Personal Info",
+      "change": "Change",
+      "shipping": "Shipping Address",
+      "newaddr": "Add New Address",
+      "cancel": "RETURN ITEM",
+      "order_details": "Order details"
     }
   },
   "gift_cards": {
