@@ -222,7 +222,8 @@
       "cart_count": {
         "one": "{{ count }} articolo",
         "other": "{{ count }} articoli"
-      }
+      },
+      "all_products": "COMPRA TUTTE"
     },
     "cart": {
       "title": "Il tuo carrello",
