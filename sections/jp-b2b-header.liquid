@@ -31,7 +31,7 @@
               <ul class="header-sub-lang-list">
                 <li id="lang-en"><a href="https://www.jeunepremier.com" class="light">EN</a></li>
                 <li id="lang-it"><a href="https://www.jeunepremier.com/it" class="light">IT</a></li>
-                <li id="lang-de"><a href="https://www.jeunepremier.com/de" class="light">DE</a></li>
+                <li id="lang-de"><a href="https://www.jeunepremier.de" class="light">DE</a></li>
                 <li id="lang-nl"><a href="https://www.jeunepremier.com/nl" class="light">NL</a></li>
                 <li id="lang-be"><a href="https://www.jeunepremier.com/be" class="light">BE</a></li>
                 <li id="lang-fr"><a href="https://www.jeunepremier.com/fr" class="light">FR</a></li>
@@ -58,7 +58,7 @@
           <div class="langs rel">
             <a href="https://www.jeunepremier.com" class="light">EN</a>
             <a href="https://www.jeunepremier.com/it" class="light">IT</a>
-            <a href="https://www.jeunepremier.com/de" class="light">DE</a>
+            <a href="https://www.jeunepremier.de" class="light">DE</a>
             <a href="https://www.jeunepremier.com/nl" class="light">NL</a>
             <a href="https://www.jeunepremier.com/be" class="light">BE</a>
             <a href="https://www.jeunepremier.com/fr" class="light">FR</a>
@@ -91,32 +91,32 @@
   
     var full = window.location.href;
     var parts = full.split('.');
-    var subDomain = parts[2].split('/')[1];
-    if(subDomain == 'nl') {
+    var subDomain = parts[2];
+    if(subDomain.includes('nl')) {
       $('#main-lang').text('NL');
       $('#lang-nl').remove();
       console.log('Lang nl');
       window.lang = "nl";
     }
-    else if(subDomain == 'be') {
+    else if(subDomain.includes('be')) {
       $('#main-lang').text('BE');
       $('#lang-be').remove();
       console.log('Lang BE');
       window.lang = "be";
     } 
-    else if(subDomain == 'fr') {
+    else if(subDomain.includes('fr')) {
       $('#main-lang').text('FR');
       $('#lang-fr').remove();
       console.log('Lang FR');
       window.lang = "fr";
     }
-    else if(subDomain == 'de') {
+    else if(subDomain.includes('de')) {
       $('#main-lang').text('DE');
       $('#lang-de').remove();
       console.log('Lang DE');
       window.lang = "de";
     }
-    else if(subDomain == 'it') {
+    else if(subDomain.includes('it')) {
       $('#main-lang').text('IT');
       $('#lang-it').remove();
       console.log('Lang IT');
