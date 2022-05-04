@@ -12,7 +12,7 @@
     {% endif %}
     {% endfor %}
   </div>
-  <header class="topheader">
+  <header class="topheader ovr-hidden">
     <div class="container">
       <div class="header-content justify-between align-center">
         <div class="mobile-hamburger no-d">
@@ -332,7 +332,11 @@
   });
 
   $(".menu-link-wrap").hover(function () {
-//     $('.topheader.active').toggleClass("ovr-hidden");
+    $('.topheader.active').toggleClass("ovr-hidden");
+  });
+  
+  $(".langs").hover(function () {
+    $('.topheader').toggleClass("ovr-hidden");
   });
 
     </script>
