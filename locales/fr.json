@@ -156,11 +156,30 @@
       "label_info": {
         "info": "caractères utilisés parmi 24",
         "error1": "Limite totale de caractères atteinte (max. 24 caractères)",
-        "error2": "Limite de ligne individuelle atteinte (max. 16 caractères)"
+        "error2": "Limite de ligne individuelle atteinte (max. 16 caractères)",
+        "name": "Le nom de l'enfant :"
       },
       "our_products_on_instagram": "Inspirez-vous et achetez ce look",
       "back": "Retour à la collection",
-      "reviews": "Critiques"
+      "reviews": "Critiques",
+      "service_text": {
+        "first_html": "Commande <strong>avant 16h<\/strong>, expédition le jour suivant.",
+        "second_html": "Livraison standard :<strong> 2 à 4 jours ouvrables<\/strong>.",
+        "third_html": "<strong>Livraison premium <\/strong> possible 1-2 jours ouvrables.",
+        "fourth_html": "14 jours de <strong>retour<\/strong>",
+        "fifth_html": "Paiements sécurisés",
+        "name": "Le nom de l'enfant :",
+        "inst": "Chaque ligne est limitée à 16 caractères. Les deux lignes ensemble sont limitées à 24 caractères."
+      },
+      "shipping_from": "Expédition de la Belgique",
+      "meet": "Rencontrez le",
+      "more": "MONTRE ACCESOIRES",
+      "new": "NOUVEAU",
+      "bestseller": "Bestseller",
+      "no_info": "Aucune information",
+      "preorder": "Précommandez",
+      "preorder_property_label": "Précommandez",
+      "preorder_property_value": "Expédition à partir du 1er juillet"
     },
     "modal": {
       "label": "Galerie de supports multimédias"
