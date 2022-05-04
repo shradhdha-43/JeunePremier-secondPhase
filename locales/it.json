@@ -325,7 +325,11 @@
     "collection_template": {
       "title": "Collezione",
       "empty": "Nessun prodotto trovato",
-      "use_fewer_filters_html": "Utilizza meno filtri o <a class=\"{{ class }}\" href=\"{{ link }}\">cancella tutto<\/a>"
+      "use_fewer_filters_html": "Utilizza meno filtri o <a class=\"{{ class }}\" href=\"{{ link }}\">cancella tutto<\/a>",
+      "bestseller": "I più popolari",
+      "new": "Nuove uscite",
+      "ascending": "Prezzo più basso",
+      "descending": "Prezzo più alto"
     },
     "video": {
       "load_video": "Carica il video: {{ description }}"
