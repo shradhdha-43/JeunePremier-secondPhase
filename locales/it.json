@@ -412,5 +412,32 @@
       "copy_code_success": "Codice copiato correttamente",
       "print_gift_card": "Stampa"
     }
+  },
+  "shopify": {
+    "sentence": {
+      "words_connector": ",",
+      "two_words_connector": "e",
+      "last_word_connector": "e"
+    },
+    "checkout": {
+      "shipping": {
+        "other_method": {
+          "one": "%{count} altro metodo disponibile a",
+          "other": "%{count} altri metodi disponibili a partire da"
+        }
+      },
+      "payment": {
+        "subscription_agreement_label_html": "Comprendo che sto accettando un abbonamento. Verrà rinnovato al costo e con la frequenza indicati fino al termine o alla <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">cancellazione<\/a>.",
+        "email_connected": "Account collegato:",
+        "mor_disclaimer_html": "Cliccando qui sotto e completando l'ordine, acconsenti all'acquisto dei tuoi articoli da Flow.io come merchant da registrare per questa transazione, secondo i <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">termini e le condizioni<\/a> e l'<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">informativa sulla privacy<\/a> di Flow.io. Flow.io è un fornitore internazionale di servizi di evasione ordini per %{shop_name}"
+      },
+      "thank_you": {
+        "estimated_arrival": "Data di consegna prevista:",
+        "estimated_delivery": "Consegna prevista",
+        "order_updates_current_step_prefix": "Passo attuale:",
+        "order_updates_past_step_prefix": "Passo precedente:",
+        "order_updates_upcoming_step_prefix": "Passo successivo:"
+      }
+    }
   }
 }
