@@ -29,10 +29,11 @@
       <div class="footer-languages-wrap footer-part-inner">
         <div class="footer-menu-title title">{{ section.settings.lang_title }}</div>
         <div class="footer-languages">
+          <script>console.log("{{ page.url }}");</script>
           {% if settings.english %}
           <a class="footer-lang-wrap flex-box align-center {% if page.url contains '/it' or page.url contains '.de' or page.url contains '/nl' or page.url contains '/fr' %}{% else %}selected{% endif %}" href="#"><span class="lang-flag">{% include 'flag-english' %}</span><span class="lang-name light">ENGLISH</span></a>
           {% endif %}
-          
+          {% comment %}
           {% if settings.italian %}
           <a class="footer-lang-wrap flex-box align-center {% if page.url contains '/it' %}selected{% endif %}" href="/it"><span class="lang-flag">{% include 'flag-italian' %}</span><span class="lang-name light">ITALIAN</span></a>
           {% endif %}
@@ -51,7 +52,7 @@
           {% if settings.spanish %}
           <a class="footer-lang-wrap flex-box align-center {% if page.url contains '/es' %}selected{% endif %}" href="/es"><span class="lang-flag">{% include 'flag-spanish' %}</span><span class="lang-name light">SPANISH</span></a>
           {% endif %}
-          {% comment %}{% endcomment %}
+          {% endcomment %}
         </div>
       </div>
       <div class="footer-sm-wrap footer-part-inner">
