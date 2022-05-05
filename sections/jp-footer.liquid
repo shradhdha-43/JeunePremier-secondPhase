@@ -29,8 +29,20 @@
       <div class="footer-languages-wrap footer-part-inner">
         <div class="footer-menu-title title">{{ section.settings.lang_title }}</div>
         <div class="footer-languages">
+          {% if settings.english %}
+          <a class="footer-lang-wrap flex-box align-center {% if page.url contains '/it' or page.url contains '/de' or page.url contains '/nl' or page.url contains '/fr' %}selected{% endif %}" href="#"><span class="lang-flag">{% include 'flag-english' %}</span><span class="lang-name light">ENGLISH</span></a>
+          {% endif %}
+          {% if settings.italian %}
+          <a class="footer-lang-wrap flex-box align-center {% if page.url contains '/it' %}selected{% endif %}" href="/it"><span class="lang-flag">{% include 'flag-italian' %}</span><span class="lang-name light">ITALIAN</span></a>
+          {% endif %}
           {% if settings.german %}
-          <a class="footer-lang-wrap flex-box align-center selected" href="#"><span class="lang-flag">{% include 'flag-english' %}</span><span class="lang-name light">ENGLISH</span></a>
+          <a class="footer-lang-wrap flex-box align-center {% if page.url contains '/de' %}selected{% endif %}" href="https://www.jeunepremier.de"><span class="lang-flag">{% include 'flag-germany' %}</span><span class="lang-name light">GERMANY</span></a>
+          {% endif %}
+          {% if settings.deutsch %}
+          <a class="footer-lang-wrap flex-box align-center {% if page.url contains '/nl' %}selected{% endif %}" href="/nl"><span class="lang-flag">{% include 'flag-belgium' %}</span><span class="lang-name light">DEUTSCH</span></a>
+          {% endif %}
+          {% if settings.french %}
+          <a class="footer-lang-wrap flex-box align-center {% if page.url contains '/fr' %}selected{% endif %}" href="/fr"><span class="lang-flag">{% include 'flag-french' %}</span><span class="lang-name light">FRENCH</span></a>
           {% endif %}
         </div>
       </div>
