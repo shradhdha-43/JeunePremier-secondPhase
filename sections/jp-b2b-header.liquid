@@ -35,6 +35,7 @@
                 <li id="lang-nl"><a href="https://www.jeunepremier.com/nl" class="light">NL</a></li>
                 {% comment %}<li id="lang-be"><a href="https://www.jeunepremier.com/nl" class="light">BE</a></li>{% endcomment %}
                 <li id="lang-fr"><a href="https://www.jeunepremier.com/fr" class="light">FR</a></li>
+                <li id="lang-ru"><a href="https://www.jeune-premier.ru" class="light">RU</a></li>
               </ul>
             </div>
           <a href="{{ section.settings.right_menu_btn_url }}" class="btn b2b-header-right-btn">{{ section.settings.right_menu_btn_txt }}</a>
@@ -62,6 +63,7 @@
             <a href="https://www.jeunepremier.com/nl" class="light">NL</a>
             {% comment %}<a href="https://www.jeunepremier.com/nl" class="light">BE</a>{% endcomment %}
             <a href="https://www.jeunepremier.com/fr" class="light">FR</a>
+            <a href="https://www.jeune-premier.ru" class="light">RU</a>
           </div>
         </div>
         
@@ -121,6 +123,13 @@
       $('#lang-it').remove();
       console.log('Lang IT');
       window.lang = "it";
+    }
+    else if(subDomain.includes('ru')) {
+      $('#main-lang').text('RU');
+      $('#lang-ru').remove();
+      $('.footer-lang-wrap.ru').addClass("selected");
+      console.log('Lang RU');
+      window.lang = "ru";
     }
     else {
       $('#main-lang').text('EN');
