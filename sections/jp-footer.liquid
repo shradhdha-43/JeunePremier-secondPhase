@@ -32,6 +32,7 @@
           {% if settings.english %}
           <a class="footer-lang-wrap flex-box align-center {% if page.url contains '/it' or page.url contains '.de' or page.url contains '/nl' or page.url contains '/fr' %}{% else %}selected{% endif %}" href="#"><span class="lang-flag">{% include 'flag-english' %}</span><span class="lang-name light">ENGLISH</span></a>
           {% endif %}
+          {% comment %}
           {% if settings.italian %}
           <a class="footer-lang-wrap flex-box align-center {% if page.url contains '/it' %}selected{% endif %}" href="/it"><span class="lang-flag">{% include 'flag-italian' %}</span><span class="lang-name light">ITALIAN</span></a>
           {% endif %}
@@ -44,6 +45,7 @@
           {% if settings.french %}
           <a class="footer-lang-wrap flex-box align-center {% if page.url contains '/fr' %}selected{% endif %}" href="/fr"><span class="lang-flag">{% include 'flag-french' %}</span><span class="lang-name light">FRENCH</span></a>
           {% endif %}
+          {% endcomment %}
         </div>
       </div>
       <div class="footer-sm-wrap footer-part-inner">
