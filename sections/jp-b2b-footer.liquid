@@ -18,8 +18,26 @@
       <div class="footer-languages-wrap footer-part-inner">
         <div class="footer-menu-title title">{{ section.settings.lang_title }}</div>
         <div class="footer-languages">
+          {% if settings.english %}
+          <a class="footer-lang-wrap flex-box align-center en" data-lang="en" href="#"><span class="lang-flag">{% include 'flag-english' %}</span><span class="lang-name light">ENGLISH</span></a>
+          {% endif %}
           {% if settings.german %}
-          <a class="footer-lang-wrap flex-box align-center selected" href="#"><span class="lang-flag">{% include 'flag-uk' %}</span><span class="lang-name light">ENGLISH</span></a>
+          <a class="footer-lang-wrap flex-box align-center de" data-lang="de" href="https://www.jeunepremier.de"><span class="lang-flag">{% include 'flag-germany' %}</span><span class="lang-name light">GERMAN</span></a>
+          {% endif %}
+          {% if settings.italian %}
+          <a class="footer-lang-wrap flex-box align-center it" data-lang="it" href="/it"><span class="lang-flag">{% include 'flag-italian' %}</span><span class="lang-name light">ITALIAN</span></a>
+          {% endif %}
+          {% if settings.danish %}
+          <a class="footer-lang-wrap flex-box align-center da" data-lang="da" href="/da"><span class="lang-flag">{% include 'flag-danish' %}</span><span class="lang-name light">DANISH</span></a>
+          {% endif %}
+          {% if settings.deutsch %}
+          <a class="footer-lang-wrap flex-box align-center nl" data-lang="nl" href="/nl"><span class="lang-flag">{% include 'flag-belgium' %}</span><span class="lang-name light">DUTCH</span></a>
+          {% endif %}
+          {% if settings.french %}
+          <a class="footer-lang-wrap flex-box align-center fr" data-lang="fr" href="/fr"><span class="lang-flag">{% include 'flag-french' %}</span><span class="lang-name light">FRENCH</span></a>
+          {% endif %}
+          {% if settings.spanish %}
+          <a class="footer-lang-wrap flex-box align-center es" data-lang="es" href="/es"><span class="lang-flag">{% include 'flag-spanish' %}</span><span class="lang-name light">SPANISH</span></a>
           {% endif %}
         </div>
       </div>
