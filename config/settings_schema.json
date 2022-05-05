@@ -156,6 +156,12 @@
         "id": "spanish",
         "label": "Spanish",
         "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "russian",
+        "label": "Russian",
+        "default": true
       }
     ]
   },
