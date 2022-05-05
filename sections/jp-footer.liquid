@@ -29,7 +29,8 @@
       <div class="footer-languages-wrap footer-part-inner">
         <div class="footer-menu-title title">{{ section.settings.lang_title }}</div>
         <div class="footer-languages">
-          <script>console.log({{ page.url }});</script>
+<!--           <script>console.log();</script> -->
+          {{ page.url }}
           {% if settings.english %}
           <a class="footer-lang-wrap flex-box align-center {% if page.url contains '/it' or page.url contains '.de' or page.url contains '/da' or page.url contains '/nl' or page.url contains '/fr' or page.url contains '/es' %}{% else %}selected{% endif %}" href="#"><span class="lang-flag">{% include 'flag-english' %}</span><span class="lang-name light">ENGLISH</span></a>
           {% endif %}
