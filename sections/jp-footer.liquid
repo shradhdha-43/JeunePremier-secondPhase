@@ -39,11 +39,17 @@
           {% if settings.german %}
           <a class="footer-lang-wrap flex-box align-center {% if page.url contains '.de' %}selected{% endif %}" href="https://www.jeunepremier.de"><span class="lang-flag">{% include 'flag-germany' %}</span><span class="lang-name light">GERMANY</span></a>
           {% endif %}
+          {% if settings.danish %}
+          <a class="footer-lang-wrap flex-box align-center {% if page.url contains '/da' %}selected{% endif %}" href="/da"><span class="lang-flag">{% include 'flag-danish' %}</span><span class="lang-name light">DANISH</span></a>
+          {% endif %}
           {% if settings.deutsch %}
           <a class="footer-lang-wrap flex-box align-center {% if page.url contains '/nl' %}selected{% endif %}" href="/nl"><span class="lang-flag">{% include 'flag-belgium' %}</span><span class="lang-name light">DEUTSCH</span></a>
           {% endif %}
           {% if settings.french %}
           <a class="footer-lang-wrap flex-box align-center {% if page.url contains '/fr' %}selected{% endif %}" href="/fr"><span class="lang-flag">{% include 'flag-french' %}</span><span class="lang-name light">FRENCH</span></a>
+          {% endif %}
+          {% if settings.spanish %}
+          <a class="footer-lang-wrap flex-box align-center {% if page.url contains '/es' %}selected{% endif %}" href="/es"><span class="lang-flag">{% include 'flag-spanish' %}</span><span class="lang-name light">SPANISH</span></a>
           {% endif %}
           {% endcomment %}
         </div>
