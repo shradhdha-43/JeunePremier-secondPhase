@@ -72,7 +72,7 @@
           </div>
           <div class="cross-sell-product-price medium">{{ product.price | times: 1.21 | money_without_trailing_zeros | strip_html }}</div>
           <div class="cross-sell-accordion">
-            <div class="cross-sell-moreinfo">{{ section.settings.more_info }} <span class="cross-sell-icon">+</span></div>
+            <div class="cross-sell-moreinfo">{{ section.settings.more_info | striphtml }} <span class="cross-sell-icon">+</span></div>
             <div class="cross-sell-infopanel">{{ product.description | truncatewords: 20 | striphtml }}</div>
           </div>
           
@@ -84,10 +84,10 @@
           {% assign noAddToCartFromCollection = true %}
           {% endunless %}
           {%- unless noAddToCartFromCollection -%}
-          <button class="cross-sell-add-product" data-variant="{{ product.first_available_variant.id }}">{{section.settings.cross_sell_add_to_cart}}</button>
-          <button class="cross-sell-add-product added-product no-disp">{{section.settings.cross_sell_added_to_cart}}</button>
+          <button class="cross-sell-add-product" data-variant="{{ product.first_available_variant.id }}">{{section.settings.cross_sell_add_to_cart | striphtml}}</button>
+          <button class="cross-sell-add-product added-product no-disp">{{section.settings.cross_sell_added_to_cart | striphtml}}</button>
           {%- else -%}
-          <a href="{{ product.url }}" class="cross-sell-add-product">{{section.settings.cross_sell_add_to_cart}}</a>
+          <a href="{{ product.url }}" class="cross-sell-add-product">{{section.settings.cross_sell_add_to_cart | striphtml}}</a>
           {%- endunless -%}
           
         </div>
