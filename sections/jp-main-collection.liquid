@@ -507,7 +507,7 @@ $(document).ready(function() {
     if($(this).hasClass('medium')) {
     	$('.filter-type.colors-filter').removeClass('medium');
     } else {
-    	$('.filter-type.colors-filter').removeClass('medium');    
+    	$(this).parent().find('.filter-type.colors-filter').removeClass('medium');    
     	$(this).addClass('medium');
     }
     
