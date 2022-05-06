@@ -206,7 +206,22 @@
             "color_swatch14": "",
             "color15": "",
             "color_tag15": "",
-            "color_swatch15": ""
+            "color_swatch15": "",
+            "color16": "",
+            "color_tag16": "",
+            "color_swatch16": "",
+            "color17": "",
+            "color_tag17": "",
+            "color_swatch17": "",
+            "color18": "",
+            "color_tag18": "",
+            "color_swatch18": "",
+            "color19": "",
+            "color_tag19": "",
+            "color_swatch19": "",
+            "color20": "",
+            "color_tag20": "",
+            "color_swatch20": ""
           }
         },
         "37cf82a1-abd9-4749-b35c-c99d4c654e95": {
@@ -272,7 +287,24 @@
             "color15": "Cherry Pompon",
             "color_tag15": "CherryPompon",
             "color_swatch15": "",
-            "image_swatch15": "shopify:\/\/shop_images\/CherryPompon_19a8ff92-2bb9-4fc5-9133-2fd0f42fcec5.png"
+            "image_swatch15": "shopify:\/\/shop_images\/CherryPompon_19a8ff92-2bb9-4fc5-9133-2fd0f42fcec5.png",
+            "color16": "Tiara Tiger",
+            "color_tag16": "tiaratiger",
+            "color_swatch16": "",
+            "image_swatch16": "shopify:\/\/shop_images\/tiaratiger_0c2009bf-ec31-4c91-b303-2f977fef2701.png",
+            "color17": "Mr. Gadget",
+            "color_tag17": "mrgadget",
+            "color_swatch17": "",
+            "image_swatch17": "shopify:\/\/shop_images\/mrgadget_d10bf5b4-27bc-463d-bbe1-688af854e0f0.png",
+            "color18": "",
+            "color_tag18": "",
+            "color_swatch18": "",
+            "color19": "",
+            "color_tag19": "",
+            "color_swatch19": "",
+            "color20": "",
+            "color_tag20": "",
+            "color_swatch20": ""
           }
         }
       },
