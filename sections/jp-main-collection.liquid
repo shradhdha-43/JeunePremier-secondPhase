@@ -364,6 +364,12 @@ $(document).ready(function() {
               $(this).addClass('medium');
             }
           });
+        
+          $('.filter-type.colors-filter').each(function() {
+            if($(this).data('value') == array[i]) {
+              $(this).addClass('medium');
+            }
+          });
 
       });
     }
@@ -418,7 +424,7 @@ $(document).ready(function() {
           }
         });
         $('.product-card').each(function(i,v) {            
-          if($(this).data('iteration') == $('.filter-type.filter.medium').length && $(this).hasClass('fop')) {
+          if($(this).data('iteration') == $('.filter-type.medium').length && $(this).hasClass('fop')) {
             $(this).removeClass('no-disp');
           }
         });
