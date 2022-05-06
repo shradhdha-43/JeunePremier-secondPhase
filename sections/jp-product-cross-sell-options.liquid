@@ -124,7 +124,7 @@
       .done(function( data ) {
         checkFreeProduct();
         $.ajax({
-          url: '/?sections=jp-cart',
+          url: '{% unless routes.root_url == "/" %}{{ routes.root_url }}{% endunless %}/?sections=jp-cart',
           method: "GET",
           dataType: "json"
         })
