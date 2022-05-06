@@ -364,12 +364,6 @@ $(document).ready(function() {
               $(this).addClass('medium');
             }
           });
-        
-          $('.filter-type.colors-filter').each(function() {
-            if($(this).data('value') == array[i]) {
-              $(this).addClass('medium');
-            }
-          });
 
       });
     }
@@ -408,13 +402,10 @@ $(document).ready(function() {
     $('.product-card').addClass('fop');
 
 
-    if($('.filter-type.filter.medium').length > 0 || $('.filter-type.colors-filter.medium').length > 0) {
+    if($('.filter-type.filter.medium').length > 0) {
       var arrClass = [];
       $('.product-card').data('iteration',0);
       $('.filter-type.filter.medium').each(function() {
-        arrClass.push($(this).data('value'));
-      });
-      $('.filter-type.colors-filter.medium').each(function() {
         arrClass.push($(this).data('value'));
       });
       $.each(arrClass , function(index, val) {
@@ -424,7 +415,7 @@ $(document).ready(function() {
           }
         });
         $('.product-card').each(function(i,v) {            
-          if($(this).data('iteration') == $('.filter-type.medium').length && $(this).hasClass('fop')) {
+          if($(this).data('iteration') == $('.filter-type.filter.medium').length && $(this).hasClass('fop')) {
             $(this).removeClass('no-disp');
           }
         });
