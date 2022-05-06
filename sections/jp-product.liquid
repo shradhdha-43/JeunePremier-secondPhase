@@ -808,7 +808,7 @@ $(document).ready(function(){
           .done(function( data ) {
             checkFreeProduct();
             $.ajax({
-              url: '/?sections=jp-cart',
+              url: '{% unless routes.root_url == "/" %}{{ routes.root_url }}{% endunless %}/?sections=jp-cart',
               method: "GET",
               dataType: "json"
             })
@@ -929,7 +929,7 @@ $(document).ready(function(){
             checkFreeProduct();
             $('.cart-items-total').text(data.item_count);    
             $.ajax({
-              url: '/?sections=jp-cart',
+              url: '{% unless routes.root_url == "/" %}{{ routes.root_url }}{% endunless %}/?sections=jp-cart',
               method: "GET",
               dataType: "json"
             })
@@ -1036,7 +1036,7 @@ $(document).ready(function(){
           .done(function( data ) {
             checkFreeProduct();
             $.ajax({
-              url: '/?sections=jp-cart',
+              url: '{% unless routes.root_url == "/" %}{{ routes.root_url }}{% endunless %}/?sections=jp-cart',
               method: "GET",
               dataType: "json"
             })
@@ -1103,7 +1103,7 @@ $(document).ready(function(){
           .done(function( data ) {
             checkFreeProduct();
             $.ajax({
-              url: '/?sections=jp-cart',
+              url: '{% unless routes.root_url == "/" %}{{ routes.root_url }}{% endunless %}/?sections=jp-cart',
               method: "GET",
               dataType: "json"
             })
@@ -1170,7 +1170,7 @@ $(document).ready(function(){
           .done(function( data ) {
             checkFreeProduct();
             $.ajax({
-              url: '/?sections=jp-cart',
+              url: '{% unless routes.root_url == "/" %}{{ routes.root_url }}{% endunless %}/?sections=jp-cart',
               method: "GET",
               dataType: "json"
             })
