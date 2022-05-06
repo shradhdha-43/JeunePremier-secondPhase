@@ -73,8 +73,22 @@
           <div class="cross-sell-product-price medium">{{ product.price | times: 1.21 | money_without_trailing_zeros | strip_html }}</div>
           <div class="cross-sell-accordion">
             <div class="cross-sell-moreinfo">{{ section.settings.more_info }} <span class="cross-sell-icon">+</span></div>
-            <div class="cross-sell-infopanel">{{ product.description | truncatewords: 20 | striphtml }}</div>
+            <div class="cross-sell-infopanel">{{ product.description | truncatewords: 20 | strip_html }}</div>
           </div>
+          
+          {% assign noAddToCartFromCollection = false %}
+          {% if product.type == 'Ludilabel' or product.type == 'Goedgemerkt' or product.type == 'Keychain letter' or product.type == 'Keychain charm' %}
+          {% assign noAddToCartFromCollection = true %}
+          {% endif %}
+          {% unless product.selected_or_first_available_variant.available %}
+          {% assign noAddToCartFromCollection = true %}
+          {% endunless %}
+          {%- unless noAddToCartFromCollection -%}
+          <button class="cross-sell-add-product" data-variant="{{ product.first_available_variant.id }}">{{section.settings.cross_sell_add_to_cart}}</button>
+          <button class="cross-sell-add-product added-product no-disp">{{section.settings.cross_sell_added_to_cart}}</button>
+          {%- else -%}
+          <a href="{{ product.url }}" class="cross-sell-add-product">{{section.settings.cross_sell_add_to_cart}}</a>
+          {%- endunless -%}
           
         </div>
       </div>
