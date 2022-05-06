@@ -64,6 +64,14 @@
             <img src="{{ product.featured_image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
           </a>
         </div>
+        <div class="cross-sell-details">
+          <div class="cross-sell-product-title medium">
+            <a href="{{ product.url }}">
+              {{ product.title | split: " - " | first }}
+            </a>
+          </div>
+          
+        </div>
       </div>
     {% endfor %}
   </div>
