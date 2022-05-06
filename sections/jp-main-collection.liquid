@@ -408,6 +408,9 @@ $(document).ready(function() {
       $('.filter-type.filter.medium').each(function() {
         arrClass.push($(this).data('value'));
       });
+      $('.filter-type.colors-filter.medium').each(function() {
+        arrClass.push($(this).data('value'));
+      });
       $.each(arrClass , function(index, val) {
         $('.product-card').each(function(i,v) {            
           if($(this).hasClass('tag-'+val)) {
