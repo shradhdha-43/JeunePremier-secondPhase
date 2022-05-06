@@ -84,8 +84,7 @@
       async: false
     })
     .done(function( data ) {
-                  window.dax = data;
-      for(var i=0; i<data.item_count; i++) {
+      for(var i=0; i<data.items.length; i++) {
         if(data.items[i].product_id == freeProdId) {
           isFreeProduct = true
         }
