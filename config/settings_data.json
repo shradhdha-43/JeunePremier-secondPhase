@@ -363,33 +363,101 @@
           "10f24754-b769-4ddd-a1b3-fb49c7891224": {
             "type": "languages",
             "settings": {
-              "block_lang": "en",
-              "block_country": "Default",
-              "block_redirect_url": ""
+              "block_country1": "",
+              "block_lang1": "",
+              "block_country2": "",
+              "block_lang2": "",
+              "block_country3": "",
+              "block_lang3": "",
+              "block_country4": "",
+              "block_lang4": "",
+              "block_country5": "",
+              "block_lang5": "",
+              "block_country6": "",
+              "block_lang6": "",
+              "block_country7": "",
+              "block_lang7": "",
+              "block_country8": "",
+              "block_lang8": "",
+              "block_country9": "",
+              "block_lang9": "",
+              "block_country10": "",
+              "block_lang10": ""
             }
           },
           "1ecd102d-8d86-4828-af52-0f12dda6c6d5": {
             "type": "languages",
             "settings": {
-              "block_lang": "nl",
-              "block_country": "Netherlands",
-              "block_redirect_url": ""
+              "block_country1": "",
+              "block_lang1": "",
+              "block_country2": "",
+              "block_lang2": "",
+              "block_country3": "",
+              "block_lang3": "",
+              "block_country4": "",
+              "block_lang4": "",
+              "block_country5": "",
+              "block_lang5": "",
+              "block_country6": "",
+              "block_lang6": "",
+              "block_country7": "",
+              "block_lang7": "",
+              "block_country8": "",
+              "block_lang8": "",
+              "block_country9": "",
+              "block_lang9": "",
+              "block_country10": "",
+              "block_lang10": ""
             }
           },
           "7740c593-bde9-4c33-b004-84a16712ed8f": {
             "type": "languages",
             "settings": {
-              "block_lang": "fr",
-              "block_country": "French",
-              "block_redirect_url": ""
+              "block_country1": "",
+              "block_lang1": "",
+              "block_country2": "",
+              "block_lang2": "",
+              "block_country3": "",
+              "block_lang3": "",
+              "block_country4": "",
+              "block_lang4": "",
+              "block_country5": "",
+              "block_lang5": "",
+              "block_country6": "",
+              "block_lang6": "",
+              "block_country7": "",
+              "block_lang7": "",
+              "block_country8": "",
+              "block_lang8": "",
+              "block_country9": "",
+              "block_lang9": "",
+              "block_country10": "",
+              "block_lang10": ""
             }
           },
           "b69e574d-b232-496f-83d6-399a3b790e4c": {
             "type": "languages",
             "settings": {
-              "block_lang": "de",
-              "block_country": "Germany",
-              "block_redirect_url": "https:\/\/www.jeunepremier.de\/"
+              "block_country1": "",
+              "block_lang1": "",
+              "block_country2": "",
+              "block_lang2": "",
+              "block_country3": "",
+              "block_lang3": "",
+              "block_country4": "",
+              "block_lang4": "",
+              "block_country5": "",
+              "block_lang5": "",
+              "block_country6": "",
+              "block_lang6": "",
+              "block_country7": "",
+              "block_lang7": "",
+              "block_country8": "",
+              "block_lang8": "",
+              "block_country9": "",
+              "block_lang9": "",
+              "block_country10": "",
+              "block_lang10": ""
             }
           }
         },
@@ -400,8 +468,12 @@
           "b69e574d-b232-496f-83d6-399a3b790e4c"
         ],
         "settings": {
-          "section_title": "Your language is set to",
-          "section_text": "Change Language",
+          "addcountryCode": false,
+          "country_title": "Your country is",
+          "language_title": "and language is set to",
+          "select_country": "Select Country",
+          "select_language": "Select Language",
+          "section_text": "Change Country and Language",
           "section_btn_text": "Continue Shopping"
         }
       }
