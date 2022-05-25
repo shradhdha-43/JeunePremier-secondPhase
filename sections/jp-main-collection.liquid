@@ -247,7 +247,7 @@
                   {{ product.title | split: " - " | first }}
                 </div>
               	<div class="product-pirce medium">
-              	{{ product.price | times: 1.21 | money_without_trailing_zeros | strip_html }}
+              	{{ product.price | times: 1 | money_without_trailing_zeros | strip_html }}
               </div>
              
             </div>

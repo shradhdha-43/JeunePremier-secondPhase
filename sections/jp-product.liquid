@@ -57,7 +57,7 @@
   {%- assign add_to_cart_text = "Preorder" -%}
 {%- endif -%}
 
-{%- assign vat = 1.21 -%}
+{%- assign vat = 1 -%}
     
 {%- assign product_price = product.price | times: vat -%}
 {%- assign product_compare_at_price = product.compare_at_price | times: vat -%}
@@ -114,7 +114,7 @@
 
             {% if product.compare_at_price_max > product.price %}
             <span id="ProductPriceCompare" class="product-compare">
-              {{ product.compare_at_price_max | times: 1.21 | money_without_trailing_zeros }}
+              {{ product.compare_at_price_max | times: 1 | money_without_trailing_zeros }}
             </span>
             {% endif %}
             <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
@@ -256,7 +256,7 @@
 
                 {% if product.compare_at_price_max > product.price %}
                 <span id="ProductPriceCompare" class="product-compare">
-                  {{ product.compare_at_price_max | times: 1.21 | money_without_trailing_zeros }}
+                  {{ product.compare_at_price_max | times: 1 | money_without_trailing_zeros }}
                 </span>
                 {% endif %}
                 <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
