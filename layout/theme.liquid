@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
     {% if template == 'cart' %}  
-    <meta http-equiv="refresh" content = "0; url = https://{{ shop.domain }}?cartopen=true">
+    <meta http-equiv="refresh" content = "0; url = https://{{ shop.domain }}{% unless routes.root_url == "/" %}{{ routes.root_url }}{% endunless %}?cartopen=true">
     <script>
       window.location.replace("https://{{ shop.domain }}{% unless routes.root_url == "/" %}{{ routes.root_url }}{% endunless %}?cartopen=true");
     </script>
