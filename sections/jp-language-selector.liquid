@@ -81,6 +81,7 @@
         
         if(storeCountry != data.detected_values.country.name || storeLanguage != data.suggestions[0].parts.language.name) {
           $('.modal').css("display","flex");
+          $('.current-country, .current-lang').removeClass('no-disp');
           
           if(data.suggestions[0].parts.language.handle.toLowerCase() == "ru") {
             $('.current-country').text("Russia");
@@ -240,7 +241,6 @@
             localStorage.setItem("conth", data.detected_values.country.handle.toLowerCase());
             localStorage.setItem("langh", data.suggestions[0].parts.language.handle.toLowerCase());
           }
-          $('.current-country, .current-lang').removeClass('no-disp');
         }
       })
       .fail(function(error) {
