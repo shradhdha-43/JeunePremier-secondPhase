@@ -143,6 +143,7 @@
             
             if(data.suggestions[0].parts.country.handle.toLowerCase() == 'be') {
               lang = 'https://www.jeunepremier.com/';
+              cont = '';
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
                 lang = lang + '';
               }
@@ -223,6 +224,7 @@
             
             if(data.detected_values.country.handle.toLowerCase() == 'be') {
               lang = 'https://www.jeunepremier.com/';
+              cont = '';
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
                 lang = lang + '';
               }
@@ -310,6 +312,7 @@
     
     if(conth == 'be') {
       lang = 'https://www.jeunepremier.com/';
+      cont = '';
       if(langh == 'en') {
         lang = lang + '';
       }
@@ -447,6 +450,7 @@
 
         if(countryCode == 'be') {
           lang = 'https://www.jeunepremier.com/';
+          cont = '';
           if(langCode == 'en') {
             lang = lang + '';
           }
@@ -487,7 +491,7 @@
 			"type": "checkbox",
 			"id": "addcountryCode",
 			"label": "Add Country code to redirect url",
-			"default": false
+			"default": true
 		},
 		{
 			"type": "text",
