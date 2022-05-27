@@ -390,7 +390,7 @@
           "10f24754-b769-4ddd-a1b3-fb49c7891224"
         ],
         "settings": {
-          "addcountryCode": false,
+          "addcountryCode": true,
           "country_title": "Your country is",
           "language_title": "and language is set to",
           "select_country": "Select Country",
