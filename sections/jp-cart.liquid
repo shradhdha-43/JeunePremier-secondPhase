@@ -197,7 +197,7 @@
         </div>
         {% endif %}
         
-        <a {% if keyChainLetter == keyChainCharm %}href="/checkout"{% endif %} class="checkout-btn {% if keyChainLetter != keyChainCharm %}checkout-disabled {% endif %}">{{ section.settings.checkout_text }}</a>
+        <a {% if keyChainLetter == keyChainCharm %}href="{% unless routes.root_url == "/" %}{{ routes.root_url }}{% endunless %}/checkout"{% endif %} class="checkout-btn {% if keyChainLetter != keyChainCharm %}checkout-disabled {% endif %}">{{ section.settings.checkout_text }}</a>
         
         {% comment %}
         <a 
