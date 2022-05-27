@@ -138,9 +138,15 @@
               }
             }
             
-//             if(data.suggestions[0].parts.language.handle.toLowerCase() == "en") {
-//               lang = lang + '';
-//             }
+            if(data.suggestions[0].parts.country.handle.toLowerCase() == 'be') {
+              lang = 'https://www.jeunepremier.com/';
+              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
+                lang = lang + '';
+              }
+              else {
+              	lang = lang + data.suggestions[0].parts.language.handle.toLowerCase();
+              }
+            }
             
             if(data.suggestions[0].parts.language.handle.toLowerCase() == 'ru') {
               lang = 'https://www.jeune-premier.ru/';
@@ -209,9 +215,15 @@
               }
             }
             
-//             if(data.suggestions[0].parts.language.handle.toLowerCase() == "en") {
-//               lang = lang + '';
-//             }
+			if(data.detected_values.country.handle.toLowerCase() == 'be') {
+              lang = 'https://www.jeunepremier.com/';
+              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
+                lang = lang + '';
+              }
+              else {
+              	lang = lang + data.suggestions[0].parts.language.handle.toLowerCase();
+              }
+            }
             
             if(data.suggestions[0].parts.language.handle.toLowerCase() == 'ru') {
               lang = 'https://www.jeune-premier.ru/';
@@ -287,9 +299,15 @@
       }
     }
     
-//     if(langh == 'en') {
-//       lang = lang + '';
-//     }
+    if(conth == 'be') {
+      lang = 'https://www.jeunepremier.com/';
+      if(langh == 'en') {
+        lang = lang + '';
+      }
+      else {
+        lang = lang + langh;
+      }
+    }
     
     if(langh == 'ru') {
       lang = 'https://www.jeune-premier.ru/';
@@ -415,9 +433,15 @@
           }
         }
 
-//         if(langCode == "en") {
-//           lang = lang + '';
-//         }
+        if(countryCode == 'be') {
+          lang = 'https://www.jeunepremier.coom/';
+          if(langCode == 'en') {
+            lang = lang + '';
+          }
+          else {
+            lang = lang + langCode;
+          }
+        }
         
         if(langCode == 'ru') {
           lang = 'https://www.jeune-premier.ru/';
