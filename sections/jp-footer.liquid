@@ -29,6 +29,9 @@
       <div class="footer-languages-wrap footer-part-inner">
         <div class="footer-menu-title title">{{ section.settings.lang_title }}</div>
         <div class="footer-languages">
+          <span class="flag flag-{{localization.country.iso_code | downcase}}"></span>
+          <span class="footer-country-name">{{localization.country.name}}</span>
+          {% comment %}
           {% if settings.english %}
           <a class="footer-lang-wrap flex-box align-center en" data-lang="en" href="#"><span class="lang-flag">{% include 'flag-english' %}</span><span class="lang-name light">ENGLISH</span></a>
           {% endif %}
@@ -53,6 +56,7 @@
           {% if settings.russian %}
           <a class="footer-lang-wrap flex-box align-center ru" data-lang="ru" href="https://www.jeune-premier.ru"><span class="lang-flag">{% include 'flag-russian' %}</span><span class="lang-name light">RUSSIAN</span></a>
           {% endif %}
+          {% endcomment %}
         </div>
       </div>
       <div class="footer-sm-wrap footer-part-inner">
