@@ -81,7 +81,7 @@
         
         if(storeCountry != data.detected_values.country.name || storeLanguage != data.suggestions[0].parts.language.name) {
           $('.modal').css("display","flex");
-          console.log(2);
+          
           var lang = '/' + data.suggestions[0].parts.language.handle.toLowerCase();
           var cont = '';
           var redirectUrl = '';
