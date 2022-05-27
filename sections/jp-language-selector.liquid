@@ -82,19 +82,19 @@
         if(storeCountry != data.detected_values.country.name || storeLanguage != data.suggestions[0].parts.language.name) {
           $('.modal').css("display","flex");
           
+          if(data.suggestions[0].parts.language.handle.toLowerCase() == "ru") {
+            $('.current-country').text("Russia");
+          }
+          else {
+            $('.current-country').text(data.detected_values.country.name);
+          }
+          $('.current-lang').text(data.suggestions[0].parts.language.name);
+          
           var lang = '/' + data.suggestions[0].parts.language.handle.toLowerCase();
           var cont = '';
           var redirectUrl = '';
           
           if(data.suggestions[0].parts.country) {
-            
-            if(data.suggestions[0].parts.language.handle.toLowerCase() == "ru") {
-              $('.current-country').text("Russia");
-            }
-            else {
-              $('.current-country').text(data.suggestions[0].parts.country.name);
-            }
-            $('.current-lang').text(data.suggestions[0].parts.language.name);
             
             if(isAddCountryCode == 'true') {
               cont = cont + '-' + data.suggestions[0].parts.country.handle.toLowerCase();
@@ -168,14 +168,6 @@
             localStorage.setItem("langh", data.suggestions[0].parts.language.handle.toLowerCase());
           } 
           else {
-            
-            if(data.suggestions[0].parts.language.handle.toLowerCase() == "ru") {
-              $('.current-country').text("Russia");
-            }
-            else {
-              $('.current-country').text(data.detected_values.country.name);
-            }
-            $('.current-lang').text(data.suggestions[0].parts.language.name);
             
             if(isAddCountryCode == 'true') {
               cont = cont + '-' + data.detected_values.country.handle.toLowerCase();
