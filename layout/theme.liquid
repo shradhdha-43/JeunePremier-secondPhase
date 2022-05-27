@@ -19,8 +19,7 @@
     {% if template == 'cart' %}  
     <meta http-equiv="refresh" content = "0; url = https://{{ shop.domain }}?cartopen=true">
     <script>
-      var currentPage = window.location.href
-      window.location.replace(currentPage+"?cartopen=true");
+      window.location.replace("https://{{ shop.domain }}?cartopen=true");
     </script>
     {% endif %}
     <title>
