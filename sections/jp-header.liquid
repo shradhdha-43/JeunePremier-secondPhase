@@ -193,13 +193,17 @@
           <a href="{{ link.url }}" class="light upper-menu-link">{{ link.title | escape }}</a>
           {% endfor %}	
           <div class="langs rel">
+            <span class="flag flag-{{localization.country.iso_code | downcase}}"></span>
+            <span class="header-country-code">{{localization.country.iso_code}}</span>
+            {% comment %}
             <a href="https://www.jeunepremier.com" class="light">EN</a>
             <a href="https://www.jeunepremier.com/it" class="light">IT</a>
             <a href="https://www.jeunepremier.de" class="light">DE</a>
             <a href="https://www.jeunepremier.com/nl" class="light">NL</a>
-            {% comment %}<a href="https://www.jeunepremier.com/nl" class="light">BE</a>{% endcomment %}
+            <a href="https://www.jeunepremier.com/nl" class="light">BE</a>
             <a href="https://www.jeunepremier.com/fr" class="light">FR</a>
             <a href="https://www.jeune-premier.ru" class="light">РУ</a>
+            {% endcomment %}
           </div>
         </div>
       </div>
