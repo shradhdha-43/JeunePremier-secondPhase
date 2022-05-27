@@ -236,6 +236,7 @@
       $('body').removeClass('no-scroll');
     });
     
+    {% comment %}
     var full = window.location.href;
     var parts = full.split('.');
     var subDomain = parts[2];
@@ -288,6 +289,7 @@
       console.log('Lang EN');
       window.lang = "en";
     }
+    {% endcomment %}
     
   });
 
