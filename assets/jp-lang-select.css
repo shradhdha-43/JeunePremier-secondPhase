@@ -44,6 +44,9 @@
   border-radius: 8px;
   box-shadow: -10px 0 30px #00000026;
 }
+#modal-div {
+  width: 100%;
+}
 .modal-div {
 /*   margin: auto; */
   display: flex;
@@ -73,7 +76,8 @@
 /*   margin-bottom: 24px !important; */
 }
 .modal-buttons {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: 40px;
   font-size: 18px;
   font-weight: normal;
