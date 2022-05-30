@@ -54,6 +54,12 @@
       "of": "von",
       "next_slide": "Nach rechts schieben",
       "previous_slide": "Nach links schieben"
+    },
+    "checkout": {
+      "order_placing": "Indem Sie diese Bestellung aufgeben, stimmen Sie unseren zu",
+      "terms_of_service": "Nutzungsbedingungen",
+      "understand": "und verstehen Sie unsere",
+      "privacy_policy": "Datenschutz-Bestimmungen"
     }
   },
   "newsletter": {
