@@ -54,6 +54,12 @@
       "of": "van",
       "next_slide": "Naar rechts schuiven",
       "previous_slide": "Naar links schuiven"
+    },
+    "checkout": {
+      "order_placing": "Door deze bestelling te plaatsen, gaat u akkoord met onze",
+      "terms_of_service": "Servicevoorwaarden",
+      "understand": "en begrijp onze",
+      "privacy_policy": "Privacybeleid"
     }
   },
   "newsletter": {
