@@ -57,7 +57,7 @@
   {%- assign add_to_cart_text = "Preorder" -%}
 {%- endif -%}
 
-{%- assign vat = 1.21 -%}
+{%- assign vat = 1 -%}
     
 {%- assign product_price = product.price | times: vat -%}
 {%- assign product_compare_at_price = product.compare_at_price | times: vat -%}

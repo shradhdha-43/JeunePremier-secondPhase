@@ -70,7 +70,7 @@
               {{ product.title | split: " - " | first }}
             </a>
           </div>
-          <div class="cross-sell-product-price medium">{{ product.price | times: 1.21 | money_without_trailing_zeros | strip_html }}</div>
+          <div class="cross-sell-product-price medium">{{ product.price | times: 1 | money_without_trailing_zeros | strip_html }}</div>
           <div class="cross-sell-accordion">
             <div class="cross-sell-moreinfo">{{ section.settings.more_info }} <span class="cross-sell-icon">+</span></div>
             <div class="cross-sell-infopanel">{{ product.description | strip_html | truncatewords: 20 }}</div>
