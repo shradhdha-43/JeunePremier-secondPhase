@@ -52,6 +52,12 @@
       "of": "из",
       "next_slide": "Листать вперед",
       "previous_slide": "Листать назад"
+    },
+    "checkout": {
+      "order_placing": "By placing this order, you agree to our",
+      "terms_of_service": "Terms of Service",
+      "understand": "and understand our",
+      "privacy_policy": "Privacy Policy"
     }
   },
   "newsletter": {
