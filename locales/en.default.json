@@ -54,6 +54,10 @@
       "of": "From",
       "next_slide": "Slide to the right",
       "previous_slide": "Slide to the left"
+    },
+    "checkout": {
+      "order_placing": "By placing this order, you agree to our",
+      "understand": "and understand our"
     }
   },
   "newsletter": {
