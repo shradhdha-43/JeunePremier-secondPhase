@@ -118,7 +118,7 @@
             </span>
             {% endif %}
             <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
-              {{ current_variant_price | money_without_trailing_zeros }} <span class="price-incl">{{ 'products.product.include_taxes' | t }}</span>
+              {{ current_variant_price | money_without_trailing_zeros }} <span class="price-incl">{% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</span>
             </span>
           </div>
             <span class="product-wishlist"></span>
@@ -260,7 +260,7 @@
                 </span>
                 {% endif %}
                 <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
-                  {{ current_variant_price | money_without_trailing_zeros }} <span class="price-incl">{{ 'products.product.include_taxes' | t }}</span>
+                  {{ current_variant_price | money_without_trailing_zeros }} <span class="price-incl">{% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</span>
                 </span>
                 </div>
                 
