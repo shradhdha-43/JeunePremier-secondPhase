@@ -159,6 +159,7 @@
       },
       "view_full_details": "View full details",
       "include_taxes": "Incl. VAT",
+      "exclude_taxes": "Excl. VAT",
       "shipping_policy_html": "<a href=\"{{ link }}\">Shipping<\/a> will be charged at checkout",
       "back": "Back to Collection",
       "reviews": "Reviews",
