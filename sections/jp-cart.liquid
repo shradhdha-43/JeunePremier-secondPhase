@@ -185,7 +185,7 @@
       <div class="drawer-cart-checkout">
         <div class="checkout-subtotal justify-between">
           <div class="checkout-title">{{ section.settings.subtotal_text }}</div>
-          <div class="subtotal">{{ cart.total_price | times: vat | money_without_trailing_zeros }} {% if localization.country.iso_code == 'BE' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</div>
+          <div class="subtotal">{{ cart.total_price | times: vat | money_without_trailing_zeros }} {% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</div>
         </div>
         <div class="checkout-shipping justify-between">
           <div class="shipping-title">{{ section.settings.shipping_text }}</div>
