@@ -228,7 +228,7 @@
             "type": "announcement",
             "settings": {
               "announcement_text": "<p>Discover the NEW Safari Collection<\/p>",
-              "announcement_url": "shopify:\/\/collections\/s22"
+              "announcement_url": "shopify:\/\/collections\/s22-1"
             }
           }
         },
