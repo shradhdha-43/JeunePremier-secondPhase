@@ -1,12 +1,40 @@
+{{ 'jp-page.css' | asset_url | stylesheet_tag }}
+
+
+<div class="page-wrapper">
+  <div class="page">
+    <h1 class="page-title">
+        {{ section.settings.page_heading | escape }}
+    </h1>
+    <div class="page-content">
+      <p>{{ section.settings.page_description | escape }}</p>
+    </div>
+  </div>
+</div>
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "JP Heading and Desc",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+		{
+			"type": "text",
+			"id": "page_heading",
+			"label": "Heading",
+			"default": "Page heading"
+		},
+		{
+			"type": "text",
+			"id": "page_description",
+			"label": "Description",
+			"default": "Page description"
+		}
+  ],
+  "presets": [
+    {
+      "name": "JP Heading and Desc"
+    }
+  ]
+}
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
