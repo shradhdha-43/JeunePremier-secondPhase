@@ -6,8 +6,10 @@ h1.page-title {
   font-size: 32px;
   font-family: 'Hero';
   font-weight: 400;
+  text-align: center;
 }
 .page-content {
+  text-align: center;
   font-weight: 300;
   color: var(--dd-color-first);
   letter-spacing: 0;
