@@ -5,9 +5,55 @@
       "disabled": true,
       "settings": {
       }
+    },
+    "16547787151c4f06cb": {
+      "type": "jp-page-heading",
+      "settings": {
+        "page_heading": "All collections - Jeune Premier",
+        "page_description": "these are all our collections"
+      }
+    },
+    "1654778749d2a9a970": {
+      "type": "jp-image-with-text",
+      "settings": {
+        "section_type": "img_txt",
+        "link_type": "btn",
+        "btn_color": "black",
+        "img_aligment": "right",
+        "title": "Balloon Blast - collection",
+        "sub_title": "",
+        "desc": "these are all our collections",
+        "link_txt": "Balloon",
+        "link_hover_txt": "Balloon",
+        "link": "shopify:\/\/collections\/balloon-blast",
+        "img": "shopify:\/\/shop_images\/ralph_8f5f782e-4927-4460-8545-f169ee3d36c0.jpg",
+        "video_link": "",
+        "marg_top": "false"
+      }
+    },
+    "1654778757f19b97d8": {
+      "type": "jp-image-with-text",
+      "settings": {
+        "section_type": "img_txt",
+        "link_type": "btn",
+        "btn_color": "black",
+        "img_aligment": "left",
+        "title": "Collection 2",
+        "sub_title": "",
+        "desc": "these are all our collections",
+        "link_txt": "Random link",
+        "link_hover_txt": "Change text on hover",
+        "link": "shopify:\/\/collections\/balloon-blast",
+        "img": "shopify:\/\/shop_images\/389A3673.jpg",
+        "video_link": "",
+        "marg_top": "false"
+      }
     }
   },
   "order": [
-    "1644996717ac0333a4"
+    "1644996717ac0333a4",
+    "16547787151c4f06cb",
+    "1654778749d2a9a970",
+    "1654778757f19b97d8"
   ]
 }
