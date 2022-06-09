@@ -9,14 +9,14 @@
     <div class="img-with-text-content flex-box align-center justify-between{% if section.settings.img_aligment == 'left' %} row-rev{% endif %}">
       
       <div class="img-w-txt-text-wrap">
-        <div class="img-w-txt-title title{% if section.settings.section_type != 'link_within_text' %} no-t-m{% endif %}">{{ section.settings.title }}</div>
+        <h2 class="img-w-txt-title title{% if section.settings.section_type != 'link_within_text' %} no-t-m{% endif %}">{{ section.settings.title }}</h2>
         {% if section.settings.sub_title %}
         <div class="subtitle medium">{{ section.settings.sub_title }}</div>
         {% endif %}
         {% if section.settings.section_type == 'link_within_text' %}
         <div class="img-w-txt-desc img-w-txt-desc-link light">{{ section.settings.desc }}</div>
         {% else %}
-        <div class="img-w-txt-desc light">{{ section.settings.desc }}</div>
+        <p class="img-w-txt-desc light">{{ section.settings.desc }}</p>
         {% endif %}
         {% if section.settings.link_type == 'btn' %}
         <a href="{{ section.settings.link }}" class="video-sec-btn title button{% if section.settings.btn_color == 'yellow' %} yellow-btn{% endif %}"><span class="original-text">{{ section.settings.link_txt }}</span><span class="hover-text">{{ section.settings.link_hover_txt }}</span></a>
@@ -43,7 +43,7 @@
       </div>
       {% else %}
       <div class="img-w-txt-image-wrap">
-      	<img src="{{ section.settings.img | img_url: "600x" }}" loading="lazy">
+      	<img src="{{ section.settings.img | img_url: "600x" }}" loading="lazy"  alt="{{ section.settings.img.alt }}">
       </div>
       {% endif %}
     </div>
