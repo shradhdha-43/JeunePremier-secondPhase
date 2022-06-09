@@ -40,7 +40,9 @@
     },
     "cart": {
       "view": "Visualizza carrello ({{ count }})",
-      "item_added": "Articolo aggiunto al carrello"
+      "item_added": "Articolo aggiunto al carrello",
+      "back": "INDIETRO",
+      "cart_title": "CARRELLO"
     },
     "share": {
       "copy_to_clipboard": "Copia link",
