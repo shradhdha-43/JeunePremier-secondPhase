@@ -60,17 +60,6 @@
 
     {{ tracking_code }}
     
-<!-- script for getting the current location and moving back 
-to prev location -->
-    
-<script>
-      var loc = $(location).attr('href')
-      localStorage.setItem( "PrevLocation", loc);
-      $(".checkout_cart_breadcrumb").click(function(){
-        history.back();
-
-      });
-</script>
   </body>
   
 </html>
