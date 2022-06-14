@@ -23,6 +23,26 @@
 $(".checkout_cart_breadcrumb").click(function(){
   console.log("clicked moving back");
   history.back();
-  $(".drawer-cart").addClass("drawn");
+  
+  function myFunction() {
+    document.getElementById("welcome").textContent = "Welcome back!";
+	$("drawer-cart").addClass("drawn");
+  }
+
+  window.onload = function() {
+    var reloading = sessionStorage.getItem("reloading");
+    if (reloading) {
+      sessionStorage.removeItem("reloading");
+      myFunction();
+    }
+  }
+
+  function reloadP() {
+    sessionStorage.setItem("reloading", "true");
+    document.location.reload();
+  }
+    
+}
+  
 });
 </script>
