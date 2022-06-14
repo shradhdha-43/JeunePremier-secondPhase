@@ -68,6 +68,11 @@
   var storeCountry = "{{ localization.country.name }}";
   var storeLanguage = "{{ localization.language.name }}";
   var isAddCountryCode = "{{ section.settings.addcountryCode }}";
+  var slug = window.location.pathname.split('/');
+  var AccessSlug = slug.slice(1);
+  
+  console.log(slug);
+  console.log(AccessSlug);
   
   if( !country && !language ) {
       $.ajax({
