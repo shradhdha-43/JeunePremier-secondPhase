@@ -648,7 +648,7 @@
   var lastLoc = localStorage.getItem("PrevLocation");
   console.log(lastLoc);
   if(lastLoc.indexOf("checkouts") > -1) {
-    window.location.replace(`${lastLoc}?cartopen=true`);
+    window.location.replace(`${$(location).attr('href')}?cartopen=true`);
   }
   console.log($(location).attr('href'));
 
