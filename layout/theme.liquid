@@ -30,13 +30,14 @@
     <script>
       var lastLoc = localStorage.getItem("PrevLocation");
 
-      if (lastLoc.indexOf("?cartopen=true") > -1){
-         window.location.replace(lastLoc);
-      }
-      else if (lastLoc.indexOf("?") > -1) {
+      if (lastLoc.indexOf("?") > -1) {
 		console.log(LasLoc)
         window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}&cartopen=true`);
       }
+      else if (lastLoc.indexOf("?cartopen=true") > -1){
+         window.location.replace(lastLoc);
+      }
+      
       else if (lastLoc == "" ) {
          window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
       }
