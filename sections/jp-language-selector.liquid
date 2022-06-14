@@ -77,6 +77,8 @@
     newPathname += Slugarray[i];
   }
   
+  
+  
 
   console.log(Slugarray); 
   console.log(newPathname)
@@ -94,6 +96,8 @@
       .done(function( data ) {
         console.log(data);
         console.log("storeCountry : "+storeCountry+" storeLanguage : "+storeLanguage);
+        
+        console.log(data.suggestions[0].parts)
         
         if(storeCountry != data.detected_values.country.name || storeLanguage != data.suggestions[0].parts.language.name) {
           $('.modal').css("display","flex");
