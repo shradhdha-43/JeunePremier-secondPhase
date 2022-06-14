@@ -36,12 +36,15 @@
       else if (lastLoc == "" ) {
         window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
       }
-      else if (lastLoc.indexOf('?') !== -1){
-      	console.log("parameters in the string")
-      }
+      
       else {
         window.location.replace(`${lastLoc}?cartopen=true`);
       }
+      
+      if (lastLoc.indexOf('?') !== -1){
+      	console.log("parameters in the string")
+      }
+      
       
      </script>
     
