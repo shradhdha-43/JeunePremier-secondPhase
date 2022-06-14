@@ -36,8 +36,7 @@
         <div class="main">
           <header class="main__header" role="banner">
             {{ content_for_logo }}
-            {% render 'checkout-breadcrumbs' %}
-            {% comment %}{{ breadcrumb }}{% endcomment %}
+            {{ breadcrumb }}
             {{ alternative_payment_methods }}
           </header>
           <main class="main__content" role="main">
