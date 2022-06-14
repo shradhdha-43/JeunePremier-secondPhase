@@ -293,10 +293,11 @@
     <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     <script>
-     var loc = $(location).attr('href')
-            console.log($(location).attr('href'));
-        	console.log(history);
-      window.location.replace(`${loc}?cartopen=true`);
+      
+      console.log($(location).attr('href'));
+      console.log(history);
+      window.history.state.prevUrl // your previous url
+      console.log("previous url is: " + window.history.previous.href);
     
     </script>
     {{ content_for_header }}
