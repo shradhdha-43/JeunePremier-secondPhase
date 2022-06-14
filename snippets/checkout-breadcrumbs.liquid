@@ -25,10 +25,11 @@
     history.back();
     
     
-    setTimeout(function(){
- 		$(".drawer-cart").addClass("drawn");
-      console.log("done")
-	}, 9000);
+   const myTimeout = setTimeout(myGreeting, 5000);
+
+function myGreeting() {
+  console.log("done")
+}
 
 });
   
