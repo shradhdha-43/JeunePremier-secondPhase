@@ -23,7 +23,8 @@
 $(".checkout_cart_breadcrumb").click(function(){
   console.log("clicked moving back");
   history.back();
- 
+ current_loc = $(location).attr('href');
+  console.log(current_loc);
     
 });
   
