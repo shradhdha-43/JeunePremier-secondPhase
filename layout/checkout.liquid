@@ -61,16 +61,13 @@
     {{ tracking_code }}
     
     <script>
-      window.checkout_number = '{{ checkout.id }}';
       console.log("checkout")
       $(".checkout_cart_breadcrumb").click(function(){
         console.log("clicked moving back");
         history.back();
-        back();
+       
       });
-
     </script>
-    
   </body>
   
 </html>
