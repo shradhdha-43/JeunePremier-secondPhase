@@ -292,7 +292,12 @@
 
     <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-    <script>console.log(current_loc = $(location).attr('href'));</script>
+    <script>
+      function back(){
+            console.log(current_loc = $(location).attr('href'));
+      }  
+    
+    </script>
     {{ content_for_header }}
 
     {%- liquid
