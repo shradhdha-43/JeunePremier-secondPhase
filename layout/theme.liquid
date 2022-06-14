@@ -20,9 +20,10 @@
     {% if template == 'cart' %}  
     <meta http-equiv="refresh" content = "0; url = https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true">
     <script>
-      window.location.replace("https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true");
-                            
-    </script>
+      var loc = $(location).attr('href');
+      localStorage.setItem( "PrevLocation", loc);
+     	 window.location.replace("https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true");
+	</script>
     
     {% endif %}
     {% endcomment %}
@@ -297,11 +298,7 @@
 
     <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-    <script>
-      var loc = $(location).attr('href');
-      localStorage.setItem( "PrevLocation", loc);
-     	
-	</script>
+    
     
     {{ content_for_header }}
 
