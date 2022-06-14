@@ -60,19 +60,16 @@
 
     {{ tracking_code }}
     
-    <script>
-	 var loc = $(location).attr('href')
-     localStorage.setItem( "PrevLocation", loc);
-  
+script for  
+    
+<script>
+      var loc = $(location).attr('href')
+      localStorage.setItem( "PrevLocation", loc);
       $(".checkout_cart_breadcrumb").click(function(){
-        console.log("clicked moving back");
         history.back();
-        
-        
-        
-       	
+
       });
-    </script>
+</script>
   </body>
   
 </html>
