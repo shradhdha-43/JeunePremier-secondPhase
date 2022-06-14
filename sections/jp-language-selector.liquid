@@ -200,7 +200,7 @@
               lang = 'https://www.jeunepremier.';
               cont = '';
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'da') {
-                lang = lang + 'dk';
+                lang = lang + 'dk' + newPathname;
               }
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'de') {
                 lang = lang + 'de';
@@ -287,7 +287,7 @@
       lang = 'https://www.jeunepremier.';
       cont = '';
       if(langh == 'da') {
-        lang = lang + 'dk';
+        lang = lang + 'dk' + newPathname;
       }
       if(langh == 'de') {
         lang = lang + 'de';
@@ -425,7 +425,7 @@
           lang = 'https://www.jeunepremier.';
           cont = '';
           if(langCode == 'da') {
-            lang = lang + 'dk';
+            lang = lang + 'dk' + newPathname;
           }
           if(langCode == 'de') {
             lang = lang + 'de';
