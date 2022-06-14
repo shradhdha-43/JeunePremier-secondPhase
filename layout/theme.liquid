@@ -768,12 +768,17 @@
 <script id="gorgias-chat-shopify-install">!function(_){_.SHOPIFY_PERMANENT_DOMAIN="{{shop.permanent_domain}}",_.SHOPIFY_CUSTOMER_ID="{{customer.id}}",_.SHOPIFY_CUSTOMER_EMAIL="{{customer.email}}"}(window||{});</script><!--Gorgias Chat Widget End-->
     
     <script>
+      
+      (function($) {
+        $(document).on("page:load page:change", function() {
+          $(".checkout_cart_breadcrumb").click(function(){
+            console.log("clicked moving back");
+            history.back();
+          });
+        })(Checkout.$);
 
-      $(".checkout_cart_breadcrumb").click(function(){
-        console.log("clicked moving back");
-        history.back();
-			
-        
+      
+
         setTimeout(function(){
           var curr_loc = $(location).attr('href');
           window.location.replace(`${curr_loc}?cartopen=true`);
