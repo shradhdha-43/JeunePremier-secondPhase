@@ -166,10 +166,10 @@
               lang = 'https://www.jeunepremier.com/';
               cont = '';
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
-                lang = lang + '' ;
+                lang = lang + '' + newPathname;
               }
               else {
-              	lang = lang + data.suggestions[0].parts.language.handle.toLowerCase();
+              	lang = lang + data.suggestions[0].parts.language.handle.toLowerCase() + newPathname;
               }
             }
             
@@ -241,10 +241,10 @@
               lang = 'https://www.jeunepremier.com/';
               cont = '';
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
-                lang = lang + '';
+                lang = lang + '' + newPathname;
               }
               else {
-              	lang = lang + data.suggestions[0].parts.language.handle.toLowerCase();
+              	lang = lang + data.suggestions[0].parts.language.handle.toLowerCase() + newPathname;
               }
             }
             
@@ -330,10 +330,10 @@
       lang = 'https://www.jeunepremier.com/';
       cont = '';
       if(langh == 'en') {
-        lang = lang + '';
+        lang = lang + '' + newPathname;
       }
       else {
-        lang = lang + langh;
+        lang = lang + langh + newPathname;
       }
     }
     
@@ -468,10 +468,10 @@
           lang = 'https://www.jeunepremier.com/';
           cont = '';
           if(langCode == 'en') {
-            lang = lang + '';
+            lang = lang + '' + newPathname;
           }
           else {
-            lang = lang + langCode;
+            lang = lang + langCode + newPathname;
           } 
         }
         
