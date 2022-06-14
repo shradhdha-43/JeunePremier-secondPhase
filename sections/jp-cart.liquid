@@ -647,10 +647,18 @@
   
 // script for getting the last loc stored in LS
   
+  
+  
 var lastLoc = localStorage.getItem("PrevLocation");
 console.log(lastLoc);
 if(lastLoc.indexOf("checkouts") > -1) {
-    window.location.replace(`${$(location).attr('href')}?cartopen=true`);
+    
+  if (window.location.href.indexOf("?cartopen=true") > -1){
+  	 window.location.replace($(location).attr('href'));
+  }
+  else {
+  	window.location.replace(`${$(location).attr('href')}?cartopen=true`);
+  }
 }
 console.log($(location).attr('href'));
 localStorage.setItem( "PrevLocation", "");
