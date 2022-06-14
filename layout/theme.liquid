@@ -20,7 +20,9 @@
     <meta http-equiv="refresh" content = "0; url = https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true">
     <script>
       window.location.replace("https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true");
+      
     </script>
+    
     {% endif %}
     <title>
       {{ page_title }}
@@ -290,6 +292,7 @@
 
     <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script>console.log(current_loc = $(location).attr('href'));</script>
     {{ content_for_header }}
 
     {%- liquid
