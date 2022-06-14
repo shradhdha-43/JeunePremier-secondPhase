@@ -40,6 +40,10 @@
         window.location.replace(`${lastLoc}?cartopen=true`);
       }
       
+      if (lastLoc.indexOf("?") > -1 && lastLoc.indexOf("?cartopen=true") > -1) {
+      	window.location.replace(`${lastLoc}&cartopen=true`);
+      }
+      
    
      </script>
     {% endif %}
