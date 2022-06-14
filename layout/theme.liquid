@@ -30,18 +30,19 @@
     <script>
       var lastLoc = localStorage.getItem("PrevLocation");
 
-//       if (lastLoc.indexOf("?cartopen=true") > -1 && lastLoc.indexOf("&cartopen=true") > -1){
-//         window.location.replace(lastLoc);
-//       }
-//       else if (lastLoc == "" ) {
-//         window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
-//       } 
-//       else {
-//         window.location.replace(`${lastLoc}?cartopen=true`);
-//       }
+      if (lastLoc.indexOf("?cartopen=true") > -1 && lastLoc.indexOf("&cartopen=true") > -1){
+        window.location.replace(lastLoc);
+      }
+      else if (lastLoc == "" ) {
+        window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
+      } 
+      else {
+        window.location.replace(`${lastLoc}?cartopen=true`);
+      }
       
       if (lastLoc.indexOf("?") > -1 && lastLoc.indexOf("?cartopen=true") > -1) {
-      	window.location.replace(`${lastLoc}&cartopen=true`);
+        localStorage.setItem( "PrevLocation", window.location.replace(`${lastLoc}&cartopen=true`););
+      	
       }
       
    
