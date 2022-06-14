@@ -767,28 +767,6 @@
 <!--Gorgias Chat Widget Start--><script id="gorgias-chat-widget-install-v2" src="https://config.gorgias.chat/gorgias-chat-bundle-loader.js?applicationId=16699"></script>
 <script id="gorgias-chat-shopify-install">!function(_){_.SHOPIFY_PERMANENT_DOMAIN="{{shop.permanent_domain}}",_.SHOPIFY_CUSTOMER_ID="{{customer.id}}",_.SHOPIFY_CUSTOMER_EMAIL="{{customer.email}}"}(window||{});</script><!--Gorgias Chat Widget End-->
     
-    <script>
-      
-      (function($) {
-        $(document).on("page:load page:change", function() {
-          $(".checkout_cart_breadcrumb").click(function(){
-            console.log("clicked moving back");
-            history.back();
-          });
-        })(Checkout.$);
 
-      
-
-        setTimeout(function(){
-          var curr_loc = $(location).attr('href');
-          window.location.replace(`${curr_loc}?cartopen=true`);
-        }, 3000);
-
-
-      });
-
-
-
-    </script>
 </body>
 </html>
