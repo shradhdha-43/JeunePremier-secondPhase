@@ -292,10 +292,12 @@
     
 <!--     #checkout redirect script -->
     
+    {% if template != 'cart' %}  
      <script>
       var loc = $(location).attr('href');
       var curr_loc = localStorage.setItem( "PrevLocation", loc);
     </script>
+    {% endif %}
     
     {% if template == 'cart' %}  
 <!--     <meta http-equiv="refresh" content = "0; url = https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true"> -->
