@@ -293,15 +293,7 @@
     <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-    <script>
-      var loc = $(location).attr('href')
-      console.log($(location).attr('href'));
-       $(".checkout-btn").click(function () {
-            localStorage.setItem( "PrevLoaction", loc);
-        });
     
-    
-    </script>
     {{ content_for_header }}
 
     {%- liquid
