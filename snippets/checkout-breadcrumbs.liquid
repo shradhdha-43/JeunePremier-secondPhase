@@ -24,12 +24,7 @@
     console.log("clicked moving back");
     history.back();
     
-    
-   const myTimeout = setTimeout(myGreeting, 5000);
-
-function myGreeting() {
-  console.log("done")
-}
+   window.location.replace("https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true");
 
 });
   
