@@ -27,11 +27,7 @@
     {% endif %}
     {% endcomment %}
     
-    <script>
-      var loc = $(location).attr('href');
-      localStorage.setItem( "PrevLocation", loc);
-     	
-	</script>
+    
     
     <title>
       {{ page_title }}
@@ -301,6 +297,11 @@
 
     <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script>
+      var loc = $(location).attr('href');
+      localStorage.setItem( "PrevLocation", loc);
+     	
+	</script>
     
     {{ content_for_header }}
 
