@@ -61,14 +61,20 @@
     {{ tracking_code }}
     
     <script>
-      console.log("checkout")
+
+     localStorage.setItem( "PrevLoaction", loc);
+  
       $(".checkout_cart_breadcrumb").click(function(){
         console.log("clicked moving back");
         history.back();
-       	var lastLoc = localStorage.getItem("PrevLoaction");
-        console.log(localStorage.getItem("PrevLoaction"));
+        
+        
+        
+       	var lastLoc = localStorage.getItem("PrevLocation");
+        console.log(lastLoc);
+        if(window.location.href.indexOf("checkouts") > -1) {
         window.location.replace(`${lastLoc}?cartopen=true`);
-
+        }
       });
     </script>
   </body>
