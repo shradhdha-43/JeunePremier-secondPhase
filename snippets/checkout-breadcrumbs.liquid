@@ -22,7 +22,7 @@
   
   $(".checkout_cart_breadcrumb").click(function(){
     console.log("clicked moving back");
-    alert(history.back());
+    console.log(history);
     
     setTimeout(function(){
  	var curr_loc = $(location).attr('href');
