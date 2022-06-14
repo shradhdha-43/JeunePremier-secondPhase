@@ -47,10 +47,8 @@
     {% else %}
     
     <script>
-      var lastLoc = localStorage.getItem("PrevLocation");
-
-   
-   
+      var loc = window.location.href;
+      var curr_loc = localStorage.setItem( "PrevLocation", loc);
      </script>
     
     {% endif %}
