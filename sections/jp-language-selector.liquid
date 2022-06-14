@@ -77,24 +77,13 @@
     newPathname += Slugarray[i];
   }
   
-  console.log(country);
-  console.log(language); 
-  console.log(countryh);
-  console.log(languageh);
-  console.log(storeCountry);
-  console.log(storeLanguage); 
-  console.log(isAddCountryCode)
-  console.log(slug);
+
   console.log(Slugarray); 
   console.log(newPathname)
   localStorage.setItem("slug", newPathname);
   
   
-  console.log("{{localization.available_countries}}\n");
-  
-
-  
-  
+   
   
   if( !country && !language ) {
       $.ajax({
