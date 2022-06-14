@@ -23,8 +23,12 @@
   $(".checkout_cart_breadcrumb").click(function(){
     console.log("clicked moving back");
     history.back();
-   var curr_loc = $(location).attr('href');
+    
+    setTimeout(function(){
+ 	var curr_loc = $(location).attr('href');
     window.location.replace(`${curr_loc}?cartopen=true`);
+	}, 3000);
+   
 
 });
   
