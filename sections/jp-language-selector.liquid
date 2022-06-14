@@ -71,16 +71,19 @@
   var slug = window.location.pathname.split('/');
   var Slugarray = slug.slice(1);
   
+  count_initials_array = ["nl" , "fr" , "it" , "be" , "at" , "de" , "ch" , "dk" , "ru" , "da"]
+    
+  count_initials_array = count_initials_array.filter( ( el ) => !Slugarray.includes( el ) );
+
+
   var newPathname = "";
-  for (i = 0; i < Slugarray.length; i++) {
+  for (i = 0; i < count_initials_array.length; i++) {
     newPathname += "/";
-    newPathname += Slugarray[i];
+    newPathname += count_initials_array[i];
   }
   
   
-  
-
-  console.log(Slugarray); 
+//   console.log(Slugarray); 
   console.log(newPathname)
   localStorage.setItem("slug", newPathname);
   
