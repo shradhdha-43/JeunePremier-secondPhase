@@ -130,7 +130,7 @@
                 lang = lang + 'dk' + newPathname;
               }
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'de') {
-                lang = lang + 'de';
+                lang = lang + 'de' + newPathname;
               }
             }
             
@@ -138,10 +138,10 @@
               lang = 'https://www.jeunepremier.';
               cont = '';
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'de') {
-                lang = lang + 'at';
+                lang = lang + 'at' + newPathname;
               }
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'fr') {
-                lang = lang + 'at/fr';
+                lang = lang + 'at/fr' + newPathname;
               }
             }
             
@@ -149,10 +149,10 @@
               lang = 'https://www.jeunepremier.';
               cont = '';
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'fr') {
-                lang = lang + 'ch/fr';
+                lang = lang + 'ch/fr' + newPathname;
               }
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'de' || data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
-                lang = lang + 'ch';
+                lang = lang + 'ch' + newPathname;
               }
             }
             
@@ -160,7 +160,7 @@
               lang = 'https://www.jeunepremier.de/';
               cont = '';
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'de' || data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
-                lang = lang + '';
+                lang = lang + '' + newPathname;
               }
             }
             
@@ -168,7 +168,7 @@
               lang = 'https://www.jeunepremier.com/';
               cont = '';
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
-                lang = lang + '';
+                lang = lang + '' + newPathname;
               }
               else {
               	lang = lang + data.suggestions[0].parts.language.handle.toLowerCase();
@@ -178,6 +178,7 @@
             if(data.suggestions[0].parts.language.handle.toLowerCase() == 'ru') {
               lang = 'https://www.jeune-premier.ru/';
               cont = '';
+              
             }
             
             console.log("if cont: "+cont);
@@ -189,6 +190,7 @@
             localStorage.setItem("lang", data.suggestions[0].parts.language.name);
             localStorage.setItem("conth", data.suggestions[0].parts.country.handle.toLowerCase());
             localStorage.setItem("langh", data.suggestions[0].parts.language.handle.toLowerCase());
+            localStorage.setItem("slug", newPathname);
           } 
           else {
             
@@ -203,7 +205,7 @@
                 lang = lang + 'dk' + newPathname;
               }
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'de') {
-                lang = lang + 'de';
+                lang = lang + 'de' + newPathname;
               }
             }
             
@@ -211,10 +213,10 @@
               lang = 'https://www.jeunepremier.';
               cont = '';
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'de') {
-                lang = lang + 'at';
+                lang = lang + 'at' + newPathname;
               }
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'fr') {
-                lang = lang + 'at/fr';
+                lang = lang + 'at/fr' + newPathname;
               }
             }
             
@@ -222,10 +224,10 @@
               lang = 'https://www.jeunepremier.';
               cont = '';
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'fr') {
-                lang = lang + 'ch/fr';
+                lang = lang + 'ch/fr' + newPathname;
               }
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'de' || data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
-                lang = lang + 'ch';
+                lang = lang + 'ch' + newPathname;
               }
             }
             
@@ -233,7 +235,7 @@
               lang = 'https://www.jeunepremier.de/';
               cont = '';
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'de' || data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
-                lang = lang + '';
+                lang = lang + '' + newPathname;
               }
             }
             
@@ -241,7 +243,7 @@
               lang = 'https://www.jeunepremier.com/';
               cont = '';
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
-                lang = lang + '';
+                lang = lang + '' + newPathname;
               }
               else {
               	lang = lang + data.suggestions[0].parts.language.handle.toLowerCase();
@@ -262,6 +264,8 @@
             localStorage.setItem("lang", data.suggestions[0].parts.language.name);
             localStorage.setItem("conth", data.detected_values.country.handle.toLowerCase());
             localStorage.setItem("langh", data.suggestions[0].parts.language.handle.toLowerCase());
+            localStorage.setItem("slug", newPathname);
+
           }
         }
       })
@@ -290,7 +294,7 @@
         lang = lang + 'dk' + newPathname;
       }
       if(langh == 'de') {
-        lang = lang + 'de';
+        lang = lang + 'de' + newPathname;
       }
     }
     
@@ -298,10 +302,10 @@
       lang = 'https://www.jeunepremier.';
       cont = '';
       if(langh == 'de') {
-        lang = lang + 'at';
+        lang = lang + 'at' + newPathname;
       }
       if(langh == 'fr') {
-        lang = lang + 'at/fr';
+        lang = lang + 'at/fr' + newPathname;
       }
     }
     
@@ -309,10 +313,10 @@
       lang = 'https://www.jeunepremier.';
       cont = '';
       if(langh == 'fr') {
-        lang = lang + 'ch/fr';
+        lang = lang + 'ch/fr' + newPathname;
       }
       if(langh == 'de' || langh == 'en') {
-        lang = lang + 'ch';
+        lang = lang + 'ch' + newPathname;
       }
     }
     
@@ -320,7 +324,7 @@
       lang = 'https://www.jeunepremier.de/';
       cont = '';
       if(langh == 'de' || langh == 'en') {
-        lang = lang + '';
+        lang = lang + '' + newPathname;
       }
     }
     
@@ -328,10 +332,10 @@
       lang = 'https://www.jeunepremier.com/';
       cont = '';
       if(langh == 'en') {
-        lang = lang + '';
+        lang = lang + '' + newPathname;
       }
       else {
-        lang = lang + langh;
+        lang = lang + langh + newPathname;
       }
     }
     
@@ -428,7 +432,7 @@
             lang = lang + 'dk' + newPathname;
           }
           if(langCode == 'de') {
-            lang = lang + 'de';
+            lang = lang + 'de' + newPathname;
           }
         }
         
@@ -436,10 +440,10 @@
           lang = 'https://www.jeunepremier.';
           cont = '';
           if(langCode == 'de') {
-            lang = lang + 'at';
+            lang = lang + 'at' + newPathname;
           }
           if(langCode == 'fr') {
-            lang = lang + 'at/fr';
+            lang = lang + 'at/fr' + newPathname;
           }
         }
         
@@ -447,10 +451,10 @@
           lang = 'https://www.jeunepremier.';
           cont = '';
           if(langCode == 'fr') {
-            lang = lang + 'ch/fr';
+            lang = lang + 'ch/fr' + newPathname;
           }
           if(langCode == 'de' || langCode == 'en') {
-            lang = lang + 'ch';
+            lang = lang + 'ch' + newPathname;
           }
         }
         
@@ -458,7 +462,7 @@
           lang = 'https://www.jeunepremier.de/';
           cont = '';
           if(langCode == "de" || langCode == "en") {
-            lang = lang + '';
+            lang = lang + '' + newPathname;
           }
         }
 
@@ -466,11 +470,11 @@
           lang = 'https://www.jeunepremier.com/';
           cont = '';
           if(langCode == 'en') {
-            lang = lang + '';
+            lang = lang + '' + newPathname;
           }
           else {
-            lang = lang + langCode;
-          }
+            lang = lang + langCode + newPathname;
+          } 
         }
         
         if(langCode == 'ru') {
