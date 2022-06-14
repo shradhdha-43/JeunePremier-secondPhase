@@ -77,15 +77,14 @@
 
 
   var newPathname = "";
-  for (i = 0; i < Slugarray.length; i++) {
+  for (i = 0; i < count_initials_array.length; i++) {
     newPathname += "/";
-    newPathname += Slugarray[i];
+    newPathname += count_initials_array[i];
   }
   
   
   console.log(count_initials_array);
 
-  console.log(Slugarray); 
   console.log(newPathname)
   localStorage.setItem("slug", newPathname);
   
