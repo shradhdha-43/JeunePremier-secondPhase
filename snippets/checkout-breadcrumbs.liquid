@@ -20,30 +20,19 @@
 
 <script>
   
-// $(".checkout_cart_breadcrumb").click(function(){
-//   console.log("clicked moving back");
-//   history.back();
-//  current_loc = $(location).attr('href');
-//   console.log(current_loc);
-  
-  
-  
+  $(".checkout_cart_breadcrumb").click(function(){
+    console.log("clicked moving back");
+    history.back();
     
-// });
-  
-$('.checkout_cart_breadcrumb').click(function(){
-        $.when(function1()).then(function2()); 
-  
-  
-  function function1() {
- 	history.back();
-  }
-  
-  function function2() {
- 	console.log("done");
-  }
 
-    
-});
+   $( document ).ready(function(
+         current_loc = $(location).attr('href');
+    console.log(current_loc);             
+                      ));
+
+
+  });
+  
+
 
 </script>
