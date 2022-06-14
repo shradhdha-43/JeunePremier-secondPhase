@@ -74,6 +74,18 @@
   console.log(slug);
   console.log(AccessSlug);
   
+  
+   function processUpdatedUrl(response, urlPath){
+//      document.getElementById("content").innerHTML = response.html;
+     document.title = response.pageTitle;
+     window.history.pushState({"html":response.html,"pageTitle":response.pageTitle},"", urlPath);
+     console.log(response);
+     console.log(urlPath);
+ }
+  
+  
+  
+  
   if( !country && !language ) {
       $.ajax({
         url: "/browsing_context_suggestions.json?source=geolocation_recommendation&country[enabled]=true&language[enabled]=true",
