@@ -94,7 +94,6 @@
         dataType: "json"
       })
       .done(function( data ) {
-        var FormData = data;
         console.log(data);
         console.log("storeCountry : "+storeCountry+" storeLanguage : "+storeLanguage);
         
@@ -274,9 +273,6 @@
   }
   else {
     console.log("Inside else");
-    console.log(data.suggestions[0].parts)
-    
-    
 	$('.current-country').text(country);
     $('.current-lang').text(language);
     var langh = localStorage.getItem("langh");
