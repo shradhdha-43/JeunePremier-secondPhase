@@ -33,9 +33,7 @@
       if (lastLoc.indexOf("?cartopen=true") > -1){
         window.location.replace(lastLoc);
       }
-      else if (lastLoc == "" ) {
-        window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
-      }
+      
       else {
         window.location.replace(`${lastLoc}?cartopen=true`);
       }
