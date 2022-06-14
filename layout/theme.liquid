@@ -300,7 +300,6 @@
     {% endif %}
     
     {% if template == 'cart' %}  
-<!--     <meta http-equiv="refresh" content = "0; url = https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true"> -->
     <script>
       var lastLoc = localStorage.getItem("PrevLocation");
 		console.log(lastLoc)
@@ -311,7 +310,7 @@
         window.location.replace(`${lastLoc}?cartopen=true`);
       }
       
-      	</script>
+     </script>
     
     {% endif %}
    
