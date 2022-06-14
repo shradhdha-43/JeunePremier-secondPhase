@@ -69,11 +69,18 @@
   var storeLanguage = "{{ localization.language.name }}";
   var isAddCountryCode = "{{ section.settings.addcountryCode }}";
   var slug = window.location.pathname.split('/');
-  var AccessSlug = slug.slice(1);
+  var Slugarray = slug.slice(1);
   
+  var newPathname = "";
+  for (i = 0; i < Slugarray.length; i++) {
+    newPathname += "/";
+    newPathname += Slugarray[i];
+  }
+
+
   console.log(slug);
-  console.log(AccessSlug);
-  
+  console.log(AccessSlug); 
+  console.log(newPathname)
   
   
   
