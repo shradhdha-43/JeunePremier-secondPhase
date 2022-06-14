@@ -31,14 +31,19 @@
       var lastLoc = localStorage.getItem("PrevLocation");
 
       if (lastLoc.indexOf("?cartopen=true") > -1){
-        window.location.replace(lastLoc);
+         window.location.replace(lastLoc);
+      }
+      else if (lastLoc.includes('?')) {
+        return lastLoc
+		console.log(LasLoc)
+         window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}cartopen=true`);
       }
       else if (lastLoc == "" ) {
-        window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
+         window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
       }
       else {
-        window.location.replace(`${lastLoc}?cartopen=true`);
-      }
+         window.location.replace(`${lastLoc}?cartopen=true`);
+      } 
       
      </script>
     
