@@ -30,7 +30,7 @@
     <script>
       var lastLoc = localStorage.getItem("PrevLocation");
 
-      if (lastLoc.indexOf("?cartopen=true") > -1 || lastLoc.indexOf("&cartopen=true") > -1){
+      if (lastLoc.indexOf("?cartopen=true") > -1 && lastLoc.indexOf("&cartopen=true") > -1){
         window.location.replace(lastLoc);
       }
       else if (lastLoc == "" ) {
@@ -40,12 +40,6 @@
         window.location.replace(`${lastLoc}?cartopen=true`);
       }
       
-       if (lastLoc.indexOf('?') > -1 || lastLoc.indexOf('?cartopen=true') > -1){
-          window.location.replace(`${lastLoc}&cartopen=true`);
-        }
-      else if(lastLoc.indexOf('?') > 0 && lastLoc.indexOf('?cartopen=true') > 0) {
-      		lastLoc.replace('?cartopen=true','&cartopen=true')
-      }
    
      </script>
     {% endif %}
