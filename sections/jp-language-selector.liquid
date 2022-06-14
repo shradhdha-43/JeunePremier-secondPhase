@@ -97,7 +97,6 @@
         console.log(data);
         console.log("storeCountry : "+storeCountry+" storeLanguage : "+storeLanguage);
         
-        console.log(data.suggestions[0].parts)
         
         if(storeCountry != data.detected_values.country.name || storeLanguage != data.suggestions[0].parts.language.name) {
           $('.modal').css("display","flex");
@@ -274,6 +273,9 @@
   }
   else {
     console.log("Inside else");
+    console.log(data.suggestions[0].parts)
+    
+    
 	$('.current-country').text(country);
     $('.current-lang').text(language);
     var langh = localStorage.getItem("langh");
