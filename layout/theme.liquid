@@ -25,10 +25,9 @@
       var curr_loc = localStorage.setItem( "PrevLocation", loc);
        
        if (window.location.href.indexOf("?") > -1 && window.location.href.indexOf("?cartopen=true") > -1) {
-         localStorage.setItem( "PrevLocation", loc);
-         var lastLoc = localStorage.getItem("PrevLocation");
-         console.log(lastLoc);
-         loc.replace('?cartopen=true','&cartopen=true')
+         localStorage.setItem( "PrevLocation", "" );
+         let updatedUlr = loc.replace('?cartopen=true','&cartopen=true');
+         console.log(updatedUlr)
        }
     </script>
     {% endif %}
