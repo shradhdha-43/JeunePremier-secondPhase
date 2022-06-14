@@ -297,7 +297,7 @@
       var loc = $(location).attr('href')
       console.log($(location).attr('href'));
        $(".checkout-btn").click(function () {
-            $.cookie("PrevLoc", loc);
+            localStorage.setItem( "PrevLoaction", loc);
         });
     
     
