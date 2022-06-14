@@ -23,8 +23,8 @@
   $(".checkout_cart_breadcrumb").click(function(){
     console.log("clicked moving back");
     history.back();
-    
-   window.location.replace("https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true");
+   var curr_loc = $(location).attr('href')
+   window.location.replace("https://{{ curr_loc }}{{ routes.root_url }}?cartopen=true");
 
 });
   
