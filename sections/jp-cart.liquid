@@ -649,19 +649,19 @@
   
   
   
-var lastLoc = localStorage.getItem("PrevLocation");
-console.log(lastLoc);
-if(lastLoc.indexOf("checkouts") > -1) {
+// var lastLoc = localStorage.getItem("PrevLocation");
+// console.log(lastLoc);
+// if(lastLoc.indexOf("checkouts") > -1) {
     
-  if (window.location.href.indexOf("?cartopen=true") > -1){
-  	 window.location.replace($(location).attr('href'));
-  }
-  else {
-  	window.location.replace(`${$(location).attr('href')}?cartopen=true`);
-  }
-}
-console.log($(location).attr('href'));
-localStorage.setItem( "PrevLocation", "");
+//   if (window.location.href.indexOf("?cartopen=true") > -1){
+//   	 window.location.replace($(location).attr('href'));
+//   }
+//   else {
+//   	window.location.replace(`${$(location).attr('href')}?cartopen=true`);
+//   }
+// }
+// console.log($(location).attr('href'));
+// localStorage.setItem( "PrevLocation", "");
 
     
     

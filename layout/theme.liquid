@@ -16,14 +16,23 @@
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
+    {% comment %}
     {% if template == 'cart' %}  
     <meta http-equiv="refresh" content = "0; url = https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true">
     <script>
       window.location.replace("https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true");
-      
+                            
     </script>
     
     {% endif %}
+    {% endcomment %}
+    
+    <script>
+      var loc = $(location).attr('href')
+      localStorage.setItem( "PrevLocation", loc);
+     	
+	</script>
+    
     <title>
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
