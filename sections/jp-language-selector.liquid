@@ -125,8 +125,9 @@
             if(data.detected_values.country.handle.toLowerCase() == 'dk') {
               lang = 'https://www.jeunepremier.';
               cont = '';
+             
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'da') {
-                lang = lang + 'dk';
+                lang = lang + 'dk' + newPathname;
               }
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'de') {
                 lang = lang + 'de';
