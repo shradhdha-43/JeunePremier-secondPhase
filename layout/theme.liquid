@@ -29,6 +29,7 @@
 //          localStorage.setItem( "PrevLocation", "" );
          let updatedUlr = window.location.href.replace('?cartopen=true','&cartopen=true');
          console.log(updatedUlr);
+         localStorage.setItem( "PrevLocation", updatedUlr );
        }
     </script>
     {% endif %}
