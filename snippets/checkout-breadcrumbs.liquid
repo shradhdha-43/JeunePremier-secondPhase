@@ -18,3 +18,20 @@
   </ol>
 </nav>
 
+<script>
+  
+  $(".checkout_cart_breadcrumb").click(function(){
+    console.log("clicked moving back");
+    cosnole.log(history.back());
+    
+    setTimeout(function(){
+ 	var curr_loc = $(location).attr('href');
+    window.location.replace(`${curr_loc}?cartopen=true`);
+	}, 3000);
+   
+
+});
+  
+
+
+</script>
