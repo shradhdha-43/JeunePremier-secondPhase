@@ -26,7 +26,7 @@
        
        if (window.location.href.indexOf("?") > -1 && window.location.href.indexOf("?cartopen=true") > -1) {
          localStorage.setItem( "PrevLocation", loc);
-         window.location.replace(`${curr_loc}&cartopen=true`);
+         window.location.replace(`${loc}&cartopen=true`);
        }
     </script>
     {% endif %}
