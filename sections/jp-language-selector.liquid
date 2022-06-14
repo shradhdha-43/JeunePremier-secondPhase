@@ -71,6 +71,10 @@
   var slug = window.location.pathname.split('/');
   var Slugarray = slug.slice(1);
   
+  if (Slugarray[0] == "") {
+  	Slugarray.shift();
+  }
+  
   count_initials_array = ["nl" , "fr" , "it" , "be" , "at" , "de" , "ch" , "dk" , "ru" , "da"]
     
   count_initials_array = Slugarray.filter( ( el ) => !count_initials_array.includes( el ) );
@@ -82,9 +86,9 @@
     newPathname += count_initials_array[i];
   }
   
-  
+  console.log(Slugarray)
   console.log(count_initials_array);
-
+	
   console.log(newPathname)
   localStorage.setItem("slug", newPathname);
   
