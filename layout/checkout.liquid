@@ -61,7 +61,7 @@
     {{ tracking_code }}
     
     <script>
-
+	 var loc = $(location).attr('href')
      localStorage.setItem( "PrevLoaction", loc);
   
       $(".checkout_cart_breadcrumb").click(function(){
