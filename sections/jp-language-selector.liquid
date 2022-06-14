@@ -73,7 +73,7 @@
   
   count_initials_array = ["nl" , "fr" , "it" , "be" , "at" , "de" , "ch" , "dk" , "ru" , "da"]
     
-  count_initials_array = count_initials_array.filter( ( el ) => !Slugarray.includes( el ) );
+  count_initials_array = Slugarray.filter( ( el ) => !count_initials_array.includes( el ) );
 
 
   var newPathname = "";
