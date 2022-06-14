@@ -301,8 +301,15 @@
     <meta http-equiv="refresh" content = "0; url = https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true">
     <script>
       var lastLoc = localStorage.getItem("PrevLocation");
-      window.location.replace(`${lastLoc}?cartopen=true`);
-	</script>
+
+      if (window.location.href.indexOf("?cartopen=true") > -1){
+         window.location.replace(lastLoc);
+      }
+      else {
+        window.location.replace(`${lastLoc}?cartopen=true`);
+      }
+      
+      	</script>
     
     {% endif %}
    
