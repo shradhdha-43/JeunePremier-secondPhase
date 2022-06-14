@@ -17,19 +17,6 @@
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
    
-    <script>
-      var loc = $(location).attr('href');
-      var curr_loc = localStorage.setItem( "PrevLocation", loc);
-    </script>
-    
-    {% if template == 'cart' %}  
-    <meta http-equiv="refresh" content = "0; url = https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true">
-    <script>
-      var lastLoc = localStorage.getItem("PrevLocation");
-      window.location.replace(`${lastLoc}?cartopen=true`);
-	</script>
-    
-    {% endif %}
    
     
     
@@ -302,6 +289,23 @@
 
     <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    
+<!--     #checkout redirect script -->
+    
+     <script>
+      var loc = $(location).attr('href');
+      var curr_loc = localStorage.setItem( "PrevLocation", loc);
+    </script>
+    
+    {% if template == 'cart' %}  
+    <meta http-equiv="refresh" content = "0; url = https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true">
+    <script>
+      var lastLoc = localStorage.getItem("PrevLocation");
+      window.location.replace(`${lastLoc}?cartopen=true`);
+	</script>
+    
+    {% endif %}
+   
     
     
     {{ content_for_header }}
