@@ -17,10 +17,34 @@
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
    
+   <!--     #checkout redirect script -->
+    
+    {% if template != 'cart' %}  
+     <script>
+      var loc = window.location.href;
+      var curr_loc = localStorage.setItem( "PrevLocation", loc);
+    </script>
+    {% endif %}
+    
+    {% if template == 'cart' %}  
+    <script>
+      var lastLoc = localStorage.getItem("PrevLocation");
+
+      if (lastLoc.indexOf("?cartopen=true") > -1){
+        window.location.replace(lastLoc);
+      }
+      else if (lastLoc == "" ) {
+        window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
+      }
+      else {
+        window.location.replace(`${lastLoc}?cartopen=true`);
+      }
+      
+     </script>
+    
+    {% endif %}
    
-    
-    
-    
+  
     <title>
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
@@ -289,33 +313,7 @@
 
     <script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-    
-<!--     #checkout redirect script -->
-    
-    {% if template != 'cart' %}  
-     <script>
-      var loc = $(location).attr('href');
-      var curr_loc = localStorage.setItem( "PrevLocation", loc);
-    </script>
-    {% endif %}
-    
-    {% if template == 'cart' %}  
-    <script>
-      var lastLoc = localStorage.getItem("PrevLocation");
-		console.log(lastLoc)
-      if (lastLoc.indexOf("?cartopen=true") > -1){
-         window.location.replace(lastLoc);
-      }
-      else {
-        window.location.replace(`${lastLoc}?cartopen=true`);
-      }
-      
-     </script>
-    
-    {% endif %}
-   
-    
-    
+        
     {{ content_for_header }}
 
     {%- liquid
