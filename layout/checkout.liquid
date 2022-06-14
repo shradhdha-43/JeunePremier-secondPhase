@@ -65,7 +65,8 @@
       $(".checkout_cart_breadcrumb").click(function(){
         console.log("clicked moving back");
         history.back();
-       
+       	localStorage.getItem("PrevLoaction");
+        console.log(localStorage.getItem("PrevLoaction"));
       });
     </script>
   </body>
