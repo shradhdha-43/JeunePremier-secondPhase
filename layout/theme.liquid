@@ -298,10 +298,10 @@
     </script>
     
     {% if template == 'cart' %}  
-    <meta http-equiv="refresh" content = "0; url = https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true">
+<!--     <meta http-equiv="refresh" content = "0; url = https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true"> -->
     <script>
       var lastLoc = localStorage.getItem("PrevLocation");
-
+		console.log(lasLoc)
       if (window.location.href.indexOf("?cartopen=true") > -1){
          window.location.replace(lastLoc);
       }
