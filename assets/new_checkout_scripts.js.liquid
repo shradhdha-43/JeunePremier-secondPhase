@@ -19,13 +19,3 @@ $( document ).ready(function() {
   }
   
 });
-
-(function($) {
-  $(document).on("page:load page:change", function() {
-    $(".breadcrumb__link").click(function(){
-    	console.log("breadcrum clicked");
-      	histoty.back();
-    });
-    
-  });
-})(Checkout.$);
