@@ -48,23 +48,23 @@
        
        
        if (window.location.href.indexOf("?") > -1 ) {
-         
+
          if(window.location.href.indexOf("?cartopen=true") > -1) {
-         	window.location.href.replace('&cartopen=true','');
-            localStorage.setItem( "PrevLocation", loc);
+           window.location.href.replace('?cartopen=true','&cartopen=true');
+           localStorage.setItem( "PrevLocation", loc);
          }
          else if (window.location.href.indexOf("&cartopen=true") > -1) {
-         	window.location.href.indexOf("?cartopen=true") > -1
-            localStorage.setItem( "PrevLocation", loc);
+           window.location.href.replace('&cartopen=true','?cartopen=true');
+           localStorage.setItem( "PrevLocation", loc);
          }
          else {
-         	localStorage.setItem( "PrevLocation", loc);
+           localStorage.setItem( "PrevLocation", loc);
          }
        }
        else {
-       	 localStorage.setItem( "PrevLocation", loc);
+         localStorage.setItem( "PrevLocation", loc);
        }
-       
+
        
     </script>
     {% endif %}
