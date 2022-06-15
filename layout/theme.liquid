@@ -23,31 +23,17 @@
      <script>
       var loc = window.location.href;
       
-      
-       if (window.location.href.indexOf("?") > -1 )
-       {
-         if (window.location.href.indexOf("?cartopen=true") > -1) 
-         {
-           let updatedUlr = window.location.href.replace('?cartopen=true','');
-           localStorage.setItem( "PrevLocation", updatedUlr );
-           window.location.replace(updatedUlr);
-         } 
-         else 
-         {
-             if (window.location.href.indexOf("&cartopen=true") > -1)
-             {
-               let updatedUlr = window.location.href.replace('&cartopen=true','');
-               localStorage.setItem( "PrevLocation", updatedUlr );
-               window.location.replace(updatedUlr);
-             }
-             else {
-               localStorage.setItem( "PrevLocation", loc);
-             }
-         }
+       if (
+         (window.location.href.indexOf("all?") > -1 && window.location.href.indexOf("?cartopen=true") > -1) ||
+         (window.location.href.indexOf("?") > -1 && window.location.href.indexOf("?cartopen=true") > -1)
+          ) {
+         let updatedUlr = window.location.href.replace('?cartopen=true','&cartopen=true');
+         console.log(updatedUlr);
+         localStorage.setItem( "PrevLocation", updatedUlr );
+         window.location.replace(updatedUlr);
        }
-       else 
-       {
-         localStorage.setItem( "PrevLocation", loc);
+       else {
+       	  var curr_loc = localStorage.setItem( "PrevLocation", loc);
        }
        
        
@@ -57,13 +43,11 @@
     {% if template == 'cart' %}  
     <script>
       var lastLoc = localStorage.getItem("PrevLocation");
-      var cartopen = "?cartopen=true";
-      
-      if(lastLoc.indexOf("?") > -1 ) {
-        cartopen = "&cartopen=true";
+
+      if (lastLoc.indexOf("?cartopen=true") > -1 || lastLoc.indexOf("&cartopen=true") > -1){
+        window.location.replace(lastLoc);
       }
-    
-      if (lastLoc == "" ) {
+      else if (lastLoc == "" ) {
         window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
       } 
       else {
