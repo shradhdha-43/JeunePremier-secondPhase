@@ -30,7 +30,7 @@
         
         localStorage.setItem("PrevLocation" , loc);
 	  	var getLoc = localStorage.getItem("PrevLocation");
-        window.location.replace('?cartopen=true','&cartopen=true');
+        window.location.replace(`${getLoc}&cartopen=true`);
       }
       
 
