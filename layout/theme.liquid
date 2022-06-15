@@ -22,13 +22,15 @@
     {% if template != 'cart' %}  
      <script>
       var loc = window.location.href;
+      var lastgetLoc = localStorage.getItem("PrevLocation");
       
        if (window.location.href.indexOf("?") > -1 )
        {
          if (window.location.href.indexOf("?cartopen=true") > -1) {
-           let updatedUlr = window.location.href.replace('?cartopen=true','');
-           localStorage.setItem( "PrevLocation", updatedUlr );
-           window.location.replace(updatedUlr);
+//            let updatedUlr = window.location.href.replace('?cartopen=true','');
+//            localStorage.setItem( "PrevLocation", updatedUlr );
+//            window.location.replace(updatedUlr);
+            window.location.replace(`${lastgetLoc}?cartopen=true`);
          } 
          else {
            if (window.location.href.indexOf("&cartopen=true") > -1) {
