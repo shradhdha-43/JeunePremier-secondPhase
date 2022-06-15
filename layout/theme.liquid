@@ -63,29 +63,30 @@
     
     {% if template == 'cart' %}  
     <script>
-//       var lastLoc = localStorage.getItem("PrevLocation");
-//       var cartopen = "?cartopen=true";
       var lastLocation = localStorage.getItem("PrevLocation");
       
-//       if(lastLoc.indexOf("?") > -1 ) {
-//         cartopen = "&cartopen=true";
-//       }
       
       if (lastLocation.includes("?filters") && lastLocation.includes("?cartopen=true")) {
-         	window.location.href.replace('?cartopen=true','&cartopen=true');
-            localStorage.setItem( "PrevLocation", lastLocation);
-       }
-       else
-       {
-       		localStorage.setItem( "PrevLocation", lastLocation);
-       }
+        window.location.href.replace('?cartopen=true','&cartopen=true');
+        localStorage.setItem( "PrevLocation", lastLocation);
+      }
+      else if(lastLocation.includes("?filters")) {
+        window.location.href.replace(`${lastLocation}&cartopen=true`);
+      }
+      else if(lastLocation.includes("?cartopen=true")) {
+        window.location.href.replace(`${lastLocation}`);
+      }
+      else
+      {
+        window.location.replace(`${lastLocation}?cartopen=true`);
+        localStorage.setItem( "PrevLocation", lastLocation);
+      }
+
     
       if (lastLocation == "" ) {
         window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
       } 
-//       else {
-//         window.location.replace(`${lastLoc}?cartopen=true`);
-//       }
+
       
        
     
