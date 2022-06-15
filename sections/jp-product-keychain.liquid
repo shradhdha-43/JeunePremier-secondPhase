@@ -577,7 +577,7 @@
                       $(this).addClass('added');   
                       
                       window.history.pushState({}, null, $(this).data('url'));
-                      {% render "checkout-open" %}
+                      localStorage.setItem( "PrevLocation", url );
                       updateBlocks($(this).data('url'));
                     });
                     }
@@ -592,11 +592,11 @@
                       $('.keychain-letter-select .letter-gold').removeClass('active').first().addClass('active');                      
                       if(protype == "charm") {
                       	window.history.pushState({}, null, $('.keychain-charm-select .charm-gold.active').data('url'));
-                        {% render "checkout-open" %}
+                        
                         updateBlocks($('.keychain-charm-select .charm-gold.active').data('url'));
                       } else {
                         window.history.pushState({}, null, $('.keychain-letter-select .letter-gold.active').data('url'));
-                        {% render "checkout-open" %}
+                        
                         updateBlocks($('.keychain-letter-select .letter-gold.active').data('url'));
                       }
                       $('.keychain-color-select .active').removeClass('active');
@@ -612,11 +612,11 @@
                       $('.keychain-letter-select .letter-rose').removeClass('active').first().addClass('active');                   
                       if(protype == "charm") {
                       	window.history.pushState({}, null, $('.keychain-charm-select .charm-rose.active').data('url'));
-                        {% render "checkout-open" %}
+                       
                       updateBlocks($('.keychain-charm-select .charm-rose.active').data('url'));
                       } else {
                         window.history.pushState({}, null, $('.keychain-letter-select .letter-rose.active').data('url'));
-                        {% render "checkout-open" %}
+                       
                       updateBlocks($('.keychain-letter-select .letter-rose.active').data('url'));
                       }
                       $('.keychain-color-select .active').removeClass('active');
@@ -632,11 +632,11 @@
                       $('.keychain-letter-select .letter-black').removeClass('active').first().addClass('active');                   
                       if(protype == "charm") {
                       	window.history.pushState({}, null, $('.keychain-charm-select .charm-black.active').data('url'));
-                        {% render "checkout-open" %}
+                        
                       updateBlocks($('.keychain-charm-select .charm-black.active').data('url'));
                       } else {
                         window.history.pushState({}, null, $('.keychain-letter-select .letter-black.active').data('url'));
-                        {% render "checkout-open" %}
+                        localStorage.setItem( "PrevLocation", url );
                       updateBlocks($('.keychain-letter-select .letter-black.active').data('url'));
                       }
                       $('.keychain-color-select .active').removeClass('active');
