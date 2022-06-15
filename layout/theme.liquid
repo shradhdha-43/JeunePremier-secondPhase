@@ -50,8 +50,8 @@
        
        if (lastLocation.includes("?filters") && lastLocation.includes("?cartopen=true")) {
          	window.location.href.replace('?cartopen=true','&cartopen=true');
+            localStorage.setItem( "PrevLocation", loc);
        }
-       
        else
        {
        		localStorage.setItem( "PrevLocation", loc);
