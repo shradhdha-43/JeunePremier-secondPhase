@@ -577,30 +577,7 @@
                       $(this).addClass('added');   
                       
                       window.history.pushState({}, null, $(this).data('url'));
-                      var loc = window.location.href;
-      
-                       if (window.location.href.indexOf("?") > -1 )
-                       {
-                         if (window.location.href.indexOf("?cartopen=true") > -1) {
-                           let updatedUlr = window.location.href.replace('?cartopen=true','');
-                           localStorage.setItem( "PrevLocation", updatedUlr );
-                           window.location.replace(updatedUlr);
-                         } 
-                         else {
-                           if (window.location.href.indexOf("&cartopen=true") > -1) {
-                             let updatedUlr = window.location.href.replace('&cartopen=true','');  
-                             localStorage.setItem( "PrevLocation", updatedUlr );
-                             window.location.replace(updatedUlr);
-                           }
-                           else {
-                             localStorage.setItem( "PrevLocation", loc);
-                           }
-                         }
-                       }
-                       else {
-                         var curr_loc = localStorage.setItem( "PrevLocation", loc);
-                       }
-       
+                      {% render "checkout-open" %}
                       updateBlocks($(this).data('url'));
                     });
                     }
@@ -615,55 +592,11 @@
                       $('.keychain-letter-select .letter-gold').removeClass('active').first().addClass('active');                      
                       if(protype == "charm") {
                       	window.history.pushState({}, null, $('.keychain-charm-select .charm-gold.active').data('url'));
-                        var loc = window.location.href;
-      
-                       if (window.location.href.indexOf("?") > -1 )
-                       {
-                         if (window.location.href.indexOf("?cartopen=true") > -1) {
-                           let updatedUlr = window.location.href.replace('?cartopen=true','');
-                           localStorage.setItem( "PrevLocation", updatedUlr );
-                           window.location.replace(updatedUlr);
-                         } 
-                         else {
-                           if (window.location.href.indexOf("&cartopen=true") > -1) {
-                             let updatedUlr = window.location.href.replace('&cartopen=true','');  
-                             localStorage.setItem( "PrevLocation", updatedUlr );
-                             window.location.replace(updatedUlr);
-                           }
-                           else {
-                             localStorage.setItem( "PrevLocation", loc);
-                           }
-                         }
-                       }
-                       else {
-                         var curr_loc = localStorage.setItem( "PrevLocation", loc);
-                       }
+                        {% render "checkout-open" %}
                         updateBlocks($('.keychain-charm-select .charm-gold.active').data('url'));
                       } else {
                         window.history.pushState({}, null, $('.keychain-letter-select .letter-gold.active').data('url'));
-                        var loc = window.location.href;
-      
-                       if (window.location.href.indexOf("?") > -1 )
-                       {
-                         if (window.location.href.indexOf("?cartopen=true") > -1) {
-                           let updatedUlr = window.location.href.replace('?cartopen=true','');
-                           localStorage.setItem( "PrevLocation", updatedUlr );
-                           window.location.replace(updatedUlr);
-                         } 
-                         else {
-                           if (window.location.href.indexOf("&cartopen=true") > -1) {
-                             let updatedUlr = window.location.href.replace('&cartopen=true','');  
-                             localStorage.setItem( "PrevLocation", updatedUlr );
-                             window.location.replace(updatedUlr);
-                           }
-                           else {
-                             localStorage.setItem( "PrevLocation", loc);
-                           }
-                         }
-                       }
-                       else {
-                         var curr_loc = localStorage.setItem( "PrevLocation", loc);
-                       }
+                        {% render "checkout-open" %}
                         updateBlocks($('.keychain-letter-select .letter-gold.active').data('url'));
                       }
                       $('.keychain-color-select .active').removeClass('active');
@@ -679,55 +612,11 @@
                       $('.keychain-letter-select .letter-rose').removeClass('active').first().addClass('active');                   
                       if(protype == "charm") {
                       	window.history.pushState({}, null, $('.keychain-charm-select .charm-rose.active').data('url'));
-                        var loc = window.location.href;
-      
-                       if (window.location.href.indexOf("?") > -1 )
-                       {
-                         if (window.location.href.indexOf("?cartopen=true") > -1) {
-                           let updatedUlr = window.location.href.replace('?cartopen=true','');
-                           localStorage.setItem( "PrevLocation", updatedUlr );
-                           window.location.replace(updatedUlr);
-                         } 
-                         else {
-                           if (window.location.href.indexOf("&cartopen=true") > -1) {
-                             let updatedUlr = window.location.href.replace('&cartopen=true','');  
-                             localStorage.setItem( "PrevLocation", updatedUlr );
-                             window.location.replace(updatedUlr);
-                           }
-                           else {
-                             localStorage.setItem( "PrevLocation", loc);
-                           }
-                         }
-                       }
-                       else {
-                         var curr_loc = localStorage.setItem( "PrevLocation", loc);
-                       }
+                        {% render "checkout-open" %}
                       updateBlocks($('.keychain-charm-select .charm-rose.active').data('url'));
                       } else {
                         window.history.pushState({}, null, $('.keychain-letter-select .letter-rose.active').data('url'));
-                        var loc = window.location.href;
-      
-                       if (window.location.href.indexOf("?") > -1 )
-                       {
-                         if (window.location.href.indexOf("?cartopen=true") > -1) {
-                           let updatedUlr = window.location.href.replace('?cartopen=true','');
-                           localStorage.setItem( "PrevLocation", updatedUlr );
-                           window.location.replace(updatedUlr);
-                         } 
-                         else {
-                           if (window.location.href.indexOf("&cartopen=true") > -1) {
-                             let updatedUlr = window.location.href.replace('&cartopen=true','');  
-                             localStorage.setItem( "PrevLocation", updatedUlr );
-                             window.location.replace(updatedUlr);
-                           }
-                           else {
-                             localStorage.setItem( "PrevLocation", loc);
-                           }
-                         }
-                       }
-                       else {
-                         var curr_loc = localStorage.setItem( "PrevLocation", loc);
-                       }
+                        {% render "checkout-open" %}
                       updateBlocks($('.keychain-letter-select .letter-rose.active').data('url'));
                       }
                       $('.keychain-color-select .active').removeClass('active');
@@ -743,55 +632,11 @@
                       $('.keychain-letter-select .letter-black').removeClass('active').first().addClass('active');                   
                       if(protype == "charm") {
                       	window.history.pushState({}, null, $('.keychain-charm-select .charm-black.active').data('url'));
-                        var loc = window.location.href;
-      
-                       if (window.location.href.indexOf("?") > -1 )
-                       {
-                         if (window.location.href.indexOf("?cartopen=true") > -1) {
-                           let updatedUlr = window.location.href.replace('?cartopen=true','');
-                           localStorage.setItem( "PrevLocation", updatedUlr );
-                           window.location.replace(updatedUlr);
-                         } 
-                         else {
-                           if (window.location.href.indexOf("&cartopen=true") > -1) {
-                             let updatedUlr = window.location.href.replace('&cartopen=true','');  
-                             localStorage.setItem( "PrevLocation", updatedUlr );
-                             window.location.replace(updatedUlr);
-                           }
-                           else {
-                             localStorage.setItem( "PrevLocation", loc);
-                           }
-                         }
-                       }
-                       else {
-                         var curr_loc = localStorage.setItem( "PrevLocation", loc);
-                       }
+                        {% render "checkout-open" %}
                       updateBlocks($('.keychain-charm-select .charm-black.active').data('url'));
                       } else {
                         window.history.pushState({}, null, $('.keychain-letter-select .letter-black.active').data('url'));
-                        var loc = window.location.href;
-      
-                       if (window.location.href.indexOf("?") > -1 )
-                       {
-                         if (window.location.href.indexOf("?cartopen=true") > -1) {
-                           let updatedUlr = window.location.href.replace('?cartopen=true','');
-                           localStorage.setItem( "PrevLocation", updatedUlr );
-                           window.location.replace(updatedUlr);
-                         } 
-                         else {
-                           if (window.location.href.indexOf("&cartopen=true") > -1) {
-                             let updatedUlr = window.location.href.replace('&cartopen=true','');  
-                             localStorage.setItem( "PrevLocation", updatedUlr );
-                             window.location.replace(updatedUlr);
-                           }
-                           else {
-                             localStorage.setItem( "PrevLocation", loc);
-                           }
-                         }
-                       }
-                       else {
-                         var curr_loc = localStorage.setItem( "PrevLocation", loc);
-                       }
+                        {% render "checkout-open" %}
                       updateBlocks($('.keychain-letter-select .letter-black.active').data('url'));
                       }
                       $('.keychain-color-select .active').removeClass('active');
