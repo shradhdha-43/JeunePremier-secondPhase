@@ -56,13 +56,16 @@
       
       if(lastLoc.indexOf("?") > -1 ) {
         cartopen = "&cartopen=true";
+        console.log("working 1");
       }
     
       if (lastLoc == "" ) {
         window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
+        console.log("working 2");
       } 
       else {
         window.location.replace(`${lastLoc}?cartopen=true`);
+        console.log("working 3");
       }
       
     
