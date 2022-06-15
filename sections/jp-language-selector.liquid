@@ -92,6 +92,7 @@
   console.log(count_initials_array);
 	
   console.log(newPathname)
+  newPathname = newPathname.replace(/([^:]\/)\/+/g, "$1")
   localStorage.setItem("slug", newPathname);
   
   
