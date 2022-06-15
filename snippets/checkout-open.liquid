@@ -1,7 +1,7 @@
 <!--     #checkout redirect script -->
 
 {% if template != 'cart' %}  
-<script>
+
   var loc = window.location.href;
 
   if (window.location.href.indexOf("?") > -1 )
@@ -27,11 +27,10 @@
   }
 
 
-</script>
 {% endif %}
 
 {% if template == 'cart' %}  
-<script>
+
   var lastLoc = localStorage.getItem("PrevLocation");
   var cartopen = "?cartopen=true";
 
@@ -52,5 +51,4 @@
 
 
 
-</script>
 {% endif %}
