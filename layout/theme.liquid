@@ -25,7 +25,7 @@
       
        if (
          (window.location.href.indexOf("all?") > -1 && window.location.href.indexOf("?cartopen=true") > -1) ||
-         (window.location.href.indexOf("?") > -1 && !window.location.href.indexOf("?cartopen=true") > -1)
+         (window.location.href.indexOf("?") > -1 && !(window.location.href.indexOf("?cartopen=true") > -1))
           ) {
          let updatedUlr = window.location.href.replace('?cartopen=true','&cartopen=true');
          console.log(updatedUlr);
