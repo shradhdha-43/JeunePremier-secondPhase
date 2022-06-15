@@ -57,8 +57,7 @@
       if(lastLoc.indexOf("?") > -1 ) {
         cartopen = "&cartopen=true";
       }
-    
-      if (lastLoc == "" ) {
+      else if (lastLoc == "" ) {
         window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
       } 
       else {
