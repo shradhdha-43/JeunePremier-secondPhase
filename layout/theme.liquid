@@ -34,11 +34,11 @@
       var getLoc = localStorage.getItem("PrevLocation");
     	
       if(getLoc == ""){
-      	window.location.href(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
+      	window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
       }
       
       if (getLoc.includes("?filter")){
-      	window.location.href(`${getLoc}&cartopen=true`);
+      	window.location.replace(`${getLoc}&cartopen=true`);
       }
       
 
