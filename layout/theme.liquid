@@ -22,6 +22,7 @@
     {% if template != 'cart' %}  
      <script>
       var loc = window.location.href;
+      localStorage.setItem( "PrevLocation", loc);
       
        if (window.location.href.indexOf("?") > -1 )
        {
