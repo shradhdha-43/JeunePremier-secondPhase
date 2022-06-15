@@ -46,6 +46,9 @@
       else if(getLoc.includes("?f")) {
       	window.location.replace(`${getLoc}&cartopen=true`);
       }
+      else if(getLoc.includes("?filters") && getLoc.includes("?cartopen=true")) {
+      	window.location.replace('?cartopen=true','&cartopen=true');
+      }
       else{
       	window.location.replace(`${getLoc}?cartopen=true`);
       }
