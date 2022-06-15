@@ -22,56 +22,118 @@
     {% if template != 'cart' %}  
     <script>
       var loc = window.location.href;
-      var lastLocation = localStorage.getItem("PrevLocation");
+      var lastLocation = localStorage.setItem("PrevLocation" , loc);
 
-      if (window.location.href.indexOf("?") > -1 )
-      {
-        if (window.location.href.indexOf("?cartopen=true") > -1) {
-          let updatedUlr = window.location.href.replace('?cartopen=true','');
-          localStorage.setItem( "PrevLocation", updatedUlr );
-          window.location.replace(updatedUlr);
-        } 
-        else {
-          if (window.location.href.indexOf("&cartopen=true") > -1) {
-            let updatedUlr = window.location.href.replace('&cartopen=true','');
-            localStorage.setItem( "PrevLocation", updatedUlr );
-            window.location.replace(updatedUlr);
-          }
-          else {
-            localStorage.setItem( "PrevLocation", loc);
-          }
-        }
-
-      }
-      else {
-        localStorage.setItem( "PrevLocation", loc);
-      }
-
-
+      
 
     </script>
     {% endif %}
 
     {% if template == 'cart' %}  
     <script>
-      var lastLoc = localStorage.getItem("PrevLocation");
-      var cartopen = "?cartopen=true";
-
-      if(lastLoc.indexOf("?") > -1 ) {
-        cartopen = "&cartopen=true";
+      var getLoc = localStorage.getItem("PrevLocation");
+    	
+      if(getLoc == ""){
+      	window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
       }
-
-      if (lastLoc == "" ) {
-        window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
-      } 
-      else {
-        window.location.replace(`${lastLoc}?cartopen=true`);
+      
+      if (getLoc.includes("?filter")){
+      	window.location.href.replace(`${getLoc}&cartopen=true`);
       }
-
+      
 
 
     </script>
     {% endif %}
+    
+<!--    ---------------------------------------------------------------------------------  -->
+    
+    {% comment %}
+        {% if template != 'cart' %}  
+     <script>
+      var loc = window.location.href;
+      localStorage.setItem("PrevLocation" , loc);
+      var lastLocation = localStorage.getItem("PrevLocation");
+      
+//        if (window.location.href.indexOf("?") > -1 )
+//        {
+//          if (window.location.href.indexOf("?cartopen=true") > -1) {
+//            let updatedUlr = window.location.href.replace('?cartopen=true','');
+//            localStorage.setItem( "PrevLocation", updatedUlr );
+//            window.location.replace(updatedUlr);
+//          } 
+//          else {
+//            if (window.location.href.indexOf("&cartopen=true") > -1) {
+//              let updatedUlr = window.location.href.replace('&cartopen=true','');
+//              localStorage.setItem( "PrevLocation", updatedUlr );
+//              window.location.replace(updatedUlr);
+//            }
+//            else {
+//              localStorage.setItem( "PrevLocation", loc);
+//            }
+//          }
+
+//        }
+//        else {
+//          	localStorage.setItem( "PrevLocation", loc);
+//        }
+       
+       
+       if (lastLocation.includes("?filters") && lastLocation.includes("?cartopen=true")) {
+         	window.location.href.replace('?cartopen=true','&cartopen=true');
+            localStorage.setItem( "PrevLocation", loc);
+       }
+       else
+       {
+       		localStorage.setItem( "PrevLocation", loc);
+       }
+       
+       
+    </script>
+    {% endif %}
+    
+    {% if template == 'cart' %}  
+    <script>
+      var lastLocation = localStorage.getItem("PrevLocation");
+      
+      
+      if (lastLocation.includes("?filters") && lastLocation.includes("?cartopen=true")) {
+        window.location.href.replace('?cartopen=true','&cartopen=true');
+        localStorage.setItem( "PrevLocation", lastLocation);
+      }
+      else if(lastLocation.includes("?filters")) {
+        window.location.href.replace(`${lastLocation}&cartopen=true`);
+        localStorage.setItem( "PrevLocation", lastLocation);
+        
+      }
+      else if(lastLocation.includes("?cartopen=true")) {
+        window.location.href.replace(`${lastLocation}`);
+        localStorage.setItem( "PrevLocation", lastLocation);
+      }
+      else if(lastLocation.includes("?")) {
+        window.location.href.replace(`${lastLocation}&cartopen=true`);
+        localStorage.setItem( "PrevLocation", lastLocation);
+      }
+      else
+      {
+        window.location.replace(`${lastLocation}?cartopen=true`);
+        localStorage.setItem( "PrevLocation", lastLocation);
+      }
+
+    
+      if (lastLocation == "" ) {
+        window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
+      } 
+
+      
+       
+    
+      
+   
+     </script>
+    {% endif %}
+    {% endcomment %}
+   
    
   
     <title>
