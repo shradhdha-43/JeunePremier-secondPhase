@@ -52,6 +52,9 @@
     
     {% if template == 'cart' %}  
     <script>
+      
+      var loc = window.location.href;
+      localStorage.setItem( "PrevLocation", loc);
       var lastLoc = localStorage.getItem("PrevLocation");
       var cartopen = "?cartopen=true";
       
