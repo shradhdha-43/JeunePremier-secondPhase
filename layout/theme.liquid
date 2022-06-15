@@ -40,7 +40,12 @@
       if (getLoc.includes("?filter")){
       	window.location.replace(`${getLoc}&cartopen=true`);
       }
-      
+      else if(getLoc.includes("?")) {
+      	window.location.replace(`${getLoc}&cartopen=true`);
+      }
+      else{
+      	window.location.replace(`${getLoc}?cartopen=true`);
+      }
 
 
     </script>
