@@ -82,9 +82,9 @@
 //   console.log(Slugarray)
   
 // //   #remove the country intial from the slug
-    count_initials_array = ["nl" , "fr" , "it" , "be" , "at" , "de" , "ch" , "dk" , "ru" , "da" , "fr-fr" , "en-nl" , "fr-nl" , "nl-nl" , "en-fr" , "en-it" , "it-it" , ".at/fr" , ".at" , ".ch/fr" , ".ch"]
-    count_initials_array = af.filter( ( el ) => !count_initials_array.includes( el ) );
-console.log(count_initials_array);
+  count_initials_array = ["nl" , "fr" , "it" , "be" , "at" , "de" , "ch" , "dk" , "ru" , "da" , "fr-fr" , "en-nl" , "fr-nl" , "nl-nl" , "en-fr" , "en-it" , "it-it" , ".at/fr" , ".at" , ".ch/fr" , ".ch"]
+  count_initials_array = af.filter( ( el ) => !count_initials_array.includes( el ) );
+  console.log(count_initials_array.join("/"));
 // //   #loop through the slug 
 //     var newPathname = "";
 //     for (i = 0; i < count_initials_array.length; i++) {
