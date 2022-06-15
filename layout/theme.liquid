@@ -22,28 +22,39 @@
     {% if template != 'cart' %}  
      <script>
       var loc = window.location.href;
+      var lastLoc = localStorage.getItem("PrevLocation");
       
-       if (window.location.href.indexOf("?") > -1 )
-       {
-         if (window.location.href.indexOf("?cartopen=true") > -1) {
-           let updatedUlr = window.location.href.replace('?cartopen=true','');
-           localStorage.setItem( "PrevLocation", updatedUlr );
-           window.location.replace(updatedUlr);
-         } 
-         else {
-           if (window.location.href.indexOf("&cartopen=true") > -1) {
-             let updatedUlr = window.location.href.replace('&cartopen=true','');
-             localStorage.setItem( "PrevLocation", updatedUlr );
-             window.location.replace(updatedUlr);
-           }
-           else {
-             localStorage.setItem( "PrevLocation", loc);
-           }
-         }
+//        if (window.location.href.indexOf("?") > -1 )
+//        {
+//          if (window.location.href.indexOf("?cartopen=true") > -1) {
+//            let updatedUlr = window.location.href.replace('?cartopen=true','');
+//            localStorage.setItem( "PrevLocation", updatedUlr );
+//            window.location.replace(updatedUlr);
+//          } 
+//          else {
+//            if (window.location.href.indexOf("&cartopen=true") > -1) {
+//              let updatedUlr = window.location.href.replace('&cartopen=true','');
+//              localStorage.setItem( "PrevLocation", updatedUlr );
+//              window.location.replace(updatedUlr);
+//            }
+//            else {
+//              localStorage.setItem( "PrevLocation", loc);
+//            }
+//          }
 
+//        }
+//        else {
+//          	localStorage.setItem( "PrevLocation", loc);
+//        }
+       
+       
+       if (lastLoc.includes("?")) {
+         console.log("includes")
+     localStorage.setItem( "PrevLocation", "suchit");
        }
-       else {
-         	localStorage.setItem( "PrevLocation", loc);
+       else
+       {
+       		localStorage.setItem( "PrevLocation", loc);
        }
        
        
