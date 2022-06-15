@@ -71,10 +71,10 @@
 //   var slug = window.location.pathname.split('/');
 //   var Slugarray = slug.slice(1);
   
-  var x = "{{ request.path }}";
-  var af = x.split("/");
-  console.log("slug: " + x);
-  console.log("af: " + af);
+  var path = "{{ request.path }}";
+  var split_path = path.split("/");
+  console.log("slug: " + path);
+  console.log("af: " + split_path);
   
 //   if (Slugarray[0] == "") {
 //   	Slugarray.shift();
@@ -83,9 +83,9 @@
   
 // //   #remove the country intial from the slug
   count_initials_array = ["nl" , "fr" , "it" , "be" , "at" , "de" , "ch" , "dk" , "ru" , "da" , "fr-fr" , "en-nl" , "fr-nl" , "nl-nl" , "en-fr" , "en-it" , "it-it" , ".at/fr" , ".at" , ".ch/fr" , ".ch"]
-  count_initials_array = af.filter( ( el ) => !count_initials_array.includes( el ) );
-  x = count_initials_array.join("/");
-  console.log(x);
+  count_initials_array = split_path.filter( ( el ) => !count_initials_array.includes( el ) );
+  path = count_initials_array.join("/");
+  console.log(path);
 // //   #loop through the slug 
 //     var newPathname = "";
 //     for (i = 0; i < count_initials_array.length; i++) {
@@ -98,8 +98,8 @@
 	
 //   console.log(newPathname)
   localStorage.setItem("slug", x);
-var slug = localStorage.getItem("slug");
-  
+  var slug = localStorage.getItem("slug");
+
    
   
   if( !country && !language ) {
