@@ -382,7 +382,9 @@ $(document).ready(function() {
       });
     }
   var collex = window.location.href.split('/').pop().split('?')[0];
-  $('.filter-type.collection').each(function() {console.log($(this).data('value'));console.log(collex);
+  $('.filter-type.collection').each(function() {
+//     console.log($(this).data('value'));
+//     console.log(collex);
     if($(this).data('value') == collex) {
       $(this).addClass('medium');
     }
