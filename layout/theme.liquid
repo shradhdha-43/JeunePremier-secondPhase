@@ -65,18 +65,29 @@
     <script>
       var lastLoc = localStorage.getItem("PrevLocation");
       var cartopen = "?cartopen=true";
+      var lastLocation = localStorage.getItem("PrevLocation");
       
-      if(lastLoc.indexOf("?") > -1 ) {
-        cartopen = "&cartopen=true";
-      }
+//       if(lastLoc.indexOf("?") > -1 ) {
+//         cartopen = "&cartopen=true";
+//       }
+      
+      if (lastLocation.includes("?filters") && lastLocation.includes("?cartopen=true")) {
+         	window.location.href.replace('?cartopen=true','&cartopen=true');
+            localStorage.setItem( "PrevLocation", loc);
+       }
+       else
+       {
+       		localStorage.setItem( "PrevLocation", loc);
+       }
     
       if (lastLoc == "" ) {
         window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
       } 
-      else {
-        window.location.replace(`${lastLoc}?cartopen=true`);
-      }
+//       else {
+//         window.location.replace(`${lastLoc}?cartopen=true`);
+//       }
       
+       
     
       
    
