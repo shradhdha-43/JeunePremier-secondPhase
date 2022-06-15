@@ -82,7 +82,7 @@
 //   console.log(Slugarray)
   
 // //   #remove the country intial from the slug
-  count_initials_array = ["nl" , "fr" , "it" , "be" , "at" , "de" , "ch" , "dk" , "ru" , "da" , "fr-fr" , "en-nl" , "fr-nl" , "nl-nl" , "en-fr" , "en-it" , "it-it" , ".at/fr" , ".at" , ".ch/fr" , ".ch"]
+  count_initials_array = ["nl" , "/fr" , "it" , "be" , "at" , "de" , "ch" , "dk" , "ru" , "da" , "fr-fr" , "en-nl" , "fr-nl" , "nl-nl" , "en-fr" , "en-it" , "it-it" , ".at/fr" , ".at" , ".ch/fr" , ".ch"]
   count_initials_array = split_path.filter( ( el ) => !count_initials_array.includes( el ) );
   path = count_initials_array.join("/");
   console.log(path);
