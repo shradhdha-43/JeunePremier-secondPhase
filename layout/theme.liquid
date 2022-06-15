@@ -35,10 +35,10 @@
          {
              if (window.location.href.indexOf("&cartopen=true") > -1)
              {
-               window.location.replace(`${newUpdatedUrl}&cartopen=true`);;
+               window.location.replace(`${newUpdatedUrl}&cartopen=true`);
              }
              else {
-               localStorage.setItem( "PrevLocation", loc);
+               window.location.replace(`${newUpdatedUrl}?cartopen=true`);
              }
          }
        }
