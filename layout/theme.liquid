@@ -40,7 +40,7 @@
       if (getLoc.includes("?filter")){
       	window.location.replace(`${getLoc}&cartopen=true`);
       }
-      else if(getLoc.includes("?cartopen=true")) {
+      else if(getLoc.includes("?cartopen=true") || getLoc.includes("&cartopen=true")) {
       	window.location.replace(`${getLoc}`);
       }
       else if(getLoc.includes("?f")) {
