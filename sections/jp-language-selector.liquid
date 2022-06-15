@@ -75,6 +75,10 @@
   if (Slugarray[0] == "") {
   	Slugarray.shift();
   }
+  else if(Slugarray.includes("&cartopen=true") || Slugarray.includes("?cartopen=true"))
+  {
+  	Slugarray.pop();
+  }
   console.log(Slugarray)
   
 //   #remove the country intial from the slug
