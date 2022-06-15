@@ -70,7 +70,7 @@
   var isAddCountryCode = "{{ section.settings.addcountryCode }}";
   var slug = window.location.pathname.split('/');console.log("{{localization.language.iso_code}}");
   {% if localization.country.iso_code == "BE" and localization.language.iso_code == "en" %}
-  var Slugarray = slug.slice(1);
+  var Slugarray = slug.slice(1); console.log('tesdfg')
   {% endif %}
   
   
