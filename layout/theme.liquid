@@ -62,10 +62,10 @@
       }
     
       if (lastLoc == "" ) {
-        window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}${cartopen}`);
+        window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
       } 
       else {
-        window.location.replace(`${lastLoc}${cartopen}`);
+        window.location.replace(`${lastLoc}?cartopen=true`);
       }
       
     
