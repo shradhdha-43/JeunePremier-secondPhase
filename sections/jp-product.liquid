@@ -640,7 +640,7 @@ $(document).ready(function(){
       .done(function( data ) {
         $('main').prepend(data['jp-product']);
         window.history.pushState({}, null, url);
-        {% render "checkout-open" %}
+        localStorage.setItem( "PrevLocation", url );
         $('.product-wrapper').last().parent().remove();
         
         if(window.keep) {
