@@ -71,9 +71,9 @@
 //   var slug = window.location.pathname.split('/');
 //   var Slugarray = slug.slice(1);
   
-//   var x = "{{ request.path }}";
-//   var af = window.location.pathname.split(x);
-  
+  var x = "{{ request.path }}";
+  var af = window.location.pathname.split(x);
+  console.log(x + af);
   
 //   if (Slugarray[0] == "") {
 //   	Slugarray.shift();
