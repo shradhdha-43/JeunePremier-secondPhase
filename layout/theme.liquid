@@ -76,6 +76,9 @@
       else if(lastLocation.includes("?cartopen=true")) {
         window.location.href.replace(`${lastLocation}`);
       }
+      else if(lastLocation.includes("?")) {
+        window.location.href.replace(`${lastLocation}`);
+      }
       else
       {
         window.location.replace(`${lastLocation}?cartopen=true`);
