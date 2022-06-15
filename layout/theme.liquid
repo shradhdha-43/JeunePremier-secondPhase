@@ -23,7 +23,12 @@
     <script>
       var loc = window.location.href;
       var lastLocation = localStorage.setItem("PrevLocation" , loc);
-
+	  var getLoc = localStorage.getItem("PrevLocation");
+      
+      
+      if(getLoc.includes("?filters") && getLoc.includes("?cartopen=true")) {
+        window.location.replace('?cartopen=true','&cartopen=true');
+      }
       
 
     </script>
