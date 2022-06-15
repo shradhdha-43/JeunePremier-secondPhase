@@ -639,7 +639,31 @@ $(document).ready(function(){
       })
       .done(function( data ) {
         $('main').prepend(data['jp-product']);
-        window.history.pushState({}, null, url);z
+        window.history.pushState({}, null, url);
+        var loc = window.location.href;
+      
+         if (window.location.href.indexOf("?") > -1 )
+         {
+           if (window.location.href.indexOf("?cartopen=true") > -1) {
+             let updatedUlr = window.location.href.replace('?cartopen=true','');
+             localStorage.setItem( "PrevLocation", updatedUlr );
+             window.location.replace(updatedUlr);
+           } 
+           else {
+             if (window.location.href.indexOf("&cartopen=true") > -1) {
+               let updatedUlr = window.location.href.replace('&cartopen=true','');  
+               localStorage.setItem( "PrevLocation", updatedUlr );
+               window.location.replace(updatedUlr);
+             }
+             else {
+               localStorage.setItem( "PrevLocation", loc);
+             }
+           }
+         }
+         else {
+           var curr_loc = localStorage.setItem( "PrevLocation", loc);
+         }
+       
         $('.product-wrapper').last().parent().remove();
         
         if(window.keep) {
