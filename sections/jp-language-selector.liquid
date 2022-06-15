@@ -96,7 +96,7 @@
 	
 //   console.log(newPathname)
   localStorage.setItem("slug", x);
-  
+var slug = localStorage.getItem("slug");
   
    
   
@@ -179,7 +179,7 @@
               lang = 'https://www.jeunepremier.com/';
               cont = '';
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
-                lang = lang + '';
+                lang = lang + slug;
               }
               else {
               	lang = lang + data.suggestions[0].parts.language.handle.toLowerCase();
