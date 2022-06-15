@@ -68,8 +68,10 @@
   var storeCountry = "{{ localization.country.name }}";
   var storeLanguage = "{{ localization.language.name }}";
   var isAddCountryCode = "{{ section.settings.addcountryCode }}";
-  var slug = window.location.pathname.split('/');
+  var slug = window.location.pathname.split('/');console.log("localization.language.iso_code");
+  {% if localization.country.iso_code == "BE" and localization.language.iso_code == "EN" %}
   var Slugarray = slug.slice(1);
+  {% endif %}
   
   
   if (Slugarray[0] == "") {
