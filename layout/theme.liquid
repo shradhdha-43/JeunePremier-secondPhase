@@ -73,12 +73,16 @@
       }
       else if(lastLocation.includes("?filters")) {
         window.location.href.replace(`${lastLocation}&cartopen=true`);
+        localStorage.setItem( "PrevLocation", lastLocation);
+        
       }
       else if(lastLocation.includes("?cartopen=true")) {
         window.location.href.replace(`${lastLocation}`);
+        localStorage.setItem( "PrevLocation", lastLocation);
       }
       else if(lastLocation.includes("?")) {
         window.location.href.replace(`${lastLocation}&cartopen=true`);
+        localStorage.setItem( "PrevLocation", lastLocation);
       }
       else
       {
