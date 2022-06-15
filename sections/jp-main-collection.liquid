@@ -457,6 +457,30 @@ $(document).ready(function() {
     }
     var url = 'https://'+window.location.hostname+'{%- unless routes.root_url == '/' -%}{{ routes.root_url }}{%- endunless -%}/collections/'+window.location.href.split('/').pop().split('?')[0]+sortx+filtersx;
     window.history.pushState({}, null, url);
+    var loc = window.location.href;
+      
+       if (window.location.href.indexOf("?") > -1 )
+       {
+         if (window.location.href.indexOf("?cartopen=true") > -1) {
+           let updatedUlr = window.location.href.replace('?cartopen=true','');
+           localStorage.setItem( "PrevLocation", updatedUlr );
+           window.location.replace(updatedUlr);
+         } 
+         else {
+           if (window.location.href.indexOf("&cartopen=true") > -1) {
+             let updatedUlr = window.location.href.replace('&cartopen=true','');  
+             localStorage.setItem( "PrevLocation", updatedUlr );
+             window.location.replace(updatedUlr);
+           }
+           else {
+             localStorage.setItem( "PrevLocation", loc);
+           }
+         }
+       }
+       else {
+         var curr_loc = localStorage.setItem( "PrevLocation", loc);
+       }
+       
     $.ajax({
       url: url,
       method: "GET"
@@ -511,6 +535,30 @@ $(document).ready(function() {
     }
     var url = 'https://'+window.location.hostname+'{%- unless routes.root_url == '/' -%}{{ routes.root_url }}{%- endunless -%}/collections/'+window.location.href.split('/').pop().split('?')[0]+sortx+filtersx;
     window.history.pushState({}, null, url);
+    var loc = window.location.href;
+      
+       if (window.location.href.indexOf("?") > -1 )
+       {
+         if (window.location.href.indexOf("?cartopen=true") > -1) {
+           let updatedUlr = window.location.href.replace('?cartopen=true','');
+           localStorage.setItem( "PrevLocation", updatedUlr );
+           window.location.replace(updatedUlr);
+         } 
+         else {
+           if (window.location.href.indexOf("&cartopen=true") > -1) {
+             let updatedUlr = window.location.href.replace('&cartopen=true','');  
+             localStorage.setItem( "PrevLocation", updatedUlr );
+             window.location.replace(updatedUlr);
+           }
+           else {
+             localStorage.setItem( "PrevLocation", loc);
+           }
+         }
+       }
+       else {
+         var curr_loc = localStorage.setItem( "PrevLocation", loc);
+       }
+       
     runFilter();
   });
 
@@ -546,6 +594,30 @@ $(document).ready(function() {
     }    
     var url = 'https://'+window.location.hostname+'{%- unless routes.root_url == '/' -%}{{ routes.root_url }}{%- endunless -%}/collections/'+collx+sortx+filtersx;
     window.history.pushState({}, null, url);
+    var loc = window.location.href;
+      
+       if (window.location.href.indexOf("?") > -1 )
+       {
+         if (window.location.href.indexOf("?cartopen=true") > -1) {
+           let updatedUlr = window.location.href.replace('?cartopen=true','');
+           localStorage.setItem( "PrevLocation", updatedUlr );
+           window.location.replace(updatedUlr);
+         } 
+         else {
+           if (window.location.href.indexOf("&cartopen=true") > -1) {
+             let updatedUlr = window.location.href.replace('&cartopen=true','');  
+             localStorage.setItem( "PrevLocation", updatedUlr );
+             window.location.replace(updatedUlr);
+           }
+           else {
+             localStorage.setItem( "PrevLocation", loc);
+           }
+         }
+       }
+       else {
+         var curr_loc = localStorage.setItem( "PrevLocation", loc);
+       }
+       
     $.ajax({
       url: url,
       method: "GET"
