@@ -38,19 +38,25 @@
       }
       
       if (getLoc.includes("?filter")){
-      	window.location.replace(`${getLoc}&cartopen=true`);
+        window.location.replace(`${getLoc}&cartopen=true`);
       }
-      else if(getLoc.includes("?cartopen=true") || getLoc.includes("&cartopen=true")) {
-      	window.location.replace(`${getLoc}`);
+      else if
+        (getLoc.includes("?cartopen=true") || getLoc.includes("&cartopen=true")) 
+        								||
+        (getLoc.includes("?filter") && getLoc.includes("&cartopen=true"))
+
+      {
+        window.location.replace(`${getLoc}`);
+
       }
       else if(getLoc.includes("?f")) {
-      	window.location.replace(`${getLoc}&cartopen=true`);
+        window.location.replace(`${getLoc}&cartopen=true`);
       }
       else if(getLoc.includes("?filters") && getLoc.includes("?cartopen=true")) {
-      	window.location.replace('?cartopen=true','&cartopen=true');
+        window.location.replace('?cartopen=true','&cartopen=true');
       }
       else{
-      	window.location.replace(`${getLoc}?cartopen=true`);
+        window.location.replace(`${getLoc}?cartopen=true`);
       }
 
 
