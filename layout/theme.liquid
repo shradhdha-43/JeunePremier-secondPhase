@@ -23,9 +23,9 @@
     <script>
       var loc = window.location.href;
       localStorage.setItem("PrevLocation" , loc);
-	  var getLoc = localStorage.getItem("PrevLocation");
+	  var updatedLoc = localStorage.getItem("PrevLocation");
       
-      if(getLoc.includes("?filters") && getLoc.includes("?cartopen=true")) {
+      if(updatedLoc.includes("?filters") && updatedLoc.includes("?cartopen=true")) {
 //         localStorage.setItem("PrevLocation" , loc);
 // 	  	var getLoc = localStorage.getItem("PrevLocation");
         window.location.replace('?cartopen=true','&cartopen=true');
