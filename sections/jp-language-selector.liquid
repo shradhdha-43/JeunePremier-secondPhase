@@ -187,7 +187,7 @@
                 lang = lang + slug;
               }
               else {
-              	lang = lang + data.suggestions[0].parts.language.handle.toLowerCase() + slug;
+              	lang = lang + data.suggestions[0].parts.language.handle.toLowerCase() + "/" + slug;
               }
             }
             
@@ -261,7 +261,7 @@
                 lang = lang + slug;
               }
               else {
-              	lang = lang + data.suggestions[0].parts.language.handle.toLowerCase() + slug;
+              	lang = lang + data.suggestions[0].parts.language.handle.toLowerCase() + "/" + slug;
               }
             }
             
@@ -350,7 +350,7 @@
         lang = lang + slug;
       }
       else {
-        lang = lang + langh + slug;
+        lang = lang + langh + "/" + slug;
       }
     }
     
@@ -488,7 +488,7 @@
             lang = lang + slug ;
           }
           else {
-            lang = lang + langCode + slug;
+            lang = lang + langCode + "/" + slug;
           } 
         }
         
