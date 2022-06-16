@@ -61,9 +61,10 @@
         window.location.replace('?cartopen=true','&cartopen=true');
       }
       else if(getLoc.endsWith("?")){
-        console.log(getLoc.split("?"));
-//         console.log(Array.from(getLoc).pop());
+
         window.location.replace(`${getLoc}&cartopen=true`);
+        console.log(getLoc.split("?"));
+        console.log(Array.from(getLoc).pop());
       }
       else{
         console.log(getLoc.substring(getLoc.lastIndexOf('?') + 1));
