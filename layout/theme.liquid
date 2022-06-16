@@ -60,12 +60,8 @@
       else if(getLoc.includes("?filters") && getLoc.includes("?cartopen=true")) {
         window.location.replace('?cartopen=true','&cartopen=true');
       }
-      else if(getLoc.includes("??")){
-        const segments = new URL(href).pathname.split('/');
-        const last = segments.pop() || segments.pop(); // Handle potential trailing slash
-        console.log(last);
-        console(getLoc.pop());
-        window.location.replace(`${getLoc}?cartopen=true`);
+      else if(window.location.href.endsWith("?")){
+        window.location.replace(`${getLoc}cartopen=true`);
       }
       else{
         console.log(getLoc.substring(getLoc.lastIndexOf('?') + 1));
