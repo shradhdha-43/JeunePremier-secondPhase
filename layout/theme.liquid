@@ -60,6 +60,10 @@
       else if(getLoc.includes("?filters") && getLoc.includes("?cartopen=true")) {
         window.location.replace('?cartopen=true','&cartopen=true');
       }
+      else if(getLoc.substring(getLoc.lastIndexOf('?') + 1)){
+        getLoc.pop();
+        window.location.replace(`${getLoc}?cartopen=true`);
+      }
       else{
         window.location.replace(`${getLoc}?cartopen=true`);
       }
