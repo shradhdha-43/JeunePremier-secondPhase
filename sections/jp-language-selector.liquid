@@ -76,12 +76,9 @@
   console.log("path: " + path);
   console.log("split_path: " + split_path);
   removeCountryInitial();
-//   if (Slugarray[0] == "") {
-//   	Slugarray.shift();
-//   }
-//   console.log(Slugarray)
+
   
-// //   #remove the country intial from the slug
+//   #remove the country intial from the slug
   function removeCountryInitial(){
     count_initials_array = ["nl" , "fr" , "it" , "be" , "at" , "de" , "ch" , "dk" , "ru" , "da" , "fr-fr" , "en-nl" , "fr-nl" , "nl-nl" , "en-fr" , "en-it" , "it-it" , ".at/fr" , ".at" , ".ch/fr" , ".ch"]
     count_initials_array = split_path.filter( ( el ) => !count_initials_array.includes( el ) );
@@ -89,17 +86,6 @@
     console.log(path);
   }
 
-// //   #loop through the slug 
-//     var newPathname = "";
-//     for (i = 0; i < count_initials_array.length; i++) {
-//       newPathname += "/";
-//       newPathname += count_initials_array[i];
-//     }
-  
-  
-//   console.log(count_initials_array);
-	
-//   console.log(newPathname)
   if(path.includes("/404") ){
     path = "";
   }
