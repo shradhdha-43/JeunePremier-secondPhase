@@ -577,6 +577,7 @@
                       $(this).addClass('added');   
                       
                       window.history.pushState({}, null, $(this).data('url'));
+                      localStorage.setItem( "PrevLocation", $(this).data('url'));
                       updateBlocks($(this).data('url'));
                     });
                     }
@@ -591,9 +592,11 @@
                       $('.keychain-letter-select .letter-gold').removeClass('active').first().addClass('active');                      
                       if(protype == "charm") {
                       	window.history.pushState({}, null, $('.keychain-charm-select .charm-gold.active').data('url'));
+                        localStorage.setItem( "PrevLocation", $('.keychain-charm-select .charm-gold.active').data('url'));
                         updateBlocks($('.keychain-charm-select .charm-gold.active').data('url'));
                       } else {
                         window.history.pushState({}, null, $('.keychain-letter-select .letter-gold.active').data('url'));
+                        localStorage.setItem( "PrevLocation", $('.keychain-letter-select .letter-gold.active').data('url'));
                         updateBlocks($('.keychain-letter-select .letter-gold.active').data('url'));
                       }
                       $('.keychain-color-select .active').removeClass('active');
@@ -609,9 +612,11 @@
                       $('.keychain-letter-select .letter-rose').removeClass('active').first().addClass('active');                   
                       if(protype == "charm") {
                       	window.history.pushState({}, null, $('.keychain-charm-select .charm-rose.active').data('url'));
+                        localStorage.setItem( "PrevLocation", $('.keychain-charm-select .charm-rose.active').data('url'));
                       updateBlocks($('.keychain-charm-select .charm-rose.active').data('url'));
                       } else {
                         window.history.pushState({}, null, $('.keychain-letter-select .letter-rose.active').data('url'));
+                        localStorage.setItem( "PrevLocation", $('.keychain-letter-select .letter-rose.active').data('url'));
                       updateBlocks($('.keychain-letter-select .letter-rose.active').data('url'));
                       }
                       $('.keychain-color-select .active').removeClass('active');
@@ -627,9 +632,11 @@
                       $('.keychain-letter-select .letter-black').removeClass('active').first().addClass('active');                   
                       if(protype == "charm") {
                       	window.history.pushState({}, null, $('.keychain-charm-select .charm-black.active').data('url'));
+                        localStorage.setItem( "PrevLocation", $('.keychain-charm-select .charm-black.active').data('url'));
                       updateBlocks($('.keychain-charm-select .charm-black.active').data('url'));
                       } else {
                         window.history.pushState({}, null, $('.keychain-letter-select .letter-black.active').data('url'));
+                        localStorage.setItem( "PrevLocation", $('.keychain-letter-select .letter-black.active').data('url'));
                       updateBlocks($('.keychain-letter-select .letter-black.active').data('url'));
                       }
                       $('.keychain-color-select .active').removeClass('active');
