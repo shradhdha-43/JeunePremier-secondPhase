@@ -138,7 +138,7 @@
           if(data.suggestions[0].parts.country) {
             
             if(isAddCountryCode == 'true') {
-              cont = cont + '-' + data.suggestions[0].parts.country.handle.toLowerCase();
+              cont = cont + '-' + data.suggestions[0].parts.country.handle.toLowerCase() + slug;
             }
             
             if(data.detected_values.country.handle.toLowerCase() == 'dk') {
@@ -213,7 +213,7 @@
           else {
             
             if(isAddCountryCode == 'true') {
-              cont = cont + '-' + data.detected_values.country.handle.toLowerCase();
+              cont = cont + '-' + data.detected_values.country.handle.toLowerCase() + slug;
             }
             
             if(data.detected_values.country.handle.toLowerCase() == 'dk') {
