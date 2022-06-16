@@ -19,57 +19,37 @@
    
    <!--     #checkout redirect script -->
 
+    {% if template == '404' %}  
+    <script>
+      var getLoc = window.location.href;
+      if(getLoc.includes("cartopen=true")) {
+        window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
+      }
+    </script>
+    {% endif %}
     {% if template != 'cart' %}  
     <script>
       var loc = window.location.href;
       localStorage.setItem("PrevLocation" , loc);
-	  var updatedLoc = localStorage.getItem("PrevLocation");
-      
-      if(updatedLoc.includes("?filters") && updatedLoc.includes("?cartopen=true")) {
-//         localStorage.setItem("PrevLocation" , loc);
-// 	  	var getLoc = localStorage.getItem("PrevLocation");
-        window.location.replace('?cartopen=true','&cartopen=true');
-      }
-      
-
     </script>
     {% endif %}
-
     {% if template == 'cart' %}  
     <script>
       var getLoc = localStorage.getItem("PrevLocation");
     	
-      if(getLoc == ""){
+      if(getLoc == "" || getLoc == null){
       	window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
-      }
-      
-      
-      if ( (getLoc.includes("?cartopen=true") || getLoc.includes("&cartopen=true")) || (getLoc.includes("?filter") && getLoc.includes("&cartopen=true")))
-
-      {
-        window.location.replace(`${getLoc}`);
-
-      }
-      else if (getLoc.includes("?filter")){
-        window.location.replace(`${getLoc}&cartopen=true`);
-      }
-      
-      else if(getLoc.includes("?f") || getLoc.includes("all?")) {
-        window.location.replace(`${getLoc}&cartopen=true`);
-      }
-      else if(getLoc.includes("?filters") && getLoc.includes("?cartopen=true")) {
-        window.location.replace('?cartopen=true','&cartopen=true');
-      }
-      else if(getLoc.endsWith("?")){
-       getLoc  = getLoc.split("?");
-        window.location.replace(`${getLoc[0]}?cartopen=true`);
-      }
-      else{
-        console.log(getLoc.substring(getLoc.lastIndexOf('?') + 1));
-        window.location.replace(`${getLoc}?cartopen=true`);
-      }
-
-
+      } else {
+        if(getLoc.includes("cartopen=true")) {
+          window.location.replace(`${getLoc}`);
+        } else {
+          if(getLoc.includes("?")) {
+            window.location.replace(`${getLoc}&cartopen=true`);
+          } else {
+            window.location.replace(`${getLoc}?cartopen=true`);
+          }
+        }
+      }      
     </script>
     {% endif %}
     
