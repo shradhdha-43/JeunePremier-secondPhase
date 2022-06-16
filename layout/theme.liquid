@@ -16,10 +16,30 @@
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
-    {% if template == 'cart' %}  
-    <meta http-equiv="refresh" content = "0; url = https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true">
+    
+    {% if template != 'cart' %}  
     <script>
-      window.location.replace("https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true");
+      var loc = window.location.href;
+      localStorage.setItem("PrevLocation" , loc);
+    </script>
+    {% endif %}
+    {% if template == 'cart' %}  
+    <script>
+      var getLoc = localStorage.getItem("PrevLocation");
+    	
+      if(getLoc == "" || getLoc == null){
+      	window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
+      } else {
+        if(getLoc.includes("cartopen=true")) {
+          window.location.replace(`${getLoc}`);
+        } else {
+          if(getLoc.includes("?")) {
+            window.location.replace(`${getLoc}&cartopen=true`);
+          } else {
+            window.location.replace(`${getLoc}?cartopen=true`);
+          }
+        }
+      }      
     </script>
     {% endif %}
     <title>
