@@ -100,6 +100,9 @@
 //   console.log(count_initials_array);
 	
 //   console.log(newPathname)
+  if(path.includes("/404") ){
+    path = "";
+  }
   localStorage.setItem("slug", path);
   var slug = localStorage.getItem("slug");
 
