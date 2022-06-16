@@ -17,6 +17,14 @@
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
     
+    {% if template == '404' %}  
+    <script>
+      var getLoc = localStorage.getItem("PrevLocation");
+      if(getLoc.includes("cartopen=true")) {
+        window.location.replace(`https://{{ shop.domain }}{{ routes.root_url }}?cartopen=true`);
+      }
+    </script>
+    {% endif %}
     {% if template != 'cart' %}  
     <script>
       var loc = window.location.href;
