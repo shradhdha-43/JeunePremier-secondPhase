@@ -60,9 +60,6 @@
       else if(getLoc.includes("?filters") && getLoc.includes("?cartopen=true")) {
         window.location.replace('?cartopen=true','&cartopen=true');
       }
-      if (window.location.href.indexOf("?") > -1) {
-      alert("? detected");
-     }
       else{
         window.location.replace(`${getLoc}?cartopen=true`);
       }
