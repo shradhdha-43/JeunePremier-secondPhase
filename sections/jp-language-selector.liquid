@@ -181,13 +181,13 @@
             }
             
             if(data.suggestions[0].parts.country.handle.toLowerCase() == 'be') {
-              lang = 'https://www.jeunepremier.com/';
+              lang = 'https://www.jeunepremier.com';
               cont = '';
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
                 lang = lang + slug;
               }
               else {
-              	lang = lang + data.suggestions[0].parts.language.handle.toLowerCase() + slug;
+              	lang = lang + "/" + data.suggestions[0].parts.language.handle.toLowerCase() + slug;
               }
             }
             
@@ -255,13 +255,13 @@
             }
             
             if(data.detected_values.country.handle.toLowerCase() == 'be') {
-              lang = 'https://www.jeunepremier.com/';
+              lang = 'https://www.jeunepremier.com';
               cont = '';
               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
                 lang = lang + slug;
               }
               else {
-              	lang = lang + data.suggestions[0].parts.language.handle.toLowerCase() + slug;
+              	lang = lang + "/" + data.suggestions[0].parts.language.handle.toLowerCase() + slug;
               }
             }
             
@@ -344,13 +344,13 @@
     }
     
     if(conth == 'be') {
-      lang = 'https://www.jeunepremier.com/';
+      lang = 'https://www.jeunepremier.com';
       cont = '';
       if(langh == 'en') {
         lang = lang + slug;
       }
       else {
-        lang = lang + langh + slug;
+        lang = lang + "/" + langh + slug;
       }
     }
     
@@ -482,13 +482,13 @@
         }
 
         if(countryCode == 'be') {
-          lang = 'https://www.jeunepremier.com/';
+          lang = 'https://www.jeunepremier.com';
           cont = '';
           if(langCode == 'en') {
             lang = lang + slug ;
           }
           else {
-            lang = lang + langCode + slug;
+            lang = lang + "/" + langCode + slug;
           } 
         }
         
