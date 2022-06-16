@@ -26,8 +26,8 @@
 	  var getLoc = localStorage.getItem("PrevLocation");
       
       if(getLoc.includes("?filters") && getLoc.includes("?cartopen=true")) {
-        localStorage.setItem("PrevLocation" , loc);
-	  	var getLoc = localStorage.getItem("PrevLocation");
+//         localStorage.setItem("PrevLocation" , loc);
+// 	  	var getLoc = localStorage.getItem("PrevLocation");
         window.location.replace('?cartopen=true','&cartopen=true');
       }
       
