@@ -494,6 +494,7 @@
         localStorage.setItem("lang", $('#language-selector').find("option:selected").val());
         localStorage.setItem("conth", countryCode);
         localStorage.setItem("langh", langCode);
+        redirectUrl = redirectUrl.replace(/([^:]\/)\/+/g, "$1");
         window.location.replace(redirectUrl);
       }
     });
