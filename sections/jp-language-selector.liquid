@@ -84,8 +84,9 @@
 
   if(path.includes("/404") ){
     path = "";
-    console.log(window.location.host)
-//     window.location.replace("https://www.jeunepremier.com");
+    var redirecturl = window.location.host
+//     console.log(window.location.host)
+    window.location.replace(redirecturl);
   }
   localStorage.setItem("slug", path);
   var slug = localStorage.getItem("slug");
