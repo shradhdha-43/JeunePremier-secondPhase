@@ -68,10 +68,13 @@
   var storeCountry = "{{ localization.country.name }}";
   var storeLanguage = "{{ localization.language.name }}";
   var isAddCountryCode = "{{ section.settings.addcountryCode }}";
-
+//   var slug = window.location.pathname.split('/');
+//   var Slugarray = slug.slice(1);
   
   var path = "{{ request.path }}";
   var split_path = path.split("/");
+  console.log("path: " + path);
+  console.log("split_path: " + split_path);
   removeCountryInitial();
 
   
@@ -80,13 +83,12 @@
     count_initials_array = ["nl" , "fr" , "it" , "be" , "-be" , "at" , "de" , "ch" , "dk" , "ru" , "da" , "fr-fr" , "en-nl" , "fr-nl" , "nl-nl" , "en-fr" , "en-it" , "it-it" , ".at/fr" , ".at" , ".ch/fr" , ".ch"]
     count_initials_array = split_path.filter( ( el ) => !count_initials_array.includes( el ) );
     path = count_initials_array.join("/");
+    console.log(path);
   }
 
   if(path.includes("/404") ){
     path = "";
-    window.location.replace("https://www.jeunepremier.com");
   }
-  
   localStorage.setItem("slug", path);
   var slug = localStorage.getItem("slug");
 
@@ -178,14 +180,14 @@
               }
             }
             
-//             if(data.suggestions[0].parts.country.handle.toLowerCase() == 'nl') {
-//               lang = 'https://www.jeunepremier.com';
-//               cont = '';
-//               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'fr') {
-//                 lang = lang + "/fr" + slug;
-//               }
+            if(data.suggestions[0].parts.country.handle.toLowerCase() == 'nl') {
+              lang = 'https://www.jeunepremier.com';
+              cont = '';
+              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'fr') {
+                lang = lang + "/fr" + slug;
+              }
            
-//             }
+            }
             
             if(data.suggestions[0].parts.language.handle.toLowerCase() == 'ru') {
               lang = 'https://www.jeune-premier.ru/';
@@ -207,7 +209,6 @@
             
             if(isAddCountryCode == 'true') {
               cont = cont + '-' + data.detected_values.country.handle.toLowerCase() + slug;
-              console.log(cont)
             }
             
             if(data.detected_values.country.handle.toLowerCase() == 'dk') {
@@ -262,14 +263,14 @@
               }
             }
             
-//             if(data.suggestions[0].parts.country.handle.toLowerCase() == 'nl') {
-//               lang = 'https://www.jeunepremier.com';
-//               cont = '';
-//               if(data.suggestions[0].parts.language.handle.toLowerCase() == 'fr') {
-//                 lang = lang + "/fr" + slug;
-//               }
+            if(data.suggestions[0].parts.country.handle.toLowerCase() == 'nl') {
+              lang = 'https://www.jeunepremier.com';
+              cont = '';
+              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'fr') {
+                lang = lang + "/fr" + slug;
+              }
            
-//             }
+            }
             
             if(data.suggestions[0].parts.language.handle.toLowerCase() == 'ru') {
               lang = 'https://www.jeune-premier.ru/';
@@ -360,14 +361,14 @@
       }
     }
     
-//     if(conth == 'nl') {
-//       lang = 'https://www.jeunepremier.com';
-//       cont = '';
-//       if(langh == 'fr') {
-//         lang = lang + '/fr' + slug;
-//       }
+    if(conth == 'nl') {
+      lang = 'https://www.jeunepremier.com';
+      cont = '';
+      if(langh == 'fr') {
+        lang = lang + '/fr' + slug;
+      }
      
-//     }
+    }
     
     if(langh == 'ru') {
       lang = 'https://www.jeune-premier.ru/';
@@ -507,14 +508,14 @@
           } 
         }
         
-//         if(conth == 'nl') {
-//           lang = 'https://www.jeunepremier.com';
-//           cont = '';
-//           if(langh == 'fr') {
-//             lang = lang + '/fr' + slug;
-//           }
+        if(conth == 'nl') {
+          lang = 'https://www.jeunepremier.com';
+          cont = '';
+          if(langh == 'fr') {
+            lang = lang + '/fr' + slug;
+          }
 
-//         }
+        }
         
         if(langCode == 'ru') {
           lang = 'https://www.jeune-premier.ru/';
