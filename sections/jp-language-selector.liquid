@@ -88,7 +88,7 @@
 
   if(path.includes("/404") ){
     path = "";
-    window.location.replace(window.location.host);
+    window.location(window.location.host);
   }
   localStorage.setItem("slug", path);
   var slug = localStorage.getItem("slug");
