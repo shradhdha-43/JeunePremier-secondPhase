@@ -209,6 +209,7 @@
             
             if(isAddCountryCode == 'true') {
               cont = cont + '-' + data.detected_values.country.handle.toLowerCase() + slug;
+              console.log(cont)
             }
             
             if(data.detected_values.country.handle.toLowerCase() == 'dk') {
