@@ -90,17 +90,7 @@
     path = "";
     window.location.replace("https://www.jeunepremier.com");
   }
-  
-  var url = window.location.href;
-    function UrlExists(url) {
-        var http = new XMLHttpRequest();
-        http.open('HEAD', url, false);
-        http.send();
-        if (http.status != 404)
-            console.log("true");
-        else
-            console.log("false");
-    }
+
   
   
   localStorage.setItem("slug", path);
