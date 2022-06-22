@@ -88,6 +88,7 @@
 
   if(path.includes("/404") ){
     path = "";
+    window.location.replace("https://www.jeunepremier.com");
   }
   localStorage.setItem("slug", path);
   var slug = localStorage.getItem("slug");
