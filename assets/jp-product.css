@@ -350,9 +350,13 @@ span.product-compare {
   text-decoration: line-through;
 }
 .add-to-cart.out-of-stock {
-    background-color: var(--dd-color-first);
+    background-color: #ccc;
     color: var(--dd-color-sixth);
     cursor: not-allowed;
+}
+.product-header-cta .addcart-cta.out-of-stock{
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 .info-line {
   margin-bottom: 16px;
