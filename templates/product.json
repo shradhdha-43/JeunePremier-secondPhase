@@ -48,6 +48,19 @@
       "settings": {
       }
     },
+    "164614191478238c86": {
+      "type": "jp-product-slider-4",
+      "settings": {
+        "bg_color": "white",
+        "title": "",
+        "desc": "",
+        "collection": "",
+        "btn_txt": "",
+        "btn_url": "",
+        "related": false,
+        "upsell_type": "bag"
+      }
+    },
     "164543171941402611": {
       "type": "jp-img-txt-ergo",
       "blocks": {
@@ -132,19 +145,6 @@
         "upsell_type": "bag"
       }
     },
-    "164614191478238c86": {
-      "type": "jp-product-slider-4",
-      "settings": {
-        "bg_color": "white",
-        "title": "",
-        "desc": "",
-        "collection": "",
-        "btn_txt": "",
-        "btn_url": "",
-        "related": false,
-        "upsell_type": "bag"
-      }
-    },
     "16462080425b9e4234": {
       "type": "jp-product-faq",
       "settings": {
@@ -215,11 +215,11 @@
     "1648025119633f453c",
     "product-recommendations",
     "1645352523c5f0e4b8",
+    "164614191478238c86",
     "164543171941402611",
     "1646073797c5988fcf",
     "16454287984d026596",
     "164607437737f92922",
-    "164614191478238c86",
     "16462080425b9e4234",
     "1645442399a142c9b8",
     "1645786214e1057d96"
