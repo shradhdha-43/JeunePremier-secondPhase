@@ -61,6 +61,45 @@
         "upsell_type": "bag"
       }
     },
+    "1646073797c5988fcf": {
+      "type": "jp-product-slider-2",
+      "settings": {
+        "bg_color": "white",
+        "title": "",
+        "desc": "",
+        "collection": "",
+        "btn_txt": "",
+        "btn_url": "",
+        "related": false,
+        "upsell_type": "bag"
+      }
+    },
+    "16454287984d026596": {
+      "type": "jp-img-scribble-txt",
+      "settings": {
+        "link_type": "btn",
+        "img_aligment": "left",
+        "title": "An eye-catcher on the street!",
+        "desc": "With the Jeune Premier Ergomaxx, reflection is part of the design. All parts of the satchel are edged with reflective piping and \/ or bands that provide optimal visibility in road traffic. See and be seen!",
+        "link_txt": "BUY SAFETY LIGHTS",
+        "link_hover_txt": "ADD TO CART",
+        "link": "",
+        "img2": "shopify:\/\/shop_images\/kerstbannerz.jpg"
+      }
+    },
+    "164607437737f92922": {
+      "type": "jp-product-slider-3",
+      "settings": {
+        "bg_color": "white",
+        "title": "",
+        "desc": "",
+        "collection": "",
+        "btn_txt": "",
+        "btn_url": "",
+        "related": false,
+        "upsell_type": "bag"
+      }
+    },
     "164543171941402611": {
       "type": "jp-img-txt-ergo",
       "blocks": {
@@ -104,45 +143,6 @@
         "title": "Ergonomics",
         "desc": "To prevent back problems and guarantee maximum wearingcomfort, school backpacks must fit perfectly on your child's back. School backpacks are only good if they sit tightlyagainst your back. Always buy a school backpack that will fit your childnow, not one that will fit them later when they've grown.",
         "text_over_img": "ONLY THE BEST FOR MY CHILD."
-      }
-    },
-    "1646073797c5988fcf": {
-      "type": "jp-product-slider-2",
-      "settings": {
-        "bg_color": "white",
-        "title": "",
-        "desc": "",
-        "collection": "",
-        "btn_txt": "",
-        "btn_url": "",
-        "related": false,
-        "upsell_type": "bag"
-      }
-    },
-    "16454287984d026596": {
-      "type": "jp-img-scribble-txt",
-      "settings": {
-        "link_type": "btn",
-        "img_aligment": "left",
-        "title": "An eye-catcher on the street!",
-        "desc": "With the Jeune Premier Ergomaxx, reflection is part of the design. All parts of the satchel are edged with reflective piping and \/ or bands that provide optimal visibility in road traffic. See and be seen!",
-        "link_txt": "BUY SAFETY LIGHTS",
-        "link_hover_txt": "ADD TO CART",
-        "link": "",
-        "img2": "shopify:\/\/shop_images\/kerstbannerz.jpg"
-      }
-    },
-    "164607437737f92922": {
-      "type": "jp-product-slider-3",
-      "settings": {
-        "bg_color": "white",
-        "title": "",
-        "desc": "",
-        "collection": "",
-        "btn_txt": "",
-        "btn_url": "",
-        "related": false,
-        "upsell_type": "bag"
       }
     },
     "16462080425b9e4234": {
@@ -216,10 +216,10 @@
     "product-recommendations",
     "1645352523c5f0e4b8",
     "164614191478238c86",
-    "164543171941402611",
     "1646073797c5988fcf",
     "16454287984d026596",
     "164607437737f92922",
+    "164543171941402611",
     "16462080425b9e4234",
     "1645442399a142c9b8",
     "1645786214e1057d96"
