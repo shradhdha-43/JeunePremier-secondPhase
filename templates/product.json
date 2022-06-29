@@ -48,8 +48,8 @@
       "settings": {
       }
     },
-    "164614191478238c86": {
-      "type": "jp-product-slider-4",
+    "1646073797c5988fcf": {
+      "type": "jp-product-slider-2",
       "settings": {
         "bg_color": "white",
         "title": "",
@@ -61,8 +61,8 @@
         "upsell_type": "bag"
       }
     },
-    "1646073797c5988fcf": {
-      "type": "jp-product-slider-2",
+    "164614191478238c86": {
+      "type": "jp-product-slider-4",
       "settings": {
         "bg_color": "white",
         "title": "",
@@ -215,8 +215,8 @@
     "1648025119633f453c",
     "product-recommendations",
     "1645352523c5f0e4b8",
-    "164614191478238c86",
     "1646073797c5988fcf",
+    "164614191478238c86",
     "16454287984d026596",
     "164607437737f92922",
     "164543171941402611",
