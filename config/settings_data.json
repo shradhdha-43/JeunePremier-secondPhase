@@ -25,11 +25,13 @@
     "type_header_font": "assistant_n4",
     "type_body_font": "assistant_n4",
     "favicon": "shopify:\/\/shop_images\/favicon-jeune-premier.png",
-    "checkout_logo_image": "shopify:\/\/shop_images\/logo.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/favicon-jeune-premier.png",
     "checkout_logo_position": "center",
     "checkout_logo_size": "large",
-    "checkout_accent_color": "#606060",
-    "checkout_button_color": "#000000",
+    "checkout_body_background_color": "#f8f7f3",
+    "checkout_sidebar_background_color": "#f8f7f3",
+    "checkout_accent_color": "#c5af88",
+    "checkout_button_color": "#333333",
     "checkout_error_color": "#e32c2b",
     "sections": {
       "announcement-bar": {
