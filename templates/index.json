@@ -113,20 +113,20 @@
             "image2": "shopify:\/\/shop_images\/RainbowDeer.jpg"
           }
         },
+        "3801cabb-732f-4ef8-bef4-b9fdcd992177": {
+          "type": "product",
+          "settings": {
+            "product": "classic-midi-butterfly",
+            "image1": "shopify:\/\/shop_images\/Butterfly.jpg",
+            "image2": "shopify:\/\/shop_images\/Butterfly.jpg"
+          }
+        },
         "ea91c1e3-e679-4dfe-81bb-3a11be116bb7": {
           "type": "product",
           "settings": {
             "product": "classic-midi-tiger-navy",
             "image1": "shopify:\/\/shop_images\/Tiger_Navy.jpg",
             "image2": "shopify:\/\/shop_images\/Tiger_Navy.jpg"
-          }
-        },
-        "3801cabb-732f-4ef8-bef4-b9fdcd992177": {
-          "type": "product",
-          "settings": {
-            "product": "it-bag-midi-balloon-blast",
-            "image1": "shopify:\/\/shop_images\/389A1213.jpg",
-            "image2": "shopify:\/\/shop_images\/389A1213.jpg"
           }
         },
         "170b19cf-96c4-4070-a616-0f4063fcfd1d": {
@@ -140,8 +140,8 @@
       },
       "block_order": [
         "4074ea81-67d7-42fe-bc7c-a19ed0cd0543",
-        "ea91c1e3-e679-4dfe-81bb-3a11be116bb7",
         "3801cabb-732f-4ef8-bef4-b9fdcd992177",
+        "ea91c1e3-e679-4dfe-81bb-3a11be116bb7",
         "170b19cf-96c4-4070-a616-0f4063fcfd1d"
       ],
       "settings": {
