@@ -519,3 +519,16 @@ span.product-compare {
     width: 50px;
   }
 }
+
+.product-header-cta .addcart-cta.out-of-stock {
+    background-color: #ccc;
+    cursor: not-allowed;
+    display: none;
+}
+
+.add-to-cart.out-of-stock {
+    display: none;
+    background-color: var(--dd-color-first);
+    color: var(--dd-color-sixth);
+    cursor: not-allowed;
+}
