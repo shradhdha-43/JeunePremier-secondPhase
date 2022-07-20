@@ -349,7 +349,7 @@
           localStorage.setItem("geocont", data.detected_values.country.handle);
          
           if (redirectLink != "") {
-             
+             console.log(window.navigator.userLanguage);
             if( languageX == "de" && data.detected_values.country.handle == "DE" ) {
               console.log(redirectLink);
               var urlSplits = window.location.href.split("?");
