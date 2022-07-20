@@ -313,8 +313,7 @@
 
 
   <script>
-    console.log("1");
-    var closeIcons=document.getElementsByClassName('pop-close');  
+    
     var redirectLink = "";
     document.querySelectorAll('link[hreflang="ru"]').forEach((summary) => {
       redirectLink = summary.href;
@@ -326,7 +325,6 @@
     var cancelled = localStorage.getItem("cancelled");
     console.log(redirectLink);
     if( !country && !language ) {
-      console.log("2");
       fetch("/browsing_context_suggestions.json?source=geolocation_recommendation&country[enabled]=true&language[enabled]=true")
       .then(async (response) => {
 
