@@ -364,22 +364,22 @@
       })
       .then(function (payload) {
         console.log(payload.location.country.code);
-      });
-
-      
-      
-      
-      console.log("indide if cancelled redirect");
-      var geol = localStorage.getItem("langh");
-      var geoc = localStorage.getItem("conth");
-      if (country == "RU") {
+        var contcode = payload.location.country.code;
+        
+        if (country == "RU" && contcode ==  "RU") {
           var urlSplits = window.location.href.split("?");
           var parameters = "";
           if (urlSplits.length > 1) {
             parameters = "?"+urlSplits[1];
           }
-//           window.location.href = redirectLink+parameters;
-      }                                      
+            window.location.href = redirectLink+parameters;
+        } 
+      });
+
+      
+      
+      
+                                      
     }
 
   </script>
