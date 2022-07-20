@@ -334,6 +334,7 @@
     var country = localStorage.getItem("geocont");
     var language = localStorage.getItem("geolang");
     var cancelled = localStorage.getItem("cancelled");
+    console.log(redirectLink);
     if( !country && !language && !cancelled ) {
       console.log("2");
       fetch("/browsing_context_suggestions.json?source=geolocation_recommendation&country[enabled]=true&language[enabled]=true")
