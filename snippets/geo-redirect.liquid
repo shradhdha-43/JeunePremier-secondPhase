@@ -349,8 +349,9 @@
           localStorage.setItem("geocont", data.detected_values.country.handle);
          
           if (redirectLink != "") {
-             console.log(redirectLink);
+             
             if( languageX == "de" && data.detected_values.country.handle == "DE" ) {
+              console.log(redirectLink);
               var urlSplits = window.location.href.split("?");
               var parameters = "";
               if (urlSplits.length > 1) {
