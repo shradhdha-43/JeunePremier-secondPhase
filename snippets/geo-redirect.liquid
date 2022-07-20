@@ -311,11 +311,11 @@
 
 
 
-<!-- 
+
 <script>
   var closeIcons=document.getElementsByClassName('pop-close');  
   var redirectLink = "";
-  document.querySelectorAll('link[hreflang="ru"]').forEach((summary) => {
+  document.querySelectorAll('link[hreflang="de-de"]').forEach((summary) => {
     redirectLink = summary.href;
   });
   function hidePopup() {
@@ -345,7 +345,7 @@
       localStorage.setItem("lang", languageX);
       localStorage.setItem("cont", data.detected_values.country.handle);
       if (redirectLink != "") {
-        if( languageX == "ru" && data.detected_values.country.handle == "RU" ) {
+        if( languageX == "de" && data.detected_values.country.handle == "DE" ) {
           var urlSplits = window.location.href.split("?");
           var parameters = "";
           if (urlSplits.length > 1) {
@@ -362,7 +362,7 @@
   });                                       
   }
   if( !cancelled && redirectLink != "" ) {
-    if (language == "ru" && country == "RU") {
+    if (language == "de" && country == "DE") {
       var urlSplits = window.location.href.split("?");
       var parameters = "";
       if (urlSplits.length > 1) {
@@ -375,4 +375,4 @@
   for (i = 0; i < closeIcons.length; i++) {
     closeIcons[i].addEventListener("click", hidePopup);
   }
-</script> -->
+</script>
