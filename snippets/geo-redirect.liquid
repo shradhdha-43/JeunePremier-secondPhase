@@ -347,8 +347,9 @@
           var languageX = window.navigator.userLanguage || window.navigator.language;
           localStorage.setItem("geolang", languageX);
           localStorage.setItem("geocont", data.detected_values.country.handle);
-          console.log(redirectLink);
+         
           if (redirectLink != "") {
+             console.log(redirectLink);
             if( languageX == "de" && data.detected_values.country.handle == "DE" ) {
               var urlSplits = window.location.href.split("?");
               var parameters = "";
