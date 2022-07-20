@@ -366,7 +366,9 @@
     }
     if( !cancelled && redirectLink != "" ) {
       console.log("indide if cancelled redirect");
-      if (language == "ru" || country == "RU") {
+      var geol = localStorage.getItem("langh");
+      var geoc = localStorage.getItem("conth");
+      if (geol == "ru" || geoc == "ru" || country == "RU") {
           console.log("3");
           var urlSplits = window.location.href.split("?");
           var parameters = "";
