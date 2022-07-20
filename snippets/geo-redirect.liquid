@@ -358,28 +358,28 @@
     }
     if( !cancelled && redirectLink != "" ) {
       
-      fetch('https://api.ipregistry.co/?key=tryout')
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (payload) {
-        console.log(payload.location.country.code);
-        var contcode = payload.location.country.code;
-        
-        if (country == "RU" && contcode ==  "RU") {
+//       fetch('https://api.ipregistry.co/?key=tryout')
+//     .then(function (response) {
+//         return response.json();
+//     })
+//     .then(function (payload) {
+//         console.log(payload.location.country.name + ', ' + payload.location.city);
+//     });
+      
+      
+      
+      
+      console.log("indide if cancelled redirect");
+//       var geol = localStorage.getItem("langh");
+//       var geoc = localStorage.getItem("conth");
+      if (country == "RU") {
           var urlSplits = window.location.href.split("?");
           var parameters = "";
           if (urlSplits.length > 1) {
             parameters = "?"+urlSplits[1];
           }
-            window.location.href = redirectLink+parameters;
-        } 
-      });
-
-      
-      
-      
-                                      
+          window.location.href = redirectLink+parameters;
+      }                                      
     }
 
   </script>
