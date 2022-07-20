@@ -369,7 +369,7 @@
         console.log(error)
       });                                       
     
-    if( redirectLink != "" ) {
+    if( !cancelled && redirectLink != "" ) {
       if (language == "de" && country == "DE") {
           var urlSplits = window.location.href.split("?");
           var parameters = "";
