@@ -309,6 +309,11 @@
 
 {%- endcomment -%}
 
+<style>
+  .recommendation-modal__container , .recommendation-modal__backdrop{
+  	display : none !important;
+  }
+</style>
 
 
 
@@ -361,7 +366,7 @@
           if (urlSplits.length > 1) {
             parameters = "?"+urlSplits[1];
           }
-          window.location.href = redirectLink+parameters;
+          document.getElementById('redirect-link').href = redirectLink+parameters;
       }                                      
     }
 
