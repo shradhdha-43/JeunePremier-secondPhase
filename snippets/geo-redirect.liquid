@@ -365,8 +365,8 @@
       .then(function (payload) {
         console.log(payload.location.country.code);
         var contcode = payload.location.country.code;
-        var ncountry = localStorage.getItem("geocont");
-        if (ncountry == "RU" && contcode ==  "RU") {
+        
+        if (country == "RU" && contcode ==  "RU") {
           var urlSplits = window.location.href.split("?");
           var parameters = "";
           if (urlSplits.length > 1) {
