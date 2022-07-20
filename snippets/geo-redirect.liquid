@@ -316,7 +316,7 @@
     console.log("1");
     var closeIcons=document.getElementsByClassName('pop-close');  
     var redirectLink = "";
-    document.querySelectorAll('link[hreflang="de-de"]').forEach((summary) => {
+    document.querySelectorAll('link[hreflang="ru"]').forEach((summary) => {
       redirectLink = summary.href;
     });
     function hidePopup() {
@@ -348,7 +348,7 @@
           localStorage.setItem("geolang", languageX);
           localStorage.setItem("geocont", data.detected_values.country.handle);
           if (redirectLink != "") {
-            if( languageX == "de" && data.detected_values.country.handle == "DE" ) {
+            if( languageX == "ru" && data.detected_values.country.handle == "RU" ) {
               var urlSplits = window.location.href.split("?");
               var parameters = "";
               if (urlSplits.length > 1) {
@@ -366,7 +366,7 @@
     }
     if( !cancelled && redirectLink != "" ) {
       console.log("indide if cancelled redirect");
-      if (language == "de" && country == "DE") {
+      if (language == "ru" || country == "RU") {
           console.log("3");
           var urlSplits = window.location.href.split("?");
           var parameters = "";
