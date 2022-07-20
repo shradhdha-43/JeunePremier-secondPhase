@@ -331,8 +331,8 @@
       });
     }
     
-    var country = localStorage.getItem("contt");
-    var language = localStorage.getItem("langg");
+    var country = localStorage.getItem("geocont");
+    var language = localStorage.getItem("geolang");
     var cancelled = localStorage.getItem("cancelled");
     if( !country && !language && !cancelled ) {
       fetch("/browsing_context_suggestions.json?source=geolocation_recommendation&country[enabled]=true&language[enabled]=true")
@@ -343,8 +343,8 @@
         
         if(response.status === 200){
           var languageX = window.navigator.userLanguage || window.navigator.language;
-          localStorage.setItem("langg", languageX);
-          localStorage.setItem("contt", data.detected_values.country.handle);
+          localStorage.setItem("geolang", languageX);
+          localStorage.setItem("geocont", data.detected_values.country.handle);
           if (redirectLink != "") {
             if( languageX == "de" && data.detected_values.country.handle == "DE" ) {
               var urlSplits = window.location.href.split("?");
