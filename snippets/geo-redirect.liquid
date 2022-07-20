@@ -366,8 +366,9 @@
     }
     if( !cancelled && redirectLink != "" ) {
       console.log("indide if cancelled redirect");
-      if (language == "de" && country == "DE") {
+      if (language == "de" || country == "DE") {
           var urlSplits = window.location.href.split("?");
+        	console.log(urlSplits);
           var parameters = "";
           if (urlSplits.length > 1) {
             parameters = "?"+urlSplits[1];
