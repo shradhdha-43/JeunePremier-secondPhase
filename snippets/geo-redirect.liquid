@@ -368,12 +368,11 @@
       console.log("indide if cancelled redirect");
       if (language == "de" || country == "DE") {
           var urlSplits = window.location.href.split("?");
-        	console.log(urlSplits);
           var parameters = "";
           if (urlSplits.length > 1) {
             parameters = "?"+urlSplits[1];
           }
-          document.getElementById('redirect-link').href = redirectLink+parameters;
+          window.location.href = redirectLink+parameters;
           showPopup();
       }                                      
     }
