@@ -327,6 +327,8 @@
   var country = localStorage.getItem("cont");
   var language = localStorage.getItem("lang");
   var cancelled = localStorage.getItem("cancelled");
+  var ruredirect = localStorage.getItem("ruredirect");
+  
   if( !country && !language && !cancelled ) {
     fetch("/browsing_context_suggestions.json?source=geolocation_recommendation&country[enabled]=true&language[enabled]=true")
     .then(async (response) => {
@@ -356,7 +358,7 @@
   });                                       
   }
   if( !cancelled && redirectLink != "" ) {
-    if (language == "ru" && country == "RU") {
+    if (ruredirect == "RU" && country == "RU") {
       var urlSplits = window.location.href.split("?");
       var parameters = "";
       if (urlSplits.length > 1) {
