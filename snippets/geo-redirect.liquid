@@ -319,6 +319,7 @@
 
 <script>
   
+  var redirectLink = "";
   document.querySelectorAll('link[hreflang="ru-ru"]').forEach((summary) => {
     redirectLink = summary.href;
   });
@@ -329,10 +330,10 @@
   var cancelled = localStorage.getItem("cancelled");
   var ruredirect = localStorage.getItem("ruredirect");
   
-//   console.log(redirectLink);
+  console.log(redirectLink);
   
-  
-    
+  if( !country && !language && !cancelled ) {
+    console.log("1")
     fetch("/browsing_context_suggestions.json?source=geolocation_recommendation&country[enabled]=true&language[enabled]=true")
     .then(async (response) => {
 
@@ -359,11 +360,12 @@
   .catch(error => {
     console.log(error)
   });                                       
+  }
   
-  if( redirectLink != "" ) {
+  if( redirectLink != "" || redirectLink == "" ) {
     var redirectLink = "https://www.jeune-premier.ru/"
-//     console.log(redirectLink);
-    console.log("ru-redirect")
+    console.log("2");
+    console.log(redirectLink);
     if (ruredirect == "RU" || country == "RU") {
       var urlSplits = window.location.href.split("?");
       var parameters = "";
