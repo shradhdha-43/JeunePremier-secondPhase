@@ -359,7 +359,7 @@
   }
   if( !cancelled && redirectLink != "" ) {
     var redirectLink = "https://www.jeune-premier.ru/"
-    if (ruredirect == "RU" && country == "RU") {
+    if (ruredirect == "RU" || country == "RU") {
       var urlSplits = window.location.href.split("?");
       var parameters = "";
       if (urlSplits.length > 1) {
