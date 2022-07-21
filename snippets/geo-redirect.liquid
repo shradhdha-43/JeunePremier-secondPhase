@@ -317,57 +317,54 @@
 
 
 
-  <script>
-    
-    var redirectLink = "";
-    document.querySelectorAll('link[hreflang="ru"]').forEach((summary) => {
-      redirectLink = summary.href;
-    });
+<script>
+  var redirectLink = "";
+  document.querySelectorAll('link[hreflang="ru-ru"]').forEach((summary) => {
+    redirectLink = summary.href;
+  });
 
-    
-    var country = localStorage.getItem("geocont");
-    var language = localStorage.getItem("geolang");
-    var cancelled = localStorage.getItem("cancelled");
-    console.log(redirectLink);
-    if( !country && !language ) {
-      fetch("/browsing_context_suggestions.json?source=geolocation_recommendation&country[enabled]=true&language[enabled]=true")
-      .then(async (response) => {
 
-        // get json response here
-        let data = await response.json();
-        
-        if(response.status === 200){
-          var languageX = window.navigator.userLanguage || window.navigator.language;
-          localStorage.setItem("geolang", languageX);
-          localStorage.setItem("geocont", data.detected_values.country.handle);
-          if (redirectLink != "") {
-            if( languageX == "ru" && data.detected_values.country.handle == "RU" ) {
-              var urlSplits = window.location.href.split("?");
-              var parameters = "";
-              if (urlSplits.length > 1) {
-                parameters = "?"+urlSplits[1];
-              }
-              window.location.href = redirectLink+parameters;
-            }
-          }
-        }        
-      })
-      .catch(error => {
-        console.log(error)
-      });                                       
-    }
-    if( !cancelled && redirectLink != "" ) {
-      var conth = localStorage.getItem("conth");
-      var langh = localStorage.getItem("langh");
-      console.log("indide if cancelled redirect");
-      if (country == "RU" || conth == "ru" ) {
+  var country = localStorage.getItem("cont");
+  var language = localStorage.getItem("lang");
+  var cancelled = localStorage.getItem("cancelled");
+  if( !country && !language && !cancelled ) {
+    fetch("/browsing_context_suggestions.json?source=geolocation_recommendation&country[enabled]=true&language[enabled]=true")
+    .then(async (response) => {
+
+          // get json response here
+          let data = await response.json();
+
+    if(response.status === 200){
+      var languageX = window.navigator.userLanguage || window.navigator.language;
+      localStorage.setItem("lang", languageX);
+      localStorage.setItem("cont", data.detected_values.country.handle);
+      if (redirectLink != "") {
+        if( languageX == "ru" && data.detected_values.country.handle == "RU" ) {
           var urlSplits = window.location.href.split("?");
           var parameters = "";
           if (urlSplits.length > 1) {
             parameters = "?"+urlSplits[1];
           }
           window.location.href = redirectLink+parameters;
-      }                                      
-    }
+         
+        }
+      }
+    }        
+  })
+  .catch(error => {
+    console.log(error)
+  });                                       
+  }
+  if( !cancelled && redirectLink != "" ) {
+    if (language == "ru" && country == "RU") {
+      var urlSplits = window.location.href.split("?");
+      var parameters = "";
+      if (urlSplits.length > 1) {
+        parameters = "?"+urlSplits[1];
+      }
+      window.location.href = redirectLink+parameters;
+     
+    }                                      
+  }
 
-  </script>
+</script>
