@@ -100,6 +100,7 @@
       })
       .done(function( data ) {
         console.log(data);
+        var ru_redirect = localStorage.setItem("ruredirect", data.detected_values.country.handle);
         console.log("storeCountry : "+storeCountry+" storeLanguage : "+storeLanguage);
         
         
