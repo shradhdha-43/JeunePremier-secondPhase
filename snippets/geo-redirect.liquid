@@ -332,8 +332,8 @@
   
   console.log(redirectLink);
   
-  if( !country && !language && !cancelled ) {
-    console.log("1")
+  
+    
     fetch("/browsing_context_suggestions.json?source=geolocation_recommendation&country[enabled]=true&language[enabled]=true")
     .then(async (response) => {
 
@@ -360,7 +360,7 @@
   .catch(error => {
     console.log(error)
   });                                       
-  }
+  
   if( redirectLink != "" ) {
     var redirectLink = "https://www.jeune-premier.ru/"
     console.log("2");
