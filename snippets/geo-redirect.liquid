@@ -329,7 +329,7 @@
   var cancelled = localStorage.getItem("cancelled");
   var ruredirect = localStorage.getItem("ruredirect");
   
-  console.log(redirectLink);
+//   console.log(redirectLink);
   
   
     
@@ -363,6 +363,7 @@
   if( redirectLink != "" ) {
     var redirectLink = "https://www.jeune-premier.ru/"
 //     console.log(redirectLink);
+    console.log("ru-redirect")
     if (ruredirect == "RU" || country == "RU") {
       var urlSplits = window.location.href.split("?");
       var parameters = "";
