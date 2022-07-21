@@ -318,8 +318,7 @@
 
 
 <script>
-  console.log("ru redirect")
-  var redirectLink = "";
+
   document.querySelectorAll('link[hreflang="ru-ru"]').forEach((summary) => {
     redirectLink = summary.href;
   });
@@ -361,7 +360,8 @@
     console.log(error)
   });                                       
   }
-  if( redirectLink != "" ) {
+
+  else {
     var redirectLink = "https://www.jeune-premier.ru/"
     console.log("2");
     console.log(redirectLink);
@@ -372,8 +372,11 @@
         parameters = "?"+urlSplits[1];
       }
       window.location.href = redirectLink+parameters;
-     
-    }                                      
+
+    }
+
   }
+  
+    
 
 </script>
