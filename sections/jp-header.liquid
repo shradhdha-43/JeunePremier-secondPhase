@@ -51,9 +51,9 @@
             <a href="{{ link.url }}" class="light upper-menu-link {% if request.path == link.url %}underline{% endif %}">{{ link.title | escape }}</a>
             {% endif %}
             {% endfor %}
-            <div class="shopping-bag">
+            <div class="shopping-bag" id="draw_cart">
               {% include 'shopping-bag' %}
-              <div class="header-cart" id="draw_cart"><span class="cart-items-total medium">{{ cart.item_count }}</span></div>
+              <div class="header-cart"><span class="cart-items-total medium">{{ cart.item_count }}</span></div>
             </div>
           </div>
           <div class="header-lower-menu justify-between">
