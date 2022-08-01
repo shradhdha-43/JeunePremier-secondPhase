@@ -589,7 +589,10 @@ $(document).ready(function() {
   console.log("Filter Script")
   $(".color-filters .filter-type").each(function(){
     var filter_data_val = $(this).data("value");
-    console.log(filter_data_val);
+    // console.log(filter_data_val);
+    if (!$(".product-card").hasClass(`tag-${filter_data_val}`)) {
+      console.log($(this).data("value"));
+    }
   })
   
 </script>
