@@ -588,7 +588,7 @@ $(document).ready(function() {
 <script>
   console.log("Filter Script")
   $(".color-filters .filter-type").each(function(){
-    $(this).data("value");
+    var filter_data_val = $(this).data("value");
     console.log(filter_data_val);
   })
   
