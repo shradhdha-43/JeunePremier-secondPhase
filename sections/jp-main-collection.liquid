@@ -591,7 +591,7 @@ $(document).ready(function() {
     var filter_data_val = $(this).data("value");
     // console.log(filter_data_val);
     if (!$(".product-card").hasClass(`tag-${filter_data_val}`)) {
-      console.log($(this).data("value"));
+      $(this).data("value").css({"pointer-events": "none", "opacity": ".2"});
     }
   })
   
