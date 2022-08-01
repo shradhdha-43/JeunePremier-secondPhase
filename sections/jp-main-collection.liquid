@@ -4,7 +4,12 @@
   <div class="container">
     <div class="jp-main-collection-content flex-box justify-between">
       <div class="collection-filters rel">
-        <div class="filter-title-wrap justify-between">
+        <div class="filter-title-wrap justify-between no-t-m">
+          <div class="filter-title medium">{{ section.settings.filter_text }}</div>
+          <div class="filter-total-products light no-t-m">(<span class="no-of-prods">{{ collection.products | size }}</span> {{ section.settings.products_text }})</div>
+          <div class="down-chev no-d">{% include 'icon-black-down-chev' %}</div>
+        </div>
+        <div class="filter-title-wrap mobile justify-between no-d">
           <div class="filter-title medium">{{ section.settings.filter_text }}</div>
           <div class="filter-total-products light no-t-m">(<span class="no-of-prods">{{ collection.products | size }}</span> {{ section.settings.products_text }})</div>
           <div class="down-chev no-d">{% include 'icon-black-down-chev' %}</div>
