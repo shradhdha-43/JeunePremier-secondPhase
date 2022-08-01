@@ -104,6 +104,12 @@ header{
   border-radius: 50%;
 }
 
+.shopping-bag{
+  position : relative;
+  width : 27px;
+  cursor : pointer;
+}
+
 .header-lower-menu{
 	display: flex;
 }
@@ -464,7 +470,3 @@ span.nav-arrow svg {
   }
 }
 
-.shopping-bag{
-  position : relative;
-  width : 27px;
-}
