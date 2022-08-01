@@ -223,7 +223,7 @@
             "type": "announcement",
             "settings": {
               "announcement_text": "<p><strong>Subscribe<\/strong> to our newsletter!<\/p>",
-              "announcement_url": ""
+              "announcement_url": "#newsletter"
             }
           },
           "d26ab7c0-b603-4f73-ab3c-393c0812a2ad": {
