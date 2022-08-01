@@ -586,12 +586,11 @@ $(document).ready(function() {
 </script>
 
 <script>
-  console.log("Filter Script")
   $(".color-filters .filter-type").each(function(){
     var filter_data_val = $(this).data("value");
     // console.log(filter_data_val);
     if (!$(".product-card").hasClass(`tag-${filter_data_val}`)) {
-      $(this).css({"pointer-events": "none", "opacity": ".2"});
+      $(this).css({"pointer-events": "none", "opacity": ".5"});
     }
   })
   
