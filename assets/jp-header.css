@@ -91,7 +91,10 @@ header{
 }
 
 .header-cart{
-	cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: -8px;
+  cursor: pointer;
   width: 24px;
   height: 24px;
   background-color: var(--dd-color-second);
@@ -459,4 +462,9 @@ span.nav-arrow svg {
   .jp-header-wrapper{
     min-height: 119px;
   }
+}
+
+.shopping-bag{
+  position : relative;
+  width : 27px;
 }
