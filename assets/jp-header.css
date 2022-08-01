@@ -34,7 +34,7 @@ header{
 }
 
 .header-content {
-    padding: 24px 0;
+    padding: 19px 0;
   display: flex;
 }
 
@@ -106,7 +106,7 @@ header{
 
 .shopping-bag{
   position : relative;
-  width : 27px;
+  width : 24px;
   cursor : pointer;
 }
 
