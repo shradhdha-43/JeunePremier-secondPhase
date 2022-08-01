@@ -51,7 +51,7 @@
             <a href="{{ link.url }}" class="light upper-menu-link {% if request.path == link.url %}underline{% endif %}">{{ link.title | escape }}</a>
             {% endif %}
             {% endfor %}
-            <div class="header-cart" id="draw_cart"><span class="cart-items-total medium">{{ cart.item_count }}</span></div>
+            <div class="header-cart" id="draw_cart">{% render 'shopping-bag' %}<span class="cart-items-total medium">{{ cart.item_count }}</span></div>
           </div>
           <div class="header-lower-menu justify-between">
             {% for link in section.settings.lower_menu.links %}
