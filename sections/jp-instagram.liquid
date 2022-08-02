@@ -43,18 +43,11 @@
 
 <script>
   $(document).ready(function(){
-
-    let check_STL;
-    
-    function myFunction() {
-      check_STL = setTimeout(check_STL_fn, 5000);
-    }
-
-    function check_STL_fn() {
-      var stamped_widget_total = $("#stamped-reviews-widget").data("total");
-      console.log(stamped_widget_total);
-    }
- 
+       setTimeout(function(){
+        var stamped_widget_total = $("#stamped-reviews-widget").data("total");
+        console.log(stamped_widget_total);
+      }, 3000);
+  
   });
   
 </script>
