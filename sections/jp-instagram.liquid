@@ -24,18 +24,12 @@
         {% endfor %}
       {% endcomment %}
       {% if template contains 'product' %}
-      <div 
-id="stamped-main-widget"  
-        data-widget-type="instagram-feed"
-data-product-id="{{ product.id }}"   
-data-name="{{ product.title | escape }}"   
-data-url="{{ shop.url }}{{ product.url }}"   
-data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}" 
-data-description="{{ product.description | escape }}"   
-data-product-sku="{{product.handle}}"
-data-product-title="{{product.title}}" 
-data-product-type="{{product.type}}">   
-</div>
+        <div id="stamped-reviews-widget"
+         data-widget-type="instagram-feed"
+         data-feed-type="carousel"
+         data-auto-play="false"
+         data-product-ids="{{ product.id }}" 
+        data-with-photos="true"></div>
       {% else %}
       <div id="stamped-reviews-widget" 
         data-widget-type="instagram-feed" 
