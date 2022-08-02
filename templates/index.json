@@ -4,7 +4,8 @@
       "type": "jp-hero",
       "settings": {
         "image": "shopify:\/\/shop_images\/pearly_ace59d34-447d-45ec-9c6e-07977a8a0183.jpg",
-        "heading": "COLORFUL &amp; UNIQUE BAGS",
+        "heading": "<b>COLORFUL &amp; UNIQUE BAGS<\/b>",
+        "heading_color": "#ffffff",
         "headinglink": "shopify:\/\/collections\/s22-1",
         "headinglinktext": "DISCOVER"
       }
