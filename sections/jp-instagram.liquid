@@ -48,8 +48,8 @@
         console.log(stamped_widget_total);
 
         if (stamped_widget_total === 0){
-          var inta_wrap = $("#stamped-reviews-widget").parent().parent().parent().attr('class');
-          inta_wrap.css("display", "none");
+          $("#stamped-reviews-widget").parent().parent().parent().attr('class').css("display", "none");
+          
         }
       }, 5000);
   
