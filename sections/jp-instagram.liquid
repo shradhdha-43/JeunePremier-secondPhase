@@ -48,7 +48,7 @@
         console.log(stamped_widget_total);
 
         if (stamped_widget_total == 0){
-          console.log($(this).closest(".instagram-wrap").css("display" , "none"));
+          console.log($(this).parents().find('div:first').attr('class'));
         }
       }, 5000);
   
