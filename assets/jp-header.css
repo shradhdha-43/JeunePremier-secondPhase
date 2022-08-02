@@ -198,12 +198,15 @@ color: var(--dd-color-first);
 }
 
 .jp-header-wrapper{
-	-webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   height: 172.4px;
   min-height: 172.391px;
+  position : fixed;
+  z-index : 5;
+  width : 100%;
 }
 
 .topheader{
