@@ -23,19 +23,12 @@
       		{% endif %}
         {% endfor %}
       {% endcomment %}
-      {% if template contains 'product' %}
-          <div id="stamped-reviews-widget"
-               data-widget-type="instagram-feed"
-               data-feed-type="carousel"
-               data-auto-play="false"
-               data-product-ids="{{ product.id }}" 
-        data-with-photos="true"></div>
-      {% else %}
+    
       <div id="stamped-reviews-widget" 
         data-widget-type="instagram-feed" 
         data-feed-type="carousel" 
         data-with-photos="true"></div>
-    {% endif %}
+    
     <a href="{{ section.settings.link_url }}" class="insta-link medium" target="_blank">{{ section.settings.link_txt }}</a>
   </div>
 </div>
