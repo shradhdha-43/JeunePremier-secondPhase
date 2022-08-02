@@ -43,8 +43,12 @@
 
 <script>
   $(document).ready(function(){
-    var stamped_widget_total = $("#stamped-reviews-widget").data("total");
+    var stamped_widget_total = $("#stamped-reviews-widget")
     console.log(stamped_widget_total);
+
+    if( stamped_widget_total.css("display") == "none" ){
+      console.log("nothing")
+    }
   });
   
 </script>
