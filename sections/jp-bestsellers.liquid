@@ -93,7 +93,7 @@
         </div>
         {% endfor %}
     </div>
-    <a href="/collections/all" class="btn bestsellers-btn">{{ section.settings.btn_text }}</a>
+    <a href="{{ section.settings.btn_url }}" class="btn bestsellers-btn">{{ section.settings.btn_text }}</a>
   </div>
 </div>
 
@@ -113,6 +113,11 @@
 			"id": "btn_text",
 			"label": "Button Text",
 			"default": "ALLE TASCHEN SHOPPEN"
+		},
+        {
+			"type": "url",
+			"id": "btn_url",
+			"label": "Button url"
 		},
 		{
           "type": "select",
