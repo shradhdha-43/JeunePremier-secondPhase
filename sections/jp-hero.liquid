@@ -3,7 +3,7 @@
 <div class="hero" style="{% if section.settings.image %}background-image: url({{ section.settings.image | img_url: "2000x" }}){% else %}background: #375D54{% endif %}">
   <div class="container flex-box justify-end">
     <span class="header-inner-wrapper">
-      <h1 class="hero-text">
+      <h1 class="hero-text" style="color:{{ section.settings.heading_color }}";>
         <span>
           {% if section.settings.design2 %}<span class="sub-head">{{ section.settings.subheading }}</span>{% endif %}
           {{ section.settings.heading }}
@@ -28,6 +28,12 @@
         "id": "heading",
         "label": "Heading",
 		"default": "Welcome to store"
+      },
+      {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading color",
+        "default" : "#ffffff"
       },
       {
         "type": "url",
