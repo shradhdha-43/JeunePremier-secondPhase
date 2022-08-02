@@ -47,9 +47,9 @@
         var stamped_widget_total = $("#stamped-reviews-widget").data("total");
         console.log(stamped_widget_total);
 
-        if (stamped_widget_total === 0){
-          $("#stamped-reviews-widget").parent().parent().parent().attr('class').css("display", "none");
-          
+        if (stamped_widget_total == 0){
+          var insta_wrap = $("#stamped-reviews-widget").parent().parent().parent().attr('class');
+          $(`${insta_wrap}`).css("display" , "none");
         }
       }, 5000);
   
