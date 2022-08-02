@@ -204,9 +204,9 @@ color: var(--dd-color-first);
   transition: all 0.5s ease;
   height: 172.4px;
   min-height: 172.391px;
-  position : fixed;
+/*   position : fixed;
   z-index : 5;
-  width : 100%;
+  width : 100%; */
 }
 
 .topheader{
