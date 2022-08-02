@@ -9,13 +9,13 @@
     "16457877033d359350": {
       "type": "jp-reseller",
       "settings": {
-        "title": "Wiederverkäufer werden",
-        "desc": "Schreiben Sie uns, wenn Sie daran interessiert sind, Wiederverkäufer unserer Produkte zu werden. Wir werden innerhalb der nächsten 24 Stunden antworten. Vielen Dank im Voraus.",
+        "title": "Become a reseller",
+        "desc": "Write to us if you are interested in becoming a reseller of our products. We will reply within the next 24 hours. Thanks in advance.",
         "img": "shopify:\/\/shop_images\/image1.jpg",
-        "contact_info_title": "Kontaktinformationen",
-        "invoice_addr_title": "Adresse der Rechnung",
-        "shipping_addr_title": "Lieferadresse",
-        "your_store": "Ihr Geschäft",
+        "contact_info_title": "Contact information",
+        "invoice_addr_title": "Address of the invoice",
+        "shipping_addr_title": "Shipping address",
+        "your_store": "Your business",
         "marg_top": "true"
       }
     }
