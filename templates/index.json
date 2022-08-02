@@ -17,21 +17,21 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/tick.webp",
-            "description": "2 year <strong><u>warranty<\/u><\/strong>"
+            "description": "2 year <strong>warranty<\/strong>"
           }
         },
         "827e64c5-68c3-4179-97d2-a75429496477": {
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/returns2.webp",
-            "description": "14 days of <strong><u>return<\/u><\/strong>"
+            "description": "14 days of <strong>return<\/strong>"
           }
         },
         "13e5a933-ce12-4b7c-8b96-0e0e637bf33a": {
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/payments2.webp",
-            "description": "Buy now, <strong><u>pay later<\/u><\/strong>"
+            "description": "Buy now, <strong>pay later<\/strong>"
           }
         }
       },
