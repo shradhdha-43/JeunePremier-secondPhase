@@ -58,7 +58,9 @@
   });
 
     $(document).ready(function(){
-       setTimeout(function(){
+      setTimeout(check_shop(), 5000);
+
+      function check_shop() {
         var stamped_widget_count = $("#to-reviews .stamped-container").data("count");
         console.log(stamped_widget_count);
 
@@ -66,7 +68,8 @@
           // $("#to-reviews .stamped-container .stamped-content").css("display", "none");
           $("#to-reviews .stamped-container .stamped-summary .summary-overview").css("display", "none");
         }
-      }, 5000);
+      }
+      
   
   });
   
