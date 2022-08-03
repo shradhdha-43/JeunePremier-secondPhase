@@ -116,6 +116,10 @@
   margin-bottom: 12px;
 }
 
+.filter-title-wrap.no-t-m {
+  pointer-events : none;
+}
+
 .filter-wrap {
     border-bottom: 1px solid var(--dd-color-second);
   margin-bottom: 12px;
