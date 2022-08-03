@@ -232,7 +232,7 @@
 .add-upsell-prod {
   cursor: pointer;
   position: absolute;
-  right: 0;
+  right: 20px;
   bottom: 0;
   color: var(--dd-color-first);
   width: 36px;
