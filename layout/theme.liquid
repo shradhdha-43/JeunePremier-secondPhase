@@ -749,44 +749,44 @@
     document.documentElement.scrollTop = 0;
   }
   
-  $(document).ready(function() {
+  // $(document).ready(function() {
     
-  const chatInterval = setInterval(checkChatBtn, 300);
+  // const chatInterval = setInterval(checkChatBtn, 300);
   
-  function checkChatBtn() {
-    chatbutton = document.getElementById("chat-button");
-    if(chatbutton) {
-      chatShowFunction();
-{% comment %}       stopChatInterval(); {% endcomment %}
-    }
-  }
+  // function checkChatBtn() {
+  //   chatbutton = document.getElementById("chat-button");
+  //   if(chatbutton) {
+  //     chatShowFunction();
+  //     stopChatInterval();
+  //   }
+  // }
 
-  function stopChatInterval() {
-    clearInterval(chatInterval);
-  }
+  // function stopChatInterval() {
+  //   clearInterval(chatInterval);
+  // }
   
-  function chatShowFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      chatbutton.style.display = "block";
-    } else {
-      chatbutton.style.display = "none";
-    }
-  }
+  // function chatShowFunction() {
+  //   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  //     chatbutton.style.display = "block";
+  //   } else {
+  //     chatbutton.style.display = "none";
+  //   }
+  // }
     
-  window.onscroll = function() {chatShowFunction()};
+  // window.onscroll = function() {chatShowFunction()};
   
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      mybutton.style.display = "flex";
-    } else {
-      mybutton.style.display = "none";
-    }
-  }
+  // function scrollFunction() {
+  //   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  //     mybutton.style.display = "flex";
+  //   } else {
+  //     mybutton.style.display = "none";
+  //   }
+  // }
 
-  // When the user scrolls down 20px from the top of the document, show the button
-  window.onscroll = function() {scrollFunction()};
+  // // When the user scrolls down 20px from the top of the document, show the button
+  // window.onscroll = function() {scrollFunction()};
   
-  });
+  // });
 </script>
     
 <script>
