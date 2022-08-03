@@ -72,10 +72,58 @@
         },
         "f4d2edd9-e219-492d-84e6-88f989c7218f": {
           "type": "team_member",
-          "disabled": true,
           "settings": {
             "name": "Niels",
             "department": "Leiter der Logistik"
+          }
+        },
+        "e35afa5c-265d-4bd4-95fa-551e2a1c38b4": {
+          "type": "team_member",
+          "settings": {
+            "name": "",
+            "department": ""
+          }
+        },
+        "620e2d56-0881-44a7-aaf3-d118e741daa3": {
+          "type": "team_member",
+          "settings": {
+            "name": "",
+            "department": ""
+          }
+        },
+        "87262ecd-9f78-4653-ad78-86d99eccfcb7": {
+          "type": "team_member",
+          "settings": {
+            "name": "",
+            "department": ""
+          }
+        },
+        "3193b445-8a6b-4e67-8beb-2c67d9c70b0e": {
+          "type": "team_member",
+          "settings": {
+            "name": "",
+            "department": ""
+          }
+        },
+        "ebb67630-a15f-4070-ae30-16e18d8608bf": {
+          "type": "team_member",
+          "settings": {
+            "name": "",
+            "department": ""
+          }
+        },
+        "23a60fe2-d3fa-4146-9199-e735590185d7": {
+          "type": "team_member",
+          "settings": {
+            "name": "",
+            "department": ""
+          }
+        },
+        "2b267faf-9638-4b7c-b557-f4c4b0ff7e84": {
+          "type": "team_member",
+          "settings": {
+            "name": "",
+            "department": ""
           }
         }
       },
@@ -85,7 +133,14 @@
         "b4cdd3e6-3871-42da-a74c-f9d6156da02b",
         "319cfe95-2f47-4298-8ac3-4e10a9c61989",
         "14283eb5-d1e3-461c-940a-aa38c9de078d",
-        "f4d2edd9-e219-492d-84e6-88f989c7218f"
+        "f4d2edd9-e219-492d-84e6-88f989c7218f",
+        "e35afa5c-265d-4bd4-95fa-551e2a1c38b4",
+        "620e2d56-0881-44a7-aaf3-d118e741daa3",
+        "87262ecd-9f78-4653-ad78-86d99eccfcb7",
+        "3193b445-8a6b-4e67-8beb-2c67d9c70b0e",
+        "ebb67630-a15f-4070-ae30-16e18d8608bf",
+        "23a60fe2-d3fa-4146-9199-e735590185d7",
+        "2b267faf-9638-4b7c-b557-f4c4b0ff7e84"
       ],
       "settings": {
         "title": "Meet the team",
@@ -116,6 +171,7 @@
       "settings": {
         "title": "SHOP BESTSELLERS",
         "btn_text": "ALLE TASCHEN SHOPPEN",
+        "btn_url": "",
         "space_above": "false"
       }
     }
