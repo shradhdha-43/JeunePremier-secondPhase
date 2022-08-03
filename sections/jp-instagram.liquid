@@ -41,6 +41,38 @@
 </div>
 </div>
 
+<script>
+  $(document).ready(function(){
+       setTimeout(function(){check_shop()}, 5000);
+       setTimeout(function(){check_shop()}, 10000);
+    function check_shop(){
+      var stamped_widget_total = $("#stamped-reviews-widget").data("total");
+        // console.log(stamped_widget_total);
+
+        if (stamped_widget_total == 0){
+          var insta_wrap = $("#stamped-reviews-widget").parent().parent().parent().attr('class');
+          $(`.${insta_wrap}`).css("display" , "none");
+          $(".faq-wrapper-blank").css("margin-bottom" , "0px");
+        }
+    }
+
+  });
+
+    $(document).ready(function(){
+       setTimeout(function(){
+        var stamped_widget_count = $("#to-reviews .stamped-container").data("count");
+        // console.log(stamped_widget_count);
+
+        if (stamped_widget_count == 0){
+          // $("#to-reviews .stamped-container .stamped-content").css("display", "none");
+          $("#to-reviews .stamped-container .stamped-summary .summary-overview").css("display", "none");
+        }
+      }, 5000);
+  
+  });
+  
+</script>
+
 {% schema %}
   {
     "name": "JP Instagram",
