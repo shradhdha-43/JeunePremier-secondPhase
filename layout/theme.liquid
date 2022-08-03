@@ -749,7 +749,7 @@
     document.documentElement.scrollTop = 0;
   }
   
-  $(document).ready(function() {
+{% comment %}   $(document).ready(function() {
     
   const chatInterval = setInterval(checkChatBtn, 300);
   
@@ -786,7 +786,7 @@
   // When the user scrolls down 20px from the top of the document, show the button
   window.onscroll = function() {scrollFunction()};
   
-  });
+  }); {% endcomment %}
 </script>
     
 <script>
