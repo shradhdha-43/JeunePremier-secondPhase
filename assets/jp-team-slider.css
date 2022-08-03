@@ -64,3 +64,9 @@
     margin: 0 5px;
 }
 }
+
+
+.jp-team-slider.abs.no-t-m.jp-product-slider-wrapper {
+  display : flex;
+  margin-right : 0;
+}
