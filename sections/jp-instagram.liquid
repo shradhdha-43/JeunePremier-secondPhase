@@ -29,14 +29,17 @@
          data-feed-type="carousel"
          data-auto-play="false"
          data-product-ids="{{ product.id }}" 
-        data-with-photos="true"></div>
+        data-with-photos="true">
+        <a href="{{ section.settings.link_url }}" class="insta-link medium" target="_blank">{{ section.settings.link_txt }}</a>
+
+        </div>
       {% else %}
       <div id="stamped-reviews-widget" 
         data-widget-type="instagram-feed" 
         data-feed-type="carousel" 
         data-with-photos="true"></div>
     {% endif %}
-    <a href="{{ section.settings.link_url }}" class="insta-link medium" target="_blank">{{ section.settings.link_txt }}</a>
+<!--     <a href="{{ section.settings.link_url }}" class="insta-link medium" target="_blank">{{ section.settings.link_txt }}</a> -->
   </div>
 </div>
 </div>
