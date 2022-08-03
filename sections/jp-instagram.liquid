@@ -45,7 +45,7 @@
 <script>
   $(document).ready(function(){
        setTimeout(function(){check_shop()}, 5000);
-
+       setTimeout(function(){check_shop()}, 10000);
     function check_shop(){
       var stamped_widget_total = $("#stamped-reviews-widget").data("total");
         console.log(stamped_widget_total);
@@ -57,7 +57,7 @@
         }
     }
 
-    setTimeout(function(){check_shop()}, 10000);
+    
   
   });
 
