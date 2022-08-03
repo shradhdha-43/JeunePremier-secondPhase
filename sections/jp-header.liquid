@@ -51,7 +51,13 @@
             <a href="{{ link.url }}" class="light upper-menu-link {% if request.path == link.url %}underline{% endif %}">{{ link.title | escape }}</a>
             {% endif %}
             {% endfor %}
+            {% comment %}
             <div class="header-cart" id="draw_cart"><span class="cart-items-total medium">{{ cart.item_count }}</span></div>
+            {% endcomment %}
+            <div class="shopping-bag">
+              {% include 'shopping-bag' %}
+              <div class="header-cart" id="draw_cart"><span class="cart-items-total medium">{{ cart.item_count }}</span></div>
+            </div>
           </div>
           <div class="header-lower-menu justify-between">
             {% for link in section.settings.lower_menu.links %}
@@ -124,7 +130,14 @@
             {% endfor %}
           </div>
         </div>
-        <div class="header-right no-d"><div class="header-cart"><span class="cart-items-total medium">{{ cart.item_count }}</span></div></div>
+        <div class="header-right no-d">
+         {% comment %}
+        <div class="header-cart"><span class="cart-items-total medium">{{ cart.item_count }}</span></div>
+        {% endcomment %}
+        <div class="shopping-bag">
+          {% include 'shopping-bag' %}
+          <div class="header-cart"><span class="cart-items-total medium">{{ cart.item_count }}</span></div>
+        </div>
       </div>
     </div>
     <div class="drawer-menu no-d">
@@ -226,7 +239,7 @@
     });
     
     
-    $('.header-cart').click(function() {
+    $('.header-cart , .shopping-bag').click(function() {
       $('.drawer-cart').addClass('drawn');
       $('.background-drawer-cart').addClass('drawn');
       $('body').addClass('no-scroll');
@@ -317,36 +330,36 @@
 <script>    
        
   
-  $(function() {
+  // $(function() {
 
-    var $window       = $(window);
-    var lastScrollTop = 0;
-    var $header       = $('.topheader');
-    window.headerHeight  = 172.4;    
+  //   var $window       = $(window);
+  //   var lastScrollTop = 0;
+  //   var $header       = $('.topheader');
+  //   window.headerHeight  = 172.4;    
 
-    $window.scroll(function() {
-      var windowTop  = $window.scrollTop();
+  //   $window.scroll(function() {
+  //     var windowTop  = $window.scrollTop();
 
-      if ( windowTop >= headerHeight ) {
-        $header.addClass( 'active' );
-        $('.header-menu-dropdown').addClass('less-top');
-      } else {
-        $header.removeClass( 'active' );
-        $header.removeClass( 'active-show' );
-        $('.header-menu-dropdown').removeClass('less-top');
-      }
+  //     if ( windowTop >= headerHeight ) {
+  //       $header.addClass( 'active' );
+  //       $('.header-menu-dropdown').addClass('less-top');
+  //     } else {
+  //       $header.removeClass( 'active' );
+  //       $header.removeClass( 'active-show' );
+  //       $('.header-menu-dropdown').removeClass('less-top');
+  //     }
 
-      if ( $header.hasClass( 'active' ) ) {
+  //     if ( $header.hasClass( 'active' ) ) {
 
-        if ( windowTop < lastScrollTop ) {
-          $header.addClass( 'active-show' );
-        } else {
-          $header.removeClass( 'active-show' );
-        }
-      }
-      lastScrollTop = windowTop;
-    } );
-  });
+  //       if ( windowTop < lastScrollTop ) {
+  //         $header.addClass( 'active-show' );
+  //       } else {
+  //         $header.removeClass( 'active-show' );
+  //       }
+  //     }
+  //     lastScrollTop = windowTop;
+  //   } );
+  // });
   
   $(window).on('resize', function(){  
     setIntervalX(function () {
