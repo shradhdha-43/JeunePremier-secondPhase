@@ -118,14 +118,15 @@ header{
     position: absolute;
     width: 100%;
     background-color: var(--dd-color-sixth);
-      left: 0;
-      top: 145px;
-      padding-top: 24px;
-      transition: .4s ease;
-      opacity: 0;
-      max-height: 0;
-      z-index: -2;
-      transition-delay: .3s;
+    left: 0;
+    top: 145px;
+    padding-top: 24px;
+    transition: .4s ease;
+    opacity: 0;
+    max-height: 0;
+    z-index: -2;
+    transition-delay: .3s;
+    visibility : hidden;
 }
 
 .header-menu-dropdown.less-top{
@@ -144,6 +145,7 @@ header{
 	opacity: 1;
   max-height: 999px;
   z-index: 5;
+  visibility : visible;
 }
 
 .header-menu-dropdown-wrap {
