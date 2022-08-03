@@ -44,11 +44,10 @@
 
 <script>
   $(document).ready(function(){
-    setTimeout(check_shop(), 5000);
+       setTimeout(function(){check_shop()}, 5000);
 
-    function check_shop() {
-      {
-        var stamped_widget_total = $("#stamped-reviews-widget").data("total");
+    function check_shop(){
+      var stamped_widget_total = $("#stamped-reviews-widget").data("total");
         console.log(stamped_widget_total);
 
         if (stamped_widget_total == 0){
@@ -56,7 +55,6 @@
           $(`.${insta_wrap}`).css("display" , "none");
           $(".faq-wrapper-blank").css("margin-bottom" , "0px");
         }
-      }
     }
   
   });
