@@ -3,7 +3,7 @@
     "main": {
       "type": "jp-product-keychain",
       "settings": {
-        "free_shipping_from": "Kostenloser Versand vanaf 150€",
+        "free_shipping_from": "Freet tote bag with every order",
         "show_payment_icons": true,
         "icon_bancontact": false,
         "icon_mastercard": true,
@@ -44,6 +44,7 @@
       "settings": {
         "title": "SHOP BESTSELLERS",
         "btn_text": "ALLE TASCHEN SHOPPEN",
+        "btn_url": "",
         "space_above": "false"
       }
     },
