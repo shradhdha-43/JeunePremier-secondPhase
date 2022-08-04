@@ -58,13 +58,17 @@
     height: auto;
 }
   
-  .member-img {
+/*   .member-img {
     height: 80vw;
-}
+} */
   
   .jp-prouduct-slider-wrap .team-card {
     margin: 12px 5px;
 }
+  .jp-team-sliderr {
+    display : flex;
+    flex-wrap :wrap;
+  }
 }
 
 
