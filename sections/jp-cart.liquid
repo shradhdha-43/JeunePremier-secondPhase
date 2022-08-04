@@ -146,9 +146,6 @@
       <div class="cart-product-wrapper">
         <div class="cart-product-image">
           <a href="{{ item.url }}" data-link="{{ item.url }}"><img src="{{ featured_image | product_img_url: '590x' }}"></a>
-          {% if item.product.id == free_product_id %}
-          <span>Note</span>
-          {% endif %}
         </div>
         
         <div class="cart-product-infos justify-between">
