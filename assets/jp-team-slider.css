@@ -93,6 +93,9 @@
   .jp-prouduct-slider-wrap .team-card {
       width: 100%;
   }
+     .member-img {
+        height: 80vw;
+    }
 }
 
 
