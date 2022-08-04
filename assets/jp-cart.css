@@ -530,4 +530,6 @@ svg.pay-icon {
 .free-product-note {
   color: red;
   font-size: 11px;
+  line-height: 18px;
+  margin-bottom: 6px;
 }
