@@ -518,3 +518,16 @@ svg.pay-icon {
     height: auto;
   }
 }
+
+.free-product-wrapper .cart-product-wrapper{
+  border-bottom : none;
+}
+
+.free-product-wrapper {
+  border-bottom : 1px solid var(--dd-color-second);
+}
+
+.free-product-note {
+  color: red;
+  font-size: 12px;
+}
