@@ -1,14 +1,14 @@
-.jp-team-slider.slick-slider.slick-dotted {
+.jp-team-sliderr.slick-slider.slick-dotted {
     margin-bottom: 48px;
 }
 
-.jp-prouduct-slider-wrap .team-card {
+/* .jp-prouduct-slider-wrap .team-card {
     width: 98% !important;
     margin: 0 8px;
-}
+} */
 
 .member-img {
-    height: 204px;
+    height: 270px;
     margin-bottom: 12px;
 }
 
@@ -48,19 +48,57 @@
 
 .team-slider-wrap{
 	display: flex;
+    align-items : center;
+    justify-content : center;
+}
+
+.jp-team-sliderr.abs.no-t-m.jp-product-slider-wrapper {
+  display: flex;
+  margin-right: 0;
+  flex-wrap: wrap;
+  width: 78%;
+  justify-content: flex-start;
+}
+
+.jp-team-sliderr.abs.no-t-m.jp-product-slider-wrapper .team-card{
+  width: 31.6%!important;
+  margin: 8px 5px;
 }
 
 
 @media(max-width: 992px){
 	.jp-team-slider-wrap .product-slider-first {
-    height: auto;
-}
+      height: auto;
+    }
   
-  .member-img {
-    height: 80vw;
-}
+    /*   .member-img {
+        height: 80vw;
+    } */
   
+    .jp-prouduct-slider-wrap .team-card {
+        margin: 12px 5px;
+    }
+    .jp-team-sliderr {
+        display : flex;
+        flex-wrap :wrap;
+    }
+    
+    .jp-prouduct-slider-wrap .team-card {
+        width: 48%;
+        margin: 5px;
+    }
+}
+
+@media(max-width: 560px){
   .jp-prouduct-slider-wrap .team-card {
-    margin: 0 5px;
+      width: 100%;
+  }
+     .member-img {
+        height: 80vw;
+    }
 }
-}
+
+
+
+
+
