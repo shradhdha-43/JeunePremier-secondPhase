@@ -146,7 +146,9 @@
       <div class="cart-product-wrapper">
         <div class="cart-product-image">
           <a href="{{ item.url }}" data-link="{{ item.url }}"><img src="{{ featured_image | product_img_url: '590x' }}"></a>
+          <span>Note</span>
         </div>
+        
         <div class="cart-product-infos justify-between">
           <div class="cart-product-info flex-box justify-between">
             <div class="title-wrapper">
@@ -179,7 +181,6 @@
             <div class="product-price">{% if item.variant.compare_at_price > item.variant.price %}<span class="product-discount-price">{{- item.variant.compare_at_price | times: vat | money_without_trailing_zeros | replace: " ","" -}}</span>{% endif %}<span class="product-selling-price">{{ item.final_price | times: vat | money_without_trailing_zeros }}</span></div>
           </div>
         </div>
-        <span>Note</span>
       </div>
       {% endfor %}
       </div>
