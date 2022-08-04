@@ -184,7 +184,7 @@
           </div>
         </div>
       </div>
-    {% if item.product.id == free_product_id %}
+    {% if item.product.id == free_product_id and cart.item_count >= 1 %}
     <span class="free-product-note">* This product was added to the cart for free as a special offer</span>
     </div>
     {% endif %}
