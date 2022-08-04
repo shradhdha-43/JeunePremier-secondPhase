@@ -1995,24 +1995,24 @@ $(document).ready(function(){
     ]
   });
   
-  // $('.jp-team-slider').slick({
-  // 	slidesToShow: 4.5,
-  //   slidesToScroll: 4,
-  //   arrows: true,
-  //   dots: true,
-  //   infinite: false,
-  //   responsive: [
-  //     {
-  //       breakpoint: 992,
-  //       settings: {
-  //         padding: '60px',
-  //         slidesToShow: 1,
-  //   		slidesToScroll: 1,
-  //         arrows: false
-  //       }
-  //     }
-  //   ]
-  // });
+  $('.jp-team-slider').slick({
+  	slidesToShow: 4.5,
+    slidesToScroll: 4,
+    arrows: true,
+    dots: true,
+    infinite: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          padding: '60px',
+          slidesToShow: 1,
+    		slidesToScroll: 1,
+          arrows: false
+        }
+      }
+    ]
+  });
   
   $('.ergos-mob').slick({
     padding: '60px',
