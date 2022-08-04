@@ -81,7 +81,6 @@
     .jp-team-sliderr {
         display : flex;
         flex-wrap :wrap;
-      justify-content : center;
     }
     
     .jp-prouduct-slider-wrap .team-card {
@@ -90,7 +89,7 @@
     }
 }
 
-@media(max-width: 425px){
+@media(max-width: 560px){
   .jp-prouduct-slider-wrap .team-card {
       width: 100%;
   }
