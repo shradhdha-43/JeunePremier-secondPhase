@@ -49,6 +49,7 @@
 .team-slider-wrap{
 	display: flex;
     align-items : center;
+    justify-content : center;
 }
 
 
@@ -68,13 +69,15 @@
 
 
 .jp-team-slider.abs.no-t-m.jp-product-slider-wrapper {
-  display : flex;
-  margin-right : 0;
-  flex-wrap : wrap;
+  display: flex;
+  margin-right: 0;
+  flex-wrap: wrap;
+  width: calc(75% - 12px);
+  justify-content: space-evenly;
 }
 
 .jp-team-slider.abs.no-t-m.jp-product-slider-wrapper .team-card{
-  width : 30% !important;
+  width : 31% !important;
   margin : 8px;
 }
 
