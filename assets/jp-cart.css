@@ -518,3 +518,7 @@ svg.pay-icon {
     height: auto;
   }
 }
+
+.cart-product-wrapper:last-child {
+  flex-direction : column;
+}
