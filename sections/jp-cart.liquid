@@ -185,7 +185,7 @@
         </div>
       </div>
     {% if item.product.id == free_product_id and cart.item_count > 1 and item.final_price == 0 %}
-    <span class="free-product-note">* This product was added to the cart for free as a special offer</span>
+    <span class="free-product-note">{{ section.settings.free_product_text }}</span>
     </div>
     {% endif %}
         
@@ -664,6 +664,12 @@
     "id": "free_product",
     "type": "product",
     "label": "Free Product"
+  },
+  {
+    "id": "free_product_text",
+    "type": "text",
+    "label": "Free Product Text",
+    "default" : "* This product was added to the cart for free as a special offer"
   },
   {
     "id": "upsell",
