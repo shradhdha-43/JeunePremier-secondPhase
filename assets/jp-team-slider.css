@@ -69,6 +69,11 @@
     display : flex;
     flex-wrap :wrap;
   }
+
+    .jp-prouduct-slider-wrap .team-card {
+      width: 45% !important;
+      margin: 0 8px;
+  }
 }
 
 
