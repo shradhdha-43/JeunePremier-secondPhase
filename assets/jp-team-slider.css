@@ -68,25 +68,26 @@
 
 @media(max-width: 992px){
 	.jp-team-slider-wrap .product-slider-first {
-    height: auto;
-}
+      height: auto;
+    }
   
-/*   .member-img {
-    height: 80vw;
-} */
+    /*   .member-img {
+        height: 80vw;
+    } */
   
-  .jp-prouduct-slider-wrap .team-card {
-    margin: 12px 5px;
-}
-  .jp-team-sliderr {
-    display : flex;
-    flex-wrap :wrap;
-  }
-
     .jp-prouduct-slider-wrap .team-card {
-      width: 45%;
-      margin: 8px;
-  }
+        margin: 12px 5px;
+    }
+    .jp-team-sliderr {
+        display : flex;
+        flex-wrap :wrap;
+      justify-content : center;
+    }
+    
+    .jp-prouduct-slider-wrap .team-card {
+        width: 45%;
+        margin: 8px;
+    }
 }
 
 @media(max-width: 425px){
