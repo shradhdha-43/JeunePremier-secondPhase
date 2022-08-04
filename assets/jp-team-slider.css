@@ -1,4 +1,4 @@
-.jp-team-slider.slick-slider.slick-dotted {
+.jp-team-sliderr.slick-slider.slick-dotted {
     margin-bottom: 48px;
 }
 
@@ -68,7 +68,7 @@
 }
 
 
-.jp-team-slider.abs.no-t-m.jp-product-slider-wrapper {
+.jp-team-sliderr.abs.no-t-m.jp-product-slider-wrapper {
   display: flex;
   margin-right: 0;
   flex-wrap: wrap;
@@ -76,7 +76,7 @@
   justify-content: space-evenly;
 }
 
-.jp-team-slider.abs.no-t-m.jp-product-slider-wrapper .team-card{
+.jp-team-sliderr.abs.no-t-m.jp-product-slider-wrapper .team-card{
   width : 30% !important;
   margin : 8px;
 }
