@@ -72,23 +72,10 @@
         },
         "f4d2edd9-e219-492d-84e6-88f989c7218f": {
           "type": "team_member",
+          "disabled": true,
           "settings": {
             "name": "Niels",
             "department": "Leiter der Logistik"
-          }
-        },
-        "be5c90c8-b044-4f9d-bd4d-920fd5fbedaf": {
-          "type": "team_member",
-          "settings": {
-            "name": "",
-            "department": ""
-          }
-        },
-        "f8308217-1225-4950-9565-68038b6c570e": {
-          "type": "team_member",
-          "settings": {
-            "name": "",
-            "department": ""
           }
         }
       },
@@ -98,9 +85,7 @@
         "b4cdd3e6-3871-42da-a74c-f9d6156da02b",
         "319cfe95-2f47-4298-8ac3-4e10a9c61989",
         "14283eb5-d1e3-461c-940a-aa38c9de078d",
-        "f4d2edd9-e219-492d-84e6-88f989c7218f",
-        "be5c90c8-b044-4f9d-bd4d-920fd5fbedaf",
-        "f8308217-1225-4950-9565-68038b6c570e"
+        "f4d2edd9-e219-492d-84e6-88f989c7218f"
       ],
       "settings": {
         "title": "Meet the team",
