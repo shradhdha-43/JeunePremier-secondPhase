@@ -142,7 +142,10 @@
       {% elsif item.product.type == "Keychain charm" or item.product.type == "keychain charm" %}
         {% assign keyChainCharm = keyChainCharm | plus: item.quantity %}
       {% endif %}
-      
+
+      {% if item.product.id == free_product_id and cart.item_count > 1 and item.final_price == 0  %}
+      <div class="free-product-wrapper">
+      {% endif %}
       <div class="cart-product-wrapper">
         <div class="cart-product-image">
           <a href="{{ item.url }}" data-link="{{ item.url }}"><img src="{{ featured_image | product_img_url: '590x' }}"></a>
@@ -180,6 +183,11 @@
           </div>
         </div>
       </div>
+      {% if item.product.id == free_product_id and cart.item_count > 1 and item.final_price == 0 %}
+      <span class="free-product-note">{{ section.settings.free_product_text }}</span>
+      </div>
+      {% endif %}
+        
       {% endfor %}
       </div>
       <div class="drawer-cart-checkout">
