@@ -179,8 +179,8 @@
             <div class="product-price">{% if item.variant.compare_at_price > item.variant.price %}<span class="product-discount-price">{{- item.variant.compare_at_price | times: vat | money_without_trailing_zeros | replace: " ","" -}}</span>{% endif %}<span class="product-selling-price">{{ item.final_price | times: vat | money_without_trailing_zeros }}</span></div>
           </div>
         </div>
-        <span>Note</span>
       </div>
+        <span>Note</span>
       {% endfor %}
       </div>
       <div class="drawer-cart-checkout">
