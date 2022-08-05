@@ -250,6 +250,7 @@
         "type": "jp-cart",
         "settings": {
           "free_product": "tote-bag-xxl-smiley",
+          "free_product_text": "* This product was added to the cart for free as a special offer",
           "upsell": "cleaner",
           "fill_text": "Fill your",
           "cart_text": "cart",
@@ -408,6 +409,12 @@
     "blocks": {
       "319724205969189013": {
         "type": "shopify:\/\/apps\/form-builder-with-file-upload\/blocks\/app-embed\/b6b8dd14-356b-4725-a4ed-77232212b3c3",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
         "settings": {
         }
