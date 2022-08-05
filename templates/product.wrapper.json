@@ -102,6 +102,15 @@
       "type": "jp-reviews-product",
       "settings": {
       }
+    },
+    "165971226656b24dfc": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -110,6 +119,7 @@
     "1645352523c5f0e4b8",
     "16462075999f906d8f",
     "1645442399a142c9b8",
-    "1645786214e1057d96"
+    "1645786214e1057d96",
+    "165971226656b24dfc"
   ]
 }
