@@ -208,6 +208,15 @@
       "type": "jp-reviews-product",
       "settings": {
       }
+    },
+    "16597120961a240424": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<script type=\"text\/javascript\">\nvar _learnq = _learnq || [];\nfunction addedToCart() {\n  fetch(`${window.location.origin}\/cart.js`)\n  .then(res => res.clone().json().then(data => {\n    var cart = {\n      total_price: data.total_price\/100,\n      $value: data.total_price\/100,\n      total_discount: data.total_discount,\n      original_total_price: data.original_total_price\/100,\n      items: data.items\n    }\n    if (item !== 'undefined') {\n      cart = Object.assign(cart, item)\n    }\n    _learnq.push(['track', 'Added to Cart', cart])\n  }))\n} \n(function (ns, fetch) {\n  ns.fetch = function() {\n    const response = fetch.apply(this, arguments);\n    response.then(res => {\n      if (`${window.location.origin}\/cart\/add.js`\n      \t.includes(res.url)) {\n        \taddedToCart()\n      }\n    });\n    return response\n  }\n}(window, window.fetch))\n$(document).ajaxComplete(function(event, request, settings){\n  if(settings.url == \"\/cart\/add.js\"){\n      addedToCart()\n  }\n})<\/script>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -222,6 +231,7 @@
     "164543171941402611",
     "16462080425b9e4234",
     "1645442399a142c9b8",
-    "1645786214e1057d96"
+    "1645786214e1057d96",
+    "16597120961a240424"
   ]
 }
