@@ -28,18 +28,18 @@
     "16445616115be2c4f4": {
       "type": "jp-main-collection",
       "blocks": {
-        "5cbdd836-ea08-463e-b7e8-1157bc52c811": {
+        "97dba447-d7b6-41ec-a2ad-eda47f7b80bd": {
           "type": "age",
           "settings": {
-            "age_title": "Age",
-            "age1": "Kindergarden",
-            "age_tag1": "2 - 6",
-            "age2": "6 to 8",
-            "age_tag2": "6-8",
-            "age3": "8 to 12",
-            "age_tag3": "8-12",
-            "age4": "",
-            "age_tag4": "",
+            "age_title": "Gender",
+            "age1": "Girls",
+            "age_tag1": "Girl",
+            "age2": "Boys",
+            "age_tag2": "Boy",
+            "age3": "Kindergarten",
+            "age_tag3": "Mini",
+            "age4": "Classic Collection",
+            "age_tag4": "Classicbag",
             "age5": "",
             "age_tag5": "",
             "age6": "",
@@ -54,18 +54,18 @@
             "age_tag10": ""
           }
         },
-        "97dba447-d7b6-41ec-a2ad-eda47f7b80bd": {
+        "5cbdd836-ea08-463e-b7e8-1157bc52c811": {
           "type": "age",
           "settings": {
-            "age_title": "Collection",
-            "age1": "Girls",
-            "age_tag1": "Girl",
-            "age2": "Boys",
-            "age_tag2": "Boy",
-            "age3": "Kindergarten",
-            "age_tag3": "Mini",
-            "age4": "Classic Collection",
-            "age_tag4": "Classicbag",
+            "age_title": "Age",
+            "age1": "Kindergarden",
+            "age_tag1": "2 - 6",
+            "age2": "6 to 8",
+            "age_tag2": "6-8",
+            "age3": "8 to 12",
+            "age_tag3": "8-12",
+            "age4": "",
+            "age_tag4": "",
             "age5": "",
             "age_tag5": "",
             "age6": "",
@@ -309,8 +309,8 @@
         }
       },
       "block_order": [
-        "5cbdd836-ea08-463e-b7e8-1157bc52c811",
         "97dba447-d7b6-41ec-a2ad-eda47f7b80bd",
+        "5cbdd836-ea08-463e-b7e8-1157bc52c811",
         "03405d13-a387-4e10-ad2d-d719aafe66a8",
         "2f4e6c4e-5e78-4437-a351-b58369a56c04",
         "cb3fc11e-73e0-4a23-bc10-fb0d22f69139",
