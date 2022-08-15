@@ -45,6 +45,7 @@
     },
     "1646073797c5988fcf": {
       "type": "jp-product-slider-2",
+      "disabled": true,
       "settings": {
         "bg_color": "white",
         "title": "",
