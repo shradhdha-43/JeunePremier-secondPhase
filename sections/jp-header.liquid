@@ -3,13 +3,15 @@
 <div class="jp-header-wrapper">
   <div class="announcement-bar">
     {% for block in section.blocks %}
-    {% if block.type == 'announcement' %}
-    {% if block.settings.announcement_url == blank %}    
-    {{ block.settings.announcement_text }}
-    {% else %}
-    <a href="{{ block.settings.announcement_url }}" class="announcement-text text-center medium">{{ block.settings.announcement_text }}</a>
-    {% endif %}
-    {% endif %}
+      {% if block.type == 'announcement' %}
+        {% if block.settings.announcement_url == blank %}
+          {{ block.settings.announcement_text }}
+        {% else %}
+          <a href="{{ block.settings.announcement_url }}" class="announcement-text text-center medium">
+            {{- block.settings.announcement_text -}}
+          </a>
+        {% endif %}
+      {% endif %}
     {% endfor %}
   </div>
   <header class="topheader ovr-hidden">
@@ -29,203 +31,273 @@
         <div class="header-right no-t-m">
           <div class="header-upper-menu justify-between align-center">
             {% for link in section.settings.upper_menu.links %}
-            {% if forloop.index == 3 %}
-            <div class="langs rel">
-              <span class="flag flag-{{localization.country.iso_code | downcase}}"></span>
-              <span class="header-country-code">{{localization.country.iso_code}}</span>
-              {% comment %}
-              <a href="#" class="light"><span id="main-lang">EN</span> {% include 'icon-down-chev' %}</a>
-              <ul class="header-sub-lang-list">
-                <li id="lang-en"><a href="https://www.jeunepremier.com" class="light">EN</a></li>
-                <li id="lang-it"><a href="https://www.jeunepremier.com/it" class="light">IT</a></li>
-                <li id="lang-de"><a href="https://www.jeunepremier.de" class="light">DE</a></li>
-                <li id="lang-nl"><a href="https://www.jeunepremier.com/nl" class="light">NL</a></li>
-                <li id="lang-be"><a href="https://www.jeunepremier.com/nl" class="light">BE</a></li>
-                <li id="lang-fr"><a href="https://www.jeunepremier.com/fr" class="light">FR</a></li>
-                <li id="lang-ru"><a href="https://www.jeune-premier.ru" class="light">РУ</a></li>
-              </ul>
-              {% endcomment %}
-            </div>
-            <a href="{{ link.url }}" class="light upper-menu-link {% if request.path == link.url %}underline{% endif %}">{{ link.title | escape }}</a>
-            {% else %}
-            <a href="{{ link.url }}" class="light upper-menu-link {% if request.path == link.url %}underline{% endif %}">{{ link.title | escape }}</a>
-            {% endif %}
+              {% if forloop.index == 3 %}
+                <div class="langs rel">
+                  <span class="flag flag-{{localization.country.iso_code | downcase}}"></span>
+                  <span class="header-country-code">{{ localization.country.iso_code }}</span>
+                  {% comment %}
+                    <a href="#" class="light"><span id="main-lang">EN</span> {% include 'icon-down-chev' %}</a>
+                    <ul class="header-sub-lang-list">
+                      <li id="lang-en"><a href="https://www.jeunepremier.com" class="light">EN</a></li>
+                      <li id="lang-it"><a href="https://www.jeunepremier.com/it" class="light">IT</a></li>
+                      <li id="lang-de"><a href="https://www.jeunepremier.de" class="light">DE</a></li>
+                      <li id="lang-nl"><a href="https://www.jeunepremier.com/nl" class="light">NL</a></li>
+                      <li id="lang-be"><a href="https://www.jeunepremier.com/nl" class="light">BE</a></li>
+                      <li id="lang-fr"><a href="https://www.jeunepremier.com/fr" class="light">FR</a></li>
+                      <li id="lang-ru"><a href="https://www.jeune-premier.ru" class="light">РУ</a></li>
+                    </ul>
+                  {% endcomment %}
+                </div>
+                <a
+                  href="{{ link.url }}"
+                  class="light upper-menu-link {% if request.path == link.url %}underline{% endif %}"
+                >
+                  {{- link.title | escape -}}
+                </a>
+              {% else %}
+                <a
+                  href="{{ link.url }}"
+                  class="light upper-menu-link {% if request.path == link.url %}underline{% endif %}"
+                >
+                  {{- link.title | escape -}}
+                </a>
+              {% endif %}
             {% endfor %}
             {% comment %}
-            <div class="header-cart" id="draw_cart"><span class="cart-items-total medium">{{ cart.item_count }}</span></div>
+              <div class="header-cart" id="draw_cart"><span class="cart-items-total medium">{{ cart.item_count }}</span></div>
             {% endcomment %}
             <div class="shopping-bag">
               {% include 'shopping-bag' %}
-              <div class="header-cart" id="draw_cart"><span class="cart-items-total medium">{{ cart.item_count }}</span></div>
+              <div class="header-cart" id="draw_cart">
+                <span class="cart-items-total medium">{{ cart.item_count }}</span>
+              </div>
             </div>
           </div>
           <div class="header-lower-menu justify-between">
             {% for link in section.settings.lower_menu.links %}
-            <div class="menu-link-wrap">
-              {% assign current = false %}
-              {%- for childlink in link.links -%}
-              {% if childlink.url == request.path %}
-              {% assign current = true %}
-              {% endif %}
-              {%- endfor -%}
-              <a href="{{ link.url }}" class="medium lower-menu-link {% if current or request.path == link.url %}underline{% endif %}">{{ link.title | escape }}</a>
-              <div class="header-menu-dropdown">
-                <div class="container">
-                  <div class="header-menu-dropdown-wrap flex-box justify-between">
-                    {%- for childlink in link.links -%}
-                    {% assign handlesxn = childlink.url | split: "/" %}
-                    {% assign colxn = collections[handlesxn.last] %}
-                    {% if colxn.url == blank %}
-                    {% assign colxn = all_products[handlesxn.last] %}
-                    {% endif %}
-                    {% if forloop.first %}
-                    {% if childlink.title == "(black-card)" %}
-                    {% assign opt = 5 %}
-                    {% else %}
-                    {% assign opt = 4 %}
-                    {% endif %}
-                    {% endif %}
-
-                    {% if opt == 5 %}
-                    {% if childlink.title == "(black-card)" %}
-                    <div class="nav-card black-card">
-                      <a href="{{ colxn.url }}" class="nav-card-link medium">{{ 'sections.header.all_collection' | t: title: link.title }}</a>
-                    </div>
-                    {% else %}
-                    <div class="nav-card">
-
-                      <a href="{{ colxn.url }}" class="nav-card-link">
-                        <div class="nav-image-wrapper">
-                          <img src="{{ colxn.featured_image | image_url: height: 214 }}" alt="{{ colxn.title }}" loading="lazy" {% if colxn.featured_image.height >= colxn.featured_image.width %}style="object-fit: contain;"{% endif %}>
-                          {% assign col_obj = collections[colxn.handle] %}
-                          {% if col_obj.metafields.my_fields.hover_image != blank %}
-                          <img src="{{ col_obj.metafields.my_fields.hover_image | image_url: height: 214 }}" alt="{{ colxn.title }}" loading="lazy" {% if col_obj.metafields.my_fields.hover_image.height >= col_obj.metafields.my_fields.hover_image.width %}style="object-fit: contain;"{% endif %}>
+              <div class="menu-link-wrap">
+                {% assign current = false %}
+                {%- for childlink in link.links -%}
+                  {% if childlink.url == request.path %}
+                    {% assign current = true %}
+                  {% endif %}
+                {%- endfor -%}
+                <a
+                  href="{{ link.url }}"
+                  class="medium lower-menu-link {% if current or request.path == link.url %}underline{% endif %}"
+                >
+                  {{- link.title | escape -}}
+                </a>
+                <div class="header-menu-dropdown">
+                  <div class="container">
+                    <div class="header-menu-dropdown-wrap flex-box justify-between">
+                      {%- for childlink in link.links -%}
+                        {% assign handlesxn = childlink.url | split: "/" %}
+                        {% assign colxn = collections[handlesxn.last] %}
+                        {% if colxn.url == blank %}
+                          {% assign colxn = all_products[handlesxn.last] %}
+                        {% endif %}
+                        {% if forloop.first %}
+                          {% if childlink.title == "(black-card)" %}
+                            {% assign opt = 5 %}
+                          {% else %}
+                            {% assign opt = 4 %}
                           {% endif %}
-                        </div>
-                        <div class="nav-title light">{{ colxn.title }}<span class="nav-arrow">{% include 'svg-thinarrow' %}</span></div>
-                      </a>
-                    </div>
+                        {% endif %}
 
-                    {% endif %}
-                    {% else %}
-                    <div class="nav-card four-cards">
-
-                      <a href="{{ colxn.url }}" class="nav-card-link">
-                        <div class="nav-image-wrapper">
-                          <img src="{{ colxn.featured_image | image_url: height: 214 }}" alt="{{ colxn.title }}" loading="lazy" {% if colxn.featured_image.height >= colxn.featured_image.width %}style="object-fit: contain;"{% endif %}>
-                          {% assign col_obj = collections[colxn.handle] %}
-                          {% if col_obj.metafields.my_fields.hover_image != blank %}
-                          <img src="{{ col_obj.metafields.my_fields.hover_image | image_url: height: 214 }}" alt="{{ colxn.title }}" loading="lazy" {% if col_obj.metafields.my_fields.hover_image.height >= col_obj.metafields.my_fields.hover_image.width %}style="object-fit: contain;"{% endif %}>
+                        {% if opt == 5 %}
+                          {% if childlink.title == "(black-card)" %}
+                            <div class="nav-card black-card">
+                              <a href="{{ colxn.url }}" class="nav-card-link medium">
+                                {{- 'sections.header.all_collection' | t: title: link.title -}}
+                              </a>
+                            </div>
+                          {% else %}
+                            <div class="nav-card">
+                              <a href="{{ colxn.url }}" class="nav-card-link">
+                                <div class="nav-image-wrapper">
+                                  <img
+                                    src="{{ colxn.featured_image | image_url: height: 214 }}"
+                                    alt="{{ colxn.title }}"
+                                    loading="lazy"
+                                    {% if colxn.featured_image.height >= colxn.featured_image.width %}
+                                      style="object-fit: contain;"
+                                    {% endif %}
+                                  >
+                                  {% assign col_obj = collections[colxn.handle] %}
+                                  {% if col_obj.metafields.my_fields.hover_image != blank %}
+                                    <img
+                                      src="{{ col_obj.metafields.my_fields.hover_image | image_url: height: 214 }}"
+                                      alt="{{ colxn.title }}"
+                                      loading="lazy"
+                                      {% if col_obj.metafields.my_fields.hover_image.height >= col_obj.metafields.my_fields.hover_image.width %}
+                                        style="object-fit: contain;"
+                                      {% endif %}
+                                    >
+                                  {% endif %}
+                                </div>
+                                <div class="nav-title light">
+                                  {{ colxn.title -}}
+                                  <span class="nav-arrow">{% include 'svg-thinarrow' %}</span>
+                                </div>
+                              </a>
+                            </div>
                           {% endif %}
-                        </div>
-                        <div class="nav-title light">{{ colxn.title }}<span class="nav-arrow">{% include 'svg-thinarrow' %}</span></div>
-                      </a>
+                        {% else %}
+                          <div class="nav-card four-cards">
+                            <a href="{{ colxn.url }}" class="nav-card-link">
+                              <div class="nav-image-wrapper">
+                                <img
+                                  src="{{ colxn.featured_image | image_url: height: 214 }}"
+                                  alt="{{ colxn.title }}"
+                                  loading="lazy"
+                                  {% if colxn.featured_image.height >= colxn.featured_image.width %}
+                                    style="object-fit: contain;"
+                                  {% endif %}
+                                >
+                                {% assign col_obj = collections[colxn.handle] %}
+                                {% if col_obj.metafields.my_fields.hover_image != blank %}
+                                  <img
+                                    src="{{ col_obj.metafields.my_fields.hover_image | image_url: height: 214 }}"
+                                    alt="{{ colxn.title }}"
+                                    loading="lazy"
+                                    {% if col_obj.metafields.my_fields.hover_image.height >= col_obj.metafields.my_fields.hover_image.width %}
+                                      style="object-fit: contain;"
+                                    {% endif %}
+                                  >
+                                {% endif %}
+                              </div>
+                              <div class="nav-title light">
+                                {{ colxn.title -}}
+                                <span class="nav-arrow">{% include 'svg-thinarrow' %}</span>
+                              </div>
+                            </a>
+                          </div>
+                        {% endif %}
+                      {%- endfor -%}
                     </div>
-                    {% endif %}
-                    {%- endfor -%}
                   </div>
                 </div>
               </div>
-            </div>
             {% endfor %}
           </div>
         </div>
         <div class="header-right no-d">
-         {% comment %}
-        <div class="header-cart"><span class="cart-items-total medium">{{ cart.item_count }}</span></div>
-        {% endcomment %}
-        <div class="shopping-bag">
-          {% include 'shopping-bag' %}
-          <div class="header-cart"><span class="cart-items-total medium">{{ cart.item_count }}</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="drawer-menu no-d">
-      <div class="drawer-menu-content">
-        <a href="/collections/all" class="shop-all-prods-btn title">{{ 'sections.header.all_products' | t }}</a>
-        <div class="header-lower-menu justify-between">
-          {% for link in section.settings.lower_menu.links %}
-          	{% if forloop.first %}
-          		{% assign opt = 4 %}
-          	{% else %}
-          		{% assign opt = 5 %}
-          	{% endif %}
-          <div class="menu-link-wrap menu-link-wrap-mobile">
-            <div class="medium lower-menu-link" role="button">{{ link.title | escape }}</div>
-            <div class="panel">
-              <div class="header-menu-dropdown-wrap flex-box justify-between{% if forloop.first != true %} five-cards{% endif %}">
-                {%- for childlink in link.links -%}
-                {% assign handlesxn = childlink.url | split: "/" %}
-                {% assign colxn = collections[handlesxn.last] %}
-                {% if colxn.url == blank %}
-                {% assign colxn = all_products[handlesxn.last] %}
-                {% endif %}
-                {% if childlink.title == "(black-card)" %}
-                {% else %}
-                {% endif %}
-
-                {% if opt == 5 %}
-                {% if childlink.title == "(black-card)" %}
-                <div class="nav-card">
-                  <a href="{{ colxn.url }}" class="nav-title light">{{ 'sections.header.all_collection' | t: title: link.title }}</a>
-                </div>
-                {% else %}
-                <div class="nav-card">
-
-                  <a href="{{ colxn.url }}" class="nav-card-link">
-                    <div class="nav-title light">{{ colxn.title }}</div>
-                  </a>
-                </div>
-
-                {% endif %}
-                {% else %}
-                {% if forloop.first %}
-                	<a href="{{ colxn.url }}" class="nav-card black-card four-cards">
-                      <div class="nav-card-link medium">{{ 'sections.header.all_collection' | t: title: link.title }}</div>
-                      <div class="nav-title light">{{ 'sections.header.all_collection' | t: title: link.title }}</div>
-                    </a>
-                {% else %}
-                <div class="nav-card four-cards">
-
-                  <a href="{{ colxn.url }}" class="nav-card-link">
-                    <img src="{{ colxn.featured_image | image_url: height: 500 }}" alt="{{ colxn.title }}" loading="lazy" {% if colxn.featured_image.height >= colxn.featured_image.width %}style="object-fit: contain;"{% endif %}>
-                    <div class="nav-title light">{{ colxn.title }}</div>
-                  </a>
-                </div>
-                {% endif %}
-                {% endif %}
-                {%- endfor -%}
-              </div>
+          {% comment %}
+            <div class="header-cart"><span class="cart-items-total medium">{{ cart.item_count }}</span></div>
+          {% endcomment %}
+          <div class="shopping-bag">
+            {% include 'shopping-bag' %}
+            <div class="header-cart">
+              <span class="cart-items-total medium">{{ cart.item_count }}</span>
             </div>
           </div>
-          {% endfor %}
-        </div>
-        <div class="header-upper-menu justify-between align-center">
-          {% for link in section.settings.upper_menu.links %}
-          <a href="{{ link.url }}" class="light upper-menu-link">{{ link.title | escape }}</a>
-          {% endfor %}	
-          <div class="langs rel">
-            <span class="flag flag-{{localization.country.iso_code | downcase}}"></span>
-            <span class="header-country-code">{{localization.country.iso_code}}</span>
-            {% comment %}
-            <a href="https://www.jeunepremier.com" class="light">EN</a>
-            <a href="https://www.jeunepremier.com/it" class="light">IT</a>
-            <a href="https://www.jeunepremier.de" class="light">DE</a>
-            <a href="https://www.jeunepremier.com/nl" class="light">NL</a>
-            <a href="https://www.jeunepremier.com/nl" class="light">BE</a>
-            <a href="https://www.jeunepremier.com/fr" class="light">FR</a>
-            <a href="https://www.jeune-premier.ru" class="light">РУ</a>
-            {% endcomment %}
-          </div>
         </div>
       </div>
-      <div class="close-menu-drawer-button"><span class="close-text light">Close</span><span class="close-icon">{% include 'icon-close' %}</span></div>
+      <div class="drawer-menu no-d">
+        <div class="drawer-menu-content">
+          <a href="/collections/all" class="shop-all-prods-btn title">{{ 'sections.header.all_products' | t }}</a>
+          <div class="header-lower-menu justify-between">
+            {% for link in section.settings.lower_menu.links %}
+              {% if forloop.first %}
+                {% assign opt = 4 %}
+              {% else %}
+                {% assign opt = 5 %}
+              {% endif %}
+              <div class="menu-link-wrap menu-link-wrap-mobile">
+                <div class="medium lower-menu-link" role="button">{{ link.title | escape }}</div>
+                <div class="panel">
+                  <div class="header-menu-dropdown-wrap flex-box justify-between{% if forloop.first != true %} five-cards{% endif %}">
+                    {%- for childlink in link.links -%}
+                      {% assign handlesxn = childlink.url | split: "/" %}
+                      {% assign colxn = collections[handlesxn.last] %}
+                      {% if colxn.url == blank %}
+                        {% assign colxn = all_products[handlesxn.last] %}
+                      {% endif %}
+                      {% if childlink.title == "(black-card)" %}
+                      {% else %}
+
+                      {% endif %}
+
+                      {% if opt == 5 %}
+                        {% if childlink.title == "(black-card)" %}
+                          <div class="nav-card">
+                            <a href="{{ colxn.url }}" class="nav-title light">
+                              {{- 'sections.header.all_collection' | t: title: link.title -}}
+                            </a>
+                          </div>
+                        {% else %}
+                          <div class="nav-card">
+                            <a href="{{ colxn.url }}" class="nav-card-link">
+                              <div class="nav-title light">{{ colxn.title }}</div>
+                            </a>
+                          </div>
+                        {% endif %}
+                      {% else %}
+                        {% comment %}
+
+                          {% if forloop.first %}
+                            <a href="{{ colxn.url }}" class="nav-card black-card four-cards">
+                                <div class="nav-card-link medium">{{ 'sections.header.all_collection' | t: title: link.title }}</div>
+                                <div class="nav-title light">{{ 'sections.header.all_collection' | t: title: link.title }}</div>
+                            </a>
+                          {% else %}
+                            <div class="nav-card four-cards">
+                              <a href="{{ colxn.url }}" class="nav-card-link">
+                                <img src="{{ colxn.featured_image | image_url: height: 500 }}" alt="{{ colxn.title }}" loading="lazy" {% if colxn.featured_image.height >= colxn.featured_image.width %}style="object-fit: contain;"{% endif %}>
+                                <div class="nav-title light">{{ colxn.title }}</div>
+                              </a>
+                            </div>
+                          {% endif %}
+                        {% endcomment %}
+                        <div class="nav-card four-cards">
+                          <a href="{{ colxn.url }}" class="nav-card-link">
+                            <img
+                              src="{{ colxn.featured_image | image_url: height: 500 }}"
+                              alt="{{ colxn.title }}"
+                              loading="lazy"
+                              {% if colxn.featured_image.height >= colxn.featured_image.width %}
+                                style="object-fit: contain;"
+                              {% endif %}
+                            >
+                            <div class="nav-title light">{{ colxn.title }}</div>
+                          </a>
+                        </div>
+                      {% endif %}
+                    {%- endfor -%}
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="header-upper-menu justify-between align-center">
+            {% for link in section.settings.upper_menu.links %}
+              <a href="{{ link.url }}" class="light upper-menu-link">{{ link.title | escape }}</a>
+            {% endfor %}
+            <div class="langs rel">
+              <span class="flag flag-{{localization.country.iso_code | downcase}}"></span>
+              <span class="header-country-code">{{ localization.country.iso_code }}</span>
+              {% comment %}
+                <a href="https://www.jeunepremier.com" class="light">EN</a>
+                <a href="https://www.jeunepremier.com/it" class="light">IT</a>
+                <a href="https://www.jeunepremier.de" class="light">DE</a>
+                <a href="https://www.jeunepremier.com/nl" class="light">NL</a>
+                <a href="https://www.jeunepremier.com/nl" class="light">BE</a>
+                <a href="https://www.jeunepremier.com/fr" class="light">FR</a>
+                <a href="https://www.jeune-premier.ru" class="light">РУ</a>
+              {% endcomment %}
+            </div>
+          </div>
+        </div>
+        <div class="close-menu-drawer-button">
+          <span class="close-text light">Close</span><span class="close-icon">{% include 'icon-close' %}</span>
+        </div>
+      </div>
     </div>
   </header>
 </div>
 
 <script>
-
   $(document).ready(function() {
     $('.panel').hide()
     $(".menu-link-wrap-mobile").find("div[role|='button']").click(function() {
@@ -237,8 +309,8 @@
         $(this).toggleClass('active');
       }
     });
-    
-    
+
+
     $('.header-cart , .shopping-bag').click(function() {
       $('.drawer-cart').addClass('drawn');
       $('.background-drawer-cart').addClass('drawn');
@@ -251,7 +323,7 @@
       $('.background-drawer-cart').removeClass('drawn');
       $('body').removeClass('no-scroll');
     });
-    
+
     {% comment %}
     var full = window.location.href;
     var parts = full.split('.');
@@ -269,7 +341,7 @@
       $('.footer-lang-wrap.nl').addClass("selected");
       console.log('Lang BE');
       window.lang = "be";
-    } 
+    }
     else if(subDomain.includes('fr')) {
       $('#main-lang').text('FR');
       $('#lang-fr').remove();
@@ -306,7 +378,7 @@
       window.lang = "en";
     }
     {% endcomment %}
-    
+
   });
 
   $('.mobile-hamburger').click(function() {
@@ -324,18 +396,18 @@
     var mybutton = document.getElementById("to-top");
     mybutton.style.display = "flex";
   });
-
 </script>
 
-<script>    
-       
-  
+<script>
+
+
+
   // $(function() {
 
   //   var $window       = $(window);
   //   var lastScrollTop = 0;
   //   var $header       = $('.topheader');
-  //   window.headerHeight  = 172.4;    
+  //   window.headerHeight  = 172.4;
 
   //   $window.scroll(function() {
   //     var windowTop  = $window.scrollTop();
@@ -360,8 +432,8 @@
   //     lastScrollTop = windowTop;
   //   } );
   // });
-  
-  $(window).on('resize', function(){  
+
+  $(window).on('resize', function(){
     setIntervalX(function () {
       $('.jp-header-wrapper').css('height', 'auto');
       window.headerHeight = $('.jp-header-wrapper').height();
@@ -372,66 +444,66 @@
   $(".menu-link-wrap").hover(function () {
     $('.topheader.active').toggleClass("ovr-hidden");
   });
-  
+
   $(".langs").hover(function () {
     $('.topheader').toggleClass("ovr-hidden");
   });
-
-    </script>
+</script>
 
 {% schema %}
-  {
-    "name": "JP Header",
-    "settings": [
-		{
-			"type": "text",
-			"id": "logo_svg_desktop",
-			"label": "Logo SVG Desktop"
-		},
-		{
-			"type": "text",
-			"id": "logo_svg_mobile",
-			"label": "Logo SVG Mobile"
-		},
-		{
-			"type": "link_list",
-			"id": "upper_menu",
-			"label": "Upper Menu"
-		},
-		{
-			"type": "link_list",
-			"id": "lower_menu",
-			"label": "Lower Menu"
-		}
-	],
-	"blocks": [
-		{
-			"type": "announcement",
-			"name": "Announcement Text",
-			"settings": [
-				{
-                    "type": "richtext",
-                    "id": "announcement_text",
-                    "label": "Announcement Text"
-                },
-                {
-                    "type": "url",
-                    "id": "announcement_url",
-                    "label": "Announcement URL"
-                }
-			]
-		}
-	],
-	"presets":[
-      {
-         "name":"JP Header"
-      }
-   ]
-  }
+{
+  "name": "JP Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_svg_desktop",
+      "label": "Logo SVG Desktop"
+    },
+    {
+      "type": "text",
+      "id": "logo_svg_mobile",
+      "label": "Logo SVG Mobile"
+    },
+    {
+      "type": "link_list",
+      "id": "upper_menu",
+      "label": "Upper Menu"
+    },
+    {
+      "type": "link_list",
+      "id": "lower_menu",
+      "label": "Lower Menu"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "announcement_text",
+          "label": "Announcement Text"
+        },
+        {
+          "type": "url",
+          "id": "announcement_url",
+          "label": "Announcement URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "JP Header"
+    }
+  ]
+}
 {% endschema %}
 
 {% stylesheet %}
 {% endstylesheet %}
 
 {% javascript %}
+
 {% endjavascript %}
