@@ -57,6 +57,13 @@
         "upsell_type": "bag"
       }
     },
+    "1660572869e621466c": {
+      "type": "jp-product-slider-lunchbox",
+      "settings": {
+        "lunchbox_title": "",
+        "lunchbox_collection": ""
+      }
+    },
     "164614191478238c86": {
       "type": "jp-product-slider-4",
       "settings": {
@@ -225,6 +232,7 @@
     "1648025119633f453c",
     "product-recommendations",
     "1646073797c5988fcf",
+    "1660572869e621466c",
     "164614191478238c86",
     "16454287984d026596",
     "164607437737f92922",
