@@ -1,48 +1,46 @@
 {{ 'jp-main-collection.css' | asset_url | stylesheet_tag }}
 {{ 'jp-product-slider.css' | asset_url | stylesheet_tag }}
 {% assign phandle = product.handle %}
-
-{%- for product_collection in product.collections -%}
-  {%- for link in linklists.main-design-collections.links -%}
-    {% assign link_url = link.url | split: "/" %}
-    {%- assign link_handle = link_url.last | handleize -%}
-
-    {%- if product_collection.handle == link_handle -%}
-      {%- assign coll = product_collection.handle -%}
-      {%- break -%}
-    {%- endif -%}
-  {%- endfor -%}
-
-  {%- if coll -%}
-    {%- break -%}
-  {%- endif -%}
-{%- endfor -%}
-
-{% assign a = 0 %}
-{% for product in collections[coll].products limit: 24 %}
-  {% unless product.type == "City Bag" or product.type == "Box Filled" or product.type == "Pencil Case" or product.type == "Case Double" or product.type == "Pencil Box" or product.type == "Alle"  or product.type == "Box" or product.type == "Drinking Bottle" or product.type == "Girls" %}
-    {% continue %}
-  {% endunless %}
-  {% if product.handle == phandle %}
-    {% continue %}
+{%- assign prod_title = product.title | downcase -%}
+{% if prod_title contains "elastic" %}
+  {%- assign slider_title = "Different Lunchboxes" -%}
+{% else %}
+  {%- assign slider_title = "Different Elastics" -%}
+{% endif %}
+{% assign phandle = product.handle %}
+{% assign tag_arr = product.tags | downcase %}
+{% assign a = 1 %}
+{% if tag_arr contains "lunchbox" and tag_arr contains "elastic" %}
+  {% if tag_arr contains "girl" or tag_arr contains "pink" %}
+    {% assign coll = "lunchbox-pink" %}
   {% endif %}
-  {% assign a = a | plus: 1 %}
-{% endfor %}
-
-<div id="to-related-2" class="jp-prouduct-slider-wrap {% if a == 0 %}no-disp{% endif %} related-blk">
+{% elsif tag_arr contains "lunchbox" and tag_arr contains "elastic" %}
+  {% if tag_arr contains "boy" or tag_arr contains "black" %}
+    {% assign coll = "lunchbox-black" %}
+  {% endif %}
+{% elsif tag_arr contains "pink" and tag_arr contains "lunchbox" %}
+  {% assign coll = "lunchbox-elastic-girls" %}
+{% elsif tag_arr contains "black" and tag_arr contains "lunchbox" %}
+  {% assign coll = "lunchbox-elastic-boys" %}
+{% else %}
+  {% assign a = 0 %}
+{% endif %}
+{%- unless coll -%}
+  {%- assign coll = section.settings.lunchbox_collection -%}
+  {%- assign slider_title = section.settings.lunchbox_title -%}
+{%- endunless -%}
+<div
+  id=""
+  class="jp-prouduct-slider-wrap {% unless coll %}no-disp{% endunless %} related-blk"
+  data-test="{{ tag_arr }}"
+>
   <div class="container rel">
     <div class="product-slider-first justify-center no-d">
-      <div class="product-slider-title title">{{ 'sections.upsell.upsell1_heading' | t }}</div>
+      <div class="product-slider-title title">{{ slider_title }}</div>
       <div class="product-slider-desc light">{{ 'sections.upsell.upsell1_description' | t }}</div>
     </div>
     <div class="jp-product-slider no-d">
       {% for product in collections[coll].products limit: 24 %}
-        {% unless product.type == "City Bag" or product.type == "Box Filled" or product.type == "Pencil Case" or product.type == "Case Double" or product.type == "Pencil Box" or product.type == "Alle" or product.type == "Box" or product.type == "Drinking Bottle" or product.type == "Girls" or product.handle == phandle %}
-          {% continue %}
-        {% endunless %}
-        {% if product.handle == phandle %}
-          {% continue %}
-        {% endif %}
         <div class="product-card">
           <div class="product-images-block rel">
             <a href="{{ product.url }}">
@@ -127,19 +125,12 @@
     </div>
     <div class="no-t-m jp-prod-slider-wrapper">
       <div class="product-slider-first justify-center">
-        <div class="product-slider-title title">{{ 'sections.upsell.upsell1_heading' | t }}</div>
+        <div class="product-slider-title title">{{ slider_title }}</div>
         <div class="product-slider-desc light">{{ 'sections.upsell.upsell1_description' | t }}</div>
       </div>
       <div class="abs no-t-m jp-product-slider-wrapper">
         <div class="jp-product-slider">
           {% for product in collections[coll].products limit: 24 %}
-            {% unless product.type == "City Bag" or product.type == "Box Filled" or product.type == "Pencil Case" or product.type == "Case Double" or product.type == "Pencil Box" or product.type == "Alle" or product.type == "Box" or product.type == "Drinking Bottle" or product.type == "Girls" %}
-              {% continue %}
-            {% endunless %}
-            {% if product.handle == phandle %}
-              {% continue %}
-            {% endif %}
-
             <div class="product-card">
               <div class="product-images-block rel">
                 <a href="{{ product.url }}">
@@ -238,79 +229,25 @@
 
 {% schema %}
 {
-  "name": "JP Product Slider 2",
+  "name": "JP Prod Slider Lunchbox",
   "class": "related-block-2",
   "settings": [
     {
-      "type": "select",
-      "id": "bg_color",
-      "label": "Background Color",
-      "options": [
-        {
-          "value": "white",
-          "label": "White"
-        },
-        {
-          "value": "light",
-          "label": "Light"
-        }
-      ],
-      "default": "white"
-    },
-    {
       "type": "text",
-      "id": "title",
-      "label": "Title"
-    },
-    {
-      "type": "text",
-      "id": "desc",
-      "label": "Description"
+      "id": "lunchbox_title",
+      "label": "Title",
+      "info": "Will be displayed if product doesn't contain the relevant tags."
     },
     {
       "type": "collection",
-      "id": "collection",
-      "label": "Collection"
-    },
-    {
-      "type": "text",
-      "id": "btn_txt",
-      "label": "Button Text"
-    },
-    {
-      "type": "url",
-      "id": "btn_url",
-      "label": "Button URL"
-    },
-    {
-      "type": "checkbox",
-      "id": "related",
-      "label": "product related box"
-    },
-    {
-      "type": "select",
-      "id": "upsell_type",
-      "label": "Upsell Type",
-      "options": [
-        {
-          "value": "bag",
-          "label": "Bags"
-        },
-        {
-          "value": "accessories",
-          "label": "Accessories"
-        },
-        {
-          "value": "paper",
-          "label": "Paper"
-        }
-      ],
-      "default": "bag"
+      "id": "lunchbox_collection",
+      "label": "Collection",
+      "info": "Will be displayed if product doesn't contain the relevant tags."
     }
   ],
   "presets": [
     {
-      "name": "JP Product Slider 2"
+      "name": "JP Prod Slider Lunchbox"
     }
   ]
 }
