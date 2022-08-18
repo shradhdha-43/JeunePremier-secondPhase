@@ -818,14 +818,17 @@
     });
   });
 </script>
-   <style>
-  @media screen and (max-width: 992px) {
-    #chat-button{
-      left: auto !important; 
-      bottom: 120px !important;
+{% if template == "product" %}
+  
+  <style>
+    @media screen and (max-width: 992px) {
+      #chat-button{
+        left: auto !important; 
+        bottom: 120px !important;
+      }
     }
-  }
-  </style>
+    </style>
+{% endif %}
     {% include "geo-redirect" %}
  
     <!-- Stamped - Begin Script-->
