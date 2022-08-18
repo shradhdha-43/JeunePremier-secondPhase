@@ -5,7 +5,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/bannerHelene.jpg",
         "heading": "<b>THE MOST BEAUTIFUL SCHOOL BACKPACKS IN THE WORLD <\/b>",
-        "text_align": "left",
+        "text_align": "center",
         "heading_color": "#ffffff",
         "desktop_allignment": "baseline",
         "mobile_allignment": "end",
