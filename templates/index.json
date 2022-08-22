@@ -4,12 +4,12 @@
       "type": "jp-hero",
       "settings": {
         "image": "shopify:\/\/shop_images\/testjeBruno_c310bb74-2e4a-4096-b6b8-5e34ae8770bb.jpg",
-        "heading": "",
+        "heading": "the most beautiful school backpacks in the world",
         "text_align": "center",
         "heading_color": "#ffffff",
         "desktop_allignment": "center",
         "mobile_allignment": "center",
-        "justify_allignment": "center",
+        "justify_allignment": "start",
         "headinglink": "shopify:\/\/collections\/s22-1",
         "headinglinktext": "DISCOVER NEW COLLECTION"
       }
