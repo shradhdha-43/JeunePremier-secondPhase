@@ -4,14 +4,14 @@
       "type": "jp-hero",
       "settings": {
         "image": "shopify:\/\/shop_images\/testjeBruno_c310bb74-2e4a-4096-b6b8-5e34ae8770bb.jpg",
-        "heading": "<b>THE MOST BEAUTIFUL SCHOOL BACKPACKS IN THE WORLD <\/b>",
+        "heading": "",
         "text_align": "center",
         "heading_color": "#ffffff",
         "desktop_allignment": "center",
         "mobile_allignment": "center",
         "justify_allignment": "end",
         "headinglink": "shopify:\/\/collections\/s22-1",
-        "headinglinktext": "DISCOVER"
+        "headinglinktext": "DISCOVER NEW COLLECTION"
       }
     },
     "164498288980aebb7d": {
