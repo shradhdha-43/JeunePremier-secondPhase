@@ -3,12 +3,12 @@
     "164498287406219e49": {
       "type": "jp-hero",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Landscape.jpg",
+        "image": "shopify:\/\/shop_images\/tesjte.jpg",
         "heading": "<b>THE MOST BEAUTIFUL SCHOOL BACKPACKS IN THE WORLD <\/b>",
         "text_align": "center",
         "heading_color": "#ffffff",
-        "desktop_allignment": "baseline",
-        "mobile_allignment": "baseline",
+        "desktop_allignment": "center",
+        "mobile_allignment": "center",
         "justify_allignment": "end",
         "headinglink": "shopify:\/\/collections\/s22-1",
         "headinglinktext": "DISCOVER"
