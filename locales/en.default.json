@@ -529,7 +529,8 @@
   "shopify": {
     "checkout": {
       "contact": {
-        "address1_label": "Streetname + house number"
+        "address1_label": "Streetname + house number",
+        "address_title": "Streetname + house number"
       }
     }
   }
