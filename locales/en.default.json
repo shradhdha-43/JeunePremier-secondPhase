@@ -525,5 +525,12 @@
       "copy_code_success": "Copy code success",
       "print_gift_card": "Print"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "contact": {
+        "address1_label": "Streetname + house number"
+      }
+    }
   }
 }
