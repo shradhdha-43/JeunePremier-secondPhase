@@ -30,7 +30,7 @@
       if(!storeCurrencySymbol) {
         storeCurrencySymbol = priceList[i].innerHTML.replace(/[\d-.,]/g, '').replace(/[A-Za-z]+/, '').replace(" ", "")
       }
-      if(moneyFormat.indexOf('AMOUNT') == -1) {
+      if(moneyFormat.indexOf('AMOUNT') === -1) {
         moneyFormat = priceList[i].textContent.replace(/[\d. ,]+/, 'AMOUNT ');
       }
     }
@@ -117,7 +117,10 @@
                   zTotals = allOptions[i].querySelector('span.radio__label__primary > span:nth-child(4)');
                   }
 
-                serviceLevel = allOptions[i].querySelector(".radio__label__primary").childNodes[0].nodeValue.replace('Duties & Taxes Included', '');
+                let dutyTaxBreakdown = allOptions[i].querySelector(".radio__label__primary span").childNodes[0].nodeValue.matchAll(/([A-Z])\w+|([a-z])+$/g);
+                let taxType = Array.from(dutyTaxBreakdown)[0][1];
+                sessionStorage.setItem("zntaxType", taxType);
+                serviceLevel = allOptions[i].querySelector(".radio__label__primary").childNodes[0].nodeValue.replace('Duties & \w+\b Included', ``);
                 allOptions[i].querySelector(".radio__label__primary").childNodes[0].nodeValue = serviceLevel;
                 var breakdownShipping = breakdown.innerText.split(',')[0].match(/\d+.\d+/);
                 breakdownShipping = breakdownShipping[0].replace(/[^\d-.]/g, '');
@@ -192,7 +195,7 @@
                       document.querySelector('.total-line--shipping').parentElement.appendChild(taxRow);
                     }
                     document.querySelector('tr.total-line.total-line--taxes > td > span').innerHTML = currencyFormat(taxForeign);
-                    document.querySelector('tr.total-line.total-line--taxes > th').innerHTML = 'Duty and Tax';
+                    document.querySelector('tr.total-line.total-line--taxes > th').innerHTML = 'Duty and '+taxType;
                     document.querySelector('tr.total-line.total-line--taxes').classList.remove('hidden');
                   }, 150);
 
@@ -212,10 +215,11 @@
               else {
                 var taxQuery = null;
                 if(allOptions[i].querySelector('.input-radio') && allOptions[i].querySelector('.input-radio').getAttribute('aria-label')){
-               	 taxQuery = allOptions[i].querySelector('.input-radio').getAttribute('aria-label').match( /Estimated duty and tax \$([\d.]+)/);
+               	 taxQuery = allOptions[i].querySelector('.input-radio').getAttribute('aria-label').match( /Estimated (\w+\b) and (\w+\b) \$([\d.]+)/);
+                    sessionStorage.setItem("znTaxType", taxQuery[1].length > 3 ? taxQuery[2] : taxQuery[1]);
                 }
                 if (taxQuery) {
-                  var DDUTaxAmount = taxQuery[1];
+                  var DDUTaxAmount = taxQuery[3];
                   var DDUShipAmount = allOptions[i].querySelector('.input-radio').value.match( /-([\d.]+)$/) [1];
                   var DDUForeignShip = allOptions[i].querySelector('.input-radio').dataset.checkoutTotalShippingCents / 100;
                   var foreignRate = (Number(DDUForeignShip) / Number(DDUShipAmount)).toFixed(4);
@@ -253,16 +257,18 @@
       }
 
       function displayPaymentTax () {
-        document.querySelector('tr.total-line.total-line--taxes > th').innerHTML = 'Duty and Tax';
+        var taxType = sessionStorage.getItem("zntaxType");
+        document.querySelector('tr.total-line.total-line--taxes > th').innerHTML = 'Duty and ' + taxType;
         document.querySelector('tr.total-line.total-line--taxes').classList.remove('hidden');
       }
 
       function displayMethodName () {
         var zMethod = document.querySelectorAll('.review-block__inner')[2];
         var zMethodText = zMethod.querySelector('.review-block__content');
-        if (zMethodText.innerText.includes('Duties & Taxes')) {
+        var taxType = sessionStorage.getItem("zntaxType")
+        if (zMethodText.innerText.includes('Duties & ')) {
           zMethodText.querySelector('.emphasis').innerText = sessionStorage.getItem('currencySymbol') + sessionStorage.getItem('znshipTotal');
-          zMethodText.innerText = zMethodText.innerText.replace('Duties & Taxes Included', '');
+          zMethodText.innerText = zMethodText.innerText.replace(/Duties & \w+\b Included/, `Duties & ${taxType} Included`);
         }
       }
 
@@ -294,7 +300,8 @@
 
         if (sessionStorage.getItem('zntaxTotal') != "" && sessionStorage.getItem('zntaxTotal') != null) {
           if (Shopify.Checkout.currency === sessionStorage.getItem('currencyISO')) {
-            document.querySelector('tr.total-line.total-line--taxes > th').innerHTML = 'Duty and Tax';
+              var taxType = sessionStorage.getItem("zntaxType");
+            document.querySelector('tr.total-line.total-line--taxes > th').innerHTML = 'Duty and ' + taxType;
             document.querySelector('tr.total-line.total-line--taxes').classList.remove('hidden');
           }
         }
