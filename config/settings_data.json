@@ -198,7 +198,7 @@
           "secure_title": "SAFE SHOPPING",
           "secure_logo": "shopify:\/\/shop_images\/SSL-Logo.png",
           "company_title": "COMPANY",
-          "company_addr": "Premiers bv <br>Vogelzangdreef 2, 8400 Oostende, Belgium <br>Contact: <a href=\"mailto:info@jeunepremier.be\">info@jeunepremier.be<\/a>\n<br>0483.00.72.73",
+          "company_addr": "Premiers bv <br>Vogelzangdreef 2, 8400 Oostende, Belgium <br>Contact: <a href=\"mailto:info@jeunepremier.be\">info@jeunepremier.be<\/a>",
           "brands_title": "BRANDS",
           "brand1_logo_2": "shopify:\/\/shop_images\/logo_1.png",
           "brand1_url": "https:\/\/www.jeunepremier.com\/",
@@ -384,8 +384,8 @@
               "block_lang8": "da,ru",
               "block_country9": "Russia-ru",
               "block_lang9": "ru",
-              "block_country10": "",
-              "block_lang10": ""
+              "block_country10": "United States-en",
+              "block_lang10": "en,fr,de"
             }
           }
         },
