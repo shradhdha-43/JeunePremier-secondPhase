@@ -56,6 +56,7 @@
         },
         "319cfe95-2f47-4298-8ac3-4e10a9c61989": {
           "type": "team_member",
+          "disabled": true,
           "settings": {
             "img": "shopify:\/\/shop_images\/JEUNE_2022__23.jpg",
             "name": "Kelly",
@@ -64,6 +65,7 @@
         },
         "14283eb5-d1e3-461c-940a-aa38c9de078d": {
           "type": "team_member",
+          "disabled": true,
           "settings": {
             "img": "shopify:\/\/shop_images\/Lore.jpg",
             "name": "Lore",
@@ -88,8 +90,8 @@
         "f4d2edd9-e219-492d-84e6-88f989c7218f"
       ],
       "settings": {
-        "title": "Meet the team",
-        "desc": "It is her mission to give every child the attention it deserves; to allow them to play the main character in their own film."
+        "title": "3 STEPS",
+        "desc": "In korte woorden + icoontjes uitleggen hoe we te werk gaan."
       }
     },
     "1645787370b1bea36b": {
