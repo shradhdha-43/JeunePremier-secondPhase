@@ -8,7 +8,7 @@
         "text_align": "center",
         "heading_color": "#FFFFFF",
         "desktop_allignment": "center",
-        "mobile_allignment": "center",
+        "mobile_allignment": "end",
         "justify_allignment": "end",
         "headinglink": "shopify:\/\/collections\/s22-1",
         "headinglinktext": "DISCOVER"
