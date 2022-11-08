@@ -1,5 +1,19 @@
 {
   "sections": {
+    "c382ef24-abf8-467e-a5dc-64f049fd98cd": {
+      "type": "jp-hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/banner_second_2.jpg",
+        "heading": "Welcome to store",
+        "text_align": "left",
+        "heading_color": "#ffffff",
+        "desktop_allignment": "end",
+        "mobile_allignment": "end",
+        "justify_allignment": "end",
+        "headinglink": "",
+        "headinglinktext": ""
+      }
+    },
     "16448252268941db16": {
       "type": "jp-image-with-text",
       "settings": {
@@ -124,6 +138,7 @@
     }
   },
   "order": [
+    "c382ef24-abf8-467e-a5dc-64f049fd98cd",
     "16448252268941db16",
     "main",
     "164578717621f3a907",
