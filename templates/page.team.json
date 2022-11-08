@@ -3,11 +3,11 @@
     "c382ef24-abf8-467e-a5dc-64f049fd98cd": {
       "type": "jp-hero",
       "settings": {
-        "image": "shopify:\/\/shop_images\/banner_second_2.jpg",
-        "heading": "Welcome to store",
-        "text_align": "left",
-        "heading_color": "#ffffff",
-        "desktop_allignment": "end",
+        "image": "shopify:\/\/shop_images\/banner_second_3.jpg",
+        "heading": "JEUNE PREMIER SECOND LIFE",
+        "text_align": "right",
+        "heading_color": "#333333",
+        "desktop_allignment": "center",
         "mobile_allignment": "end",
         "justify_allignment": "end",
         "headinglink": "",
