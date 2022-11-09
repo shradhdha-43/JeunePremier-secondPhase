@@ -20,11 +20,11 @@
         "section_type": "link_within_text",
         "link_type": "link",
         "btn_color": "black",
-        "img_aligment": "left",
+        "img_aligment": "right",
         "title": "SECOND LIFE",
         "sub_title": "Give your  designer bag a second life",
-        "desc": "Before anything else, we believe in quality &amp; timelessness. \nBy selling your perfectly maintained bag, you are helping us build a more responsible fashion industry.\n\n<br><br>Send us your old Jeune Premier bag between June 20th - July 20th 2023 and receive a shopping voucher up to €50.\n\n<br><br>Be sure to subscribe on our newsletter to be up to date about the second life project!",
-        "link_txt": "Read more about Jeune Premier Second life",
+        "desc": "Before anything else, we believe in quality &amp; timelessness. \nBy selling your perfectly maintained bag, you are helping us build a more responsible fashion industry.\n\n<br><br>Send us your old Jeune Premier bag <b>between June 20th - July 20th 2023<\/b> and receive a shopping voucher <b>up to €50.<\/b>\n\n<br><br>Be sure to subscribe on our newsletter to be up to date about the second life project!",
+        "link_txt": "<b> Read more about Jeune Premier Second life<\/b>",
         "link_hover_txt": "Read more about Jeune Premier Second life",
         "link": "",
         "img": "shopify:\/\/shop_images\/groep.jpg",
@@ -49,7 +49,7 @@
           "settings": {
             "img": "shopify:\/\/shop_images\/JEUNE_2022__21SQ.jpg",
             "name": "1. Select your bag",
-            "department": "Select your Jeune Premier bag you wihs to sell. Upload photos of the bag you want to sell in different angles."
+            "department": "Select your Jeune Premier bag you wish to sell. Upload photos of the bag from different angles."
           }
         },
         "3672b134-e9c4-4ae2-8562-8b2ce6a80e8b": {
@@ -116,7 +116,7 @@
         "img_aligment": "right",
         "title": "Dirty bag?",
         "sub_title": "No worries! We have the perfect solution for you.",
-        "desc": "Just like a nice handbag, you shouldn't put a school backpack in the washing machine! \n\nIn order to give our bags the spotlight they deserve throughout their lifespan, we have teamed up with the renowned Belgian company Eres to develop a unique cleaning formula. The Jeune Premier Cleaner is a handy 100 ml spray. \n\nYou can easily spray it onto all Jeune Premier fabrics and rub it in with a damp cloth for excellent results!",
+        "desc": "Just like a nice handbag, you shouldn't put a school backpack in the washing machine! \n\n<br><br>In order to give our bags the spotlight they deserve throughout their lifespan, we have teamed up with the renowned Belgian company Eres to develop a unique cleaning formula. The <b>Jeune Premier Cleaner <\/b> is a handy 100 ml spray. \n\n<br><br>You can easily spray it onto all Jeune Premier fabrics and rub it in with a damp cloth for excellent results!",
         "link_txt": "BUY CLEANER",
         "link_hover_txt": "BUY CLEANER",
         "link": "shopify:\/\/collections\/cleaner",
@@ -130,7 +130,7 @@
       "type": "jp-bestsellers",
       "settings": {
         "title": "SHOP BESTSELLERS",
-        "btn_text": "ALLE TASCHEN SHOPPEN",
+        "btn_text": "SHOP BESTSELLERS",
         "btn_url": "",
         "space_above": "false"
       }
