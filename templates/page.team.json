@@ -14,6 +14,14 @@
         "headinglinktext": ""
       }
     },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
     "16448252268941db16": {
       "type": "jp-image-with-text",
       "settings": {
@@ -30,15 +38,7 @@
         "img": "shopify:\/\/shop_images\/groep.jpg",
         "product_video": "",
         "video_link": "",
-        "marg_top": "false"
-      }
-    },
-    "main": {
-      "type": "main-page",
-      "disabled": true,
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 36
+        "marg_top": "true"
       }
     },
     "164578717621f3a907": {
@@ -186,17 +186,24 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "be2b8adc-f260-4bab-ad69-56cac163dde1": {
+      "type": "jp-page",
+      "disabled": true,
+      "settings": {
+      }
     }
   },
   "order": [
     "c382ef24-abf8-467e-a5dc-64f049fd98cd",
-    "16448252268941db16",
     "main",
+    "16448252268941db16",
     "164578717621f3a907",
     "63bf6ec1-0639-4bd2-a570-0c4893b4066b",
     "bbc5569a-5dea-4b94-ab18-9cddcc0363fe",
     "1645787370b1bea36b",
     "164578753105ca4634",
-    "870e5ab9-508b-4377-bd76-f4e566b51f9c"
+    "870e5ab9-508b-4377-bd76-f4e566b51f9c",
+    "be2b8adc-f260-4bab-ad69-56cac163dde1"
   ]
 }
