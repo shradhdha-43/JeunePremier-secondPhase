@@ -107,6 +107,34 @@
         "desc": "Clear space in your wardrobe and earn Jeune Premier credit by selling your designer bag through our Second Life service."
       }
     },
+    "79fcca3f-a24e-4a84-8cc6-3ebdd72d9079": {
+      "type": "jp-faq",
+      "blocks": {
+        "9d84caf3-d392-4cfe-a5f4-699aa0506699": {
+          "type": "faq",
+          "settings": {
+            "question": "WHAT ITEM(S) CAN I SELL?",
+            "answer": "We are currently only accepting Backpacks from the following collections: 2020, 2021, 2022"
+          }
+        },
+        "290d1014-e0a7-43d3-975e-3747cd2087b2": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        }
+      },
+      "block_order": [
+        "9d84caf3-d392-4cfe-a5f4-699aa0506699",
+        "290d1014-e0a7-43d3-975e-3747cd2087b2"
+      ],
+      "settings": {
+        "title": "",
+        "link_text": "",
+        "link": ""
+      }
+    },
     "63bf6ec1-0639-4bd2-a570-0c4893b4066b": {
       "type": "jp-newsletter",
       "settings": {
@@ -199,6 +227,7 @@
     "main",
     "16448252268941db16",
     "164578717621f3a907",
+    "79fcca3f-a24e-4a84-8cc6-3ebdd72d9079",
     "63bf6ec1-0639-4bd2-a570-0c4893b4066b",
     "bbc5569a-5dea-4b94-ab18-9cddcc0363fe",
     "1645787370b1bea36b",
