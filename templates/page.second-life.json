@@ -1,7 +1,22 @@
 {
   "sections": {
+    "bbba3d33-3409-4c36-b73c-3e92ce802d8b": {
+      "type": "jp-hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/banner_second_3_9ae96a35-cd2a-4800-8de9-325b3f9116ba.jpg",
+        "heading": "",
+        "text_align": "left",
+        "heading_color": "#ffffff",
+        "desktop_allignment": "end",
+        "mobile_allignment": "end",
+        "justify_allignment": "end",
+        "headinglink": "",
+        "headinglinktext": ""
+      }
+    },
     "1650370907f3c868da": {
       "type": "jp-b2b-hero",
+      "disabled": true,
       "blocks": {
         "2ec22d25-2a4a-419b-85fd-6b098274bd00": {
           "type": "marquee",
@@ -155,6 +170,7 @@
     }
   },
   "order": [
+    "bbba3d33-3409-4c36-b73c-3e92ce802d8b",
     "1650370907f3c868da",
     "16503735538213c0b3",
     "1650373849c7b91265",
