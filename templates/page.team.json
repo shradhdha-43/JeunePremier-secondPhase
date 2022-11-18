@@ -1,19 +1,5 @@
 {
   "sections": {
-    "c382ef24-abf8-467e-a5dc-64f049fd98cd": {
-      "type": "jp-hero",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/banner_second_3_9ae96a35-cd2a-4800-8de9-325b3f9116ba.jpg",
-        "heading": "",
-        "text_align": "right",
-        "heading_color": "#333333",
-        "desktop_allignment": "end",
-        "mobile_allignment": "end",
-        "justify_allignment": "end",
-        "headinglink": "",
-        "headinglinktext": ""
-      }
-    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -29,13 +15,13 @@
         "link_type": "link",
         "btn_color": "black",
         "img_aligment": "right",
-        "title": "Give your  designer bag a second life",
+        "title": "TEAM JEUNE PREMIER",
         "sub_title": "",
-        "desc": "Before anything else, we believe in quality &amp; timelessness. \nBy selling your perfectly maintained bag, you are helping us build a more responsible fashion industry.\n\n<br><br>Send us your old Jeune Premier bag <b>between June 20th - July 20th 2023<\/b> and receive a shopping voucher up to <b>€50<\/b>.\n\n<br><br>Be sure to subscribe on our newsletter to be up to date about the second life project!",
-        "link_txt": "Read more about Jeune Premier Second life",
-        "link_hover_txt": "Read more about Jeune Premier Second life",
+        "desc": "Worldwide, grey school gates are turning into red carpets.  True thrillers unfold themselves, in which children play the leading roles and parents try to steer everything in the right direction in the role of director. <br><br>Contradictions were never so apparent and emotions never dissipated so quickly. As the night irrevocably gives birth to the morning, at the school gate every tear dries up and transforms into a pure smile. The cinematic event on 1 September serves as the main source of inspiration for Jeune Premier.  <br><br>It is her mission to give every child the attention it deserves; to allow them to play the main character in their own film. \n<br><br>Acting has never been so easy.",
+        "link_txt": "",
+        "link_hover_txt": "",
         "link": "",
-        "img": "shopify:\/\/shop_images\/Citybag_Cherry_Pompon.jpg",
+        "img": "shopify:\/\/shop_images\/SchrijnwerkenVerniers-8.jpg",
         "product_video": "",
         "video_link": "",
         "marg_top": "true"
@@ -47,50 +33,57 @@
         "c6effd63-a330-4588-8469-fd7e1c1b73b6": {
           "type": "team_member",
           "settings": {
-            "img": "shopify:\/\/shop_images\/1_cd9b8f1d-9027-4566-9798-011719d79be0.jpg",
-            "name": "1. Select your bag",
-            "department": "Select your Jeune Premier bag you wish to sell. Upload photos of the bag from different angles."
+            "img": "shopify:\/\/shop_images\/JEUNE_2022__21SQ.jpg",
+            "name": "Bruno Piers",
+            "department": "CEO"
           }
         },
         "3672b134-e9c4-4ae2-8562-8b2ce6a80e8b": {
           "type": "team_member",
           "settings": {
-            "img": "shopify:\/\/shop_images\/2_74970249-2b29-4663-bee2-46b704ec3f4e.jpg",
-            "name": "2. Get your quote",
-            "department": "As soon as we approve your request, we'll tell you how much shopping credit you could earn on selling your old Jeune Premier Bag."
+            "img": "shopify:\/\/shop_images\/JEUNE_12.jpg",
+            "name": "Hélène Fransen",
+            "department": "Creative Director"
           }
         },
         "b4cdd3e6-3871-42da-a74c-f9d6156da02b": {
           "type": "team_member",
           "settings": {
-            "img": "shopify:\/\/shop_images\/3_f79f3963-2c67-495e-b86f-b0abc0178f1c.jpg",
-            "name": "3.  Send us the bag",
-            "department": "Send us your items by post using the pre-paid label you received by email from us."
+            "img": "shopify:\/\/shop_images\/JEUNE_2022__Caroline_6cf4fe04-3429-4a68-a9c4-f614e9e86a04.jpg",
+            "name": "Caroline Vanleke",
+            "department": "E - Commerce Manager"
           }
         },
         "319cfe95-2f47-4298-8ac3-4e10a9c61989": {
           "type": "team_member",
           "settings": {
-            "img": "shopify:\/\/shop_images\/4_08b7a93e-733a-45b8-83ed-6faeed8041ed.jpg",
-            "name": "4. Receive your shopping voucher",
-            "department": "Receive your voucher via email to be used on our Jeune Premier Official website. Have fun shopping!"
+            "img": "shopify:\/\/shop_images\/Lore_bdd9aaa4-5e69-48da-8812-d16af5000976.jpg",
+            "name": "Lore Luyens",
+            "department": "Production Manager"
           }
         },
         "14283eb5-d1e3-461c-940a-aa38c9de078d": {
           "type": "team_member",
-          "disabled": true,
           "settings": {
-            "img": "shopify:\/\/shop_images\/Lore.jpg",
+            "img": "shopify:\/\/shop_images\/JEUNE_2022__KELLY.jpg",
             "name": "Lore",
             "department": "Production Manager"
           }
         },
         "f4d2edd9-e219-492d-84e6-88f989c7218f": {
           "type": "team_member",
-          "disabled": true,
           "settings": {
-            "name": "Niels",
-            "department": "Leiter der Logistik"
+            "img": "shopify:\/\/shop_images\/Ulrike_1_1.jpg",
+            "name": "Ulrike Dorchain",
+            "department": "Accountant"
+          }
+        },
+        "c86ab5d7-38ca-4675-b6b8-4552cf6ab4ea": {
+          "type": "team_member",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/JulieVermast.jpg",
+            "name": "Julie Vermast",
+            "department": "Sales Manager"
           }
         }
       },
@@ -100,11 +93,12 @@
         "b4cdd3e6-3871-42da-a74c-f9d6156da02b",
         "319cfe95-2f47-4298-8ac3-4e10a9c61989",
         "14283eb5-d1e3-461c-940a-aa38c9de078d",
-        "f4d2edd9-e219-492d-84e6-88f989c7218f"
+        "f4d2edd9-e219-492d-84e6-88f989c7218f",
+        "c86ab5d7-38ca-4675-b6b8-4552cf6ab4ea"
       ],
       "settings": {
-        "title": "HERE'S HOW IT WORKS",
-        "desc": "Clear space in your wardrobe and earn Jeune Premier credit by selling your designer bag through our Second Life service."
+        "title": "Meet the team",
+        "desc": ""
       }
     },
     "79fcca3f-a24e-4a84-8cc6-3ebdd72d9079": {
@@ -223,7 +217,6 @@
     }
   },
   "order": [
-    "c382ef24-abf8-467e-a5dc-64f049fd98cd",
     "main",
     "16448252268941db16",
     "164578717621f3a907",
