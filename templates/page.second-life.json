@@ -62,58 +62,20 @@
     "16503735538213c0b3": {
       "type": "jp-image-with-text",
       "settings": {
-        "section_type": "img_txt",
+        "section_type": "link_within_text",
         "link_type": "link",
         "btn_color": "black",
         "img_aligment": "right",
-        "title": "Our story",
+        "title": "Give your  designer bag a second life",
         "sub_title": "",
-        "desc": "“From Paris to Seoul, Jeune Premier is the coolest satchel right now!” was the headline of a newspaper article in De Tijd.<br><br> When I couldn’t find a nice backpack for my son Ralph in 2012, I sat down at the kitchen table and quickly designed one myself. Ralph loved color and I value aesthetics and quality. With that in mind, I wanted to design something colorful and strong at the same time, moving away from the brightly colored polyester…",
-        "link_txt": "Read more",
-        "link_hover_txt": "",
+        "desc": "Before anything else, we believe in quality &amp; timelessness. \nBy selling your perfectly maintained bag, you are helping us build a more responsible fashion industry.\n\n<br><br>Send us your old Jeune Premier bag <b>between June 20th - July 20th 2023<\/b> and receive a shopping voucher up to <b>€50<\/b>.\n\n<br><br>Be sure to subscribe on our newsletter to be up to date about the second life project!",
+        "link_txt": "Read more about Jeune Premier Second life",
+        "link_hover_txt": "Read more about Jeune Premier Second life",
         "link": "shopify:\/\/collections",
-        "img": "shopify:\/\/shop_images\/Schermafbeelding.webp",
+        "img": "shopify:\/\/shop_images\/Citybag_Cherry_Pompon.jpg",
         "product_video": "",
         "video_link": "",
-        "marg_top": "false"
-      }
-    },
-    "1650373849c7b91265": {
-      "type": "jp-image-with-text",
-      "settings": {
-        "section_type": "img_txt",
-        "link_type": "btn",
-        "btn_color": "yellow",
-        "img_aligment": "left",
-        "title": "Lorem ipsum dolor sit amet",
-        "sub_title": "",
-        "desc": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea<br><br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
-        "link_txt": "BECOME A RESELLER",
-        "link_hover_txt": "BECOME A RESELLER",
-        "link": "shopify:\/\/collections",
-        "img": "shopify:\/\/shop_images\/Schermafbeelding.webp",
-        "product_video": "",
-        "video_link": "",
-        "marg_top": "false"
-      }
-    },
-    "1650374631b618a5a9": {
-      "type": "jp-image-with-text",
-      "settings": {
-        "section_type": "video",
-        "link_type": "link",
-        "btn_color": "black",
-        "img_aligment": "left",
-        "title": "New: ergomaxx",
-        "sub_title": "",
-        "desc": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea<br><br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea",
-        "link_txt": "",
-        "link_hover_txt": "",
-        "link": "",
-        "product_video": "",
-        "cover_img": "shopify:\/\/shop_images\/image1.jpg",
-        "video_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0077\/6565\/5629\/files\/BANNERWEBSITE.mp4?v=1619694065",
-        "marg_top": "false"
+        "marg_top": "true"
       }
     },
     "165042082401ae5e68": {
@@ -159,13 +121,51 @@
         "3f0d614c-7244-45c4-b798-d5ee67d1f7cd"
       ],
       "settings": {
-        "bg_color": "white",
-        "title": "Join the adventure!",
-        "desc": "Be one of 1000+ undaunted Premiers retailers around the world.",
+        "bg_color": "light",
+        "title": "HERE'S HOW IT WORKS",
+        "desc": "Clear space in your wardrobe and earn Jeune Premier credit by selling your designer bag through our Second Life service.",
         "collection": "it-bags",
         "btn_txt": "BECOME A RESELLER",
         "btn_url": "shopify:\/\/pages\/b2b-register",
         "upsell_type": "bag"
+      }
+    },
+    "1650373849c7b91265": {
+      "type": "jp-image-with-text",
+      "settings": {
+        "section_type": "img_txt",
+        "link_type": "btn",
+        "btn_color": "yellow",
+        "img_aligment": "left",
+        "title": "Lorem ipsum dolor sit amet",
+        "sub_title": "",
+        "desc": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea<br><br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
+        "link_txt": "BECOME A RESELLER",
+        "link_hover_txt": "BECOME A RESELLER",
+        "link": "shopify:\/\/collections",
+        "img": "shopify:\/\/shop_images\/Schermafbeelding.webp",
+        "product_video": "",
+        "video_link": "",
+        "marg_top": "false"
+      }
+    },
+    "1650374631b618a5a9": {
+      "type": "jp-image-with-text",
+      "settings": {
+        "section_type": "video",
+        "link_type": "link",
+        "btn_color": "black",
+        "img_aligment": "left",
+        "title": "New: ergomaxx",
+        "sub_title": "",
+        "desc": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea<br><br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea",
+        "link_txt": "",
+        "link_hover_txt": "",
+        "link": "",
+        "product_video": "",
+        "cover_img": "shopify:\/\/shop_images\/image1.jpg",
+        "video_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0077\/6565\/5629\/files\/BANNERWEBSITE.mp4?v=1619694065",
+        "marg_top": "false"
       }
     }
   },
@@ -173,8 +173,8 @@
     "bbba3d33-3409-4c36-b73c-3e92ce802d8b",
     "1650370907f3c868da",
     "16503735538213c0b3",
+    "165042082401ae5e68",
     "1650373849c7b91265",
-    "1650374631b618a5a9",
-    "165042082401ae5e68"
+    "1650374631b618a5a9"
   ]
 }
