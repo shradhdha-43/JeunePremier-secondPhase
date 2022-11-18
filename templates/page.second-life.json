@@ -14,51 +14,6 @@
         "headinglinktext": ""
       }
     },
-    "1650370907f3c868da": {
-      "type": "jp-b2b-hero",
-      "disabled": true,
-      "blocks": {
-        "2ec22d25-2a4a-419b-85fd-6b098274bd00": {
-          "type": "marquee",
-          "settings": {
-            "img_1": "shopify:\/\/shop_images\/lejdd_Tekengebied_1-01_2x_fcbfc33c-7414-4e73-b600-557d7fdc89d6.png",
-            "img_2": "shopify:\/\/shop_images\/ideat_Tekengebied_1-01_2x_71ee2f30-4919-49a2-940d-2cd2840440f8.png",
-            "img_3": "shopify:\/\/shop_images\/l_officiele_Tekengebied_1_2x_e08448d1-58fd-4869-afa0-c58ec95b2448.png"
-          }
-        },
-        "0cda5b22-0dad-4b23-9682-9128e66414c4": {
-          "type": "marquee",
-          "settings": {
-            "img_1": "shopify:\/\/shop_images\/madame_figaro_Tekengebied_1_2x_c8b7f2aa-8531-4829-bc8c-63dadc11c9c0.png",
-            "img_2": "shopify:\/\/shop_images\/lesechos_Tekengebied_1-01_2x_b9becc4c-c837-4b42-8409-549392552188.png",
-            "img_3": "shopify:\/\/shop_images\/maisondematernelles_Tekengebied_1_2x_3ea5c6e7-eb5c-4991-a7c8-82999658235a.png"
-          }
-        },
-        "ad416ad5-d01f-418e-9fc1-4bcebe1f3302": {
-          "type": "marquee",
-          "settings": {
-            "img_1": "shopify:\/\/shop_images\/magicmama_Tekengebied_1_2x_e8f8a8ea-d44d-433b-9176-3649699d2f8b.png",
-            "img_2": "shopify:\/\/shop_images\/marie_claire_idees_Tekengebied_1_2x_57ace3f3-f116-4381-a99a-993b2bbd3347.png",
-            "img_3": "shopify:\/\/shop_images\/marieclairemaison_Tekengebied_1_2x_2261bb6f-b238-49a0-8064-d988a3bdcb27.png"
-          }
-        }
-      },
-      "block_order": [
-        "2ec22d25-2a4a-419b-85fd-6b098274bd00",
-        "0cda5b22-0dad-4b23-9682-9128e66414c4",
-        "ad416ad5-d01f-418e-9fc1-4bcebe1f3302"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/banner_second_3_9ae96a35-cd2a-4800-8de9-325b3f9116ba.jpg",
-        "heading": "",
-        "subtitle": "",
-        "link": "",
-        "headinglinktext": "",
-        "title": "",
-        "marquee_height": 28,
-        "marquee_item_width": 280
-      }
-    },
     "16503735538213c0b3": {
       "type": "jp-image-with-text",
       "settings": {
@@ -125,99 +80,6 @@
         "desc": "Clear space in your wardrobe and earn Jeune Premier credit by selling your designer bag through our Second Life service."
       }
     },
-    "165042082401ae5e68": {
-      "type": "jp-b2b-product-slider",
-      "disabled": true,
-      "blocks": {
-        "45ba6250-6a95-4375-bac4-8e587bbc5a5a": {
-          "type": "product",
-          "settings": {
-            "product": "backpack-kids",
-            "image1": "shopify:\/\/shop_images\/image1.jpg",
-            "image2": "shopify:\/\/shop_images\/image1.jpg"
-          }
-        },
-        "e1a04116-acc9-40a1-9e9e-e2567b8bdfc1": {
-          "type": "product",
-          "settings": {
-            "product": "alpaca",
-            "image1": "shopify:\/\/shop_images\/product-image-2.webp",
-            "image2": "shopify:\/\/shop_images\/product-image-2.webp"
-          }
-        },
-        "bef5396a-d415-46c5-93ec-70db7c6b1e62": {
-          "type": "product",
-          "settings": {
-            "product": "backpack-kids-backpack-girl",
-            "image1": "shopify:\/\/shop_images\/Banner2.webp",
-            "image2": "shopify:\/\/shop_images\/Banner2.webp"
-          }
-        },
-        "3f0d614c-7244-45c4-b798-d5ee67d1f7cd": {
-          "type": "product",
-          "settings": {
-            "product": "new-ralphie",
-            "image1": "shopify:\/\/shop_images\/product-image-1_5b7569a6-dd8b-4021-85e7-ac15a9130b7d.webp",
-            "image2": "shopify:\/\/shop_images\/product-image-1_5b7569a6-dd8b-4021-85e7-ac15a9130b7d.webp"
-          }
-        }
-      },
-      "block_order": [
-        "45ba6250-6a95-4375-bac4-8e587bbc5a5a",
-        "e1a04116-acc9-40a1-9e9e-e2567b8bdfc1",
-        "bef5396a-d415-46c5-93ec-70db7c6b1e62",
-        "3f0d614c-7244-45c4-b798-d5ee67d1f7cd"
-      ],
-      "settings": {
-        "bg_color": "light",
-        "title": "HERE'S HOW IT WORKS",
-        "desc": "Clear space in your wardrobe and earn Jeune Premier credit by selling your designer bag through our Second Life service.",
-        "collection": "it-bags",
-        "btn_txt": "BECOME A RESELLER",
-        "btn_url": "shopify:\/\/pages\/b2b-register",
-        "upsell_type": "bag"
-      }
-    },
-    "1650373849c7b91265": {
-      "type": "jp-image-with-text",
-      "disabled": true,
-      "settings": {
-        "section_type": "img_txt",
-        "link_type": "btn",
-        "btn_color": "yellow",
-        "img_aligment": "left",
-        "title": "Lorem ipsum dolor sit amet",
-        "sub_title": "",
-        "desc": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea<br><br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
-        "link_txt": "BECOME A RESELLER",
-        "link_hover_txt": "BECOME A RESELLER",
-        "link": "shopify:\/\/collections",
-        "img": "shopify:\/\/shop_images\/Schermafbeelding.webp",
-        "product_video": "",
-        "video_link": "",
-        "marg_top": "false"
-      }
-    },
-    "1650374631b618a5a9": {
-      "type": "jp-image-with-text",
-      "disabled": true,
-      "settings": {
-        "section_type": "video",
-        "link_type": "link",
-        "btn_color": "black",
-        "img_aligment": "left",
-        "title": "New: ergomaxx",
-        "sub_title": "",
-        "desc": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea<br><br>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea",
-        "link_txt": "",
-        "link_hover_txt": "",
-        "link": "",
-        "product_video": "",
-        "cover_img": "shopify:\/\/shop_images\/image1.jpg",
-        "video_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0077\/6565\/5629\/files\/BANNERWEBSITE.mp4?v=1619694065",
-        "marg_top": "false"
-      }
-    },
     "869f82fc-0783-4f79-8f59-256415c6d647": {
       "type": "jp-faq",
       "blocks": {
@@ -253,16 +115,40 @@
         "link_text": "",
         "link": ""
       }
+    },
+    "3e68bd2e-3b55-428a-a486-ac330fd75fb4": {
+      "type": "jp-newsletter",
+      "settings": {
+        "title": "I want to sell my Jeune Premier Bag.",
+        "desc": "Interested about our new Jeune Premier Second life project? Great! Subscribe via the link below to be up to date when to send your bag you want to sell.",
+        "policies_text": "<p>Note: You can unsubscribe from the newsletter at any time. See our <a href=\"https:\/\/www.jeunepremier.com\/pages\/privacy-cookie-policy\" target=\"_blank\" title=\"https:\/\/www.jeunepremier.com\/pages\/privacy-cookie-policy\">privacy policy<\/a> and our <a href=\"https:\/\/www.jeunepremier.com\/pages\/terms-conditions-b2c\" target=\"_blank\" title=\"https:\/\/www.jeunepremier.com\/pages\/terms-conditions-b2c\">general terms and conditions<\/a>. <\/p>"
+      }
+    },
+    "490a218d-7447-41c7-bd01-3513671b6054": {
+      "type": "jp-image-with-text",
+      "settings": {
+        "section_type": "img_txt",
+        "link_type": "btn",
+        "btn_color": "black",
+        "img_aligment": "right",
+        "title": "Dirty bag?",
+        "sub_title": "No worries! We have the perfect solution for you.",
+        "desc": "Just like a nice handbag, you shouldn't put a school backpack in the washing machine! \n\n<br><br>In order to give our bags the spotlight they deserve throughout their lifespan, we have teamed up with the renowned Belgian company Eres to develop a unique cleaning formula. The <b>Jeune Premier Cleaner <\/b> is a handy 100 ml spray. \n\n<br><br>You can easily spray it onto all Jeune Premier fabrics and rub it in with a damp cloth for excellent results!",
+        "link_txt": "BUY CLEANER",
+        "link_hover_txt": "BUY CLEANER",
+        "link": "shopify:\/\/collections\/cleaner",
+        "img": "shopify:\/\/shop_images\/cleaner_2_1.jpg",
+        "video_link": "",
+        "marg_top": "false"
+      }
     }
   },
   "order": [
     "bbba3d33-3409-4c36-b73c-3e92ce802d8b",
-    "1650370907f3c868da",
     "16503735538213c0b3",
     "595c127d-411f-4060-bc11-f0b829d2a744",
-    "165042082401ae5e68",
-    "1650373849c7b91265",
-    "1650374631b618a5a9",
-    "869f82fc-0783-4f79-8f59-256415c6d647"
+    "869f82fc-0783-4f79-8f59-256415c6d647",
+    "3e68bd2e-3b55-428a-a486-ac330fd75fb4",
+    "490a218d-7447-41c7-bd01-3513671b6054"
   ]
 }
