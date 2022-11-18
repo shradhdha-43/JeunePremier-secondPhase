@@ -78,8 +78,56 @@
         "marg_top": "true"
       }
     },
+    "595c127d-411f-4060-bc11-f0b829d2a744": {
+      "type": "jp-team-slider",
+      "blocks": {
+        "8f4f6bf9-07d7-4517-b0e1-d0892c12c807": {
+          "type": "team_member",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/1_cd9b8f1d-9027-4566-9798-011719d79be0.jpg",
+            "name": "1. Select your bag",
+            "department": "Clear space in your wardrobe and earn Jeune Premier credit by selling your designer bag through our Second Life service."
+          }
+        },
+        "8e3fda77-51f8-4ee8-bf29-8ebdeab6f14c": {
+          "type": "team_member",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/2_74970249-2b29-4663-bee2-46b704ec3f4e.jpg",
+            "name": "2. Get your quote",
+            "department": "As soon as we approve your request, we'll tell you how much shopping credit you could earn on selling your old Jeune Premier Bag."
+          }
+        },
+        "93648b89-648d-4a42-a815-285ae9fa8d4e": {
+          "type": "team_member",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/3_f79f3963-2c67-495e-b86f-b0abc0178f1c.jpg",
+            "name": "3.  Send us the bag",
+            "department": "Send us your items by post using the pre-paid label you received by email from us."
+          }
+        },
+        "36b9c4ae-4637-4f9e-9ef7-93dfa1384cb7": {
+          "type": "team_member",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/4_08b7a93e-733a-45b8-83ed-6faeed8041ed.jpg",
+            "name": "4. Receive your shopping voucher",
+            "department": "Receive your voucher via email to be used on our Jeune Premier Official website. Have fun shopping!"
+          }
+        }
+      },
+      "block_order": [
+        "8f4f6bf9-07d7-4517-b0e1-d0892c12c807",
+        "8e3fda77-51f8-4ee8-bf29-8ebdeab6f14c",
+        "93648b89-648d-4a42-a815-285ae9fa8d4e",
+        "36b9c4ae-4637-4f9e-9ef7-93dfa1384cb7"
+      ],
+      "settings": {
+        "title": "HERE'S HOW IT WORKS",
+        "desc": "Clear space in your wardrobe and earn Jeune Premier credit by selling your designer bag through our Second Life service."
+      }
+    },
     "165042082401ae5e68": {
       "type": "jp-b2b-product-slider",
+      "disabled": true,
       "blocks": {
         "45ba6250-6a95-4375-bac4-8e587bbc5a5a": {
           "type": "product",
@@ -173,6 +221,7 @@
     "bbba3d33-3409-4c36-b73c-3e92ce802d8b",
     "1650370907f3c868da",
     "16503735538213c0b3",
+    "595c127d-411f-4060-bc11-f0b829d2a744",
     "165042082401ae5e68",
     "1650373849c7b91265",
     "1650374631b618a5a9"
