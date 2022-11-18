@@ -100,8 +100,8 @@
         "f3372545-d040-499f-b9eb-fcd0b8c52986": {
           "type": "faq",
           "settings": {
-            "question": "",
-            "answer": ""
+            "question": "HOW DOES THE TRADE-IN SERVICE WORK?",
+            "answer": "The Jeune Premier Second Life trade-in offer is limited to residents from Belgium, France, The Netherlands &amp; Germany. \n\n<br><br> Your item must be clean, undamaged &amp; fully functional. \n\n<br><br>"
           }
         }
       },
@@ -138,6 +138,7 @@
         "link_hover_txt": "BUY CLEANER",
         "link": "shopify:\/\/collections\/cleaner",
         "img": "shopify:\/\/shop_images\/cleaner_2_1.jpg",
+        "product_video": "",
         "video_link": "",
         "marg_top": "false"
       }
