@@ -180,6 +180,7 @@
     },
     "1650373849c7b91265": {
       "type": "jp-image-with-text",
+      "disabled": true,
       "settings": {
         "section_type": "img_txt",
         "link_type": "btn",
@@ -199,6 +200,7 @@
     },
     "1650374631b618a5a9": {
       "type": "jp-image-with-text",
+      "disabled": true,
       "settings": {
         "section_type": "video",
         "link_type": "link",
@@ -215,6 +217,42 @@
         "video_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0077\/6565\/5629\/files\/BANNERWEBSITE.mp4?v=1619694065",
         "marg_top": "false"
       }
+    },
+    "869f82fc-0783-4f79-8f59-256415c6d647": {
+      "type": "jp-faq",
+      "blocks": {
+        "6f0774cf-d29e-4ce3-9023-b9c641d36d2f": {
+          "type": "faq",
+          "settings": {
+            "question": "WHAT ITEM(S) CAN I SELL?",
+            "answer": "We are currently only accepting Backpacks from the following collections: 2020, 2021, 2022"
+          }
+        },
+        "dfe9676d-1ae9-4055-b76e-171394b43eb8": {
+          "type": "faq",
+          "settings": {
+            "question": "I'VE SUBMITTED MY BAG(S). WHEN WILL I RECEIVE MY QUOTE?",
+            "answer": "We'll send your quote within five working days."
+          }
+        },
+        "f3372545-d040-499f-b9eb-fcd0b8c52986": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        }
+      },
+      "block_order": [
+        "6f0774cf-d29e-4ce3-9023-b9c641d36d2f",
+        "dfe9676d-1ae9-4055-b76e-171394b43eb8",
+        "f3372545-d040-499f-b9eb-fcd0b8c52986"
+      ],
+      "settings": {
+        "title": "Frequently Asked Questions",
+        "link_text": "",
+        "link": ""
+      }
     }
   },
   "order": [
@@ -224,6 +262,7 @@
     "595c127d-411f-4060-bc11-f0b829d2a744",
     "165042082401ae5e68",
     "1650373849c7b91265",
-    "1650374631b618a5a9"
+    "1650374631b618a5a9",
+    "869f82fc-0783-4f79-8f59-256415c6d647"
   ]
 }
