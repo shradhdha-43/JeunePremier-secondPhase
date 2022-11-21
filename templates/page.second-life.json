@@ -124,6 +124,13 @@
             "question": "HOW DOES THE TRADE-IN SERVICE WORK?",
             "answer": "The Jeune Premier Second Life trade-in offer is limited to residents from Belgium, France, The Netherlands &amp; Germany. \n\n<br><br> Your item must be clean, undamaged &amp; fully functional. \n\n<br><br>"
           }
+        },
+        "28d909e2-ecb0-406b-8c94-bc41b1f2e7ea": {
+          "type": "faq",
+          "settings": {
+            "question": "IN WHAT CONDITION CAN I SEND MY BAG ?",
+            "answer": "Your bag must be clean &amp; have nog tears, holes, or stains. <br><br>If you still would like to give your bag a touch-up, you can buy the Jeune Premier cleaner HERE."
+          }
         }
       },
       "block_order": [
@@ -132,7 +139,8 @@
         "dfe9676d-1ae9-4055-b76e-171394b43eb8",
         "9fb82a15-bd4c-4829-b126-e4c3162544db",
         "f1cb0def-103d-4f5b-8a59-fc432d6fbe1a",
-        "f3372545-d040-499f-b9eb-fcd0b8c52986"
+        "f3372545-d040-499f-b9eb-fcd0b8c52986",
+        "28d909e2-ecb0-406b-8c94-bc41b1f2e7ea"
       ],
       "settings": {
         "title": "Frequently Asked Questions",
