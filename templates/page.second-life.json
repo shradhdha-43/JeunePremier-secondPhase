@@ -103,12 +103,20 @@
             "question": "HOW DOES THE TRADE-IN SERVICE WORK?",
             "answer": "The Jeune Premier Second Life trade-in offer is limited to residents from Belgium, France, The Netherlands &amp; Germany. \n\n<br><br> Your item must be clean, undamaged &amp; fully functional. \n\n<br><br>"
           }
+        },
+        "6846a789-e45b-4538-812c-a172e842a4b9": {
+          "type": "faq",
+          "settings": {
+            "question": "Which countries can submit Second life requests?",
+            "answer": "Currently we only accept Second Life requests from Belgium, The Netherlands, France &amp; Germany."
+          }
         }
       },
       "block_order": [
         "6f0774cf-d29e-4ce3-9023-b9c641d36d2f",
         "dfe9676d-1ae9-4055-b76e-171394b43eb8",
-        "f3372545-d040-499f-b9eb-fcd0b8c52986"
+        "f3372545-d040-499f-b9eb-fcd0b8c52986",
+        "6846a789-e45b-4538-812c-a172e842a4b9"
       ],
       "settings": {
         "title": "Frequently Asked Questions",
