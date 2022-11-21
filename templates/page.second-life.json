@@ -49,7 +49,7 @@
           "settings": {
             "img": "shopify:\/\/shop_images\/stap_2_bis.jpg",
             "name": "2. Get your quote",
-            "department": "As soon as we approve your request, we'll tell you how much shopping credit you could earn on selling your old Jeune Premier Bag."
+            "department": "As soon as we receive your request, we'll tell you how much shopping credit you could earn on selling your old Jeune Premier Bag."
           }
         },
         "93648b89-648d-4a42-a815-285ae9fa8d4e": {
@@ -57,7 +57,7 @@
           "settings": {
             "img": "shopify:\/\/shop_images\/stap_3_1f72d373-a60a-4d25-8be7-d9202aa8aaf5.jpg",
             "name": "3.  Send us the bag",
-            "department": "Send us your items by post using the pre-paid label you received by email from us."
+            "department": "When we approve your request, you can ship your items by post using  our pre-paid label."
           }
         },
         "36b9c4ae-4637-4f9e-9ef7-93dfa1384cb7": {
@@ -65,7 +65,7 @@
           "settings": {
             "img": "shopify:\/\/shop_images\/stap_4bis.jpg",
             "name": "4. Receive your shopping voucher",
-            "department": "Receive your voucher via email to be used on our Jeune Premier Official website. Have fun shopping!"
+            "department": "Receive your voucher via email to shop on our oficial Jeune Premier website.  <br> Have fun shopping!"
           }
         }
       },
