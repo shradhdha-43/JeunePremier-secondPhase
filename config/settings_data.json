@@ -229,8 +229,8 @@
           "d26ab7c0-b603-4f73-ab3c-393c0812a2ad": {
             "type": "announcement",
             "settings": {
-              "announcement_text": "<p>Discover the NEW Safari Collection<\/p>",
-              "announcement_url": "shopify:\/\/collections\/s22-1"
+              "announcement_text": "<p>New product drop coming soon! #giftmas<\/p>",
+              "announcement_url": ""
             }
           }
         },
