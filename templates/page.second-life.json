@@ -87,7 +87,7 @@
           "type": "faq",
           "settings": {
             "question": "WHAT ITEM(S) CAN I SELL?",
-            "answer": "We are currently only accepting Backpacks from the following collections: 2020, 2021, 2022"
+            "answer": "We are currently only accepting Backpacks from the following collections: 2020, 2021 and 2022. <br> No accessories, pencilboxes, City Bags, Drinking Bottles,.."
           }
         },
         "6846a789-e45b-4538-812c-a172e842a4b9": {
@@ -111,18 +111,18 @@
             "answer": "As soon as we receive &amp; accept your request, you'll receive your first Shopping Voucher. <br> The first Shopping Voucher includes 50% of the quote you've received from us. \n<br>The second Shopping Voucher we'll be send to you when your bag is sold online."
           }
         },
-        "f3372545-d040-499f-b9eb-fcd0b8c52986": {
-          "type": "faq",
-          "settings": {
-            "question": "HOW DOES THE TRADE-IN SERVICE WORK?",
-            "answer": "The Jeune Premier Second Life trade-in offer is limited to residents from Belgium, France, The Netherlands &amp; Germany. \n\n<br><br> Your item must be clean, undamaged &amp; fully functional. \n\n<br><br>"
-          }
-        },
         "f1cb0def-103d-4f5b-8a59-fc432d6fbe1a": {
           "type": "faq",
           "settings": {
             "question": "WHAT HAPPENS IF MY BAG DOESN'T SELL?",
             "answer": "No worries, we give your bag a new life anyway! \n<br>If the bag is not sold within 4 months, we will donate it to charity! <br><u><a href=\"https:\/\/www.jeunepremier.com\/blogs\/stories\/ibis-foundation\">Read more<\/a><\/u> about our charity project."
+          }
+        },
+        "f3372545-d040-499f-b9eb-fcd0b8c52986": {
+          "type": "faq",
+          "settings": {
+            "question": "HOW DOES THE TRADE-IN SERVICE WORK?",
+            "answer": "The Jeune Premier Second Life trade-in offer is limited to residents from Belgium, France, The Netherlands &amp; Germany. \n\n<br><br> Your item must be clean, undamaged &amp; fully functional. \n\n<br><br>"
           }
         }
       },
@@ -131,8 +131,8 @@
         "6846a789-e45b-4538-812c-a172e842a4b9",
         "dfe9676d-1ae9-4055-b76e-171394b43eb8",
         "9fb82a15-bd4c-4829-b126-e4c3162544db",
-        "f3372545-d040-499f-b9eb-fcd0b8c52986",
-        "f1cb0def-103d-4f5b-8a59-fc432d6fbe1a"
+        "f1cb0def-103d-4f5b-8a59-fc432d6fbe1a",
+        "f3372545-d040-499f-b9eb-fcd0b8c52986"
       ],
       "settings": {
         "title": "Frequently Asked Questions",
