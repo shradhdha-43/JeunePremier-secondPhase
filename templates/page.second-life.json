@@ -90,6 +90,13 @@
             "answer": "We are currently only accepting Backpacks from the following collections: 2020, 2021 and 2022. <br> No accessories, pencilboxes, City Bags, Drinking Bottles,.."
           }
         },
+        "5cc09eff-5f98-48da-a8cd-a0456dd1418b": {
+          "type": "faq",
+          "settings": {
+            "question": "WHEN CAN I SEND MY SECOND LIFE BAG",
+            "answer": "We we'll start collection Second Life bags <b> mid June 2023<\/b>.\n\nIf you want to be up to date when exactly, be sure to subscribe to one newsletter."
+          }
+        },
         "6846a789-e45b-4538-812c-a172e842a4b9": {
           "type": "faq",
           "settings": {
@@ -131,24 +138,17 @@
             "question": "WHAT HAPPENS IF MY BAG DOESN'T SELL?",
             "answer": "No worries, we give your bag a new life anyway! \n<br><br>IIf the bag is not sold within 4 months, we will donate it to charity! <br><br><u><a href=\"https:\/\/www.jeunepremier.com\/blogs\/stories\/ibis-foundation\">Read more<\/a><\/u> about our charity project."
           }
-        },
-        "5cc09eff-5f98-48da-a8cd-a0456dd1418b": {
-          "type": "faq",
-          "settings": {
-            "question": "WHEN CAN I SEND MY SECOND LIFE BAG",
-            "answer": "We we'll start collection Second Life bags mid June 2023. \n\nIf you want to be up to date when exactly, be sure to subscribe to one newsletter."
-          }
         }
       },
       "block_order": [
         "6f0774cf-d29e-4ce3-9023-b9c641d36d2f",
+        "5cc09eff-5f98-48da-a8cd-a0456dd1418b",
         "6846a789-e45b-4538-812c-a172e842a4b9",
         "28d909e2-ecb0-406b-8c94-bc41b1f2e7ea",
         "f3372545-d040-499f-b9eb-fcd0b8c52986",
         "dfe9676d-1ae9-4055-b76e-171394b43eb8",
         "9fb82a15-bd4c-4829-b126-e4c3162544db",
-        "f1cb0def-103d-4f5b-8a59-fc432d6fbe1a",
-        "5cc09eff-5f98-48da-a8cd-a0456dd1418b"
+        "f1cb0def-103d-4f5b-8a59-fc432d6fbe1a"
       ],
       "settings": {
         "title": "Frequently Asked Questions",
