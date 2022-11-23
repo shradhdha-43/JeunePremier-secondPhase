@@ -1,7 +1,7 @@
 {{ 'jp-image-with-text.css' | asset_url | stylesheet_tag }}
 
 
-<div class="img-with-text-wrapper{% if section.settings.section_type == 'video' %} video-wrapper{% endif %}{% if section.settings.marg_top == 'true' %} sec-marg-top{% endif %}">
+<div class="img-with-text-wrapper{% if section.settings.section_type == 'video' %} video-wrapper{% endif %}{% if section.settings.marg_top == 'true' %} sec-marg-top{% endif %}{% if section.settings.remove_bottom_marg %} remove_bottom_marg{% endif %}">
   <div class="container">
     {% if section.settings.section_type != 'link_within_text' %}
     <div class="img-w-txt-title title no-d">{{ section.settings.title }}</div>
@@ -197,6 +197,12 @@
             }
           ],
           "default": "false"
+        },
+        {
+          "type": "checkbox",
+          "id": "remove_bottom_marg",
+          "label": "Remove bottom margin",
+          "default": false
         }
 	],
 	"presets":[

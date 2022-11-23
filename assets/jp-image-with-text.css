@@ -2,6 +2,10 @@
 	margin-bottom: 120px;
 }
 
+.img-with-text-wrapper.remove_bottom_marg {
+  margin-bottom: 0;
+}
+
 .sec-marg-top{
 	margin-top: 80px;
 }
