@@ -61,17 +61,7 @@ data-style-color-hover-opacity=""
       		{% endif %}
         {% endfor %}
       {% endcomment %}
-      {% if template contains 'product' %}
-        <div class="{% if section.settings.get_carousel_widget %}instagram-carousel{% else %}image-gallery{% endif %}">
-          <div id="stamped-reviews-widget"
-              data-widget-type="instagram-feed"
-              data-feed-type="{% if section.settings.get_carousel_widget %}carousel{% endif %}"
-              data-auto-play="false"
-              data-product-ids="{{ product.id }}" 
-              data-with-photos="true"
-              data-take="{{ section.settings.instagram_posts }}"></div>
-          </div>
-      {% else %}
+
       <div class="{% if section.settings.get_carousel_widget %}instagram-carousel{% else %}image-gallery{% endif %}">
           <div id="stamped-reviews-widget" 
               data-widget-type="instagram-feed" 
@@ -80,7 +70,7 @@ data-style-color-hover-opacity=""
               data-take="{{ section.settings.instagram_posts }}"
         ></div>
         </div>
-    {% endif %}
+        
     <a href="{{ section.settings.link_url }}" class="insta-link medium {% if section.settings.get_carousel_widget %}increase-height{% endif %}" target="_blank">{{ section.settings.link_txt }}</a>
   </div>
 </div>
