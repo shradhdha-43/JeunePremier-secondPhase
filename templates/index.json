@@ -72,7 +72,8 @@
         "product_video": "https:\/\/youtu.be\/VmuXhM-1xTs",
         "cover_img": "shopify:\/\/shop_images\/MIDI_MEISJE_THUMBNAIL.jpg",
         "video_link": "",
-        "marg_top": "false"
+        "marg_top": "false",
+        "remove_bottom_marg": true
       }
     },
     "16437837659a2daced": {
@@ -266,7 +267,7 @@
         "title": "Get inspired & shop the look",
         "link_txt": "See more",
         "link_url": "shopify:\/\/pages\/shop-instagram",
-        "custom_review_bg": "#F9F7F3",
+        "custom_review_bg": "#f9f7f3",
         "get_carousel_widget": false,
         "instagram_posts": 8,
         "padding_top": 120,
@@ -300,7 +301,8 @@
         "img": "shopify:\/\/shop_images\/groep.webp",
         "product_video": "",
         "video_link": "",
-        "marg_top": "false"
+        "marg_top": "false",
+        "remove_bottom_marg": false
       }
     },
     "16456368329d9ebfc4": {
@@ -319,7 +321,8 @@
         "img": "shopify:\/\/shop_images\/Schermafbeelding.webp",
         "product_video": "",
         "video_link": "",
-        "marg_top": "false"
+        "marg_top": "false",
+        "remove_bottom_marg": false
       }
     },
     "1643791821dd6795a7": {
