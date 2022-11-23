@@ -1,0 +1,142 @@
+.custom-review {
+    display: flex !important;
+    padding: 0 10px;
+}
+
+.review_image_block {
+    max-width: 590px;
+    max-height: 590px;
+    width: 100%;
+    height: 100%;
+}
+
+.review_image_block img {
+    object-fit: cover;
+    max-width: 590px;
+    max-height: 590px;
+    height: 590px;
+}
+
+.review_text_block {
+    max-width: 388px;
+    color: var(--dd-color-first);
+}
+
+.rating_text {
+    font-size: 40px;
+    line-height: 64px;
+    text-transform: uppercase;
+    color: var(--dd-color-first);
+    letter-spacing: 0;
+}
+
+.rating_heading {
+    max-width: 350px;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 1.92px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.reviewer_name , .review_date_and_location{
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 1.28px;
+    margin-bottom: 16px;
+}
+
+.review_date_and_location {
+    margin-bottom: 40px;
+}
+
+.main_review {
+    letter-spacing: 0;
+    margin: 16px 0;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.more_review_text:hover a {
+    text-decoration: underline;
+}
+
+.arrow_wrapper {
+    justify-content: start;
+}
+
+.arrow_wrapper .review_dots {
+    width: fit-content;
+    padding: 0 20px;
+}
+
+.arrow_wrapper .review_dots .slick-dots{
+    position: unset;
+    height: auto;
+}
+
+.arrow_wrapper .slick-arrow svg{
+    cursor: pointer;
+    border: none;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.arrow_wrapper .slick-arrow.slick-disabled {
+    cursor: not-allowed;
+    opacity: .5;
+}
+
+.left-arrorw-wrap.slick-arrow svg {
+    transform: rotate(180deg);
+}
+
+.reviewe_nos {
+    display: flex;
+}
+
+.reviewe_nos svg {
+    fill: #333333;
+}
+
+.rating_text svg {
+    width: 24px;
+    height: 23px;
+}
+
+.rate_text {
+    margin-right : 8px;
+}
+
+@media screen and (max-width: 992px) {
+    .custom-review {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .review_text_block , .review_image_block , .review_image_block img {
+        max-width: 100%;
+    }
+    .arrow_wrapper {
+        justify-content: center;
+    }
+    .review_text_block {
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .review_text_block  {
+        max-width: 350px;
+    }
+    .review_image_block , .review_image_block img  {
+        max-width: 350px;
+        max-height: 350px;
+        height: 350px;
+    }
+    .custom-review {
+        padding: 0;
+        align-items: center;
+    }
+}

@@ -1,0 +1,158 @@
+{{ 'custom-reviews.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 993px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="custom-review-block section-{{ section.id }}-padding" style="background-color : {{ section.settings.custom_review_bg }}">
+  <div class="container custom_review_slider">
+    {% for block in section.blocks %}
+        {% assign rating_count = block.settings.rating %}
+        <div class="custom-review justify-between align-center">
+            <div class="review_text_block">
+                <div class="rating_text flex-box align-center"><span class="rate_text">{{ block.settings.rating_text }}</span> {% for i in (1..rating_count) -%}{% render 'icon-black-star' %}{%- endfor %}</div>
+                <div class="rating_heading">{{ block.settings.rating_heading }}</div>
+                <p class="reviewer_name">{{ block.settings.reviewer_name }}</p>
+                <div class="reviewe_nos">
+                {% for i in (1..rating_count) -%}
+                    {% render 'icon-black-star' %}
+                {%- endfor %}
+                </div>
+                <div class="main_review">{{ block.settings.main_review }}</div>
+                <div class="review_date_and_location">{{ block.settings.review_date_and_location }}</div>
+                <div class="more_review_text"><a href="{{ block.settings.more_review_url }}">{{ block.settings.more_review_text }}</a></div>
+            </div>
+            <div class="review_image_block">
+                <img  class="review_image" src="{{ block.settings.review_image | image_url: height: 600 }}" loading="lazy" alt="Review Image">
+            </div>
+        </div>
+    {% endfor %}
+  </div>
+    <div class="arrow_wrapper container flex-box">
+        <span class="left-arrorw-wrap">{% render 'arrow-next' %}</span>
+        <span class="review_dots"></span>
+        <span class="right-arrorw-wrap">{% render 'arrow-next' %}</span>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "JP Custom review blocks",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "custom_review_bg",
+      "label": "Background color"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 120
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Review",
+      "name": "Review Block",
+      "settings": [
+        {
+            "type": "header",
+            "content": "Text Block Setting"
+        },
+        {
+            "type": "range",
+            "id": "rating",
+            "min": 0,
+            "max": 5,
+            "step": 1,
+            "label": "Rating",
+            "default": 5
+        },
+        {
+          "type": "text",
+          "id": "rating_text",
+          "default": "5.0",
+          "label": "Review Text"
+        },
+        {
+            "type": "text",
+            "id": "rating_heading",
+            "default": "754 MENINGEN VAN GELUKKIGE KLANTEN",
+            "label": "Review Heading"
+        },
+        {
+            "type": "text",
+            "id": "reviewer_name",
+            "label": "Reviewer Name"
+        },
+        {
+            "type": "richtext",
+            "id": "main_review",
+            "label": "Main Review"
+        },
+        {
+            "type": "text",
+            "id": "review_date_and_location",
+            "default" : "19/09/2022 - Belgium",
+            "label": "Review Date and Location"
+        },
+        {
+            "type": "text",
+            "id": "more_review_text",
+            "default" : "Meer reviews",
+            "label": "More review text"
+        },
+        {
+            "type": "url",
+            "id": "more_review_url",
+            "label": "More review url"
+        },
+        {
+            "type": "header",
+            "content": "Image Block Setting"
+        },
+        {
+            "type": "image_picker",
+            "id": "review_image",
+            "label": "Review Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "JP Custom review blocks"
+    }
+  ]
+}
+{% endschema %}

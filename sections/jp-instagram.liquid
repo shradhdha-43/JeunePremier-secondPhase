@@ -1,9 +1,47 @@
 {{ 'jp-instagram.css' | asset_url | stylesheet_tag }}
 
-<div class="instagram-wrap">
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 993px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% comment %}
+data-hover-text=""
+data-shop-button-text=""
+data-review-ids=""
+data-product-ids=""
+data-product-category=""
+data-product-brand=""
+data-tags=""
+data-limit-words=""
+data-fill-empty="false"
+data-random="false"
+data-with-photos="false"
+data-element-id="3"
+data-lang="en"
+data-loaded-page="1"
+data-total=""
+data-height=""
+data-auto-play="false"
+data-auto-play-speed=""
+data-style-color-hover=""
+data-style-color-hover-opacity=""
+
+{% endcomment %}
+
+<div class="instagram-wrap section-{{ section.id }}-padding" style="background-color : {{ section.settings.custom_review_bg }}">
   <div class="container">
     <div class="insta-title title text-center">{{ 'products.product.our_products_on_instagram' | t }}</div>
-    <div class="insta-imgs flex-box justify-between">
+    <div class="insta-imgs">
       {% comment %}
     	{% for block in section.blocks %}
       		{% if block.type == 'insta_img' %}
@@ -24,19 +62,26 @@
         {% endfor %}
       {% endcomment %}
       {% if template contains 'product' %}
+        <div class="{% if section.settings.get_carousel_widget %}instagram-carousel{% else %}image-gallery{% endif %}">
           <div id="stamped-reviews-widget"
-               data-widget-type="instagram-feed"
-               data-feed-type="carousel"
-               data-auto-play="false"
-               data-product-ids="{{ product.id }}" 
-        data-with-photos="true"></div>
+              data-widget-type="instagram-feed"
+              data-feed-type="{% if section.settings.get_carousel_widget %}carousel{% endif %}"
+              data-auto-play="false"
+              data-product-ids="{{ product.id }}" 
+              data-with-photos="true"
+              data-take="{{ section.settings.instagram_posts }}"></div>
+          </div>
       {% else %}
-      <div id="stamped-reviews-widget" 
-        data-widget-type="instagram-feed" 
-        data-feed-type="carousel" 
-        data-with-photos="true"></div>
+      <div class="{% if section.settings.get_carousel_widget %}instagram-carousel{% else %}image-gallery{% endif %}">
+          <div id="stamped-reviews-widget" 
+              data-widget-type="instagram-feed" 
+              data-feed-type="{% if section.settings.get_carousel_widget %}carousel{% endif %}" 
+              data-with-photos="true" 
+              data-take="{{ section.settings.instagram_posts }}"
+        ></div>
+        </div>
     {% endif %}
-    <a href="{{ section.settings.link_url }}" class="insta-link medium" target="_blank">{{ section.settings.link_txt }}</a>
+    <a href="{{ section.settings.link_url }}" class="insta-link medium {% if section.settings.get_carousel_widget %}increase-height{% endif %}" target="_blank">{{ section.settings.link_txt }}</a>
   </div>
 </div>
 </div>
@@ -93,7 +138,56 @@
 			"type": "url",
 			"id": "link_url",
 			"label": "link URL"
-		}
+		},
+    {
+      "type": "color",
+      "id": "custom_review_bg",
+      "label": "Background color",
+      "default" : "#F9F7F3"
+    },
+    {
+      "type": "header",
+      "content": "Instagram setting"
+    },
+    {
+      "type": "checkbox",
+      "id": "get_carousel_widget",
+      "label": "Enable Instagram Carousel",
+      "default" : false
+    },
+    {
+      "type": "range",
+      "id": "instagram_posts",
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "label": "Instagram posts to show",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 120
+    }
 	],
 	"blocks": [
 		{

@@ -1788,6 +1788,7 @@ $(document).ready(function(){
 //       }
 //     ]
 //   });
+
   
   $('.slider-for').slick({
     speed: 300,
@@ -2040,6 +2041,36 @@ $(document).ready(function(){
     loop: true,
   	autoplaySpeed: 5000
   });
+
+ 
+  function slidersInit() {
+    $('.custom_review_slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: true,
+      infinite: false,
+      prevArrow: $(".arrow_wrapper .left-arrorw-wrap"),
+      nextArrow: $(".arrow_wrapper .right-arrorw-wrap"),
+      appendDots: $(".review_dots"),
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            infinite: true
+          }
+        }
+      ]
+    });
+  }
+  slidersInit();
+  
+    if (Shopify.designMode) {
+      document.addEventListener("shopify:section:load", () => {
+        slidersInit();
+      });
+    }
+
   
   
 });
