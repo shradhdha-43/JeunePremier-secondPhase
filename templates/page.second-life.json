@@ -30,7 +30,8 @@
         "img": "shopify:\/\/shop_images\/Citybag_Cherry_Pompon.jpg",
         "product_video": "",
         "video_link": "",
-        "marg_top": "true"
+        "marg_top": "true",
+        "remove_bottom_marg": false
       }
     },
     "595c127d-411f-4060-bc11-f0b829d2a744": {
@@ -160,8 +161,9 @@
       "type": "jp-newsletter",
       "settings": {
         "title": "I want to sell my Jeune Premier Bag!",
-        "desc": "Interested about our new Jeune Premier Second life project? <br>Great 🖤!<br> Subscribe via the link below to be up to date.",
-        "policies_text": "<p>Note: You can unsubscribe from the newsletter at any time. See our <a href=\"https:\/\/www.jeunepremier.com\/pages\/privacy-cookie-policy\" target=\"_blank\" title=\"https:\/\/www.jeunepremier.com\/pages\/privacy-cookie-policy\">privacy policy<\/a> and our <a href=\"https:\/\/www.jeunepremier.com\/pages\/terms-conditions-b2c\" target=\"_blank\" title=\"https:\/\/www.jeunepremier.com\/pages\/terms-conditions-b2c\">general terms and conditions<\/a>. <\/p>"
+        "desc": "Interested about our new Jeune Premier Second life project? Great 🖤! Subscribe via the link below to be up to date.",
+        "policies_text": "<p>Note: You can unsubscribe from the newsletter at any time. See our <a href=\"https:\/\/www.jeunepremier.com\/pages\/privacy-cookie-policy\" target=\"_blank\" title=\"https:\/\/www.jeunepremier.com\/pages\/privacy-cookie-policy\">privacy policy<\/a> and our <a href=\"https:\/\/www.jeunepremier.com\/pages\/terms-conditions-b2c\" target=\"_blank\" title=\"https:\/\/www.jeunepremier.com\/pages\/terms-conditions-b2c\">general terms and conditions<\/a>. <\/p>",
+        "klaviyo_id": "VsjLfS"
       }
     },
     "490a218d-7447-41c7-bd01-3513671b6054": {
@@ -180,7 +182,8 @@
         "img": "shopify:\/\/shop_images\/cleaner_2_1.jpg",
         "product_video": "",
         "video_link": "",
-        "marg_top": "false"
+        "marg_top": "false",
+        "remove_bottom_marg": false
       }
     },
     "fb28c26a-4fc3-425e-b0e1-bab795674fad": {
