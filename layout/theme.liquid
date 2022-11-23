@@ -616,7 +616,7 @@
       <div onclick="topFunction();" id="to-top" style="display:none;" class="scroll-to-top no-d"><div class="top-chev">{% include 'icon-black-down-chev' %}</div></div>
     </main>
     
-    {% if page.url contains "b2b" %}
+    {% if page.url contains "b2b" or page.url contains 'jeune-premier-second-life' %}
     {% section 'jp-b2b-footer' %}
     {% else %}
     {% section "jp-newsletter" %}

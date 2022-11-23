@@ -21,8 +21,8 @@
       <div class="title newsletter-title text-center">{{ section.settings.title }}</div>
       <div class="newsletter-desc light text-center">{{ section.settings.desc }}</div>
       <div class="newsletter-form-wrap">
-      	<form id="email_signup_{{ id }}" class="klaviyo_gdpr_embed_{{ list_id }} newsletter-form" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
-          <input type="hidden" name="g" value="{{ list_id }}">
+      	<form id="email_signup_{{ id }}" class="{% if section.settings.klaviyo_id != blank %}klaviyo_gdpr_embed_{{ section.settings.klaviyo_id }}{% else %}klaviyo_gdpr_embed_{{ list_id }}{% endif %} newsletter-form" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">
+          <input type="hidden" name="g" value="{% if section.settings.klaviyo_id != blank %}{{ section.settings.klaviyo_id }}{% else %}{{ list_id }}{% endif %}">
           <input type="hidden" name="$fields" value="$consent">
           <input type="hidden" name="$list_fields" value="$consent">
 
@@ -67,6 +67,12 @@
 			"type": "richtext",
 			"id": "policies_text",
 			"label": "Policies text"
+		},
+		{
+			"type": "text",
+			"id": "klaviyo_id",
+			"label": "Klaviyo id",
+      "default" : "Yvx9Gs"
 		}
 	],
 	"presets":[
