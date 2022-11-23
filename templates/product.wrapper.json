@@ -49,7 +49,6 @@
     },
     "1645442399a142c9b8": {
       "type": "jp-instagram",
-      "disabled": true,
       "blocks": {
         "9cfd7868-4dd7-486f-8086-bbb8fe75a3d3": {
           "type": "insta_img",
@@ -97,7 +96,7 @@
         "title": "Get inspired & shop the look",
         "link_txt": "View more",
         "link_url": "https:\/\/www.instagram.com\/jeunepremier_official\/",
-        "custom_review_bg": "#F9F7F3",
+        "custom_review_bg": "#f9f7f3",
         "get_carousel_widget": false,
         "instagram_posts": 8,
         "padding_top": 120,
