@@ -15,7 +15,12 @@
   }
 </style>
 
-<div class="hero" style="{% if section.settings.image %}background-image: url({{ section.settings.image | img_url: "2000x" }}){% else %}background: #375D54{% endif %}">
+<div class="hero {% if section.settings.custom_hero_video != blank %} video_added{% endif %}" style="{% if section.settings.image %}background-image: url({{ section.settings.image | img_url: "2000x" }}){% else %}background: #375D54{% endif %}">
+  {% if section.settings.custom_hero_video != blank %}
+    <video class="hero-video" id="hero-video" width="100%" playsinline autoplay="true" muted="muted" loop>
+      <source src="{{ section.settings.custom_hero_video }}" type="video/mp4">
+    </video>
+  {% endif %}
   <div class="container flex-box justify-end" style="justify-content : {{ section.settings.justify_allignment }} !important">
     <span class="header-inner-wrapper" {% if section.settings.desktop_allignment == "baseline" or section.settings.mobile_allignment == "baseline" %} style="margin-top : 30px" {% endif %}>
       <h1 class="hero-text" style="color:{{ section.settings.heading_color }}";>
@@ -39,6 +44,11 @@
          "label":"Image"
       },
       {
+        "type": "text",
+        "id": "custom_hero_video",
+        "label": "Custom Video Link"
+      },
+      {
       "type": "header",
       "content": "Heading"
       },
@@ -46,7 +56,7 @@
         "type": "html",
         "id": "heading",
         "label": "Heading",
-		"default": "Welcome to store"
+		    "default": "Welcome to store"
       },
       {
         "type": "select",
