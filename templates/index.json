@@ -164,10 +164,11 @@
       "blocks": {
         "4074ea81-67d7-42fe-bc7c-a19ed0cd0543": {
           "type": "product",
+          "disabled": true,
           "settings": {
-            "product": "classic-midi-rainbow-deer",
-            "image1": "shopify:\/\/shop_images\/RainbowDeer.jpg",
-            "image2": "shopify:\/\/shop_images\/RainbowDeer.jpg"
+            "product": "classic-midi-unicorn-blue",
+            "image1": "shopify:\/\/shop_images\/Cld22180_-_1.jpg",
+            "image2": "shopify:\/\/shop_images\/Cld22180_-_1.jpg"
           }
         },
         "3801cabb-732f-4ef8-bef4-b9fdcd992177": {
