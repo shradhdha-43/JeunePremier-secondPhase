@@ -3,15 +3,16 @@
     "164498287406219e49": {
       "type": "jp-hero",
       "settings": {
-        "image": "shopify:\/\/shop_images\/banner_second_2_f51adb64-d1ba-45dc-b8ec-2c3098767728.jpg",
-        "heading": "the most beautiful school backpacks in the world",
+        "image": "shopify:\/\/shop_images\/banner_second_3_9ae96a35-cd2a-4800-8de9-325b3f9116ba.jpg",
+        "custom_hero_video": "",
+        "heading": "",
         "text_align": "center",
         "heading_color": "#ffffff",
-        "desktop_allignment": "center",
+        "desktop_allignment": "end",
         "mobile_allignment": "end",
         "justify_allignment": "end",
-        "headinglink": "shopify:\/\/collections\/s22-1",
-        "headinglinktext": "DISCOVER"
+        "headinglink": "shopify:\/\/pages\/jeune-premier-second-life",
+        "headinglinktext": "READ MORE"
       }
     },
     "164498288980aebb7d": {
