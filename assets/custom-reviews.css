@@ -110,6 +110,14 @@
     margin-right : 8px;
 }
 
+.all-review {
+    text-decoration: underline;
+    text-transform: capitalize;
+    margin-bottom: 16px;
+    cursor: pointer;
+    padding-left: 35px;
+}
+
 @media screen and (max-width: 992px) {
     .custom-review {
         flex-direction: column;
@@ -138,5 +146,8 @@
     .custom-review {
         padding: 0;
         align-items: center;
+    }
+    .all-review {
+        padding-left: 20px;
     }
 }

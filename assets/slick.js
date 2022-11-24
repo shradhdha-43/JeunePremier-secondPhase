@@ -2049,17 +2049,12 @@ $(document).ready(function(){
       slidesToScroll: 1,
       arrows: true,
       dots: true,
-      infinite: false,
+      infinite: true,
       prevArrow: $(".arrow_wrapper .left-arrorw-wrap"),
       nextArrow: $(".arrow_wrapper .right-arrorw-wrap"),
       appendDots: $(".review_dots"),
       responsive: [
-        {
-          breakpoint: 992,
-          settings: {
-            infinite: true
-          }
-        }
+
       ]
     });
   }
