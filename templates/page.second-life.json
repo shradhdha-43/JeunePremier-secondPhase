@@ -10,8 +10,8 @@
         "desktop_allignment": "end",
         "mobile_allignment": "end",
         "justify_allignment": "end",
-        "headinglink": "https:\/\/www.jeunepremier.com\/blogs\/stories\/jeune-premier-second-life",
-        "headinglinktext": "READ MORE"
+        "headinglink": "",
+        "headinglinktext": ""
       }
     },
     "16503735538213c0b3": {
@@ -24,9 +24,9 @@
         "title": "Give your  designer bag a second life",
         "sub_title": "",
         "desc": "Before anything else, we believe in quality &amp; timelessness. \nBy selling your perfectly maintained bag, you are helping us build a more responsible fashion industry.\n\n<br><br>Send us your old Jeune Premier bag <b>between June 20th - July 20th 2023<\/b> and receive a shopping voucher up to <b>€50<\/b>.\n\n<br><br>Be sure to subscribe on our newsletter to be up to date about the second life project!",
-        "link_txt": "Read more about Jeune Premier Second life",
+        "link_txt": "Read more about Second life",
         "link_hover_txt": "Read more about Second life",
-        "link": "",
+        "link": "shopify:\/\/blogs\/stories\/jeune-premier-second-life",
         "img": "shopify:\/\/shop_images\/Citybag_Cherry_Pompon.jpg",
         "product_video": "",
         "video_link": "",
