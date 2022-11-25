@@ -48,6 +48,15 @@
       "settings": {
       }
     },
+    "8e1a02ca-3bfb-44ae-8d3c-1b1aaa4706c3": {
+      "type": "jp-newsletter",
+      "settings": {
+        "title": "I want to sell my Jeune Premier Bag!",
+        "desc": "Interested about our new Jeune Premier Second life project? <br><br>Great 🖤! <br><br>Subscribe via the link below to be up to date.",
+        "policies_text": "<p>Note: You can unsubscribe from the newsletter at any time. See our <a href=\"https:\/\/www.jeunepremier.com\/pages\/privacy-cookie-policy\" target=\"_blank\" title=\"https:\/\/www.jeunepremier.com\/pages\/privacy-cookie-policy\">privacy policy<\/a> and our <a href=\"https:\/\/www.jeunepremier.com\/pages\/terms-conditions-b2c\" target=\"_blank\" title=\"https:\/\/www.jeunepremier.com\/pages\/terms-conditions-b2c\">general terms and conditions<\/a>. <\/p>",
+        "klaviyo_id": "VsjLfS"
+      }
+    },
     "1645179113cbd1ec4e": {
       "type": "jp-bestsellers",
       "settings": {
@@ -422,6 +431,7 @@
   "order": [
     "164498287406219e49",
     "164498288980aebb7d",
+    "8e1a02ca-3bfb-44ae-8d3c-1b1aaa4706c3",
     "1645179113cbd1ec4e",
     "1644555888f4e91b15",
     "16437837659a2daced",
