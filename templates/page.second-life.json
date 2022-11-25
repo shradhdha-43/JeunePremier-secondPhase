@@ -4,14 +4,24 @@
       "type": "jp-hero",
       "settings": {
         "image": "shopify:\/\/shop_images\/banner_second_3_9ae96a35-cd2a-4800-8de9-325b3f9116ba.jpg",
-        "heading": "JUNE 20th - JULY 20th 2023",
+        "custom_hero_video": "",
+        "heading": "",
         "text_align": "left",
         "heading_color": "#333333",
         "desktop_allignment": "end",
         "mobile_allignment": "end",
         "justify_allignment": "end",
-        "headinglink": "",
-        "headinglinktext": ""
+        "headinglink": "https:\/\/manage.kmail-lists.com\/subscriptions\/subscribe?g=VsjLfS&%24fields=%24consent&%24list_fields=%24consent&email=kelly%40jeunepremier.be&commit=",
+        "headinglinktext": "REGISTER HERE"
+      }
+    },
+    "3e68bd2e-3b55-428a-a486-ac330fd75fb4": {
+      "type": "jp-newsletter",
+      "settings": {
+        "title": "I want to sell my Jeune Premier Bag!",
+        "desc": "Interested about our new Jeune Premier Second life project? Great 🖤! Subscribe via the link below to be up to date.",
+        "policies_text": "<p>Note: You can unsubscribe from the newsletter at any time. See our <a href=\"https:\/\/www.jeunepremier.com\/pages\/privacy-cookie-policy\" target=\"_blank\" title=\"https:\/\/www.jeunepremier.com\/pages\/privacy-cookie-policy\">privacy policy<\/a> and our <a href=\"https:\/\/www.jeunepremier.com\/pages\/terms-conditions-b2c\" target=\"_blank\" title=\"https:\/\/www.jeunepremier.com\/pages\/terms-conditions-b2c\">general terms and conditions<\/a>. <\/p>",
+        "klaviyo_id": "VsjLfS"
       }
     },
     "16503735538213c0b3": {
@@ -157,15 +167,6 @@
         "link": ""
       }
     },
-    "3e68bd2e-3b55-428a-a486-ac330fd75fb4": {
-      "type": "jp-newsletter",
-      "settings": {
-        "title": "I want to sell my Jeune Premier Bag!",
-        "desc": "Interested about our new Jeune Premier Second life project? Great 🖤! Subscribe via the link below to be up to date.",
-        "policies_text": "<p>Note: You can unsubscribe from the newsletter at any time. See our <a href=\"https:\/\/www.jeunepremier.com\/pages\/privacy-cookie-policy\" target=\"_blank\" title=\"https:\/\/www.jeunepremier.com\/pages\/privacy-cookie-policy\">privacy policy<\/a> and our <a href=\"https:\/\/www.jeunepremier.com\/pages\/terms-conditions-b2c\" target=\"_blank\" title=\"https:\/\/www.jeunepremier.com\/pages\/terms-conditions-b2c\">general terms and conditions<\/a>. <\/p>",
-        "klaviyo_id": "VsjLfS"
-      }
-    },
     "490a218d-7447-41c7-bd01-3513671b6054": {
       "type": "jp-image-with-text",
       "settings": {
@@ -198,10 +199,10 @@
   },
   "order": [
     "bbba3d33-3409-4c36-b73c-3e92ce802d8b",
+    "3e68bd2e-3b55-428a-a486-ac330fd75fb4",
     "16503735538213c0b3",
     "595c127d-411f-4060-bc11-f0b829d2a744",
     "869f82fc-0783-4f79-8f59-256415c6d647",
-    "3e68bd2e-3b55-428a-a486-ac330fd75fb4",
     "490a218d-7447-41c7-bd01-3513671b6054",
     "fb28c26a-4fc3-425e-b0e1-bab795674fad"
   ]
