@@ -5,9 +5,9 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/banner_second_3_9ae96a35-cd2a-4800-8de9-325b3f9116ba.jpg",
         "custom_hero_video": "",
-        "heading": "",
+        "heading": "<i>JEUNE PREMIER <\/i>\n<br><b> SECOND LIFE<\/b>",
         "text_align": "center",
-        "heading_color": "#ffffff",
+        "heading_color": "#333333",
         "desktop_allignment": "end",
         "mobile_allignment": "end",
         "justify_allignment": "end",
