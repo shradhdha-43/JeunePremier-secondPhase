@@ -56,6 +56,20 @@
         "upsell_type": "bag"
       }
     },
+    "adb91f43-fda2-4779-8486-4a2a6aff28cf": {
+      "type": "jp-img-scribble-txt",
+      "settings": {
+        "link_type": "btn",
+        "img_aligment": "right",
+        "title": "EEN BLICKVANG OP DE STRAAT",
+        "desc": "CCCCCCCCCCCCCCCCCCCC",
+        "link_txt": "BUY HERE",
+        "link_hover_txt": "BUY HERE",
+        "link": "shopify:\/\/products\/set-led-lights",
+        "img": "shopify:\/\/shop_images\/stap_2_bis.jpg",
+        "img2": "shopify:\/\/shop_images\/stap_3_1f72d373-a60a-4d25-8be7-d9202aa8aaf5.jpg"
+      }
+    },
     "164614191478238c86": {
       "type": "jp-product-slider-4",
       "settings": {
@@ -229,6 +243,7 @@
     "1648025119633f453c",
     "product-recommendations",
     "1646073797c5988fcf",
+    "adb91f43-fda2-4779-8486-4a2a6aff28cf",
     "164614191478238c86",
     "16454287984d026596",
     "164607437737f92922",
