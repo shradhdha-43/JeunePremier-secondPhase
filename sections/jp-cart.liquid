@@ -348,9 +348,13 @@
       $('.drawer-cart').addClass('drawn');
       $('.background-drawer-cart').addClass('drawn');
       $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
+      let prodId = $(this).data('variant');
+      var deleted_slide = localStorage.getItem("deleted_slide");
+      console.log(deleted_slide[prodId]);
       var formData = {
         'line': parseInt($(this).closest('.cart-product-wrapper').find('.delete-cart-product').data('variant')),
-        'quantity': $(this).data('value')-1
+        'quantity': $(this).data('value')-1,
+        'sections': "jp-cart"
       };
       $.ajax({
         url: "/cart/change.js",

@@ -1300,7 +1300,7 @@ $( document ).ready(function() {
     $('body').removeClass('no-scroll');
   }); {% endcomment %}
 
-  function storeInLocalStorage(item, key, value) {
+  {% comment %} function storeInLocalStorage(item, key, value) {
     console.log("storeLocal running");
     var data = localStorage.getItem('deleted_slide');
   
@@ -1311,7 +1311,8 @@ $( document ).ready(function() {
     localStorage.setItem(item, JSON.stringify(data));
   }
     
-  $('.cross-sell-add-product:not(.added-product)').click(function() {
+  {% comment %} $('.cross-sell-add-product:not(.added-product)').click(function() { {% endcomment %}
+  $('body').on("click", ".cross-sell-add-product:not(.added-product)", function() {
   
 
     var cross_variant_id = $(this).data('variant');
@@ -1385,7 +1386,7 @@ $( document ).ready(function() {
     .fail(function(error) {
       console.log( error );
     });
-  });
+  }); {% endcomment %}
 
 
   

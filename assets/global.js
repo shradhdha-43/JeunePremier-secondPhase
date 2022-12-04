@@ -892,5 +892,144 @@ class VariantRadios extends VariantSelects {
 
 customElements.define('variant-radios', VariantRadios);
 
+function cartDone(data) {
+  var $content = $(data["jp-cart"]);
+  console.log(data);
+  if($('.cart-body').hasClass('c-empty') && !$content.find('.cart-body').hasClass('c-empty')) {
+    $('.additional-checkout-buttons').appendTo($content.find('.cart-body'));
+    $('.drawer-cart').html('');
+    $($content.find('.drawer-cart-header')).appendTo('.drawer-cart');
+    $($content.find('.drawer-cart-main-sec')).appendTo('.drawer-cart');
+    $($content.find('.drawer-cart-footer')).appendTo('.drawer-cart');
+    $('.close-cart').click(function() {
+          $('.drawer-cart').removeClass('drawn');
+          $('.background-drawer-cart').removeClass('drawn');
+  $('body').removeClass('no-scroll');
+    });
+    $('.additional-checkout-buttons').removeClass('no-disp');
+    $('.remove-scripts').html($content.find('.remove-scripts').html());
+  } else {
+    if(!$('.cart-body').hasClass('c-empty') && $content.find('.cart-body').hasClass('c-empty')) {
+      $('.additional-checkout-buttons').appendTo($content.find('.cart-body'));
+      $('.drawer-cart').html('');
+      $($content.find('.drawer-cart-header')).appendTo('.drawer-cart');
+      $($content.find('.drawer-cart-main-sec')).appendTo('.drawer-cart');
+      $('.close-cart').click(function() {
+            $('.drawer-cart').removeClass('drawn');
+            $('.background-drawer-cart').removeClass('drawn');
+  $('body').removeClass('no-scroll');
+      });
+      $('.additional-checkout-buttons').addClass('no-disp');
+      $('.remove-scripts').html($content.find('.remove-scripts').html());
+    } else {
+      if($content.find('.cart-body').hasClass('c-empty')) {
+        $('.cart-body').html($content.find('.cart-body').html());
+        $('.cart-body').removeClass('upsell');
+      } else {
+        $('.drawer-cart-checkout').html($content.find('.drawer-cart-checkout').html());
+        $('.product-wrapper-container').html($content.find('.product-wrapper-container').html());
+        $('.drawer-cart-footer').html($content.find('.drawer-cart-footer').html());
+        $('.remove-scripts').html($content.find('.remove-scripts').html());
+        $('.cart-body').removeClass('c-empty');
+        if($content.find('.cart-body').hasClass('upsell')) {
+          $('.cart-body').addClass('c-empty');
+        } else {
+          $('.cart-body').removeClass('c-empty');
+        }
+      }
+    }
+  }
+  $('.load-container').remove();
+}
+
+function storeInLocalStorage(item, key, value) {
+  console.log("storeLocal running");
+  var data = localStorage.getItem('deleted_slide');
+
+  data = data ? JSON.parse(data) : {};
+
+  data[key] = value;
+
+  localStorage.setItem(item, JSON.stringify(data));
+}
+  
+// $('.cross-sell-add-product:not(.added-product)').click(function() { 
+$('body').on("click", ".cross-sell-add-product:not(.added-product)", function() {
 
 
+  var cross_variant_id = $(this).data('variant');
+
+
+  var urls = $(this).data('url');
+  if($(this).data('variant')) {
+  var notAdded = false;
+  var formData;
+      formData = {
+        'items': [{
+          'id': parseInt($(this).data('variant')),
+          'quantity': 1
+        }],
+        'sections': "jp-cart"
+      };
+    $.ajax({
+      url: "/cart/add.js",
+      method: "POST",
+      dataType: "json",
+      data: formData,
+    })
+    .done(function( data ) {
+      checkFreeProduct();
+      let root__url = "/";
+      if (Shopify.routes.root == "/") {
+        root__url = Shopify.routes.root;
+      }
+      $.ajax({
+        url: `/?sections=jp-cart`,
+        method: "GET",
+        dataType: "json"
+      })
+      .done(function( data ) {
+        cartDone(data);
+      })
+      .fail(function(error) {
+        console.log( error );
+        $('.load-container').remove();
+      });
+      console.log("open cart");
+      $(".background-drawer-cart").addClass("drawn");
+      $(".drawer-cart").addClass("drawn");
+      $("body").addClass("no-scroll");
+    })
+    .fail(function(error) {
+      notAdded = true;
+      console.log( error );
+      $('.load-container').remove();
+    });
+    
+    if(notAdded != true) {
+      $(this).next().removeClass("no-disp");
+      $(this).addClass("no-disp");
+      var deleted_slide = $(this).closest(".slick-slide").html();
+      var crossObj = { id : cross_variant_id , htmlData : deleted_slide };
+      storeInLocalStorage('deleted_slide' , cross_variant_id , deleted_slide);
+      var removeslide = $(this).closest(".slick-slide").attr("data-slick-index");
+      $('.show-cross-upsell .cross-sell-body').slick('slickRemove', removeslide);
+      // $('.show-cross-upsell .cross-sell-body')[0].slick.refresh(); ?sections=jp-cart
+    }
+
+    if($(".cross-sell-body .slick-track .slick-slide").length  == 0  ) {
+      $(".accessories").addClass("no-disp");
+    }
+  }
+
+  $.ajax({
+    url: $(this).data('urls')+'/?sections=jp-product-cross-sell-options',
+    method: "GET"
+  })
+  .done(function( data ) {
+    console.log(data);
+  })
+  .fail(function(error) {
+    console.log( error );
+  });
+});
