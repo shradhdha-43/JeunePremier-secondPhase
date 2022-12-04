@@ -1,63 +1,82 @@
 body.no-scroll {
-	overflow: hidden;
+  overflow: hidden;
 }
 .drawer-cross-sell-cart {
-    display: block;
-    position: fixed;
-    z-index: 9;
-    height: 100vh;
-    width: 100%;
-    max-width: 611px;
-    background-color: var(--dd-color-sixth);
-    top: 0;
-    right: -611px;
-    padding: 0;
-    transition: .4s ease;
+  display: none;
+  /* position: fixed; */
+  z-index: 9;
+  /* height: 100vh; */
+  width: 100%;
+  /* max-width: 611px; */
+  background-color: var(--dd-color-sixth);
+  top: 0;
+  /* right: -611px; */
+  padding: 0;
+  transition: 0.4s ease;
+}
+/* .show-cross-upsell .cross-sell-body:not(.slick-initialized) * {
+  display: none;
+  opacity: 0;
+} */
+.show-cross-upsell .accessories {
+  display: block;
+}
+.show-cross-upsell .drawer-cross-sell-cart {
+  display: flex;
+  align-items: center;
+}
+.slick-slide.slick-hide {
+  display: none;
+}
+.show-cross-upsell #shopify-section-jp-product-cross-sell-options .drawer-cross-sell-cart  {
+  display: block !important;
 }
 .drawer-cross-sell-cart.drawn {
-    right: 0;
-    box-shadow: -6px 3px 16px #C5AF8833;
+  right: 0;
+  box-shadow: -6px 3px 16px #c5af8833;
 }
 .background-drawer-cross-sell.drawn {
-    z-index: 8;
-    opacity: 1;
-    right: 0;
+  z-index: 8;
+  opacity: 1;
+  right: 0;
 }
 .background-drawer-cross-sell {
-    width: 100vw;
-    position: fixed;
-    height: 100%;
-    background-color: #00000040;
-    right: 0;
-    top: 0;
-    z-index: -1;
-    display: block;
-    transition: .4s ease;
-    opacity: 0;
-  	cursor: pointer;
+  width: 100vw;
+  position: fixed;
+  height: 100%;
+  background-color: #00000040;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  display: block;
+  transition: 0.4s ease;
+  opacity: 0;
+  cursor: pointer;
 }
 .drawer-cross-sell-header {
-    padding: 32px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid var(--dd-color-second);
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--dd-color-second);
 }
 .close-cross-sell-cart {
-    cursor: pointer;
-    position: absolute;
+  cursor: pointer;
+  position: absolute;
 }
 .close-cross-sell-cart svg {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 .cross-sell-body {
-    max-width: none;
-    display: block;
-    margin: 0 auto;
-    padding: 0 20px;
-    height: 100vh;
-    overflow-y: scroll;
-    position: relative;
-    padding-bottom: 12vh;
+  max-width: none;
+  display: block;
+  margin: 0 auto;
+  /* padding: 0 20px; */
+  /* height: 100vh; */
+  /* overflow-y: scroll; */
+  position: relative;
+  /* padding-bottom: 12vh; */
+  width: 100%;
+  max-width: 325px;
 }
 /* width */
 .cross-sell-body::-webkit-scrollbar {
@@ -66,7 +85,7 @@ body.no-scroll {
 
 /* Track */
 .cross-sell-body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 /* Handle */
@@ -77,130 +96,183 @@ body.no-scroll {
 
 /* Handle on hover */
 .cross-sell-body::-webkit-scrollbar-thumb:hover {
-  background: var(--dd-color-second); 
+  background: var(--dd-color-second);
 }
 
 .cross-sell-product {
-	display: flex;
-  	align-items: flex-start;
-  	width: 100%;
-  	max-width: 451px;
-  	margin: 0 auto 16px;
-  	padding: 16px;
-  	background-color: var(--dd-color-fourth);
+  display: flex !important;
+  align-items: center;
+  width: 100%;
+  max-width: 325px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--dd-color-sixth);
 }
 .cross-sell-product:first-child {
-	margin-top: 40px;
+  /* margin-top: 40px; */
 }
 .cross-sell-product-img {
-	display: block;
-  	width: 40%;
-  	max-width: 160px;
-  	position: relative;
+  display: block;
+  /* width: 40%;
+  max-width: 160px; */
+  width: 80px;
+  max-width: 80px;
+  max-height: 80px;
+  position: relative;
 }
 .cross-sell-product-img a {
-	display: block;
+  display: block;
 }
 .cross-sell-product-img img {
-    width: 100%;
-    height: 160px;
-    object-fit: contain;
-    display: block;
+  width: 100%;
+  /* height: 160px; */
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 .cross-sell-details {
-  	display: block;
+  /* display: block;
   	width: calc(100% - 176px);
-	margin-left: 16px;
+	margin-left: 16px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-left: 8px;
 }
-.cross-sell-product-title, .cross-sell-product-title a, .cross-sell-product-price {
-  	display: block;
-	font-size: 16px;
-  	line-height: 32px;
-  	font-family: 'Work Sans',sans-serif;
-    letter-spacing: 1.28px;
-    color: #333333;
-    text-transform: uppercase;
+.cross-sell-product-title,
+.cross-sell-product-title a,
+.cross-sell-product-price {
+  display: block;
+  font-family: "Work Sans", sans-serif;
+  color: #333333;
+  text-transform: uppercase;
+  letter-spacing: 0;
 }
+
+.cross-sell-product-title,
+.cross-sell-product-title a {
+  font-size: 16px;
+  line-height: 24px;
+  max-width: 162px;
+}
+
+.cross-sell-product-price {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+}
+
 .cross-sell-accordion {
-	cursor: pointer;
+  cursor: pointer;
 }
 .cross-sell-moreinfo {
-	display: flex;
-  	align-items: center;
-	font-size: 14px;
-  	line-height: 20px;
-  	font-family: 'Work Sans',sans-serif;
-    letter-spacing: 0;
-    color: #333333;
-  	font-weight: 300;
-  	padding: 8px 0;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Work Sans", sans-serif;
+  letter-spacing: 0;
+  color: #333333;
+  font-weight: 300;
+  padding: 8px 0;
 }
 .cross-sell-icon {
-	margin-left: 4px;
-  	transition: all 0.4s ease;
+  margin-left: 4px;
+  transition: all 0.4s ease;
 }
 .cross-sell-moreinfo.active .cross-sell-icon {
-	transform: rotate(135deg);
+  transform: rotate(135deg);
 }
 .cross-sell-infopanel {
-	font-size: 14px;
-  	line-height: 20px;
-  	font-family: 'Work Sans',sans-serif;
-    letter-spacing: 0;
-    color: #333333;
-  	font-weight: 300;
-  	padding-bottom: 16px;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Work Sans", sans-serif;
+  letter-spacing: 0;
+  color: #333333;
+  font-weight: 300;
+  padding-bottom: 16px;
 }
 .cross-sell-add-product {
-	display: block;
-  	width: fit-content;
-  	background-color: #333333;
-  	color: #ffffff;
-  	border: 1px solid #333333;
-  	padding: 12px;
-  	text-align: center;
-  	font-size: 11px;
-  	line-height: 24px;
+  display: flex;
+  /* display: block; */
+  width: fit-content;
+  background-color: #c5af88;
+  color: #ffffff;
+  border: 1px solid #333333;
+  padding: 12px;
+  text-align: center;
+  font-size: 11px;
+  /* line-height: 24px;
   	font-weight: 500;
     font-family: 'Work Sans',sans-serif;
     letter-spacing: 0.88px;
-    text-transform: uppercase;
-  	cursor: pointer;
+    text-transform: uppercase; */
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+  align-items: center;
 }
 .cross-sell-add-product.added-product {
-	background-color: #C5AF88;
-  	color: #333333;
+  background-color: #c5af88;
+  color: #333333;
+  width: fit-content;
+}
+
+.cross-sell-arrows svg {
+  width: 8px;
+  height: 16px;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.cross-sell-arrows.slick-disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.cross-sell-left-arrow {
+  transform: rotate(180deg);
+  margin-bottom: 5px;
 }
 
 @media (max-width: 992px) {
-    .drawer-cross-sell-header {
-      padding: 32px 20px;
-    }
+  .drawer-cross-sell-header {
+    padding: 32px 20px;
+  }
+  .cross-sell-product {
+    padding: 5px;
+  }
+  .accessories_dots .slick-dots {
+    padding-bottom: 20px;
+    position: unset;
+  }
 }
 
 @media (max-width: 560px) {
-    .cross-sell-body {
+  /* .cross-sell-body {
       padding-bottom: 15vh;
-    }
-    .cross-sell-product:first-child {
-      margin-top: 20px;
-    }
-    .cross-sell-product {
-      margin: 0 auto 10px;
-    }
-    .cross-sell-product-img {
-      width: 30%;
-      max-width: 80px;
-    }
-    .cross-sell-product-img img {
-      height: 80px;
-    }
-    .cross-sell-details {
+    } */
+  .cross-sell-product:first-child {
+    /* margin-top: 20px; */
+  }
+  .cross-sell-product {
+    max-width: 280px;
+  }
+  .cross-sell-product-img {
+    width: 30%;
+    max-width: 80px;
+  }
+  .cross-sell-product-img img {
+    height: 80px;
+  }
+  /* .cross-sell-details {
       width: calc(100% - 96px);
-    }
+    } */
 }
 @media (max-width: 320px) {
-  	.no-sm {
-      display: none !important;
-    }
+  .no-sm {
+    display: none !important;
+  }
 }

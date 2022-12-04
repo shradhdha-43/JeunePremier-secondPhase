@@ -299,9 +299,7 @@
                   {%- endfor -%}
                 </div>
                 
-                {%- unless product.type == 'Goedgemerkt' or product.type == 'Ludilabel' -%}
-                <a class="accessories"><span class="h-rotate">+</span> <span class="h-underline">{{ 'products.product.more' | t }}</span></a>
-                {% else %}
+                {%- if product.type == 'Goedgemerkt' or product.type == 'Ludilabel' -%}
                 <div class="labels">
                   <div class="info">
                     {{ 'products.product.label_info.name' | t }}
@@ -320,7 +318,7 @@
                     </div>
                   </div>
                 </div>
-                {%- endunless -%}
+              {%- endif -%}
                      
                      {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}
                   <div class="jumbotron mb20">
@@ -412,6 +410,12 @@
                 </div>
                 {% endif %}
                 {% endfor %}
+
+                {%- unless product.type == 'Goedgemerkt' or product.type == 'Ludilabel' -%}
+                  <div class="show-cross-upsell">
+                    {% render 'jp-product-cross-sell-options' %}
+                  </div>
+                {%- endunless -%}
                 
                 <div class="product-services">
                   <div class="product-service">
@@ -586,17 +590,17 @@
   
 $(document).ready(function(){
   
-  if(window.keep) {
+  {% comment %} if(window.keep) {
     $('.accessories').removeClass('no-disp');
   } else {
     $('.accessories').addClass('no-disp');
-  }
+  } {% endcomment %}
 
-  $('.accessories').click(function() {
+  {% comment %} $('.accessories').click(function() {
   	$(".drawer-cross-sell-cart").addClass("drawn");
     $('.background-drawer-cross-sell').addClass('drawn');
-//     $('body').addClass('no-scroll');
-  });
+    $('body').addClass('no-scroll');
+  }); {% endcomment %}
   
   $(".js-product-preview-hover").mouseover(function(){
     $(".slider-product-hover").css("display", "block");
@@ -643,11 +647,11 @@ $(document).ready(function(){
         localStorage.setItem( "PrevLocation", url );
         $('.product-wrapper').last().parent().remove();
         
-        if(window.keep) {
+        {% comment %} if(window.keep) {
           $('.accessories').removeClass('no-disp');
         } else {
           $('.accessories').addClass('no-disp');
-        }
+        } {% endcomment %}
         $('.slider-for').slick({
           speed: 300,
           arrows: false,
@@ -698,6 +702,17 @@ $(document).ready(function(){
                 arrows: true
               }
             }
+          ]
+        });
+        $('.show-cross-upsell .cross-sell-body').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          infinite: false,
+          prevArrow: $(".show-cross-upsell .cross-sell-left-arrow"),
+          nextArrow: $(".show-cross-upsell .cross-sell-right-arrow"),
+          responsive: [
+            
           ]
         });
         
@@ -1276,6 +1291,147 @@ $( document ).ready(function() {
 
 {% include "photoswipe" %}
 {% endcomment %}
+
+
+<script>
+  {% comment %} $('.close-cross-sell-cart,.background-drawer-cross-sell').click(function() {
+    $('.drawer-cross-sell-cart').removeClass('drawn');
+    $('.background-drawer-cross-sell').removeClass('drawn');
+    $('body').removeClass('no-scroll');
+  }); {% endcomment %}
+
+  function storeInLocalStorage(item, key, value) {
+    console.log("storeLocal running");
+    var data = localStorage.getItem('deleted_slide');
+  
+    data = data ? JSON.parse(data) : {};
+  
+    data[key] = value;
+  
+    localStorage.setItem(item, JSON.stringify(data));
+  }
+    
+  $('.cross-sell-add-product:not(.added-product)').click(function() {
+  
+
+    var cross_variant_id = $(this).data('variant');
+
+    
+
+    var urls = $(this).data('url');
+    if($(this).data('variant')) {
+    var notAdded = false;
+    var formData;
+        formData = {
+          'items': [{
+            'id': parseInt($(this).data('variant')),
+            'quantity': 1
+          }]
+        };
+      $.ajax({
+        url: "/cart/add.js",
+        method: "POST",
+        dataType: "json",
+        data: formData,
+      })
+      .done(function( data ) {
+        checkFreeProduct();
+        $.ajax({
+          url: '{% unless routes.root_url == "/" %}{{ routes.root_url }}{% endunless %}/?sections=jp-cart',
+          method: "GET",
+          dataType: "json"
+        })
+        .done(function( data ) {
+          {% include "cart-done" %}
+        })
+        .fail(function(error) {
+          console.log( error );
+          $('.load-container').remove();
+        });
+        console.log("open cart");
+        $(".background-drawer-cart").addClass("drawn");
+        $(".drawer-cart").addClass("drawn");
+        $("body").addClass("no-scroll");
+      })
+      .fail(function(error) {
+        notAdded = true;
+        console.log( error );
+        $('.load-container').remove();
+      });
+      
+      if(notAdded != true) {
+        $(this).next().removeClass("no-disp");
+        $(this).addClass("no-disp");
+        var deleted_slide = $(this).closest(".slick-slide").html();
+        var crossObj = { id : cross_variant_id , htmlData : deleted_slide };
+        storeInLocalStorage('deleted_slide' , cross_variant_id , deleted_slide);
+        var removeslide = $(this).closest(".slick-slide").attr("data-slick-index");
+        $('.show-cross-upsell .cross-sell-body').slick('slickRemove', removeslide);
+        {% comment %} $('.show-cross-upsell .cross-sell-body')[0].slick.refresh(); {% endcomment %}
+      }
+
+      if($(".cross-sell-body .slick-track .slick-slide").length  == 0  ) {
+        $(".accessories").addClass("no-disp");
+      }
+    }
+
+    $.ajax({
+      url: $(this).data('urls')+'/?sections=jp-product-cross-sell-options',
+      method: "GET"
+    })
+    .done(function( data ) {
+      console.log(data);
+    })
+    .fail(function(error) {
+      console.log( error );
+    });
+  });
+
+
+  
+
+
+
+  
+  ///----- Auto-Close Accordion
+  $(document).ready(function() {
+    //--- initial state of elements
+    $('.cross-sell-infopanel').hide()
+    //----- click function
+    $(".cross-sell-accordion").find(".cross-sell-moreinfo").click(function() { //---- tabs or buttons
+      //---- active class
+      $(".cross-sell-accordion").find(".cross-sell-moreinfo").removeClass('active');
+      $(this).closest('.cross-sell-accordion').find('.cross-sell-infopanel').slideUp();
+      var selected = $(this).next('.cross-sell-infopanel');
+      if (selected.is(":hidden")) {
+        $(this).next('.cross-sell-infopanel').slideDown();
+        $(this).toggleClass('active');
+      }
+    });
+  });
+</script>
+
+<script>
+
+  $(document).ready(function() {
+    console.log("load accessories");
+
+    $(".cross-sell-product").each(function( index ) {
+      if($(this).hasClass("ids_matched")){
+      $(this).addClass("hideme");
+      $(this).parent().parent().addClass("slick-hide");
+      console.log($(this).parent());
+
+
+      var removeslides = $(this).closest(".slick-slide.slick-hide").attr("data-slick-index");
+      $('.show-cross-upsell .cross-sell-body').slick('slickRemove', removeslides)
+      $('.show-cross-upsell .cross-sell-body')[0].slick.refresh();
+
+      };
+    });
+    
+  });
+  </script>
 
 {% schema %}
   {

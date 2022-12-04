@@ -2057,6 +2057,26 @@ $(document).ready(function(){
 
       ]
     });
+
+    $('.show-cross-upsell .cross-sell-body').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      infinite: false,
+      dots : false,
+      prevArrow: $(".show-cross-upsell .cross-sell-left-arrow"),
+      nextArrow: $(".show-cross-upsell .cross-sell-right-arrow"),
+      appendDots: $(".show-cross-upsell .accessories_dots"),
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            dots: true
+          }
+        }
+      ]
+    });
+    
   }
   slidersInit();
   

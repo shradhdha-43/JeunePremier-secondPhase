@@ -175,7 +175,7 @@
           </div>
           <div class="cart-product-qty-del justify-between">
             {% comment %}{% if item.product.id != free_product_id %}{% endif %}{% endcomment %}
-            <div class="delete-cart-product" data-variant="{{ forloop.index }}">
+            <div class="delete-cart-product" data-cross-check="{{ item.product.first_available_variant.id }}" data-variant="{{ forloop.index }}">
               <div class="delete-text">{{ section.settings.delete_text }}</div>
             </div>
             {% comment %}{% endcomment %}
@@ -295,6 +295,21 @@
   $(document).ready(function() {
                               
     $('.delete-cart-product').click(function() {
+
+
+      var cross_check_id = $(this).data("cross-check");
+      console.log(cross_check_id);
+
+
+      {% comment %} var getCrossSelllocalarray = localStorage.getItem("cross-sell");
+      console.log(getCrossSelllocalarray);
+
+      var checkcrossprodstatus = getCrossSelllocalarray.includes(cross_check_id);
+      console.log(checkcrossprodstatus);
+
+      var getDeletedSlide = localStorage.getItem("deleted_slide");
+      $('.show-cross-upsell .cross-sell-body').slick('slickAdd', getDeletedSlide); {% endcomment %}
+
       $('.drawer-cart').addClass('drawn');
       $('.background-drawer-cart').addClass('drawn');
       $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);

@@ -1,0 +1,194 @@
+{{ 'jp-cross-sell.css' | asset_url | stylesheet_tag }}
+
+{% assign crossSellhandle = product.handle %}
+
+<script>
+  console.log('product handle: {{crossSellhandle}}');
+</script>
+
+{%- for product_collection in product.collections -%}
+  {%- for link in linklists['main-design-collections'].links -%}
+    {% assign link_url = link.url | split: '/' %}
+    {% assign link_handle = link_url.last | handleize %}
+
+    {%- if product_collection.handle == link_handle -%}
+      <script>
+        console.log('{{ product_collection.title }}');
+      </script>
+      <script>
+        console.log('link: {{link.url}}');
+      </script>
+      <script>
+        console.log('link handle: {{link_handle}}');
+      </script>
+      {% assign coll = product_collection.handle %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% if coll %}
+    <script>
+      console.log('coll: {{coll}}');
+    </script>
+    <script>
+      console.log('loop break');
+    </script>
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% assign crossSellCount = 0 %}
+{% for product in collections[coll].products limit: 24 %}
+  {% unless product.type == 'City Bag'
+    or product.type == 'Box Filled'
+    or product.type == 'Pencil Case'
+    or product.type == 'Case Double'
+    or product.type == 'Pencil Box'
+    or product.type == 'Alle'
+    or product.type == 'Box'
+    or product.type == 'Drinking Bottle'
+    or product.type == 'Girls'
+    or product.type == 'Keychain'
+    or product.type == 'Keychain charm'
+    or product.type == 'Ludilabel'
+    or product.type == 'Goedgemerkt'
+    or product.type == 'Jeune Premier / Goedgemerkt'
+    or product.type == 'File Folder'
+    or product.type == 'Alle'
+    or product.type == 'Wrapping paper'
+    or product.type == 'Name label'
+    or product.type == 'Fun Label'
+  %}
+    {% continue %}
+  {% endunless %}
+  {% if product.handle == crossSellhandle %}
+    {% continue %}
+  {% endif %}
+
+  <script>
+    console.log('product: {{product.type}} - {{product.handle}}');
+  </script>
+  {% assign crossSellCount = crossSellCount | plus: 1 %}
+{% endfor %}
+
+<script>
+  console.log('crossSellCount: {{crossSellCount}}');
+</script>
+<span class="accessories {% if crossSellCount == 0 %}no-disp{% endif %}"
+  ><span>{{ 'products.product.more' | t }}</span></span
+>
+<div class="drawer-cross-sell-cart {% if crossSellCount == 0 %}no-disp{% endif %}">
+  <div class="drawer-cross-sell-header no-disp">
+    <span class="close-cross-sell-cart light">
+      {%- include 'svg-arrow' %}
+      <span class="no-sm">{{ 'general.cart.back' | t }}</span></span
+    >
+    <h2 class="cart-headign">{{ section.settings.cross_sell_header }}</h2>
+  </div>
+  <div class="cross-sell-left-arrow cross-sell-arrows">{% render 'arrow-next' %}</div>
+
+  <div
+    class="cross-sell-body"
+    data-cart-items="{% for xitem in cart.items %}{{ xitem.product.first_available_variant.id }},{% endfor %}"
+  >
+    {% for product in collections[coll].products limit: 24 %}
+      {% unless product.type == 'City Bag'
+        or product.type == 'Box Filled'
+        or product.type == 'Pencil Case'
+        or product.type == 'Case Double'
+        or product.type == 'Pencil Box'
+        or product.type == 'Alle'
+        or product.type == 'Box'
+        or product.type == 'Drinking Bottle'
+        or product.type == 'Girls'
+        or product.type == 'Keychain'
+        or product.type == 'Keychain charm'
+        or product.type == 'Ludilabel'
+        or product.type == 'Goedgemerkt'
+        or product.type == 'Jeune Premier / Goedgemerkt'
+        or product.type == 'File Folder'
+        or product.type == 'Alle'
+        or product.type == 'Wrapping paper'
+        or product.type == 'Name label'
+        or product.type == 'Fun Label'
+      %}
+        {% continue %}
+      {% endunless %}
+      {% if product.handle == crossSellhandle %}
+        {% continue %}
+      {% endif %}
+ 
+      <div class="cross-sell-product {% for xitem in cart.items %}{% if xitem.product.first_available_variant.id == product.first_available_variant.id %}ids_matched{% endif %}{% endfor %}" data-id="{{ product.first_available_variant.id }}" data-status="{{ crossfound }}">
+        <div class="cross-sell-product-img">
+          <a href="{{ product.url }}">
+            <img src="{{ product.featured_image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+          </a>
+        </div>
+        <div class="cross-sell-details">
+          <div class="cross-sell-title-price-wrap">
+            <div class="cross-sell-product-title medium">
+              <a href="{{ product.url }}">
+                {{ product.title | split: ' - ' | first }}
+              </a>
+            </div>
+            <div class="cross-sell-product-price">
+              {{ product.price | times: 1 | money_without_trailing_zeros | strip_html }}
+            </div>
+
+            <div class="cross-sell-accordion no-disp">
+              <div class="cross-sell-moreinfo">
+                {{ section.settings.more_info }}
+                <span class="cross-sell-icon">+</span>
+              </div>
+              <div class="cross-sell-infopanel">{{ product.description | strip_html | truncatewords: 20 }}</div>
+            </div>
+          </div>
+
+          {% assign noAddToCartFromCollection = false %}
+          {% if product.type == 'Ludilabel'
+            or product.type == 'Goedgemerkt'
+            or product.type == 'Keychain letter'
+            or product.type == 'Keychain charm'
+          %}
+            {% assign noAddToCartFromCollection = true %}
+          {% endif %}
+          {% unless product.selected_or_first_available_variant.available %}
+            {% assign noAddToCartFromCollection = true %}
+          {% endunless %}
+          {%- unless noAddToCartFromCollection -%}
+            <button
+              class="cross-sell-add-product"
+              data-urls="{{ product.url }}"
+              data-variant="{{ product.first_available_variant.id }}"
+            >
+              <span class="icon-plus">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                  <g id="Plus_sign" data-name="Plus sign" transform="translate(-1128.278 -4780.5)">
+                    <path id="Path_7" data-name="Path 7" d="M1128.278,4786.557h12" transform="translate(0 -0.057)" fill="none" stroke="#333333" stroke-width="1"></path>
+                    <path id="Path_10" data-name="Path 10" d="M1128.278,4786.557h12" transform="translate(5920.834 3652.222) rotate(90)" fill="none" stroke="#333333" stroke-width="1"></path>
+                  </g>
+                </svg>
+              </span>
+            </button>
+            <button class="cross-sell-add-product added-product no-disp">Added ✔</button>
+          {%- else -%}
+            <a href="{{ product.url }}" class="cross-sell-add-product"
+              ><span class="icon-plus">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                  <g id="Plus_sign" data-name="Plus sign" transform="translate(-1128.278 -4780.5)">
+                    <path id="Path_7" data-name="Path 7" d="M1128.278,4786.557h12" transform="translate(0 -0.057)" fill="none" stroke="#333333" stroke-width="1"></path>
+                    <path id="Path_10" data-name="Path 10" d="M1128.278,4786.557h12" transform="translate(5920.834 3652.222) rotate(90)" fill="none" stroke="#333333" stroke-width="1"></path>
+                  </g>
+                </svg></span
+            ></a>
+          {%- endunless -%}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="cross-sell-right-arrow cross-sell-arrows">{% render 'arrow-next' %}</div>
+</div>
+<span class="accessories_dots"></span>
+<div class="background-drawer-cross-sell no-disp"></div>
+
+
