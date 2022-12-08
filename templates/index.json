@@ -176,8 +176,8 @@
           "type": "product",
           "settings": {
             "product": "limited-classic-midi-liberty-unicorn",
-            "image1": "shopify:\/\/shop_images\/Cld22180_-_1.jpg",
-            "image2": "shopify:\/\/shop_images\/Cld22180_-_1.jpg"
+            "image1": "shopify:\/\/shop_images\/ja.jpg",
+            "image2": "shopify:\/\/shop_images\/Lcd22196_2.jpg"
           }
         },
         "3801cabb-732f-4ef8-bef4-b9fdcd992177": {
@@ -199,9 +199,9 @@
         "170b19cf-96c4-4070-a616-0f4063fcfd1d": {
           "type": "product",
           "settings": {
-            "product": "classic-midi-cherry-glitter-pink",
-            "image1": "shopify:\/\/shop_images\/cherry.jpg",
-            "image2": "shopify:\/\/shop_images\/cherry.jpg"
+            "product": "limited-classic-outer-space",
+            "image1": "shopify:\/\/shop_images\/outer.jpg",
+            "image2": "shopify:\/\/shop_images\/Lcd22195_-_front_2.jpg"
           }
         }
       },
