@@ -3,16 +3,15 @@
     "164498287406219e49": {
       "type": "jp-hero",
       "settings": {
-        "image": "shopify:\/\/shop_images\/banner_second_3_2cfd31e7-0aa7-4e71-91fa-baeb416405b9.jpg",
-        "custom_hero_video": "",
-        "heading": "<i>JEUNE PREMIER <\/i>\n<br><br><b> SECOND LIFE<\/b><br>",
+        "custom_hero_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/8cae60ea64564a4a859d835b6f5f11db.mp4",
+        "heading": "",
         "text_align": "center",
         "heading_color": "#333333",
         "desktop_allignment": "end",
         "mobile_allignment": "end",
-        "justify_allignment": "end",
-        "headinglink": "shopify:\/\/pages\/jeune-premier-second-life",
-        "headinglinktext": "READ MORE"
+        "justify_allignment": "center",
+        "headinglink": "shopify:\/\/collections\/the-gift-guide",
+        "headinglinktext": "SHOP THE GIFT GUIDE"
       }
     },
     "164498288980aebb7d": {
@@ -50,6 +49,7 @@
     },
     "8e1a02ca-3bfb-44ae-8d3c-1b1aaa4706c3": {
       "type": "jp-newsletter",
+      "disabled": true,
       "settings": {
         "title": "I want to sell my Jeune Premier Bag!",
         "desc": "Interested about our new Jeune Premier Second life project? <br><br>Great 🖤! <br><br>Subscribe via the link below to be up to date.",
