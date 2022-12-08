@@ -1,10 +1,11 @@
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-search.css' | asset_url | stylesheet_tag }}
 
-<link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
+{% comment %} <link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
 
-<noscript>{{ 'component-search.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-search.css' | asset_url | stylesheet_tag }}</noscript> {% endcomment %}
 
 {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
   {{ 'component-facets.css' | asset_url | stylesheet_tag }}
@@ -14,6 +15,7 @@
 <style>
   .template-search__header {
     margin-bottom: 3rem;
+    margin-top: 3rem;
   }
 
   .template-search__search {
@@ -32,6 +34,7 @@
   @media screen and (min-width: 750px) {
     .template-search__header {
       margin-bottom: 5rem;
+      margin-top: 5rem;
     }
   }
 
@@ -61,13 +64,13 @@
 {%- endstyle -%}
 
 <div class="template-search{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %} section-{{ section.id }}-padding">
-  <div class="template-search__header page-width center">
+  <div class="text-center template-search__header container center">
     {%- if search.performed -%}
-      <h1 class="h2">{{ 'templates.search.title' | t }}</h1>
+      <h1 class="h2 search_title">{{ 'templates.search.title' | t }}</h1>
     {%- else -%}
-      <h1 class="h2">{{ 'general.search.search' | t }}</h1>
+      <h1 class="h2 search_title">{{ 'general.search.search' | t }}</h1>
     {%- endif -%}
-    <div class="template-search__search">
+    <div class="template-search__search no-disp">
       {%- if settings.predictive_search_enabled -%}
         <predictive-search data-loading-text="{{ 'accessibility.loading' | t }}">
       {%- endif -%}
@@ -123,7 +126,7 @@
     {%- if search.performed -%}
       {%- unless section.settings.enable_filtering or section.settings.enable_sorting -%}
         {%- if search.results_count > 0 -%}
-          <p role="status">{{ 'templates.search.results_with_count_and_term' | t: terms: search.terms, count: search.results_count }}</p>
+          <p role="status">{{ 'templates.search.results_with_count_and_term.one' | t: terms: search.terms, count: search.results_count }}</p>
         {%- endif -%}
       {%- endunless -%}
       {%- if search.results_count == 0 and search.filters == empty -%}
@@ -134,14 +137,14 @@
   {%- if search.performed -%}
     {%- if search.filters != empty -%}
       {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
-        <div class="page-width">
+        <div class="container">
           {% render 'facets', results: search, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, collapse_on_larger_devices: section.settings.collapse_on_larger_devices %}
         </div>
       {%- endif -%}
     {%- endif -%}
     <div id="ProductGridContainer">
       {%- if search.results.size == 0 and search.filters != empty -%}
-        <div class="template-search__results collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
+        <div class="template-search__results collection collection--empty container" id="product-grid" data-id="{{ section.id }}">
           <div class="loading-overlay gradient"></div>
           <div class="title-wrapper center">
             <h2 class="title title--primary">
@@ -151,10 +154,10 @@
           </div>
         </div>
       {%- else -%}
-        {% paginate search.results by 24 %}
-          <div class="template-search__results collection page-width" id="product-grid" data-id="{{ section.id }}">
+        {% paginate search.results by 500 %}
+          <div class="template-search__results collection container" id="product-grid" data-id="{{ section.id }}">
             <div class="loading-overlay gradient"></div>
-            <ul class="grid grid--4-col-desktop grid--3-col-tablet grid--2-col grid--one-third-max grid--quarter-max product-grid" role="list">
+            <ul class="custom_search_grid grid grid--4-col-desktop grid--3-col-tablet grid--2-col grid--one-third-max grid--quarter-max product-grid" role="list">
               {%- for item in search.results -%}
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
@@ -184,8 +187,8 @@
                         lazy_load: lazy_load
                       %}
                     {%- when 'page' -%}
-                      <div class="card-wrapper underline-links-hover">
-                        <div class="card card--card card--text ratio color-{{ settings.card_color_scheme }}" style="--ratio-percent: 100%;">
+                      <div class="flex-box justify-center align-center custom_page_search card-wrapper underline-links-hover">
+                        <div class="flex-box justify-center align-center card card--card card--text ratio color-{{ settings.card_color_scheme }}" style="--ratio-percent: 100%;">
                             <div class="card__content">
                               <div class="card__information">
                                 <h3 class="card__heading">
@@ -246,13 +249,13 @@
     {
       "type": "checkbox",
       "id": "show_secondary_image",
-      "default": false,
+      "default": true,
       "label": "t:sections.main-search.settings.show_secondary_image.label"
     },
     {
       "type": "checkbox",
       "id": "show_vendor",
-      "default": false,
+      "default": true,
       "label": "t:sections.main-search.settings.show_vendor.label"
     },
     {
@@ -269,14 +272,14 @@
     {
       "type": "checkbox",
       "id": "enable_filtering",
-      "default": true,
+      "default": false,
       "label": "t:sections.main-collection-product-grid.settings.enable_filtering.label",
       "info": "t:sections.main-collection-product-grid.settings.enable_filtering.info"
     },
     {
       "type": "checkbox",
       "id": "enable_sorting",
-      "default": true,
+      "default": false,
       "label": "t:sections.main-collection-product-grid.settings.enable_sorting.label"
     },
     {
@@ -313,7 +316,7 @@
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
-      "default": 36
+      "default": 100
     },
     {
       "type": "range",
@@ -323,7 +326,7 @@
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
+      "default": 100
     }
   ]
 }

@@ -167,7 +167,7 @@
             </div>
             {% comment %}{% if item.product.id != free_product_id %}{% endif %}{% endcomment %}
             <div class="cart-product-qty" data-quantity="1">
-              <div class="qty-manipulation-symbol minus-symbol cart-minus" data-variant="{{ item.variant.id }}" data-value="{{item.quantity}}">-</div>
+              <div class="qty-manipulation-symbol minus-symbol cart-minus" data-cross-check="{{ item.product.first_available_variant.id }}" data-variant="{{ item.variant.id }}" data-value="{{item.quantity}}">-</div>
               <div class="cart-qty" value="{{item.quantity}}">{{item.quantity}}</div>
               <div class="qty-manipulation-symbol plus-symbol cart-plus" data-variant="{{ item.variant.id }}" data-value="{{item.quantity}}">+</div>
             </div>
@@ -300,15 +300,23 @@
       var cross_check_id = $(this).data("cross-check");
       console.log(cross_check_id);
 
-
-      {% comment %} var getCrossSelllocalarray = localStorage.getItem("cross-sell");
-      console.log(getCrossSelllocalarray);
-
-      var checkcrossprodstatus = getCrossSelllocalarray.includes(cross_check_id);
-      console.log(checkcrossprodstatus);
-
-      var getDeletedSlide = localStorage.getItem("deleted_slide");
-      $('.show-cross-upsell .cross-sell-body').slick('slickAdd', getDeletedSlide); {% endcomment %}
+      var deleted_slide = JSON.parse(localStorage.getItem("deleted_slide"));
+      console.log(deleted_slide);
+      if(deleted_slide[cross_check_id]){
+          var TheDeletedCrossSell = deleted_slide[cross_check_id]['htmlData'];
+          var main_product_url = deleted_slide[cross_check_id]['prevLoc'];
+          var deleted_slide_index = deleted_slide[cross_check_id]['slideId']
+          console.log(deleted_slide[cross_check_id]['prevLoc']);
+    
+          var current_url = window.location.pathname;
+          console.log(current_url);
+    
+          if((main_product_url).includes(current_url)) {
+            console.log("urls matched");
+            $('.show-cross-upsell .cross-sell-body').slick('slickAdd','<div>' + TheDeletedCrossSell + '</div>', 0 , true);
+          }
+      }
+      
 
       $('.drawer-cart').addClass('drawn');
       $('.background-drawer-cart').addClass('drawn');
@@ -345,12 +353,34 @@
     });
 
     $('.cart-minus').click(function() {
+
+    if($(this).data('value') == 1){
+      var cross_check_id = $(this).data("cross-check");
+      console.log(cross_check_id);
+
+      var deleted_slide = JSON.parse(localStorage.getItem("deleted_slide"));
+      console.log(deleted_slide);
+      if(deleted_slide[cross_check_id]){
+          var TheDeletedCrossSell = deleted_slide[cross_check_id]['htmlData'];
+          var main_product_url = deleted_slide[cross_check_id]['prevLoc'];
+          var deleted_slide_index = deleted_slide[cross_check_id]['slideId']
+          console.log(deleted_slide[cross_check_id]['prevLoc']);
+    
+          var current_url = window.location.pathname;
+          console.log(current_url);
+    
+          if((main_product_url).includes(current_url)) {
+            console.log("urls matched");
+            $('.show-cross-upsell .cross-sell-body').slick('slickAdd','<div>' + TheDeletedCrossSell + '</div>', 0 , true);
+          }
+      }
+    }
+
+
       $('.drawer-cart').addClass('drawn');
       $('.background-drawer-cart').addClass('drawn');
       $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
-      let prodId = $(this).data('variant');
-      var deleted_slide = localStorage.getItem("deleted_slide");
-      console.log(deleted_slide[prodId]);
+      
       var formData = {
         'line': parseInt($(this).closest('.cart-product-wrapper').find('.delete-cart-product').data('variant')),
         'quantity': $(this).data('value')-1,

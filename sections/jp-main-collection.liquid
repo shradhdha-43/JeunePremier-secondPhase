@@ -1,5 +1,24 @@
 {{ 'jp-main-collection.css' | asset_url | stylesheet_tag }}
 {% assign coll = section.settings.collection %}
+
+<div class="jp-collection-banner">
+    <div class="container">
+        <div class="banner_container_wrapper flex-box justify-between align-center">
+            <div class="jpcb_text_block">
+                <div class="jpcb_banner_heading">{{ collection.title }}</div>
+                <div class="jpcb_banner_content">{{ collection.description }}</div>
+            </div>
+            <div class="jpcb_image_block">
+                {% if collection.image != blank %}
+                <img  class="banner_image" src="{{ collection.image | image_url: height: 2000 }}" loading="lazy" alt="Banner Image">
+                {% else %}
+                <img  class="banner_image" src="{{ collection.products.first | image_url: height: 2000 }}" loading="lazy" alt="Banner Image">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="jp-main-collection">
   <div class="container">
     <div class="jp-main-collection-content flex-box justify-between">
@@ -40,11 +59,11 @@
             {% case block.type %}
             {% when 'age' %}
             <div class="filter-wrap coll-filter">
-              <div class="filter-sort-title-wrap accordion flex-box justify-between active" role="button">
+              <div class="filter-sort-title-wrap accordion flex-box justify-between" role="button">
                 <div class="filter-sort-title medium">{{ block.settings.age_title }}</div>
                 <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
               </div>
-              <div class="filters filter-panel other-filters light">
+              <div class="filters filter-panel other-filters light" style="display : none;">
                 {% if block.settings.age_tag1 != '' %}
                 <div class="filter-type filter" data-value="{{ block.settings.age_tag1 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age1 }}</div>
                 {% endif %}
@@ -79,11 +98,11 @@
             </div>
             {% when 'color' %}
             <div class="filter-wrap">
-              <div class="filter-sort-title-wrap accordion flex-box justify-between active" role="button">
+              <div class="filter-sort-title-wrap accordion flex-box justify-between" role="button">
                 <div class="filter-sort-title medium">{{ block.settings.color_title }}</div>
                 <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
               </div>
-              <div class="color-filters filter-panel light">
+              <div class="color-filters filter-panel light" style="display : none;">
                   {% if block.settings.color_tag1 != '' %}
                   <div class="filter-type colors-filter filter" data-value={{ block.settings.color_tag1 }}><span class="color-swatch" {% if block.settings.color_swatch1 != blank %}style="background-color: {{ block.settings.color_swatch1 }};"{% endif %}>{% if block.settings.image_swatch1 != blank %}<img src="{{ block.settings.image_swatch1 | img_url: "16x" }}" alt="{{ block.settings.color1 }}">{% endif %}</span>{{ block.settings.color1 }}</div>
                   {% endif %}
@@ -368,6 +387,9 @@ $(document).ready(function() {
           $('.filter-type.filter').each(function() {
             if($(this).data('value') == array[i]) {
               $(this).addClass('medium');
+			  var filter_parent = $(this).parent().parent();
+			  filter_parent.find(".accordion").addClass("active");
+			  filter_parent.find(".filter-panel").css("display" , '');
             }
           });
 
@@ -382,6 +404,9 @@ $(document).ready(function() {
           $('.filter-type.sort').each(function() {
             if($(this).data('value') == array[i]) {
               $(this).addClass('medium');
+			  var filter_parent = $(this).parent().parent();
+			  filter_parent.find(".accordion").addClass("active");
+			  filter_parent.find(".filter-panel").css("display" , '');
             }
           });
 
@@ -562,7 +587,10 @@ $(document).ready(function() {
     .done(function( data ) {
       var placeholder = document.createElement('div');
       placeholder.innerHTML = data;
+	  var jp_collection_banner = $(placeholder).find('.jp-collection-banner');
       var divx = $(placeholder).find('.prod-coll-page');
+
+	  $('.jp-collection-banner').first().replaceWith(placeholder.querySelector('.jp-collection-banner'));
       $('.prod-coll-page').first().replaceWith(placeholder.querySelector('.prod-coll-page'));
       addApply();
       runFilter();

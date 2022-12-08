@@ -2029,7 +2029,7 @@ $(document).ready(function(){
   
   $('.announcement-bar').on('init', function(event, slick){        
       window.headerHeight = $('.jp-header-wrapper').height();
-      $('.jp-header-wrapper').css('height', headerHeight+'px');
+      // $('.jp-header-wrapper').css('height', headerHeight+'px');
   });
   $('.announcement-bar').slick({
   	slidesToShow: 1,

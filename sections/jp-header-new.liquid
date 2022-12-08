@@ -1,7 +1,8 @@
 {{ 'jp-header.css' | asset_url | stylesheet_tag }}
 {{ 'component-predictive-search.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
 
-<div class="jp-header-wrapper">
+<div class="jp-header-wrapper header-wrapper">
   <div class="announcement-bar">
     {% for block in section.blocks %}
       {% if block.type == 'announcement' %}
@@ -19,11 +20,88 @@
     <div class="container">
       <div class="header-content justify-between">
         <div class="mobile-hamburger no-d">
-          <div class="navbar-toggler">
-            <span class="icon-bar bar1"></span>
-            <span class="icon-bar bar2"></span>
-            <span class="icon-bar bar3"></span>
-          </div>
+            <header-drawer data-breakpoint="tablet">
+                <details id="Details-menu-drawer-container" class="menu-drawer-container">
+                <summary class="mainsummary header__icon header__icon--menu header__icon--summary link focus-inset" aria-label="{{ 'sections.header.menu' | t }}">
+                    <span>
+                    {% render 'icon-hamburger' %}
+                    <div class="close__mainmenu">
+                        {% render 'icon-close' %}
+                    </div>
+                    </span>
+                </summary>
+                <div id="menu-drawer" class="gradient menu-drawer motion-reduce" tabindex="-1">
+                    <div class="menu-drawer__inner-container">
+                    <div class="menu-drawer__navigation-container">
+                        <nav class="menu-drawer__navigation">
+                            <ul class="main-ul menu-drawer__menu has-submenu list-menu" role="list">
+                                {%- for link in section.settings.lower_menu.links -%}
+                                <li>
+                                    {%- if link.links != blank -%}
+                                    <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
+                                        <summary class="mainlinktitle main-summary list-menu__item link link--text focus-inset">
+                                        {{ link.title | escape }}
+                                        {% render 'icon-caret' %}
+                                        </summary>
+                                        <div id="link-{{ link.handle | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce" tabindex="-1">
+                                        <div class="menu-drawer__inner-submenu">
+                                            <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
+                                            {% render 'icon-arrow' %}
+                                            Back
+                                            </button>
+                                            <ul class="menu-drawer__menu list-menu">
+                                                <div class="main_link_title">{{ link.title }}</div>
+                                            {%- for childlink in link.links -%}
+                                                <div class="childname">{{ childlink.title }}</div>
+                                                  <ul class="grandchild-ul menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                                      {%- for grandchildlink in childlink.links -%}
+                                                          <li>
+                                                          <a href="{{ grandchildlink.url }}" class="{% if grandchildlink.title contains 'Alle' or grandchildlink.title contains "All" %}bold {% endif %}grandchildtitle menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                                              {{ grandchildlink.title | escape }}
+                                                              {% render 'icon-caret' %}
+                                                          </a>
+                                                          </li>
+                                                      {%- endfor -%}
+                                                  </ul>
+                                            {%- endfor -%}
+                                            </ul>
+                                        </div>
+                                        </div>
+                                    </details>
+                                    {%- else -%}
+                                    <a href="{{ link.url }}" class="no-grandchild work-sans-light menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+                                        {{ link.title | escape }}
+                                    </a>
+                                    {%- endif -%}
+                                </li>
+                                {%- endfor -%}
+                            </ul>
+                            <div class="custom_mobile_submenu">
+                                {% for link in section.settings.upper_menu.links %}
+                                    <a
+                                    href="{{ link.url }}"
+                                    class="light {% if request.path == link.url %}underline{% endif %}"
+                                    >
+                                    {{- link.title | escape -}}
+                                    </a>
+                                {% endfor %}
+                                <a href="/pages/get-in-touch" class="light">Contact</a>
+                                <a href="/account" class="light">Log in</a>
+                                <div class="langs rel">
+                                  <span class="flag flag-{{localization.country.iso_code | downcase}}"></span>
+                                  <span class="header-country-code">{{ localization.country.iso_code }}</span>
+                                </div>
+                            </div>
+                            <a href="/collections/all" class="shop-all-prods-btn title">SHOP ALL PRODUCTS</a>
+                            <div class="close-menu">
+                                <span class="custom-close-text light">Close</span><span class="close-icon">{% include 'icon-close' %}</span>
+                            </div>
+                        </nav>
+                    </div>
+                    </div>
+                </div>
+                </details>
+            </header-drawer>
         </div>
 
         <div class="header-right no-t-m">
@@ -40,7 +118,10 @@
         </div>
 
         <div class="header-left">
-          <a href="{{ routes.root_url }}" class="desktop-logo no-t-m">{{ section.settings.logo_svg_desktop }}</a>
+          <div class="new_header_logo no-t-m">
+            <a href="{{ routes.root_url }}" class="desktop-cherries-logo">{{ section.settings.logo_svg_mobile }}</a>
+            <a href="{{ routes.root_url }}" class="desktop-logo">{{ section.settings.logo_svg_desktop }}</a>
+          </div>
           <a href="{{ routes.root_url }}" class="mobile-logo no-d">{{ section.settings.logo_svg_mobile }}</a>
         </div>
 
@@ -99,9 +180,9 @@
               {% endif %}
             {%- endfor -%}
             <span
-              class="medium lower-menu-link {% if current or request.path == link.url %}underline{% endif %}"
+              class="medium flex-box lower-menu-link {% if current or request.path == link.url %}underline{% endif %}"
             >
-              {{- link.title | escape -}}
+              {{- link.title | escape -}} {% render 'icon-caret' %}
             </span>
             <div class="header-menu-dropdown">
               <div class="container">
@@ -147,7 +228,7 @@
                             {% if childlink.title == 'DESIGN' or childlink.title == 'design' -%}
                               {%- render 'icon-jp-cherries' -%}
                             {%- endif -%}
-                            <span class="grandtitle">{{ grandchild.title }}</span>{% render 'icon-caret' %}
+                            <a href="{{ grandchild.url | replace : '%3' , '?' | remove : 'F' }}"><span class="grandtitle">{{ grandchild.title }}</span>{% render 'icon-caret' %}</a>
                           </li>
                         {% endfor %}
                       </ul>
@@ -178,6 +259,9 @@
           </div>
         {% endfor %}
       </div>
+
+
+
     </div>
   </header>
 
@@ -207,6 +291,7 @@
           {% render 'icon-search' %}
         </button>
       </div>
+      {% render 'icon-close' %}
       <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
         <div class="predictive-search__loading-state">
           <svg
@@ -255,16 +340,28 @@
     });
   });
 
-  $('.mobile-hamburger').click(function () {
-    $('.drawer-menu').addClass('drawn');
+  $('.mobile-hamburger .icon-hamburger').click(function () {
+    {% comment %} $('.drawer-menu').addClass('drawn'); {% endcomment %}
     $('html').addClass('no-scroll');
     $('body').addClass('no-scroll');
     var mybutton = document.getElementById('to-top');
     mybutton.style.display = 'none';
   });
 
-  $('.close-menu-drawer-button').click(function () {
-    $('.drawer-menu').removeClass('drawn');
+  $('.mobile-hamburger .icon-close').click(function () {
+    {% comment %} $('.drawer-menu').removeClass('drawn'); {% endcomment %}
+    $('html').removeClass('no-scroll');
+    $('body').removeClass('no-scroll');
+    var mybutton = document.getElementById('to-top');
+    mybutton.style.display = 'flex';
+  });
+
+  $('.close-menu').click(function () {
+    console.log("close menu drawer")
+    $("#shopify-section-jp-header-new").removeClass("menu-open");
+    $(".menu-drawer-container").removeClass("menu-opening");
+    $(".menu-drawer-container").removeAttr("open");
+    $(".mainsummary").attr("aria-expanded","false");
     $('html').removeClass('no-scroll');
     $('body').removeClass('no-scroll');
     var mybutton = document.getElementById('to-top');
@@ -273,7 +370,7 @@
 </script>
 
 <script>
-  $(window).on('resize', function () {
+  {% comment %} $(window).on('resize', function () {
     setIntervalX(
       function () {
         $('.jp-header-wrapper').css('height', 'auto');
@@ -283,7 +380,7 @@
       300,
       5
     );
-  });
+  }); {% endcomment %}
 
   $('.menu-link-wrap').hover(function () {
     $('.topheader.active').toggleClass('ovr-hidden');
@@ -321,6 +418,28 @@
       $('.header-wrapper').removeClass('header-hover');
     }
   );
+</script>
+
+<script>
+$(".custom-search-wrap , .search-modal__form .icon-close").click(function(){
+    console.log("open custom search");
+    $(".jp-custom-search").toggleClass("show-searchbar");
+});
+
+
+$(document).ready(function(){
+  $(window).scroll(function() {
+    if($(window).scrollTop() > 200 ){
+      $(".desktop-cherries-logo").addClass("hide");
+    }
+    else {
+      $(".desktop-cherries-logo").removeClass("hide");
+    }
+});
+});
+
+
+
 </script>
 
 {% schema %}

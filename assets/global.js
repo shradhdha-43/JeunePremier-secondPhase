@@ -289,8 +289,6 @@ class MenuDrawer extends HTMLElement {
 
     this.mainDetailsToggle = this.querySelector('details');
 
-    if (navigator.platform === 'iPhone') document.documentElement.style.setProperty('--viewport-height', `${window.innerHeight}px`);
-
     this.addEventListener('keyup', this.onKeyUp.bind(this));
     this.addEventListener('focusout', this.onFocusOut.bind(this));
     this.bindEvents();
@@ -313,6 +311,7 @@ class MenuDrawer extends HTMLElement {
   onSummaryClick(event) {
     const summaryElement = event.currentTarget;
     const detailsElement = summaryElement.parentNode;
+    const parentMenuElement = detailsElement.closest('.has-submenu');
     const isOpen = detailsElement.hasAttribute('open');
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -324,10 +323,15 @@ class MenuDrawer extends HTMLElement {
     if (detailsElement === this.mainDetailsToggle) {
       if(isOpen) event.preventDefault();
       isOpen ? this.closeMenuDrawer(event, summaryElement) : this.openMenuDrawer(summaryElement);
+
+      if (window.matchMedia('(max-width: 990px)')) {
+        document.documentElement.style.setProperty('--viewport-height', `${window.innerHeight}px`);
+      }
     } else {
       setTimeout(() => {
         detailsElement.classList.add('menu-opening');
         summaryElement.setAttribute('aria-expanded', true);
+        parentMenuElement && parentMenuElement.classList.add('submenu-open');
         !reducedMotion || reducedMotion.matches ? addTrapFocus() : summaryElement.nextElementSibling.addEventListener('transitionend', addTrapFocus);
       }, 100);
     }
@@ -343,10 +347,15 @@ class MenuDrawer extends HTMLElement {
   }
 
   closeMenuDrawer(event, elementToFocus = false) {
+    if (event === undefined) return;
+
     this.mainDetailsToggle.classList.remove('menu-opening');
-    this.mainDetailsToggle.querySelectorAll('details').forEach(details =>  {
+    this.mainDetailsToggle.querySelectorAll('details').forEach(details => {
       details.removeAttribute('open');
       details.classList.remove('menu-opening');
+    });
+    this.mainDetailsToggle.querySelectorAll('.submenu-open').forEach(submenu => {
+      submenu.classList.remove('submenu-open');
     });
     document.body.classList.remove(`overflow-hidden-${this.dataset.breakpoint}`);
     removeTrapFocus(elementToFocus);
@@ -355,7 +364,9 @@ class MenuDrawer extends HTMLElement {
 
   onFocusOut(event) {
     setTimeout(() => {
-      if (this.mainDetailsToggle.hasAttribute('open') && !this.mainDetailsToggle.contains(document.activeElement)) this.closeMenuDrawer();
+      if(this.mainDetailsToggle){
+        if (this.mainDetailsToggle.hasAttribute('open') && !this.mainDetailsToggle.contains(document.activeElement)) this.closeMenuDrawer();
+      }
     });
   }
 
@@ -365,6 +376,8 @@ class MenuDrawer extends HTMLElement {
   }
 
   closeSubmenu(detailsElement) {
+    const parentMenuElement = detailsElement.closest('.submenu-open');
+    parentMenuElement && parentMenuElement.classList.remove('submenu-open');
     detailsElement.classList.remove('menu-opening');
     detailsElement.querySelector('summary').setAttribute('aria-expanded', false);
     removeTrapFocus(detailsElement.querySelector('summary'));
@@ -403,7 +416,7 @@ class HeaderDrawer extends MenuDrawer {
   }
 
   openMenuDrawer(summaryElement) {
-    this.header = this.header || document.getElementById('shopify-section-header');
+    this.header = this.header || document.getElementById('shopify-section-jp-header-new');
     this.borderOffset = this.borderOffset || this.closest('.header-wrapper').classList.contains('header-wrapper--border-bottom') ? 1 : 0;
     document.documentElement.style.setProperty('--header-bottom-position', `${parseInt(this.header.getBoundingClientRect().bottom - this.borderOffset)}px`);
     this.header.classList.add('menu-open');
@@ -1007,29 +1020,22 @@ $('body').on("click", ".cross-sell-add-product:not(.added-product)", function() 
     });
     
     if(notAdded != true) {
+
+      var removeslideIndex = $(this).closest(".slick-slide").attr("data-slick-index");
+      var deleted_slide = $(this).closest(".slick-slide").html();
+      var prevLoc = localStorage.getItem("PrevLocation");
+      var crossObj = { prevLoc : prevLoc , htmlData : deleted_slide , slideId : removeslideIndex };
+      
+      storeInLocalStorage('deleted_slide' , cross_variant_id , crossObj);
+      $('body .show-cross-upsell .cross-sell-body').slick('slickRemove', removeslideIndex);
+      $('.show-cross-upsell .cross-sell-body')[0].slick.refresh();
+
       $(this).next().removeClass("no-disp");
       $(this).addClass("no-disp");
-      var deleted_slide = $(this).closest(".slick-slide").html();
-      var crossObj = { id : cross_variant_id , htmlData : deleted_slide };
-      storeInLocalStorage('deleted_slide' , cross_variant_id , deleted_slide);
-      var removeslide = $(this).closest(".slick-slide").attr("data-slick-index");
-      $('.show-cross-upsell .cross-sell-body').slick('slickRemove', removeslide);
-      // $('.show-cross-upsell .cross-sell-body')[0].slick.refresh(); ?sections=jp-cart
     }
 
     if($(".cross-sell-body .slick-track .slick-slide").length  == 0  ) {
       $(".accessories").addClass("no-disp");
     }
   }
-
-  $.ajax({
-    url: $(this).data('urls')+'/?sections=jp-product-cross-sell-options',
-    method: "GET"
-  })
-  .done(function( data ) {
-    console.log(data);
-  })
-  .fail(function(error) {
-    console.log( error );
-  });
 });

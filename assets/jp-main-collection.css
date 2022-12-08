@@ -194,11 +194,84 @@
 }
 
 .jp-main-collection {
-    padding: 80px 0 56px;
+  padding-bottom : 56px;
 }
 
 .no-disp-filter{
 	display: none !important;
+}
+
+.jpcb_text_block , .jpcb_image_block{
+  width: 100%;
+  max-width: 50%;
+}
+
+.jpcb_image_block img{
+  width: 100%;
+  max-height: 228px;
+  object-fit: cover;
+  display: block;
+}
+
+.jpcb_text_block {
+  max-height: 228px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0 40px;
+}
+
+.jpcb_text_block::-webkit-scrollbar {
+  display: none;
+}
+
+.jpcb_banner_heading {
+  font-family: 'Hero';
+  font-size: 40px;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+
+.banner_container_wrapper {
+  background-color: #F9F7F3;
+  margin: 80px 0 40px;
+  height: 228px;
+}
+
+.jpcb_banner_content {
+  font-family: 'Work Sans';
+  font-size: 16px;
+  letter-spacing: 0;
+  font-weight: 300;
+  line-height: 24px;
+  margin-top: 12px;
+}
+
+@media(max-width: 992px){
+  .jpcb_text_block {
+      height: 228px;
+      padding: 24px 20px;
+  }
+  .jpcb_text_block , .jpcb_image_block{
+      max-width: 100%;
+  }
+  .banner_container_wrapper {
+      flex-direction: column-reverse;
+      margin: 0  0 40px;
+      height: auto;
+  }
+  .jpcb_image_block img {
+      max-height: 241px;
+      height: 241px;
+  }
+  .jp-collection-banner .container {
+      padding: 0;
+  }
+  .jpcb_banner_content {
+      margin-top: 16px;
+  }
+  .jpcb_banner_heading {
+    font-size: 32px;
+  }
 }
 
 @media(max-width: 992px){
@@ -325,7 +398,7 @@
 }
   
   .jp-main-collection {
-    padding: 40px 0 20px;
-}
+    padding-bottom : 40px;
+  }
 }
 
