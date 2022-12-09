@@ -1,8 +1,12 @@
 .announcement-bar {
   background-color: var(--dd-color-second);
-  padding: 6px 0;
+  /* padding: 6px 0; */
   text-align: center;
   display: flex;
+}
+
+.announcement-bar .slick-slide {
+  min-height: 32px;
 }
 
 .announcement-bar a {
@@ -169,7 +173,7 @@ header {
   background-color: var(--dd-color-sixth);
   left: 0;
   /* top: 180px; */
-  top: calc(100% - 2px);
+  top: calc(100% - 5px);
   padding-top: 40px;
   transition: 0.4s ease;
   opacity: 0;
@@ -189,6 +193,7 @@ header {
 
 .menu-link-wrap span svg{
   width: 10px;
+  height: 10px;
   margin-left: 8px;
   transition: .4s ease;
 }
@@ -458,7 +463,7 @@ span.nav-arrow svg {
 }
 
 .show-searchbar.jp-custom-search {
-  top: calc(100% - 2px);
+  top: calc(100% - 5px);
   z-index: 1;
   opacity: 1;
   visibility: visible;
@@ -550,7 +555,7 @@ details:not([open])>.header__icon--menu .icon-close, details[open]>.header__icon
   opacity: 1;
   transform: scale(1);
   transition: transform .15s ease,opacity .15s ease;
-  top: 0;
+  /* top: 0; */
   stroke: black;
   stroke-width: 1px;
   width: 24px;
@@ -575,6 +580,7 @@ details:not([open])>.header__icon--menu .icon-close, details[open]>.header__icon
   margin: 0;
 }
 
+
 .menu-drawer-container.menu-opening .close__mainmenu {
   width: 75vw;
   background: white;
@@ -582,8 +588,10 @@ details:not([open])>.header__icon--menu .icon-close, details[open]>.header__icon
   z-index: 5;
   position: fixed;
   overflow: hidden;
-  transform: translateY(-40px);
+  transform: translateY(0);
   left: 0;
+  transition: .4s ease;
+  transition-delay: .4s;
 }
 
 @media (max-width: 1024px) {
@@ -729,7 +737,7 @@ details:not([open])>.header__icon--menu .icon-close, details[open]>.header__icon
 
   .jp-header-wrapper {
     height: auto;
-    min-height: 146px;
+    min-height: 112px;
   }
 
   .nav-title.light {
@@ -756,7 +764,7 @@ details:not([open])>.header__icon--menu .icon-close, details[open]>.header__icon
   }
 
   .announcement-bar .slick-slide {
-    min-height: 54px;
+    min-height: 32px;
     align-items: center;
     display: flex;
     justify-content: center;
@@ -775,7 +783,7 @@ details:not([open])>.header__icon--menu .icon-close, details[open]>.header__icon
 
 @media (min-width: 608px) and (max-width: 992px) {
   .jp-header-wrapper {
-    min-height: 119px;
+    min-height: 112px;
   }
 }
 

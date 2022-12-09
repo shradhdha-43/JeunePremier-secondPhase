@@ -180,7 +180,7 @@
               {% endif %}
             {%- endfor -%}
             <span
-              class="medium flex-box lower-menu-link {% if current or request.path == link.url %}underline{% endif %}"
+              class="medium flex-box align-center lower-menu-link {% if current or request.path == link.url %}underline{% endif %}"
             >
               {{- link.title | escape -}} {% render 'icon-caret' %}
             </span>
@@ -344,6 +344,7 @@
     {% comment %} $('.drawer-menu').addClass('drawn'); {% endcomment %}
     $('html').addClass('no-scroll');
     $('body').addClass('no-scroll');
+    $(".header-left , .mobile_icons").css("display" , "none");
     var mybutton = document.getElementById('to-top');
     mybutton.style.display = 'none';
   });
@@ -352,6 +353,7 @@
     {% comment %} $('.drawer-menu').removeClass('drawn'); {% endcomment %}
     $('html').removeClass('no-scroll');
     $('body').removeClass('no-scroll');
+    $(".header-left , .mobile_icons").css("display" , "");
     var mybutton = document.getElementById('to-top');
     mybutton.style.display = 'flex';
   });
@@ -366,6 +368,7 @@
     $('body').removeClass('no-scroll');
     var mybutton = document.getElementById('to-top');
     mybutton.style.display = 'flex';
+    $(".header-left , .mobile_icons").css("display" , "");
   });
 </script>
 

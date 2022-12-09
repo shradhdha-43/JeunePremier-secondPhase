@@ -34,7 +34,7 @@ menu-drawer > details[open] > summary::before {
   visibility: hidden;
   z-index: 3;
   left: 0;
-  top: 66px;
+  top: 100%;
   width: 100%;
   padding: 0;
   border: 0;
@@ -51,6 +51,7 @@ menu-drawer > details[open] > summary::before {
   width: 16px;
   transform: translateY(40px);
   left: 20px;
+  transition-delay: .15s;
 }
 
 .js .menu-drawer {
@@ -95,9 +96,9 @@ details[open].menu-opening > .menu-drawer__submenu {
   height: 100%;
 }
 
-.menu-drawer__navigation {
+/* .menu-drawer__navigation {
   padding: 60px 0;
-}
+} */
 
 .menu-drawer__inner-submenu {
   height: 100%;
