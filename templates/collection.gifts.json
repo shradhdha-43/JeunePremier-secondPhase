@@ -335,6 +335,32 @@
             "color_tag20": "",
             "color_swatch20": ""
           }
+        },
+        "0eb51ca6-aaf6-4233-8aa0-46f8495084a2": {
+          "type": "age",
+          "settings": {
+            "age_title": "PRICE RANGE",
+            "age1": "",
+            "age_tag1": "",
+            "age2": "",
+            "age_tag2": "",
+            "age3": "",
+            "age_tag3": "",
+            "age4": "",
+            "age_tag4": "",
+            "age5": "",
+            "age_tag5": "",
+            "age6": "",
+            "age_tag6": "",
+            "age7": "",
+            "age_tag7": "",
+            "age8": "",
+            "age_tag8": "",
+            "age9": "",
+            "age_tag9": "",
+            "age10": "",
+            "age_tag10": ""
+          }
         }
       },
       "block_order": [
@@ -345,7 +371,8 @@
         "03405d13-a387-4e10-ad2d-d719aafe66a8",
         "2f4e6c4e-5e78-4437-a351-b58369a56c04",
         "cb3fc11e-73e0-4a23-bc10-fb0d22f69139",
-        "2c5bf433-7477-45ec-8489-9cdd2db2f722"
+        "2c5bf433-7477-45ec-8489-9cdd2db2f722",
+        "0eb51ca6-aaf6-4233-8aa0-46f8495084a2"
       ],
       "settings": {
         "collection": "all",
