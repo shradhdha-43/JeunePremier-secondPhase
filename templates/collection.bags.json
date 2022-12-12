@@ -28,6 +28,32 @@
     "16445616115be2c4f4": {
       "type": "jp-main-collection",
       "blocks": {
+        "03405d13-a387-4e10-ad2d-d719aafe66a8": {
+          "type": "collection",
+          "settings": {
+            "collection_title": "Model",
+            "collection1": "School Bags",
+            "collection_tag1": "schoolbags",
+            "collection2": "School Backpacks",
+            "collection_tag2": "school-backpacks",
+            "collection3": "Ergomaxx",
+            "collection_tag3": "Ergomaxx",
+            "collection4": "Leisure Bags",
+            "collection_tag4": "leasure-bags",
+            "collection5": "Shoulder Bags",
+            "collection_tag5": "shoulderbags",
+            "collection6": "City Bags",
+            "collection_tag6": "city-bags",
+            "collection7": "Tote Bags",
+            "collection_tag7": "Totebag",
+            "collection8": "",
+            "collection_tag8": "",
+            "collection9": "",
+            "collection_tag9": "",
+            "collection10": "",
+            "collection_tag10": ""
+          }
+        },
         "9eacd4fc-4cbb-47d1-acc6-1b97288cc999": {
           "type": "age",
           "settings": {
@@ -64,6 +90,32 @@
             "age_tag2": "Boy",
             "age3": "",
             "age_tag3": "",
+            "age4": "",
+            "age_tag4": "",
+            "age5": "",
+            "age_tag5": "",
+            "age6": "",
+            "age_tag6": "",
+            "age7": "",
+            "age_tag7": "",
+            "age8": "",
+            "age_tag8": "",
+            "age9": "",
+            "age_tag9": "",
+            "age10": "",
+            "age_tag10": ""
+          }
+        },
+        "5cbdd836-ea08-463e-b7e8-1157bc52c811": {
+          "type": "age",
+          "settings": {
+            "age_title": "Age",
+            "age1": "Kindergarden",
+            "age_tag1": "2 - 6",
+            "age2": "6 to 8",
+            "age_tag2": "6-8",
+            "age3": "8 to 12",
+            "age_tag3": "8-12",
             "age4": "",
             "age_tag4": "",
             "age5": "",
@@ -166,60 +218,9 @@
             "image_swatch20": "shopify:\/\/shop_images\/Rainbow_Deer_163.png"
           }
         },
-        "5cbdd836-ea08-463e-b7e8-1157bc52c811": {
-          "type": "age",
-          "settings": {
-            "age_title": "Age",
-            "age1": "Kindergarden",
-            "age_tag1": "2 - 6",
-            "age2": "6 to 8",
-            "age_tag2": "6-8",
-            "age3": "8 to 12",
-            "age_tag3": "8-12",
-            "age4": "",
-            "age_tag4": "",
-            "age5": "",
-            "age_tag5": "",
-            "age6": "",
-            "age_tag6": "",
-            "age7": "",
-            "age_tag7": "",
-            "age8": "",
-            "age_tag8": "",
-            "age9": "",
-            "age_tag9": "",
-            "age10": "",
-            "age_tag10": ""
-          }
-        },
-        "03405d13-a387-4e10-ad2d-d719aafe66a8": {
-          "type": "collection",
-          "settings": {
-            "collection_title": "Model",
-            "collection1": "School Bags",
-            "collection_tag1": "schoolbags",
-            "collection2": "School Backpacks",
-            "collection_tag2": "school-backpacks",
-            "collection3": "Ergomaxx",
-            "collection_tag3": "Ergomaxx",
-            "collection4": "Leisure Bags",
-            "collection_tag4": "leasure-bags",
-            "collection5": "Shoulder Bags",
-            "collection_tag5": "shoulderbags",
-            "collection6": "City Bags",
-            "collection_tag6": "city-bags",
-            "collection7": "Tote Bags",
-            "collection_tag7": "Totebag",
-            "collection8": "",
-            "collection_tag8": "",
-            "collection9": "",
-            "collection_tag9": "",
-            "collection10": "",
-            "collection_tag10": ""
-          }
-        },
         "2f4e6c4e-5e78-4437-a351-b58369a56c04": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection_title": "Accessories",
             "collection1": "Pencilbox",
@@ -246,6 +247,7 @@
         },
         "cb3fc11e-73e0-4a23-bc10-fb0d22f69139": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection_title": "Stationery",
             "collection1": "Personalized Label",
@@ -338,11 +340,11 @@
         }
       },
       "block_order": [
+        "03405d13-a387-4e10-ad2d-d719aafe66a8",
         "9eacd4fc-4cbb-47d1-acc6-1b97288cc999",
         "97dba447-d7b6-41ec-a2ad-eda47f7b80bd",
-        "37cf82a1-abd9-4749-b35c-c99d4c654e95",
         "5cbdd836-ea08-463e-b7e8-1157bc52c811",
-        "03405d13-a387-4e10-ad2d-d719aafe66a8",
+        "37cf82a1-abd9-4749-b35c-c99d4c654e95",
         "2f4e6c4e-5e78-4437-a351-b58369a56c04",
         "cb3fc11e-73e0-4a23-bc10-fb0d22f69139",
         "2c5bf433-7477-45ec-8489-9cdd2db2f722"
