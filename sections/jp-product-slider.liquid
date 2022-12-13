@@ -83,7 +83,9 @@
               {% endif %}
               
               {% if last_items and collection.handle != 'last-items' and collection.handle != 'letzte-artikel' %}
+                {% unless product.title contains 'Gift card' or product.title contains 'Gift' %}
                   <div class="prod-tag product-tag-last medium">{{ 'products.product.last_item' | t }}</div>
+                {% endunless %}
               {% elsif is_bestseller %}
                   {% unless collection_is_bestellers %}
                     <div class="prod-tag medium">{{ 'products.product.bestseller' | t }}</div>
@@ -124,7 +126,7 @@
                 </div>
               	<div class="product-pirce medium">                  
                   <a href="{{ product.url }}">
-                    {{ product.price | times: 1 | money_without_trailing_zeros | strip_html }}
+                    {{ product.price | times: 1 | money_without_currency | strip_html }} ,-
                   </a>
               </div>
              
@@ -183,7 +185,9 @@
               {% endif %}
               
               {% if last_items and collection.handle != 'last-items' and collection.handle != 'letzte-artikel' %}
+                {% unless product.title contains 'Gift card' or product.title contains 'Gift' %}
                   <div class="prod-tag product-tag-last medium">{{ 'products.product.last_item' | t }}</div>
+                {% endunless %}
               {% elsif is_bestseller %}
                   {% unless collection_is_bestellers %}
                     <div class="prod-tag medium">{{ 'products.product.bestseller' | t }}</div>
@@ -223,7 +227,7 @@
                 </div>
               	<div class="product-pirce medium">                  
                   <a href="{{ product.url }}">
-                    {{ product.price | times: 1 | money_without_trailing_zeros | strip_html }}
+                    {{ product.price | times: 1 | money_without_currency | strip_html }} ,-
                   </a>
               </div>
              

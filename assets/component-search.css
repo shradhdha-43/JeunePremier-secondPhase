@@ -32,6 +32,10 @@ input::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
+.grid__item:empty {
+  display: none;
+}
+
 .search_title {
   font-size: 18px;
   text-transform: uppercase;

@@ -132,7 +132,7 @@
               </a>
             </div>
             <div class="cross-sell-product-price">
-              {{ product.price | times: 1 | money_without_trailing_zeros | strip_html }}
+              {{ product.price | times: 1 | money_without_currency | strip_html }} ,-
             </div>
 
             <div class="cross-sell-accordion no-disp">
