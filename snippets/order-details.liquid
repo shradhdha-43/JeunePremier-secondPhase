@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="cart-product-qty-del justify-between">
-        <div class="product-price"><span class="product-selling-price">{{ item.final_price | times: vat | money_without_currency }} ,-</span></div>
+        <div class="product-price"><span class="product-selling-price">{{ item.final_price | times: vat | money_without_trailing_zeros  }}</span></div>
       </div>
     </div>
   </div>

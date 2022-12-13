@@ -27,7 +27,7 @@
                     {{ product.title | escape }}
                   </a>
             <div class="upsell-prod-variant light">{{ product.title }}</div>
-            <div class="upsell-prod-price light">{{ product.price | money_without_currency }} ,-</div>
+            <div class="upsell-prod-price light">{{ product.price | money_without_trailing_zeros  }}</div>
           </div>
           <div class="upsell-add-to-cart">+</div>
         </div>

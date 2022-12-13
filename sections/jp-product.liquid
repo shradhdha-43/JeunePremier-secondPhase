@@ -114,11 +114,11 @@
 
             {% if product.compare_at_price_max > product.price %}
             <span id="ProductPriceCompare" class="product-compare">
-              {{ product.compare_at_price_max | times: 1 | money_without_currency }} ,-
+              {{ product.compare_at_price_max | times: 1 | money_without_trailing_zeros }}
             </span>
             {% endif %}
             <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
-              {{ current_variant_price | money_without_currency }} ,- <span class="price-incl">{% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</span>
+              {{ current_variant_price | money_without_trailing_zeros }}  <span class="price-incl">{% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</span>
             </span>
           </div>
             <span class="product-wishlist"></span>
@@ -256,11 +256,11 @@
 
                 {% if product.compare_at_price_max > product.price %}
                 <span id="ProductPriceCompare" class="product-compare">
-                  {{ product.compare_at_price_max | times: 1 | money_without_currency }} ,-
+                  {{ product.compare_at_price_max | times: 1 | money_without_trailing_zeros  }}
                 </span>
                 {% endif %}
                 <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
-                  {{ current_variant_price | money_without_currency }} ,- <span class="price-incl">{% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</span>
+                  {{ current_variant_price | money_without_trailing_zeros  }} <span class="price-incl">{% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</span>
                 </span>
                 </div>
                 
@@ -542,7 +542,7 @@
   <div class="product-header-cta come-in no-d">
     <div class="header-cta-container">
       <div class="cta-left">
-        <span class="product-price">{{ current_variant_price | money_without_currency }} ,-</span>
+        <span class="product-price">{{ current_variant_price | money_without_trailing_zeros  }}</span>
       </div>
       <div class="cta-right">
         <span class="addcart-cta addcta-single {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %} {% if product.type == 'Goedgemerkt' or product.type == 'Ludilabel' %}label-type stop-prop{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%} id="AddToCartCta">{{ add_to_cart_text }}</span>
