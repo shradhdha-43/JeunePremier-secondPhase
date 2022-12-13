@@ -46,6 +46,11 @@ input::-webkit-search-decoration {
   gap: 40px;
 }
 
+.custom_search_grid .grid__item {
+  width: 260px;
+  max-width: 260px;
+}
+
 .custom_search_grid .card__inner {
   height: 300px;
   max-height: 300px;
@@ -143,6 +148,10 @@ input::-webkit-search-decoration {
 @media screen and (max-width: 992px) {
   .custom_search_grid {
     grid-template-columns: auto auto auto;
+  }
+  .custom_search_grid .grid__item {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
