@@ -64,7 +64,7 @@
 {%- endstyle -%}
 
 <div class="template-search{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %} section-{{ section.id }}-padding">
-  <div class="text-center template-search__header container center">
+  <div class="text-center template-search__header container center no-disp">
     {%- if search.performed -%}
       <h1 class="h2 search_title">{{ 'templates.search.title' | t }}</h1>
     {%- else -%}

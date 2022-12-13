@@ -9,11 +9,19 @@
                 <div class="jpcb_banner_content">{{ collection.description }}</div>
             </div>
             <div class="jpcb_image_block">
-                {% if collection.image != blank %}
-                <img  class="banner_image" src="{{ collection.image | image_url: height: 2000 }}" loading="lazy" alt="Banner Image">
-                {% else %}
-                <img  class="banner_image" src="{{ collection.products.first | image_url: height: 2000 }}" loading="lazy" alt="Banner Image">
-                {% endif %}
+				{% assign media = collection.metafields.custom.collection_banner_video.value %}
+				
+				{% if collection.metafields.custom.collection_banner_video.value != blank %}
+					{% if media.media_type == 'video' %}
+						{{ media | video_tag: image_size: '1000x', controls: false, autoplay: true , loop: true }}
+					{% else %}
+						<img  class="banner_image" src="{{ collection.metafields.custom.collection_banner_video.value | image_url: height: 2000 }}" loading="lazy" alt="Banner Image">
+				{% endif %}
+					{% elsif collection.image != blank %}
+					<img  class="banner_image" src="{{ collection.image | image_url: height: 2000 }}" loading="lazy" alt="Banner Image">
+				{% else %}
+                	<img  class="banner_image" src="{{ collection.products.first | image_url: height: 2000 }}" loading="lazy" alt="Banner Image">
+				{% endif %}
             </div>
         </div>
     </div>
@@ -230,12 +238,14 @@
               {% if product.tags contains 'bestseller' %}
                 {% assign is_bestseller = true %}
               {% endif %}
-              {% if collection.handle == 'bestseller' or collection.handle == 'bestsellers'  %}
+              {% if collection.handle == 'bestseller' or collection.handle == 'bestsellers' %}
                 {% assign collection_is_bestellers = true %}
               {% endif %}
               
               {% if last_items and collection.handle != 'last-items' and collection.handle != 'letzte-artikel' %}
+				{% unless product.title contains 'Gift card' or product.title contains 'Gift' %}
                   <div class="prod-tag product-tag-last medium">{{ 'products.product.last_item' | t }}</div>
+				{% endunless %}
               {% elsif is_bestseller %}
                   {% unless collection_is_bestellers %}
                     <div class="prod-tag medium">{{ 'products.product.bestseller' | t }}</div>

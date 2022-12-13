@@ -27,7 +27,8 @@
     transition: .4s ease;
     left: 0;
     top: 0;
-  	object-fit: cover;
+  	object-fit: contain;
+    background-color: #ffffff
 }
 
 .product-images-block:hover img:last-child {
@@ -213,6 +214,11 @@
   display: block;
 }
 
+.jpcb_image_block video {
+  height: 228px;
+  float: right;
+}
+
 .jpcb_text_block {
   max-height: 228px;
   overflow-x: hidden;
@@ -271,6 +277,12 @@
   }
   .jpcb_banner_heading {
     font-size: 32px;
+  }
+  .jpcb_image_block video {
+    width: 100%;
+    background: var(--dd-color-second);
+    height: auto;
+    max-height: 228px;
   }
 }
 

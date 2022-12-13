@@ -302,7 +302,8 @@
 
       var deleted_slide = JSON.parse(localStorage.getItem("deleted_slide"));
       console.log(deleted_slide);
-      if(deleted_slide[cross_check_id]){
+      if(deleted_slide) {
+        if(deleted_slide[cross_check_id]){
           var TheDeletedCrossSell = deleted_slide[cross_check_id]['htmlData'];
           var main_product_url = deleted_slide[cross_check_id]['prevLoc'];
           var deleted_slide_index = deleted_slide[cross_check_id]['slideId']
@@ -315,6 +316,8 @@
             console.log("urls matched");
             $('.show-cross-upsell .cross-sell-body').slick('slickAdd','<div>' + TheDeletedCrossSell + '</div>', 0 , true);
           }
+      }
+      
       }
       
 
