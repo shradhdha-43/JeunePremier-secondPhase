@@ -52,7 +52,9 @@
                                             <ul class="menu-drawer__menu list-menu">
                                                 <div class="main_link_title">{{ link.title }}</div>
                                             {%- for childlink in link.links -%}
+                                              <a href="{{ childlink.url }}">
                                                 <div class="childname">{{ childlink.title }}</div>
+                                              </a>
                                                   <ul class="grandchild-ul menu-drawer__menu list-menu" role="list" tabindex="-1">
                                                       {%- for grandchildlink in childlink.links -%}
                                                           <li>
@@ -201,13 +203,15 @@
                       {% endif %}
 
                       <ul class="navigation_block menu-{{ forloop.index }}" data-childlink="{{ childrandomObj }}">
-                        <li
-                          class="child-heading"
-                          data-image-id="image-{{ forloop.index }}"
-                          data-hoverimage="{{ child_main_coll__image }}"
-                        >
-                          {{ childlink.title }}
-                        </li>
+                        <a href="{{ childlink.url }}">
+                          <li
+                            class="child-heading"
+                            data-image-id="image-{{ forloop.index }}"
+                            data-hoverimage="{{ child_main_coll__image }}"
+                          >
+                            {{ childlink.title }}
+                          </li>
+                        </a>
                         {% for grandchild in childlink.links %}
                           {% assign randomObj = grandchild.object %}
 
