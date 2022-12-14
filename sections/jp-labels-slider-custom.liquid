@@ -48,7 +48,7 @@
               {% endif %}
               
               {% if last_items and labels_collection.handle != 'last-items' and labels_collection.handle != 'letzte-artikel' %}
-                {% unless product.title contains 'Gift card' or product.title contains 'Gift' %}
+                {% unless product.type contains 'Gift card' or product.title contains 'Gift' %}
                   <div class="prod-tag product-tag-last medium">{{ 'products.product.last_item' | t }}</div>
                 {% endunless %}
               {% elsif is_bestseller %}
@@ -138,7 +138,7 @@
               {% endif %}
               
               {% if last_items and labels_collection.handle != 'last-items' and labels_collection.handle != 'letzte-artikel' %}
-                {% unless product.title contains 'Gift card' or product.title contains 'Gift' %}
+                {% unless product.type contains 'Gift card' or product.title contains 'Gift' %}
                   <div class="prod-tag product-tag-last medium">{{ 'products.product.last_item' | t }}</div>
                 {% endunless %}
               {% elsif is_bestseller %}
