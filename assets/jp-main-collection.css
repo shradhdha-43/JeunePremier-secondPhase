@@ -243,6 +243,10 @@
   height: 228px;
 }
 
+.jp-collection-banner {
+  padding-top: 1px;
+}
+
 .jpcb_banner_content {
   font-family: "Work Sans";
   font-size: 16px;
