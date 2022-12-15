@@ -285,6 +285,10 @@ header {
   font-weight: 500;
 }
 
+.grandchildtitle b{
+  margin-left: 5px;
+}
+
 .grandchild-heading:last-child .jp-cherries {
   display: none;
 }
