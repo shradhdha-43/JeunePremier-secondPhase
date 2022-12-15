@@ -528,6 +528,22 @@ span.nav-arrow svg {
   width: 15px;
 }
 
+.design_image {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  margin-right : 4px;
+}
+
+.design_image img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
 /* menu drawer */
 
 .main_link_title {
