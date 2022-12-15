@@ -214,20 +214,40 @@
                         </a>
                         {% for grandchild in childlink.links %}
                           {% assign randomObj = grandchild.object %}
-
                           {% assign img = randomObj.featured_image %}
+                          {% assign randomObjHandle = grandchild.url | split: '?filters=' | first | split: '/collections/' | last %}
+                          {% assign randomObjFilter = grandchild.url | split: '?filters=' | last %}
+
+                          {%- paginate collections[randomObjHandle].products by 500 -%}
+                            {% for product in collections[randomObjHandle].products reversed %}
+                              {% for tag in product.tags %}
+                                {% if tag == randomObjFilter %}
+                                  {% assign tags_matched = product.title %}
+                                  {% assign tags_matched_image = product.metafields.custom.navigation_image %}
+                                  {% break %}
+                                {% endif %}
+                              {% endfor %}
+                            {% endfor %}
+                          {% endpaginate %}
+                        
 
                           {% if img != blank %}
                             {%- assign img = img | image_url: width: 1000 -%}
-                          {% else %}
+                          {% elsif tags_matched_image != blank  %}
+                            {% assign img = tags_matched_image | image_url: width: 1000 %}
+                            {% else %}
                             {% assign img = section.settings.mega_menu_image.src | image_url: width: 1000 %}
                           {% endif %}
+
 
                           <li
                             class="grandchild-heading align-center {% if childlink.title == "DESIGN" or childlink.title == "design" %}mb-16{% endif %}{% if grandchild.title contains 'Alle' or grandchild.title contains "All" %} bold{% endif %}"
                             data-grandchildlink="{{randomObj}}"
                             data-image-id="image-{{ forloop.index }}"
                             data-hoverimage="{{ img }}"
+                            data-randomObjFilter="{{randomObjFilter}}"
+                            data-randomObjHandle="{{randomObjHandle}}"
+                            data-tag_matched_product = "{{tags_matched}}"
                           >
                             {% if childlink.title == 'DESIGN' or childlink.title == 'design' -%}
                               {%- render 'icon-jp-cherries' -%}
