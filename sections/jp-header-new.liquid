@@ -59,7 +59,7 @@
                                                       {%- for grandchildlink in childlink.links -%}
                                                           <li>
                                                           <a href="{{ grandchildlink.url }}" class="{% if grandchildlink.title contains 'Alle' or grandchildlink.title contains "All" %}bold {% endif %}grandchildtitle menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
-                                                              {{ grandchildlink.title }}
+                                                              {{ grandchildlink.title | remove : "design-" }}
                                                               {% render 'icon-caret' %}
                                                           </a>
                                                           </li>
@@ -221,10 +221,18 @@
                           {%- paginate collections[randomObjHandle].products by 500 -%}
                             {% for product in collections[randomObjHandle].products reversed %}
                               {% for tag in product.tags %}
+                                {% if grandchild.url contains 'filters' %}
+
                                 {% if tag == randomObjFilter %}
                                   {% assign tags_matched = product.title %}
                                   {% assign tags_matched_image = product.metafields.custom.navigation_image %}
+                                  {% assign design_image_product = product.metafields.custom.navigation_design_image %}
                                   {% break %}
+                                {% endif %}
+
+                                {% else %}
+                                {% assign tags_matched = product.title %}
+                                {% assign design_image_product = product.metafields.custom.navigation_design_image %}
                                 {% endif %}
                               {% endfor %}
                             {% endfor %}
@@ -241,7 +249,7 @@
 
 
                           <li
-                            class="grandchild-heading align-center {% if childlink.title == "DESIGN" or childlink.title == "design" %}mb-16{% endif %}{% if grandchild.title contains 'Alle' or grandchild.title contains "All" %} bold{% endif %}"
+                            class="grandchild-heading align-center {% if grandchild.title contains 'Alle' or grandchild.title contains "All" %} bold{% endif %}"
                             data-grandchildlink="{{randomObj}}"
                             data-image-id="image-{{ forloop.index }}"
                             data-hoverimage="{{ img }}"
@@ -249,10 +257,16 @@
                             data-randomObjHandle="{{randomObjHandle}}"
                             data-tag_matched_product = "{{tags_matched}}"
                           >
-                            {% if childlink.title == 'DESIGN' or childlink.title == 'design' -%}
-                              {%- render 'icon-jp-cherries' -%}
-                            {%- endif -%}
-                            <a href="{{ grandchild.url | replace : '%3' , '?' | remove : 'F' }}"><span class="grandtitle">{{ grandchild.title }}</span>{% render 'icon-caret' %}</a>
+                            <a href="{{ grandchild.url | replace : '%3' , '?' | remove : 'F' }}">
+                              <span class="grandtitle">
+                                {% if design_image_product != blank and grandchild.title contains 'design-'  %}
+                                  <span class="design_image" style="background-color: #fcfcfc;">
+                                    <img src="{{ design_image_product | image_url: width: 250 }}" alt="">
+                                  </span>
+                                  {% endif %}
+                                {{ grandchild.title | remove : "design-" }}</span>
+                              {% render 'icon-caret' %}
+                            </a>
                           </li>
                         {% endfor %}
                       </ul>
