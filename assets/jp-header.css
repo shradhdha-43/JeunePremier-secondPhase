@@ -249,6 +249,12 @@ header {
   width: 100%;
 }
 
+.grandchild-heading a {
+  display: flex;
+  align-items: baseline;
+  justify-content: start;
+}
+
 .navigation_block {
   padding: 0;
   list-style: none;
@@ -529,7 +535,7 @@ span.nav-arrow svg {
 }
 
 .design_image {
-  width: 16px;
+  width: 20px;
   height: 16px;
   display: inline-block;
   border-radius: 50%;
