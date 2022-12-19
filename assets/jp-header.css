@@ -593,6 +593,10 @@ details:not([open])>.header__icon--menu .icon-close, details[open]>.header__icon
   top: -10px;
 }
 
+.toggle_menu_items {
+  display: none;
+}
+
 .main-summary.menu-drawer__menu-item .icon-caret {
   z-index: 5;
   width: 16px;
