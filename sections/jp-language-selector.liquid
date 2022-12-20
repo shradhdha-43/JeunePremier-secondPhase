@@ -4,691 +4,846 @@
 <div class="container flex-box">
   <div class="modal">
     <div class="modal-marg rel">
-      <span class="close-lang">{% include "close-icon" %}</span>
+      <span class="close-lang">{% include 'close-icon' %}</span>
       <div class="justify-content flex-center modal-div">
-        <h2 id="modal-welcome" class="modal-content">{{ section.settings.country_title }} <span class="current-country no-disp">{{ localization.country.name }}</span> {{ section.settings.language_title }} <span class="current-lang no-disp">{{ localization.language.name }}</span></h2>
-        <div id="modal-div">        
+        <h2 id="modal-welcome" class="modal-content">
+          {{ section.settings.country_title }}
+          <span class="current-country no-disp">{{ localization.country.name }}</span>
+          {{ section.settings.language_title }}
+          <span class="current-lang no-disp">{{ localization.language.name }}</span>
+        </h2>
+        <div id="modal-div">
           <div class="flex-box flex-column justify-center">
-            
             <p class="country-text no-disp">{{ section.settings.select_country }}</p>
             <select class="modal-buttons no-disp" id="country-selector">
-            {% for block in section.blocks %}
-              {% if block.settings.block_country1 != blank %}<option class="country-options" data-langs="{{ block.settings.block_lang1 | replace: ' ', '' }}" data-country="{{ block.settings.block_country1 | split: '-' | first }}" data-country-code="{{ block.settings.block_country1 | split: '-' | last }}">{{ block.settings.block_country1 | split: '-' | first }}</option>{% endif %}
-              {% if block.settings.block_country2 != blank %}<option class="country-options" data-langs="{{ block.settings.block_lang2 | replace: ' ', '' }}" data-country="{{ block.settings.block_country2 | split: '-' | first }}" data-country-code="{{ block.settings.block_country2 | split: '-' | last }}">{{ block.settings.block_country2 | split: '-' | first }}</option>{% endif %}
-              {% if block.settings.block_country3 != blank %}<option class="country-options" data-langs="{{ block.settings.block_lang3 | replace: ' ', '' }}" data-country="{{ block.settings.block_country3 | split: '-' | first }}" data-country-code="{{ block.settings.block_country3 | split: '-' | last }}">{{ block.settings.block_country3 | split: '-' | first }}</option>{% endif %}
-              {% if block.settings.block_country4 != blank %}<option class="country-options" data-langs="{{ block.settings.block_lang4 | replace: ' ', '' }}" data-country="{{ block.settings.block_country4 | split: '-' | first }}" data-country-code="{{ block.settings.block_country4 | split: '-' | last }}">{{ block.settings.block_country4 | split: '-' | first }}</option>{% endif %}
-              {% if block.settings.block_country5 != blank %}<option class="country-options" data-langs="{{ block.settings.block_lang5 | replace: ' ', '' }}" data-country="{{ block.settings.block_country5 | split: '-' | first }}" data-country-code="{{ block.settings.block_country5 | split: '-' | last }}">{{ block.settings.block_country5 | split: '-' | first }}</option>{% endif %}
-              {% if block.settings.block_country6 != blank %}<option class="country-options" data-langs="{{ block.settings.block_lang6 | replace: ' ', '' }}" data-country="{{ block.settings.block_country6 | split: '-' | first }}" data-country-code="{{ block.settings.block_country6 | split: '-' | last }}">{{ block.settings.block_country6 | split: '-' | first }}</option>{% endif %}
-              {% if block.settings.block_country7 != blank %}<option class="country-options" data-langs="{{ block.settings.block_lang7 | replace: ' ', '' }}" data-country="{{ block.settings.block_country7 | split: '-' | first }}" data-country-code="{{ block.settings.block_country7 | split: '-' | last }}">{{ block.settings.block_country7 | split: '-' | first }}</option>{% endif %}
-              {% if block.settings.block_country8 != blank %}<option class="country-options" data-langs="{{ block.settings.block_lang8 | replace: ' ', '' }}" data-country="{{ block.settings.block_country8 | split: '-' | first }}" data-country-code="{{ block.settings.block_country8 | split: '-' | last }}">{{ block.settings.block_country8 | split: '-' | first }}</option>{% endif %}
-              {% if block.settings.block_country9 != blank %}<option class="country-options" data-langs="{{ block.settings.block_lang9 | replace: ' ', '' }}" data-country="{{ block.settings.block_country9 | split: '-' | first }}" data-country-code="{{ block.settings.block_country9 | split: '-' | last }}">{{ block.settings.block_country9 | split: '-' | first }}</option>{% endif %}
-              {% if block.settings.block_country10 != blank %}<option class="country-options" data-langs="{{ block.settings.block_lang10 | replace: ' ', '' }}" data-country="{{ block.settings.block_country10 | split: '-' | first }}" data-country-code="{{ block.settings.block_country10 | split: '-' | last }}">{{ block.settings.block_country10 | split: '-' | first }}</option>{% endif %}
-            {% endfor %}
+              {% for block in section.blocks %}
+                {% if block.settings.block_country1 != blank -%}
+                  <option
+                    class="country-options"
+                    data-langs="{{ block.settings.block_lang1 | replace: ' ', '' }}"
+                    data-country="{{ block.settings.block_country1 | split: '-' | first }}"
+                    data-country-code="{{ block.settings.block_country1 | split: '-' | last }}"
+                  >
+                    {{ block.settings.block_country1 | split: '-' | first }}
+                  </option>
+                {%- endif %}
+                {% if block.settings.block_country2 != blank -%}
+                  <option
+                    class="country-options"
+                    data-langs="{{ block.settings.block_lang2 | replace: ' ', '' }}"
+                    data-country="{{ block.settings.block_country2 | split: '-' | first }}"
+                    data-country-code="{{ block.settings.block_country2 | split: '-' | last }}"
+                  >
+                    {{ block.settings.block_country2 | split: '-' | first }}
+                  </option>
+                {%- endif %}
+                {% if block.settings.block_country3 != blank -%}
+                  <option
+                    class="country-options"
+                    data-langs="{{ block.settings.block_lang3 | replace: ' ', '' }}"
+                    data-country="{{ block.settings.block_country3 | split: '-' | first }}"
+                    data-country-code="{{ block.settings.block_country3 | split: '-' | last }}"
+                  >
+                    {{ block.settings.block_country3 | split: '-' | first }}
+                  </option>
+                {%- endif %}
+                {% if block.settings.block_country4 != blank -%}
+                  <option
+                    class="country-options"
+                    data-langs="{{ block.settings.block_lang4 | replace: ' ', '' }}"
+                    data-country="{{ block.settings.block_country4 | split: '-' | first }}"
+                    data-country-code="{{ block.settings.block_country4 | split: '-' | last }}"
+                  >
+                    {{ block.settings.block_country4 | split: '-' | first }}
+                  </option>
+                {%- endif %}
+                {% if block.settings.block_country5 != blank -%}
+                  <option
+                    class="country-options"
+                    data-langs="{{ block.settings.block_lang5 | replace: ' ', '' }}"
+                    data-country="{{ block.settings.block_country5 | split: '-' | first }}"
+                    data-country-code="{{ block.settings.block_country5 | split: '-' | last }}"
+                  >
+                    {{ block.settings.block_country5 | split: '-' | first }}
+                  </option>
+                {%- endif %}
+                {% if block.settings.block_country6 != blank -%}
+                  <option
+                    class="country-options"
+                    data-langs="{{ block.settings.block_lang6 | replace: ' ', '' }}"
+                    data-country="{{ block.settings.block_country6 | split: '-' | first }}"
+                    data-country-code="{{ block.settings.block_country6 | split: '-' | last }}"
+                  >
+                    {{ block.settings.block_country6 | split: '-' | first }}
+                  </option>
+                {%- endif %}
+                {% if block.settings.block_country7 != blank -%}
+                  <option
+                    class="country-options"
+                    data-langs="{{ block.settings.block_lang7 | replace: ' ', '' }}"
+                    data-country="{{ block.settings.block_country7 | split: '-' | first }}"
+                    data-country-code="{{ block.settings.block_country7 | split: '-' | last }}"
+                  >
+                    {{ block.settings.block_country7 | split: '-' | first }}
+                  </option>
+                {%- endif %}
+                {% if block.settings.block_country8 != blank -%}
+                  <option
+                    class="country-options"
+                    data-langs="{{ block.settings.block_lang8 | replace: ' ', '' }}"
+                    data-country="{{ block.settings.block_country8 | split: '-' | first }}"
+                    data-country-code="{{ block.settings.block_country8 | split: '-' | last }}"
+                  >
+                    {{ block.settings.block_country8 | split: '-' | first }}
+                  </option>
+                {%- endif %}
+                {% if block.settings.block_country9 != blank -%}
+                  <option
+                    class="country-options"
+                    data-langs="{{ block.settings.block_lang9 | replace: ' ', '' }}"
+                    data-country="{{ block.settings.block_country9 | split: '-' | first }}"
+                    data-country-code="{{ block.settings.block_country9 | split: '-' | last }}"
+                  >
+                    {{ block.settings.block_country9 | split: '-' | first }}
+                  </option>
+                {%- endif %}
+                {% if block.settings.block_country10 != blank -%}
+                  <option
+                    class="country-options"
+                    data-langs="{{ block.settings.block_lang10 | replace: ' ', '' }}"
+                    data-country="{{ block.settings.block_country10 | split: '-' | first }}"
+                    data-country-code="{{ block.settings.block_country10 | split: '-' | last }}"
+                  >
+                    {{ block.settings.block_country10 | split: '-' | first }}
+                  </option>
+                {%- endif %}
+                {% if block.settings.block_country11 != blank -%}
+                  <option
+                    class="country-options"
+                    data-langs="{{ block.settings.block_lang11 | replace: ' ', '' }}"
+                    data-country="{{ block.settings.block_country11 | split: '-' | first }}"
+                    data-country-code="{{ block.settings.block_country11 | split: '-' | last }}"
+                  >
+                    {{ block.settings.block_country11 | split: '-' | first }}
+                  </option>
+                {%- endif %}
+              {% endfor %}
             </select>
-            
+
             <p class="lang-text no-disp">{{ section.settings.select_language }}</p>
             <select class="modal-buttons no-disp" id="language-selector">
-            {% for block in section.blocks %}
-              {% assign languages1 = block.settings.block_lang1 | replace: ' ', '' | split: ',' %}
-              {% assign languages2 = block.settings.block_lang2 | replace: ' ', '' | split: ',' %}
-              {% assign languages3 = block.settings.block_lang3 | replace: ' ', '' | split: ',' %}
-              {% assign languages4 = block.settings.block_lang4 | replace: ' ', '' | split: ',' %}
-              {% assign languages5 = block.settings.block_lang5 | replace: ' ', '' | split: ',' %}
-              {% assign languages6 = block.settings.block_lang6 | replace: ' ', '' | split: ',' %}
-              {% assign languages7 = block.settings.block_lang7 | replace: ' ', '' | split: ',' %}
-              {% assign languages8 = block.settings.block_lang8 | replace: ' ', '' | split: ',' %}
-              {% assign languages9 = block.settings.block_lang9 | replace: ' ', '' | split: ',' %}
-              {% assign languages10 = block.settings.block_lang10 | replace: ' ', '' | split: ',' %}
-              
-              {% assign languages = languages1 | concat: languages2 | concat: languages3 | concat: languages4 | concat: languages5 | concat: languages6 | concat: languages7 | concat: languages8 | concat: languages9 | concat: languages10 %}
-              {% assign uniqLanguages = languages | uniq %}
-              
-              {% for lang in uniqLanguages %}
-              	<option class="language-options" data-lang="{{ lang }}">{% if lang == "en" %}English{% elsif lang == "nl" %}Dutch{% elsif lang == "fr" %}French{% elsif lang == "de" %}German{% elsif lang == "it" %}Italian{% elsif lang == "da" %}Danish{% elsif lang == "ru" %}Russian{% endif %}</option>
+              {% for block in section.blocks %}
+                {% assign languages1 = block.settings.block_lang1 | replace: ' ', '' | split: ',' %}
+                {% assign languages2 = block.settings.block_lang2 | replace: ' ', '' | split: ',' %}
+                {% assign languages3 = block.settings.block_lang3 | replace: ' ', '' | split: ',' %}
+                {% assign languages4 = block.settings.block_lang4 | replace: ' ', '' | split: ',' %}
+                {% assign languages5 = block.settings.block_lang5 | replace: ' ', '' | split: ',' %}
+                {% assign languages6 = block.settings.block_lang6 | replace: ' ', '' | split: ',' %}
+                {% assign languages7 = block.settings.block_lang7 | replace: ' ', '' | split: ',' %}
+                {% assign languages8 = block.settings.block_lang8 | replace: ' ', '' | split: ',' %}
+                {% assign languages9 = block.settings.block_lang9 | replace: ' ', '' | split: ',' %}
+                {% assign languages10 = block.settings.block_lang10 | replace: ' ', '' | split: ',' %}
+                {% assign languages11 = block.settings.block_lang11 | replace: ' ', '' | split: ',' %}
+
+                {% assign languages = languages1
+                  | concat: languages2
+                  | concat: languages3
+                  | concat: languages4
+                  | concat: languages5
+                  | concat: languages6
+                  | concat: languages7
+                  | concat: languages8
+                  | concat: languages9
+                  | concat: languages10
+                  | concat: languages11
+                %}
+                {% assign uniqLanguages = languages | uniq %}
+
+                {% for lang in uniqLanguages %}
+                  <option class="language-options" data-lang="{{ lang }}">
+                    {% if lang == 'en' -%}
+                      English
+                    {%- elsif lang == 'nl' -%}
+                      Dutch
+                    {%- elsif lang == 'fr' -%}
+                      French
+                    {%- elsif lang == 'de' -%}
+                      German
+                    {%- elsif lang == 'it' -%}
+                      Italian
+                    {%- elsif lang == 'da' -%}
+                      Danish
+                    {%- elsif lang == 'ru' -%}
+                      Russian
+                    {%- elsif lang == 'ko' -%}
+                      Korean
+                    {%- endif %}
+                  </option>
+                {% endfor %}
               {% endfor %}
-            {% endfor %}
             </select>
-            
           </div>
         </div>
-        <button data-redirect-url="" class="btn btn-center" id="suggested" style="margin-bottom: 12px !important;">{{ section.settings.section_btn_text }}</button>
+        <button data-redirect-url="" class="btn btn-center" id="suggested" style="margin-bottom: 12px !important;">
+          {{ section.settings.section_btn_text }}
+        </button>
         <span class="modal-text change-lang-link">{{ section.settings.section_text }}</span>
       </div>
     </div>
-    <span class="modal-span">
-    </span>
+    <span class="modal-span"> </span>
   </div>
 </div>
 
-<script>  
-  var country = localStorage.getItem("cont");
-  var language = localStorage.getItem("lang");
-  var countryh = localStorage.getItem("conth");
-  var languageh = localStorage.getItem("langh");
-  var storeCountry = "{{ localization.country.name }}";
-  var storeLanguage = "{{ localization.language.name }}";
-  var isAddCountryCode = "{{ section.settings.addcountryCode }}";
+<script>
+  var country = localStorage.getItem('cont');
+  var language = localStorage.getItem('lang');
+  var countryh = localStorage.getItem('conth');
+  var languageh = localStorage.getItem('langh');
+  var storeCountry = '{{ localization.country.name }}';
+  var storeLanguage = '{{ localization.language.name }}';
+  var isAddCountryCode = '{{ section.settings.addcountryCode }}';
 
-  var path = "{{ request.path }}";
-  var split_path = path.split("/");
+  var path = '{{ request.path }}';
+  var split_path = path.split('/');
   removeCountryInitial();
 
-  
-  function removeCountryInitial(){
-    count_initials_array = ["nl" , "fr" , "it" , "be" , "-be" , "at" , "de" , "ch" , "dk" , "ru" , "da" , "fr-fr" , "en-nl" , "fr-nl" , "nl-nl" , "en-fr" , "en-it" , "it-it" , ".at/fr" , ".at" , ".ch/fr" , ".ch"]
-    count_initials_array = split_path.filter( ( el ) => !count_initials_array.includes( el ) );
-    path = count_initials_array.join("/");
+  function removeCountryInitial() {
+    count_initials_array = [
+      'nl',
+      'fr',
+      'it',
+      'be',
+      '-be',
+      'at',
+      'de',
+      'ch',
+      'dk',
+      'ru',
+      'da',
+      'fr-fr',
+      'en-nl',
+      'fr-nl',
+      'nl-nl',
+      'en-fr',
+      'en-it',
+      'it-it',
+      '.at/fr',
+      '.at',
+      '.ch/fr',
+      '.ch'
+    ];
+    count_initials_array = split_path.filter((el) => !count_initials_array.includes(el));
+    path = count_initials_array.join('/');
   }
 
-  if(path.includes("/404") ){
-    path = "";
-    window.location.replace("https://www.jeunepremier.com");
+  if (path.includes('/404')) {
+    path = '';
+    window.location.replace('https://www.jeunepremier.com');
   }
 
-  
-  
-  localStorage.setItem("slug", path);
-  var slug = localStorage.getItem("slug");
+  localStorage.setItem('slug', path);
+  var slug = localStorage.getItem('slug');
 
-   
-  
-  if( !country && !language ) {
-      $.ajax({
-        url: "/browsing_context_suggestions.json?source=geolocation_recommendation&country[enabled]=true&language[enabled]=true",
-        method: "GET",
-        dataType: "json"
-      })
-      .done(function( data ) {
+  if (!country && !language) {
+    $.ajax({
+      url: '/browsing_context_suggestions.json?source=geolocation_recommendation&country[enabled]=true&language[enabled]=true',
+      method: 'GET',
+      dataType: 'json',
+    })
+      .done(function (data) {
         console.log(data);
-        var ru_redirect = localStorage.setItem("ruredirect", data.detected_values.country.handle);
-        console.log("storeCountry : "+storeCountry+" storeLanguage : "+storeLanguage);
-        
-        
-        if(storeCountry != data.detected_values.country.name || storeLanguage != data.suggestions[0].parts.language.name) {
-          $('.modal').css("display","flex");
+        var ru_redirect = localStorage.setItem('ruredirect', data.detected_values.country.handle);
+        console.log('storeCountry : ' + storeCountry + ' storeLanguage : ' + storeLanguage);
+
+        if (
+          storeCountry != data.detected_values.country.name ||
+          storeLanguage != data.suggestions[0].parts.language.name
+        ) {
+          $('.modal').css('display', 'flex');
           $('.current-country, .current-lang').removeClass('no-disp');
-          
-          if(data.suggestions[0].parts.language.handle.toLowerCase() == "ru") {
-            $('.current-country').text("Russia");
-          }
-          else {
+
+          if (data.suggestions[0].parts.language.handle.toLowerCase() == 'ru') {
+            $('.current-country').text('Russia');
+          } else {
             $('.current-country').text(data.detected_values.country.name);
           }
           $('.current-lang').text(data.suggestions[0].parts.language.name);
-          
+
           var lang = '/' + data.suggestions[0].parts.language.handle.toLowerCase();
           var cont = '';
           var redirectUrl = '';
-          
-          if(data.suggestions[0].parts.country) {
-            
-            if(isAddCountryCode == 'true') {
+
+          if (data.suggestions[0].parts.country) {
+            if (isAddCountryCode == 'true') {
               cont = cont + '-' + data.suggestions[0].parts.country.handle.toLowerCase() + slug;
             }
-            
-            if(data.detected_values.country.handle.toLowerCase() == 'dk') {
+
+            if (data.detected_values.country.handle.toLowerCase() == 'dk') {
               lang = 'https://www.jeunepremier.';
               cont = '';
-             
-              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'da') {
-                lang = lang + 'dk' ;
+
+              if (data.suggestions[0].parts.language.handle.toLowerCase() == 'da') {
+                lang = lang + 'dk';
               }
-              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'de') {
+              if (data.suggestions[0].parts.language.handle.toLowerCase() == 'de') {
                 lang = lang + 'de';
               }
             }
-            
-            if(data.suggestions[0].parts.country.handle.toLowerCase() == 'at') {
+
+            if (data.suggestions[0].parts.country.handle.toLowerCase() == 'at') {
               lang = 'https://www.jeunepremier.';
               cont = '';
-              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'de') {
-                lang = lang + 'at' ;
+              if (data.suggestions[0].parts.language.handle.toLowerCase() == 'de') {
+                lang = lang + 'at';
               }
-              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'fr') {
+              if (data.suggestions[0].parts.language.handle.toLowerCase() == 'fr') {
                 lang = lang + 'at/fr';
               }
             }
-            
-            if(data.suggestions[0].parts.country.handle.toLowerCase() == 'ch') {
+
+            if (data.suggestions[0].parts.country.handle.toLowerCase() == 'ch') {
               lang = 'https://www.jeunepremier.';
               cont = '';
-              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'fr') {
-                lang = lang + 'ch/fr' ;
+              if (data.suggestions[0].parts.language.handle.toLowerCase() == 'fr') {
+                lang = lang + 'ch/fr';
               }
-              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'de' || data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
+              if (
+                data.suggestions[0].parts.language.handle.toLowerCase() == 'de' ||
+                data.suggestions[0].parts.language.handle.toLowerCase() == 'en'
+              ) {
                 lang = lang + 'ch';
               }
             }
-            
-            if(data.suggestions[0].parts.country.handle.toLowerCase() == 'de') {
+
+            if (data.suggestions[0].parts.country.handle.toLowerCase() == 'de') {
               lang = 'https://www.jeunepremier.de/';
               cont = '';
-              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'de' || data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
-                lang = lang + '' ;
-              }
-            }
-            
-            if(data.suggestions[0].parts.country.handle.toLowerCase() == 'be') {
-              lang = 'https://www.jeunepremier.com';
-              cont = '';
-              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
-                lang = lang + slug;
-              }
-              else {
-              	lang = lang + "/" + data.suggestions[0].parts.language.handle.toLowerCase() + slug;
-              }
-            }
-            
-            
-            if(data.suggestions[0].parts.language.handle.toLowerCase() == 'ru') {
-              lang = 'https://www.jeune-premier.ru/';
-              cont = '';
-              
-            }
-            
-            console.log("if cont: "+cont);
-            console.log("if lang: "+lang);
-            
-            redirectUrl = lang+cont;
-            $('#suggested').attr('data-redirect-url',redirectUrl);
-            localStorage.setItem("cont", data.suggestions[0].parts.country.name);
-            localStorage.setItem("lang", data.suggestions[0].parts.language.name);
-            localStorage.setItem("conth", data.suggestions[0].parts.country.handle.toLowerCase());
-            localStorage.setItem("langh", data.suggestions[0].parts.language.handle.toLowerCase());
-          } 
-          else {
-            
-            if(isAddCountryCode == 'true') {
-              cont = cont + '-' + data.detected_values.country.handle.toLowerCase() + slug;
-            }
-            
-            if(data.detected_values.country.handle.toLowerCase() == 'dk') {
-              lang = 'https://www.jeunepremier.';
-              cont = '';
-              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'da') {
-                lang = lang + 'dk';
-              }
-              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'de') {
-                lang = lang + 'de';
-              }
-            }
-            
-            if(data.detected_values.country.handle.toLowerCase() == 'at') {
-              lang = 'https://www.jeunepremier.';
-              cont = '';
-              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'de') {
-                lang = lang + 'at';
-              }
-              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'fr') {
-                lang = lang + 'at/fr';
-              }
-            }
-            
-            if(data.detected_values.country.handle.toLowerCase() == 'ch') {
-              lang = 'https://www.jeunepremier.';
-              cont = '';
-              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'fr') {
-                lang = lang + 'ch/fr';
-              }
-              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'de' || data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
-                lang = lang + 'ch' ;
-              }
-            }
-            
-            if(data.detected_values.country.handle.toLowerCase() == 'de') {
-              lang = 'https://www.jeunepremier.de/';
-              cont = '';
-              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'de' || data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
+              if (
+                data.suggestions[0].parts.language.handle.toLowerCase() == 'de' ||
+                data.suggestions[0].parts.language.handle.toLowerCase() == 'en'
+              ) {
                 lang = lang + '';
               }
             }
-            
-            if(data.detected_values.country.handle.toLowerCase() == 'be') {
+
+            if (data.suggestions[0].parts.country.handle.toLowerCase() == 'be') {
               lang = 'https://www.jeunepremier.com';
               cont = '';
-              if(data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
+              if (data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
                 lang = lang + slug;
-              }
-              else {
-              	lang = lang + "/" + data.suggestions[0].parts.language.handle.toLowerCase() + slug;
+              } else {
+                lang = lang + '/' + data.suggestions[0].parts.language.handle.toLowerCase() + slug;
               }
             }
-            
-            
-            if(data.suggestions[0].parts.language.handle.toLowerCase() == 'ru') {
+
+            if (data.suggestions[0].parts.language.handle.toLowerCase() == 'ru') {
               lang = 'https://www.jeune-premier.ru/';
               cont = '';
             }
-            
-            console.log("else cont: "+cont);
-            console.log("else lang: "+lang);
-            
-            redirectUrl = lang+cont;
-            $('#suggested').attr('data-redirect-url',redirectUrl);
-            localStorage.setItem("cont", data.detected_values.country.name);
-            localStorage.setItem("lang", data.suggestions[0].parts.language.name);
-            localStorage.setItem("conth", data.detected_values.country.handle.toLowerCase());
-            localStorage.setItem("langh", data.suggestions[0].parts.language.handle.toLowerCase());
-            
 
+            console.log('if cont: ' + cont);
+            console.log('if lang: ' + lang);
+
+            redirectUrl = lang + cont;
+            $('#suggested').attr('data-redirect-url', redirectUrl);
+            localStorage.setItem('cont', data.suggestions[0].parts.country.name);
+            localStorage.setItem('lang', data.suggestions[0].parts.language.name);
+            localStorage.setItem('conth', data.suggestions[0].parts.country.handle.toLowerCase());
+            localStorage.setItem('langh', data.suggestions[0].parts.language.handle.toLowerCase());
+          } else {
+            if (isAddCountryCode == 'true') {
+              cont = cont + '-' + data.detected_values.country.handle.toLowerCase() + slug;
+            }
+
+            if (data.detected_values.country.handle.toLowerCase() == 'dk') {
+              lang = 'https://www.jeunepremier.';
+              cont = '';
+              if (data.suggestions[0].parts.language.handle.toLowerCase() == 'da') {
+                lang = lang + 'dk';
+              }
+              if (data.suggestions[0].parts.language.handle.toLowerCase() == 'de') {
+                lang = lang + 'de';
+              }
+            }
+
+            if (data.detected_values.country.handle.toLowerCase() == 'at') {
+              lang = 'https://www.jeunepremier.';
+              cont = '';
+              if (data.suggestions[0].parts.language.handle.toLowerCase() == 'de') {
+                lang = lang + 'at';
+              }
+              if (data.suggestions[0].parts.language.handle.toLowerCase() == 'fr') {
+                lang = lang + 'at/fr';
+              }
+            }
+
+            if (data.detected_values.country.handle.toLowerCase() == 'ch') {
+              lang = 'https://www.jeunepremier.';
+              cont = '';
+              if (data.suggestions[0].parts.language.handle.toLowerCase() == 'fr') {
+                lang = lang + 'ch/fr';
+              }
+              if (
+                data.suggestions[0].parts.language.handle.toLowerCase() == 'de' ||
+                data.suggestions[0].parts.language.handle.toLowerCase() == 'en'
+              ) {
+                lang = lang + 'ch';
+              }
+            }
+
+            if (data.detected_values.country.handle.toLowerCase() == 'de') {
+              lang = 'https://www.jeunepremier.de/';
+              cont = '';
+              if (
+                data.suggestions[0].parts.language.handle.toLowerCase() == 'de' ||
+                data.suggestions[0].parts.language.handle.toLowerCase() == 'en'
+              ) {
+                lang = lang + '';
+              }
+            }
+
+            if (data.detected_values.country.handle.toLowerCase() == 'be') {
+              lang = 'https://www.jeunepremier.com';
+              cont = '';
+              if (data.suggestions[0].parts.language.handle.toLowerCase() == 'en') {
+                lang = lang + slug;
+              } else {
+                lang = lang + '/' + data.suggestions[0].parts.language.handle.toLowerCase() + slug;
+              }
+            }
+
+            if (data.suggestions[0].parts.language.handle.toLowerCase() == 'ru') {
+              lang = 'https://www.jeune-premier.ru/';
+              cont = '';
+            }
+
+            console.log('else cont: ' + cont);
+            console.log('else lang: ' + lang);
+
+            redirectUrl = lang + cont;
+            $('#suggested').attr('data-redirect-url', redirectUrl);
+            localStorage.setItem('cont', data.detected_values.country.name);
+            localStorage.setItem('lang', data.suggestions[0].parts.language.name);
+            localStorage.setItem('conth', data.detected_values.country.handle.toLowerCase());
+            localStorage.setItem('langh', data.suggestions[0].parts.language.handle.toLowerCase());
           }
         }
       })
-      .fail(function(error) {
-        console.log( error );
+      .fail(function (error) {
+        console.log(error);
       });
-  }
-  else {
-    console.log("Inside else");
-	$('.current-country').text(country);
+  } else {
+    console.log('Inside else');
+    $('.current-country').text(country);
     $('.current-lang').text(language);
-    var langh = localStorage.getItem("langh");
-    var conth = localStorage.getItem("conth");
+    var langh = localStorage.getItem('langh');
+    var conth = localStorage.getItem('conth');
     var cont = '';
     var lang = '/' + langh;
     var redirectUrl = '';
-    
-    if(isAddCountryCode == 'true') {
+
+    if (isAddCountryCode == 'true') {
       cont = cont + '-' + conth + slug;
     }
-    
-    if(conth == 'dk') {
+
+    if (conth == 'dk') {
       lang = 'https://www.jeunepremier.';
       cont = '';
-      if(langh == 'da') {
+      if (langh == 'da') {
         lang = lang + 'dk';
       }
-      if(langh == 'de') {
+      if (langh == 'de') {
         lang = lang + 'de';
       }
     }
-    
-    if(conth == 'at') {
+
+    if (conth == 'at') {
       lang = 'https://www.jeunepremier.';
       cont = '';
-      if(langh == 'de') {
+      if (langh == 'de') {
         lang = lang + 'at';
       }
-      if(langh == 'fr') {
+      if (langh == 'fr') {
         lang = lang + 'at/fr';
       }
     }
-    
-    if(conth == 'ch') {
+
+    if (conth == 'ch') {
       lang = 'https://www.jeunepremier.';
       cont = '';
-      if(langh == 'fr') {
+      if (langh == 'fr') {
         lang = lang + 'ch/fr';
       }
-      if(langh == 'de' || langh == 'en') {
+      if (langh == 'de' || langh == 'en') {
         lang = lang + 'ch';
       }
     }
-    
-    if(conth == 'de') {
+
+    if (conth == 'de') {
       lang = 'https://www.jeunepremier.de/';
       cont = '';
-      if(langh == 'de' || langh == 'en') {
+      if (langh == 'de' || langh == 'en') {
         lang = lang + '';
       }
     }
-    
-    if(conth == 'be') {
+
+    if (conth == 'be') {
       lang = 'https://www.jeunepremier.com';
       cont = '';
-      if(langh == 'en') {
+      if (langh == 'en') {
         lang = lang + slug;
-      }
-      else {
-        lang = lang + "/" + langh ;
+      } else {
+        lang = lang + '/' + langh;
       }
     }
-    
-    if(langh == 'ru') {
+
+    if (langh == 'ru') {
       lang = 'https://www.jeune-premier.ru/';
       cont = '';
     }
-    
-    redirectUrl = lang+cont;
-    $('#suggested').attr('data-redirect-url',redirectUrl);
-	$('.current-country, .current-lang').removeClass('no-disp');
-  }
-  
 
-  $( document ).ready(function() {
-    
-    $('.change-lang-link').click(function() {
-      
+    redirectUrl = lang + cont;
+    $('#suggested').attr('data-redirect-url', redirectUrl);
+    $('.current-country, .current-lang').removeClass('no-disp');
+  }
+
+  $(document).ready(function () {
+    $('.change-lang-link').click(function () {
       $('#country-selector').removeClass('no-disp');
       $('#language-selector').removeClass('no-disp');
       $('.country-text, .lang-text').removeClass('no-disp');
-      
-      var suggestedCountry = localStorage.getItem("conth");
-      var suggestedLang = localStorage.getItem("langh");
-      
-      $('#country-selector option').each(function() {
-        if($(this).data("country-code") == suggestedCountry) {
-        	$(this).prop('selected','selected');
-        }
-      });
-      
-      var langs = $('#country-selector').find("option:selected").data("langs");
-      var languagesArr = langs.split(",");
-      
-      $('#language-selector option').each(function() {
-        var tempLang = $(this).data("lang");
-        if(tempLang == suggestedLang) {
-          $(this).prop('selected','selected');
-        }
-        if(languagesArr.includes(tempLang)) {
-          $(this).show();
-        }
-        else {
-          $(this).hide();
-        }
-      });
-      
-      $('#suggested').attr('data-redirect-url',"");
-    });
-    
-    $('#country-selector').change(function() {
-      var langs = $(this).find("option:selected").data("langs");
-      var languagesArr = langs.split(",");
 
-      $("#language-selector option").each(function() {
-        var tempLang = $(this).data("lang");
-        if(languagesArr.includes(tempLang)) {
-          $(this).show();
+      var suggestedCountry = localStorage.getItem('conth');
+      var suggestedLang = localStorage.getItem('langh');
+
+      $('#country-selector option').each(function () {
+        if ($(this).data('country-code') == suggestedCountry) {
+          $(this).prop('selected', 'selected');
         }
-        else {
+      });
+
+      var langs = $('#country-selector').find('option:selected').data('langs');
+      var languagesArr = langs.split(',');
+
+      $('#language-selector option').each(function () {
+        var tempLang = $(this).data('lang');
+        if (tempLang == suggestedLang) {
+          $(this).prop('selected', 'selected');
+        }
+        if (languagesArr.includes(tempLang)) {
+          $(this).show();
+        } else {
           $(this).hide();
         }
       });
-      
-      $("#language-selector option:not(hidden):first-child").prop('selected','selected');
+
+      $('#suggested').attr('data-redirect-url', '');
     });
-    
-//     $('#language-selector').change(function() {
-//     });
-    
-    
-    $('#suggested').click(function() {
-      if($(this).attr('data-redirect-url') != "") {
-        console.log("if : "+$(this).attr('data-redirect-url'));
-      	window.location.replace($(this).attr('data-redirect-url'));
-      }
-      else {
-      	var countryCode = $('#country-selector').find("option:selected").data("country-code");
-        var langCode = $('#language-selector').find("option:selected").data("lang");
+
+    $('#country-selector').change(function () {
+      var langs = $(this).find('option:selected').data('langs');
+      var languagesArr = langs.split(',');
+
+      $('#language-selector option').each(function () {
+        var tempLang = $(this).data('lang');
+        if (languagesArr.includes(tempLang)) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+
+      $('#language-selector option:not(hidden):first-child').prop('selected', 'selected');
+    });
+
+    //     $('#language-selector').change(function() {
+    //     });
+
+    $('#suggested').click(function () {
+      if ($(this).attr('data-redirect-url') != '') {
+        console.log('if : ' + $(this).attr('data-redirect-url'));
+        window.location.replace($(this).attr('data-redirect-url'));
+      } else {
+        var countryCode = $('#country-selector').find('option:selected').data('country-code');
+        var langCode = $('#language-selector').find('option:selected').data('lang');
         var cont = '';
         var lang = '/' + langCode;
         var redirectUrl = '';
-        var isAddCountryCode = "{{ section.settings.addcountryCode }}";
-      	console.log("isAddCountryCode: "+isAddCountryCode);
-        
-        if(isAddCountryCode == 'true') {
-          cont = cont +"-"+ countryCode + slug;	
+        var isAddCountryCode = '{{ section.settings.addcountryCode }}';
+        console.log('isAddCountryCode: ' + isAddCountryCode);
+
+        if (isAddCountryCode == 'true') {
+          cont = cont + '-' + countryCode + slug;
         }
-        
-        if(countryCode == 'dk') {
+
+        if (countryCode == 'dk') {
           lang = 'https://www.jeunepremier.';
           cont = '';
-          if(langCode == 'da') {
+          if (langCode == 'da') {
             lang = lang + 'dk';
           }
-          if(langCode == 'de') {
+          if (langCode == 'de') {
             lang = lang + 'de';
           }
         }
-        
-        if(countryCode == 'at') {
+
+        if (countryCode == 'at') {
           lang = 'https://www.jeunepremier.';
           cont = '';
-          if(langCode == 'de') {
+          if (langCode == 'de') {
             lang = lang + 'at';
           }
-          if(langCode == 'fr') {
+          if (langCode == 'fr') {
             lang = lang + 'at/fr';
           }
         }
-        
-        if(countryCode == 'ch') {
+
+        if (countryCode == 'ch') {
           lang = 'https://www.jeunepremier.';
           cont = '';
-          if(langCode == 'fr') {
+          if (langCode == 'fr') {
             lang = lang + 'ch/fr';
           }
-          if(langCode == 'de' || langCode == 'en') {
+          if (langCode == 'de' || langCode == 'en') {
             lang = lang + 'ch';
           }
         }
-        
-        if(countryCode == "de") {
+
+        if (countryCode == 'de') {
           lang = 'https://www.jeunepremier.de/';
           cont = '';
-          if(langCode == "de" || langCode == "en") {
+          if (langCode == 'de' || langCode == 'en') {
             lang = lang + '';
           }
         }
 
-        if(countryCode == 'be') {
+        if (countryCode == 'be') {
           lang = 'https://www.jeunepremier.com';
           cont = '';
-          if(langCode == 'en') {
-            lang = lang + slug ;
+          if (langCode == 'en') {
+            lang = lang + slug;
+          } else {
+            lang = lang + '/' + langCode + slug;
           }
-          else {
-            lang = lang + "/" + langCode + slug;
-          } 
         }
-       
-        
-        if(langCode == 'ru') {
+
+        if (langCode == 'ru') {
           lang = 'https://www.jeune-premier.ru/';
           cont = '';
         }
-        
+
         redirectUrl = lang + cont;
-        $(this).attr('data-redirect-url',redirectUrl);
-        console.log("else : "+$(this).attr('data-redirect-url'));
-        
-        localStorage.setItem("cont", $('#country-selector').find("option:selected").val());
-        localStorage.setItem("lang", $('#language-selector').find("option:selected").val());
-        localStorage.setItem("conth", countryCode);
-        localStorage.setItem("langh", langCode);
-        redirectUrl = redirectUrl.replace(/([^:]\/)\/+/g, "$1");
+        $(this).attr('data-redirect-url', redirectUrl);
+        console.log('else : ' + $(this).attr('data-redirect-url'));
+
+        localStorage.setItem('cont', $('#country-selector').find('option:selected').val());
+        localStorage.setItem('lang', $('#language-selector').find('option:selected').val());
+        localStorage.setItem('conth', countryCode);
+        localStorage.setItem('langh', langCode);
+        redirectUrl = redirectUrl.replace(/([^:]\/)\/+/g, '$1');
         window.location.replace(redirectUrl);
       }
     });
-    
-    $('.close-lang').click(function() {
-      $('.modal').css("display","none");
+
+    $('.close-lang').click(function () {
+      $('.modal').css('display', 'none');
     });
   });
-  
 </script>
 
 {% schema %}
-  {
-    "name": "JP Language Selector",
-    "settings": [
-		{
-			"type": "checkbox",
-			"id": "addcountryCode",
-			"label": "Add Country code to redirect url",
-			"default": true
-		},
-		{
-			"type": "text",
-			"id": "country_title",
-			"label": "Country Title",
-			"default": "Your country is "
-		},
-  		{
-			"type": "text",
-			"id": "language_title",
-			"label": "Language Title",
-			"default": "and language is set to "
-		},
-		{
-			"type": "text",
-			"id": "select_country",
-			"label": "Select Country Text",
-			"default": "Select Country"
-		},
-		{
-			"type": "text",
-			"id": "select_language",
-			"label": "Select Language Text",
-			"default": "Select Language"
-		},
-		{
-			"type": "text",
-			"id": "section_text",
-			"label": "Section Text",
-			"default": "Change Country and Language"
-		},
-		{
-			"type": "text",
-			"id": "section_btn_text",
-			"label": "Section Button Text",
-			"default": "Continue Shopping"
-		}
-	],
-	"blocks": [
-      {
-        "type": "languages",
-        "name": "Language and Country",
-        "settings": [
-          {
-            "type": "text",
-            "id": "block_country1",
-            "label": "Enter Country name - country code",
-            "info": "Eg: Netherlands-nl, French-fr"
-          },
-		  {
-            "type": "text",
-            "id": "block_lang1",
-            "label": "Enter language in iso format",
-            "info": "Eg: en,fr"
-          },
-		  {
-            "type": "text",
-            "id": "block_country2",
-            "label": "Enter Country name - country code",
-            "info": "Eg: Netherlands-nl, French-fr"
-          },
-		  {
-            "type": "text",
-            "id": "block_lang2",
-            "label": "Enter language in iso format",
-            "info": "Eg: en,fr"
-          },
-		  {
-            "type": "text",
-            "id": "block_country3",
-            "label": "Enter Country name - country code",
-            "info": "Eg: Netherlands-nl, French-fr"
-          },
-		  {
-            "type": "text",
-            "id": "block_lang3",
-            "label": "Enter language in iso format",
-            "info": "Eg: en,fr"
-          },
-		  {
-            "type": "text",
-            "id": "block_country4",
-            "label": "Enter Country name - country code",
-            "info": "Eg: Netherlands-nl, French-fr"
-          },
-		  {
-            "type": "text",
-            "id": "block_lang4",
-            "label": "Enter language in iso format",
-            "info": "Eg: en,fr"
-          },
-		  {
-            "type": "text",
-            "id": "block_country5",
-            "label": "Enter Country name - country code",
-            "info": "Eg: Netherlands-nl, French-fr"
-          },
-		  {
-            "type": "text",
-            "id": "block_lang5",
-            "label": "Enter language in iso format",
-            "info": "Eg: en,fr"
-          },
-		  {
-            "type": "text",
-            "id": "block_country6",
-            "label": "Enter Country name - country code",
-            "info": "Eg: Netherlands-nl, French-fr"
-          },
-		  {
-            "type": "text",
-            "id": "block_lang6",
-            "label": "Enter language in iso format",
-            "info": "Eg: en,fr"
-          },
-		  {
-            "type": "text",
-            "id": "block_country7",
-            "label": "Enter Country name - country code",
-            "info": "Eg: Netherlands-nl, French-fr"
-          },
-		  {
-            "type": "text",
-            "id": "block_lang7",
-            "label": "Enter language in iso format",
-            "info": "Eg: en,fr"
-          },
-		  {
-            "type": "text",
-            "id": "block_country8",
-            "label": "Enter Country name - country code",
-            "info": "Eg: Netherlands-nl, French-fr"
-          },
-		  {
-            "type": "text",
-            "id": "block_lang8",
-            "label": "Enter language in iso format",
-            "info": "Eg: en,fr"
-          },
-		  {
-            "type": "text",
-            "id": "block_country9",
-            "label": "Enter Country name - country code",
-            "info": "Eg: Netherlands-nl, French-fr"
-          },
-		  {
-            "type": "text",
-            "id": "block_lang9",
-            "label": "Enter language in iso format",
-            "info": "Eg: en,fr"
-          },
-		  {
-            "type": "text",
-            "id": "block_country10",
-            "label": "Enter Country name - country code",
-            "info": "Eg: Netherlands-nl, French-fr"
-          },
-		  {
-            "type": "text",
-            "id": "block_lang10",
-            "label": "Enter language in iso format",
-            "info": "Eg: en,fr"
-          }
-        ]
-      }
-    ],
-	"presets": [
-      {
-		"name":"JP Language Selector"
-      }
-	]
-  }
+{
+  "name": "JP Language Selector",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "addcountryCode",
+      "label": "Add Country code to redirect url",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "country_title",
+      "label": "Country Title",
+      "default": "Your country is "
+    },
+    {
+      "type": "text",
+      "id": "language_title",
+      "label": "Language Title",
+      "default": "and language is set to "
+    },
+    {
+      "type": "text",
+      "id": "select_country",
+      "label": "Select Country Text",
+      "default": "Select Country"
+    },
+    {
+      "type": "text",
+      "id": "select_language",
+      "label": "Select Language Text",
+      "default": "Select Language"
+    },
+    {
+      "type": "text",
+      "id": "section_text",
+      "label": "Section Text",
+      "default": "Change Country and Language"
+    },
+    {
+      "type": "text",
+      "id": "section_btn_text",
+      "label": "Section Button Text",
+      "default": "Continue Shopping"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "languages",
+      "name": "Language and Country",
+      "settings": [
+        {
+          "type": "text",
+          "id": "block_country1",
+          "label": "Enter Country name - country code",
+          "info": "Eg: Netherlands-nl, French-fr"
+        },
+        {
+          "type": "text",
+          "id": "block_lang1",
+          "label": "Enter language in iso format",
+          "info": "Eg: en,fr"
+        },
+        {
+          "type": "text",
+          "id": "block_country2",
+          "label": "Enter Country name - country code",
+          "info": "Eg: Netherlands-nl, French-fr"
+        },
+        {
+          "type": "text",
+          "id": "block_lang2",
+          "label": "Enter language in iso format",
+          "info": "Eg: en,fr"
+        },
+        {
+          "type": "text",
+          "id": "block_country3",
+          "label": "Enter Country name - country code",
+          "info": "Eg: Netherlands-nl, French-fr"
+        },
+        {
+          "type": "text",
+          "id": "block_lang3",
+          "label": "Enter language in iso format",
+          "info": "Eg: en,fr"
+        },
+        {
+          "type": "text",
+          "id": "block_country4",
+          "label": "Enter Country name - country code",
+          "info": "Eg: Netherlands-nl, French-fr"
+        },
+        {
+          "type": "text",
+          "id": "block_lang4",
+          "label": "Enter language in iso format",
+          "info": "Eg: en,fr"
+        },
+        {
+          "type": "text",
+          "id": "block_country5",
+          "label": "Enter Country name - country code",
+          "info": "Eg: Netherlands-nl, French-fr"
+        },
+        {
+          "type": "text",
+          "id": "block_lang5",
+          "label": "Enter language in iso format",
+          "info": "Eg: en,fr"
+        },
+        {
+          "type": "text",
+          "id": "block_country6",
+          "label": "Enter Country name - country code",
+          "info": "Eg: Netherlands-nl, French-fr"
+        },
+        {
+          "type": "text",
+          "id": "block_lang6",
+          "label": "Enter language in iso format",
+          "info": "Eg: en,fr"
+        },
+        {
+          "type": "text",
+          "id": "block_country7",
+          "label": "Enter Country name - country code",
+          "info": "Eg: Netherlands-nl, French-fr"
+        },
+        {
+          "type": "text",
+          "id": "block_lang7",
+          "label": "Enter language in iso format",
+          "info": "Eg: en,fr"
+        },
+        {
+          "type": "text",
+          "id": "block_country8",
+          "label": "Enter Country name - country code",
+          "info": "Eg: Netherlands-nl, French-fr"
+        },
+        {
+          "type": "text",
+          "id": "block_lang8",
+          "label": "Enter language in iso format",
+          "info": "Eg: en,fr"
+        },
+        {
+          "type": "text",
+          "id": "block_country9",
+          "label": "Enter Country name - country code",
+          "info": "Eg: Netherlands-nl, French-fr"
+        },
+        {
+          "type": "text",
+          "id": "block_lang9",
+          "label": "Enter language in iso format",
+          "info": "Eg: en,fr"
+        },
+        {
+          "type": "text",
+          "id": "block_country10",
+          "label": "Enter Country name - country code",
+          "info": "Eg: Netherlands-nl, French-fr"
+        },
+        {
+          "type": "text",
+          "id": "block_lang10",
+          "label": "Enter language in iso format",
+          "info": "Eg: en,fr"
+        },
+        {
+          "type": "text",
+          "id": "block_country11",
+          "label": "Enter Country name - country code",
+          "info": "Eg: Netherlands-nl, French-fr"
+        },
+        {
+          "type": "text",
+          "id": "block_lang11",
+          "label": "Enter language in iso format",
+          "info": "Eg: en,fr"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "JP Language Selector"
+    }
+  ]
+}
 {% endschema %}
 
 {% stylesheet %}
