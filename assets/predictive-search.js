@@ -128,7 +128,7 @@ class PredictiveSearch extends HTMLElement {
       return;
     }
 
-    fetch(`${routes.predictive_search_url}?q=${encodeURIComponent(searchTerm)}&${encodeURIComponent('resources[type]')}=product&${encodeURIComponent('resources[limit]')}=4&section_id=predictive-search`)
+    fetch(`${routes.predictive_search_url}?q=${encodeURIComponent(searchTerm)}&${encodeURIComponent('resources[type]')}=product&${encodeURIComponent('resources[limit]')}=4&section_id=predictive-search&resources[options][fields]=tag,title,product_type,variants.title`)
       .then((response) => {
         if (!response.ok) {
           var error = new Error(response.status);
@@ -180,7 +180,7 @@ class PredictiveSearch extends HTMLElement {
   }
 
   getResultsMaxHeight() {
-    this.resultsMaxHeight = window.innerHeight - document.getElementById('shopify-section-header').getBoundingClientRect().bottom;
+    this.resultsMaxHeight = window.innerHeight - document.getElementById('shopify-section-jp-header-new').getBoundingClientRect().bottom;
     return this.resultsMaxHeight;
   }
 

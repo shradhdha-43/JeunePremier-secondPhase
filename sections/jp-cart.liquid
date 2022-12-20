@@ -167,7 +167,7 @@
             </div>
             {% comment %}{% if item.product.id != free_product_id %}{% endif %}{% endcomment %}
             <div class="cart-product-qty" data-quantity="1">
-              <div class="qty-manipulation-symbol minus-symbol cart-minus" data-variant="{{ item.variant.id }}" data-value="{{item.quantity}}">-</div>
+              <div class="qty-manipulation-symbol minus-symbol cart-minus" data-cross-check="{{ item.product.first_available_variant.id }}" data-variant="{{ item.variant.id }}" data-value="{{item.quantity}}">-</div>
               <div class="cart-qty" value="{{item.quantity}}">{{item.quantity}}</div>
               <div class="qty-manipulation-symbol plus-symbol cart-plus" data-variant="{{ item.variant.id }}" data-value="{{item.quantity}}">+</div>
             </div>
@@ -175,11 +175,11 @@
           </div>
           <div class="cart-product-qty-del justify-between">
             {% comment %}{% if item.product.id != free_product_id %}{% endif %}{% endcomment %}
-            <div class="delete-cart-product" data-variant="{{ forloop.index }}">
+            <div class="delete-cart-product" data-cross-check="{{ item.product.first_available_variant.id }}" data-variant="{{ forloop.index }}">
               <div class="delete-text">{{ section.settings.delete_text }}</div>
             </div>
             {% comment %}{% endcomment %}
-            <div class="product-price">{% if item.variant.compare_at_price > item.variant.price %}<span class="product-discount-price">{{- item.variant.compare_at_price | times: vat | money_without_trailing_zeros | replace: " ","" -}}</span>{% endif %}<span class="product-selling-price">{{ item.final_price | times: vat | money_without_trailing_zeros }}</span></div>
+            <div class="product-price">{% if item.variant.compare_at_price > item.variant.price %}<span class="product-discount-price">{{- item.variant.compare_at_price | times: vat | money_without_trailing_zeros | replace: " ","" -}}</span>{% endif %}<span class="product-selling-price">{{ item.final_price | times: vat | money_without_trailing_zeros  }} </span></div>
           </div>
         </div>
       </div>
@@ -193,7 +193,7 @@
       <div class="drawer-cart-checkout">
         <div class="checkout-subtotal justify-between">
           <div class="checkout-title">{{ section.settings.subtotal_text }}</div>
-          <div class="subtotal">{{ cart.total_price | times: vat | money_without_trailing_zeros }} {% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</div>
+          <div class="subtotal">{{ cart.total_price | times: vat | money_without_trailing_zeros  }} {% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</div>
         </div>
         <div class="checkout-shipping justify-between">
           <div class="shipping-title">{{ section.settings.shipping_text }}</div>
@@ -268,7 +268,7 @@
             <div class="upsell-product-title-price">
               <a href="{{ upsellx.url }}" class="product-name">{{ upsellx.title | split: " - " | first }}</a>
               <div class="product-color">{{ upsellx.title | split: " - " | last }}</div>
-              <div class="product-price upsell-price">{% if upsellx.compare_at_price > upsellx.price %}<span class="product-compare-price upsell-compare-price">{{ upsellx.compare_at_price | times: vat | money_without_trailing_zeros }}</span>{% endif %}<span class="product-selling-price">{{ upsellx.price | times: vat | money_without_trailing_zeros }}</span></div>
+              <div class="product-price upsell-price">{% if upsellx.compare_at_price > upsellx.price %}<span class="product-compare-price upsell-compare-price">{{ upsellx.compare_at_price | times: vat | money_without_trailing_zeros  }} </span>{% endif %}<span class="product-selling-price">{{ upsellx.price | times: vat | money_without_trailing_zeros  }} </span></div>
             </div>
 
             <div class="add-upsell-prod" data-variant="{{ upsellx.variants.first.id }}"><span class="icon-plus">{% include 'icon-plus-new' %}</span></div>
@@ -295,6 +295,32 @@
   $(document).ready(function() {
                               
     $('.delete-cart-product').click(function() {
+
+
+      var cross_check_id = $(this).data("cross-check");
+      console.log(cross_check_id);
+
+      var deleted_slide = JSON.parse(localStorage.getItem("deleted_slide"));
+      console.log(deleted_slide);
+      if(deleted_slide) {
+        if(deleted_slide[cross_check_id]){
+          var TheDeletedCrossSell = deleted_slide[cross_check_id]['htmlData'];
+          var main_product_url = deleted_slide[cross_check_id]['prevLoc'];
+          var deleted_slide_index = deleted_slide[cross_check_id]['slideId']
+          console.log(deleted_slide[cross_check_id]['prevLoc']);
+    
+          var current_url = window.location.pathname;
+          console.log(current_url);
+    
+          if((main_product_url).includes(current_url)) {
+            console.log("urls matched");
+            $('.show-cross-upsell .cross-sell-body').slick('slickAdd','<div>' + TheDeletedCrossSell + '</div>', 0 , true);
+          }
+      }
+      
+      }
+      
+
       $('.drawer-cart').addClass('drawn');
       $('.background-drawer-cart').addClass('drawn');
       $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
@@ -330,12 +356,38 @@
     });
 
     $('.cart-minus').click(function() {
+
+    if($(this).data('value') == 1){
+      var cross_check_id = $(this).data("cross-check");
+      console.log(cross_check_id);
+
+      var deleted_slide = JSON.parse(localStorage.getItem("deleted_slide"));
+      console.log(deleted_slide);
+      if(deleted_slide[cross_check_id]){
+          var TheDeletedCrossSell = deleted_slide[cross_check_id]['htmlData'];
+          var main_product_url = deleted_slide[cross_check_id]['prevLoc'];
+          var deleted_slide_index = deleted_slide[cross_check_id]['slideId']
+          console.log(deleted_slide[cross_check_id]['prevLoc']);
+    
+          var current_url = window.location.pathname;
+          console.log(current_url);
+    
+          if((main_product_url).includes(current_url)) {
+            console.log("urls matched");
+            $('.show-cross-upsell .cross-sell-body').slick('slickAdd','<div>' + TheDeletedCrossSell + '</div>', 0 , true);
+          }
+      }
+    }
+
+
       $('.drawer-cart').addClass('drawn');
       $('.background-drawer-cart').addClass('drawn');
       $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
+      
       var formData = {
         'line': parseInt($(this).closest('.cart-product-wrapper').find('.delete-cart-product').data('variant')),
-        'quantity': $(this).data('value')-1
+        'quantity': $(this).data('value')-1,
+        'sections': "jp-cart"
       };
       $.ajax({
         url: "/cart/change.js",

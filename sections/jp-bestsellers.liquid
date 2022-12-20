@@ -32,7 +32,9 @@
               {% endif %}
               
               {% if last_items and collection.handle != 'last-items' and collection.handle != 'letzte-artikel' %}
+                {% unless product.type contains 'Gift card' or product.title contains 'Gift' %}
                   <div class="prod-tag product-tag-last medium">{{ 'products.product.last_item' | t }}</div>
+                {% endunless %}
               {% elsif is_bestseller %}
                   {% unless collection_is_bestellers %}
                     
@@ -80,7 +82,7 @@
                   </a>
                 </div>
               	<div class="product-pirce medium">
-                  <a href="{{ product.url }}">{{ product.price | times: 1 | money_without_trailing_zeros | strip_html }}</a>
+                  <a href="{{ product.url }}">{{ product.price | times: 1 | money_without_trailing_zeros  | strip_html }}</a>
               </div>
              
             </div>

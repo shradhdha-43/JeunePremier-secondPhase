@@ -2,10 +2,18 @@
 
 <style>
   .header-inner-wrapper {
-    align-self: {{section.settings.desktop_allignment}};
+    align-self: {{ section.settings.desktop_allignment }};
   }
   .hero-text {
-    text-align : {{section.settings.text_align}};
+    text-align : {{ section.settings.text_align }};
+  }
+  .header-inner-wrapper .btn {
+    background-color : {{ section.settings.hero_button_bg }};
+    color : {{ section.settings.hero_text_color }};
+  }
+  .header-inner-wrapper .btn:hover {
+    background-color : {{ section.settings.hero_button_hover_bg_color }};
+    color : {{ section.settings.hero_button_hover_text_color }};
   }
 
   @media screen and (max-width : 992px) {
@@ -161,6 +169,30 @@
         "type": "text",
         "id": "headinglinktext",
         "label": "Heading Button Text"
+      },
+      {
+        "type": "color",
+        "id": "hero_button_bg",
+        "label": "Background Color",
+        "default" : "#333333"
+      },
+      {
+        "type": "color",
+        "id": "hero_text_color",
+        "label": "Text Color",
+        "default" : "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "hero_button_hover_bg_color",
+        "label": "Hover Background Color",
+        "default" : "#c5af88"
+      },
+      {
+        "type": "color",
+        "id": "hero_button_hover_text_color",
+        "label": "Hover Text Color",
+        "default" : "#333333"
       }
 	],
    "presets":[

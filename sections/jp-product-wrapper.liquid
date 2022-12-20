@@ -116,7 +116,7 @@
 
 
             <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
-              {{ current_variant_price | money_without_trailing_zeros }} <span class="price-incl">{{ 'products.product.include_taxes' | t }}</span>
+              {{ current_variant_price | money_without_trailing_zeros  }} <span class="price-incl">{{ 'products.product.include_taxes' | t }}</span>
             </span>
           </div>
             <span class="product-wishlist"></span>
@@ -250,7 +250,7 @@
                 
 
                 <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
-                  {{ current_variant_price | money_without_trailing_zeros }} <span class="price-incl">{{ 'products.product.include_taxes' | t }}</span>
+                  {{ current_variant_price | money_without_trailing_zeros  }} <span class="price-incl">{{ 'products.product.include_taxes' | t }}</span>
                 </span>
                 </div>
                 
@@ -638,7 +638,7 @@
   <div class="product-header-cta come-in no-d">
     <div class="header-cta-container">
       <div class="cta-left">
-        <span class="product-price">{{ current_variant_price | money_without_trailing_zeros  }}</span>
+        <span class="product-price">{{ current_variant_price | money_without_trailing_zeros  }} </span>
       </div>
       <div class="cta-right">
         <span class="addcart-cta addcta-multi {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%} id="AddToCartCta">{{ add_to_cart_text }}</span>

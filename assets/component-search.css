@@ -1,4 +1,4 @@
-.search__input.field__input {
+/* .search__input.field__input {
   padding-right: 5rem;
 }
 
@@ -25,9 +25,152 @@
 .search__button .icon {
   height: 1.8rem;
   width: 1.8rem;
-}
+} */
 
 /* Remove extra spacing for search inputs in Safari */
 input::-webkit-search-decoration {
   -webkit-appearance: none;
+}
+
+.grid__item:empty {
+  display: none;
+}
+
+.search_title {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.custom_search_grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 40px;
+}
+
+.custom_search_grid .grid__item {
+  width: 260px;
+  max-width: 260px;
+}
+
+.custom_search_grid .card__inner {
+  height: 300px;
+  max-height: 300px;
+}
+
+.custom_search_grid .card__media .media img {
+  object-fit: contain;
+}
+
+.custom_search_grid .card__badge {
+  display: none;
+}
+
+.visually-hidden {
+  display: none;
+}
+
+.unit-price {
+  display: none;
+}
+
+.grid__item .card__heading {
+  font-size: 16px;
+}
+
+/* component-media */
+.media {
+  display: block;
+  background-color: rgba(var(--color-foreground), 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.media--transparent {
+  background-color: transparent;
+}
+
+.media > *:not(.zoom):not(.deferred-media__poster-button),
+.media model-viewer {
+  display: block;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.media > img {
+  object-fit: cover;
+  object-position: center center;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.media--square {
+  padding-bottom: 100%;
+}
+
+.media--portrait {
+  padding-bottom: 125%;
+}
+
+.media--landscape {
+  padding-bottom: 66.6%;
+}
+
+.media--cropped {
+  padding-bottom: 56%;
+}
+
+.media--16-9 {
+  padding-bottom: 56.25%;
+}
+
+.media--circle {
+  padding-bottom: 100%;
+  border-radius: 50%;
+}
+
+.media.media--hover-effect > img + img {
+  opacity: 0;
+}
+
+.custom_page_search {
+  background-color: var(--dd-color-second);
+  opacity: .85;
+}
+
+@media screen and (min-width: 990px) {
+  .media--cropped {
+    padding-bottom: 63%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .custom_search_grid {
+    grid-template-columns: auto auto auto;
+  }
+  .custom_search_grid .grid__item {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .custom_search_grid {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .custom_search_grid {
+    grid-template-columns: auto;
+  }
+  .custom_search_grid .card__inner {
+    height: 200px;
+    max-height: 200px;
+  }
 }

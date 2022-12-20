@@ -38,6 +38,7 @@
         </div>
     {% endfor %}
   </div>
+  <div class="container all-review"><a href="{{ section.settings.all_review_url }}">{{ section.settings.all_review_text }}</a></div>
     <div class="arrow_wrapper container flex-box">
         <span class="left-arrorw-wrap">{% render 'arrow-next' %}</span>
         <span class="review_dots"></span>
@@ -54,6 +55,17 @@
       "type": "color",
       "id": "custom_review_bg",
       "label": "Background color"
+    },
+    {
+      "type": "text",
+      "id": "all_review_text",
+      "default" : "all reviews",
+      "label": "All reviews text"
+    },
+    {
+        "type": "url",
+        "id": "all_review_url",
+        "label": "All reviews url"
     },
     {
       "type": "header",

@@ -1,176 +1,9 @@
-{{ 'jp-cross-sell.css' | asset_url | stylesheet_tag }}
-
-{% assign crossSellhandle = product.handle %}
-
-<script>console.log("product handle: {{crossSellhandle}}")</script>
-
-{%- for product_collection in product.collections -%}
-	
-  {%- for link in linklists.main-design-collections.links -%}
-
-	{% assign link_url = link.url | split: "/" %}
-    {% assign link_handle = link_url.last | handleize %}
-
-    {%- if product_collection.handle == link_handle -%}
-		<script>console.log("{{ product_collection.title }}")</script>
-		<script>console.log("link: {{link.url}}")</script>
-		<script>console.log("link handle: {{link_handle}}")</script>
-      {% assign coll = product_collection.handle %}
-      {% break %}
-    {% endif %}
-  {% endfor %}
-
-  {% if coll %}
-	<script>console.log("coll: {{coll}}")</script>
-	<script>console.log("loop break")</script>
-    {% break %}
-  {% endif %}
-{% endfor %}
-
-{% assign crossSellCount = 0 %}
-{% for product in collections[coll].products limit:24 %}
-    {% unless product.type == "City Bag" or product.type == "Box Filled" or product.type == "Pencil Case" or product.type == "Case Double" or product.type == "Pencil Box" or product.type == "Alle"  or product.type == "Box" or product.type == "Drinking Bottle" or product.type == "Girls" or product.type == "Keychain" or product.type == "Keychain charm" or product.type == "Ludilabel" or product.type == "Goedgemerkt" or product.type == "Jeune Premier / Goedgemerkt" or product.type == "File Folder" or product.type == "Alle" or product.type == "Wrapping paper" or product.type == "Name label" or product.type == "Fun Label" %}
-    	{% continue %}
-    {% endunless %}
-    {% if product.handle == crossSellhandle %}
-        {% continue %}
-    {% endif %}
-    
-	<script>console.log("product: {{product.type}} - {{product.handle}}")</script>
-    {% assign crossSellCount = crossSellCount | plus: 1 %}
-
-{% endfor %}
-
-<script>console.log("crossSellCount: {{crossSellCount}}")</script>
-
-<div class="drawer-cross-sell-cart {% if crossSellCount == 0 %}no-disp{% endif %}">
-  <div class="drawer-cross-sell-header">
-    <span class="close-cross-sell-cart light">{% include 'svg-arrow' %} <span class="no-sm">{{ 'general.cart.back' | t }}</span></span>
-    <h2 class="cart-headign">{{ section.settings.cross_sell_header }}</h2>
-  </div>
-  <div class="cross-sell-body">
-    {% for product in collections[coll].products limit:24 %}
-    
-      {% unless product.type == "City Bag" or product.type == "Box Filled" or product.type == "Pencil Case" or product.type == "Case Double" or product.type == "Pencil Box" or product.type == "Alle"  or product.type == "Box" or product.type == "Drinking Bottle" or product.type == "Girls" or product.type == "Keychain" or product.type == "Keychain charm" or product.type == "Ludilabel" or product.type == "Goedgemerkt" or product.type == "Jeune Premier / Goedgemerkt" or product.type == "File Folder" or product.type == "Alle" or product.type == "Wrapping paper" or product.type == "Name label" or product.type == "Fun Label" %}
-          {% continue %}
-      {% endunless %}
-      {% if product.handle == crossSellhandle %}
-          {% continue %}
-      {% endif %}
-    
-      <div class="cross-sell-product">
-        <div class="cross-sell-product-img">
-          <a href="{{ product.url }}">
-            <img src="{{ product.featured_image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
-          </a>
-        </div>
-        <div class="cross-sell-details">
-          <div class="cross-sell-product-title medium">
-            <a href="{{ product.url }}">
-              {{ product.title | split: " - " | first }}
-            </a>
-          </div>
-          <div class="cross-sell-product-price medium">{{ product.price | times: 1 | money_without_trailing_zeros | strip_html }}</div>
-          <div class="cross-sell-accordion">
-            <div class="cross-sell-moreinfo">{{ section.settings.more_info }} <span class="cross-sell-icon">+</span></div>
-            <div class="cross-sell-infopanel">{{ product.description | strip_html | truncatewords: 20 }}</div>
-          </div>
-          
-          {% assign noAddToCartFromCollection = false %}
-          {% if product.type == 'Ludilabel' or product.type == 'Goedgemerkt' or product.type == 'Keychain letter' or product.type == 'Keychain charm' %}
-          {% assign noAddToCartFromCollection = true %}
-          {% endif %}
-          {% unless product.selected_or_first_available_variant.available %}
-          {% assign noAddToCartFromCollection = true %}
-          {% endunless %}
-          {%- unless noAddToCartFromCollection -%}
-          <button class="cross-sell-add-product" data-variant="{{ product.first_available_variant.id }}">{{section.settings.cross_sell_add_to_cart}}</button>
-          <button class="cross-sell-add-product added-product no-disp">{{section.settings.cross_sell_added_to_cart}}</button>
-          {%- else -%}
-          <a href="{{ product.url }}" class="cross-sell-add-product">{{section.settings.cross_sell_add_to_cart}}</a>
-          {%- endunless -%}
-          
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-</div>
-<div class="background-drawer-cross-sell {% if crossSellCount == 0 %}no-disp{% endif %}"></div>
-
-
-<script>
-  $('.close-cross-sell-cart,.background-drawer-cross-sell').click(function() {
-    $('.drawer-cross-sell-cart').removeClass('drawn');
-    $('.background-drawer-cross-sell').removeClass('drawn');
-    $('body').removeClass('no-scroll');
-  });
-  
-  $(".cross-sell-add-product:not(.added-product)").click(function() {
-    if($(this).data('variant')) {
-    var notAdded = false;
-    var formData;
-        formData = {
-          'items': [{
-            'id': parseInt($(this).data('variant')),
-            'quantity': 1
-          }]
-        };
-      $.ajax({
-        url: "/cart/add.js",
-        method: "POST",
-        dataType: "json",
-        data: formData,
-      })
-      .done(function( data ) {
-        checkFreeProduct();
-        $.ajax({
-          url: '{% unless routes.root_url == "/" %}{{ routes.root_url }}{% endunless %}/?sections=jp-cart',
-          method: "GET",
-          dataType: "json"
-        })
-        .done(function( data ) {
-          {% include "cart-done" %}
-        })
-        .fail(function(error) {
-          console.log( error );
-          $('.load-container').remove();
-        });
-      })
-      .fail(function(error) {
-        notAdded = true;
-        console.log( error );
-        $('.load-container').remove();
-      });
-      
-      if(notAdded != true) {
-        $(this).next().removeClass("no-disp");
-        $(this).addClass("no-disp");
-      }
-    }
-  });
-  
-  ///----- Auto-Close Accordion
-  $(document).ready(function() {
-    //--- initial state of elements
-    $('.cross-sell-infopanel').hide()
-    //----- click function
-    $(".cross-sell-accordion").find(".cross-sell-moreinfo").click(function() { //---- tabs or buttons
-      //---- active class
-      $(".cross-sell-accordion").find(".cross-sell-moreinfo").removeClass('active');
-      $(this).closest('.cross-sell-accordion').find('.cross-sell-infopanel').slideUp();
-      var selected = $(this).next('.cross-sell-infopanel');
-      if (selected.is(":hidden")) {
-        $(this).next('.cross-sell-infopanel').slideDown();
-        $(this).toggleClass('active');
-      }
-    });
-  });
-</script>
+{% render 'jp-product-cross-sell-options' %}
 
 {% schema %}
   {
     "name": "JP Product Cross Sell",
-	"class": "product-cross-sell",
+	  "class": "product-cross-sell",
     "settings": [
       {
         "type": "text",
@@ -178,19 +11,19 @@
         "label": "Cross Sell Cart Header",
         "default": "Fully Packed"
       },
-	  {
+	    {
         "type": "text",
         "id": "more_info",
         "label": "More Info text",
         "default": "More info"
       },
-	  {
+	    {
         "type": "text",
         "id": "cross_sell_add_to_cart",
         "label": "Cross Sell Add to Cart text",
         "default": "SHOP NOW &#43;"
       },
-	  {
+	    {
         "type": "text",
         "id": "cross_sell_added_to_cart",
         "label": "Cross Sell Added to Cart text",
