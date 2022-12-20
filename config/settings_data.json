@@ -268,7 +268,8 @@
         "settings": {
           "title": "Would you like to know what we are up to?",
           "desc": "Be the first to discover new products, behind-the-scenes stories and promotions.",
-          "policies_text": "<p>Note: You can unsubscribe from the newsletter at any time. See our <a href=\"https:\/\/www.jeunepremier.com\/pages\/privacy-cookie-policy\" target=\"_blank\" title=\"https:\/\/www.jeunepremier.com\/pages\/privacy-cookie-policy\">privacy policy<\/a> and our <a href=\"https:\/\/www.jeunepremier.com\/pages\/terms-conditions-b2c\" target=\"_blank\" title=\"https:\/\/www.jeunepremier.com\/pages\/terms-conditions-b2c\">general terms and conditions<\/a>. <\/p>"
+          "policies_text": "<p>Note: You can unsubscribe from the newsletter at any time. See our <a href=\"https:\/\/www.jeunepremier.com\/pages\/privacy-cookie-policy\" target=\"_blank\" title=\"https:\/\/www.jeunepremier.com\/pages\/privacy-cookie-policy\">privacy policy<\/a> and our <a href=\"https:\/\/www.jeunepremier.com\/pages\/terms-conditions-b2c\" target=\"_blank\" title=\"https:\/\/www.jeunepremier.com\/pages\/terms-conditions-b2c\">general terms and conditions<\/a>. <\/p>",
+          "klaviyo_id": "Yvx9Gs"
         }
       },
       "jp-product-cross-sell-options": {
@@ -385,7 +386,9 @@
               "block_country9": "Russia-ru",
               "block_lang9": "ru",
               "block_country10": "United States-en",
-              "block_lang10": "en,fr,de"
+              "block_lang10": "en,fr,de",
+              "block_country11": "Korean-ko",
+              "block_lang11": "ko"
             }
           }
         },
