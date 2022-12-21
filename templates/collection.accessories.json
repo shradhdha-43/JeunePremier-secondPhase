@@ -30,6 +30,7 @@
       "blocks": {
         "03405d13-a387-4e10-ad2d-d719aafe66a8": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection_title": "Model",
             "collection1": "School Bags",
@@ -52,6 +53,32 @@
             "collection_tag9": "",
             "collection10": "",
             "collection_tag10": ""
+          }
+        },
+        "2f4e6c4e-5e78-4437-a351-b58369a56c04": {
+          "type": "collection",
+          "settings": {
+            "collection_title": "Accessories",
+            "collection1": "Pencilbox",
+            "collection_tag1": "school-accessories-pencil-case",
+            "collection2": "Lunchbox",
+            "collection_tag2": "lunchbox",
+            "collection3": "Drinking Bottle",
+            "collection_tag3": "drinking-bottles",
+            "collection4": "Led lights",
+            "collection_tag4": "Led-lights",
+            "collection5": "Keychain",
+            "collection_tag5": "school-accessories-key-chain",
+            "collection6": "Cleaner",
+            "collection_tag6": "cleaner",
+            "collection7": "Watch",
+            "collection_tag7": "watch",
+            "collection8": "Wallets",
+            "collection_tag8": "wallet",
+            "collection9": "Bodyglowers",
+            "collection_tag9": "Bodyglower",
+            "collection10": "Stationery",
+            "collection_tag10": "Stationery"
           }
         },
         "9eacd4fc-4cbb-47d1-acc6-1b97288cc999": {
@@ -218,33 +245,6 @@
             "image_swatch20": "shopify:\/\/shop_images\/Rainbow_Deer_163.png"
           }
         },
-        "2f4e6c4e-5e78-4437-a351-b58369a56c04": {
-          "type": "collection",
-          "disabled": true,
-          "settings": {
-            "collection_title": "Accessories",
-            "collection1": "Pencilbox",
-            "collection_tag1": "school-accessories-pencil-case",
-            "collection2": "Lunchbox",
-            "collection_tag2": "lunchbox",
-            "collection3": "Drinking Bottle",
-            "collection_tag3": "drinking-bottles",
-            "collection4": "Led lights",
-            "collection_tag4": "Led-lights",
-            "collection5": "Keychain",
-            "collection_tag5": "school-accessories-key-chain",
-            "collection6": "Cleaner",
-            "collection_tag6": "cleaner",
-            "collection7": "Watch",
-            "collection_tag7": "watch",
-            "collection8": "",
-            "collection_tag8": "",
-            "collection9": "",
-            "collection_tag9": "",
-            "collection10": "",
-            "collection_tag10": ""
-          }
-        },
         "cb3fc11e-73e0-4a23-bc10-fb0d22f69139": {
           "type": "collection",
           "disabled": true,
@@ -341,11 +341,11 @@
       },
       "block_order": [
         "03405d13-a387-4e10-ad2d-d719aafe66a8",
+        "2f4e6c4e-5e78-4437-a351-b58369a56c04",
         "9eacd4fc-4cbb-47d1-acc6-1b97288cc999",
         "97dba447-d7b6-41ec-a2ad-eda47f7b80bd",
         "5cbdd836-ea08-463e-b7e8-1157bc52c811",
         "37cf82a1-abd9-4749-b35c-c99d4c654e95",
-        "2f4e6c4e-5e78-4437-a351-b58369a56c04",
         "cb3fc11e-73e0-4a23-bc10-fb0d22f69139",
         "2c5bf433-7477-45ec-8489-9cdd2db2f722"
       ],
