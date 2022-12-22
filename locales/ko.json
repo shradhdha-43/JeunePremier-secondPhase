@@ -178,7 +178,8 @@
       "shipping_from": "벨기에에서 배송",
       "meet": "특징",
       "our_products_on_instagram": "영감을 얻고 룩을 쇼핑하세요",
-      "bis_trigger": "알림 - 재고 있음"
+      "bis_trigger": "알림 - 재고 있음",
+      "exclude_taxes": "세금이 제외됩니다."
     },
     "modal": {
       "label": "미디어 갤러리"
