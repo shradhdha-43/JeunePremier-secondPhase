@@ -200,7 +200,9 @@
         "july": "7월",
         "august": "8월",
         "september": "9월",
-        "october": "10월"
+        "october": "10월",
+        "november": "11월",
+        "december": "12월"
       }
     },
     "modal": {
