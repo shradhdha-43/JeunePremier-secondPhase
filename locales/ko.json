@@ -152,7 +152,31 @@
       },
       "view_full_details": "전체 세부 정보 보기",
       "include_taxes": "세금이 포함됩니다.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">배송료<\/a>는 결제 시 계산됩니다."
+      "shipping_policy_html": "<a href=\"{{ link }}\">배송료<\/a>는 결제 시 계산됩니다.",
+      "back": "컬렉션으로 돌아가기",
+      "reviews": "리뷰",
+      "back_short": "돌아가기",
+      "free_shipping": "주문할 때마다 무료 토트백",
+      "last_item": "마지막 아이템",
+      "label_info": {
+        "info": "24에서부터 사용된 글자",
+        "error1": "총 글자 수 제한 도달(최대 24자)",
+        "error2": "개별 줄 제한 도달(최대 16자)",
+        "error3": "이름 및\/또는 성 입력",
+        "inst": "각 줄은 16자로 제한됩니다. 두 줄 모두 최대 24자로 제한됩니다.",
+        "name": "어린이 이름:"
+      },
+      "service_text": {
+        "first_html": "오후 4시 이전 주문시, 당일 발송",
+        "second_html": "표준 배송 시간은 영업일 기준 2-4일",
+        "third_html": "프리미엄 배송 가능 영업일 기준 1~2일",
+        "fourth_html": "반품 14일간",
+        "fifth_html": "안전한 결제",
+        "name": "어린이 이름:",
+        "inst": "각 줄은 16자로 제한됩니다. 두 줄을 합하면 24자로 제한됩니다."
+      },
+      "shipping_from": "벨기에에서 배송",
+      "meet": "특징"
     },
     "modal": {
       "label": "미디어 갤러리"
