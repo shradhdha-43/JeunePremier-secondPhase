@@ -179,7 +179,29 @@
       "meet": "특징",
       "our_products_on_instagram": "영감을 얻고 룩을 쇼핑하세요",
       "bis_trigger": "알림 - 재고 있음",
-      "exclude_taxes": "세금이 제외됩니다."
+      "exclude_taxes": "세금이 제외됩니다.",
+      "more": "악세사리",
+      "new": "잭",
+      "bestseller": "베스트셀러",
+      "no_info": "정보 없음",
+      "size_chart": "사이즈와 핏을 확인하세요",
+      "preorder": "사전주문",
+      "preorder_info_html": "<p>신제품: 이제 미리 주문할 수 있습니다!<br><\/p>\n<p><meta charset=\"utf-8\"><span data-mce-fragment=\"1\">여러분이 가장 좋아하는 젠느프리미어 제품을 곧 받을 것이라고 100% 확신할 수 있습니다.<\/span><br data-mce-fragment=\"1\">해당 상품은 7월 1일 발송하고 개별 안내드리겠습니다.<\/p>",
+      "preorder_property_label": "사전주문",
+      "preorder_property_value": "7월 1일부터 배송",
+      "back_in_stock_in": "재고 있음",
+      "months": {
+        "january": "1월",
+        "february": "2월",
+        "march": "3월",
+        "april": "4월",
+        "may": "5월",
+        "june": "6월",
+        "july": "7월",
+        "august": "8월",
+        "september": "9월",
+        "october": "10월"
+      }
     },
     "modal": {
       "label": "미디어 갤러리"
