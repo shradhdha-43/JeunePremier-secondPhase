@@ -3,15 +3,20 @@
     "164498287406219e49": {
       "type": "jp-hero",
       "settings": {
-        "custom_hero_video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/8cae60ea64564a4a859d835b6f5f11db.mp4",
+        "image": "shopify:\/\/shop_images\/142A7713.jpg",
+        "custom_hero_video": "",
         "heading": "",
         "text_align": "center",
         "heading_color": "#333333",
         "desktop_allignment": "end",
         "mobile_allignment": "end",
         "justify_allignment": "center",
-        "headinglink": "shopify:\/\/collections\/the-gift-guide",
-        "headinglinktext": "SHOP THE GIFT GUIDE"
+        "headinglink": "shopify:\/\/collections\/essentials",
+        "headinglinktext": "SHOP THE ESSENTIALS",
+        "hero_button_bg": "#333333",
+        "hero_text_color": "#ffffff",
+        "hero_button_hover_bg_color": "#fee1e6",
+        "hero_button_hover_text_color": "#333333"
       }
     },
     "164498288980aebb7d": {
