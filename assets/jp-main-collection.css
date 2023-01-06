@@ -31,6 +31,10 @@
   background-color: #ffffff;
 }
 
+.collection-products .product-images-block img:last-child {
+  object-fit: cover;
+}
+
 .product-images-block:hover img:last-child {
   opacity: 1;
 }
