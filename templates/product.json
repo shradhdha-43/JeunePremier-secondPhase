@@ -85,6 +85,7 @@
     },
     "16454287984d026596": {
       "type": "jp-img-scribble-txt",
+      "disabled": true,
       "settings": {
         "link_type": "btn",
         "img_aligment": "left",
