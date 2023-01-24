@@ -132,7 +132,11 @@
               </a>
             </div>
             <div class="cross-sell-product-price">
-              {{ product.price | times: 1 | money_without_trailing_zeros  | strip_html }}
+              {% if localization.country.currency.iso_code == 'EUR' %}
+                {{ product.price | times: 1 | money_without_currency | replace: ",00",",-" }}
+              {% else %}
+                {{ product.price | times: 1 | money_without_trailing_zeros  | strip_html }}
+              {% endif %}
             </div>
 
             <div class="cross-sell-accordion no-disp">

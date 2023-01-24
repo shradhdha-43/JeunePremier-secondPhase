@@ -27,7 +27,13 @@
                     {{ product.title | escape }}
                   </a>
             <div class="upsell-prod-variant light">{{ product.title }}</div>
-            <div class="upsell-prod-price light">{{ product.price | money_without_trailing_zeros  }}</div>
+            <div class="upsell-prod-price light">
+              {% if localization.country.currency.iso_code == 'EUR' %}
+                {{ product.price | money_without_currency | replace: ",00",",-" }}
+              {% else %}
+                {{ product.price | money_without_trailing_zeros  }}
+              {% endif %}
+            </div>
           </div>
           <div class="upsell-add-to-cart">+</div>
         </div>

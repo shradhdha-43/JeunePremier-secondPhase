@@ -179,7 +179,24 @@
               <div class="delete-text">{{ section.settings.delete_text }}</div>
             </div>
             {% comment %}{% endcomment %}
-            <div class="product-price">{% if item.variant.compare_at_price > item.variant.price %}<span class="product-discount-price">{{- item.variant.compare_at_price | times: vat | money_without_trailing_zeros | replace: " ","" -}}</span>{% endif %}<span class="product-selling-price">{{ item.final_price | times: vat | money_without_trailing_zeros  }} </span></div>
+            <div class="product-price">
+              {% if item.variant.compare_at_price > item.variant.price %}
+                <span class="product-discount-price">
+                  {%- if localization.country.currency.iso_code == 'EUR' -%}
+                    {{- item.variant.compare_at_price | times: vat | money_without_currency | replace: " ","" | replace: ",00",",-" -}}
+                  {%- else -%}
+                    {{- item.variant.compare_at_price | times: vat | money_without_trailing_zeros | replace: " ","" -}}
+                  {%- endif -%}
+                </span>
+              {% endif %}
+              <span class="product-selling-price">
+                {%- if localization.country.currency.iso_code == 'EUR' -%}
+                  {{ item.final_price | times: vat | money_without_currency | replace: ",00",",-" }} 
+                {%- else -%}
+                  {{ item.final_price | times: vat | money_without_trailing_zeros  }} 
+                {%- endif -%} 
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -193,7 +210,18 @@
       <div class="drawer-cart-checkout">
         <div class="checkout-subtotal justify-between">
           <div class="checkout-title">{{ section.settings.subtotal_text }}</div>
-          <div class="subtotal">{{ cart.total_price | times: vat | money_without_trailing_zeros  }} {% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</div>
+          <div class="subtotal">
+            {%- if localization.country.currency.iso_code == 'EUR' -%}
+              {{ cart.total_price | times: vat | money_without_currency | replace: ',00',',-'  }} 
+            {%- else -%}
+              {{ cart.total_price | times: vat | money_without_trailing_zeros  }} 
+            {%- endif -%} 
+            {% if localization.country.iso_code == 'CH' %}
+              {{ 'products.product.exclude_taxes' | t }}
+              {% else %}
+              {{ 'products.product.include_taxes' | t }}
+            {% endif %}
+          </div>
         </div>
         <div class="checkout-shipping justify-between">
           <div class="shipping-title">{{ section.settings.shipping_text }}</div>
@@ -268,7 +296,24 @@
             <div class="upsell-product-title-price">
               <a href="{{ upsellx.url }}" class="product-name">{{ upsellx.title | split: " - " | first }}</a>
               <div class="product-color">{{ upsellx.title | split: " - " | last }}</div>
-              <div class="product-price upsell-price">{% if upsellx.compare_at_price > upsellx.price %}<span class="product-compare-price upsell-compare-price">{{ upsellx.compare_at_price | times: vat | money_without_trailing_zeros  }} </span>{% endif %}<span class="product-selling-price">{{ upsellx.price | times: vat | money_without_trailing_zeros  }} </span></div>
+              <div class="product-price upsell-price">
+                {% if upsellx.compare_at_price > upsellx.price %}
+                  <span class="product-compare-price upsell-compare-price">
+                    {%- if localization.country.currency.iso_code == 'EUR' -%}
+                      {{ upsellx.compare_at_price | times: vat | money_without_currency | replace: ',00',',-' }} 
+                    {%- else -%}
+                      {{ upsellx.compare_at_price | times: vat | money_without_trailing_zeros  }} 
+                    {%- endif -%}
+                  </span>
+                {% endif %}
+                <span class="product-selling-price">
+                  {%- if localization.country.currency.iso_code == 'EUR' -%}
+                    {{ upsellx.price | times: vat | money_without_currency | replace: ',00',',-' }} 
+                  {%- else -%}
+                    {{ upsellx.price | times: vat | money_without_trailing_zeros  }} 
+                  {%- endif -%}
+                </span>
+              </div>
             </div>
 
             <div class="add-upsell-prod" data-variant="{{ upsellx.variants.first.id }}"><span class="icon-plus">{% include 'icon-plus-new' %}</span></div>
