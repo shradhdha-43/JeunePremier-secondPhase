@@ -88,7 +88,22 @@
         <div class="product-image" id="ProductPhoto">
           <div class="no-d">
             <a class="back-btn" href="/collections/all">{% render "svg-arrow" %} {{ 'products.product.back' | t }}</a>
-            <h1>{{ product.title | split: " - " | first }}</h1>    
+            
+            <!--  MOBILE TITLE & PRICE  --> 
+            <div class="title_price_wrapper">
+              <h1>{{ product.title | split: " - " | first }}</h1>    
+                <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
+                  {%- if localization.country.currency.iso_code == 'EUR' -%}
+                    {{ current_variant_price | money_without_currency | replace: ",00",",-" }}
+                  {%- else -%}
+                    {{ current_variant_price | money_without_trailing_zeros }}
+                  {%- endif -%}  
+                  {% comment %}
+                    HIDE TAX TEXT
+                  <span class="price-incl">{% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</span>
+                  {% endcomment %}
+                </span>
+            </div>     
 
             <div class="review-box">
               {% assign no_of_rev = 0 %}
@@ -114,10 +129,12 @@
               </a>
             </div>
 
-
+           {% comment %}
+            OLD PRICE PLACEMENT
             <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
               {{ current_variant_price | money_without_trailing_zeros  }} <span class="price-incl">{% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</span>
             </span>
+            {% endcomment %}
           </div>
             <span class="product-wishlist"></span>
           <div class="product-image-content">
@@ -225,7 +242,22 @@
                 
                 <div class="no-t-m">
                 <a class="back-btn" href="/collections/all">{% render "svg-arrow" %} {{ 'products.product.back_short' | t }}</a>
-                <h1>{{ product.title | split: " - " | first }}</h1>    
+                
+                <!--  DESKTOP TITLE & PRICE  --> 
+                <div class="title_price_wrapper">
+                  <h1>{{ product.title | split: " - " | first }}</h1>
+                  <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
+                    {% if localization.country.currency.iso_code == 'EUR' %}
+                      {{ current_variant_price | money_without_currency | replace: ",00",",-"  }}
+                    {% else %}
+                      {{ current_variant_price | money_without_trailing_zeros  }} 
+                    {% endif %}
+                    {% comment %}
+                      HIDE TAX TEXT
+                      <span class="price-incl">{% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</span>
+                    {% endcomment %}
+                  </span>
+                </div>    
                 
 				<div class="review-box">
                     {% assign no_of_rev = 0 %}
@@ -251,10 +283,11 @@
                     </a>
                 </div>
                 
-
+              {% comment %}
                 <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
                   {{ current_variant_price | money_without_trailing_zeros  }} <span class="price-incl">{% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</span>
                 </span>
+              {% endcomment %}
                 </div>
                 
                 {% if product.type == keychain_charm_type_name
@@ -539,8 +572,8 @@
                       
                       var $priceCharm = $('.keychain-charm .active').first().data('price');
                       var $priceLetter = $('.keychain-letter .active').first().data('price');
-                      $('#ProductPrice').html(`€`+(($priceCharm+$priceLetter)/100).toFixed(2).replace(/\.0+$/,'').replace('.',',')+` <span class="price-incl">{% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</span>`)
-                      $('.product-price').html(`€`+(($priceCharm+$priceLetter)/100).toFixed(2).replace(/\.0+$/,'').replace('.',','))
+                      $('#ProductPrice').html((($priceCharm+$priceLetter)/100).toFixed(2).replace(/\.0+$/,'').replace('.',','))
+                      $('.product-price').html((($priceCharm+$priceLetter)/100).toFixed(2).replace(/\.0+$/,'').replace('.',','))
                       
                       var $titleCharm = $('.keychain-charm .active').first().data('name');
                       var $titleLetter = $('.keychain-letter .active').first().data('name');
@@ -821,7 +854,13 @@
   <div class="product-header-cta come-in no-d">
     <div class="header-cta-container">
       <div class="cta-left">
-        <span class="product-price">{{ current_variant_price | money_without_trailing_zeros  }} </span>
+        <span class="product-price">
+          {% if localization.country.currency.iso_code == 'EUR' %}
+            {{ current_variant_price | money_without_currency | replace: ",00",",-" }}
+          {% else %}
+            {{ current_variant_price | money_without_trailing_zeros  }}
+          {% endif %}
+        </span>
       </div>
       <div class="cta-right">
         <span class="addcart-cta addcta-multi {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%} id="AddToCartCta">{{ add_to_cart_text }}</span>

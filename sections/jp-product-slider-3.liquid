@@ -107,7 +107,11 @@
                 </div>
               	<div class="product-pirce medium">                  
                   <a href="{{ product.url }}">
-                    {{ product.price | times: 1 | money_without_trailing_zeros | strip_html }} 
+                    {% if localization.country.currency.iso_code == 'EUR' %}
+                      {{ product.price | times: 1 | money_without_currency | replace: ",00",",-" }}
+                    {% else %}
+                      {{ product.price | times: 1 | money_without_trailing_zeros  | strip_html }}
+                    {% endif %} 
                   </a>
               </div>
              
@@ -200,7 +204,11 @@
                 </div>
               	<div class="product-pirce medium">                  
                   <a href="{{ product.url }}">
-                    {{ product.price | times: 1 | money_without_trailing_zeros | strip_html }} 
+                    {% if localization.country.currency.iso_code == 'EUR' %}
+                      {{ product.price | times: 1 | money_without_currency | replace: ",00",",-" }}
+                    {% else %}
+                      {{ product.price | times: 1 | money_without_trailing_zeros  | strip_html }}
+                    {% endif %} 
                   </a>
               </div>
              
