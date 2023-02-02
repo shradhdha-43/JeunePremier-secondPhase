@@ -531,9 +531,6 @@
       "contact": {
         "address1_label": "Streetname + house number",
         "address_title": "Streetname + house number"
-      },
-      "delivery_options": {
-        "shipping_address": "Shipping address (only in english lang)"
       }
     }
   }
