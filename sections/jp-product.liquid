@@ -75,7 +75,7 @@
   {%- endif -%}
 {%- endfor -%}
 
-
+<div class="{% for tag in product.tags %} {{ tag }} {% endfor %}">
   <div class="product-wrapper">
 
     <div class="product-single container" data-rv-handle="{{ product.handle }}">
@@ -625,6 +625,21 @@
     </script>
     {% endunless %}
   </div>
+</div>
+<!-- START HIDE EARLY ACCESS PRODUCT -->
+<script>
+  $(document).ready(function() {
+    if (!localStorage.getItem("password")) {
+      $(".private").hide();
+      window.location.replace("{{ routes.root_url }}");
+    } else {
+      $(".private").show();
+    }
+  });
+</script>
+<!-- END HIDE EARLY ACCESS PRODUCT -->
+
+
 
 <script>
   

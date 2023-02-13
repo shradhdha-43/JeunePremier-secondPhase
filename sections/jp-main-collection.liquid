@@ -1,6 +1,379 @@
 {{ 'jp-main-collection.css' | asset_url | stylesheet_tag }}
+{% style %}
+.password_main {
+    margin: 100px auto;
+	padding: 0px 15px;
+    text-align: center;
+}
+.input_class_wrap{
+	margin: 0px auto;
+    max-width: 590px;
+}
+.pass_heading{
+	max-width:900px;
+	margin: 0px auto;
+	text-align: center;
+	font-size:28px;
+	margin-bottom:18px;
+}
+{% endstyle %}
 {% assign coll = section.settings.collection %}
 
+{% if collection.metafields.custom.private == true %}
+
+	<div id="password-section" class="password_main">
+		<h1 class="pass_heading">{{- section.settings.enter_pass -}}</h1>
+		<div class="input_class_wrap">
+			<input type="password" id="password-input" placeholder="🔑 Enter Password...">
+			<button id="submit-button" class="btn">{{ section.settings.submit_pass }}</button>
+			<h4>
+				<div id="error-section" class="password_error" style="display: none;">
+					{{- section.settings.wrong_password -}}
+				</div>
+			</h4>
+		</div>
+	</div>
+	<div id="content-section" style="display: none;">
+		<div class="jp-collection-banner">
+			<div class="container">
+				<div class="banner_container_wrapper flex-box justify-between align-center">
+					<div class="jpcb_text_block">
+						<div class="jpcb_banner_heading">{{ collection.title }}</div>
+						<div class="jpcb_banner_content">{{ collection.description }}</div>
+					</div>
+					<div class="jpcb_image_block">
+						{% assign media = collection.metafields.custom.collection_banner_video.value %}
+						
+						{% if collection.metafields.custom.collection_banner_video.value != blank %}
+							{% if media.media_type == 'video' %}
+								{{ media | video_tag: image_size: '1000x', controls: false, autoplay: true , loop: true }}
+							{% else %}
+								<img  class="banner_image" src="{{ collection.metafields.custom.collection_banner_video.value | image_url: height: 2000 }}" loading="lazy" alt="Banner Image">
+						{% endif %}
+							{% elsif collection.image != blank %}
+							<img  class="banner_image" src="{{ collection.image | image_url: height: 2000 }}" loading="lazy" alt="Banner Image">
+						{% else %}
+							<img  class="banner_image" src="{{ collection.products.first | image_url: height: 2000 }}" loading="lazy" alt="Banner Image">
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="jp-main-collection">
+		<div class="container">
+			<div class="jp-main-collection-content flex-box justify-between">
+			<div class="collection-filters rel">
+				<div class="filter-title-wrap justify-between no-t-m">
+				<div class="filter-title medium">{{ section.settings.filter_text }}</div>
+				<div class="filter-total-products light">(<span class="no-of-prods">{{ collection.products | size }}</span> {{ section.settings.products_text }})</div>
+				<div class="down-chev no-d">{% include 'icon-black-down-chev' %}</div>
+				</div>
+				<div class="filter-title-wrap justify-between no-d">
+				<div class="filter-title medium">{{ section.settings.filter_text }}</div>
+				<div class="down-chev no-d">{% include 'icon-black-down-chev' %}</div>
+				</div>
+				<div class="all-filter-wrap">
+				<div class="all-filter-inner-wrap">
+				<div class="filter-title-inner no-d">
+				<div class="filter-title-inner-wrap justify-between">
+					<div class="filter-title medium">{{ section.settings.filter_text }}</div>
+					<div class="reset-link medium">{{ section.settings.reset_text }}</div>
+				</div>
+				</div>
+				<div class="filter-wrap">
+				<div class="filter-sort-title-wrap accordion flex-box justify-between active" role="button">
+					<div class="filter-sort-title medium">{{ section.settings.sort_text }}</div>
+					<div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+				</div>
+				<div class="sorts filter-panel light">
+					<div class="filter-type sort bestsellers" data-value="best-selling">{{ 'sections.collection_template.bestseller' | t }}</div>
+					<div class="filter-type sort new-first" data-value="created-descending">{{ 'sections.collection_template.new' | t }}</div>
+					<div class="filter-type sort ltoh" data-value="price-ascending">{{ 'sections.collection_template.ascending' | t }}</div>
+					{% comment %}
+					<div class="filter-type sort htol" data-value="price-descending">{{ 'sections.collection_template.descending' | t }}</div>
+					{% endcomment %}
+				</div>
+				</div>
+					
+					{% for block in section.blocks %}   
+					{% case block.type %}
+					{% when 'age' %}
+					<div class="filter-wrap coll-filter">
+					<div class="filter-sort-title-wrap accordion flex-box justify-between" role="button">
+						<div class="filter-sort-title medium">{{ block.settings.age_title }}</div>
+						<div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+					</div>
+					<div class="filters filter-panel other-filters light" style="display : none;">
+						{% if block.settings.age_tag1 != '' %}
+						<div class="filter-type filter" data-value="{{ block.settings.age_tag1 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age1 }}</div>
+						{% endif %}
+						{% if block.settings.age_tag2 != '' %}
+						<div class="filter-type filter" data-value="{{ block.settings.age_tag2 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age2 }}</div>
+						{% endif %}
+						{% if block.settings.age_tag3 != '' %}
+						<div class="filter-type filter" data-value="{{ block.settings.age_tag3 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age3 }}</div>
+						{% endif %}
+						{% if block.settings.age_tag4 != '' %}
+						<div class="filter-type filter" data-value="{{ block.settings.age_tag4 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age4 }}</div>
+						{% endif %}
+						{% if block.settings.age_tag5 != '' %}
+						<div class="filter-type filter" data-value="{{ block.settings.age_tag5 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age5 }}</div>
+						{% endif %}
+						{% if block.settings.age_tag6 != '' %}
+						<div class="filter-type filter" data-value="{{ block.settings.age_tag6 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age6 }}</div>
+						{% endif %}
+						{% if block.settings.age_tag7 != '' %}
+						<div class="filter-type filter" data-value="{{ block.settings.age_tag7 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age7 }}</div>
+						{% endif %}
+						{% if block.settings.age_tag8 != '' %}
+						<div class="filter-type filter" data-value="{{ block.settings.age_tag8 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age8 }}</div>
+						{% endif %}
+						{% if block.settings.age_tag9 != '' %}
+						<div class="filter-type filter" data-value="{{ block.settings.age_tag9 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age9 }}</div>
+						{% endif %}
+						{% if block.settings.age_tag10 != '' %}
+						<div class="filter-type filter" data-value="{{ block.settings.age_tag10 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.age10 }}</div>
+						{% endif %}
+					</div>
+					</div>
+					{% when 'color' %}
+					<div class="filter-wrap">
+					<div class="filter-sort-title-wrap accordion flex-box justify-between" role="button">
+						<div class="filter-sort-title medium">{{ block.settings.color_title }}</div>
+						<div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+					</div>
+					<div class="color-filters filter-panel light" style="display : none;">
+						{% if block.settings.color_tag1 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag1 }}'><span class="color-swatch" {% if block.settings.color_swatch1 != blank %}style="background-color: {{ block.settings.color_swatch1 }};"{% endif %}>{% if block.settings.image_swatch1 != blank %}<img src="{{ block.settings.image_swatch1 | img_url: "16x" }}" alt="{{ block.settings.color1 }}">{% endif %}</span>{{ block.settings.color1 }}</div>
+						{% endif %}
+						{% if block.settings.color_tag2 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag2 }}'><span class="color-swatch" {% if block.settings.color_swatch2 != blank %}style="background-color: {{ block.settings.color_swatch2 }};"{% endif %}>{% if block.settings.image_swatch2 != blank %}<img src="{{ block.settings.image_swatch2 | img_url: "16x" }}" alt="{{ block.settings.color2 }}">{% endif %}</span>{{ block.settings.color2 }}</div>
+						{% endif %}
+						{% if block.settings.color_tag3 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag3 }}'><span class="color-swatch" {% if block.settings.color_swatch3 != blank %}style="background-color: {{ block.settings.color_swatch3 }};"{% endif %}>{% if block.settings.image_swatch3 != blank %}<img src="{{ block.settings.image_swatch3 | img_url: "16x" }}" alt="{{ block.settings.color3 }}">{% endif %}</span>{{ block.settings.color3 }}</div>
+						{% endif %}
+						{% if block.settings.color_tag4 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag4 }}'><span class="color-swatch" {% if block.settings.color_swatch4 != blank %}style="background-color: {{ block.settings.color_swatch4 }};"{% endif %}>{% if block.settings.image_swatch4 != blank %}<img src="{{ block.settings.image_swatch4 | img_url: "16x" }}" alt="{{ block.settings.color4 }}">{% endif %}</span>{{ block.settings.color4 }}</div>
+						{% endif %}
+						{% if block.settings.color_tag5 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag5 }}'><span class="color-swatch" {% if block.settings.color_swatch5 != blank %}style="background-color: {{ block.settings.color_swatch5 }};"{% endif %}>{% if block.settings.image_swatch5 != blank %}<img src="{{ block.settings.image_swatch5 | img_url: "16x" }}" alt="{{ block.settings.color5 }}">{% endif %}</span>{{ block.settings.color5 }}</div>
+						{% endif %}
+						{% if block.settings.color_tag6 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag6 }}'><span class="color-swatch" {% if block.settings.color_swatch6 != blank %}style="background-color: {{ block.settings.color_swatch6 }};"{% endif %}>{% if block.settings.image_swatch6 != blank %}<img src="{{ block.settings.image_swatch6 | img_url: "16x" }}" alt="{{ block.settings.color6 }}">{% endif %}</span>{{ block.settings.color6 }}</div>
+						{% endif %}
+						{% if block.settings.color_tag7 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag7 }}'><span class="color-swatch" {% if block.settings.color_swatch7 != blank %}style="background-color: {{ block.settings.color_swatch7 }};"{% endif %}>{% if block.settings.image_swatch7 != blank %}<img src="{{ block.settings.image_swatch7 | img_url: "16x" }}" alt="{{ block.settings.color7 }}">{% endif %}</span>{{ block.settings.color7 }}</div>
+						{% endif %}
+						{% if block.settings.color_tag8 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag8 }}'><span class="color-swatch" {% if block.settings.color_swatch8 != blank %}style="background-color: {{ block.settings.color_swatch8 }};"{% endif %}>{% if block.settings.image_swatch8 != blank %}<img src="{{ block.settings.image_swatch8 | img_url: "16x" }}" alt="{{ block.settings.color8 }}">{% endif %}</span>{{ block.settings.color8 }}</div>
+						{% endif %}
+						{% if block.settings.color_tag9 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag9 }}'><span class="color-swatch" {% if block.settings.color_swatch9 != blank %}style="background-color: {{ block.settings.color_swatch9 }};"{% endif %}>{% if block.settings.image_swatch9 != blank %}<img src="{{ block.settings.image_swatch9 | img_url: "16x" }}" alt="{{ block.settings.color9 }}">{% endif %}</span>{{ block.settings.color9 }}</div>
+						{% endif %}
+						{% if block.settings.color_tag10 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag10 }}'><span class="color-swatch" {% if block.settings.color_swatch10 != blank %}style="background-color: {{ block.settings.color_swatch10 }};"{% endif %}>{% if block.settings.image_swatch10 != blank %}<img src="{{ block.settings.image_swatch10 | img_url: "16x" }}" alt="{{ block.settings.color10 }}">{% endif %}</span>{{ block.settings.color10 }}</div>
+						{% endif %}
+						{% if block.settings.color_tag11 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag11 }}'><span class="color-swatch" {% if block.settings.color_swatch11 != blank %}style="background-color: {{ block.settings.color_swatch11 }};"{% endif %}>{% if block.settings.image_swatch11 != blank %}<img src="{{ block.settings.image_swatch11 | img_url: "16x" }}" alt="{{ block.settings.color11 }}">{% endif %}</span>{{ block.settings.color11 }}</div>
+						{% endif %}
+						{% if block.settings.color_tag12 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag12 }}'><span class="color-swatch" {% if block.settings.color_swatch12 != blank %}style="background-color: {{ block.settings.color_swatch12 }};"{% endif %}>{% if block.settings.image_swatch12 != blank %}<img src="{{ block.settings.image_swatch12 | img_url: "16x" }}" alt="{{ block.settings.color12 }}">{% endif %}</span>{{ block.settings.color12 }}</div>
+						{% endif %}
+						{% if block.settings.color_tag13 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag13 }}'><span class="color-swatch" {% if block.settings.color_swatch13 != blank %}style="background-color: {{ block.settings.color_swatch13 }};"{% endif %}>{% if block.settings.image_swatch13 != blank %}<img src="{{ block.settings.image_swatch13 | img_url: "16x" }}" alt="{{ block.settings.color13 }}">{% endif %}</span>{{ block.settings.color13 }}</div>
+						{% endif %}
+						{% if block.settings.color_tag14 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag14 }}'><span class="color-swatch" {% if block.settings.color_swatch14 != blank %}style="background-color: {{ block.settings.color_swatch14 }};"{% endif %}>{% if block.settings.image_swatch14 != blank %}<img src="{{ block.settings.image_swatch14 | img_url: "16x" }}" alt="{{ block.settings.color14 }}">{% endif %}</span>{{ block.settings.color14 }}</div>
+						{% endif %}
+						{% if block.settings.color_tag15 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag15 }}'><span class="color-swatch" {% if block.settings.color_swatch15 != blank %}style="background-color: {{ block.settings.color_swatch15 }};"{% endif %}>{% if block.settings.image_swatch15 != blank %}<img src="{{ block.settings.image_swatch15 | img_url: "16x" }}" alt="{{ block.settings.color15 }}">{% endif %}</span>{{ block.settings.color15 }}</div>
+						{% endif %}
+						{% if block.settings.color_tag16 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag16 }}'><span class="color-swatch" {% if block.settings.color_swatch16 != blank %}style="background-color: {{ block.settings.color_swatch16 }};"{% endif %}>{% if block.settings.image_swatch16 != blank %}<img src="{{ block.settings.image_swatch16 | img_url: "16x" }}" alt="{{ block.settings.color16 }}">{% endif %}</span>{{ block.settings.color16 }}</div>
+						{% endif %}
+						{% if block.settings.color_tag17 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag17 }}'><span class="color-swatch" {% if block.settings.color_swatch17 != blank %}style="background-color: {{ block.settings.color_swatch17 }};"{% endif %}>{% if block.settings.image_swatch17 != blank %}<img src="{{ block.settings.image_swatch17 | img_url: "16x" }}" alt="{{ block.settings.color17 }}">{% endif %}</span>{{ block.settings.color17 }}</div>
+						{% endif %}
+						{% if block.settings.color_tag18 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag18 }}'><span class="color-swatch" {% if block.settings.color_swatch18 != blank %}style="background-color: {{ block.settings.color_swatch18 }};"{% endif %}>{% if block.settings.image_swatch18 != blank %}<img src="{{ block.settings.image_swatch18 | img_url: "16x" }}" alt="{{ block.settings.color18 }}">{% endif %}</span>{{ block.settings.color18 }}</div>
+						{% endif %}
+						{% if block.settings.color_tag19 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag19 }}'><span class="color-swatch" {% if block.settings.color_swatch19 != blank %}style="background-color: {{ block.settings.color_swatch19 }};"{% endif %}>{% if block.settings.image_swatch19 != blank %}<img src="{{ block.settings.image_swatch19 | img_url: "16x" }}" alt="{{ block.settings.color19 }}">{% endif %}</span>{{ block.settings.color19 }}</div>
+						{% endif %}
+						{% if block.settings.color_tag20 != '' %}
+						<div class="filter-type colors-filter filter" data-value='{{ block.settings.color_tag20 }}'><span class="color-swatch" {% if block.settings.color_swatch20 != blank %}style="background-color: {{ block.settings.color_swatch20 }};"{% endif %}>{% if block.settings.image_swatch20 != blank %}<img src="{{ block.settings.image_swatch20 | img_url: "16x" }}" alt="{{ block.settings.color20 }}">{% endif %}</span>{{ block.settings.color20 }}</div>
+						{% endif %}
+					</div>              
+					</div>
+					{% else %}              
+					<div class="filter-wrap coll-filter">
+						<div class="filter-sort-title-wrap accordion flex-box justify-between active" role="button">
+						<div class="filter-sort-title medium">{{ block.settings.collection_title }}</div>
+						<div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+						</div>
+						<div class="filters filter-panel light">
+						{% if block.settings.collection_tag1 != '' %}
+						<div class="filter-type collection" data-value="{{ block.settings.collection_tag1 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection1 }}</div>
+						{% endif %}
+						{% if block.settings.collection_tag2 != '' %}
+						<div class="filter-type collection" data-value="{{ block.settings.collection_tag2 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection2 }}</div>
+						{% endif %}
+						{% if block.settings.collection_tag3 != '' %}
+						<div class="filter-type collection" data-value="{{ block.settings.collection_tag3 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection3 }}</div>
+						{% endif %}
+						{% if block.settings.collection_tag4 != '' %}
+						<div class="filter-type collection" data-value="{{ block.settings.collection_tag4 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection4 }}</div>
+						{% endif %}
+						{% if block.settings.collection_tag5 != '' %}
+						<div class="filter-type collection" data-value="{{ block.settings.collection_tag5 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection5 }}</div>
+						{% endif %}
+						{% if block.settings.collection_tag6 != '' %}
+						<div class="filter-type collection" data-value="{{ block.settings.collection_tag6 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection6 }}</div>
+						{% endif %}
+						{% if block.settings.collection_tag7 != '' %}
+						<div class="filter-type collection" data-value="{{ block.settings.collection_tag7 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection7 }}</div>
+						{% endif %}
+						{% if block.settings.collection_tag8 != '' %}
+						<div class="filter-type collection" data-value="{{ block.settings.collection_tag8 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection8 }}</div>
+						{% endif %}
+						{% if block.settings.collection_tag9 != '' %}
+						<div class="filter-type collection" data-value="{{ block.settings.collection_tag9 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection9 }}</div>
+						{% endif %}
+						{% if block.settings.collection_tag10 != '' %}
+						<div class="filter-type collection" data-value="{{ block.settings.collection_tag10 }}"><span class="checkbox"><span class="inner-checkbox"></span></span>{{ block.settings.collection10 }}</div>
+						{% endif %}
+						</div>
+					</div>
+					{% endcase %}
+					{% endfor %}
+				</div>
+				<div class="filter-lower-part no-d">
+					<div class="button apply-filter-btn">{{ section.settings.show_all }}</div>
+					<div class="close-filter-drawer-button"><span class="close-text light">{{ section.settings.close_text }}</span><span class="close-icon">{% include 'icon-close' %}</span></div>
+				</div>
+				</div>
+			</div>
+			<div class="collection-products flex-box prod-coll-page">
+				{% paginate collection.products by 500 %}
+				{% for product in collection.products %}
+				{% if product.id != 7381981921448 %}
+				<div class="product-card{% for tag in product.tags %} tag-{{ tag }}{% endfor %}">
+					<div class="product-images-block rel">
+					<a href="{{ product.url }}">
+					
+					{% assign collection_is_bestellers = false %}
+					{% assign is_bestseller = false %}
+					{% assign last_items = false %}
+					{% if product.first_available_variant.inventory_quantity <= 10 and product.first_available_variant.inventory_policy != "continue" %}
+						{% assign last_items = true %}
+					{% endif %}
+					{% if product.tags contains 'bestseller' %}
+						{% assign is_bestseller = true %}
+					{% endif %}
+					{% if collection.handle == 'bestseller' or collection.handle == 'bestsellers' %}
+						{% assign collection_is_bestellers = true %}
+					{% endif %}
+					
+					{% if last_items and collection.handle != 'last-items' and collection.handle != 'letzte-artikel' %}
+						{% unless product.type contains 'Gift card' or product.title contains 'Gift' %}
+						<div class="prod-tag product-tag-last medium">{{ 'products.product.last_item' | t }}</div>
+						{% endunless %}
+					{% elsif is_bestseller %}
+						{% unless collection_is_bestellers %}
+							<div class="prod-tag medium">{{ 'products.product.bestseller' | t }}</div>
+						{% endunless %}
+					{% endif %} 
+					{% unless collection.handle == 'neu' %}
+						{% for collectionx in product.collections %}{% if collectionx.handle contains "neu" %}
+						<div class="prod-neu-tag medium">{{ 'products.product.new' | t }}</div>{% break %}
+						{% endif %}{% endfor %}    
+					{% endunless %}
+					
+					{% for image in product.images limit: 2 %}
+					{% if forloop.first and forloop.last %}
+					<img src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" class="" loading="lazy">
+					{% endif %}
+					<img class="{% if forloop.last %}no-t-m{% endif %}" src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+					{% endfor %}  
+					</a>
+					{% assign noAddToCartFromCollection = false %}
+					{% if product.type == 'Ludilabel' or product.type == 'Keychain letter' or product.type == 'Keychain charm' %}
+						{% assign noAddToCartFromCollection = true %}
+					{% endif %}
+					{% unless product.selected_or_first_available_variant.available %}
+						{% assign noAddToCartFromCollection = true %}
+					{% endunless %}
+					{%- unless noAddToCartFromCollection -%}
+					<div class="coll-add-to-cart-btn" data-variant="{{ product.first_available_variant.id }}">+</div>
+					{%- endunless -%}
+				</div>
+				<div class="product-details">
+					<div class="product-name-price-col justify-between">
+						<div class="product-title medium">
+						{% assign remove_word = product.title | truncatewords: 1, "" %}
+						{{ product.title | split: " - " | first }}
+						</div>
+						<div class="product-pirce medium">
+						{% if localization.country.currency.iso_code == 'EUR' %}
+						{{ product.price | times: 1 | money_without_currency | replace: ",00",",-" }}
+						{% else %}
+						{{ product.price | times: 1 | money_without_trailing_zeros | strip_html }} 
+						{% endif %}
+					</div>
+					
+					</div>
+					<div class="product-price-col">
+					<div class="product-sub-title light">
+						{{ product.title | split: " - " | last }}
+						{% comment %}{{ product.metafields.descriptors.subtitle }}{% endcomment %}
+					</div>
+					</div>
+				</div>
+				</div>
+				{% endif %}
+				{% endfor %}
+				{% endpaginate %}
+			</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<script>
+		const mainSection = document.getElementById('password-section');
+		const passwordInput = document.getElementById('password-input');
+		const submitButton = document.getElementById('submit-button');
+		const contentSection = document.getElementById('content-section');
+		const errorSection = document.getElementById('error-section');
+		
+		const correctPassword = '{{ section.settings.password }}';
+		const hash = btoa(correctPassword);
+		
+		const storedPassword = localStorage.getItem('password');
+		if (storedPassword === hash) {
+		mainSection.style.display = 'none';
+		contentSection.style.display = 'block';
+		passwordInput.style.display = 'none';
+		submitButton.style.display = 'none';
+		}
+		
+		submitButton.addEventListener('click', function() {
+		const userPassword = passwordInput.value;
+		const hashedPassword = btoa(userPassword);
+		if (hashedPassword === hash) {
+			contentSection.style.display = 'block';
+			mainSection.style.display = 'none';
+			localStorage.setItem('password', hash);
+			//location.reload();
+		} else {
+			errorSection.style.display = 'block';
+			setTimeout(function() {
+				errorSection.style.display = 'none';
+			}, 2000);
+		}
+		});
+	</script>
+
+{% else %}
 <div class="jp-collection-banner">
     <div class="container">
         <div class="banner_container_wrapper flex-box justify-between align-center">
@@ -225,6 +598,9 @@
         {% paginate collection.products by 500 %}
         {% for product in collection.products %}
         {% if product.id != 7381981921448 %}
+		{% if product.tags contains 'private' %}
+			{% continue %}
+		{% else %}
         <div class="product-card{% for tag in product.tags %} tag-{{ tag }}{% endfor %}">
         	<div class="product-images-block rel">
             <a href="{{ product.url }}">
@@ -298,6 +674,7 @@
             </div>
           </div>
         </div>
+	    {% endif %}
         {% endif %}
         {% endfor %}
         {% endpaginate %}
@@ -305,31 +682,32 @@
     </div>
   </div>
 </div>
+{%endif%}
 
 <script>
 
-	///----- Auto-Close Accordion
-$(document).ready(function() {
-  //--- initial state of elements
-//   $('.panel').hide()
-    //----- click function
-  $(".filter-wrap").find("div[role|='button']").click(function() { //---- tabs or buttons
-    //---- active class
-//     $(".faq-wrap").find("div[role|='button']").removeClass('active');
-//     $('.filter-panel').slideUp();
-    var selected = $(this).next('.filter-panel');
-    if (selected.is(":hidden")) {
-      $(this).next('.filter-panel').slideDown();
-      $(this).toggleClass('active');
-      
-    }
-    else{
-    	$(this).next('.filter-panel').slideUp();
-      $(this).toggleClass('active');
-    }
-    $(this).find('.down-chev').toggleClass('rotate');
-  });
-});
+		///----- Auto-Close Accordion
+	$(document).ready(function() {
+	//--- initial state of elements
+	//   $('.panel').hide()
+		//----- click function
+	$(".filter-wrap").find("div[role|='button']").click(function() { //---- tabs or buttons
+		//---- active class
+	//     $(".faq-wrap").find("div[role|='button']").removeClass('active');
+	//     $('.filter-panel').slideUp();
+		var selected = $(this).next('.filter-panel');
+		if (selected.is(":hidden")) {
+		$(this).next('.filter-panel').slideDown();
+		$(this).toggleClass('active');
+		
+		}
+		else{
+			$(this).next('.filter-panel').slideUp();
+		$(this).toggleClass('active');
+		}
+		$(this).find('.down-chev').toggleClass('rotate');
+	});
+	});
   
   function addApply() { 
 
@@ -649,6 +1027,38 @@ $(document).ready(function() {
   {
     "name": "JP Main Collection",
     "settings": [
+		{
+			"type": "header",
+			"content": "Password Setup"
+		},				  
+		{
+			"type": "text",
+			"id": "password",
+			"label": "Enter Password",
+			"default": "VIP"
+		},
+		{
+			"type": "text",
+			"id": "enter_pass",
+			"label": "Enter Password Label",
+			"default": "Please Enter your Password"
+		},
+		{
+			"type": "text",
+			"id": "submit_pass",
+			"label": "Submit button Label",
+			"default": "Submit"
+		},
+		{
+			"type": "text",
+			"id": "wrong_password",
+			"label": "Error Message for Wrong Password",
+			"default": "Incorrect password, please try again."
+		},		  
+		{
+			"type": "header",
+			"content": "Section Customization"
+		},	
 		{
           "type": "collection",
           "id": "collection",
