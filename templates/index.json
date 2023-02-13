@@ -91,26 +91,6 @@
         "remove_bottom_marg": true
       }
     },
-    "16437127436c75ae35": {
-      "type": "jp-image-with-text",
-      "settings": {
-        "section_type": "img_txt",
-        "link_type": "link",
-        "btn_color": "black",
-        "img_aligment": "right",
-        "title": "HELP! Which bag should I choose for my child?",
-        "sub_title": "",
-        "desc": "The transition from kindergarten to primary school calls for a fitting school bag. But which bag should you buy for your child? And what exactly are the differences between the current Jeune Premier models?",
-        "link_txt": "Read more",
-        "link_hover_txt": "",
-        "link": "shopify:\/\/blogs\/stories\/help-which-bag-suits-my-child",
-        "img": "shopify:\/\/shop_images\/groep.webp",
-        "product_video": "",
-        "video_link": "",
-        "marg_top": "false",
-        "remove_bottom_marg": false
-      }
-    },
     "16437837659a2daced": {
       "type": "jp-seen-on",
       "blocks": {
@@ -239,11 +219,31 @@
       "settings": {
         "bg_color": "white",
         "title": "CLASSIC COLLECTION",
-        "desc": "These are our “Jeune Premier” all-time favorites with the original retro-locks. We are head over heels in love with these classics. Their timeless design makes them easy to style with any outfit.",
+        "desc": "These are our “Jeune Premier” all-time favorites! Their timeless design makes them easy to style with any outfit.",
         "collection": "classics",
         "btn_txt": "DISCOVER - €99,90",
         "btn_url": "shopify:\/\/collections\/classics",
         "upsell_type": "bag"
+      }
+    },
+    "16437127436c75ae35": {
+      "type": "jp-image-with-text",
+      "settings": {
+        "section_type": "img_txt",
+        "link_type": "link",
+        "btn_color": "black",
+        "img_aligment": "right",
+        "title": "CHOOSE THE RIGHT ONE: A BAG FOR EACH AGE",
+        "sub_title": "",
+        "desc": "Which model should you choose for your child? That depends on the age group and lifestyle. For each age group (2 to 12 years old) and lifestyle, Jeune Premier has designed a customised school bag that 100% meets your child's needs!",
+        "link_txt": "Read more",
+        "link_hover_txt": "",
+        "link": "shopify:\/\/blogs\/stories\/help-which-bag-suits-my-child",
+        "img": "shopify:\/\/shop_images\/groep.webp",
+        "product_video": "",
+        "video_link": "",
+        "marg_top": "false",
+        "remove_bottom_marg": false
       }
     },
     "1645637117415b621a": {
@@ -439,9 +439,9 @@
     "8e1a02ca-3bfb-44ae-8d3c-1b1aaa4706c3",
     "1645179113cbd1ec4e",
     "1644555888f4e91b15",
-    "16437127436c75ae35",
     "16437837659a2daced",
     "16469818107a071e93",
+    "16437127436c75ae35",
     "1645637117415b621a",
     "164563766038f711c3",
     "16502824973f476e50",
