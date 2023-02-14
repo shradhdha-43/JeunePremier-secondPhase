@@ -1,3 +1,30 @@
 .checkout__legal-wrapper a {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+.testing {
+  margin-top: 12px;
+  padding: 13px;
+  align-items: flex-start;
+  background: wheat;
+  gap: 4px;
+  color: black;
+  display: flex;
+  border-radius: 5px;
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+}
+.testing:first-child {
+  line-height: 24px;
+}
+.fadeout {
+  z-index: 11;
+  position: absolute;
+  padding: 4px;
+  border-radius: 4px;
+  right: 0;
+}
+.fadeout.success {
+  background: #fff2db;
+}
+.fadeout.error {
+  background: #ffe1e1;
 }

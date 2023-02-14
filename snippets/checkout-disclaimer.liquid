@@ -1,0 +1,37 @@
+<script async>
+
+  $( document ).ready(function() {
+    //works only on the contact information page 
+    if (Shopify.Checkout.step == "contact_information") {
+      {% if settings.disclaimer_check_mess != blank %}
+        $('<p class="testing"><span>ℹ</span><span>{{ settings.disclaimer_check_mess }}</span></p>').insertBefore('.step__footer');
+      {% endif %}
+      $(`.section--shipping-address input[type='text']:not(.visually-hidden)`).on("input", function() {
+          var str = $(this).val();
+          if (isEnglish(str)) {
+             //success message if character is an english alphabet
+            {% if settings.success_check_mess != blank %}
+              $('<p class="fadeout success">{{ settings.success_check_mess }}</p>').insertAfter(this);
+            {% endif %}
+          } 
+          else {
+            //error message if character is not in english alphabet
+            {% if settings.error_check_mess != blank %}
+              $('<p class="fadeout error">{{ settings.error_check_mess }}</p>').insertAfter(this);
+            {% endif %}
+          }
+          //makes error message disappear after 1.5 seconds
+          setTimeout(function() {
+              $('.fadeout').fadeOut(1000);
+              }, 1500);
+  
+        });
+       //function that checks if input character is ABC or 0,1-9
+        function isEnglish(str) {
+          var re = /^[a-zA-Z0-9\s]+$/;
+          return re.test(str);
+        }
+      }
+  });
+
+</script>
