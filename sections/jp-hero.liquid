@@ -1,12 +1,17 @@
 {{ 'jp-hero.css' | asset_url | stylesheet_tag }}
 
-<style>
+{% style %}
   .header-inner-wrapper {
     align-self: {{ section.settings.desktop_allignment }};
   }
   .hero-text {
     text-align : {{ section.settings.text_align }};
   }
+  {% if section.settings.image %}
+  .hero{
+    background-image: url({{ section.settings.image | img_url: "2000x" }});
+  }
+  {% endif %}
   .header-inner-wrapper .btn {
     background-color : {{ section.settings.hero_button_bg }};
     color : {{ section.settings.hero_text_color }};
@@ -21,12 +26,19 @@
     align-self: {{section.settings.mobile_allignment}};
     }
   }
-</style>
+  
+  @media screen and (max-width : 767px) {
+    {% if section.settings.mob_image %}
+      .hero{
+        background-image: url({{ section.settings.mob_image | img_url: "2000x" }});
+      }
+    {% endif %}
+  }
+{% endstyle %}
 
-<div class="hero {% if section.settings.custom_hero_video != blank %} video_added{% endif %}" style="{% if section.settings.image %}background-image: url({{ section.settings.image | img_url: "2000x" }}){% else %}background: #375D54{% endif %}">
-  {% if section.settings.custom_hero_video != blank %}
+<div class="hero {% if section.settings.video_dsk != blank or section.settings.video_mob != blank %} video_added{% endif %}">
+  {% if section.settings.video_dsk != blank or section.settings.video_mob != blank %}
     <video class="hero-video" id="hero-video" width="100%" playsinline autoplay="true" muted="muted" loop>
-      <source src="{{ section.settings.custom_hero_video }}" type="video/mp4">
     </video>
   {% endif %}
   <div class="container flex-box justify-end" style="justify-content : {{ section.settings.justify_allignment }} !important">
@@ -41,20 +53,61 @@
     </span>
   </div>
 </div>
+<script>
+  const video = document.getElementById("hero-video");
+  const deskvideo = "{{ section.settings.video_dsk.sources[1].url }}";
+  const mobvideo = "{{ section.settings.video_mob.sources[1].url }}";
+  function changeVideoSource() {
+    if (window.innerWidth >= 768) {
+      if (deskvideo) {
+        video.src = deskvideo;
+      } else {
+        video.src = mobvideo;
+      }
+    } else {
+      if (mobvideo) {
+        video.src = mobvideo;
+      } else {
+        video.src = deskvideo;
+      }
+    }
+  }
 
+  window.addEventListener("resize", changeVideoSource);
+  changeVideoSource();
+</script>
 {% schema %}
   {
     "name": "JP Hero",
     "settings": [
-	  {
+      {
+        "type": "header",
+        "content": "Image Settings",
+        "info": "Ensure that the video setting is left blank in order to display images"
+      },
+	    {
          "type":"image_picker",
          "id":"image",
-         "label":"Image"
+         "label":"Desktop Image"
       },
       {
-        "type": "text",
-        "id": "custom_hero_video",
-        "label": "Custom Video Link"
+        "type":"image_picker",
+        "id":"mob_image",
+        "label":"Mobile Image"
+      },
+      {
+        "type": "header",
+        "content": "Video Settings"
+      },
+      {
+        "type":"video",
+        "id":"video_dsk",
+        "label":"Desktop Video"
+      },
+      {
+        "type":"video",
+        "id":"video_mob",
+        "label":"Mobile Video"
       },
       {
       "type": "header",
