@@ -350,6 +350,10 @@
         "2c5bf433-7477-45ec-8489-9cdd2db2f722"
       ],
       "settings": {
+        "password": "LOVE COLLECTION",
+        "enter_pass": "Please Enter your Password",
+        "submit_pass": "Submit",
+        "wrong_password": "Incorrect password, please try again.",
         "collection": "all",
         "filter_text": "FILTER",
         "products_text": "PRODUCTS",
