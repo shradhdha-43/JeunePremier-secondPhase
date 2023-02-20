@@ -122,7 +122,7 @@
         <div class="header-left">
           <div class="new_header_logo no-t-m">
             <a href="{{ routes.root_url }}" class="desktop-cherries-logo">{{ section.settings.logo_svg_mobile }}</a>
-            <a href="{{ routes.root_url }}" class="desktop-logo">{{ section.settings.logo_svg_desktop }}</a>
+            <a href="{{ routes.root_url }}" aria-label="desktop-logo" class="desktop-logo">{{ section.settings.logo_svg_desktop }}</a>
           </div>
           <a href="{{ routes.root_url }}" class="mobile-logo no-d">{{ section.settings.logo_svg_mobile }}</a>
         </div>
@@ -219,8 +219,8 @@
                           {% assign randomObjFilter = grandchild.url | split: '?filters=' | last %}
 
                           {%- paginate collections[randomObjHandle].products by 500 -%}
-                            {% for product in collections[randomObjHandle].products reversed %}
-                              {% for tag in product.tags %}
+                            {%- for product in collections[randomObjHandle].products reversed -%}
+                              {%- for tag in product.tags -%}
                                 {% if grandchild.url contains 'filters' %}
 
                                 {% if tag == randomObjFilter %}
@@ -234,9 +234,9 @@
                                 {% assign tags_matched = product.title %}
                                 {% assign design_image_product = product.metafields.custom.navigation_design_image %}
                                 {% endif %}
-                              {% endfor %}
-                            {% endfor %}
-                          {% endpaginate %}
+                              {%- endfor -%}
+                            {%- endfor -%}
+                          {%- endpaginate -%}
                         
 
                           {% if img != blank %}
@@ -261,7 +261,7 @@
                               <span class="grandtitle">
                                 {% if design_image_product != blank and grandchild.title contains 'design-'  %}
                                   <span class="design_image" style="background-color: #fcfcfc;">
-                                    <img src="{{ design_image_product | image_url: width: 250 }}" alt="">
+                                    <img src="{{ design_image_product | image_url: width: 250 }}" alt="" loading="lazy">
                                   </span>
                                   {% endif %}
                                 {{ grandchild.title | remove : "design-" }}</span>
