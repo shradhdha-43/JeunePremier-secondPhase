@@ -66,7 +66,10 @@
         <div class="sm-logos flex-box">
         	{% for block in section.blocks %}
       		{% if block.type == 'sm' %}
-          		<a href="{{ block.settings.sm_link }}" class="sm_logo" target="_blank">{{ block.settings.sm_logo }}</a>
+          		<a href="{{ block.settings.sm_link }}" class="sm_logo" target="_blank">
+					<span class="visually-hidden">Social Media link</span>
+					{{ block.settings.sm_logo }}
+				</a>
       		{% endif %}
       	{% endfor %}
         </div>
@@ -78,7 +81,9 @@
         <div class="shipping-companies-svgs">
         	{% for block in section.blocks %}
       		{% if block.type == 'shipping_logo' %}
-          <div class="shipping-logo"><img src="{{ block.settings.shipping_logo | img_url: "120x" }}"></div>
+          		<div class="shipping-logo">
+					<img src="{{ block.settings.shipping_logo | img_url: "120x" }}" alt="{{ block.settings.shipping_logo.alt }}" loading= 'lazy'>
+				</div>
           	{% endif %}
       		{% endfor %}
         </div>
@@ -97,7 +102,14 @@
       </div>
       <div class="footer-secure footer-part-inner">
       	<div class="footer-menu-title title">{{ section.settings.secure_title }}</div>
-          <div class="secure-logo"><img src="{{ section.settings.secure_logo | img_url: "180x" }}" alt="logo"></div>
+          <div class="secure-logo">
+			{{
+				section.settings.secure_logo
+				| image_url: width: 180
+				| image_tag: loading: 'lazy', sizes: sizes, widths: '165, 360, 535, 750, 1070, 1500'
+			}}
+			{% comment %} <img src="{{ section.settings.secure_logo | img_url: "180x" }}" alt="logo"> {% endcomment %}
+		</div>
           	
       </div>
     </div>
@@ -109,8 +121,24 @@
       <div class="footer-brands footer-part-inner">
       	<div class="footer-menu-title title">{{ section.settings.brands_title }}</div>
         <div class="footer-brands-logos flex-box">
-        	<a href="{{ section.settings.brand1_url }}" class="footer-brand-logo"><img src="{{ section.settings.brand1_logo_2 | img_url: "80x" }}" alt="logo"></a>
-          	<a href="{{ section.settings.brand2_url }}" class="footer-brand-logo"><img src="{{ section.settings.brand2_logo_2 | img_url: "80x" }}" alt="logo"></a>
+        	<a href="{{ section.settings.brand1_url }}" class="footer-brand-logo">
+				<span class="visually-hidden">jeune premier</span>
+				{{
+					section.settings.brand1_logo_2
+					| image_url: width: 80
+					| image_tag: loading: 'lazy', sizes: sizes, widths: '165, 360, 535, 750, 1070, 1500'
+				}}
+				{% comment %} <img src="{{ section.settings.brand1_logo_2 | img_url: "80x" }}" alt="logo"> {% endcomment %}
+			</a>
+          	<a href="{{ section.settings.brand2_url }}" class="footer-brand-logo">
+				<span class="visually-hidden">jack piers</span>
+				{{
+					section.settings.brand2_logo_2
+					| image_url: width: 80
+					| image_tag: loading: 'lazy', sizes: sizes, widths: '165, 360, 535, 750, 1070, 1500'
+				}}
+				{% comment %} <img src="{{ section.settings.brand2_logo_2 | img_url: "80x" }}" alt="logo"> {% endcomment %}
+			</a>
         </div>
       </div>
       <div class="footer-showroom footer-part-inner">

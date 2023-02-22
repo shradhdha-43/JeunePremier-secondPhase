@@ -360,6 +360,17 @@
     %}
 
     {% style %}
+    .visually-hidden {
+        position: absolute!important;
+        overflow: hidden;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        clip: rect(0 0 0 0);
+        word-wrap: normal!important;
+    }
     {{ settings.type_body_font | font_face: font_display: 'swap' }}
     {{ body_font_bold | font_face: font_display: 'swap' }}
     {{ body_font_italic | font_face: font_display: 'swap' }}
@@ -556,7 +567,9 @@
     <!-- MouseFlow Tracking Code Ends -->
 
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
-    <script src="{{ 'slick.js' | asset_url }}"></script>
+    <script src="{{ 'slick.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'lozad.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'general-theme.js' | asset_url }}" defer="defer"></script>
     <script>
       function setIntervalX(callback, delay, repetitions) {
         var x = 0;
@@ -707,92 +720,7 @@
     {%- if settings.predictive_search_enabled -%}
     <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-    {% comment %}
-    
-    {% endcomment %}
-    <script>
-      $('.play-btn:not(.added)').click(function(ev) {
-          console.log('click');
-          $(this).addClass('no-disp');
-          $(this).closest('.img-w-txt-video-wrap').find('.video-cover').hide();
-           if($(this).parent().hasClass('custom-video')){
-             console.log('custom video');
-             $(this).closest('.custom-video').find('.cust-video').trigger('play');
-           }
-           else{
-             $(this).closest('.img-w-txt-video-wrap').find('.yt-video').removeClass('no-disp');
-             console.log($(this).closest('.img-w-txt-video-wrap').find(".yt-video")[0].src);
-             var symbol = $(this).closest('.img-w-txt-video-wrap').find(".yt-video")[0].src.indexOf("?") > -1 ? "&" : "?";
-             console.log(symbol);
-             $(this).closest('.img-w-txt-video-wrap').find(".yt-video")[0].src += symbol + "autoplay=1&mute=1&rel=0";
-           }
-        });
-      $('.play-btn:not(.added)').addClass('added');
-    </script>
-    
-<script>
-  
-  $('.langs').click(function() {
-  	$('.modal').css("display","flex");
-  });
-  
-</script>
-   
-<script>
-  var chatbutton;
-  
-  //Get the button
-  var mybutton = document.getElementById("to-top");
 
-  function hideChatBtn() {
-	$("#chat-button").css("z-index","8");
-  }
-  
-  // When the user clicks on the button, scroll to the top of the document
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-  
-{% comment %}   $(document).ready(function() {
-    
-  const chatInterval = setInterval(checkChatBtn, 300);
-  
-  function checkChatBtn() {
-    chatbutton = document.getElementById("chat-button");
-    if(chatbutton) {
-      chatShowFunction();
-      stopChatInterval();
-    }
-  }
-
-  function stopChatInterval() {
-    clearInterval(chatInterval);
-  }
-  
-  function chatShowFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      chatbutton.style.display = "block";
-    } else {
-      chatbutton.style.display = "none";
-    }
-  }
-    
-  window.onscroll = function() {chatShowFunction()};
-  
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      mybutton.style.display = "flex";
-    } else {
-      mybutton.style.display = "none";
-    }
-  }
-
-  // When the user scrolls down 20px from the top of the document, show the button
-  window.onscroll = function() {scrollFunction()};
-  
-  }); {% endcomment %}
-</script>
     
 <script>
   $(document).ready(function() {

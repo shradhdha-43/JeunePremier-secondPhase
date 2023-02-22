@@ -18,6 +18,13 @@ body.no-scroll {
   display: none;
   opacity: 0;
 } */
+
+.cross-sell-body:not(.cross-sell-body.slick-initialized) {
+  display: flex;
+  overflow: hidden;
+  height:103px;
+}
+
 .show-cross-upsell .accessories {
   display: block;
 }

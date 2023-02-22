@@ -157,7 +157,7 @@
               {% assign videos_size = videos | size %}
               {% for video in videos %}              
                 <div class="product-single__thumbnail product-single__thumbnail-video">
-                  {{ video | video_tag: mute: true, image_size: '400x' }}
+                  {{ video | image_url: width: 100 | image_tag: widths: '165, 360, 535, 750, 1070, 1500' }}
                   <div class="play-button">
                     <div class="triangle-right"></div>
                   </div>
@@ -173,6 +173,8 @@
                   <div class="product-single__thumbnail">
                     <img  src="{{ media | img_url: '200x' }}"
                                   srcset="{{ media | img_url: '200x' }} 1x,{{ media | img_url: '400x' }} 2x"
+                                  width="200"
+                                  height="200"
                                   alt="{{ media.alt | escape }}">
                   </div>
                 {%- endif -%}
@@ -205,6 +207,8 @@
                        srcset="{{ media | img_url: '350x' }} 350w,
                                     {{ media | img_url: '600x' }} 600w"
                        sizes="(max-width: 400px) 350px, 100vw"
+                       width="{{ media.width }}"
+                       height="{{ media.height }}"
                        {% unless forloop.first %}loading="lazy"{% endunless %}
                        alt="{{ media.alt | escape }}"/>
               </div>
@@ -330,9 +334,9 @@
                   <div class="related-products-preview__item">
                     <span href="{{ product.url }}" class="related-products-preview__link active new-variant" data-url="{{ product.url }}">
                       {% if product.type  == 'Goedgemerkt' %}
-                      <img src="{{ product.media[1] | default: product.featured_image | img_url: '200x200' }}" alt="{{ product.title }}">
+                      <img src="{{ product.media[1] | default: product.featured_image | img_url: '200x200' }}" alt="{{ product.title }}" width="300px" height="300px">
                       {% else %}
-                      <img src="{{ product.featured_image | img_url: '200x200' }}" alt="{{ product.title }}">
+                      <img src="{{ product.featured_image | img_url: '200x200' }}" alt="{{ product.title }}" width="300px" height="300px">
                       {% endif %}
                     </span>
                   </div>
@@ -342,9 +346,9 @@
                   <div class="related-products-preview__item">
                     <span href="{{ type_product.url }}" class="related-products-preview__link js-product-preview-hover new-variant inactive" data-url="{{ type_product.url }}" data-image={{ type_product.featured_image | img_url: '600x' }}>
                       {% if type_product.type  == 'Goedgemerkt' %}
-                      <img src="{{ type_product.media[1] | default: type_product.featured_image | img_url: '200x200' }}" alt="{{ type_product.title }}">
+                      <img src="{{ type_product.media[1] | default: type_product.featured_image | img_url: '200x200' }}" alt="{{ type_product.title }}" width="200px" height="200px">
                       {% else %}
-                      <img src="{{ type_product.featured_image | img_url: '200x200' }}" alt="{{ type_product.title }}">
+                      <img src="{{ type_product.featured_image | img_url: '200x200' }}" alt="{{ type_product.title }}" width="200px" height="200px">
                       {% endif %}
                     </span>
                   </div>
@@ -474,7 +478,7 @@
                   <div class="product-service">
                     <div class="product-icon">
 
-                      <img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/Balloon_2x_5b85fbf2-2e74-4f2e-93e5-fd3e457d7a84.png?v=1646067947">
+                      <img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/Balloon_2x_5b85fbf2-2e74-4f2e-93e5-fd3e457d7a84.png?v=1646067947" alt="shipping" width="36px">
 
                     </div>
                     <div class="product-service-text">
@@ -484,7 +488,7 @@
                   <div class="product-service">
                     <div class="product-icon">
 
-                      <img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/Returns2_2x_c5c95c08-9a64-4165-b72b-efe804a88a15.png?v=1646068021">
+                      <img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/Returns2_2x_c5c95c08-9a64-4165-b72b-efe804a88a15.png?v=1646068021" alt="Standard delivery" width="36px">
 
                     </div>
                     <div class="product-service-text">
@@ -493,20 +497,19 @@
                   </div>
                   <div class="product-service">
                     <div class="product-icon">
-
-                      <img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/shipping_rocket_2x_9bb866c5-482e-4bb4-b4c5-193ba5af5733.png?v=1646068125">
-
+                      <img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/shipping_rocket_2x_9bb866c5-482e-4bb4-b4c5-193ba5af5733.png?v=1646068125" alt="Premium delivery" width="36px">
                     </div>
                     <div class="product-service-text">
                       {{ 'products.product.service_text.third_html' | t }}
-                      <span class="product-service-image">
-                        <img src="//cdn.shopify.com/s/files/1/0334/1100/6595/files/Image_1_2x_547d5440-281c-4b80-a282-29345fd89818_54x.png?v=1644309668" alt="courier">
-                      </span></div>
+                    </div>
+                    <span class="product-service-image">
+                      <img src="//cdn.shopify.com/s/files/1/0334/1100/6595/files/Image_1_2x_547d5440-281c-4b80-a282-29345fd89818_54x.png?v=1644309668" alt="courier" height="54px" width="54px" style="object-fit: contain;">
+                    </span>
                   </div>
                   <div class="product-service">
                     <div class="product-icon">
 
-                      <img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/Returns2_2x_94194c04-a351-4a1e-b63e-106e6605c184.png?v=1646068203">
+                      <img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/Returns2_2x_94194c04-a351-4a1e-b63e-106e6605c184.png?v=1646068203" alt="14 days of return" width="36px">
 
                     </div>
                     <div class="product-service-text">
@@ -516,7 +519,7 @@
                   <div class="product-service">
                     <div class="product-icon">
 
-                      <img src="https://cdn.shopify.com/s/files/1/0077/6565/5629/t/37/assets/payments-icon.png?v=17638508258846057926">
+                      <img src="https://cdn.shopify.com/s/files/1/0077/6565/5629/t/37/assets/payments-icon.png?v=17638508258846057926" alt="Safe payments" width="36px">
 
                     </div>
                     <div class="product-service-text">
@@ -537,7 +540,7 @@
                             {%- if section.settings[setting] -%}
                               <li>
                                 {%- capture src -%}logo-{{ method }}.svg{%- endcapture -%}
-                                <img src="{{ src | asset_url }}" alt="{{ method }}">
+                                <img src="{{ src | asset_url }}" alt="{{ method }}" width="29px" height="29px">
                               </li>
                             {%- endif -%}
                           {%- endfor -%}

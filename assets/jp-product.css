@@ -213,7 +213,7 @@ span.related-products-preview__link.active::after, .keychain-charm-select .activ
 .product-service {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 18px;
 }
 .product-service:last-child {
@@ -231,6 +231,7 @@ span.related-products-preview__link.active::after, .keychain-charm-select .activ
   display: block;
   width: 100%;
   height: 100%;
+  object-fit: contain;
 }
 .product-service-text {
   width: calc( 100% - 56px );
@@ -241,7 +242,7 @@ span.related-products-preview__link.active::after, .keychain-charm-select .activ
 }
 .product-service-image {
   float: right;
-  display: inline-block;
+  display: flex;
   height: 100%;
 }
 .play-button {

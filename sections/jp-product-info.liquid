@@ -152,8 +152,8 @@
       {% if product.metafields.my_fields.product_info_video != blank %}
           <div class="img-w-txt-image-wrap img-w-txt-video-wrap rel custom-video">
             <img  class="video-cover" src="{% if product.metafields.my_fields.product_info_block_image != blank %}{{ product.metafields.my_fields.product_info_block_image | img_url: '600x' }}{% else %}{{ product.featured_image | img_url: '600x' }}{% endif %}" loading="lazy" alt="Video title">
-            <video class="cust-video" width="100%" height="100%" controls>
-              <source src="{{ product.metafields.my_fields.product_info_video }}" type="video/mp4">
+            <video class="cust-video lozad" width="100%" height="100%" controls>
+              <source data-src="{{ product.metafields.my_fields.product_info_video }}" type="video/mp4">
             </video>
             <div id="play" class="play-btn">
               {% include 'icon-play-button' %}
@@ -162,7 +162,7 @@
       	{% elsif product.metafields.my_fields.product_info_youtube != blank %}
           <div class="img-w-txt-image-wrap img-w-txt-video-wrap rel">
             <img  class="video-cover" src="{% if product.metafields.my_fields.product_info_block_image != blank %}{{ product.metafields.my_fields.product_info_block_image | img_url: '600x' }}{% else %}{{ product.featured_image | img_url: '600x' }}{% endif %}" loading="lazy" alt="Video title">
-            <iframe class="no-disp yt-video" width="100%" height="100%" src="https://www.youtube.com/embed/{{ product.metafields.my_fields.product_info_youtube }}" frameborder="0">
+            <iframe class="no-disp yt-video lozad" width="100%" height="100%" data-src="https://www.youtube.com/embed/{{ product.metafields.my_fields.product_info_youtube }}" frameborder="0">
             </iframe>
             <div id="play" class="play-btn">
               {% include 'icon-play-button' %}
@@ -183,8 +183,15 @@
 
 <script>
 
+
 	///----- Auto-Close Accordion
 $(document).ready(function() {
+
+
+  const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+  observer.observe();
+
+
   //--- initial state of elements
   $('.product-single-accordion__content').hide()
     //----- click function
