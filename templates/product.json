@@ -324,7 +324,7 @@
         "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-1": {
           "type": "product_grid",
           "settings": {
-            "background_color": "color1",
+            "background_color": "color2",
             "product_image": "shopify:\/\/shop_images\/bobbie.svg",
             "product_name": "It Bag Mini",
             "first_cell": true,
@@ -344,6 +344,7 @@
           "type": "product_grid",
           "settings": {
             "background_color": "color1",
+            "product_image": "shopify:\/\/shop_images\/Ergomaxx.svg",
             "product_name": "It Bag Mini",
             "first_cell": true,
             "second_cell": true,
@@ -361,7 +362,8 @@
         "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-3": {
           "type": "product_grid",
           "settings": {
-            "background_color": "color1",
+            "background_color": "color2",
+            "product_image": "shopify:\/\/shop_images\/Midi.svg",
             "product_name": "It Bag Mini",
             "first_cell": true,
             "second_cell": true,
@@ -397,7 +399,8 @@
         "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-5": {
           "type": "product_grid",
           "settings": {
-            "background_color": "color1",
+            "background_color": "color2",
+            "product_image": "shopify:\/\/shop_images\/Ralphie.svg",
             "product_name": "It Bag Mini",
             "first_cell": true,
             "second_cell": true,
