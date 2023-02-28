@@ -140,6 +140,7 @@
           "type": "product_grid",
           "settings": {
             "background_color": "color2",
+            "product_image": "shopify:\/\/shop_images\/City_bag.svg",
             "product_name": "It Bag Mini",
             "first_cell": true,
             "second_cell": true,
@@ -157,6 +158,7 @@
           "type": "product_grid",
           "settings": {
             "background_color": "color1",
+            "product_image": "shopify:\/\/shop_images\/Ergomaxx.svg",
             "product_name": "It Bag Mini",
             "first_cell": true,
             "second_cell": true,
@@ -174,6 +176,7 @@
           "type": "product_grid",
           "settings": {
             "background_color": "color2",
+            "product_image": "shopify:\/\/shop_images\/bobbie.svg",
             "product_name": "It Bag Mini",
             "first_cell": true,
             "second_cell": true,
@@ -191,6 +194,7 @@
           "type": "product_grid",
           "settings": {
             "background_color": "color1",
+            "product_image": "shopify:\/\/shop_images\/Midi.svg",
             "product_name": "It Bag Mini",
             "first_cell": true,
             "second_cell": true,
