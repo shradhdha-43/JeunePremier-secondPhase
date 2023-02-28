@@ -139,7 +139,7 @@
         "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-1": {
           "type": "product_grid",
           "settings": {
-            "background_color": "color1",
+            "background_color": "color2",
             "product_name": "It Bag Mini",
             "first_cell": true,
             "second_cell": true,
@@ -173,7 +173,7 @@
         "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-3": {
           "type": "product_grid",
           "settings": {
-            "background_color": "color1",
+            "background_color": "color2",
             "product_name": "It Bag Mini",
             "first_cell": true,
             "second_cell": true,
@@ -207,7 +207,7 @@
         "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-5": {
           "type": "product_grid",
           "settings": {
-            "background_color": "color1",
+            "background_color": "color2",
             "product_name": "It Bag Mini",
             "first_cell": true,
             "second_cell": true,
@@ -241,7 +241,7 @@
         "00dfcca2-d649-463e-a45f-45567a6ac422": {
           "type": "product_grid",
           "settings": {
-            "background_color": "color1",
+            "background_color": "color2",
             "product_name": "It Bag Mini",
             "first_cell": true,
             "second_cell": true,
