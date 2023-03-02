@@ -10,12 +10,12 @@
 .hide-svg{
     display: none;
 }
-.mar-cust{
+/* .mar-cust{
 margin-top:36px;
 }
 .product-single__subtitle.mar-cust {
     margin-top: 36px;
-}
+} */
  /* .border-css{
     box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px,
     rgb(31, 193, 27) 0px 0px 0px 6px,
@@ -29,6 +29,7 @@ margin-top:36px;
     box-shadow: #fff 0 0 0 3px, #473854 0 0 0 6px, #78a9ad 0 0 0 9px, #58714d 0 0 0 12px, #e5d68e 0 0 0 15px, #f16b46 0 0 0 17px, #93302c 0 0 0 20px;
     border-radius: 5px;
 }
+
 @media screen and (max-width: 900px) {
     .svgg {
       position: absolute;
