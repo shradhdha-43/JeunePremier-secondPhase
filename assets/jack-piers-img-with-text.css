@@ -1,11 +1,12 @@
 .img-w-txt-image-wrap{
     position: relative;
 }
-.svgg{
+.svgg {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(500%,-700%);
+    transform: translate(163%,-239%);
+    width:100px;
 }
 .hide-svg{
     display: none;
@@ -32,17 +33,24 @@ margin-top:36px;
 
 @media screen and (max-width: 900px) {
     .svgg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(598%,-787%);
-  }
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(236%,-307%);
+    }
 }
 @media screen and (max-width: 500px) {
     .svgg{
-   
-    transform: translate(257%,-472%);
+        transform: translate(108%,-180%);
+        width: 78px;
     }
+    
+    .img-w-txt-image-wrap.border-css {
+        width: 91%;
+        height: calc(100vw - 40px);
+        margin-bottom: 20px;
+    }
+    
   }
 
  
