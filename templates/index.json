@@ -320,6 +320,28 @@
         "btn_url": "shopify:\/\/collections\/personalized-name-labels"
       }
     },
+    "83ccac26-89e5-460a-a832-561580cd30c5": {
+      "type": "Jack-piers-Img-with-text",
+      "settings": {
+        "section_type": "img_txt",
+        "link_type": "btn",
+        "btn_color": "black",
+        "img_aligment": "left",
+        "new_title": "New",
+        "title": "Meet Jack Piers",
+        "sub_title": "",
+        "desc": "Style the playground\n<br>\n<br>\nNamed after the cool city of Amsterdam, this backpack is worth its name in every sense. Beautiful, practical and comfortable are the key words. The backpack has handles that allow you to carry it by the hand or on your back. Fill it with binders and textbooks for school days or your sports gear in your free time.",
+        "link_txt": "SHOP COLLECTION",
+        "link_hover_txt": "SHOP COLLECTION",
+        "open_gorgias": true,
+        "svg_icon": false,
+        "border-color": true,
+        "link": "shopify:\/\/collections",
+        "video_link": "",
+        "marg_top": "false",
+        "remove_bottom_marg": false
+      }
+    },
     "16456368329d9ebfc4": {
       "type": "jp-image-with-text",
       "settings": {
@@ -447,6 +469,7 @@
     "1645637117415b621a",
     "164563766038f711c3",
     "16502824973f476e50",
+    "83ccac26-89e5-460a-a832-561580cd30c5",
     "16456368329d9ebfc4",
     "1643791821dd6795a7",
     "16493243714634c848"
