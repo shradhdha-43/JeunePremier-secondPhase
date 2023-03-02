@@ -395,6 +395,8 @@
         "95f663a1-c32e-460f-94bc-b35700367269"
       ],
       "settings": {
+        "section_bg_color": "#e8dfcf",
+        "open_gorgias": false,
         "title": "FAQ",
         "link_text": "Other questions",
         "link": "shopify:\/\/pages\/faqs"
