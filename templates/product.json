@@ -77,8 +77,8 @@
         "7a22c2b2-afa4-42d4-85a9-2a75dd659dee"
       ],
       "settings": {
-        "section_bg_color": "",
-        "open_gorgias": false,
+        "section_bg_color": "#F9F7F3",
+        "open_gorgias": true,
         "title": "FAQ",
         "link_text": "Other question",
         "link": ""
