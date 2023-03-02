@@ -41,6 +41,16 @@
         "remove_bottom_marg": false
       }
     },
+    "631da08d-fc43-4049-9cc9-f1a2f0d83d2e": {
+      "type": "jp-faq",
+      "settings": {
+        "section_bg_color": "",
+        "open_gorgias": false,
+        "title": "",
+        "link_text": "",
+        "link": ""
+      }
+    },
     "main": {
       "type": "jp-product",
       "disabled": true,
@@ -656,6 +666,7 @@
   "order": [
     "bfe73b4d-cd28-4383-ab49-c5a2f5c81423",
     "e89768d2-0bfe-4d54-8685-6a2f1415198e",
+    "631da08d-fc43-4049-9cc9-f1a2f0d83d2e",
     "main",
     "1648025119633f453c",
     "product-recommendations",
