@@ -98,9 +98,9 @@
       "settings": {
         "section_bg_color": "",
         "open_gorgias": true,
-        "title": "",
-        "link_text": "",
-        "link": ""
+        "title": "FAQ",
+        "link_text": "Other questions",
+        "link": "shopify:\/\/pages\/faqs"
       }
     },
     "main": {
