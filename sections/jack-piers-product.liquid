@@ -1,0 +1,1768 @@
+{{ 'jack-piers-product.css' | asset_url | stylesheet_tag }}
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign featured_image = current_variant.featured_image | default: product.featured_image %}
+
+{% comment %} Check keychain-letter-select snippet for documentation {% endcomment %}
+{% assign keychain_letter_type_name = 'Keychain letter' %}
+{% assign keychain_charm_type_name = 'Keychain charm' %}
+{% assign wrapping_paper_type_name = 'Wrapping paper' %}
+
+{% capture content %}{{ product.description }}{% endcapture %}
+{% assign section_split = content | split: '<h2>' %}
+
+{% assign video_split = content | split: '<h2>Video</h2>' %}
+{% assign video_split = video_split[1] %}
+
+{%- comment -%}
+  New split based on paragraphs with -split-item in it
+{%- endcomment -%}
+{% assign product_description = product.description | remove: ' data-mce-fragment="1"' %}
+{%- if product_description contains '<p>-split-item' -%}
+  {%- assign split_items_array = product_description | split: '<p>-split-item' -%}
+  {%- for split_item in split_items_array -%}
+    {%- if split_item contains '-content-</p>' -%}
+      {%- assign split_items_content = split_item | remove_first: '-content-</p>' -%}
+    {%- elsif split_item contains '-readmore-</p>' -%}
+      {%- assign split_items_content_readmore = split_item | remove_first: '-readmore-</p>' -%}
+    {%- elsif split_item contains '-reviewtitle-</p>' -%}
+      {%- assign split_items_content_review_title = split_item | remove_first: '-reviewtitle-</p>' -%}
+    {%- elsif split_item contains '-reviewbody-</p>' -%}
+      {%- assign split_items_content_review_body = split_item | remove_first: '-reviewbody-</p>' -%}
+    {%- elsif split_item contains '-reviewauthor-</p>' -%}
+      {%- assign split_items_content_review_author = split_item | remove_first: '-reviewauthor-</p>' -%}
+    {%- elsif split_item contains '-reviewdate-</p>' -%}
+      {%- assign split_items_content_review_date = split_item | remove_first: '-reviewdate-</p>' -%}
+    {%- elsif split_item contains '-reviewplace-</p>' -%}
+      {%- assign split_items_content_review_place = split_item | remove_first: '-reviewplace-</p>' -%}
+    {%- elsif split_item contains '-design-</p>' -%}
+      {%- assign split_items_design = split_item | remove_first: '-design-</p>' | strip_html -%}
+    {%- elsif split_item contains '-accordion-</p>' -%}
+      {%- assign split_items_accordion = split_item | remove_first: '-accordion-</p>' -%}
+      {%- assign split_items_accordion = split_items_accordion | prepend: '<p></p>' -%}
+      {%- comment -%}
+        Section_split is being used by accordions
+      {%- endcomment -%}
+      {% assign section_split = split_items_accordion | split: '<h2>' %}
+    {%- elsif split_item contains '-features-</p>' -%}
+      {%- assign split_items_features = split_item | remove_first: '-features-</p>' -%}
+    {%- else -%}
+      {%- assign split_items_subtitle = split_items_subtitle | append: split_item -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- assign add_to_cart_text = "Add to Cart" -%}
+{%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}
+  {%- assign add_to_cart_text = "Preorder" -%}
+{%- endif -%}
+
+{%- assign vat = 1 -%}
+    
+{%- assign product_price = product.price | times: vat -%}
+{%- assign product_compare_at_price = product.compare_at_price | times: vat -%}
+
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign current_variant_price = current_variant.price | times: vat -%}
+{%- assign current_variant_compare_at_price = current_variant.compare_at_price | times: vat -%}
+
+{%- assign product_type = product.type -%}
+{%- assign product_type_handle = product_type | handleize -%}
+{%- for col in product.collections -%}
+  {%- if col.title == product_type or col.handle contains product_type_handle -%}
+    {%- assign type_collection = col -%}
+    {% break %}
+  {%- endif -%}
+{%- endfor -%}
+
+
+  <div class="product-wrapper">
+
+    <div class="product-single container" data-rv-handle="{{ product.handle }}">
+      <div class="product-row">
+        <div class="product-image" id="ProductPhoto">
+
+          <div class="no-d">
+            <a class="back-btn" href="/collections/all">{% render "svg-arrow" %} {{ 'products.product.back' | t }}</a>
+            <div class="vendor-name">
+              {{ product.vendor }}
+            </div>
+
+            <!--  MOBILE TITLE & PRICE  --> 
+            <div class="title_price_wrapper">
+              <h1>{{ product.title | split: " - " | first }}</h1>    
+              {% if product.compare_at_price_max > product.price %}
+                <span id="ProductPriceCompare" class="product-compare">
+                  {%- if localization.country.currency.iso_code == 'EUR' -%}
+                    {{ product.compare_at_price_max | times: 1 | money_without_currency | replace: ",00",",-" }}
+                  {%- else -%}
+                    {{ product.compare_at_price_max | times: 1 | money_without_trailing_zeros }}
+                  {%- endif -%}
+                </span>
+                {% endif %}
+                <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
+                  {%- if localization.country.currency.iso_code == 'EUR' -%}
+                    {{ current_variant_price | money_without_currency | replace: ",00",",-" }}
+                  {%- else -%}
+                    {{ current_variant_price | money_without_trailing_zeros }}
+                  {%- endif -%}  
+                  {% comment %}
+                    HIDE TAX TEXT
+                  <span class="price-incl">{% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</span>
+                  {% endcomment %}
+                </span>
+            </div> 
+
+            <div class="review-box">
+              {% assign no_of_rev = 0 %}
+              {% assign avg_rev = 0.0 %}
+              {%- for type_product in type_collection.products -%}
+
+              {% if type_product.metafields.stamped.reviews_count %}
+              {% assign no_of_rev = no_of_rev | plus: type_product.metafields.stamped.reviews_count %}
+              {% if avg_rev != 0 %}
+              {% assign avg_rev = avg_rev | plus: type_product.metafields.stamped.reviews_average | divided_by: 2.0 %}
+              {% else %}
+              {% assign avg_rev = type_product.metafields.stamped.reviews_average %}
+              {% endif %}
+              {% endif %}
+              {%- endfor -%}
+
+              {% assign avg_rev_loop = avg_rev | round %}
+              {%for i in (1..product.metafields.stamped.reviews_average) %}
+              {% include 'icon-jack-piers' %}
+              {% endfor %}
+              <a href="#to-reviews" class="no-of-ratings p-color">
+                {% if product.metafields.stamped.reviews_count != blank %}{{ product.metafields.stamped.reviews_count }} {{ 'products.product.reviews' | t }}{% endif %}
+              </a>
+            </div>
+
+
+          {% comment %}
+            OLD PRODUCT PRICE
+            {% if product.compare_at_price_max > product.price %}
+            <span id="ProductPriceCompare" class="product-compare">
+              {{ product.compare_at_price_max | times: 1 | money_without_trailing_zeros }}
+            </span>
+            {% endif %}
+            <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
+              {{ current_variant_price | money_without_trailing_zeros }}  <span class="price-incl">{% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</span>
+            </span>
+          {% endcomment %}
+
+          </div>
+            <span class="product-wishlist"></span>
+          <div class="product-image-content">
+
+            <div class="no-t-m slider-nav custom-color{% if product.media.size < 6 %}no-transform{% endif %}">
+              
+              {% assign videos = product.media | where: "media_type", "video" %}
+              {% assign videos_size = videos | size %}
+              {% for video in videos %}              
+                <div class="product-single__thumbnail product-single__thumbnail-video">
+                  {{ video | image_url: width: 100 | image_tag: widths: '165, 360, 535, 750, 1070, 1500' }}
+                  <div class="play-button">
+                    <div class="triangle-right"></div>
+                  </div>
+                </div>
+              {% endfor %}
+              
+              {%- for media in product.media -%}     
+              {% case media.media_type %}
+              {% when 'image' %}
+                {%- assign alt_format = media.alt | strip | plus: 0 -%}
+                {% unless media.alt contains 'social_' %}
+                {%- if alt_format == 0 -%}              
+                  <div class="product-single__thumbnail">
+                    <img  src="{{ media | img_url: '200x' }}"
+                                  srcset="{{ media | img_url: '200x' }} 1x,{{ media | img_url: '400x' }} 2x"
+                                  width="200"
+                                  height="200"
+                                  alt="{{ media.alt | escape }}">
+                  </div>
+                {%- endif -%}
+                {% endunless %}
+              {% when 'external_video' %}
+                <div class="product-single__thumbnail product-single__thumbnail-video-external">
+                  {{ media | external_video_url: controls: "0" | external_video_tag }}
+                </div>
+              {% when 'video' %}
+              {% endcase %}
+              {%- endfor -%}
+            </div>
+            <div class="slider-for">
+              {% for video in videos %}              
+              <div class="slider__slide" data-index="{{ forloop.index0 }}">
+                <div class="slider__item slider__item--video">
+                  {{ video| video_tag: controls: false, mute: true, loop: true, autoplay: true, image_size: '1024x1024' }}
+                </div>
+              </div>
+              {% endfor %}
+              
+              {%- for media in product.media -%}  
+              {% case media.media_type %}
+              {% when 'image' %}
+              {%- assign alt_format = media.alt | strip | plus: 0 -%}
+              {% unless media.alt contains 'social_' %}
+              {%- if alt_format == 0 -%}
+              <div class="slider__slide" data-index="{{ forloop.index0 }}">
+                  <img src="{{ media | img_url: '600x' }}"
+                       srcset="{{ media | img_url: '350x' }} 350w,
+                                    {{ media | img_url: '600x' }} 600w"
+                       sizes="(max-width: 400px) 350px, 100vw"
+                       width="{{ media.width }}"
+                       height="{{ media.height }}"
+                       {% unless forloop.first %}loading="lazy"{% endunless %}
+                       alt="{{ media.alt | escape }}"/>
+              </div>
+              {%- endif -%}
+              {% endunless %}
+
+              {% when 'external_video' %}
+              <div class="slider__slide" data-index="{{ forloop.index0 }}">
+                {{ media | external_video_url: controls: "0", playsinline: "0", rel: "0" | external_video_tag }}
+              </div>
+              {% when 'video' %}              
+              {% endcase %}
+              {% endfor %}
+            </div>
+            <div class="for-lighthouse no-disp">
+              {% for video in videos %}              
+              <span class="for-light" data-vid="yes" href="{{ video | img_url: 'master' }}" data-caption="{{ product.title | escape  }}" data-width="{{video.width}}" data-height="{{video.height}}" itemprop="contentUrl" data-index="{{ forloop.index0 }}"></span>
+              {% endfor %}
+              {% assign sorted = product.media | sort: "media_type" %}
+              {% assign counter = 0 %}
+              {%- for media in sorted -%}  
+              {% case media.media_type %}
+              {% when 'image' %}
+              {%- assign alt_format = media.alt | strip | plus: 0 -%}
+              {% unless media.alt contains 'social_' %}
+              {%- if alt_format == 0 -%}              
+              <span class="for-light" data-vid="no" href="{{ media | img_url: 'master' }}" data-caption="{{ product.title | escape  }}" data-width="{{media.width}}" data-height="{{media.height}}" itemprop="contentUrl" data-index="{{ counter | plus: videos_size }}"></span>
+              {% assign counter = counter | plus: 1 %}
+              {%- endif -%}
+              {% endunless %}
+              {% when 'external_video' %}
+              <span class="for-light" data-vid="yes" href="{{ media | img_url: 'master' }}" data-caption="{{ product.title | escape  }}" data-width="{{media.width}}" data-height="{{media.height}}" itemprop="contentUrl" data-index="{{ counter | plus: videos_size }}"></span>
+              {% assign counter = counter | plus: 1 %}
+              {% when 'video' %}              
+              {% endcase %}
+              {% endfor %}
+            </div>
+            <div class="slider-product-hover">
+              <img src="{{ featured_image | img_url: '600x' }}" alt="{{ product.title }}" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="product-data">
+          <div class="product-single__content-wrap">
+            <div class="product-single__content--mobile product-single__content product">
+              <div class="final--order">
+                <div class="no-t-m">
+                  <a class="back-btn" href="/collections/all">{% render "svg-arrow" %} {{ 'products.product.back_short' | t }}</a>
+                  <div class="vendor-name">
+                    {{ product.vendor }}
+                  </div>
+
+                  
+                  <!--  DESKTOP TITLE & PRICE  --> 
+                  <div class="title_price_wrapper">
+                    
+                    <h1>{{ product.title | split: " - " | first }}</h1>
+                    {% if product.compare_at_price_max > product.price %}
+                      <span id="ProductPriceCompare" class="product-compare">
+                      {%- if localization.country.currency.iso_code == 'EUR' -%}
+                      {{ product.compare_at_price_max | times: 1 | money_without_currency | replace: ",00",",-" }}
+                      {%- else -%}
+                      {{ product.compare_at_price_max | times: 1 | money_without_trailing_zeros  }}
+                      {%- endif -%}
+                      </span>
+                    {% endif %}
+                    <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
+                      {% if localization.country.currency.iso_code == 'EUR' %}
+                        {{ current_variant_price | money_without_currency | replace: ",00",",-"  }}
+                      {% else %}
+                        {{ current_variant_price | money_without_trailing_zeros  }} 
+                      {% endif %}
+                      {% comment %}
+                        HIDE TAX TEXT
+                        <span class="price-incl">{% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</span>
+                      {% endcomment %}
+                    </span>
+                  </div>  
+                  
+                  <div class="review-box">
+                    {% assign no_of_rev = 0 %}
+                    {% assign avg_rev = 0.0 %}
+                    {%- for type_product in type_collection.products -%}
+                      {% if type_product.metafields.stamped.reviews_count %}
+                        {% assign no_of_rev = no_of_rev | plus: type_product.metafields.stamped.reviews_count %}
+                        {% if avg_rev != 0 %}
+                          {% assign avg_rev = avg_rev | plus: type_product.metafields.stamped.reviews_average | divided_by: 2.0 %}
+                        {% else %}
+                          {% assign avg_rev = type_product.metafields.stamped.reviews_average %}
+                        {% endif %}
+                      {% endif %}
+                    {%- endfor -%}
+                    {% assign avg_rev_loop = avg_rev | round %}
+                    {%for i in (1..product.metafields.stamped.reviews_average) %}
+                      {% include 'icon-jack-piers' %}
+                    {% endfor %}
+                    <a href="#to-reviews" class="no-of-ratings p-color">
+                      {% if product.metafields.stamped.reviews_count != blank %}{{ product.metafields.stamped.reviews_count }} {{ 'products.product.reviews' | t }}{% endif %}
+                    </a>
+                  </div>
+                  
+                {% comment %}
+                  HIDE OLD PRICE
+                  {% if product.compare_at_price_max > product.price %}
+                  <span id="ProductPriceCompare" class="product-compare">
+                    {{ product.compare_at_price_max | times: 1 | money_without_trailing_zeros  }}
+                  </span>
+                  {% endif %}
+                  <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
+                    {{ current_variant_price | money_without_trailing_zeros  }} <span class="price-incl">{% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</span>
+                  </span>
+                {% endcomment %}
+
+                </div>
+                
+                {%- if split_items_design -%}
+                  <div class="product-single__design">
+                    <a href="#products-related-by-design">
+                      {{ product.title | split: " - " | last }}
+                      {% comment %}{{ split_items_design | remove: 'Design:' }}{% endcomment %}
+                    </a>
+                  </div>
+                {%- endif -%}
+                
+                <div class="related-products-preview bgc">
+                  <div class="related-products-preview__item">
+                    <span href="{{ product.url }}" class="related-products-preview__link active new-variant" data-url="{{ product.url }}">
+                      {% if product.type  == 'Goedgemerkt' %}
+                      <img src="{{ product.media[1] | default: product.featured_image | img_url: '200x200' }}" alt="{{ product.title }}" width="300px" height="300px">
+                      {% else %}
+                      <img src="{{ product.featured_image | img_url: '200x200' }}" alt="{{ product.title }}" width="300px" height="300px">
+                      {% endif %}
+                    </span>
+                  </div>
+
+                  {%- for type_product in type_collection.products -%}
+                  {%- unless type_product.handle == product.handle -%}
+                  <div class="related-products-preview__item">
+                    <span href="{{ type_product.url }}" class="related-products-preview__link js-product-preview-hover new-variant inactive" data-url="{{ type_product.url }}" data-image={{ type_product.featured_image | img_url: '600x' }}>
+                      {% if type_product.type  == 'Goedgemerkt' %}
+                      <img src="{{ type_product.media[1] | default: type_product.featured_image | img_url: '200x200' }}" alt="{{ type_product.title }}" width="200px" height="200px">
+                      {% else %}
+                      <img src="{{ type_product.featured_image | img_url: '200x200' }}" alt="{{ type_product.title }}" width="200px" height="200px">
+                      {% endif %}
+                    </span>
+                  </div>
+                  {%- endunless -%}
+                  {%- endfor -%}
+                </div>
+                
+                {%- if product.type == 'Goedgemerkt' or product.type == 'Ludilabel' -%}
+                <div class="labels">
+                  <div class="info">
+                    {{ 'products.product.label_info.name' | t }}
+                  </div>
+                  <div class="info">
+                    {{ 'products.product.label_info.inst' | t }}
+                  </div>
+                  <div class="label-inputs">                    
+                    <input type="text" class="label-input label-first" placeholder="Vorname" maxlength="16" name="properties[Vorname]" value="">
+                    <input type="text" class="label-input label-last" maxlength="16" placeholder="Nachname" name="properties[Nachname]" value="">
+                    <div class="label-info"><span class="current-letters">0</span> {{ 'products.product.label_info.info' | t }}</div>
+                    <div class="label-error">
+                      <span class="label-error-limit no-disp">- {{ 'products.product.label_info.error1' | t }}</span>
+                      <span class="label-error-line-limit no-disp">- {{ 'products.product.label_info.error2' | t }}</span>
+                      <span class="label-error-either no-disp">- {{ 'products.product.label_info.error3' | t }}</span>
+                    </div>
+                  </div>
+                </div>
+              {%- endif -%}
+                     
+                     {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}
+                  <div class="jumbotron mb20">
+                    {{ 'products.product.preorder_info_html' | t }}
+                  </div>
+                {%- endif -%}
+                
+                {% if product.metafields.my_fields.product_text_line != blank %}<div class="info-line">{{ product.metafields.my_fields.product_text_line }}</div>{% endif %}
+                {%- assign add_to_cart_text = 'products.product.add_to_cart' | t -%}
+                {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}
+                {%- assign add_to_cart_text = 'products.product.preorder' | t -%}
+                {%- endif -%}
+                <button class="add-to-cart btn add-this no-t-m {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %} {% if product.type == 'Goedgemerkt' or product.type == 'Ludilabel' %}label-type stop-prop{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%}>{{add_to_cart_text}}</button>
+                
+                <div id="BIS_wrap"  style="display: none">
+                  <button id="BIS_trigger" type="button" class="out-of-stock-notify-btn">
+                    {{ 'products.product.bis_trigger' | t }}
+                  </button>
+                  <div class="js-out-of-stock ">
+                    {% include 'product-back-in-stock' %}
+                  </div>
+                </div>
+                
+                {% if current_variant_price > 14900 %}
+                <span class="free-shipping no-t-m">{{ 'products.product.free_shipping' | t }} <img src="//cdn.shopify.com/s/files/1/0334/1100/6595/files/Check_gold_2x_999c4ca6-c15a-478a-8f63-31f5d4d14ccc_22x.png?v=1644228290" alt="tick" width="22" height="16">{% comment %}{% if section.settings.tick %}<img src="{{ section.settings.tick | img_url: "22x" }}" alt="tick" width="22" height="16">{% endif %}{% endcomment %}</span>
+                {% endif %}
+                
+                
+
+                  {% unless product.available %}
+                        <script>
+                          $('.add-to-cart').addClass('out-of-stock');
+                          $('.add-to-cart').text('{{ 'products.product.sold_out' | t }}');
+                          $('.addcart-cta').addClass('out-of-stock');	
+                          $('.addcart-cta').text('{{ 'products.product.sold_out' | t }}');
+                          $('#BIS_wrap').css('display','block');
+                		</script>
+                  {% endunless %}
+
+                  {% assign last_items = false %}
+                  {% if product.variants.first.inventory_management == "shopify" %}
+                      {% if product.variants.first.inventory_quantity <= 10 and product.variants.first.inventory_quantity > 0 %}
+                    {% assign last_items = true %}
+                  {% endif %}
+                  {% endif %}
+
+                  {% if last_items %}
+                    <p class="product-single__label product-single__label--last-items">
+                        <span>
+                        {{ 'products.product.last_item' | t }}
+                        </span>
+                      </p>
+                  {% endif %}
+                
+                {% for productTag in product.tags %}
+                {% if productTag contains 'back-in-stock-' %}
+                <div class="back-in-stock-info">
+                  {{ 'products.product.back_in_stock_in' | t }}
+                  {% assign split = productTag | split: 'back-in-stock-' %}
+                  {% assign month = split[1] %}
+                  {% case month %}
+                  {% when 'january' %}
+                  {{ 'products.product.months.january' | t }}
+                  {% when 'february' %}
+                  {{ 'products.product.months.february' | t }}
+                  {% when 'march' %}
+                  {{ 'products.product.months.march' | t }}
+                  {% when 'april' %}
+                  {{ 'products.product.months.april' | t }}
+                  {% when 'may' %}
+                  {{ 'products.product.months.may' | t }}
+                  {% when 'june' %}
+                  {{ 'products.product.months.june' | t }}
+                  {% when 'july' %}
+                  {{ 'products.product.months.july' | t }}
+                  {% when 'august' %}
+                  {{ 'products.product.months.august' | t }}
+                  {% when 'september' %}
+                  {{ 'products.product.months.september' | t }}
+                  {% when 'october' %}
+                  {{ 'products.product.months.october' | t }}
+                  {% when 'november' %}
+                  {{ 'products.product.months.november' | t }}
+                  {% when 'december' %}
+                  {{ 'products.product.months.december' | t }}
+                  {% else %}
+
+                  {% endcase %}
+                </div>
+                {% endif %}
+                {% endfor %}
+
+                {%- unless product.type == 'Goedgemerkt' or product.type == 'Ludilabel' -%}
+                  <div class="show-cross-upsell">
+                    {% render 'jp-product-cross-sell-options' %}
+                  </div>
+                {%- endunless -%}
+                
+                <div class="product-services">
+                  <div class="product-service">
+                    <div class="product-icon">
+
+                      <img src="https://cdn.shopify.com/s/files/1/0077/6565/5629/files/shipping_balloon2_2x_aa1a58bd-148c-4a7b-b1a1-004a5e90ab54.png?v=1677732007" alt="shipping" width="36px">
+
+                    </div>
+                    <div class="product-service-text">
+                      {{ 'products.product.service_text.first_html' | t }}
+                    </div>
+                  </div>
+                  <div class="product-service">
+                    <div class="product-icon">
+
+                      <img src="https://cdn.shopify.com/s/files/1/0077/6565/5629/files/nuGJlP.tif_4__2x_2055b580-ebe7-4ba4-9676-95caaa6af7c2.jpg?v=1677732249" alt="Standard delivery" width="36px">
+
+                    </div>
+                    <div class="product-service-text">
+                      {{ 'products.product.service_text.second_html' | t }}
+                    </div>
+                  </div>
+                  <div class="product-service">
+                    <div class="product-icon">
+                      <img src="https://cdn.shopify.com/s/files/1/0077/6565/5629/files/express_shipping-_2x_08d3517e-829f-460f-b74d-58ee9903a830.jpg?v=1677732322" alt="Premium delivery" width="36px">
+                    </div>
+                    <div class="product-service-text">
+                      {{ 'products.product.service_text.third_html' | t }}
+                    </div>
+                    <span class="product-service-image">
+                      <img src="https://cdn.shopify.com/s/files/1/0077/6565/5629/files/returns__2x_7b65cd78-5d93-425f-8017-c68725d7cee8.jpg?v=1677732401https://cdn.shopify.com/s/files/1/0077/6565/5629/files/returns__2x_7b65cd78-5d93-425f-8017-c68725d7cee8.jpg?v=1677732401" alt="courier" height="54px" width="54px" style="object-fit: contain;">
+                    </span>
+                  </div>
+                  <div class="product-service">
+                    <div class="product-icon">
+
+                      <img src="https://cdn.shopify.com/s/files/1/0077/6565/5629/files/returns__2x_7b65cd78-5d93-425f-8017-c68725d7cee8.jpg?v=1677732401" alt="14 days of return" width="36px">
+
+                    </div>
+                    <div class="product-service-text">
+                      {{ 'products.product.service_text.fourth_html' | t }}
+                    </div>
+                  </div>
+                  <div class="product-service">
+                    <div class="product-icon">
+
+                      <img src="https://cdn.shopify.com/s/files/1/0077/6565/5629/t/37/assets/payments-icon.png?v=17638508258846057926" alt="Safe payments" width="36px">
+
+                    </div>
+                    <div class="product-service-text">
+                      {{ 'products.product.service_text.fifth_html' | t }}
+                      
+                      {%- if section.settings.show_payment_icons -%}
+                        <ul class="product-services__icons-list">
+                          {% if section.settings.icon_cartebleue %}
+                            {%- if request.host contains 'jeunepremier.fr' -%}
+                              <li>
+                                <img src="{{ 'logo-cartebleue.svg' | asset_url }}" alt="Carte Bleue">
+                              </li>
+                            {%- endif -%}
+                          {% endif %}
+                          {%- assign payment_methods = 'visa,mastercard,paypal,americanexpress,maestro,ideal,bancontact,sofort,klarna,kbc,belfius,giropay' | split: ',' -%}
+                          {%- for method in payment_methods -%}
+                            {%- capture setting -%}icon_{{ method }}{%- endcapture -%}
+                            {%- if section.settings[setting] -%}
+                              <li>
+                                {%- capture src -%}logo-{{ method }}.svg{%- endcapture -%}
+                                <img src="{{ src | asset_url }}" alt="{{ method }}" width="29px" height="29px">
+                              </li>
+                            {%- endif -%}
+                          {%- endfor -%}
+                        </ul>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                </div>
+           {% comment %} For accordin {% endcomment %}     
+        <div class="img-w-txt-desc light margin-cust">
+            {%- if split_items_subtitle -%}
+            <div class="product-single__subtitle">
+              {{ split_items_subtitle }}
+            </div>
+            {%- endif -%}
+  
+  
+            <div class="product-single__description rte">
+              {%- if split_items_content -%}
+              {{ split_items_content }}
+  
+              {% if split_items_content_readmore %}
+              <div class="readmore">
+                <div class="readmore__content">
+                  {{ split_items_content_readmore }}
+                </div>
+              </div>
+  
+              {% endif %}
+              {%- else -%}
+              {{ section_split | first }}
+              {%- endif -%}
+            </div>
+  
+            <div class="product-single__accordions border-custom">
+              {%- for item in section_split -%}
+              {%- assign accordion_split = item | split: '</h2>' -%}
+              {%- assign accordion_title = accordion_split[0] | strip -%}
+              {%- assign accordion_text = accordion_split[1] | strip_html -%}
+  
+              {% if accordion_text != '' %}
+              {% if accordion_title == 'Why we love it' %}
+              <div class="product-single-accordion border-custom">
+                <div class="product-faq-question-wrap accordion flex-box justify-between" role="button">
+                  <h2 class="product-single-accordion__title " role="button">{{ accordion_title }}</h2>
+                  <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+                </div>
+                {% if accordion_split[1] != blank %}
+                <div class="rte product-single-accordion__content" >
+                  {{ accordion_split[1] | remove: '<p> </p>' }}
+                </div>
+                {% endif %}
+              </div>
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+  
+              {%- for item in section_split -%}
+              {%- assign accordion_split = item | split: '</h2>' -%}
+              {%- assign accordion_title = accordion_split[0] | strip -%}
+              {%- assign accordion_text = accordion_split[1] | strip_html -%}
+  
+              {% unless accordion_title == 'Why we love it' %}
+              {% if accordion_text != '' %}
+              {% if accordion_title != 'Video' and accordion_title != '' %}
+              <div class="product-single-accordion border-custom">
+  
+                <div class="product-faq-question-wrap accordion flex-box justify-between " role="button">
+                  <h2 class="product-single-accordion__title " role="button">{{ accordion_title }}</h2>
+                  <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+                </div>
+                {% if accordion_split[1] != blank %}
+                <div class="rte product-single-accordion__content" >
+                  {{ accordion_split[1] | remove: '<p> </p>' }}
+                  {% if accordion_title contains 'Size ' %}
+                  <span>
+                    <a class="size-chart" data-vid="no" href="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/size-chart.png?v=1645923400" data-caption="Size chart" data-width="2000" data-height="1402" itemprop="contentUrl" data-index="{{ product.media | size }}" target="_blank">
+                      {{ 'products.product.size_chart' | t }}
+                    </a>
+                  </span>
+                  {% endif %}
+                </div>
+                {% endif %}
+              </div>
+              {% endif %}
+              {% endif %}
+              {% endunless %}
+              {%- endfor -%}
+              {% if accordion_text == '' %}
+              <p>{{ 'products.product.no_info' | t }}</p>
+              {% endif %}
+            </div>
+        </div>
+				{% comment %}
+                <div class="product-services">
+                {%- for block in section.blocks -%}
+                  <div class="product-service">
+                    <div class="product-icon">
+                      {% if block.settings.listIcon == "returns" %}
+                      <img src="{{ "returns-icon.png" | asset_url }}">
+                      {% elsif block.settings.listIcon == "express" %}
+                      <img src="{{ "express-shipping-icon.png" | asset_url }}">
+                      {% else %}
+                      <img src="{{ "shipping-icon.png" | asset_url }}">
+                      {% endif %}
+                    </div>
+                    <div class="product-service-text">
+                      {{ block.settings.description }}
+
+                      {%- if block.settings.image != blank -%}
+                      <span class="product-service-image">
+                        <img src="{{ block.settings.image | img_url: "54x" }}" alt="courier">
+                      </span>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                {%- endfor -%}
+                </div>
+                {% endcomment %}
+
+              </div>
+
+              {% if shipping_from_belgium %}
+                <div id="shipping-from-belgium-info">
+                  {{ 'products.product.shipping_from' | t }}
+                </div>
+              {% endif %}
+
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="product-header-cta come-in no-d">
+    <div class="header-cta-container">
+      <div class="cta-left">
+        <span class="product-price">
+          {% if localization.country.currency.iso_code == 'EUR' %}
+            {{ current_variant_price | money_without_currency | replace: ",00",",-" }}
+          {% else %}
+            {{ current_variant_price | money_without_trailing_zeros  }}
+          {% endif %}
+        </span>
+      </div>
+      <div class="cta-right">
+        <span class="addcart-cta addcta-single {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %} {% if product.type == 'Goedgemerkt' or product.type == 'Ludilabel' %}label-type stop-prop{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%} id="AddToCartCta">{{ add_to_cart_text }}</span>
+      </div>
+    </div>
+    <span class="sticky-free-shipping">
+    {% if current_variant_price > 14900 %}
+      {{ 'products.product.free_shipping' | t }} <img src="//cdn.shopify.com/s/files/1/0334/1100/6595/files/Check_gold_2x_999c4ca6-c15a-478a-8f63-31f5d4d14ccc_22x.png?v=1644228290" alt="tick" width="22" height="16">
+    {% else %}
+      {{ section.settings.free_shipping_from }}
+    {% endif %}
+    </span>
+  
+    {% unless product.available %}
+    <script>
+      $('.add-to-cart').addClass('out-of-stock');
+      $('.add-to-cart').text('{{ 'products.product.sold_out' | t }}');
+      $('.addcart-cta').addClass('out-of-stock');	
+      $('.addcart-cta').text('{{ 'products.product.sold_out' | t }}');
+	  $('#BIS_wrap').css('display','block');
+    </script>
+    {% endunless %}
+  </div>
+
+<script>
+  
+  {% comment %}
+  function checkHeaderCta() {
+    var y = $(document).scrollTop();
+    if (y < $(".product-wrapper").innerHeight()) {
+      $('.product-header-cta').removeClass('come-in');
+    } else {
+      $('.product-header-cta').addClass('come-in');
+    }
+  }
+  checkHeaderCta();
+  
+  $(document).scroll(function() {
+    checkHeaderCta();
+  });
+  
+  $(document).ready(function() {
+  });
+  {% endcomment %}
+  
+$(document).ready(function(){
+  
+  {% comment %} if(window.keep) {
+    $('.accessories').removeClass('no-disp');
+  } else {
+    $('.accessories').addClass('no-disp');
+  } {% endcomment %}
+
+  {% comment %} $('.accessories').click(function() {
+  	$(".drawer-cross-sell-cart").addClass("drawn");
+    $('.background-drawer-cross-sell').addClass('drawn');
+    $('body').addClass('no-scroll');
+  }); {% endcomment %}
+  
+  $(".js-product-preview-hover").mouseover(function(){
+    $(".slider-product-hover").css("display", "block");
+    $(".slider-product-hover img").attr("src", $(this).data('image'));
+  });
+  $(".js-product-preview-hover").mouseout(function(){
+    $(".slider-product-hover").css("display", "none");
+  });
+
+  $('.label-input, .label-type').on('input click', function(){ 
+    $('.label-type').removeClass('stop-prop');
+    $('.label-error span').addClass('no-disp');
+    var total = 0;
+    $('.label-input').each(function(index){
+      total += $(this).val().length
+      if($(this).val().length > 16) {
+        $('.label-error .label-error-line-limit').removeClass('no-disp');
+        $('.label-type').addClass('stop-prop');
+      }
+    });
+    $('.current-letters').text(total);
+    if(total > 24) {        
+      $('.label-error .label-error-limit').removeClass('no-disp');
+      $('.label-type').addClass('stop-prop');
+    }
+    if(total == 0) {        
+      $('.label-error .label-error-either ').removeClass('no-disp');
+      $('.label-type').addClass('stop-prop');
+    }
+  });
+  
+  
+    $('.new-variant:not(.added)').click(function() {
+      
+    var url = $(this).data('url');
+    if($(this).hasClass('inactive')) {
+      $.ajax({
+        url: $(this).data('url')+'/?sections=jp-product',
+        method: "GET"
+      })
+      .done(function( data ) {
+        $('main').prepend(data['jp-product']);
+        window.history.pushState({}, null, url);
+        localStorage.setItem( "PrevLocation", url );
+        $('.product-wrapper').last().parent().remove();
+        
+        {% comment %} if(window.keep) {
+          $('.accessories').removeClass('no-disp');
+        } else {
+          $('.accessories').addClass('no-disp');
+        } {% endcomment %}
+        $('.slider-for').slick({
+          speed: 300,
+          arrows: false,
+          useTransform: true,
+          touchThreshold: 100,
+          draggable: true,
+          slidesToScroll: 1,
+          slidesToShow: 1,
+          mobileFirst: false,
+          asNavFor: '.slider-nav',
+          dots: true,
+          responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+              }
+            }
+          ]
+        });        
+        $('.slider-nav').slick({
+          vertical: true,
+          verticalSwiping: true,
+          slidesToShow: 6,
+          slidesToScroll: 1,
+          focusOnSelect: true,
+          asNavFor: '.slider-for',
+          infinite: false,
+          responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+                arrows: false
+              }
+            }
+          ]
+        });
+        $('.related-products-preview').slick({
+          slidesToShow: 7,
+          slidesToScroll: 1,
+          arrows: true,
+          focusOnSelect: true,
+          infinite: false,
+          loop: false,
+          responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+                arrows: true
+              }
+            }
+          ]
+        });
+        $('.show-cross-upsell .cross-sell-body').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          infinite: false,
+          prevArrow: $(".show-cross-upsell .cross-sell-left-arrow"),
+          nextArrow: $(".show-cross-upsell .cross-sell-right-arrow"),
+          responsive: [
+            
+          ]
+        });
+        
+        setIntervalX(function () {        
+          $('.slider-for').slick('resize');
+          $('.slider-nav').slick('resize');
+          $('.related-products-preview').slick('resize');
+        }, 300, 4);
+        
+
+        $('.slider-for').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+          var $currentSlide =$(slick.$slides.get(currentSlide));
+          var $video = $currentSlide.find('video');
+
+          if ($video.length) {
+            $video[0].pause();
+          }
+        });
+
+        $('.slider-for').on('afterChange', function(event, slick, currentSlide, nextSlide){
+          var $currentSlide =$(slick.$slides.get(currentSlide));
+          var $video = $currentSlide.find('video');
+
+          if ($video.length) {
+            $video[0].play();
+          }
+        });
+
+
+        var $thumbnails = $('.slider-nav');
+        var thumbnailsCount = $thumbnails.slick('getSlick').slideCount;
+        $thumbnails.on('wheel', (function(e) {
+          var currentIndex = $thumbnails.find('.slick-current').attr('data-slick-index');
+
+          if (e.originalEvent.deltaY < 0 && currentIndex > 0) {
+            e.preventDefault();
+            $thumbnails.slick('slickPrev');
+          } else if (e.originalEvent.deltaY > 0 && currentIndex < (thumbnailsCount - 1)) {
+            e.preventDefault();
+            $thumbnails.slick('slickNext');
+          }
+        }));
+        
+
+        $('.add-this, .addcart-cta').click(function() {
+          if($(this).hasClass('out-of-stock') || $(this).hasClass('stop-prop')) {
+          	return 0;
+          }
+          $('.drawer-cart').addClass('drawn');
+          $('.background-drawer-cart').addClass('drawn');
+          $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
+          var formData;
+          if($(this).hasClass('label-type')){
+            if($(this).hasClass('stop-prop')) {
+              return 0;
+            }
+            if($(this).hasClass('preorder')) {
+            formData = {
+              'items': [{
+                'id': parseInt($(this).data('variant')),
+                'quantity': 1,
+                'properties': {
+                  'Nachname': $('.label-input.label-last').val(),
+                  'Vorname': $('.label-input.label-first').val(),
+                  '_sku': '{{ product.selected_or_first_available_variant.sku }}',
+                  '{{ 'products.product.preorder_property_label' | t }}': $(this).data('preorder')
+                }
+              }]
+            };
+            } else {
+            formData = {
+              'items': [{
+                'id': parseInt($(this).data('variant')),
+                'quantity': 1,
+                'properties': {
+                  'Nachname': $('.label-input.label-last').val(),
+                  'Vorname': $('.label-input.label-first').val(),
+                  '_sku': '{{ product.selected_or_first_available_variant.sku }}'
+                }
+              }]
+            };
+            }
+          } else {
+            if($(this).hasClass('preorder')) {
+            formData = {
+              'items': [{
+                'id': parseInt($(this).data('variant')),
+                'quantity': 1,
+                'properties': {
+                  '{{ 'products.product.preorder_property_label' | t }}': $(this).data('preorder')
+                }
+              }]
+            };
+            } else {
+            formData = {
+              'items': [{
+                'id': parseInt($(this).data('variant')),
+                'quantity': 1
+              }]
+            };
+            }
+          }
+          $.ajax({
+            url: "/cart/add.js",
+            method: "POST",
+            dataType: "json",
+            data: formData,
+          })
+          .done(function( data ) {
+            checkFreeProduct();
+            $.ajax({
+              url: '{% unless routes.root_url == "/" %}{{ routes.root_url }}{% endunless %}/?sections=jp-cart',
+              method: "GET",
+              dataType: "json"
+            })
+            .done(function( data ) {
+              {% include "cart-done" %}
+            })
+            .fail(function(error) {
+              console.log( error );
+          $('.load-container').remove();
+            });
+          })
+          .fail(function(error) {
+            console.log( error );
+          $('.load-container').remove();
+          });
+        });
+        $("html, body").animate({ scrollTop: 0 }, "fast");
+        
+      })
+      .fail(function(error) {
+        console.log( error );
+      });
+      
+      $.ajax({
+        url: $(this).data('url')+'/?sections=jp-product-info',
+        method: "GET"
+      })
+      .done(function( data ) {
+         $('.jp-info-prod').after(data['jp-product-info']);        
+        $('.jp-info-prod').first().remove();
+        $('.play-btn:not(.added)').click(function(ev) {
+          console.log('click');
+          $(this).addClass('no-disp');
+          $(this).closest('.img-w-txt-video-wrap').find('.video-cover').hide();
+           if($(this).parent().hasClass('custom-video')){
+             console.log('custom video');
+             $(this).closest('.custom-video').find('.cust-video').trigger('play');
+           }
+           else{
+             $(this).closest('.img-w-txt-video-wrap').find('.yt-video').removeClass('no-disp');
+             console.log($(this).closest('.img-w-txt-video-wrap').find(".yt-video")[0].src);
+             var symbol = $(this).closest('.img-w-txt-video-wrap').find(".yt-video")[0].src.indexOf("?") > -1 ? "&" : "?";
+             console.log(symbol);
+             $(this).closest('.img-w-txt-video-wrap').find(".yt-video")[0].src += symbol + "autoplay=1&mute=1&rel=0";
+           }
+        });
+      $('.play-btn:not(.added)').addClass('added');
+      })
+      .fail(function(error) {
+        console.log( error );
+      });
+      
+      $.ajax({
+        url: $(this).data('url')+'/?sections=jp-img-txt-ergo',
+        method: "GET"
+      })
+      .done(function( data ) {
+         $('.detailed-product').after(data['jp-img-txt-ergo']);
+        
+        $('.detailed-product').first().remove();
+
+
+        $('.ergos-mob').slick({
+          padding: '60px',
+          slidesToShow: 1.2,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: true,
+          infinite: false
+        });
+      })
+      .fail(function(error) {
+        console.log( error );
+      });
+      
+      $.ajax({
+        url: $(this).data('url')+'/?sections=jp-instagram',
+        method: "GET"
+      })
+      .done(function( data ) {
+         $('.insta-stamped').after(data['jp-instagram']);
+        
+        $('.insta-stamped').first().remove();
+        StampedFn.init();
+      })
+      .fail(function(error) {
+        console.log( error );
+      });
+      
+      $.ajax({
+        url: $(this).data('url')+'/?sections=jp-img-scribble-txt',
+        method: "GET"
+      })
+      .done(function( data ) {
+         $('.info-upsell').after(data['jp-img-scribble-txt']);
+        
+        $('.info-upsell').first().remove();
+        
+        
+        $('.info-upsell .coll-add-to-cart-btn').click(function() {
+          $('.drawer-cart').addClass('drawn');
+          $('.background-drawer-cart').addClass('drawn');
+          $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
+          var formData;
+          formData = {
+            'items': [{
+              'id': parseInt($(this).data('variant')),
+              'quantity': 1
+            }]
+          };
+          $.ajax({
+            url: "/cart/add.js",
+            method: "POST",
+            dataType: "json",
+            data: formData,
+          })
+          .done(function( data ) {
+            checkFreeProduct();
+            $('.cart-items-total').text(data.item_count);    
+            $.ajax({
+              url: '{% unless routes.root_url == "/" %}{{ routes.root_url }}{% endunless %}/?sections=jp-cart',
+              method: "GET",
+              dataType: "json"
+            })
+            .done(function( data ) {
+              {% include "cart-done" %}
+            })
+            .fail(function(error) {
+              console.log( error );
+          $('.load-container').remove();
+            });
+          })
+          .fail(function(error) {
+            console.log( error );
+          $('.load-container').remove();
+          });
+        });
+        
+      })
+      .fail(function(error) {
+        console.log( error );
+      });
+      
+      $.ajax({
+        url: $(this).data('url')+'/?sections=jp-product-faq',
+        method: "GET"
+      })
+      .done(function( data ) {
+        $('.faq-prod-class').after(data['jp-product-faq']);
+        $('.faq-prod-class').first().remove();
+      })
+      .fail(function(error) {
+        console.log( error );
+      });
+      
+      $.ajax({
+        url: $(this).data('url')+'/?sections=jp-reviews-product',
+        method: "GET"
+      })
+      .done(function( data ) {
+         $('.reviews-stamped').after(data['jp-reviews-product']);        
+        $('.reviews-stamped').first().remove();
+      })
+      .fail(function(error) {
+        console.log( error );
+      });
+      
+//       Product Cross Sell Update Logic Start
+      $.ajax({
+        url: $(this).data('url')+'/?sections=jp-product-cross-sell-options',
+        method: "GET"
+      })
+      .done(function( data ) {
+        console.log(data);
+        $('.product-cross-sell').after(data['jp-product-cross-sell-options']);
+        $('.product-cross-sell').first().remove();
+      })
+      .fail(function(error) {
+        console.log( error );
+      });
+//       Product Cross Sell Update Logic End
+      
+      $.ajax({
+        url: $(this).data('url')+'/?sections=jp-product-slider-2',
+        method: "GET"
+      })
+      .done(function( data ) {
+         $('.related-block-2').after(data['jp-product-slider-2']);        
+        $('.related-block-2').first().remove();        
+        $('.jp-product-slider:not(.slick-initialized)').slick({
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          arrows: true,
+          dots: true,
+          infinite: false,
+          responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+                padding: '60px',
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false
+              }
+            }
+          ]
+        });
+        $('.related-block-2 .coll-add-to-cart-btn').click(function() {
+          $('.drawer-cart').addClass('drawn');
+          $('.background-drawer-cart').addClass('drawn');
+          $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
+          var formData;
+          formData = {
+            'items': [{
+              'id': parseInt($(this).data('variant')),
+              'quantity': 1
+            }]
+          };
+          $.ajax({
+            url: "/cart/add.js",
+            method: "POST",
+            dataType: "json",
+            data: formData,
+          })
+          .done(function( data ) {
+            checkFreeProduct();
+            $.ajax({
+              url: '{% unless routes.root_url == "/" %}{{ routes.root_url }}{% endunless %}/?sections=jp-cart',
+              method: "GET",
+              dataType: "json"
+            })
+            .done(function( data ) {
+              {% include "cart-done" %}
+            })
+            .fail(function(error) {
+              console.log( error );
+              $('.load-container').remove();
+            });
+          })
+          .fail(function(error) {
+            console.log( error );
+            $('.load-container').remove();
+          });
+        });
+      })
+      .fail(function(error) {
+        console.log( error );
+      });
+      
+      $.ajax({
+        url: $(this).data('url')+'/?sections=jp-product-slider-3',
+        method: "GET"
+      })
+      .done(function( data ) {
+         $('.related-block-3').after(data['jp-product-slider-3']);        
+        $('.related-block-3').first().remove();        
+        $('.jp-product-slider:not(.slick-initialized)').slick({
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          arrows: true,
+          dots: true,
+          infinite: false,
+          responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+                padding: '60px',
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false
+              }
+            }
+          ]
+        });
+        $('.related-block-3 .coll-add-to-cart-btn').click(function() {
+          $('.drawer-cart').addClass('drawn');
+          $('.background-drawer-cart').addClass('drawn');
+          $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
+          var formData;
+          formData = {
+            'items': [{
+              'id': parseInt($(this).data('variant')),
+              'quantity': 1
+            }]
+          };
+          $.ajax({
+            url: "/cart/add.js",
+            method: "POST",
+            dataType: "json",
+            data: formData,
+          })
+          .done(function( data ) {
+            checkFreeProduct();
+            $.ajax({
+              url: '{% unless routes.root_url == "/" %}{{ routes.root_url }}{% endunless %}/?sections=jp-cart',
+              method: "GET",
+              dataType: "json"
+            })
+            .done(function( data ) {
+              {% include "cart-done" %}
+            })
+            .fail(function(error) {
+              console.log( error );
+              $('.load-container').remove();
+            });
+          })
+          .fail(function(error) {
+            console.log( error );
+            $('.load-container').remove();
+          });
+        });
+      })
+      .fail(function(error) {
+        console.log( error );
+      });
+      
+      $.ajax({
+        url: $(this).data('url')+'/?sections=jp-product-slider-4',
+        method: "GET"
+      })
+      .done(function( data ) {
+         $('.related-block-4').after(data['jp-product-slider-4']);        
+        $('.related-block-4').first().remove();        
+        $('.jp-product-slider:not(.slick-initialized)').slick({
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          arrows: true,
+          dots: true,
+          infinite: false,
+          responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+                padding: '60px',
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false
+              }
+            }
+          ]
+        });
+        $('.related-block-4 .coll-add-to-cart-btn').click(function() {
+          $('.drawer-cart').addClass('drawn');
+          $('.background-drawer-cart').addClass('drawn');
+          $('.cart-body').append(`<div class="load-container"><div class="load"></div></div>`);
+          var formData;
+          formData = {
+            'items': [{
+              'id': parseInt($(this).data('variant')),
+              'quantity': 1
+            }]
+          };
+          $.ajax({
+            url: "/cart/add.js",
+            method: "POST",
+            dataType: "json",
+            data: formData,
+          })
+          .done(function( data ) {
+            checkFreeProduct();
+            $.ajax({
+              url: '{% unless routes.root_url == "/" %}{{ routes.root_url }}{% endunless %}/?sections=jp-cart',
+              method: "GET",
+              dataType: "json"
+            })
+            .done(function( data ) {
+              {% include "cart-done" %}
+            })
+            .fail(function(error) {
+              console.log( error );
+              $('.load-container').remove();
+            });
+          })
+          .fail(function(error) {
+            console.log( error );
+            $('.load-container').remove();
+          });
+        });
+      })
+      .fail(function(error) {
+        console.log( error );
+      });
+      
+      
+    }
+    });
+  $('.new-variant').addClass('added');
+
+});
+</script>
+
+{% comment %}
+<!-- Core CSS file -->
+<link rel="stylesheet" href="{{ "photoswipe.css" | asset_url }}"> 
+
+<!-- Skin CSS file (styling of UI - buttons, caption, etc.)
+     In the folder of skin CSS file there are also:
+     - .png and .svg icons sprite, 
+     - preloader.gif (for browsers that do not support CSS animations) -->
+<link rel="stylesheet" href="{{ "default-skin.css" | asset_url }}"> 
+
+<!-- Core JS file -->
+<script src="{{ "photoswipe.min.js" | asset_url }}"></script> 
+
+<!-- UI JS file -->
+<script src="{{ "photoswipe-ui-default.min.js" | asset_url }}"></script> 
+
+<script>
+$( document ).ready(function() {
+    // Init empty gallery array
+    var container = [];
+  var gallery;
+  
+    // Loop over gallery items and push it to the array
+    $('.for-lighthouse .for-light').each(function() {
+      if($(this).data('vid') == 'yes') {
+        var $link = $(this),
+            item = {
+              html: $link.html()
+            };
+        container.push(item);
+      } else {
+        var $link = $(this),
+            item = {
+              src: $link.attr('href'),
+              w: $link.data('width'),
+              h: $link.data('height'),
+              title: $link.data('caption')
+            };
+        container.push(item);
+      }
+    });
+  $('.size-chart').each(function() {
+        var $link = $(this),
+            item = {
+              src: $link.attr('href'),
+              w: $link.data('width'),
+              h: $link.data('height'),
+              title: $link.data('caption')
+            };
+        container.push(item);
+    });
+
+    // Define click event on gallery item
+    $('.slider-for .slider__slide,.slider-for-2 .slider__slide, .size-chart').click(function(event) {
+
+      // Prevent location change
+      event.preventDefault();
+
+      // Define object and gallery options
+      var $pswp = $('.pswp')[0],
+          options = {
+            index: $(this).data('index'),
+            bgOpacity: 0.85,
+            showHideOpacity: true
+          };
+
+      // Initialize PhotoSwipe
+      gallery = new PhotoSwipe($pswp, PhotoSwipeUI_Default, container, options);
+      gallery.init();
+    });
+});
+</script>
+
+{% include "photoswipe" %}
+{% endcomment %}
+
+
+<script>
+  {% comment %} $('.close-cross-sell-cart,.background-drawer-cross-sell').click(function() {
+    $('.drawer-cross-sell-cart').removeClass('drawn');
+    $('.background-drawer-cross-sell').removeClass('drawn');
+    $('body').removeClass('no-scroll');
+  }); {% endcomment %}
+
+  {% comment %} function storeInLocalStorage(item, key, value) {
+    console.log("storeLocal running");
+    var data = localStorage.getItem('deleted_slide');
+  
+    data = data ? JSON.parse(data) : {};
+  
+    data[key] = value;
+  
+    localStorage.setItem(item, JSON.stringify(data));
+  }
+    
+  {% comment %} $('.cross-sell-add-product:not(.added-product)').click(function() { {% endcomment %}
+  $('body').on("click", ".cross-sell-add-product:not(.added-product)", function() {
+  
+
+    var cross_variant_id = $(this).data('variant');
+
+    
+
+    var urls = $(this).data('url');
+    if($(this).data('variant')) {
+    var notAdded = false;
+    var formData;
+        formData = {
+          'items': [{
+            'id': parseInt($(this).data('variant')),
+            'quantity': 1
+          }]
+        };
+      $.ajax({
+        url: "/cart/add.js",
+        method: "POST",
+        dataType: "json",
+        data: formData,
+      })
+      .done(function( data ) {
+        checkFreeProduct();
+        $.ajax({
+          url: '{% unless routes.root_url == "/" %}{{ routes.root_url }}{% endunless %}/?sections=jp-cart',
+          method: "GET",
+          dataType: "json"
+        })
+        .done(function( data ) {
+          {% include "cart-done" %}
+        })
+        .fail(function(error) {
+          console.log( error );
+          $('.load-container').remove();
+        });
+        console.log("open cart");
+        $(".background-drawer-cart").addClass("drawn");
+        $(".drawer-cart").addClass("drawn");
+        $("body").addClass("no-scroll");
+      })
+      .fail(function(error) {
+        notAdded = true;
+        console.log( error );
+        $('.load-container').remove();
+      });
+      
+      if(notAdded != true) {
+        $(this).next().removeClass("no-disp");
+        $(this).addClass("no-disp");
+        var deleted_slide = $(this).closest(".slick-slide").html();
+        var crossObj = { id : cross_variant_id , htmlData : deleted_slide };
+        storeInLocalStorage('deleted_slide' , cross_variant_id , deleted_slide);
+        var removeslide = $(this).closest(".slick-slide").attr("data-slick-index");
+        $('.show-cross-upsell .cross-sell-body').slick('slickRemove', removeslide);
+        {% comment %} $('.show-cross-upsell .cross-sell-body')[0].slick.refresh(); {% endcomment %}
+      }
+
+      if($(".cross-sell-body .slick-track .slick-slide").length  == 0  ) {
+        $(".accessories").addClass("no-disp");
+      }
+    }
+
+    $.ajax({
+      url: $(this).data('urls')+'/?sections=jp-product-cross-sell-options',
+      method: "GET"
+    })
+    .done(function( data ) {
+      console.log(data);
+    })
+    .fail(function(error) {
+      console.log( error );
+    });
+  }); {% endcomment %}
+
+
+  
+
+
+
+  
+  ///----- Auto-Close Accordion
+  $(document).ready(function() {
+    //--- initial state of elements
+    $('.cross-sell-infopanel').hide()
+    //----- click function
+    $(".cross-sell-accordion").find(".cross-sell-moreinfo").click(function() { //---- tabs or buttons
+      //---- active class
+      $(".cross-sell-accordion").find(".cross-sell-moreinfo").removeClass('active');
+      $(this).closest('.cross-sell-accordion').find('.cross-sell-infopanel').slideUp();
+      var selected = $(this).next('.cross-sell-infopanel');
+      if (selected.is(":hidden")) {
+        $(this).next('.cross-sell-infopanel').slideDown();
+        $(this).toggleClass('active');
+      }
+    });
+  });
+</script>
+
+<script>
+
+  $(document).ready(function() {
+    console.log("load accessories");
+
+    $(".cross-sell-product").each(function( index ) {
+      if($(this).hasClass("ids_matched")){
+      $(this).addClass("hideme");
+      $(this).parent().parent().addClass("slick-hide");
+      console.log($(this).parent());
+
+
+      var removeslides = $(this).closest(".slick-slide.slick-hide").attr("data-slick-index");
+      $('.show-cross-upsell .cross-sell-body').slick('slickRemove', removeslides)
+      $('.show-cross-upsell .cross-sell-body')[0].slick.refresh();
+
+      };
+    });
+    
+  });
+  </script>
+
+{% schema %}
+  {
+    "name": "Jack Piers product",
+    "settings": [    
+	  {
+         "type":"image_picker",
+         "id":"tick",
+         "label":"Tick Image"
+      },
+	  {
+         "type":"text",
+         "id":"free_shipping_from",
+         "label":"Free Shipping From text",
+		 "default": "Kostenloser Versand vanaf 150€"
+      },
+	  {
+        "type": "checkbox",
+        "id": "show_payment_icons",
+        "label": {
+          "en": "Show payment icons"
+        },
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_bancontact",
+        "label": {
+          "en": "Bancontact"
+        },
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_mastercard",
+        "label": {
+          "en": "Mastercard"
+        },
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_visa",
+        "label": {
+          "en": "Visa"
+        },
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_maestro",
+        "label": {
+          "en": "Maestro"
+        },
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_americanexpress",
+        "label": {
+          "en": "American Express"
+        },
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_paypal",
+        "label": {
+          "en": "Paypal"
+        },
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_ideal",
+        "label": {
+          "en": "Ideal"
+        },
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_sofort",
+        "label": {
+          "en": "Sofort"
+        },
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_klarna",
+        "label": {
+          "en": "Klarna"
+        },
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_belfius",
+        "label": {
+          "en": "Belfius"
+        },
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_kbc",
+        "label": {
+          "en": "KBC"
+        },
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_giropay",
+        "label": {
+          "en": "Giropay"
+        },
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "icon_cartebleue",
+        "label": {
+          "en": "Carte Bleue"
+        },
+        "default": false
+      }
+    ],
+	"blocks": [
+    {
+      "type": "image",
+      "name": "product service",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "image"
+        },
+        {
+          "type": "html",
+          "id": "description",
+          "label": "Selling point description"
+        },
+		{
+          "type": "select",
+          "id": "listIcon",
+          "label": "List Icon",
+          "options": [
+            {
+              "value": "shipping",
+              "label": "Shipping"
+            },
+            {
+              "value": "express",
+              "label": "Express Shipping"
+            },
+            {
+              "value": "returns",
+              "label": "Returns"
+            }
+          ],
+          "default": "returns"
+        }
+      ]
+    }
+	],
+	"presets":[
+      {
+         "name":"Jack Piers product"
+      }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

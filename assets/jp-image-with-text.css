@@ -180,4 +180,40 @@
   .video-sec-btn.button {
     width: 100%;
 }
+
+.custom-title{
+ text-align: start;
 }
+.hide-title{
+  display: none;
+}
+
+.newimg-w-txt-title{
+  font-family: 'Hero',sans-serif;
+    text-align: start;
+      font-size: 32px;
+      line-height: 40px;
+      margin-bottom: 24px;
+  }
+  .mar-cust{
+    margin: 0px;
+  }
+  
+}
+
+.font-custm{
+  font-family: 'PhosphateInline';
+  font-size: 32px;
+  line-height: 40px;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+.new-st{
+  /* font-family: 'PhosphateInline'; */
+  font-family: "PhosphateInline, Museo Sans, Helvetica, Arial, Verdana, sans-serif";
+  font-size: 16px;
+  line-height: 40px;
+  /* margin-bottom: 24px; */
+  font-weight: 500;
+}
+

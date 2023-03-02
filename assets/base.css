@@ -1,5 +1,17 @@
+/* @font-face {
+  font-family: 'PhosphateInline';
+  src: url('https://cdn.shopify.com/s/files/1/0077/6565/5629/files/PhosphateInline_font.ttf?v=1677738508') format("woff");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+} */
 /* Color custom properties */
-
+@font-face {
+  font-family: PhosphateInline;
+  src: local("PhosphateInline"),
+    url('https://cdn.shopify.com/s/files/1/0077/6565/5629/files/PhosphateInline_font.ttf?v=1677738508')
+      format("woff");
+}
 :root,
 .color-background-1 {
   --color-foreground: var(--color-base-text);
