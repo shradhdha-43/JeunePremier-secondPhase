@@ -3,7 +3,7 @@
     "249a6d94-72ac-433e-89cc-7d3943997787": {
       "type": "jack-piers-product",
       "custom_css": [
-        ".cross-sell-add-product{background-color:#333;}"
+        ".cross-sell-add-product {background-color: #333;}"
       ],
       "settings": {
         "free_shipping_from": "Kostenloser Versand vanaf 150€",
@@ -21,6 +21,67 @@
         "icon_kbc": false,
         "icon_giropay": false,
         "icon_cartebleue": false
+      }
+    },
+    "bbe19e49-c1b5-416a-affb-4cb141014415": {
+      "type": "Jack-piers-Img-with-text",
+      "settings": {
+        "section_type": "img_txt",
+        "link_type": "link",
+        "btn_color": "black",
+        "img_aligment": "right",
+        "new_title": "",
+        "title": "About Jack Piers",
+        "sub_title": "",
+        "desc": "Named after the cool city of Amsterdam, this backpack is worth its name in every sense. \n<br>\n<br>\nBeautiful, practical and comfortable are the key words. The backpack has handles that allow you to carry it by the hand or on your back. Fill it with binders and textbooks for school days or your sports gear in your free time.",
+        "link_txt": "",
+        "link_hover_txt": "",
+        "open_gorgias": true,
+        "svg_icon": true,
+        "border-color": false,
+        "link": "",
+        "img": "shopify:\/\/shop_images\/142A6492_1400x_2x_3ed453ae-1b59-4eef-a8bf-1732e70d1cd3.jpg",
+        "video_link": "",
+        "marg_top": "false",
+        "remove_bottom_marg": false
+      }
+    },
+    "b74f85fd-7dba-4721-8ebf-7ae26c544f84": {
+      "type": "jp-faq",
+      "blocks": {
+        "1526d0c4-7967-43fe-867f-8ccc2f65c1ef": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I pay later?",
+            "answer": "Changed your mind and wish to return a product? No problem! From the day following the delivery of your purchase, you have 14 days to cancel your order. We will issue you a full refund, excluding the delivery charges your paid with your order. Our returns are not free and will be deducted from the amount to be refunded. This link provides an overview of the prices for a return shipment per country."
+          }
+        },
+        "942abb4a-7de5-4766-839b-c03684235e2e": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I maintain my bag?",
+            "answer": "Just like a nice handbag, you shouldn't put a school backpack in the washing machine! In order to give our bags the spotlight they deserve throughout their lifespan, we have teamed up with the renowned Belgian company Eres to develop a unique cleaning formula. The Jeune Premier Cleaner is a handy 100 ml spray. You can easily spray it onto all Jeune Premier fabrics and rub it in with a damp cloth for excellent results!"
+          }
+        },
+        "7a22c2b2-afa4-42d4-85a9-2a75dd659dee": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I return a product",
+            "answer": "Changed your mind and wish to return a product? No problem! From the day following the delivery of your purchase, you have 14 days to cancel your order. We will issue you a full refund, excluding the delivery charges your paid with your order. Our returns are not free and will be deducted from the amount to be refunded. This link provides an overview of the prices for a return shipment per country."
+          }
+        }
+      },
+      "block_order": [
+        "1526d0c4-7967-43fe-867f-8ccc2f65c1ef",
+        "942abb4a-7de5-4766-839b-c03684235e2e",
+        "7a22c2b2-afa4-42d4-85a9-2a75dd659dee"
+      ],
+      "settings": {
+        "section_bg_color": "#F9F7F3",
+        "open_gorgias": true,
+        "title": "FAQ",
+        "link_text": "Other question",
+        "link": ""
       }
     },
     "main": {
@@ -548,6 +609,7 @@
     },
     "16462080425b9e4234": {
       "type": "jp-product-faq",
+      "disabled": true,
       "settings": {
         "faq_title": "FAQ",
         "faq_link_text": "Other questions",
@@ -627,6 +689,8 @@
   },
   "order": [
     "249a6d94-72ac-433e-89cc-7d3943997787",
+    "bbe19e49-c1b5-416a-affb-4cb141014415",
+    "b74f85fd-7dba-4721-8ebf-7ae26c544f84",
     "main",
     "1648025119633f453c",
     "product-recommendations",
