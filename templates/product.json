@@ -1,7 +1,28 @@
 {
   "sections": {
+    "249a6d94-72ac-433e-89cc-7d3943997787": {
+      "type": "jack-piers-product",
+      "settings": {
+        "free_shipping_from": "Kostenloser Versand vanaf 150€",
+        "show_payment_icons": true,
+        "icon_bancontact": false,
+        "icon_mastercard": true,
+        "icon_visa": true,
+        "icon_maestro": false,
+        "icon_americanexpress": false,
+        "icon_paypal": true,
+        "icon_ideal": true,
+        "icon_sofort": true,
+        "icon_klarna": true,
+        "icon_belfius": false,
+        "icon_kbc": false,
+        "icon_giropay": false,
+        "icon_cartebleue": false
+      }
+    },
     "main": {
       "type": "jp-product",
+      "disabled": true,
       "settings": {
         "free_shipping_from": "Free totebag with every order",
         "show_payment_icons": true,
@@ -602,6 +623,7 @@
     }
   },
   "order": [
+    "249a6d94-72ac-433e-89cc-7d3943997787",
     "main",
     "1648025119633f453c",
     "product-recommendations",
