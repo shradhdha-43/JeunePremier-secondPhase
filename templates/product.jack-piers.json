@@ -1,7 +1,49 @@
 {
   "sections": {
+    "bfe73b4d-cd28-4383-ab49-c5a2f5c81423": {
+      "type": "jack-piers-product",
+      "settings": {
+        "free_shipping_from": "Kostenloser Versand vanaf 150€",
+        "show_payment_icons": true,
+        "icon_bancontact": false,
+        "icon_mastercard": true,
+        "icon_visa": true,
+        "icon_maestro": false,
+        "icon_americanexpress": false,
+        "icon_paypal": true,
+        "icon_ideal": true,
+        "icon_sofort": true,
+        "icon_klarna": true,
+        "icon_belfius": false,
+        "icon_kbc": false,
+        "icon_giropay": false,
+        "icon_cartebleue": false
+      }
+    },
+    "e89768d2-0bfe-4d54-8685-6a2f1415198e": {
+      "type": "Jack-piers-Img-with-text",
+      "settings": {
+        "section_type": "img_txt",
+        "link_type": "link",
+        "btn_color": "black",
+        "img_aligment": "right",
+        "new_title": "",
+        "title": "About Jack Piers",
+        "sub_title": "",
+        "desc": "Street style on the playground Typically for little brothers, the Jack Piers collection is playful, daring, a bit rebellious, but above all unique! With cool hand-drawn prints, Jack Piers brings the cool Ostend street vibes straight to the classroom. The little brother of Jeune Premier combines the experience, product knowledge and eye for detail of his big brother with a refreshing, colorful approach and this in an affordable way.",
+        "link_txt": "",
+        "link_hover_txt": "",
+        "open_gorgias": true,
+        "link": "",
+        "img": "shopify:\/\/shop_images\/142A6492_1400x_2x_3ed453ae-1b59-4eef-a8bf-1732e70d1cd3.jpg",
+        "video_link": "",
+        "marg_top": "false",
+        "remove_bottom_marg": false
+      }
+    },
     "main": {
       "type": "jp-product",
+      "disabled": true,
       "settings": {
         "free_shipping_from": "Free totebag with every order",
         "show_payment_icons": true,
@@ -45,6 +87,7 @@
     },
     "1646073797c5988fcf": {
       "type": "jp-product-slider-2",
+      "disabled": true,
       "settings": {
         "bg_color": "white",
         "title": "",
@@ -58,6 +101,7 @@
     },
     "adb91f43-fda2-4779-8486-4a2a6aff28cf": {
       "type": "jp-img-scribble-txt",
+      "disabled": true,
       "settings": {
         "link_type": "btn",
         "img_aligment": "right",
@@ -72,6 +116,7 @@
     },
     "164614191478238c86": {
       "type": "jp-product-slider-4",
+      "disabled": true,
       "settings": {
         "bg_color": "white",
         "title": "",
@@ -99,6 +144,7 @@
     },
     "164607437737f92922": {
       "type": "jp-product-slider-3",
+      "disabled": true,
       "settings": {
         "bg_color": "white",
         "title": "",
@@ -112,11 +158,13 @@
     },
     "1645352523c5f0e4b8": {
       "type": "jp-product-info",
+      "disabled": true,
       "settings": {
       }
     },
     "65e1bdbc-170e-4784-8140-853ea00f9703": {
       "type": "jp-be-sizechart",
+      "disabled": true,
       "blocks": {
         "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-0": {
           "type": "product_grid",
@@ -302,6 +350,7 @@
     },
     "ad058941-8e42-4a50-b18a-ac15be376d7f": {
       "type": "jp-fr-sizechart",
+      "disabled": true,
       "blocks": {
         "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-0": {
           "type": "niveau",
@@ -479,6 +528,7 @@
     },
     "164543171941402611": {
       "type": "jp-img-txt-ergo",
+      "disabled": true,
       "blocks": {
         "9494620b-f4cb-4962-8306-3f277dfcad84": {
           "type": "ergo",
@@ -524,6 +574,7 @@
     },
     "16462080425b9e4234": {
       "type": "jp-product-faq",
+      "disabled": true,
       "settings": {
         "faq_title": "FAQ",
         "faq_link_text": "Other questions",
@@ -532,6 +583,7 @@
     },
     "1645442399a142c9b8": {
       "type": "jp-instagram",
+      "disabled": true,
       "blocks": {
         "9cfd7868-4dd7-486f-8086-bbb8fe75a3d3": {
           "type": "insta_img",
@@ -602,6 +654,8 @@
     }
   },
   "order": [
+    "bfe73b4d-cd28-4383-ab49-c5a2f5c81423",
+    "e89768d2-0bfe-4d54-8685-6a2f1415198e",
     "main",
     "1648025119633f453c",
     "product-recommendations",
