@@ -11,11 +11,10 @@
     font-weight: 500;
 }
 .new-st{
-    /* font-family: 'PhosphateInline'; */
-    font-family: "PhosphateInline, Museo Sans, Helvetica, Arial, Verdana, sans-serif";
+
     font-size: 16px;
     line-height: 40px;
-    /* margin-bottom: 24px; */
+    font-family: 'Work Sans',sans-serif;
     font-weight: 500;
   }
 .img-w-txt-image-wrap{

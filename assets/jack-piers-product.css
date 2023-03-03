@@ -555,9 +555,7 @@
   
 
   .vendor-name {
-    /* font-family: "PhosphateInline"; */
-    /* font-weight: 500; */
-    /* text-rendering: optimizeLegibility; */
+    font-family: 'Work Sans',sans-serif;
     font-size: 16px;
     line-height: 40px;
     text-transform: uppercase;
