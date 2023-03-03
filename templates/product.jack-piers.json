@@ -23,30 +23,6 @@
         "icon_cartebleue": false
       }
     },
-    "e89768d2-0bfe-4d54-8685-6a2f1415198e": {
-      "type": "Jack-piers-Img-with-text",
-      "settings": {
-        "section_type": "img_txt",
-        "link_type": "link",
-        "btn_color": "black",
-        "img_aligment": "right",
-        "new_title": "",
-        "title": "About Jack Piers",
-        "sub_title": "",
-        "desc": "Street style on the playground Typically for little brothers, the Jack Piers collection is playful, daring, a bit rebellious, but above all unique! With cool hand-drawn prints, Jack Piers brings the cool Ostend street vibes straight to the classroom. The little brother of Jeune Premier combines the experience, product knowledge and eye for detail of his big brother with a refreshing, colorful approach and this in an affordable way.",
-        "link_txt": "",
-        "link_hover_txt": "",
-        "open_gorgias": true,
-        "svg_icon": true,
-        "border-color": false,
-        "link": "",
-        "img": "shopify:\/\/shop_images\/142A6492_1400x_2x_3ed453ae-1b59-4eef-a8bf-1732e70d1cd3.jpg",
-        "product_video": "",
-        "video_link": "",
-        "marg_top": "false",
-        "remove_bottom_marg": false
-      }
-    },
     "631da08d-fc43-4049-9cc9-f1a2f0d83d2e": {
       "type": "jp-faq",
       "blocks": {
@@ -723,7 +699,6 @@
   },
   "order": [
     "bfe73b4d-cd28-4383-ab49-c5a2f5c81423",
-    "e89768d2-0bfe-4d54-8685-6a2f1415198e",
     "631da08d-fc43-4049-9cc9-f1a2f0d83d2e",
     "main",
     "1648025119633f453c",
