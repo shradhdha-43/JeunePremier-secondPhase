@@ -91,12 +91,36 @@
             "question": "How do I return a product",
             "answer": "Changed your mind and wish to return a product? No problem! From the day following the delivery of your purchase, you have 14 days to cancel your order. We will issue you a full refund, excluding the delivery charges your paid with your order. Our returns are not free and will be deducted from the amount to be refunded. This link provides an overview of the prices for a return shipment per country."
           }
+        },
+        "5f30813f-eb4e-4ff1-94ea-a28401a7c404": {
+          "type": "faq",
+          "settings": {
+            "question": "The item is defective - Legal warranty",
+            "answer": "Goods are considered defective if received damaged, or if a manufacturing defect occurs within two years of purchase. Please note that items damaged due to wear and tear, improper use, fall, fire or water damage are not considered defective. If you have received the goods damaged ('visible defect') Jeune Premier asks that you report this defect along with a photo of the defect and the proof of purchase within two months of delivery. Jeune Premier will then contact the Customer regarding the free replacement and\/or repair of the defective item. If a manufacturing defect occurs within two years of purchase that could not reasonably have been known at the time of delivery (\"hidden defect\"), Jeune Premier asks that this defect be reported as soon as possible, and at least within 2 months of its discovery, along with a photograph of the defect and proof of purchase. In such a case, the Customer may invoke our warranty policy and Jeune Premier will contact the Customer regarding the free replacement and\/or repair of the defective item.\n\nThe normal cost of return in these cases shall be borne by Jeune Premier.\"\n\nFor more information on exercising the legal right to warranty, please refer to our B2C general terms and conditions of sale.\""
+          }
+        },
+        "2bd30180-9933-462b-be4e-fb0fed8f5bcc": {
+          "type": "faq",
+          "settings": {
+            "question": "What happens if I'm not home during delivery",
+            "answer": "What happens if I'm not home during delivery\nThe delivery person of bpost, DPD, GLS or UPS will deliver the order to the indicated delivery address. If you are not at home during the first delivery attempt, you will receive a notice of absence. This may be in the form of a note in the letterbox, an email or a Track &amp; Trace link.\n\nWith this notice of absence, the delivery person inform you where your order is located, with the following three options:\n• A new delivery attempt will be made on the subsequent working day. During a second delivery attempt, your order may be delivered by a different courier;\n• The order has been delivered to one of your neighbours;\n• The order is waiting for you at a collection point."
+          }
+        },
+        "30a8e315-937c-4cbe-9b8a-029ab2e7e091": {
+          "type": "faq",
+          "settings": {
+            "question": "Missing an item with your order?",
+            "answer": "In the event that you ordered one or more items, but have not received them, please contact our customer service as soon as possible. We will be happy to assist you. Please contact info@jeunepremier.be"
+          }
         }
       },
       "block_order": [
         "1526d0c4-7967-43fe-867f-8ccc2f65c1ef",
         "942abb4a-7de5-4766-839b-c03684235e2e",
-        "7a22c2b2-afa4-42d4-85a9-2a75dd659dee"
+        "7a22c2b2-afa4-42d4-85a9-2a75dd659dee",
+        "5f30813f-eb4e-4ff1-94ea-a28401a7c404",
+        "2bd30180-9933-462b-be4e-fb0fed8f5bcc",
+        "30a8e315-937c-4cbe-9b8a-029ab2e7e091"
       ],
       "settings": {
         "section_bg_color": "#f9f7f3",
