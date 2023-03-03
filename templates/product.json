@@ -1,7 +1,28 @@
 {
   "sections": {
+    "main": {
+      "type": "jp-product",
+      "settings": {
+        "free_shipping_from": "Free totebag with every order",
+        "show_payment_icons": true,
+        "icon_bancontact": true,
+        "icon_mastercard": true,
+        "icon_visa": true,
+        "icon_maestro": false,
+        "icon_americanexpress": false,
+        "icon_paypal": true,
+        "icon_ideal": false,
+        "icon_sofort": false,
+        "icon_klarna": true,
+        "icon_belfius": false,
+        "icon_kbc": false,
+        "icon_giropay": false,
+        "icon_cartebleue": false
+      }
+    },
     "249a6d94-72ac-433e-89cc-7d3943997787": {
       "type": "jack-piers-product",
+      "disabled": true,
       "custom_css": [
 
       ],
@@ -78,32 +99,11 @@
         "7a22c2b2-afa4-42d4-85a9-2a75dd659dee"
       ],
       "settings": {
-        "section_bg_color": "#F9F7F3",
+        "section_bg_color": "#f9f7f3",
         "open_gorgias": true,
         "title": "FAQ",
         "link_text": "Other question",
         "link": ""
-      }
-    },
-    "main": {
-      "type": "jp-product",
-      "disabled": true,
-      "settings": {
-        "free_shipping_from": "Free totebag with every order",
-        "show_payment_icons": true,
-        "icon_bancontact": true,
-        "icon_mastercard": true,
-        "icon_visa": true,
-        "icon_maestro": false,
-        "icon_americanexpress": false,
-        "icon_paypal": true,
-        "icon_ideal": false,
-        "icon_sofort": false,
-        "icon_klarna": true,
-        "icon_belfius": false,
-        "icon_kbc": false,
-        "icon_giropay": false,
-        "icon_cartebleue": false
       }
     },
     "1648025119633f453c": {
@@ -689,10 +689,10 @@
     }
   },
   "order": [
+    "main",
     "249a6d94-72ac-433e-89cc-7d3943997787",
     "35cce94c-2bff-4901-81ea-89ce71fa2cfd",
     "b74f85fd-7dba-4721-8ebf-7ae26c544f84",
-    "main",
     "1648025119633f453c",
     "product-recommendations",
     "1646073797c5988fcf",
