@@ -3,7 +3,7 @@
     "bfe73b4d-cd28-4383-ab49-c5a2f5c81423": {
       "type": "jack-piers-product",
       "custom_css": [
-        ".cross-sell-add-product {background-color: #333;}"
+
       ],
       "settings": {
         "free_shipping_from": "Kostenloser Versand vanaf 150€",
