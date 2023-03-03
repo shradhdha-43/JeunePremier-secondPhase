@@ -594,3 +594,8 @@
   box-shadow: #fff 0 0 0 3px, #473854 0 0 0 6px, #78a9ad 0 0 0 9px, #58714d 0 0 0 12px, #e5d68e 0 0 0 15px, #f16b46 0 0 0 17px, #93302c 0 0 0 20px;
   border-radius: 5px;
 }
+@media screen and (max-width: 500px) {
+.product-services {
+  padding: 10px;
+}
+}
