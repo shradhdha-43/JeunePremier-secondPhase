@@ -23,29 +23,6 @@
         "icon_cartebleue": false
       }
     },
-    "bbe19e49-c1b5-416a-affb-4cb141014415": {
-      "type": "Jack-piers-Img-with-text",
-      "settings": {
-        "section_type": "img_txt",
-        "link_type": "link",
-        "btn_color": "black",
-        "img_aligment": "right",
-        "new_title": "",
-        "title": "About Jack Piers",
-        "sub_title": "",
-        "desc": "Named after the cool city of Amsterdam, this backpack is worth its name in every sense. \n<br>\n<br>\nBeautiful, practical and comfortable are the key words. The backpack has handles that allow you to carry it by the hand or on your back. Fill it with binders and textbooks for school days or your sports gear in your free time.",
-        "link_txt": "",
-        "link_hover_txt": "",
-        "open_gorgias": true,
-        "svg_icon": true,
-        "border-color": false,
-        "link": "",
-        "img": "shopify:\/\/shop_images\/142A6492_1400x_2x_3ed453ae-1b59-4eef-a8bf-1732e70d1cd3.jpg",
-        "video_link": "",
-        "marg_top": "false",
-        "remove_bottom_marg": false
-      }
-    },
     "b74f85fd-7dba-4721-8ebf-7ae26c544f84": {
       "type": "jp-faq",
       "blocks": {
@@ -77,7 +54,7 @@
         "7a22c2b2-afa4-42d4-85a9-2a75dd659dee"
       ],
       "settings": {
-        "section_bg_color": "#F9F7F3",
+        "section_bg_color": "#f9f7f3",
         "open_gorgias": true,
         "title": "FAQ",
         "link_text": "Other question",
@@ -689,7 +666,6 @@
   },
   "order": [
     "249a6d94-72ac-433e-89cc-7d3943997787",
-    "bbe19e49-c1b5-416a-affb-4cb141014415",
     "b74f85fd-7dba-4721-8ebf-7ae26c544f84",
     "main",
     "1648025119633f453c",
