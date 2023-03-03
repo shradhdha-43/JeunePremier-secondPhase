@@ -49,6 +49,11 @@ align-items: initial;
 .img-w-txt-image-wrap.width-cst {
     width: 50%;
 }
+@media screen and (max-width: 1024px) {
+    .svgg {
+        transform: translate(122%,-257%);
+    }
+}
 
 @media screen and (max-width: 992px) {
     .img-w-txt-image-wrap.width-cst {
@@ -58,10 +63,16 @@ align-items: initial;
     .img-w-txt-text-wrap.custom-width {
         width: 100%;
     }
-}
-@media screen and (max-width: 1024px) {
-    .svgg {
-        transform: translate(122%,-257%);
+    .newimg-w-txt-title.title.no-d.font-custm.custom-title{
+        
+          
+            margin-bottom: 24px;
+            font-family: PhosphateInline;
+            font-size: 24px;
+            line-height: 40px;
+            text-transform: uppercase;
+            font-weight: 500;
+     
     }
 }
 
