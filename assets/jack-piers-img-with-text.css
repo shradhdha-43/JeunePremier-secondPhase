@@ -94,6 +94,9 @@ align-items: initial;
         margin-left: 10px;
         padding:30px;
     }
+    .border-css {
+        border-radius: 0 0 5px 5px;
+    }
 }
 @media screen and (max-width: 500px) {
     .svgg {
