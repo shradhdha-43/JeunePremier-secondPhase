@@ -41,6 +41,7 @@
         "border-color": false,
         "link": "",
         "img": "shopify:\/\/shop_images\/142A6492_1400x_2x_3ed453ae-1b59-4eef-a8bf-1732e70d1cd3.jpg",
+        "product_video": "",
         "video_link": "",
         "marg_top": "false",
         "remove_bottom_marg": false
@@ -77,7 +78,7 @@
         "7a22c2b2-afa4-42d4-85a9-2a75dd659dee"
       ],
       "settings": {
-        "section_bg_color": "#f9f7f3",
+        "section_bg_color": "#F9F7F3",
         "open_gorgias": true,
         "title": "FAQ",
         "link_text": "Other question",
