@@ -1,16 +1,15 @@
 {{ 'jp-image-with-text.css' | asset_url | stylesheet_tag }}
-{{ 'jack-piers-img-with-text.css' | asset_url | stylesheet_tag }}
+{{ 'jack-piers-product-img-with-text.css' | asset_url | stylesheet_tag }}
 
 <div class="img-with-text-wrapper{% if section.settings.section_type == 'video' %} video-wrapper{% endif %}{% if section.settings.marg_top == 'true' %} sec-marg-top{% endif %}{% if section.settings.remove_bottom_marg %} remove_bottom_marg{% endif %}">
   <div class="container">
     {% if section.settings.section_type != 'link_within_text' %}
     
-    <div class="img-w-txt-title title no-d font-custm{% if section.settings.open_gorgias %} hide-title{% endif %}">{{ section.settings.title }}</div>
+    <div class="img-w-txt-title title no-d {% if section.settings.open_gorgias %} hide-title{% endif %}">{{ section.settings.title }}</div>
     {% endif %}
     <div class="img-with-text-content flex-box align-center  {% if section.settings.border-color %} border-padding {% endif %} justify-between{% if section.settings.img_aligment == 'left' %} row-rev{% endif %}">
       
-      <div class="img-w-txt-text-wrap custom-width ">
-        <div class="border-wrap {% if section.settings.border-color %} border-css{% endif %}">
+      <div class="img-w-txt-text-wrap {% if section.settings.border-color %} border-css{% endif %}">
         {%- if section.settings.new_title != blank -%}
         <div class="new-st">{{ section.settings.new_title }}</div>
         {%- endif -%}
@@ -31,10 +30,10 @@
         <a href="{{ section.settings.link }}" class="read-more-btn medium">{{ section.settings.link_txt }}</a>
         {% endif %}
         
-        </div>
+        
       </div>
       {% if section.settings.section_type == 'video' %}
-      <div class="img-w-txt-image-wrap  img-w-txt-video-wrap rel{% if section.settings.video_link != '' %} custom-video{% endif %}">
+      <div class="img-w-txt-image-wrap img-w-txt-video-wrap rel{% if section.settings.video_link != '' %} custom-video{% endif %}">
           <img  class="video-cover" src="{{ section.settings.cover_img | image_url: height: 600 }}" loading="lazy" alt="Video title">
         	{% if section.settings.video_link != '' %}
               <video class="cust-video" width="100%" height="100%" controls>
@@ -49,7 +48,7 @@
       </div>
       </div>
       {% else %}
-      <div class="img-w-txt-image-wrap width-cst">
+      <div class="img-w-txt-image-wrap ">
       	<img src="{{ section.settings.img | img_url: "600x" }}" loading="lazy"  alt="{{ section.settings.img.alt }}">
         <div class="svg-wrap {% if section.settings.svg_icon %} hide-svg {% endif %}">
           {% render 'jack-pier-logo-svg' %} 
@@ -85,7 +84,7 @@
 
 {% schema %}
   {
-    "name": "Jack piers Img with Text",
+    "name": "Jack Product ImgwithText",
     "settings": [
         {
           "type": "select",
@@ -255,7 +254,7 @@
 	],
 	"presets":[
       {
-         "name":"Jack Piers Img with Text"
+         "name":"Jack Product ImgwithText"
       }
    ]
   }

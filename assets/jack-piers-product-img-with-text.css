@@ -1,23 +1,3 @@
-.font-custm {
-    
-    font-size: 32px;
-    line-height: 40px;
-    margin-bottom: 24px;
-    font-weight: 500;
-    font-family: "PhosphateInline";
-    font-size: 16px;
-    line-height: 40px;
-    text-transform: uppercase;
-    font-weight: 500;
-}
-.new-st{
-    /* font-family: 'PhosphateInline'; */
-    font-family: "PhosphateInline, Museo Sans, Helvetica, Arial, Verdana, sans-serif";
-    font-size: 16px;
-    line-height: 40px;
-    /* margin-bottom: 24px; */
-    font-weight: 500;
-  }
 .img-w-txt-image-wrap{
     position: relative;
 }
@@ -31,33 +11,28 @@
 .hide-svg{
     display: none;
 }
-
+/* .mar-cust{
+margin-top:36px;
+}
+.product-single__subtitle.mar-cust {
+    margin-top: 36px;
+} */
+ /* .border-css{
+    box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px,
+    rgb(31, 193, 27) 0px 0px 0px 6px,
+    rgb(255, 217, 19) 0px 0px 0px 9px, 
+    rgb(255, 156, 85) 0px 0px 0px 12px,
+    rgb(255, 156, 85) 0px 0px 0px 12px,
+    rgb(255, 85, 85) 0px 0px 0px 15px;
+    
+}  */
 .border-css {
     box-shadow: #fff 0 0 0 3px, #473854 0 0 0 6px, #78a9ad 0 0 0 9px, #58714d 0 0 0 12px, #e5d68e 0 0 0 15px, #f16b46 0 0 0 17px, #93302c 0 0 0 20px;
-    border-radius:0 5px 5px 0;
+    border-radius: 5px;
     padding: 50px;
 }
 .border-padding{
 align-items: initial;
-}
-
-.img-w-txt-text-wrap.custom-width {
-    display: flex;
-    padding: 20px;
-    width: 50%;
-}
-.img-w-txt-image-wrap.width-cst {
-    width: 50%;
-}
-
-@media screen and (max-width: 992px) {
-    .img-w-txt-image-wrap.width-cst {
-        width: 100%;
-        margin-bottom: 0px;
-    }
-    .img-w-txt-text-wrap.custom-width {
-        width: 100%;
-    }
 }
 @media screen and (max-width: 1024px) {
     .svgg {
@@ -91,7 +66,10 @@ align-items: initial;
         width: 78px;
     }
     .border-css{
-    padding: 0px; 
+    padding: 0px 10px 10px 11px;
+
+  
+    
     }
     .img-w-txt-text-wrap.border-css {
         width: 91%;
@@ -110,4 +88,29 @@ align-items: initial;
         transform: translate(59%,-167%);
         width: 78px;
     }
+}
+
+.font-custm {
+    
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 24px;
+    font-weight: 500;
+    font-family: "PhosphateInline";
+    font-size: 16px;
+    line-height: 40px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+@media screen and (max-width: 900px) {
+.newimg-w-txt-title.title.no-d.font-custm.custom-title { 
+    line-height: 40px;
+    margin-bottom: 24px;
+    font-weight: 500;
+    font-family: "PhosphateInline";
+    font-size: 24px;
+    line-height: 40px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
 }

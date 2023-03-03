@@ -90,7 +90,7 @@
 
             <!--  MOBILE TITLE & PRICE  --> 
             <div class="title_price_wrapper">
-              <h1>{{ product.title | split: " - " | first }}</h1>    
+              <h1 class="font-cstm">{{ product.title | split: " - " | first }}</h1>    
               {% if product.compare_at_price_max > product.price %}
                 <span id="ProductPriceCompare" class="product-compare">
                   {%- if localization.country.currency.iso_code == 'EUR' -%}
@@ -269,7 +269,7 @@
                   <!--  DESKTOP TITLE & PRICE  --> 
                   <div class="title_price_wrapper">
                     
-                    <h1>{{ product.title | split: " - " | first }}</h1>
+                    <h1 class="font-cstm">{{ product.title | split: " - " | first }}</h1>
                     {% if product.compare_at_price_max > product.price %}
                       <span id="ProductPriceCompare" class="product-compare">
                       {%- if localization.country.currency.iso_code == 'EUR' -%}

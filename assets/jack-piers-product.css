@@ -64,7 +64,7 @@
   .back-btn svg {
     transform: rotate(180deg);
   }
-  .product-data h1, .product-image h1 {
+  /* .product-data h1, .product-image h1 {
       font-size: 24px;
       line-height: 32px;
       letter-spacing: 2px;
@@ -72,7 +72,7 @@
       text-transform: uppercase;
       font-weight: 500;
       margin-bottom: 4px;
-  }
+  } */
   .review-box {
     display: flex;
     align-items: center;
@@ -553,15 +553,16 @@
     }
   }
   
-  
-  .vendor-name{
-    font-family: 'PhosphateInline','Museo Sans','Helvetica,Arial','Verdana','sans-serif';
-    font-weight: 500;
-    text-rendering: optimizeLegibility;
+
+  .vendor-name {
+    /* font-family: "PhosphateInline"; */
+    /* font-weight: 500; */
+    /* text-rendering: optimizeLegibility; */
     font-size: 16px;
     line-height: 40px;
- 
-  }
+    text-transform: uppercase;
+    font-weight: 500;
+}
   .p-color{
     color:#333;
   }
@@ -581,16 +582,13 @@
   .product-single-accordion.border-custom:first-child{
     border-top:1px solid #333!important;
   }
-
-/* .border-css{
-  box-shadow: rgb(147, 48, 44) 0px 0px 0px 3px,
-  rgb(241, 107, 70) 0px 0px 0px 6px,
-  rgb(229, 214, 142) 0px 0px 0px 9px, 
-  rgb(88, 113, 77) 0px 0px 0px 12px,
-  rgb(120, 169, 173) 0px 0px 0px 15px,
-  rgb(71, 56, 84) 0px 0px 0px 12px,
-  rgb(255, 255, 255) 0px 0px 0px 9px;
-} */
+  .font-cstm {
+    font-size: 24px;
+    font-family: PhosphateInline; 
+    line-height: 40px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
 
 .border-css-ar {
   box-shadow: #fff 0 0 0 3px, #473854 0 0 0 6px, #78a9ad 0 0 0 9px, #58714d 0 0 0 12px, #e5d68e 0 0 0 15px, #f16b46 0 0 0 17px, #93302c 0 0 0 20px;
