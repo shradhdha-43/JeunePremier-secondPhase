@@ -7,9 +7,9 @@
     
     <div class="img-w-txt-title title no-d font-custm{% if section.settings.open_gorgias %} hide-title{% endif %}">{{ section.settings.title }}</div>
     {% endif %}
-    <div class="img-with-text-content flex-box align-center justify-between{% if section.settings.img_aligment == 'left' %} row-rev{% endif %}">
+    <div class="img-with-text-content flex-box align-center  {% if section.settings.border-color %} border-padding {% endif %} justify-between{% if section.settings.img_aligment == 'left' %} row-rev{% endif %}">
       
-      <div class="img-w-txt-text-wrap">
+      <div class="img-w-txt-text-wrap {% if section.settings.border-color %} border-css{% endif %}">
         {%- if section.settings.new_title != blank -%}
         <div class="new-st">{{ section.settings.new_title }}</div>
         {%- endif -%}
@@ -48,7 +48,7 @@
       </div>
       </div>
       {% else %}
-      <div class="img-w-txt-image-wrap {% if section.settings.border-color %} border-css{% endif %}">
+      <div class="img-w-txt-image-wrap ">
       	<img src="{{ section.settings.img | img_url: "600x" }}" loading="lazy"  alt="{{ section.settings.img.alt }}">
         <div class="svg-wrap {% if section.settings.svg_icon %} hide-svg {% endif %}">
           {% render 'jack-pier-logo-svg' %} 
@@ -196,7 +196,7 @@
     },
     {
       "type": "checkbox",
-      "label": "To enable border around image",
+      "label": "To enable Border Around the Text",
       "id": "border-color"
     },
 		{
