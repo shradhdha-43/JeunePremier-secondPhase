@@ -31,7 +31,7 @@
 .border-css {
     box-shadow: #fff 0 0 0 3px, #473854 0 0 0 6px, #78a9ad 0 0 0 9px, #58714d 0 0 0 12px, #e5d68e 0 0 0 15px, #f16b46 0 0 0 17px, #93302c 0 0 0 20px;
     border-radius:0 5px 5px 0;
-    padding: 50px;
+    padding: 50px 80px;
 }
 .border-padding{
 align-items: initial;
@@ -46,7 +46,11 @@ align-items: initial;
     width: 50%;
 }
 
-
+@media screen and (max-width: 1100px) {
+    .border-css {
+        padding: 50px;
+    }
+}
 @media screen and (max-width: 992px) {
     .img-w-txt-image-wrap.width-cst {
         width: 100%;
@@ -62,6 +66,9 @@ align-items: initial;
             text-transform: uppercase;
             font-weight: 500;
      
+    }
+    .border-css {
+        padding: 50px;
     }
 }
 

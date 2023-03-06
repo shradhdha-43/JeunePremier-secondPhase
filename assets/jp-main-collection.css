@@ -440,10 +440,11 @@
 }
 
 .wrap-vendor svg {
-  width: 70px;
+  width: 80px;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
 .wrap-vendor svg {
   width: 40px;
+  height: 40px;
 }
 }
