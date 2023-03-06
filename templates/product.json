@@ -2,6 +2,7 @@
   "sections": {
     "main": {
       "type": "jp-product",
+      "disabled": true,
       "settings": {
         "free_shipping_from": "Free totebag with every order",
         "show_payment_icons": true,
@@ -22,7 +23,6 @@
     },
     "249a6d94-72ac-433e-89cc-7d3943997787": {
       "type": "jack-piers-product",
-      "disabled": true,
       "custom_css": [
 
       ],
