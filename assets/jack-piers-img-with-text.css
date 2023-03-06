@@ -20,10 +20,9 @@
 }
 .svgg {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(163%,-239%);
-    width:100px;
+    top: 16px;
+    right: 16px;
+    width: 80px;
 }
 .hide-svg{
     display: none;
@@ -46,11 +45,7 @@ align-items: initial;
 .img-w-txt-image-wrap.width-cst {
     width: 50%;
 }
-@media screen and (max-width: 1024px) {
-    .svgg {
-        transform: translate(122%,-257%);
-    }
-}
+
 
 @media screen and (max-width: 992px) {
     .img-w-txt-image-wrap.width-cst {
@@ -70,20 +65,9 @@ align-items: initial;
     }
 }
 
-@media screen and (max-width: 900px) {
-    .svgg {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(236%,-307%);
-    }
-}
 
 @media screen and (max-width: 780px) {
-    .svgg {
-        
-        transform: translate(203%,-307%);
-    }
+   
     .img-w-txt-text-wrap.border-css {
         width: 96%;
         margin-left: 10px;
@@ -91,13 +75,11 @@ align-items: initial;
     }
     .border-css {
         border-radius: 0 0 5px 5px;
+        padding: 25px;
     }
 }
 @media screen and (max-width: 500px) {
-    .svgg {
-        transform: translate(110%,-197%);
-        width: 78px;
-    }
+
     .border-wrap.border-css {
         padding: 11px;
     }
@@ -107,15 +89,3 @@ align-items: initial;
         padding:0px;
     }
   }
-  @media screen and (max-width: 400px) {
-    .svgg {
-        transform: translate(93%,-197%);
-        width: 78px;
-    }
-}
-@media screen and (max-width: 340px) {
-    .svgg {
-        transform: translate(59%,-167%);
-        width: 78px;
-    }
-}
