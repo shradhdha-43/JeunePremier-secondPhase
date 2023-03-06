@@ -5,7 +5,7 @@
   <div class="container">
     {% if section.settings.section_type != 'link_within_text' %}
     
-    <div class="img-w-txt-title title no-d font-custm{% if section.settings.open_gorgias %} hide-title{% endif %}">{{ section.settings.title }}</div>
+    <div class="img-w-txt-title title no-d font-custom{% if section.settings.open_gorgias %} hide-title{% endif %}">{{ section.settings.title }}</div>
     {% endif %}
     <div class="img-with-text-content flex-box align-center  {% if section.settings.border-color %} border-padding {% endif %} justify-between{% if section.settings.img_aligment == 'left' %} row-rev{% endif %}">
       
@@ -14,11 +14,11 @@
         {%- if section.settings.new_title != blank -%}
         <div class="new-st">{{ section.settings.new_title }}</div>
         {%- endif -%}
-        <h2 class="img-w-txt-title font-custm title{% if section.settings.section_type != 'link_within_text' %} no-t-m{% endif %}">{{ section.settings.title }}</h2>
+        <h2 class="img-w-txt-title font-custom title{% if section.settings.section_type != 'link_within_text' %} no-t-m{% endif %}">{{ section.settings.title }}</h2>
         {% if section.settings.sub_title %}
         <div class="subtitle medium mar-cust">{{ section.settings.sub_title }}</div>
         {% comment %} <div class="img-w-txt-title title no-d custom-title">{{ section.settings.title }}</div> {% endcomment %}
-        <div class="newimg-w-txt-title title no-d font-custm custom-title">{{ section.settings.title }}</div>
+        <div class="newimg-w-txt-title title no-d font-custom custom-title">{{ section.settings.title }}</div>
         {% endif %}
         {% if section.settings.section_type == 'link_within_text' %}
         <div class="img-w-txt-desc img-w-txt-desc-link light">{{ section.settings.desc }}</div>
@@ -187,7 +187,7 @@
 		},
     {
       "type": "checkbox",
-      "label": "To bring Title below the image for mobile",
+      "label": "To hide title above the image for mobile",
       "id": "open_gorgias"
     },
     {

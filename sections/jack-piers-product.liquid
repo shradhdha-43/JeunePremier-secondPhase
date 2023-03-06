@@ -90,7 +90,7 @@
 
             <!--  MOBILE TITLE & PRICE  --> 
             <div class="title_price_wrapper">
-              <h1 class="font-cstm">{{ product.title | split: " - " | first }}</h1>    
+              <h1 >{{ product.title | split: " - " | first }}</h1>    
               {% if product.compare_at_price_max > product.price %}
                 <span id="ProductPriceCompare" class="product-compare">
                   {%- if localization.country.currency.iso_code == 'EUR' -%}
@@ -152,8 +152,8 @@
 
           </div>
             <span class="product-wishlist"></span>
-          <div class="product-image-content">
-
+          <div class="product-image-content position-rel">
+            {% render 'jack-piers-product-icon' %} 
             <div class="no-t-m slider-nav custom-color{% if product.media.size < 6 %}no-transform{% endif %}">
               
               {% assign videos = product.media | where: "media_type", "video" %}
@@ -269,7 +269,7 @@
                   <!--  DESKTOP TITLE & PRICE  --> 
                   <div class="title_price_wrapper">
                     
-                    <h1 class="font-cstm">{{ product.title | split: " - " | first }}</h1>
+                    <h1 >{{ product.title | split: " - " | first }}</h1>
                     {% if product.compare_at_price_max > product.price %}
                       <span id="ProductPriceCompare" class="product-compare">
                       {%- if localization.country.currency.iso_code == 'EUR' -%}

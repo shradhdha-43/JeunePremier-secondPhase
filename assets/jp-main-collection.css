@@ -422,3 +422,28 @@
     padding-bottom: 40px;
   }
 }
+
+.vendor-wrap {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 300;
+  margin-top: 2px;
+}
+.position-rel{
+  position: relative;
+}
+.wrap-vendor {
+  position: absolute;
+  z-index: 4;
+  right: 0px;
+  top:0px;
+}
+
+.wrap-vendor svg {
+  width: 70px;
+}
+@media screen and (max-width: 400px) {
+.wrap-vendor svg {
+  width: 40px;
+}
+}
