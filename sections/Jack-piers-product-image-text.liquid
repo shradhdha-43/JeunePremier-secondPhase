@@ -5,7 +5,7 @@
   <div class="container">
     {% if section.settings.section_type != 'link_within_text' %}
     
-    <div class="img-w-txt-title title no-d {% if section.settings.open_gorgias %} hide-title{% endif %}">{{ section.settings.title }}</div>
+    {% comment %} <div class="img-w-txt-title title no-d {% if section.settings.open_gorgias %} hide-title{% endif %}">{{ section.settings.title }}</div> {% endcomment %}
     {% endif %}
     <div class="img-with-text-content flex-box align-center  {% if section.settings.border-color %} border-padding {% endif %} justify-between{% if section.settings.img_aligment == 'left' %} row-rev{% endif %}">
       
@@ -184,11 +184,7 @@
 			"id": "link_hover_txt",
 			"label": "Link Hover Text"
 		},
-    {
-      "type": "checkbox",
-      "label": "To hide title above the image for mobile",
-      "id": "open_gorgias"
-    },
+   
     {
       "type": "checkbox",
       "label": "To Hide the Svg from the Image",
