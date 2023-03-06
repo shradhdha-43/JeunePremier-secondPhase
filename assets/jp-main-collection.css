@@ -434,7 +434,7 @@
 }
 .wrap-vendor {
   position: absolute;
-  z-index: 4;
+  z-index: 1;
   right: 0px;
   top:0px;
 }
