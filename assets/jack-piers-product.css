@@ -592,17 +592,39 @@
  position: relative; 
 }
 .svg-product{ 
-  display: none;
-}
-@media screen and (max-width: 768px) {
-  .svg-product{ 
   position:absolute;
   display: block;
   top: 10px;
-  left: 10px;
+  left: 105px;
   z-index: 1;
   width: 80px;
   height: 80px;
+}
+.product-single-accordion__title {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 300;
+}
+.product-single-accordion__content {
+  font-size: 16px;
+  line-height: 24px;
+  padding-bottom: 24px;
+}
+.product-faq-question-wrap {
+  padding: 16px 0 12px;
+}
+@media screen and (max-width: 992px) {
+  .svg-product{ 
+    top: 10px;
+    left: 50%;
+    transform: translateX(-355%);
+  }
+}
+@media screen and (max-width: 768px) {
+  .svg-product{ 
+  top: 10px;
+  left: 10px;
+  transform: none;
 }
 .border-css-ar {
   padding: 11px;

@@ -583,7 +583,7 @@
               {%- endif -%}
             </div>
   
-            <div class="product-single__accordions border-custom">
+            <div class="product-single__accordions_custom border-custom">
               {%- for item in section_split -%}
               {%- assign accordion_split = item | split: '</h2>' -%}
               {%- assign accordion_title = accordion_split[0] | strip -%}
@@ -597,7 +597,7 @@
                   <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
                 </div>
                 {% if accordion_split[1] != blank %}
-                <div class="rte product-single-accordion__content" >
+                <div class="rte product-single-accordion__content_custom" >
                   {{ accordion_split[1] | remove: '<p> </p>' }}
                 </div>
                 {% endif %}
@@ -621,7 +621,7 @@
                   <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
                 </div>
                 {% if accordion_split[1] != blank %}
-                <div class="rte product-single-accordion__content" >
+                <div class="rte product-single-accordion__content_custom" >
                   {{ accordion_split[1] | remove: '<p> </p>' }}
                   {% if accordion_title contains 'Size ' %}
                   <span>
@@ -1587,7 +1587,33 @@ $( document ).ready(function() {
     
   });
   </script>
+  <script>
 
+
+    ///----- Auto-Close Accordion
+  $(document).ready(function() {
+  
+  
+    const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+    observer.observe();
+  
+  
+    //--- initial state of elements
+    $('.product-single-accordion__content_custom').hide()
+      //----- click function
+    $(".product-single__accordions_custom").find(".product-faq-question-wrap").click(function() { //---- tabs or buttons
+      //---- active class
+      $(".product-single__accordions_custom").find(".product-faq-question-wrap").removeClass('active');
+      $(this).closest('.product-single__accordions_custom').find('.product-single-accordion__content_custom').slideUp();
+      var selected = $(this).next('.product-single-accordion__content_custom');
+      if (selected.is(":hidden")) {
+        $(this).next('.product-single-accordion__content_custom').slideDown();
+        $(this).toggleClass('active');
+      }
+    });
+  });
+    
+  </script>
 {% schema %}
   {
     "name": "Jack Piers product",
