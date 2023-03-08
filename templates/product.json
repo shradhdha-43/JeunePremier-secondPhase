@@ -420,7 +420,7 @@
           "type": "product_grid",
           "settings": {
             "background_color": "color1",
-            "product_image": "shopify:\/\/shop_images\/Midi.svg",
+            "product_image": "shopify:\/\/shop_images\/Maxi-05.svg",
             "product_name": "Cartable Maxi",
             "first_cell": false,
             "second_cell": false,
@@ -439,7 +439,7 @@
           "type": "product_grid",
           "settings": {
             "background_color": "color2",
-            "product_image": "shopify:\/\/shop_images\/Midi.svg",
+            "product_image": "shopify:\/\/shop_images\/James-02.svg",
             "product_name": "Sac à dos James",
             "first_cell": false,
             "second_cell": false,
