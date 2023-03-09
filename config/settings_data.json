@@ -26,6 +26,8 @@
     "type_body_font": "assistant_n4",
     "favicon": "shopify:\/\/shop_images\/favicon-jeune-premier.png",
     "currency_code_enabled": false,
+    "error_check_mess": "May we kindly ask you to fill in your personal data in English for smooth shipping of your order.",
+    "disclaimer_check_mess": "I assure that I have entered my personal data in English to ensure smooth shipping of my order.",
     "checkout_logo_image": "shopify:\/\/shop_images\/favicon-jeune-premier.png",
     "checkout_logo_position": "center",
     "checkout_logo_size": "large",
