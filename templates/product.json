@@ -117,7 +117,6 @@
     },
     "65e1bdbc-170e-4784-8140-853ea00f9703": {
       "type": "jp-be-sizechart",
-      "disabled": true,
       "blocks": {
         "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-0": {
           "type": "product_grid",
@@ -265,6 +264,7 @@
         },
         "d9c804d4-7f4f-4570-8590-cb0586fb542b": {
           "type": "product_grid",
+          "disabled": true,
           "settings": {
             "background_color": "color1",
             "product_name": "It Bag Mini",
@@ -311,7 +311,7 @@
         "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-0": {
           "type": "niveau",
           "settings": {
-            "background_color": "color1",
+            "background_color": "color2",
             "col_head": "NIVEAU",
             "cell_1": "Section des touts-petites",
             "cell_2": "Section des petites",
