@@ -413,6 +413,7 @@
         "blocks": {
           "4d62b47a-48fe-45e7-a6a3-737a68a1908a": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "announcement_text": "<p>📢 All orders between 8.02 & 14.02 will be delayed due to stock shift 📢<\/p>",
               "announcement_url": ""
