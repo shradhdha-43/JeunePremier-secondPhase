@@ -1,6 +1,11 @@
 <script async>
-
   $( document ).ready(function() {
+    //works only for the below countries
+    let array = ['CN','IL','KR','GR','RU','JP'];
+    let valueToCheck = '{{ locale }}';
+    //console.log(array);
+    //console.log(valueToCheck);
+    if (array.some(item => valueToCheck.includes(item))){
     //works only on the contact information page 
     if (Shopify.Checkout.step == "contact_information") {
       {% if settings.disclaimer_check_mess != blank %}
@@ -32,6 +37,6 @@
           return re.test(str);
         }
       }
+    }
   });
-
 </script>
