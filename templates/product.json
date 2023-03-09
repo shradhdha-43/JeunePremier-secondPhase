@@ -115,6 +115,373 @@
       "settings": {
       }
     },
+    "65e1bdbc-170e-4784-8140-853ea00f9703": {
+      "type": "jp-be-sizechart",
+      "blocks": {
+        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-0": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color1",
+            "product_image": "shopify:\/\/shop_images\/mini-07.svg",
+            "product_name": "It Bag Mini",
+            "first_cell": false,
+            "second_cell": true,
+            "third_cell": true,
+            "fourth_cell": false,
+            "fifth_cell": false,
+            "sixth_cell": false,
+            "seventh_cell": false,
+            "eighth_cell": false,
+            "ninth_cell": false,
+            "tenth_cell": false
+          }
+        },
+        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-1": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color2",
+            "product_image": "shopify:\/\/shop_images\/Ralphie.svg",
+            "product_name": "Backpack Ralphie",
+            "first_cell": true,
+            "second_cell": true,
+            "third_cell": true,
+            "fourth_cell": false,
+            "fifth_cell": false,
+            "sixth_cell": false,
+            "seventh_cell": false,
+            "eighth_cell": false,
+            "ninth_cell": false,
+            "tenth_cell": false
+          }
+        },
+        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-2": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color1",
+            "product_image": "shopify:\/\/shop_images\/Midi.svg",
+            "product_name": "It Bag Midi",
+            "first_cell": false,
+            "second_cell": false,
+            "third_cell": false,
+            "fourth_cell": true,
+            "fifth_cell": true,
+            "sixth_cell": true,
+            "seventh_cell": false,
+            "eighth_cell": false,
+            "ninth_cell": false,
+            "tenth_cell": false
+          }
+        },
+        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-3": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color2",
+            "product_image": "shopify:\/\/shop_images\/Ergomaxx.svg",
+            "product_name": "Backpack Ergomaxx",
+            "first_cell": false,
+            "second_cell": false,
+            "third_cell": false,
+            "fourth_cell": true,
+            "fifth_cell": true,
+            "sixth_cell": true,
+            "seventh_cell": true,
+            "eighth_cell": true,
+            "ninth_cell": false,
+            "tenth_cell": false
+          }
+        },
+        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-4": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color1",
+            "product_image": "shopify:\/\/shop_images\/bobbie.svg",
+            "product_name": "Backpack Bobbie",
+            "first_cell": false,
+            "second_cell": false,
+            "third_cell": false,
+            "fourth_cell": true,
+            "fifth_cell": true,
+            "sixth_cell": true,
+            "seventh_cell": true,
+            "eighth_cell": true,
+            "ninth_cell": true,
+            "tenth_cell": true
+          }
+        },
+        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-5": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color2",
+            "product_image": "shopify:\/\/shop_images\/James-02.svg",
+            "product_name": "Backpack James",
+            "first_cell": false,
+            "second_cell": false,
+            "third_cell": false,
+            "fourth_cell": false,
+            "fifth_cell": false,
+            "sixth_cell": true,
+            "seventh_cell": true,
+            "eighth_cell": true,
+            "ninth_cell": true,
+            "tenth_cell": true
+          }
+        },
+        "cddc8a78-efc0-43bb-be90-e283c5431a50": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color1",
+            "product_image": "shopify:\/\/shop_images\/Maxi-05.svg",
+            "product_name": "It Bag Maxi",
+            "first_cell": false,
+            "second_cell": false,
+            "third_cell": false,
+            "fourth_cell": false,
+            "fifth_cell": false,
+            "sixth_cell": true,
+            "seventh_cell": true,
+            "eighth_cell": true,
+            "ninth_cell": true,
+            "tenth_cell": true
+          }
+        },
+        "00dfcca2-d649-463e-a45f-45567a6ac422": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color2",
+            "product_image": "shopify:\/\/shop_images\/City_bag.svg",
+            "product_name": "City Bag",
+            "first_cell": true,
+            "second_cell": true,
+            "third_cell": true,
+            "fourth_cell": true,
+            "fifth_cell": true,
+            "sixth_cell": true,
+            "seventh_cell": true,
+            "eighth_cell": false,
+            "ninth_cell": true,
+            "tenth_cell": true
+          }
+        },
+        "d9c804d4-7f4f-4570-8590-cb0586fb542b": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color1",
+            "product_name": "It Bag Mini",
+            "first_cell": true,
+            "second_cell": true,
+            "third_cell": false,
+            "fourth_cell": false,
+            "fifth_cell": false,
+            "sixth_cell": false,
+            "seventh_cell": false,
+            "eighth_cell": false,
+            "ninth_cell": false,
+            "tenth_cell": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-0",
+        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-1",
+        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-2",
+        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-3",
+        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-4",
+        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-5",
+        "cddc8a78-efc0-43bb-be90-e283c5431a50",
+        "00dfcca2-d649-463e-a45f-45567a6ac422",
+        "d9c804d4-7f4f-4570-8590-cb0586fb542b"
+      ],
+      "settings": {
+        "heading": "Welcher Rucksack ist der richtige für mein Kind?",
+        "maten_in_cm": "*Maten in cm",
+        "first_column_heading": "SCHOOL",
+        "first_column_2nd_cel": "Kleuterschool",
+        "first_column_3rd_cell": "Lagere school",
+        "second_column_heading": "LEEFTIJD",
+        "second_column_cell_entries": "2-3,4,5-6,6,7,8,9,10,11,12",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "ad058941-8e42-4a50-b18a-ac15be376d7f": {
+      "type": "jp-fr-sizechart",
+      "blocks": {
+        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-0": {
+          "type": "niveau",
+          "settings": {
+            "background_color": "color1",
+            "col_head": "NIVEAU",
+            "cell_1": "Section des touts-petites",
+            "cell_2": "Section des petites",
+            "cell_3": "Section des moyens",
+            "cell_4": "Sectons des grands",
+            "cell_5": "Cours préparatoire (CP)",
+            "cell_6": "Cours élémentaire 1 (CE1)",
+            "cell_7": "Cours élémentaire 2 (CE2)",
+            "cell_8": "Cours moyen 1 (CM1)",
+            "cell_9": "Cours moyen 2 (CM2)",
+            "cell_10": "5e",
+            "cell_11": "6e"
+          }
+        },
+        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-2": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color1",
+            "product_image": "shopify:\/\/shop_images\/Ralphie.svg",
+            "product_name": "Sac à dos Ralphie",
+            "first_cell": true,
+            "second_cell": true,
+            "third_cell": true,
+            "fourth_cell": true,
+            "fifth_cell": false,
+            "sixth_cell": false,
+            "seventh_cell": false,
+            "eighth_cell": false,
+            "ninth_cell": false,
+            "tenth_cell": false,
+            "eleventh_cell": false
+          }
+        },
+        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-1": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color2",
+            "product_image": "shopify:\/\/shop_images\/mini-07.svg",
+            "product_name": "Cartable Mini",
+            "first_cell": false,
+            "second_cell": false,
+            "third_cell": true,
+            "fourth_cell": true,
+            "fifth_cell": false,
+            "sixth_cell": false,
+            "seventh_cell": false,
+            "eighth_cell": false,
+            "ninth_cell": false,
+            "tenth_cell": false,
+            "eleventh_cell": false
+          }
+        },
+        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-3": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color2",
+            "product_image": "shopify:\/\/shop_images\/Midi.svg",
+            "product_name": "Cartable Midi",
+            "first_cell": false,
+            "second_cell": false,
+            "third_cell": false,
+            "fourth_cell": false,
+            "fifth_cell": true,
+            "sixth_cell": true,
+            "seventh_cell": true,
+            "eighth_cell": false,
+            "ninth_cell": false,
+            "tenth_cell": false,
+            "eleventh_cell": false
+          }
+        },
+        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-4": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color1",
+            "product_image": "shopify:\/\/shop_images\/Ergomaxx.svg",
+            "product_name": "Sac à dos Ergomaxx",
+            "first_cell": false,
+            "second_cell": false,
+            "third_cell": false,
+            "fourth_cell": false,
+            "fifth_cell": true,
+            "sixth_cell": true,
+            "seventh_cell": true,
+            "eighth_cell": true,
+            "ninth_cell": true,
+            "tenth_cell": false,
+            "eleventh_cell": false
+          }
+        },
+        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-5": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color2",
+            "product_image": "shopify:\/\/shop_images\/bobbie.svg",
+            "product_name": "Sac à dos Bobbie",
+            "first_cell": false,
+            "second_cell": false,
+            "third_cell": false,
+            "fourth_cell": false,
+            "fifth_cell": true,
+            "sixth_cell": true,
+            "seventh_cell": true,
+            "eighth_cell": true,
+            "ninth_cell": true,
+            "tenth_cell": true,
+            "eleventh_cell": true
+          }
+        },
+        "f36706db-3818-4e2e-8070-2c4fe3a96274": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color1",
+            "product_image": "shopify:\/\/shop_images\/Maxi-05.svg",
+            "product_name": "Cartable Maxi",
+            "first_cell": false,
+            "second_cell": false,
+            "third_cell": false,
+            "fourth_cell": false,
+            "fifth_cell": false,
+            "sixth_cell": false,
+            "seventh_cell": true,
+            "eighth_cell": true,
+            "ninth_cell": true,
+            "tenth_cell": true,
+            "eleventh_cell": true
+          }
+        },
+        "4bbe2bf4-8e19-4d16-b519-5e932d985570": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color2",
+            "product_image": "shopify:\/\/shop_images\/James-02.svg",
+            "product_name": "Sac à dos James",
+            "first_cell": false,
+            "second_cell": false,
+            "third_cell": false,
+            "fourth_cell": false,
+            "fifth_cell": false,
+            "sixth_cell": false,
+            "seventh_cell": true,
+            "eighth_cell": true,
+            "ninth_cell": true,
+            "tenth_cell": true,
+            "eleventh_cell": true
+          }
+        }
+      },
+      "block_order": [
+        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-0",
+        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-2",
+        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-1",
+        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-3",
+        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-4",
+        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-5",
+        "f36706db-3818-4e2e-8070-2c4fe3a96274",
+        "4bbe2bf4-8e19-4d16-b519-5e932d985570"
+      ],
+      "settings": {
+        "heading": "Welcher Rucksack ist der richtige für mein Kind?",
+        "maten_in_cm": "*Maten in cm",
+        "first_column_heading": "ECOLE",
+        "first_column_2nd_cel": "Ecole maternelle",
+        "first_column_3rd_cell": "Ecole élémentaire",
+        "fourth_column_4th_cell": "Collège",
+        "second_column_heading": "ÂGE",
+        "col_heading_2_mob": "ÂGE",
+        "second_column_cell_entries": "2,3,4,5,6,7,8,9,10,11,12",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "164543171941402611": {
       "type": "jp-img-txt-ergo",
       "blocks": {
@@ -249,6 +616,8 @@
     "16454287984d026596",
     "164607437737f92922",
     "1645352523c5f0e4b8",
+    "65e1bdbc-170e-4784-8140-853ea00f9703",
+    "ad058941-8e42-4a50-b18a-ac15be376d7f",
     "164543171941402611",
     "16462080425b9e4234",
     "1645442399a142c9b8",
