@@ -117,6 +117,7 @@
     },
     "65e1bdbc-170e-4784-8140-853ea00f9703": {
       "type": "jp-be-sizechart",
+      "disabled": true,
       "blocks": {
         "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-0": {
           "type": "product_grid",
@@ -305,6 +306,7 @@
     },
     "ad058941-8e42-4a50-b18a-ac15be376d7f": {
       "type": "jp-fr-sizechart",
+      "disabled": true,
       "blocks": {
         "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-0": {
           "type": "niveau",
