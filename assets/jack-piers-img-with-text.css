@@ -81,7 +81,7 @@ align-items: initial;
         padding:30px;
     }
     .border-css {
-        border-radius: 0 0 5px 5px;
+        border-radius:  5px;
         padding: 25px;
     }
 }
