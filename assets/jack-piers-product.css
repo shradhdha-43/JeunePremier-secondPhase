@@ -427,7 +427,8 @@
       line-height: 24px;
       margin-top: 0;
       color: var(--dd-color-sixth);
-      background-color: var(--dd-color-first);
+/*       background-color: var(--dd-color-first); */
+      background-color:#57714c;
       margin-bottom: 0;
       text-transform: uppercase;
       text-align: center;
