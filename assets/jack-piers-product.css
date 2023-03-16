@@ -183,7 +183,8 @@
   }
   .add-to-cart, .out-of-stock-notify-btn {
     border: 0;
-    background-color: var(--dd-color-first);
+/*     background-color: var(--dd-color-first); */
+    background-color:#57714c;
     display: block;
     width: 100%;
     padding: 16px;
@@ -368,7 +369,7 @@
   
   .add-to-cart.out-of-stock {
       display: none;
-      background-color: var(--dd-color-first);
+      background-color: );
       color: var(--dd-color-sixth);
       cursor: not-allowed;
   }
@@ -632,5 +633,5 @@
 }
 
 .color-gr{
-  background-color:#57714c!important;
+  background-color:#57714c;
 }
