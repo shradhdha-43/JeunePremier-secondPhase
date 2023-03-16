@@ -699,7 +699,7 @@
         </span>
       </div>
       <div class="cta-right">
-        <span class="addcart-cta addcta-single {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %} {% if product.type == 'Goedgemerkt' or product.type == 'Ludilabel' %}label-type stop-prop{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%} id="AddToCartCta">{{ add_to_cart_text }}</span>
+        <span class="addcart-cta addcta-single color-gr {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %} {% if product.type == 'Goedgemerkt' or product.type == 'Ludilabel' %}label-type stop-prop{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%} id="AddToCartCta">{{ add_to_cart_text }}</span>
       </div>
     </div>
     <span class="sticky-free-shipping">
