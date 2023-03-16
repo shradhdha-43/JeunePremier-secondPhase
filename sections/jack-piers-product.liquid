@@ -395,7 +395,7 @@
                 {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}
                 {%- assign add_to_cart_text = 'products.product.preorder' | t -%}
                 {%- endif -%}
-                <button class="add-to-cart btn add-this no-t-m {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %} {% if product.type == 'Goedgemerkt' or product.type == 'Ludilabel' %}label-type stop-prop{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%}>{{add_to_cart_text}}</button>
+                <button class="add-to-cart btn add-this no-t-m color-gr{% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %} {% if product.type == 'Goedgemerkt' or product.type == 'Ludilabel' %}label-type stop-prop{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%}>{{add_to_cart_text}}</button>
                 
                 <div id="BIS_wrap"  style="display: none">
                   <button id="BIS_trigger" type="button" class="out-of-stock-notify-btn">
