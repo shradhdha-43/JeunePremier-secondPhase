@@ -130,7 +130,7 @@
 
               {% assign avg_rev_loop = avg_rev | round %}
               {%for i in (1..product.metafields.stamped.reviews_average) %}
-              {% include 'icon-jack-piers' %}
+              {% include 'jack-piers-stars' %}
               {% endfor %}
               <a href="#to-reviews" class="no-of-ratings p-color">
                 {% if product.metafields.stamped.reviews_count != blank %}{{ product.metafields.stamped.reviews_count }} {{ 'products.product.reviews' | t }}{% endif %}
@@ -307,7 +307,7 @@
                     {%- endfor -%}
                     {% assign avg_rev_loop = avg_rev | round %}
                     {%for i in (1..product.metafields.stamped.reviews_average) %}
-                      {% include 'icon-jack-piers' %}
+                      {% include 'jack-piers-stars' %}
                     {% endfor %}
                     <a href="#to-reviews" class="no-of-ratings p-color">
                       {% if product.metafields.stamped.reviews_count != blank %}{{ product.metafields.stamped.reviews_count }} {{ 'products.product.reviews' | t }}{% endif %}
