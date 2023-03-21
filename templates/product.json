@@ -293,12 +293,12 @@
         "d9c804d4-7f4f-4570-8590-cb0586fb542b"
       ],
       "settings": {
-        "heading": "Welcher Rucksack ist der richtige für mein Kind?",
-        "maten_in_cm": "*Maten in cm",
-        "first_column_heading": "SCHOOL",
-        "first_column_2nd_cel": "Kleuterschool",
-        "first_column_3rd_cell": "Lagere school",
-        "second_column_heading": "LEEFTIJD",
+        "heading": "Which backpack is the right one for my child?",
+        "maten_in_cm": "*Sizes in cm",
+        "first_column_heading": "School",
+        "first_column_2nd_cel": "Preschool",
+        "first_column_3rd_cell": "Primary school",
+        "second_column_heading": "Age",
         "second_column_cell_entries": "2-3,4,5-6,6,7,8,9,10,11,12",
         "padding_top": 36,
         "padding_bottom": 36
