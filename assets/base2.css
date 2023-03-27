@@ -195,9 +195,9 @@
     outline: 0!important;
 }
   
-/*   .content-for-layout{
-    margin-top: 0;
-  } */
+  .content-for-layout{
+    margin-top: 213px;
+  }
 
   .page-width {
     max-width: var(--page-width);
