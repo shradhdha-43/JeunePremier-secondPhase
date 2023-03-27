@@ -363,6 +363,10 @@ h3 .icon-arrow, .h3 .icon-arrow {
     transition: transform var(--duration-short) ease;
 }
 
+.jp-header-wrapper{
+  max-width: 100vw;
+}
+
   @media screen and (min-width: 990px){
     .title--primary {
     margin: 2rem 0;
