@@ -408,6 +408,8 @@ h3 .icon-arrow, .h3 .icon-arrow {
 }
   }
 
-@media (max-width: 992px){
-  
+@media (max-width: 749px){
+  .content-for-layout {
+    margin-top: 134px;
+}
 }
