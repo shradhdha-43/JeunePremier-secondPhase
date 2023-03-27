@@ -143,6 +143,12 @@
   --color-icon: rgb(var(--color-base-text));
 }
 
+:root {
+  --duration-short: 100ms;
+  --duration-default: 200ms;
+  --duration-long: 500ms;
+}
+
 .color-icon-accent-1 {
   --color-icon: rgb(var(--color-base-accent-1));
 }
