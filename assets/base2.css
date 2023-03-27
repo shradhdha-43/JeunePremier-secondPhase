@@ -189,6 +189,11 @@
   --shadow-blur-radius: var(--media-shadow-blur-radius);
   --shadow-opacity: var(--media-shadow-opacity);
 }
+
+.focus-none {
+    box-shadow: none!important;
+    outline: 0!important;
+}
   
   .content-for-layout{
     margin-top: 0;
