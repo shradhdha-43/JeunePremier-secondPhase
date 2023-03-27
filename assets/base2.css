@@ -312,6 +312,46 @@
     font-size: calc(var(--font-heading-scale) * 1.7rem);
 }
 
+.ratio:before {
+    content: "";
+    width: 0;
+    height: 0;
+    padding-bottom: var(--ratio-percent);
+}
+.media--transparent {
+    background-color: transparent;
+}
+.media>img {
+    object-fit: cover;
+    object-position: center center;
+    transition: opacity .4s cubic-bezier(.25,.46,.45,.94);
+}
+
+.media>*:not(.zoom):not(.deferred-media__poster-button), .media model-viewer {
+    display: block;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+h3 .icon-arrow, .h3 .icon-arrow {
+    width: calc(var(--font-heading-scale) * 1.5rem);
+}
+
+.full-unstyled-link {
+    text-decoration: none;
+    color: currentColor;
+    display: block;
+}
+
+.animate-arrow .icon-arrow path {
+    transform: translate(-0.25rem);
+    transition: transform var(--duration-short) ease;
+}
+
   @media screen and (min-width: 990px){
     .title, .title-wrapper-with-link {
     margin: 5rem 0 3rem;
@@ -340,17 +380,9 @@
     font-size: calc(var(--font-heading-scale) * 1.8rem);
 }
 
-    .full-unstyled-link {
-    text-decoration: none;
-    color: currentColor;
-    display: block;
-}
+    
 
-    .full-unstyled-link {
-    text-decoration: none;
-    color: currentColor;
-    display: block;
-}
+    
 
     .animate-arrow .icon-arrow path {
     transform: translate(-0.25rem);
