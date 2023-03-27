@@ -391,10 +391,38 @@
               "block_country11": "Korean-ko",
               "block_lang11": "ko"
             }
+          },
+          "33b7759d-71a5-4867-b232-f9d0815d0eeb": {
+            "type": "languages",
+            "settings": {
+              "block_country1": "Global-be",
+              "block_lang1": "en,nl,fr,de,ko",
+              "block_country2": "",
+              "block_lang2": "",
+              "block_country3": "",
+              "block_lang3": "",
+              "block_country4": "",
+              "block_lang4": "",
+              "block_country5": "",
+              "block_lang5": "",
+              "block_country6": "",
+              "block_lang6": "",
+              "block_country7": "",
+              "block_lang7": "",
+              "block_country8": "",
+              "block_lang8": "",
+              "block_country9": "",
+              "block_lang9": "",
+              "block_country10": "",
+              "block_lang10": "",
+              "block_country11": "",
+              "block_lang11": ""
+            }
           }
         },
         "block_order": [
-          "10f24754-b769-4ddd-a1b3-fb49c7891224"
+          "10f24754-b769-4ddd-a1b3-fb49c7891224",
+          "33b7759d-71a5-4867-b232-f9d0815d0eeb"
         ],
         "settings": {
           "addcountryCode": true,
