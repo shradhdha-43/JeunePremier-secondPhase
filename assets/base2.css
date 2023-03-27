@@ -358,8 +358,15 @@ h3 .icon-arrow, .h3 .icon-arrow {
 }
 
   @media screen and (min-width: 990px){
+    .title--primary {
+    margin: 2rem 0;
+}
     .title, .title-wrapper-with-link {
     margin: 5rem 0 3rem;
+}
+
+    .card .media.media--hover-effect>img:only-child, .card-wrapper .media.media--hover-effect>img:only-child {
+    transition: transform var(--duration-long) ease;
 }
   }
 
@@ -392,12 +399,5 @@ h3 .icon-arrow, .h3 .icon-arrow {
     .animate-arrow .icon-arrow path {
     transform: translate(-0.25rem);
     transition: transform var(--duration-short) ease;
-}
-  }
-
-
-  @media screen and (min-width: 990px){
-    .title--primary {
-    margin: 2rem 0;
 }
   }
