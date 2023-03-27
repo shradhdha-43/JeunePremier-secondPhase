@@ -407,3 +407,7 @@ h3 .icon-arrow, .h3 .icon-arrow {
     transition: transform var(--duration-short) ease;
 }
   }
+
+@media (max-width: 992px){
+  
+}
