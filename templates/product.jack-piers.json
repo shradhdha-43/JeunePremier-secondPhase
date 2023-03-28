@@ -131,7 +131,6 @@
     },
     "1648025119633f453c": {
       "type": "jp-product-cross-sell-options",
-      "disabled": true,
       "settings": {
         "cross_sell_header": "Fully Packed",
         "more_info": "More info",
