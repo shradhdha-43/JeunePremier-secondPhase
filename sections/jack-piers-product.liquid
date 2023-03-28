@@ -76,7 +76,7 @@
 {%- endfor -%}
 
 
-  <div class="product-wrapper">
+  <div class="product-wrapper {{ product.type }}">
 
     <div class="product-single container" data-rv-handle="{{ product.handle }}">
       <div class="product-row">
@@ -1579,8 +1579,10 @@ $( document ).ready(function() {
 
 
       var removeslides = $(this).closest(".slick-slide.slick-hide").attr("data-slick-index");
-      $('.show-cross-upsell .cross-sell-body').slick('slickRemove', removeslides)
-      $('.show-cross-upsell .cross-sell-body')[0].slick.refresh();
+      if(removeslides){
+        $('.show-cross-upsell .cross-sell-body').slick('slickRemove', removeslides)
+        $('.show-cross-upsell .cross-sell-body')[0].slick.refresh();
+      }
 
       };
     });
