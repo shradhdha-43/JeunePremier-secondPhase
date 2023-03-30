@@ -69,7 +69,6 @@
     },
     "b74f85fd-7dba-4721-8ebf-7ae26c544f84": {
       "type": "jp-faq",
-      "disabled": true,
       "blocks": {
         "1526d0c4-7967-43fe-867f-8ccc2f65c1ef": {
           "type": "faq",
