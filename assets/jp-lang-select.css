@@ -3,11 +3,11 @@
 }
 
 .modal {
-  display: none; 
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 16; 
+  z-index: 16;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -32,8 +32,8 @@
   margin: auto 0;
   display: flex;
   width: 100%;
-  max-width: 480px;
-/*   height: 100vh;
+  max-width: 400px;
+  /*   height: 100vh;
   max-height: 300px; */
   justify-content: center;
   align-self: center;
@@ -48,12 +48,13 @@
   width: 100%;
 }
 .modal-div {
-/*   margin: auto; */
+  /*   margin: auto; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0 20px;
+  width: 100%;
 }
 .modal-span {
   position: absolute;
@@ -73,7 +74,7 @@
   margin: 0;
   text-decoration: underline;
   cursor: pointer;
-/*   margin-bottom: 24px !important; */
+  /*   margin-bottom: 24px !important; */
 }
 .modal-buttons {
   width: 100%;
@@ -83,7 +84,7 @@
   color: #333;
   margin: 12px auto;
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
   padding: 0.3em 28px 0.3em 0.5em;
   border: 1px solid #babfc3;
@@ -113,7 +114,8 @@
   top: 12px;
   right: 12px;
 }
-.country-text, .lang-text {
+.country-text,
+.lang-text {
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -122,10 +124,45 @@
   opacity: 1;
   margin: 0;
 }
-
+svg#globe {
+  height: 85%;
+  transform: none;
+  width: 85%;
+}
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
 @media (max-width: 560px) {
   .modal-marg {
-  	margin-left: 20px;
+    margin-left: 20px;
     margin-right: 20px;
+    max-width: 330px;
+  }
+  
+  .modal-content {
+    font-size: 17px;
+    line-height: 24px;
+    margin-bottom: 0px;
+    letter-spacing: 0;
+  }
+
+  .modal-buttons {
+    height: auto;
+    font-size: 14px;
+    margin: 4px 0px;
+    line-height: 18px;
+  }
+  .country-text,
+  .lang-text {
+    line-height: 18px;
+    font-size: 14px;
+  }
+  .btn-mobile {
+    font-size: 16px !important;
+    letter-spacing: 0.9px;
+    padding: 10px !important;
+    text-transform: capitalize !important;
   }
 }

@@ -90,8 +90,16 @@
                                 <a href="/pages/get-in-touch" class="light">Contact</a>
                                 <a href="/account" class="light">Log in</a>
                                 <div class="langs rel">
-                                  <span class="flag flag-{{localization.country.iso_code | downcase}}"></span>
-                                  <span class="header-country-code">{{ localization.country.iso_code }}</span>
+                                <!-- visible country flags -->
+                                {%  assign  countries = "NL,BE,DE,KR,IT,US,DK,CH,FR" | split: "," %}
+                                {%  assign  count_code = localization.country.iso_code  %}
+                                  {%- if countries contains count_code -%}
+                                    <span class="flag flag-{{ localization.country.iso_code | downcase }}"></span>
+                                    <span class="header-country-code">{{ localization.country.iso_code }}</span>
+                                    {%- else -%}
+                                    <span class="flag">{% render 'icon-globe' %}</span>
+                                    <span class="header-country-code">Global</span>
+                                  {%- endif -%}
                                 </div>
                             </div>
                             <a href="/collections/all" class="shop-all-prods-btn title">SHOP ALL PRODUCTS</a>
@@ -129,6 +137,14 @@
 
         <div class="flex-box align-center mobile_icons no-d">
 
+          {%  assign  countries = "NL,BE,DE,KR,IT,US,DK,CH,FR" | split: "," %}
+          {%  assign  count_code = localization.country.iso_code %}
+            {%- if countries contains count_code -%}
+              <span class="flag flag-{{ localization.country.iso_code | downcase }} langs" style="margin-right:16px;"></span>
+              {%- else -%}
+              <span class="flag langs" style="margin-right:16px;">{% render 'icon-globe' %}</span>
+            {%- endif -%}
+
           <div style="margin-right:16px;" class="custom-search-wrap">
             <span>{% render 'icon-search' %}</span>
           </div>
@@ -148,8 +164,24 @@
             </div>
 
             <div class="langs rel">
-              <span class="flag flag-{{ localization.country.iso_code | downcase }}"></span>
-              <span class="header-country-code">{{ localization.country.iso_code }}</span>
+              <!-- visible country flags -->
+              {%  assign  countries = "NL,BE,DE,KR,IT,US,DK,CH,FR" | split: "," %}
+              {%  assign  count_code = localization.country.iso_code %}
+                {%- if countries contains count_code -%}
+                  <span class="flag flag-{{ localization.country.iso_code | downcase }}"></span>
+                  <span class="header-country-code">{{ localization.country.iso_code }}</span>
+                  {%- else -%}
+                  <span class="flag">{% render 'icon-globe' %}</span>
+                  <span class="header-country-code">Global</span>
+                {%- endif -%}
+              {% comment %} {% assign count_code = localization.country.iso_code %}
+              {%- if count_code == 'DK' or count_code == 'BE' or count_code == 'IT' or count_code == 'NL' or count_code == 'DE' or count_code == 'FR' or count_code == 'US' or count_code == 'DK' or count_code == 'CH'-%}
+                <span class="flag flag-{{ localization.country.iso_code | downcase }}"></span>
+                <span class="header-country-code">{{ localization.country.iso_code }}</span>
+              {%- else -%}
+                <span class="flag">{% render 'icon-globe' %}</span>
+                <span class="header-country-code">Global</span>
+              {%- endif -%} {% endcomment %}
             </div>
 
             <div class="account_login">

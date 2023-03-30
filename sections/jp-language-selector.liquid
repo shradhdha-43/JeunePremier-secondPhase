@@ -13,7 +13,8 @@
           <span class="current-lang no-disp">{{ localization.language.name }}</span>
         </h2>
         <div id="modal-div">
-          <div class="flex-box flex-column justify-center">
+          <div class="modal-grid">
+            <div class="wrap-selector">
             <p class="country-text no-disp">{{ section.settings.select_country }}</p>
             <select class="modal-buttons no-disp" id="country-selector">
               {% for block in section.blocks %}
@@ -127,9 +128,20 @@
                     {{ block.settings.block_country11 | split: '-' | first }}
                   </option>
                 {%- endif %}
+                {% if block.settings.block_country12 != blank -%}
+                  <option
+                    class="country-options"
+                    data-langs="{{ block.settings.block_lang12 | replace: ' ', '' }}"
+                    data-country="{{ block.settings.block_country12 | split: '-' | first }}"
+                    data-country-code="{{ block.settings.block_country12 | split: '-' | last }}"
+                  >
+                    {{ block.settings.block_country12 | split: '-' | first }}
+                  </option>
+                {%- endif %}
               {% endfor %}
             </select>
-
+          </div>
+            <div class="wrap-selector">
             <p class="lang-text no-disp">{{ section.settings.select_language }}</p>
             <select class="modal-buttons no-disp" id="language-selector">
               {% for block in section.blocks %}
@@ -144,6 +156,7 @@
                 {% assign languages9 = block.settings.block_lang9 | replace: ' ', '' | split: ',' %}
                 {% assign languages10 = block.settings.block_lang10 | replace: ' ', '' | split: ',' %}
                 {% assign languages11 = block.settings.block_lang11 | replace: ' ', '' | split: ',' %}
+                {% assign languages12 = block.settings.block_lang12 | replace: ' ', '' | split: ',' %}
 
                 {% assign languages = languages1
                   | concat: languages2
@@ -156,6 +169,7 @@
                   | concat: languages9
                   | concat: languages10
                   | concat: languages11
+                  | concat: languages12
                 %}
                 {% assign uniqLanguages = languages | uniq %}
 
@@ -183,11 +197,13 @@
               {% endfor %}
             </select>
           </div>
+          </div>
         </div>
-        <button data-redirect-url="" class="btn btn-center" id="suggested" style="margin-bottom: 12px !important;">
+        <button data-redirect-url="" class="btn btn-center btn-mobile" id="suggested" style="margin-bottom: 12px !important;">
           {{ section.settings.section_btn_text }}
         </button>
         <span class="modal-text change-lang-link">{{ section.settings.section_text }}</span>
+        <span class="modal-text back-txt no-disp">back</span>
       </div>
     </div>
     <span class="modal-span"> </span>
@@ -260,7 +276,8 @@
           storeCountry != data.detected_values.country.name ||
           storeLanguage != data.suggestions[0].parts.language.name
         ) {
-          $('.modal').css('display', 'flex');
+          //Hides the modal for first time visitors
+          //$('.modal').css('display', 'flex');
           $('.current-country, .current-lang').removeClass('no-disp');
 
           if (data.suggestions[0].parts.language.handle.toLowerCase() == 'ru') {
@@ -510,6 +527,9 @@
 
   $(document).ready(function () {
     $('.change-lang-link').click(function () {
+      $(this).addClass('no-disp');
+      $('#modal-welcome').addClass('no-disp');
+      $('.back-txt').removeClass('no-disp');
       $('#country-selector').removeClass('no-disp');
       $('#language-selector').removeClass('no-disp');
       $('.country-text, .lang-text').removeClass('no-disp');
@@ -533,12 +553,23 @@
         }
         if (languagesArr.includes(tempLang)) {
           $(this).show();
+          $(this).prop("disabled", false);
         } else {
           $(this).hide();
+          $(this).prop("disabled", true);
         }
       });
 
       $('#suggested').attr('data-redirect-url', '');
+    });
+
+    $('.back-txt').click(function () {
+      $(this).addClass('no-disp');
+      $('#country-selector').addClass('no-disp');
+      $('#language-selector').addClass('no-disp');
+      $('.country-text, .lang-text').addClass('no-disp');
+      $('#modal-welcome').removeClass('no-disp');
+      $('.change-lang-link').removeClass('no-disp');
     });
 
     $('#country-selector').change(function () {
@@ -549,8 +580,10 @@
         var tempLang = $(this).data('lang');
         if (languagesArr.includes(tempLang)) {
           $(this).show();
+          $(this).prop("disabled", false);
         } else {
           $(this).hide();
+          $(this).prop("disabled", true);
         }
       });
 
@@ -833,6 +866,18 @@
         {
           "type": "text",
           "id": "block_lang11",
+          "label": "Enter language in iso format",
+          "info": "Eg: en,fr"
+        },
+        {
+          "type": "text",
+          "id": "block_country12",
+          "label": "Enter Country name - country code",
+          "info": "Eg: Netherlands-nl, French-fr"
+        },
+        {
+          "type": "text",
+          "id": "block_lang12",
           "label": "Enter language in iso format",
           "info": "Eg: en,fr"
         }

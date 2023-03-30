@@ -30,8 +30,15 @@
         <div class="footer-menu-title title">{{ section.settings.lang_title }}</div>
         <div class="footer-languages">
           <div class="langs rel">
-            <span class="flag flag-{{localization.country.iso_code | downcase}}"></span>
-            <span class="footer-country-name">{{localization.country.name}}</span>
+			{%  assign  countries = "NL,BE,DE,KR,IT,US,DK,CH,FR" | split: "," %}
+			{%  assign  count_code = localization.country.iso_code %}
+			  {%- if countries contains count_code -%}
+				<span class="flag flag-{{ localization.country.iso_code | downcase }}"></span>
+				<span class="header-country-code">{{ localization.country.iso_code }}</span>
+				{%- else -%}
+				<span class="flag">{% render 'icon-globe' %}</span>
+				<span class="header-country-code">Global</span>
+			  {%- endif -%}
           </div>
           {% comment %}
           {% if settings.english %}
