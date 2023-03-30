@@ -271,6 +271,7 @@
     },
     "16462080425b9e4234": {
       "type": "jp-product-faq",
+      "disabled": true,
       "settings": {
         "faq_title": "FAQ",
         "faq_link_text": "Other questions",
