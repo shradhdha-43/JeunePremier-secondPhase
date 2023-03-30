@@ -388,10 +388,12 @@
               "block_lang8": "da,ru",
               "block_country9": "Russia-ru",
               "block_lang9": "ru",
-              "block_country10": "United States-en",
+              "block_country10": "United States-us",
               "block_lang10": "en,fr,de",
               "block_country11": "Korean-ko",
-              "block_lang11": "ko"
+              "block_lang11": "ko",
+              "block_country12": "Global-be",
+              "block_lang12": "en,nl,fr,de,ru,ko"
             }
           }
         },
