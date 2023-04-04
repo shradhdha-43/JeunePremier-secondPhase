@@ -44,6 +44,7 @@ align-items: initial;
 }
 .img-w-txt-image-wrap.width-cst {
     width: 50%;
+    height:auto;
 }
 
 @media screen and (max-width: 1100px) {
