@@ -771,25 +771,6 @@
 <!--Gorgias Chat Widget Start--><script id="gorgias-chat-widget-install-v2" src="https://config.gorgias.chat/gorgias-chat-bundle-loader.js?applicationId=16699"></script>
 <script id="gorgias-chat-shopify-install">!function(_){_.SHOPIFY_PERMANENT_DOMAIN="{{shop.permanent_domain}}",_.SHOPIFY_CUSTOMER_ID="{{customer.id}}",_.SHOPIFY_CUSTOMER_EMAIL="{{customer.email}}"}(window||{});</script><!--Gorgias Chat Widget End-->
 
-<!-- Speed optimization Widget start -->
-<script>
-window.rumv = window.rumv || { url: location.pathname };
-window.rumv.storage = JSON.parse( sessionStorage.getItem('rumv') || '{"pageviews":0}' );
-
-(function(w, dc, v, id, d) {
-	w.rumv.storage.pageviews++;
-	if ( 'urls' in w.rumv.storage && !( w.rumv.url in w.rumv.storage['urls'] ) ) {
-		sessionStorage.setItem('rumv', JSON.stringify(window.rumv.storage) );
-		return false;
-	}
-	
-	var hd = dc.getElementsByTagName('head')[0],
-		scr = dc.createElement('script'); scr.async=1;
-	scr.src = 'https://d5yoctgpv4cpx.cloudfront.net/'+id+'/'+v+'.js';
-	hd.appendChild(scr);
-})(window,document,'v2', 'RUM-BABB870D1B', 'jeunepremier.com');
-</script>
-<!--END Speed optimization -->
     
     </body>
 </html>
