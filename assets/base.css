@@ -1,4 +1,10 @@
-/* Color custom properties */
+@font-face {
+  font-family: "PhosphateInline";
+  src:  url("phosphateInline.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}
 
 :root,
 .color-background-1 {

@@ -226,6 +226,29 @@
         "upsell_type": "bag"
       }
     },
+    "83ccac26-89e5-460a-a832-561580cd30c5": {
+      "type": "Jack-piers-Img-with-text",
+      "settings": {
+        "section_type": "img_txt",
+        "link_type": "btn",
+        "btn_color": "black",
+        "img_aligment": "left",
+        "new_title": "New",
+        "title": "MEET JACK PIERS",
+        "sub_title": "",
+        "desc": "Style the playground\n<br>\n<br>\nTypically for little brothers, the Jack Piers collection is playful, daring, a bit rebellious, but above all unique! \n<br>\n<br>\nWith cool hand-drawn prints, Jack Plers brings the cool Ostend street vibes straight to the classroom.\n<br>\n<br>\n The little brother of Jeune Premier combines the experience, product knowledge and eye for detail of his big brother with a refreshing, colorful approach and this in an affordable way.",
+        "link_txt": "SHOP COLLECTION",
+        "link_hover_txt": "SHOP COLLECTION",
+        "svg_icon": false,
+        "border-color": true,
+        "link": "shopify:\/\/collections",
+        "img": "shopify:\/\/shop_images\/142A6492_1400x_2x_3ed453ae-1b59-4eef-a8bf-1732e70d1cd3.jpg",
+        "product_video": "",
+        "video_link": "",
+        "marg_top": "false",
+        "remove_bottom_marg": false
+      }
+    },
     "16437127436c75ae35": {
       "type": "jp-image-with-text",
       "settings": {
@@ -395,6 +418,8 @@
         "95f663a1-c32e-460f-94bc-b35700367269"
       ],
       "settings": {
+        "section_bg_color": "#e8dfcf",
+        "open_gorgias": false,
         "title": "FAQ",
         "link_text": "Other questions",
         "link": "shopify:\/\/pages\/faqs"
@@ -441,6 +466,7 @@
     "1644555888f4e91b15",
     "16437837659a2daced",
     "16469818107a071e93",
+    "83ccac26-89e5-460a-a832-561580cd30c5",
     "16437127436c75ae35",
     "1645637117415b621a",
     "164563766038f711c3",

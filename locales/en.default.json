@@ -178,7 +178,7 @@
         "first_html": "Order <strong>before 4pm<\/strong>, same day shipping.",
         "second_html": "Standard delivery time <strong>2-4 business days<\/strong>.",
         "third_html": "<strong>Premium delivery<\/strong> possible 1-2 business days",
-        "fourth_html": "14 days of<strong>return<\/strong>",
+        "fourth_html": "14 days of <strong>return<\/strong>",
         "fifth_html": "Safe payments",
         "name": "The Child’s name:",
         "inst": "Each line is limited to 16 characters. Both lines together are limited to 24 characters."

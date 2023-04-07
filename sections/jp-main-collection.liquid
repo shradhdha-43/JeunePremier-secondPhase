@@ -226,7 +226,7 @@
         {% for product in collection.products %}
         {% if product.id != 7381981921448 %}
         <div class="product-card{% for tag in product.tags %} tag-{{ tag }}{% endfor %}">
-        	<div class="product-images-block rel">
+        	<div class="product-images-block rel position-rel">
             <a href="{{ product.url }}">
               
               {% assign collection_is_bestellers = false %}
@@ -256,7 +256,14 @@
                 <div class="prod-neu-tag medium">{{ 'products.product.new' | t }}</div>{% break %}
                 {% endif %}{% endfor %}    
               {% endunless %}
-              
+			   {% if product.vendor == "Jack Piers" %}
+			  	<div class="wrap-vendor">
+					{% render 'jack-piers-product-icon' %} 
+				</div>
+				{% endif %}
+			  {% comment %} {% if product.vendor == "Jack Piers" %}
+              {{ product.vendor }}
+				{% endif %} {% endcomment %}
               {% for image in product.images limit: 2 %}
               {% if forloop.first and forloop.last %}
               <img src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" class="" loading="lazy">
@@ -287,14 +294,19 @@
 				{% else %}
               	{{ product.price | times: 1 | money_without_trailing_zeros | strip_html }} 
 				{% endif %}
-              </div>
-             
+              	</div>
+				
             </div>
             <div class="product-price-col">
                <div class="product-sub-title light">
                  {{ product.title | split: " - " | last }}
               	{% comment %}{{ product.metafields.descriptors.subtitle }}{% endcomment %}
               </div>
+			  <div class="vendor-wrap">
+				{% if product.vendor == "Jack Piers" %}
+				  {{ product.vendor }}
+				{% endif %}
+			 </div>
             </div>
           </div>
         </div>

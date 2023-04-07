@@ -1,0 +1,70 @@
+.img-w-txt-image-wrap{
+    position: relative;
+}
+.font-custm {
+    font-size: 28px!important;
+    line-height: 40px;
+    margin-bottom: 24px;
+    font-weight: 500;
+    font-family: "PhosphateInline";
+    font-size: 16px;
+    line-height: 40px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.svgg {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 80px;
+}
+.hide-svg{
+    display: none;
+}
+
+.border-css {
+    box-shadow: #fff 0 0 0 3px, #473854 0 0 0 6px, #78a9ad 0 0 0 9px, #58714d 0 0 0 12px, #e5d68e 0 0 0 15px, #f16b46 0 0 0 17px, #93302c 0 0 0 20px;
+    border-radius: 5px;
+    padding: 50px;
+}
+.border-padding{
+align-items: initial;
+}
+
+
+@media screen and (max-width: 900px) {
+    
+    .newimg-w-txt-title.title.no-d.font-custm.custom-title{
+        font-size: 28px!important;
+        line-height: 40px;
+        margin-bottom: 24px;
+        font-weight: 500;
+        font-family: "PhosphateInline";
+        font-size: 16px;
+        line-height: 40px;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+}
+
+@media screen and (max-width: 780px) {
+   
+    .img-w-txt-text-wrap.border-css {
+        width: 96%;
+        margin-left: 10px;
+        padding:30px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .border-css{
+    padding: 0px 10px 10px 11px;
+    
+    }
+    .img-w-txt-text-wrap.border-css {
+        width: 91%;
+        margin-left: 16px;
+        padding:0px;
+    }
+  }
+ 
+

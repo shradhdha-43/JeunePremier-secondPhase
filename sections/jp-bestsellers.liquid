@@ -15,7 +15,7 @@
     <div class="bestseller-products">
     	{% for product in collections['bestsellers'].products limit:12 %}
         <div class="product-card">
-        	<div class="product-images-block rel">
+        	<div class="product-images-block rel position-rel">
             <a href="{{ product.url }}">
               
               {% assign collection_is_bestellers = false %}
@@ -45,7 +45,11 @@
                 <div class="prod-neu-tag medium">{{ 'products.product.new' | t }}</div>{% break %}
                 {% endif %}{% endfor %}    
               {% endunless %}
-              
+              {% if product.vendor == "Jack Piers" %}
+			          	<div class="wrap-vendor">
+					        {% render 'jack-piers-product-icon' %} 
+				          </div>
+				      {% endif %}
               {% for image in product.images limit: 2 %}
               {% if forloop.first and forloop.last %}
                 <img src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
@@ -96,6 +100,11 @@
                <div class="product-sub-title light">
                  <a href="{{ product.url }}">{{ product.title | split: " - " | last }}</a>
               </div>
+              <div class="vendor-wrap">
+				      {% if product.vendor == "Jack Piers" %}
+				        {{ product.vendor }}
+				      {% endif %}
+			        </div>
             </div>
           </div>
         </div>

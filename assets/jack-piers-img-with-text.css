@@ -1,0 +1,99 @@
+.font-custom {
+    font-size: 28px!important;
+    line-height: 40px;
+    margin-bottom: 24px;
+    font-weight: 500;
+    font-family: "PhosphateInline";
+    font-size: 16px;
+    line-height: 40px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.new-st{
+    font-size: 16px;
+    line-height: 40px;
+    font-family: 'Work Sans',sans-serif;
+    font-weight: 500;
+  }
+.img-w-txt-image-wrap{
+    position: relative;
+}
+.svgg {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 80px;
+}
+.hide-svg{
+    display: none;
+}
+
+.border-css {
+    box-shadow: #fff 0 0 0 3px, #473854 0 0 0 6px, #78a9ad 0 0 0 9px, #58714d 0 0 0 12px, #e5d68e 0 0 0 15px, #f16b46 0 0 0 17px, #93302c 0 0 0 20px;
+    border-radius:0 5px 5px 0;
+    padding: 50px 80px;
+}
+.border-padding{
+align-items: initial;
+}
+
+.img-w-txt-text-wrap.custom-width {
+    display: flex;
+    padding: 20px;
+    width: 50%;
+}
+.img-w-txt-image-wrap.width-cst {
+    width: 50%;
+    height:auto;
+}
+
+@media screen and (max-width: 1100px) {
+    .border-css {
+        padding: 50px;
+    }
+}
+@media screen and (max-width: 992px) {
+    .img-w-txt-image-wrap.width-cst {
+        width: 100%;
+        margin-bottom: 0px;
+    }
+    .img-w-txt-text-wrap.custom-width {
+        width: 100%;
+    }
+    .newimg-w-txt-title.title.no-d.font-custom.custom-title{
+            margin-bottom: 28px!important;
+            font-family: PhosphateInline;
+            line-height: 40px;
+            text-transform: uppercase;
+            font-weight: 500;
+     
+    }
+    .border-css {
+        padding: 50px;
+    }
+}
+
+
+@media screen and (max-width: 780px) {
+   
+    .img-w-txt-text-wrap.border-css {
+        width: 96%;
+        margin-left: 10px;
+        padding:30px;
+    }
+    .border-css {
+        border-radius:  5px;
+        padding: 25px;
+    }
+}
+@media screen and (max-width: 500px) {
+
+    .border-wrap.border-css {
+        padding: 11px;
+    }
+    .img-w-txt-text-wrap.border-css {
+        width: 91%;
+        margin-left: 16px;
+        padding:0px;
+    }
+  }

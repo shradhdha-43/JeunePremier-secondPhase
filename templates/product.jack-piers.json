@@ -1,7 +1,116 @@
 {
   "sections": {
+    "bfe73b4d-cd28-4383-ab49-c5a2f5c81423": {
+      "type": "jack-piers-product",
+      "custom_css": [
+
+      ],
+      "settings": {
+        "free_shipping_from": "Kostenloser Versand vanaf 150€",
+        "show_payment_icons": true,
+        "icon_bancontact": false,
+        "icon_mastercard": true,
+        "icon_visa": true,
+        "icon_maestro": false,
+        "icon_americanexpress": false,
+        "icon_paypal": true,
+        "icon_ideal": true,
+        "icon_sofort": true,
+        "icon_klarna": true,
+        "icon_belfius": false,
+        "icon_kbc": false,
+        "icon_giropay": false,
+        "icon_cartebleue": false
+      }
+    },
+    "15de17c5-3131-47e5-8dad-c02616637a8a": {
+      "type": "Jack-piers-product-image-text",
+      "settings": {
+        "section_type": "img_txt",
+        "link_type": "link",
+        "btn_color": "black",
+        "img_aligment": "right",
+        "new_title": "",
+        "title": "About Jack Piers",
+        "sub_title": "",
+        "desc": "Street style on the playground <br> \n<br>Typically for little brothers, the Jack Piers collection is playful, daring, a bit rebellious, but above all unique! With cool hand-drawn prints, Jack Piers brings the cool Ostend street vibes straight to the classroom. <br> \n<br>The little brother of Jeune Premier combines the experience, product knowledge and eye for detail of his big brother with a refreshing, colorful approach and this in an affordable way.",
+        "link_txt": "",
+        "link_hover_txt": "",
+        "svg_icon": true,
+        "border-color": false,
+        "link": "",
+        "img": "shopify:\/\/shop_images\/142A6492_1400x_2x_3ed453ae-1b59-4eef-a8bf-1732e70d1cd3.jpg",
+        "product_video": "",
+        "video_link": "",
+        "marg_top": "false",
+        "remove_bottom_marg": false
+      }
+    },
+    "631da08d-fc43-4049-9cc9-f1a2f0d83d2e": {
+      "type": "jp-faq",
+      "blocks": {
+        "41093eef-d1c4-4c7b-aca1-f5f01a651bfb": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I return a product",
+            "answer": "Changed your mind and wish to return a product? No problem! From the day following the delivery of your purchase, you have 14 days to cancel your \n\norder. We will issue you a full refund, excluding the delivery charges your paid with your order. Our returns are not free and will be deducted from the amount to be refunded. This link provides an overview of the prices for a return shipment per country.\n\nThe return is not free of charge, these costs will be deducted from the amount to be refunded.\n\nThe procedure is as follows:\nKlicken Click on the Link below, OR go to your account page and click 'return an item'.\nCheck your mailbox and download the return form to slip into your package and a prepaid label to stick on your order.\nShip your package to us."
+          }
+        },
+        "b89f2607-0780-41c1-8fee-84cc0b7f7642": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I maintain my bag?",
+            "answer": "Certainly you can! Thanks to our collaboration with Klarna, you have the option to pay only when your order has been delivered and when you are completely satisfied. Your order will be shipped in the same way as with any other payment method. With Klarna you always have 0% interest and no extra costs if you pay on time within 35 days. And you only pay for the items you wish to keep, of course."
+          }
+        },
+        "43b3268b-974e-472f-8497-df2b93a28691": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I pay later?",
+            "answer": "Certainly you can! Thanks to our collaboration with Klarna, you have the option to pay only when your order has been delivered and when you are completely satisfied. Your order will be shipped in the same way as with any other payment method. With Klarna you always have 0% interest and no extra costs if you pay on time within 35 days. And you only pay for the items you wish to keep, of course.\n\nKlarna General Terms and Conditions"
+          }
+        },
+        "3127b251-a530-471a-9c61-66319039fd85": {
+          "type": "faq",
+          "settings": {
+            "question": "The item is defective - Legal warranty",
+            "answer": "Goods are considered defective if received damaged, or if a manufacturing defect occurs within two years of purchase. Please note that items damaged due to wear and tear, improper use, fall, fire or water damage are not considered defective. If you have received the goods damaged ('visible defect') Jeune Premier asks that you report this defect along with a photo of the defect and the proof of purchase within two months of delivery. Jeune Premier will then contact the Customer regarding the free replacement and\/or repair of the defective item. If a manufacturing defect occurs within two years of purchase that could not reasonably have been known at the time of delivery (\"hidden defect\"), Jeune Premier asks that this defect be reported as soon as possible, and at least within 2 months of its discovery, along with a photograph of the defect and proof of purchase. In such a case, the Customer may invoke our warranty policy and Jeune Premier will contact the Customer regarding the free replacement and\/or repair of the defective item.\n\nThe normal cost of return in these cases shall be borne by Jeune Premier.\"\n\nFor more information on exercising the legal right to warranty, please refer to our B2C general terms and conditions of sale.\""
+          }
+        },
+        "006b021e-db22-46cc-94bf-cd9af9404659": {
+          "type": "faq",
+          "settings": {
+            "question": "What happens if I'm not home during delivery",
+            "answer": "What happens if I'm not home during delivery\nThe delivery person of bpost, DPD, GLS or UPS will deliver the order to the indicated delivery address. If you are not at home during the first delivery attempt, you will receive a notice of absence. This may be in the form of a note in the letterbox, an email or a Track &amp; Trace link.\n\nWith this notice of absence, the delivery person inform you where your order is located, with the following three options:\n• A new delivery attempt will be made on the subsequent working day. During a second delivery attempt, your order may be delivered by a different courier;\n• The order has been delivered to one of your neighbours;\n• The order is waiting for you at a collection point."
+          }
+        },
+        "b33fdf05-ae62-4c17-b756-76b329617c37": {
+          "type": "faq",
+          "settings": {
+            "question": "Missing an item with your order?",
+            "answer": "In the event that you ordered one or more items, but have not received them, please contact our customer service as soon as possible. We will be happy to assist you.\n\nPlease contact info@jeunepremier.be"
+          }
+        }
+      },
+      "block_order": [
+        "41093eef-d1c4-4c7b-aca1-f5f01a651bfb",
+        "b89f2607-0780-41c1-8fee-84cc0b7f7642",
+        "43b3268b-974e-472f-8497-df2b93a28691",
+        "3127b251-a530-471a-9c61-66319039fd85",
+        "006b021e-db22-46cc-94bf-cd9af9404659",
+        "b33fdf05-ae62-4c17-b756-76b329617c37"
+      ],
+      "settings": {
+        "section_bg_color": "",
+        "open_gorgias": true,
+        "title": "FAQ",
+        "link_text": "Other questions",
+        "link": "shopify:\/\/pages\/faqs"
+      }
+    },
     "main": {
       "type": "jp-product",
+      "disabled": true,
       "settings": {
         "free_shipping_from": "Free totebag with every order",
         "show_payment_icons": true,
@@ -45,6 +154,7 @@
     },
     "1646073797c5988fcf": {
       "type": "jp-product-slider-2",
+      "disabled": true,
       "settings": {
         "bg_color": "white",
         "title": "",
@@ -58,6 +168,7 @@
     },
     "adb91f43-fda2-4779-8486-4a2a6aff28cf": {
       "type": "jp-img-scribble-txt",
+      "disabled": true,
       "settings": {
         "link_type": "btn",
         "img_aligment": "right",
@@ -72,6 +183,7 @@
     },
     "164614191478238c86": {
       "type": "jp-product-slider-4",
+      "disabled": true,
       "settings": {
         "bg_color": "white",
         "title": "",
@@ -99,6 +211,7 @@
     },
     "164607437737f92922": {
       "type": "jp-product-slider-3",
+      "disabled": true,
       "settings": {
         "bg_color": "white",
         "title": "",
@@ -112,380 +225,13 @@
     },
     "1645352523c5f0e4b8": {
       "type": "jp-product-info",
-      "settings": {
-      }
-    },
-    "65e1bdbc-170e-4784-8140-853ea00f9703": {
-      "type": "jp-be-sizechart",
-      "blocks": {
-        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-0": {
-          "type": "product_grid",
-          "settings": {
-            "background_color": "color1",
-            "product_image": "shopify:\/\/shop_images\/mini-07.svg",
-            "product_name": "It Bag Mini",
-            "first_cell": false,
-            "second_cell": true,
-            "third_cell": true,
-            "fourth_cell": false,
-            "fifth_cell": false,
-            "sixth_cell": false,
-            "seventh_cell": false,
-            "eighth_cell": false,
-            "ninth_cell": false,
-            "tenth_cell": false
-          }
-        },
-        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-1": {
-          "type": "product_grid",
-          "settings": {
-            "background_color": "color2",
-            "product_image": "shopify:\/\/shop_images\/Ralphie.svg",
-            "product_name": "Backpack Ralphie",
-            "first_cell": true,
-            "second_cell": true,
-            "third_cell": true,
-            "fourth_cell": false,
-            "fifth_cell": false,
-            "sixth_cell": false,
-            "seventh_cell": false,
-            "eighth_cell": false,
-            "ninth_cell": false,
-            "tenth_cell": false
-          }
-        },
-        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-2": {
-          "type": "product_grid",
-          "settings": {
-            "background_color": "color1",
-            "product_image": "shopify:\/\/shop_images\/Midi.svg",
-            "product_name": "It Bag Midi",
-            "first_cell": false,
-            "second_cell": false,
-            "third_cell": false,
-            "fourth_cell": true,
-            "fifth_cell": true,
-            "sixth_cell": true,
-            "seventh_cell": false,
-            "eighth_cell": false,
-            "ninth_cell": false,
-            "tenth_cell": false
-          }
-        },
-        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-3": {
-          "type": "product_grid",
-          "settings": {
-            "background_color": "color2",
-            "product_image": "shopify:\/\/shop_images\/Ergomaxx.svg",
-            "product_name": "Backpack Ergomaxx",
-            "first_cell": false,
-            "second_cell": false,
-            "third_cell": false,
-            "fourth_cell": true,
-            "fifth_cell": true,
-            "sixth_cell": true,
-            "seventh_cell": true,
-            "eighth_cell": true,
-            "ninth_cell": false,
-            "tenth_cell": false
-          }
-        },
-        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-4": {
-          "type": "product_grid",
-          "settings": {
-            "background_color": "color1",
-            "product_image": "shopify:\/\/shop_images\/bobbie.svg",
-            "product_name": "Backpack Bobbie",
-            "first_cell": false,
-            "second_cell": false,
-            "third_cell": false,
-            "fourth_cell": true,
-            "fifth_cell": true,
-            "sixth_cell": true,
-            "seventh_cell": true,
-            "eighth_cell": true,
-            "ninth_cell": true,
-            "tenth_cell": true
-          }
-        },
-        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-5": {
-          "type": "product_grid",
-          "settings": {
-            "background_color": "color2",
-            "product_image": "shopify:\/\/shop_images\/James-02.svg",
-            "product_name": "Backpack James",
-            "first_cell": false,
-            "second_cell": false,
-            "third_cell": false,
-            "fourth_cell": false,
-            "fifth_cell": false,
-            "sixth_cell": true,
-            "seventh_cell": true,
-            "eighth_cell": true,
-            "ninth_cell": true,
-            "tenth_cell": true
-          }
-        },
-        "cddc8a78-efc0-43bb-be90-e283c5431a50": {
-          "type": "product_grid",
-          "settings": {
-            "background_color": "color1",
-            "product_image": "shopify:\/\/shop_images\/Maxi-05.svg",
-            "product_name": "It Bag Maxi",
-            "first_cell": false,
-            "second_cell": false,
-            "third_cell": false,
-            "fourth_cell": false,
-            "fifth_cell": false,
-            "sixth_cell": true,
-            "seventh_cell": true,
-            "eighth_cell": true,
-            "ninth_cell": true,
-            "tenth_cell": true
-          }
-        },
-        "00dfcca2-d649-463e-a45f-45567a6ac422": {
-          "type": "product_grid",
-          "settings": {
-            "background_color": "color2",
-            "product_image": "shopify:\/\/shop_images\/City_bag.svg",
-            "product_name": "City Bag",
-            "first_cell": true,
-            "second_cell": true,
-            "third_cell": true,
-            "fourth_cell": true,
-            "fifth_cell": true,
-            "sixth_cell": true,
-            "seventh_cell": true,
-            "eighth_cell": false,
-            "ninth_cell": true,
-            "tenth_cell": true
-          }
-        },
-        "d9c804d4-7f4f-4570-8590-cb0586fb542b": {
-          "type": "product_grid",
-          "disabled": true,
-          "settings": {
-            "background_color": "color1",
-            "product_name": "It Bag Mini",
-            "first_cell": true,
-            "second_cell": true,
-            "third_cell": false,
-            "fourth_cell": false,
-            "fifth_cell": false,
-            "sixth_cell": false,
-            "seventh_cell": false,
-            "eighth_cell": false,
-            "ninth_cell": false,
-            "tenth_cell": false
-          }
-        }
-      },
-      "block_order": [
-        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-0",
-        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-1",
-        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-2",
-        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-3",
-        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-4",
-        "template--14667992727629__65e1bdbc-170e-4784-8140-853ea00f9703-16775968066c43d79a-5",
-        "cddc8a78-efc0-43bb-be90-e283c5431a50",
-        "00dfcca2-d649-463e-a45f-45567a6ac422",
-        "d9c804d4-7f4f-4570-8590-cb0586fb542b"
-      ],
-      "settings": {
-        "heading": "Which backpack is the right one for my child?",
-        "maten_in_cm": "*Sizes in cm",
-        "first_column_heading": "School",
-        "first_column_2nd_cel": "Preschool",
-        "first_column_3rd_cell": "Primary school",
-        "second_column_heading": "Age",
-        "second_column_cell_entries": "2-3,4,5-6,6,7,8,9,10,11,12",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "ad058941-8e42-4a50-b18a-ac15be376d7f": {
-      "type": "jp-fr-sizechart",
       "disabled": true,
-      "blocks": {
-        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-0": {
-          "type": "niveau",
-          "settings": {
-            "background_color": "color2",
-            "col_head": "NIVEAU",
-            "cell_1": "Section des touts-petites",
-            "cell_2": "Section des petites",
-            "cell_3": "Section des moyens",
-            "cell_4": "Sectons des grands",
-            "cell_5": "Cours préparatoire (CP)",
-            "cell_6": "Cours élémentaire 1 (CE1)",
-            "cell_7": "Cours élémentaire 2 (CE2)",
-            "cell_8": "Cours moyen 1 (CM1)",
-            "cell_9": "Cours moyen 2 (CM2)",
-            "cell_10": "5e",
-            "cell_11": "6e"
-          }
-        },
-        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-2": {
-          "type": "product_grid",
-          "settings": {
-            "background_color": "color1",
-            "product_image": "shopify:\/\/shop_images\/Ralphie.svg",
-            "product_name": "Sac à dos Ralphie",
-            "first_cell": true,
-            "second_cell": true,
-            "third_cell": true,
-            "fourth_cell": true,
-            "fifth_cell": false,
-            "sixth_cell": false,
-            "seventh_cell": false,
-            "eighth_cell": false,
-            "ninth_cell": false,
-            "tenth_cell": false,
-            "eleventh_cell": false
-          }
-        },
-        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-1": {
-          "type": "product_grid",
-          "settings": {
-            "background_color": "color2",
-            "product_image": "shopify:\/\/shop_images\/mini-07.svg",
-            "product_name": "Cartable Mini",
-            "first_cell": false,
-            "second_cell": false,
-            "third_cell": true,
-            "fourth_cell": true,
-            "fifth_cell": false,
-            "sixth_cell": false,
-            "seventh_cell": false,
-            "eighth_cell": false,
-            "ninth_cell": false,
-            "tenth_cell": false,
-            "eleventh_cell": false
-          }
-        },
-        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-3": {
-          "type": "product_grid",
-          "settings": {
-            "background_color": "color2",
-            "product_image": "shopify:\/\/shop_images\/Midi.svg",
-            "product_name": "Cartable Midi",
-            "first_cell": false,
-            "second_cell": false,
-            "third_cell": false,
-            "fourth_cell": false,
-            "fifth_cell": true,
-            "sixth_cell": true,
-            "seventh_cell": true,
-            "eighth_cell": false,
-            "ninth_cell": false,
-            "tenth_cell": false,
-            "eleventh_cell": false
-          }
-        },
-        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-4": {
-          "type": "product_grid",
-          "settings": {
-            "background_color": "color1",
-            "product_image": "shopify:\/\/shop_images\/Ergomaxx.svg",
-            "product_name": "Sac à dos Ergomaxx",
-            "first_cell": false,
-            "second_cell": false,
-            "third_cell": false,
-            "fourth_cell": false,
-            "fifth_cell": true,
-            "sixth_cell": true,
-            "seventh_cell": true,
-            "eighth_cell": true,
-            "ninth_cell": true,
-            "tenth_cell": false,
-            "eleventh_cell": false
-          }
-        },
-        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-5": {
-          "type": "product_grid",
-          "settings": {
-            "background_color": "color2",
-            "product_image": "shopify:\/\/shop_images\/bobbie.svg",
-            "product_name": "Sac à dos Bobbie",
-            "first_cell": false,
-            "second_cell": false,
-            "third_cell": false,
-            "fourth_cell": false,
-            "fifth_cell": true,
-            "sixth_cell": true,
-            "seventh_cell": true,
-            "eighth_cell": true,
-            "ninth_cell": true,
-            "tenth_cell": true,
-            "eleventh_cell": true
-          }
-        },
-        "f36706db-3818-4e2e-8070-2c4fe3a96274": {
-          "type": "product_grid",
-          "settings": {
-            "background_color": "color1",
-            "product_image": "shopify:\/\/shop_images\/Maxi-05.svg",
-            "product_name": "Cartable Maxi",
-            "first_cell": false,
-            "second_cell": false,
-            "third_cell": false,
-            "fourth_cell": false,
-            "fifth_cell": false,
-            "sixth_cell": false,
-            "seventh_cell": true,
-            "eighth_cell": true,
-            "ninth_cell": true,
-            "tenth_cell": true,
-            "eleventh_cell": true
-          }
-        },
-        "4bbe2bf4-8e19-4d16-b519-5e932d985570": {
-          "type": "product_grid",
-          "settings": {
-            "background_color": "color2",
-            "product_image": "shopify:\/\/shop_images\/James-02.svg",
-            "product_name": "Sac à dos James",
-            "first_cell": false,
-            "second_cell": false,
-            "third_cell": false,
-            "fourth_cell": false,
-            "fifth_cell": false,
-            "sixth_cell": false,
-            "seventh_cell": true,
-            "eighth_cell": true,
-            "ninth_cell": true,
-            "tenth_cell": true,
-            "eleventh_cell": true
-          }
-        }
-      },
-      "block_order": [
-        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-0",
-        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-2",
-        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-1",
-        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-3",
-        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-4",
-        "template--14667992727629__ad058941-8e42-4a50-b18a-ac15be376d7f-1677596819cb6fae29-5",
-        "f36706db-3818-4e2e-8070-2c4fe3a96274",
-        "4bbe2bf4-8e19-4d16-b519-5e932d985570"
-      ],
       "settings": {
-        "heading": "Welcher Rucksack ist der richtige für mein Kind?",
-        "maten_in_cm": "*Maten in cm",
-        "first_column_heading": "ECOLE",
-        "first_column_2nd_cel": "Ecole maternelle",
-        "first_column_3rd_cell": "Ecole élémentaire",
-        "fourth_column_4th_cell": "Collège",
-        "second_column_heading": "ÂGE",
-        "col_heading_2_mob": "ÂGE",
-        "second_column_cell_entries": "2,3,4,5,6,7,8,9,10,11,12",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "164543171941402611": {
       "type": "jp-img-txt-ergo",
+      "disabled": true,
       "blocks": {
         "9494620b-f4cb-4962-8306-3f277dfcad84": {
           "type": "ergo",
@@ -531,6 +277,7 @@
     },
     "16462080425b9e4234": {
       "type": "jp-product-faq",
+      "disabled": true,
       "settings": {
         "faq_title": "FAQ",
         "faq_link_text": "Other questions",
@@ -539,6 +286,7 @@
     },
     "1645442399a142c9b8": {
       "type": "jp-instagram",
+      "disabled": true,
       "blocks": {
         "9cfd7868-4dd7-486f-8086-bbb8fe75a3d3": {
           "type": "insta_img",
@@ -609,6 +357,9 @@
     }
   },
   "order": [
+    "bfe73b4d-cd28-4383-ab49-c5a2f5c81423",
+    "15de17c5-3131-47e5-8dad-c02616637a8a",
+    "631da08d-fc43-4049-9cc9-f1a2f0d83d2e",
     "main",
     "1648025119633f453c",
     "product-recommendations",
@@ -618,8 +369,6 @@
     "16454287984d026596",
     "164607437737f92922",
     "1645352523c5f0e4b8",
-    "65e1bdbc-170e-4784-8140-853ea00f9703",
-    "ad058941-8e42-4a50-b18a-ac15be376d7f",
     "164543171941402611",
     "16462080425b9e4234",
     "1645442399a142c9b8",

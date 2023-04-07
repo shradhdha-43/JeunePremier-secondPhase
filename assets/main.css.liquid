@@ -1,3 +1,4 @@
+
 * {
   outline: none !important;
   box-sizing: border-box;
@@ -8,6 +9,15 @@ html {
 @font-face {
   font-family: "Hero";
   src: url({{ "Hero-Regular.otf" | asset_url }}) format("TrueType");
+}
+@font-face {
+  font-family: PhosphateInline;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("PhosphateInline"),
+    url(https://cdn.shopify.com/s/files/1/0077/6565/5629/files/PhosphateInline.woff?v=1677666198)
+      format("woff");
 }
 body {
   font-family: 'Work Sans',sans-serif;

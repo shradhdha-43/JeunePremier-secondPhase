@@ -283,3 +283,12 @@ body.no-scroll {
     display: none !important;
   }
 }
+
+
+.white_plus svg path {
+  stroke:#ffff
+  }
+
+  .white_plus .cross-sell-add-product {
+    background-color: black;
+}
