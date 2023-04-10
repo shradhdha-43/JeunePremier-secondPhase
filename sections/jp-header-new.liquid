@@ -17,7 +17,7 @@
     {% endfor %}
   </div>
   <header class="topheader ovr-hidden">
-    <div class="container">
+    <div class="container flex-box flex-column">
       <div class="header-content justify-between">
         <div class="mobile-hamburger no-d">
             <header-drawer data-breakpoint="tablet">
@@ -261,7 +261,14 @@
                               <span class="grandtitle">
                                 {% if design_image_product != blank and grandchild.title contains 'design-'  %}
                                   <span class="design_image" style="background-color: #fcfcfc;">
-                                    <img src="{{ design_image_product | image_url: width: 250 }}" alt="" loading="lazy">
+                                    {{
+                                      design_image_product
+                                      | image_url: width: 20
+                                      | image_tag:
+                                        loading: 'lazy',
+                                        sizes: '100vw',
+                                        widths: '20,30'
+                                    }}
                                   </span>
                                   {% endif %}
                                 {{ grandchild.title | remove : "design-" }}</span>
@@ -397,7 +404,6 @@
   });
 
   $('.close-menu').click(function () {
-    console.log("close menu drawer")
     $("#shopify-section-jp-header-new").removeClass("menu-open");
     $(".menu-drawer-container").removeClass("menu-opening");
     $(".menu-drawer-container").removeAttr("open");
@@ -463,7 +469,6 @@
 
 <script>
 $(".custom-search-wrap , .search-modal__form .icon-close").click(function(){
-    console.log("open custom search");
     $(".jp-custom-search").toggleClass("show-searchbar");
 });
 

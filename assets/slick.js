@@ -2076,7 +2076,6 @@ $(document).ready(function(){
 });
 
 $(function(){
-  console.log($('.cross-sell-body'));
   $('.show-cross-upsell .cross-sell-body').slick({
     slidesToShow: 1,
     slidesToScroll: 1,

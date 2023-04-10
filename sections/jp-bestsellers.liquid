@@ -52,15 +52,48 @@
 				      {% endif %}
               {% for image in product.images limit: 2 %}
               {% if forloop.first and forloop.last %}
-                <img src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
-                <img class="no-t-m" src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+                  {{
+                    image
+                    | image_url: width: 400
+                    | image_tag:
+                      loading: 'lazy',
+                      sizes: '100vw',
+                      widths: '400, 550, 750'
+                  }}
+                  {{
+                    image
+                    | image_url: width: 400
+                    | image_tag:
+                      loading: 'lazy',
+                      sizes: '100vw',
+                      widths: '400, 550, 750',
+                      class: 'no-t-m'
+                  }}
+            
               {% else %}
                 {% if forloop.first %}
                 {% capture first %}
-                <img class="no-t-m" src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+
+                {{
+                  image
+                  | image_url: width: 400
+                  | image_tag:
+                    loading: 'lazy',
+                    sizes: '100vw',
+                    widths: '400, 550, 750',
+                    class: 'no-t-m'
+                }}
+
                 {% endcapture %}
                 {% else %}
-              	<img src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+                {{
+                  image
+                  | image_url: width: 400
+                  | image_tag:
+                    loading: 'lazy',
+                    sizes: '100vw',
+                    widths: '400, 550, 750'
+                }}
               	{{ first }}
                 {% endif %}
               {% endif %}              
