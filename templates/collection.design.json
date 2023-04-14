@@ -109,12 +109,12 @@
         "5cbdd836-ea08-463e-b7e8-1157bc52c811": {
           "type": "age",
           "settings": {
-            "age_title": "Age",
-            "age1": "Kindergarden",
+            "age_title": "School year",
+            "age1": "Preschool",
             "age_tag1": "2 - 6",
-            "age2": "6 to 8",
+            "age2": "Primary School",
             "age_tag2": "6-8",
-            "age3": "8 to 12",
+            "age3": "Secondary School",
             "age_tag3": "8-12",
             "age4": "",
             "age_tag4": "",
