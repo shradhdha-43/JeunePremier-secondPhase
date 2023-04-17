@@ -10,17 +10,41 @@
         	{% if block.type == 'marquee' %}
         		{% if block.settings.img_1 != blank %}
         			<div class="marquee-item marquee-txt light featured-banner__item" style="width: {{ section.settings.marquee_item_width }}px; height: {{ section.settings.marquee_height }}px">
-                      <img class="marquee-img" src="{{ block.settings.img_1 | img_url: '200x' }}">
+						{{
+							block.settings.img_1
+							| image_url: width: 200
+							| image_tag:
+							  loading: 'lazy',
+							  sizes: '100vw',
+							  widths: '50 , 100 , 150 , 200',
+							  class: 'marquee-img'
+						  }}
         			</div>
         		{% endif %}
         		{% if block.settings.img_2 != blank %}
         			<div class="marquee-item marquee-txt light featured-banner__item" style="width: {{ section.settings.marquee_item_width }}px; height: {{ section.settings.marquee_height }}px">
-                      <img class="marquee-img" src="{{ block.settings.img_2 | img_url: '200x' }}">
+						{{
+							block.settings.img_2
+							| image_url: width: 200
+							| image_tag:
+							  loading: 'lazy',
+							  sizes: '100vw',
+							  widths: '50 , 100 , 150 , 200',
+							  class: 'marquee-img'
+						  }}
         			</div>
         		{% endif %}
         		{% if block.settings.img_3 != blank %}
         			<div class="marquee-item marquee-txt light featured-banner__item" style="width: {{ section.settings.marquee_item_width }}px; height: {{ section.settings.marquee_height }}px">
-                      <img class="marquee-img" src="{{ block.settings.img_3 | img_url: '200x' }}">
+						{{
+							block.settings.img_3
+							| image_url: width: 200
+							| image_tag:
+							  loading: 'lazy',
+							  sizes: '100vw',
+							  widths: '50 , 100 , 150 , 200',
+							  class: 'marquee-img'
+						  }}
         			</div>
         		{% endif %}
         	{% endif %}
@@ -31,17 +55,41 @@
         	{% if block.type == 'marquee' %}
         		{% if block.settings.img_1 != blank %}
         			<div class="marquee-item marquee-txt light featured-banner__item" style="width: {{ section.settings.marquee_item_width }}px; height: {{ section.settings.marquee_height }}px">
-                      <img class="marquee-img" src="{{ block.settings.img_1 | img_url: '200x' }}">
+						{{
+							block.settings.img_1
+							| image_url: width: 200
+							| image_tag:
+							  loading: 'lazy',
+							  sizes: '100vw',
+							  widths: '50 , 100 , 150 , 200',
+							  class: 'marquee-img'
+						  }}
         			</div>
         		{% endif %}
         		{% if block.settings.img_2 != blank %}
         			<div class="marquee-item marquee-txt light featured-banner__item" style="width: {{ section.settings.marquee_item_width }}px; height: {{ section.settings.marquee_height }}px">
-                      <img class="marquee-img" src="{{ block.settings.img_2 | img_url: '200x' }}">
+						{{
+							block.settings.img_2
+							| image_url: width: 200
+							| image_tag:
+							  loading: 'lazy',
+							  sizes: '100vw',
+							  widths: '50 , 100 , 150 , 200',
+							  class: 'marquee-img'
+						  }}
         			</div>
         		{% endif %}
         		{% if block.settings.img_3 != blank %}
         			<div class="marquee-item marquee-txt light featured-banner__item" style="width: {{ section.settings.marquee_item_width }}px; height: {{ section.settings.marquee_height }}px">
-                      <img class="marquee-img" src="{{ block.settings.img_3 | img_url: '200x' }}">
+						{{
+							block.settings.img_3
+							| image_url: width: 200
+							| image_tag:
+							  loading: 'lazy',
+							  sizes: '100vw',
+							  widths: '50 , 100 , 150 , 200',
+							  class: 'marquee-img'
+						  }}
         			</div>
         		{% endif %}
         	{% endif %}

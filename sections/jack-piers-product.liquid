@@ -1,8 +1,8 @@
-{{ 'jp-product.css' | asset_url | stylesheet_tag }}
+{{ 'jack-piers-product.css' | asset_url | stylesheet_tag }}
 
 {% assign current_variant = product.selected_or_first_available_variant %}
 {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
-
+ 
 {% comment %} Check keychain-letter-select snippet for documentation {% endcomment %}
 {% assign keychain_letter_type_name = 'Keychain letter' %}
 {% assign keychain_charm_type_name = 'Keychain charm' %}
@@ -76,7 +76,7 @@
 {%- endfor -%}
 
 
-  <div class="product-wrapper">
+  <div class="product-wrapper {{ product.type }}">
 
     <div class="product-single container" data-rv-handle="{{ product.handle }}">
       <div class="product-row">
@@ -84,10 +84,13 @@
 
           <div class="no-d">
             <a class="back-btn" href="/collections/all">{% render "svg-arrow" %} {{ 'products.product.back' | t }}</a>
-            
+            <div class="vendor-name">
+              {{ product.vendor }}
+            </div>
+
             <!--  MOBILE TITLE & PRICE  --> 
             <div class="title_price_wrapper">
-              <h1>{{ product.title | split: " - " | first }}</h1>    
+              <h1 >{{ product.title | split: " - " | first }}</h1>    
               {% if product.compare_at_price_max > product.price %}
                 <span id="ProductPriceCompare" class="product-compare">
                   {%- if localization.country.currency.iso_code == 'EUR' -%}
@@ -127,9 +130,9 @@
 
               {% assign avg_rev_loop = avg_rev | round %}
               {%for i in (1..product.metafields.stamped.reviews_average) %}
-              {% include 'icon-black-star' %}
+              {% include 'jack-piers-stars' %}
               {% endfor %}
-              <a href="#to-reviews" class="no-of-ratings">
+              <a href="#to-reviews" class="no-of-ratings p-color">
                 {% if product.metafields.stamped.reviews_count != blank %}{{ product.metafields.stamped.reviews_count }} {{ 'products.product.reviews' | t }}{% endif %}
               </a>
             </div>
@@ -149,9 +152,9 @@
 
           </div>
             <span class="product-wishlist"></span>
-          <div class="product-image-content">
-
-            <div class="no-t-m slider-nav {% if product.media.size < 6 %}no-transform{% endif %}">
+          <div class="product-image-content position-rel">
+            {% render 'jack-piers-product-icon' %} 
+            <div class="no-t-m slider-nav custom-color{% if product.media.size < 6 %}no-transform{% endif %}">
               
               {% assign videos = product.media | where: "media_type", "video" %}
               {% assign videos_size = videos | size %}
@@ -258,11 +261,15 @@
               <div class="final--order">
                 <div class="no-t-m">
                   <a class="back-btn" href="/collections/all">{% render "svg-arrow" %} {{ 'products.product.back_short' | t }}</a>
+                  <div class="vendor-name">
+                    {{ product.vendor }}
+                  </div>
 
-
+                  
                   <!--  DESKTOP TITLE & PRICE  --> 
                   <div class="title_price_wrapper">
-                    <h1>{{ product.title | split: " - " | first }}</h1>
+                    
+                    <h1 >{{ product.title | split: " - " | first }}</h1>
                     {% if product.compare_at_price_max > product.price %}
                       <span id="ProductPriceCompare" class="product-compare">
                       {%- if localization.country.currency.iso_code == 'EUR' -%}
@@ -300,9 +307,9 @@
                     {%- endfor -%}
                     {% assign avg_rev_loop = avg_rev | round %}
                     {%for i in (1..product.metafields.stamped.reviews_average) %}
-                      {% include 'icon-black-star' %}
+                      {% include 'jack-piers-stars' %}
                     {% endfor %}
-                    <a href="#to-reviews" class="no-of-ratings">
+                    <a href="#to-reviews" class="no-of-ratings p-color">
                       {% if product.metafields.stamped.reviews_count != blank %}{{ product.metafields.stamped.reviews_count }} {{ 'products.product.reviews' | t }}{% endif %}
                     </a>
                   </div>
@@ -330,7 +337,7 @@
                   </div>
                 {%- endif -%}
                 
-                <div class="related-products-preview">
+                <div class="related-products-preview bgc">
                   <div class="related-products-preview__item">
                     <span href="{{ product.url }}" class="related-products-preview__link active new-variant" data-url="{{ product.url }}">
                       {% if product.type  == 'Goedgemerkt' %}
@@ -388,7 +395,7 @@
                 {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}
                 {%- assign add_to_cart_text = 'products.product.preorder' | t -%}
                 {%- endif -%}
-                <button class="add-to-cart btn add-this no-t-m {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %} {% if product.type == 'Goedgemerkt' or product.type == 'Ludilabel' %}label-type stop-prop{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%}>{{add_to_cart_text}}</button>
+                <button class="add-to-cart btn add-this no-t-m color-gr{% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %} {% if product.type == 'Goedgemerkt' or product.type == 'Ludilabel' %}label-type stop-prop{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%}>{{add_to_cart_text}}</button>
                 
                 <div id="BIS_wrap"  style="display: none">
                   <button id="BIS_trigger" type="button" class="out-of-stock-notify-btn">
@@ -474,11 +481,11 @@
                   </div>
                 {%- endunless -%}
                 
-                <div class="product-services">
+                <div class="product-services border-css-ar">
                   <div class="product-service">
                     <div class="product-icon">
 
-                      <img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/Balloon_2x_5b85fbf2-2e74-4f2e-93e5-fd3e457d7a84.png?v=1646067947" alt="shipping" width="36px">
+                      <img src="https://cdn.shopify.com/s/files/1/0077/6565/5629/files/shipping_balloon2_2x_aa1a58bd-148c-4a7b-b1a1-004a5e90ab54.png?v=1677732007" alt="shipping" width="36px">
 
                     </div>
                     <div class="product-service-text">
@@ -488,7 +495,7 @@
                   <div class="product-service">
                     <div class="product-icon">
 
-                      <img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/Returns2_2x_c5c95c08-9a64-4165-b72b-efe804a88a15.png?v=1646068021" alt="Standard delivery" width="36px">
+                      <img src="https://cdn.shopify.com/s/files/1/0077/6565/5629/files/nuGJlP.tif_4__2x_2055b580-ebe7-4ba4-9676-95caaa6af7c2.jpg?v=1677732249" alt="Standard delivery" width="36px">
 
                     </div>
                     <div class="product-service-text">
@@ -497,19 +504,20 @@
                   </div>
                   <div class="product-service">
                     <div class="product-icon">
-                      <img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/shipping_rocket_2x_9bb866c5-482e-4bb4-b4c5-193ba5af5733.png?v=1646068125" alt="Premium delivery" width="36px">
+                      <img src="https://cdn.shopify.com/s/files/1/0077/6565/5629/files/express_shipping-_2x_08d3517e-829f-460f-b74d-58ee9903a830.jpg?v=1677732322" alt="Premium delivery" width="36px">
                     </div>
                     <div class="product-service-text">
                       {{ 'products.product.service_text.third_html' | t }}
                     </div>
                     <span class="product-service-image">
-                      <img src="//cdn.shopify.com/s/files/1/0334/1100/6595/files/Image_1_2x_547d5440-281c-4b80-a282-29345fd89818_54x.png?v=1644309668" alt="courier" height="54px" width="54px" style="object-fit: contain;">
+                      <img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/Image_1_2x_547d5440-281c-4b80-a282-29345fd89818_54x.png?v=1644309668" alt="courier" height="54px" width="54px" style="object-fit: contain;">
                     </span>
+                    
                   </div>
                   <div class="product-service">
                     <div class="product-icon">
 
-                      <img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/Returns2_2x_94194c04-a351-4a1e-b63e-106e6605c184.png?v=1646068203" alt="14 days of return" width="36px">
+                      <img src="https://cdn.shopify.com/s/files/1/0077/6565/5629/files/returns__2x_7b65cd78-5d93-425f-8017-c68725d7cee8.jpg?v=1677732401" alt="14 days of return" width="36px">
 
                     </div>
                     <div class="product-service-text">
@@ -549,7 +557,91 @@
                     </div>
                   </div>
                 </div>
-                
+           {% comment %} For accordin {% endcomment %}     
+        <div class="img-w-txt-desc light margin-cust">
+            {%- if split_items_subtitle -%}
+            <div class="product-single__subtitle mar-cust">
+              {{ split_items_subtitle }}
+            </div>
+            {%- endif -%}
+  
+  
+            <div class="product-single__description rte">
+              {%- if split_items_content -%}
+              {{ split_items_content }}
+  
+              {% if split_items_content_readmore %}
+              <div class="readmore">
+                <div class="readmore__content">
+                  {{ split_items_content_readmore }}
+                </div>
+              </div>
+  
+              {% endif %}
+              {%- else -%}
+              {{ section_split | first }}
+              {%- endif -%}
+            </div>
+  
+            <div class="product-single__accordions_custom border-custom">
+              {%- for item in section_split -%}
+              {%- assign accordion_split = item | split: '</h2>' -%}
+              {%- assign accordion_title = accordion_split[0] | strip -%}
+              {%- assign accordion_text = accordion_split[1] | strip_html -%}
+  
+              {% if accordion_text != '' %}
+              {% if accordion_title == 'Why we love it' %}
+              <div class="product-single-accordion border-custom">
+                <div class="product-faq-question-wrap accordion flex-box justify-between" role="button">
+                  <h2 class="product-single-accordion__title " role="button">{{ accordion_title }}</h2>
+                  <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+                </div>
+                {% if accordion_split[1] != blank %}
+                <div class="rte product-single-accordion__content_custom" >
+                  {{ accordion_split[1] | remove: '<p> </p>' }}
+                </div>
+                {% endif %}
+              </div>
+              {% endif %}
+              {% endif %}
+              {% endfor %}
+  
+              {%- for item in section_split -%}
+              {%- assign accordion_split = item | split: '</h2>' -%}
+              {%- assign accordion_title = accordion_split[0] | strip -%}
+              {%- assign accordion_text = accordion_split[1] | strip_html -%}
+  
+              {% unless accordion_title == 'Why we love it' %}
+              {% if accordion_text != '' %}
+              {% if accordion_title != 'Video' and accordion_title != '' %}
+              <div class="product-single-accordion border-custom">
+  
+                <div class="product-faq-question-wrap accordion flex-box justify-between " role="button">
+                  <h2 class="product-single-accordion__title " role="button">{{ accordion_title }}</h2>
+                  <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
+                </div>
+                {% if accordion_split[1] != blank %}
+                <div class="rte product-single-accordion__content_custom" >
+                  {{ accordion_split[1] | remove: '<p> </p>' }}
+                  {% if accordion_title contains 'Size ' %}
+                  <span>
+                    <a class="size-chart" data-vid="no" href="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/size-chart.png?v=1645923400" data-caption="Size chart" data-width="2000" data-height="1402" itemprop="contentUrl" data-index="{{ product.media | size }}" target="_blank">
+                      {{ 'products.product.size_chart' | t }}
+                    </a>
+                  </span>
+                  {% endif %}
+                </div>
+                {% endif %}
+              </div>
+              {% endif %}
+              {% endif %}
+              {% endunless %}
+              {%- endfor -%}
+              {% if accordion_text == '' %}
+              <p>{{ 'products.product.no_info' | t }}</p>
+              {% endif %}
+            </div>
+        </div>
 				{% comment %}
                 <div class="product-services">
                 {%- for block in section.blocks -%}
@@ -607,7 +699,7 @@
         </span>
       </div>
       <div class="cta-right">
-        <span class="addcart-cta addcta-single {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %} {% if product.type == 'Goedgemerkt' or product.type == 'Ludilabel' %}label-type stop-prop{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%} id="AddToCartCta">{{ add_to_cart_text }}</span>
+        <span class="addcart-cta color-gr addcta-single  {% if product.tags contains 'preorder' or product.tags contains 'PO1' %}preorder{% endif %} {% if product.type == 'Goedgemerkt' or product.type == 'Ludilabel' %}label-type stop-prop{% endif %}" data-variant="{{product.selected_or_first_available_variant.id}}" {%- if product.tags contains 'preorder' or product.tags contains 'PO1' -%}data-preorder="{{ 'products.product.preorder_property_value' | t }}"{%- endif -%} id="AddToCartCta">{{ add_to_cart_text }}</span>
       </div>
     </div>
     <span class="sticky-free-shipping">
@@ -1487,18 +1579,46 @@ $( document ).ready(function() {
 
 
       var removeslides = $(this).closest(".slick-slide.slick-hide").attr("data-slick-index");
-      $('.show-cross-upsell .cross-sell-body').slick('slickRemove', removeslides)
-      $('.show-cross-upsell .cross-sell-body')[0].slick.refresh();
+      if(removeslides){
+        $('.show-cross-upsell .cross-sell-body').slick('slickRemove', removeslides)
+        $('.show-cross-upsell .cross-sell-body')[0].slick.refresh();
+      }
 
       };
     });
     
   });
   </script>
+  <script>
 
+
+    ///----- Auto-Close Accordion
+  $(document).ready(function() {
+  
+  
+    const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+    observer.observe();
+  
+  
+    //--- initial state of elements
+    $('.product-single-accordion__content_custom').hide()
+      //----- click function
+    $(".product-single__accordions_custom").find(".product-faq-question-wrap").click(function() { //---- tabs or buttons
+      //---- active class
+      $(".product-single__accordions_custom").find(".product-faq-question-wrap").removeClass('active');
+      $(this).closest('.product-single__accordions_custom').find('.product-single-accordion__content_custom').slideUp();
+      var selected = $(this).next('.product-single-accordion__content_custom');
+      if (selected.is(":hidden")) {
+        $(this).next('.product-single-accordion__content_custom').slideDown();
+        $(this).toggleClass('active');
+      }
+    });
+  });
+    
+  </script>
 {% schema %}
   {
-    "name": "JP Product",
+    "name": "Jack Piers product",
     "settings": [    
 	  {
          "type":"image_picker",
@@ -1661,7 +1781,12 @@ $( document ).ready(function() {
         }
       ]
     }
-	]
+	],
+	"presets":[
+      {
+         "name":"Jack Piers product"
+      }
+   ]
   }
 {% endschema %}
 

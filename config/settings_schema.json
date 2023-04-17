@@ -1400,5 +1400,39 @@
         "default": true
       }
     ]
+  },
+  {
+    "name": "Checkout Disclaimer",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Disclaimer Settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "The following text will appear when non-English characters are entered"
+      },
+      {
+        "type": "textarea",
+        "id": "success_check_mess",
+        "label": "Correct Characters Label",
+        "info": "leave this empty and it will not appear for users that type correct English characters",
+        "placeholder": "✅ Text is in English"
+      },
+      {
+        "type": "textarea",
+        "id": "error_check_mess",
+        "info": "leave this field blank in order to ensure that it does not appear on the checkout page.",
+        "label": "Wrong Characters Label",
+        "placeholder": "⚠ Kindly input text using the English alphabet."
+      },
+      {
+        "type": "textarea",
+        "id": "disclaimer_check_mess",
+        "info": "leave this field blank in order to ensure that it does not appear on the checkout page.",
+        "label": "Disclaimer Label",
+        "placeholder": "Please ensure that the text is written in the English alphabet as this will accelerate the shipping process."
+      }
+    ]
   }
 ]

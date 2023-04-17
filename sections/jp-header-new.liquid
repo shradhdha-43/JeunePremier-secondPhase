@@ -17,7 +17,7 @@
     {% endfor %}
   </div>
   <header class="topheader ovr-hidden">
-    <div class="container">
+    <div class="container flex-box flex-column">
       <div class="header-content justify-between">
         <div class="mobile-hamburger no-d">
             <header-drawer data-breakpoint="tablet">
@@ -122,7 +122,7 @@
         <div class="header-left">
           <div class="new_header_logo no-t-m">
             <a href="{{ routes.root_url }}" class="desktop-cherries-logo">{{ section.settings.logo_svg_mobile }}</a>
-            <a href="{{ routes.root_url }}" class="desktop-logo">{{ section.settings.logo_svg_desktop }}</a>
+            <a href="{{ routes.root_url }}" class="desktop-logo"><span class="visually-hidden">jeune premier logo</span>{{ section.settings.logo_svg_desktop }}</a>
           </div>
           <a href="{{ routes.root_url }}" class="mobile-logo no-d">{{ section.settings.logo_svg_mobile }}</a>
         </div>
@@ -191,16 +191,16 @@
                 <div class="header-menu-dropdown-wrap flex-box justify-between">
                   <div class="header-menu-dropdown-left-wrap">
                     {%- for childlink in link.links -%}
-                      {% assign childrandomObj = childlink.object %}
-                      {% assign child_coll__image = childrandomObj.featured_image %}
+                      {%- assign childrandomObj = childlink.object -%}
+                      {%- assign child_coll__image = childrandomObj.featured_image -%}
 
-                      {% if child_coll__image != blank %}
+                      {%- if child_coll__image != blank -%}
                         {%- assign child_main_coll__image = child_coll__image | image_url: width: 1000 -%}
-                      {% else %}
+                      {%- else -%}
                         {% assign child_main_coll__image = section.settings.mega_menu_image.src
                           | image_url: width: 1000
                         %}
-                      {% endif %}
+                      {%- endif -%}
 
                       <ul class="navigation_block menu-{{ forloop.index }}" data-childlink="{{ childrandomObj }}">
                         <a href="{{ childlink.url }}">
@@ -209,47 +209,47 @@
                             data-image-id="image-{{ forloop.index }}"
                             data-hoverimage="{{ child_main_coll__image }}"
                           >
-                            {{ childlink.title }}
+                            {{- childlink.title -}}
                           </li>
                         </a>
                         {% for grandchild in childlink.links %}
-                          {% assign randomObj = grandchild.object %}
-                          {% assign img = randomObj.featured_image %}
-                          {% assign randomObjHandle = grandchild.url | split: '?filters=' | first | split: '/collections/' | last %}
-                          {% assign randomObjFilter = grandchild.url | split: '?filters=' | last %}
+                          {%- assign randomObj = grandchild.object -%}
+                          {%- assign img = randomObj.featured_image -%}
+                          {%- assign randomObjHandle = grandchild.url | split: '?filters=' | first | split: '/collections/' | last -%}
+                          {%- assign randomObjFilter = grandchild.url | split: '?filters=' | last -%}
 
                           {%- paginate collections[randomObjHandle].products by 500 -%}
-                            {% for product in collections[randomObjHandle].products reversed %}
-                              {% for tag in product.tags %}
-                                {% if grandchild.url contains 'filters' %}
+                            {%- for product in collections[randomObjHandle].products reversed -%}
+                              {%- for tag in product.tags -%}
+                                {%- if grandchild.url contains 'filters' -%}
 
-                                {% if tag == randomObjFilter %}
-                                  {% assign tags_matched = product.title %}
-                                  {% assign tags_matched_image = product.metafields.custom.navigation_image %}
-                                  {% assign design_image_product = product.metafields.custom.navigation_design_image %}
+                                {%- if tag == randomObjFilter -%}
+                                  {%- assign tags_matched = product.title -%}
+                                  {%- assign tags_matched_image = product.metafields.custom.navigation_image -%}
+                                  {%- assign design_image_product = product.metafields.custom.navigation_design_image -%}
                                   {% break %}
-                                {% endif %}
+                                {%- endif -%}
 
-                                {% else %}
-                                {% assign tags_matched = product.title %}
-                                {% assign design_image_product = product.metafields.custom.navigation_design_image %}
-                                {% endif %}
-                              {% endfor %}
-                            {% endfor %}
-                          {% endpaginate %}
+                                {%- else -%}
+                                {%- assign tags_matched = product.title -%}
+                                {%- assign design_image_product = product.metafields.custom.navigation_design_image -%}
+                                {%- endif -%}
+                              {%- endfor -%}
+                            {%- endfor -%}
+                          {%- endpaginate -%}
                         
 
-                          {% if img != blank %}
+                          {%- if img != blank -%}
                             {%- assign img = img | image_url: width: 1000 -%}
-                          {% elsif tags_matched_image != blank  %}
-                            {% assign img = tags_matched_image | image_url: width: 1000 %}
-                            {% else %}
-                            {% assign img = section.settings.mega_menu_image.src | image_url: width: 1000 %}
-                          {% endif %}
+                          {%- elsif tags_matched_image != blank  -%}
+                            {%- assign img = tags_matched_image | image_url: width: 1000 -%}
+                            {%- else -%}
+                            {%- assign img = section.settings.mega_menu_image.src | image_url: width: 1000 -%}
+                          {%- endif -%}
 
 
                           <li
-                            class="grandchild-heading align-center {% if grandchild.title contains 'Alle' or grandchild.title contains "All" %} bold{% endif %}"
+                            class="grandchild-heading align-center {%- if grandchild.title contains 'Alle' or grandchild.title contains "All" -%} bold{%- endif -%}"
                             data-grandchildlink="{{randomObj}}"
                             data-image-id="image-{{ forloop.index }}"
                             data-hoverimage="{{ img }}"
@@ -259,16 +259,23 @@
                           >
                             <a href="{{ grandchild.url | replace : '%3' , '?' | remove : 'F' }}">
                               <span class="grandtitle">
-                                {% if design_image_product != blank and grandchild.title contains 'design-'  %}
+                                {%- if design_image_product != blank and grandchild.title contains 'design-'  -%}
                                   <span class="design_image" style="background-color: #fcfcfc;">
-                                    <img src="{{ design_image_product | image_url: width: 250 }}" alt="">
+                                    {{
+                                      design_image_product
+                                      | image_url: width: 20
+                                      | image_tag:
+                                        loading: 'lazy',
+                                        sizes: '100vw',
+                                        widths: '20,30'
+                                    }}
                                   </span>
-                                  {% endif %}
+                                  {%- endif -%}
                                 {{ grandchild.title | remove : "design-" }}</span>
-                              {% render 'icon-caret' %}
+                              {%- render 'icon-caret' -%}
                             </a>
                           </li>
-                        {% endfor %}
+                        {%- endfor -%}
                       </ul>
                     {%- endfor -%}
                   </div>
@@ -295,7 +302,7 @@
               </div>
             </div>
           </div>
-        {% endfor %}
+        {%- endfor -%}
       </div>
 
 
@@ -397,7 +404,6 @@
   });
 
   $('.close-menu').click(function () {
-    console.log("close menu drawer")
     $("#shopify-section-jp-header-new").removeClass("menu-open");
     $(".menu-drawer-container").removeClass("menu-opening");
     $(".menu-drawer-container").removeAttr("open");
@@ -463,7 +469,6 @@
 
 <script>
 $(".custom-search-wrap , .search-modal__form .icon-close").click(function(){
-    console.log("open custom search");
     $(".jp-custom-search").toggleClass("show-searchbar");
 });
 

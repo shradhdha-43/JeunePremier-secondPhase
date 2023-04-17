@@ -1,14 +1,24 @@
 {{ 'jp-faq.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  .section-background-{{ section.id }}{
+    background-color: {{ section.settings.section_bg_color }};
+  }
 
-<div class="faq-wrapper">
+  .container-{{ section.id }}-background{
+    background-color: {{ section.settings.bg_color }};
+  }
+
+
+{%- endstyle -%}
+<div class="faq-wrapper  section-{{ section.id }}-padding section-background-{{ section.id }}">
   <div class="container">
     <div class="faq-content">
       <div class="faq-title title text-center">{{ section.settings.title }}</div>
-      <div class="faq-wrap">
+      <div class="faq-wrap {% if section.settings.open_gorgias %} custom-border{% endif %}">
         {% for block in section.blocks %}
         {% if block.type == 'faq' %}
-        	<div class="faq-qa-wrap">
-              <div class="faq-question-wrap accordion flex-box justify-between" role="button">
+        	<div class="faq-qa-wrap {% if section.settings.open_gorgias %} custom-border{% endif %}">
+              <div class="faq-question-wrap accordion flex-box justify-between font-cust" role="button">
                 <div class="faq-question medium">{{ block.settings.question }}</div>
                 <div class="down-chev">{% include 'icon-black-down-chev' %}</div>
               </div>
@@ -50,7 +60,17 @@ $(document).ready(function() {
   {
     "name": "JP FAQ",
     "settings": [
-		{
+      {
+      "type": "color",
+      "label": "Section background color",
+      "id": "section_bg_color"
+      },
+      {
+      "type": "checkbox",
+      "label": "change border color to black",
+      "id": "open_gorgias"
+      },
+    {
 			"type": "text",
 			"id": "title",
 			"label": "Title"
@@ -71,7 +91,8 @@ $(document).ready(function() {
 			"type": "faq",
 			"name": "FAQ QA",
 			"settings": [
-				{
+       
+        {
 					"type": "text",
 					"id": "question",
 					"label": "Question"

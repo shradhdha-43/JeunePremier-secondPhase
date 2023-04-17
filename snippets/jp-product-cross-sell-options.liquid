@@ -2,9 +2,7 @@
 
 {% assign crossSellhandle = product.handle %}
 
-<script>
-  console.log('product handle: {{crossSellhandle}}');
-</script>
+
 
 {%- for product_collection in product.collections -%}
   {%- for link in linklists['main-design-collections'].links -%}
@@ -12,27 +10,12 @@
     {% assign link_handle = link_url.last | handleize %}
 
     {%- if product_collection.handle == link_handle -%}
-      <script>
-        console.log('{{ product_collection.title }}');
-      </script>
-      <script>
-        console.log('link: {{link.url}}');
-      </script>
-      <script>
-        console.log('link handle: {{link_handle}}');
-      </script>
       {% assign coll = product_collection.handle %}
       {% break %}
     {% endif %}
   {% endfor %}
 
   {% if coll %}
-    <script>
-      console.log('coll: {{coll}}');
-    </script>
-    <script>
-      console.log('loop break');
-    </script>
     {% break %}
   {% endif %}
 {% endfor %}
@@ -58,6 +41,10 @@
     or product.type == 'Wrapping paper'
     or product.type == 'Name label'
     or product.type == 'Fun Label'
+    or product.type == 'Gym Bag'
+    or product.type == 'Jackie'
+    or product.type == 'Jack Piers / Accessories / Pencil Case'
+    or product.type == 'Schoolbag Paris'
   %}
     {% continue %}
   {% endunless %}
@@ -65,15 +52,11 @@
     {% continue %}
   {% endif %}
 
-  <script>
-    console.log('product: {{product.type}} - {{product.handle}}');
-  </script>
+
   {% assign crossSellCount = crossSellCount | plus: 1 %}
 {% endfor %}
 
-<script>
-  console.log('crossSellCount: {{crossSellCount}}');
-</script>
+
 <span class="accessories {% if crossSellCount == 0 %}no-disp{% endif %}"
   ><span>{{ 'products.product.more' | t }}</span></span
 >
@@ -111,6 +94,11 @@
         or product.type == 'Wrapping paper'
         or product.type == 'Name label'
         or product.type == 'Fun Label'
+        or product.type == 'Gym Bag'
+        or product.type == 'Jackie'
+        or product.type == 'Jack Piers / Accessories / Pencil Case'
+        or product.type == 'Schoolbag Paris'
+
       %}
         {% continue %}
       {% endunless %}
@@ -121,10 +109,10 @@
       <div class="cross-sell-product {% for xitem in cart.items %}{% if xitem.product.first_available_variant.id == product.first_available_variant.id %}ids_matched{% endif %}{% endfor %}" data-id="{{ product.first_available_variant.id }}" data-status="{{ crossfound }}">
         <div class="cross-sell-product-img">
           <a href="{{ product.url }}">
-            <img src="{{ product.featured_image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+            <img src="{{ product.featured_image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy" width="{{ product.featured_media.width }}" height="{{ product.featured_media.height }}">
           </a>
         </div>
-        <div class="cross-sell-details">
+        <div class="cross-sell-details {% if template == 'product.jack-piers' %}white_plus{% endif %}">
           <div class="cross-sell-title-price-wrap">
             <div class="cross-sell-product-title medium">
               <a href="{{ product.url }}">
@@ -168,8 +156,8 @@
               <span class="icon-plus">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
                   <g id="Plus_sign" data-name="Plus sign" transform="translate(-1128.278 -4780.5)">
-                    <path id="Path_7" data-name="Path 7" d="M1128.278,4786.557h12" transform="translate(0 -0.057)" fill="none" stroke="#333333" stroke-width="1"></path>
-                    <path id="Path_10" data-name="Path 10" d="M1128.278,4786.557h12" transform="translate(5920.834 3652.222) rotate(90)" fill="none" stroke="#333333" stroke-width="1"></path>
+                    <path id="Path_7" data-name="Path 7" d="M1128.278,4786.557h12" transform="translate(0 -0.057)" fill="none" stroke="#333" stroke-width="1"></path>
+                    <path id="Path_10" data-name="Path 10" d="M1128.278,4786.557h12" transform="translate(5920.834 3652.222) rotate(90)" fill="none" stroke="#333" stroke-width="1"></path>
                   </g>
                 </svg>
               </span>
@@ -177,7 +165,8 @@
             <button class="cross-sell-add-product added-product no-disp">Added ✔</button>
           {%- else -%}
             <a href="{{ product.url }}" class="cross-sell-add-product"
-              ><span class="icon-plus">
+              ><span class="icon-plus"
+                ><span class="visually-hidden">Add to cart</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
                   <g id="Plus_sign" data-name="Plus sign" transform="translate(-1128.278 -4780.5)">
                     <path id="Path_7" data-name="Path 7" d="M1128.278,4786.557h12" transform="translate(0 -0.057)" fill="none" stroke="#333333" stroke-width="1"></path>

@@ -1,0 +1,263 @@
+{{ 'jp-image-with-text.css' | asset_url | stylesheet_tag }}
+{{ 'jack-piers-product-img-with-text.css' | asset_url | stylesheet_tag }}
+ 
+<div class="img-with-text-wrapper{% if section.settings.section_type == 'video' %} video-wrapper{% endif %}{% if section.settings.marg_top == 'true' %} sec-marg-top{% endif %}{% if section.settings.remove_bottom_marg %} remove_bottom_marg{% endif %}">
+  <div class="container">
+    {% if section.settings.section_type != 'link_within_text' %}
+    
+    {% comment %} <div class="img-w-txt-title title no-d {% if section.settings.open_gorgias %} hide-title{% endif %}">{{ section.settings.title }}</div> {% endcomment %}
+    {% endif %}
+    <div class="img-with-text-content flex-box align-center  {% if section.settings.border-color %} border-padding {% endif %} justify-between{% if section.settings.img_aligment == 'left' %} row-rev{% endif %}">
+      
+      <div class="img-w-txt-text-wrap {% if section.settings.border-color %} border-css{% endif %}">
+        {%- if section.settings.new_title != blank -%}
+        <div class="new-st">{{ section.settings.new_title }}</div>
+        {%- endif -%}
+        <h2 class="img-w-txt-title font-custm title{% if section.settings.section_type != 'link_within_text' %} no-t-m{% endif %}">{{ section.settings.title }}</h2>
+        {% if section.settings.sub_title %}
+        <div class="subtitle medium mar-cust">{{ section.settings.sub_title }}</div>
+        {% comment %} <div class="img-w-txt-title title no-d custom-title">{{ section.settings.title }}</div> {% endcomment %}
+        <div class="newimg-w-txt-title title no-d font-custm custom-title">{{ section.settings.title }}</div>
+        {% endif %}
+        {% if section.settings.section_type == 'link_within_text' %}
+        <div class="img-w-txt-desc img-w-txt-desc-link light">{{ section.settings.desc }}</div>
+        {% else %}
+        <p class="img-w-txt-desc light">{{ section.settings.desc }}</p>
+        {% endif %}
+        {% if section.settings.link_type == 'btn' %}
+        <a href="{{ section.settings.link }}" class="video-sec-btn title button{% if section.settings.btn_color == 'yellow' %} yellow-btn{% endif %}"><span class="original-text">{{ section.settings.link_txt }}</span><span class="hover-text">{{ section.settings.link_hover_txt }}</span></a>
+        {% else %}
+        <a href="{{ section.settings.link }}" class="read-more-btn medium">{{ section.settings.link_txt }}</a>
+        {% endif %}
+        
+        
+      </div>
+      {% if section.settings.section_type == 'video' %}
+      <div class="img-w-txt-image-wrap img-w-txt-video-wrap rel{% if section.settings.video_link != '' %} custom-video{% endif %}">
+          <img  class="video-cover" src="{{ section.settings.cover_img | image_url: height: 600 }}" loading="lazy" alt="Video title">
+        	{% if section.settings.video_link != '' %}
+              <video class="cust-video" width="100%" height="100%" controls>
+                <source src="{{ section.settings.video_link }}" type="video/mp4">
+              </video>
+        	{% else %}
+          <iframe class="no-disp yt-video" width="100%" height="100%" src="https://www.youtube.com/embed/{{ section.settings.product_video.id }}" frameborder="0">
+			</iframe>
+          	{% endif %}
+          <div id="play" class="play-btn">
+        {% include 'icon-play-button' %}
+      </div>
+      </div>
+      {% else %}
+      <div class="img-w-txt-image-wrap ">
+      	<img src="{{ section.settings.img | img_url: "600x" }}" loading="lazy"  alt="{{ section.settings.img.alt }}">
+        <div class="svg-wrap {% if section.settings.svg_icon %} hide-svg {% endif %}">
+          {% render 'jack-pier-logo-svg' %} 
+        {% comment %} <svg xmlns="http://www.w3.org/2000/svg" width="41.596" height="36.414" class="svgg" viewBox="0 0 41.596 36.414">
+        <g id="returns_" transform="translate(-4.516 -27.867)">
+          <g id="nuGJlP.tif_4_" transform="translate(17.395 27.867)">
+            <g id="Group_64256" data-name="Group 64256" transform="translate(0.435)">
+              <path id="Path_2466" data-name="Path 2466" d="M51.938,31.156a.6.6,0,0,0-.562.01Q45,34.115,38.614,37.049c-.1.044-.2.1-.333.166,2.172.9,4.294,1.79,6.422,2.666a.615.615,0,0,0,.411-.054q4.087-1.849,8.173-3.708L57.6,34.041ZM30.26,33.841a.92.92,0,0,0,.127.083c2,.832,3.991,1.668,5.987,2.49a.637.637,0,0,0,.44-.049q5.869-2.685,11.729-5.39c.465-.215.924-.43,1.418-.66-.113-.054-.191-.093-.269-.127-1.687-.739-3.38-1.467-5.067-2.216a1.036,1.036,0,0,0-.915,0q-4.725,2.069-9.46,4.123C32.94,32.677,31.625,33.249,30.26,33.841Z" transform="translate(-30.26 -27.867)" fill="#383b49"/>
+            </g>
+            <g id="Group_64257" data-name="Group 64257" transform="translate(0 6.374)">
+              <path id="Path_2467" data-name="Path 2467" d="M29.39,40.9c.176.064.323.112.47.176,2.025.846,4.045,1.692,6.075,2.529a.375.375,0,0,1,.279.416c-.01,1.365,0,2.729,0,4.1a.678.678,0,0,0,.518.714.649.649,0,0,0,.739-.308,1.124,1.124,0,0,0,.1-.46c.01-1.066,0-2.133,0-3.2v-.548c.117.039.205.059.289.093q3.155,1.313,6.315,2.627c.152.064.24.122.24.318q-.007,7.953,0,15.906a.9.9,0,0,1-.015.127c-.112-.039-.22-.073-.323-.117Q37,60.33,29.937,57.393a.8.8,0,0,1-.567-.841q.015-7.652,0-15.3A3.2,3.2,0,0,1,29.39,40.9Z" transform="translate(-29.37 -40.9)" fill="#383b49"/>
+            </g>
+            <g id="Group_64258" data-name="Group 64258" transform="translate(15.711 6.839)">
+              <path id="Path_2468" data-name="Path 2468" d="M74.5,56.988a.9.9,0,0,1-.611.949c-4.216,1.9-7.748,3.82-11.954,5.732-.122.054-.249.1-.416.171-.01-.147-.02-.259-.02-.372q0-7.777,0-15.559a.4.4,0,0,1,.269-.435c4.378-1.981,8.09-3.639,12.463-5.625Z" transform="translate(-61.49 -41.85)" fill="#383b49"/>
+            </g>
+          </g>
+          <path id="Path_2469" data-name="Path 2469" d="M5.93,69.051,15.1,59.88l-.181,4.828,23.311-.044-4.5,4.51,4.808,4.661H15.1v4.387Z" transform="translate(0 -16.355)" fill="#fff" stroke="#383b49" stroke-width="2"/>
+        </g>
+        </svg> {% endcomment %}
+        
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script>
+
+ 
+  
+</script>
+
+{% schema %}
+  {
+    "name": "Jack Product ImgwithText",
+    "settings": [
+        {
+          "type": "select",
+          "id": "section_type",
+          "label": "Section Type",
+          "options": [
+          {
+          "value": "img_txt",
+          "label": "Image Text"
+          },
+          {
+          "value": "video",
+          "label": "Video Text"
+          },
+          {
+          "value": "link_within_text",
+          "label": "Link within Text"
+          }
+          ],
+          "default": "img_txt"
+        },
+		{
+          "type": "select",
+          "id": "link_type",
+          "label": "Link Type",
+          "options": [
+          {
+          "value": "btn",
+          "label": "Button"
+          },
+          {
+          "value": "link",
+          "label": "Link"
+          }
+          ],
+          "default": "link"
+        },
+		{
+          "type": "select",
+          "id": "btn_color",
+          "label": "Button Color",
+          "options": [
+          {
+          "value": "black",
+          "label": "Black"
+          },
+          {
+          "value": "yellow",
+          "label": "Yellow"
+          }
+          ],
+          "default": "black"
+        },
+		{
+          "type": "radio",
+          "id": "img_aligment",
+          "label": "Media alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "right"
+        },
+        {
+			"type": "text",
+			"id": "new_title",
+			"label": "New Bar"
+		},
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		},
+		{
+			"type": "text",
+			"id": "sub_title",
+			"label": "Sub Title"
+		},
+		{
+			"type": "html",
+			"id": "desc",
+			"label": "Description"
+		},
+		{
+			"type": "text",
+			"id": "link_txt",
+			"label": "Link Text"
+		},
+		{
+			"type": "text",
+			"id": "link_hover_txt",
+			"label": "Link Hover Text"
+		},
+   
+    {
+      "type": "checkbox",
+      "label": "To Hide the Svg from the Image",
+      "id": "svg_icon"
+    },
+    {
+      "type": "checkbox",
+      "label": "To enable Border Around the Text",
+      "id": "border-color"
+    },
+		{
+			"type": "url",
+			"id": "link",
+			"label": "Link"
+		},
+		{
+			"type": "image_picker",
+			"id": "img",
+			"label": "Image"
+		},
+		{
+          "type": "video_url",
+          "id": "product_video",
+          "label": "Video URL",
+          "accept": [
+            "youtube",
+            "vimeo"
+          ]
+        },
+		{
+			"type": "image_picker",
+			"id": "cover_img",
+			"label": "Video Cover Image"
+		},
+		{
+			"type": "text",
+			"id": "video_link",
+			"label": "Custom Video Link"
+		},
+    
+		{
+          "type": "select",
+          "id": "marg_top",
+          "label": "Margin Top",
+          "options": [
+            {
+              "value": "true",
+              "label": "True"
+            },
+            {
+              "value": "false",
+              "label": "False"
+            }
+          ],
+          "default": "false"
+        },
+        {
+          "type": "checkbox",
+          "id": "remove_bottom_marg",
+          "label": "Remove bottom margin",
+          "default": false
+        }
+	],
+	"presets":[
+      {
+         "name":"Jack Product ImgwithText"
+      }
+   ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

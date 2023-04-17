@@ -178,7 +178,7 @@
         "first_html": "Order <strong>before 4pm<\/strong>, same day shipping.",
         "second_html": "Standard delivery time <strong>2-4 business days<\/strong>.",
         "third_html": "<strong>Premium delivery<\/strong> possible 1-2 business days",
-        "fourth_html": "14 days of<strong>return<\/strong>",
+        "fourth_html": "14 days of <strong>return<\/strong>",
         "fifth_html": "Safe payments",
         "name": "The Child’s name:",
         "inst": "Each line is limited to 16 characters. Both lines together are limited to 24 characters."
@@ -191,9 +191,9 @@
       "no_info": "No info",
       "size_chart": "Check size and fit",
       "preorder": "Preorder",
-      "preorder_info_html": "<strong>NEW:<\/strong>  Now you can order in advance!<br\/>So you can be 100% sure that you will receive your favorite Jeune Premier product soon.<br\/>We will ship this item on july 1 & inform you personally.",
+      "preorder_info_html": "<FONT COLOR=\"#ff0000\"><strong>NEW:<\/strong>  Now you can pre-order your favourites in advance!<br\/>To be a 100% sure, you can reserve from 13.02.<br\/>We will ship this item on 27 feb & inform you personally.<\/FONT COLOR=\"#ff0000\">",
       "preorder_property_label": "Preorder",
-      "preorder_property_value": "Shipping from July 1.",
+      "preorder_property_value": "Shipping from Feb. 27th",
       "back_in_stock_in": "Back in stock in",
       "months": {
         "january": "January",
@@ -376,7 +376,7 @@
     },
     "upsell": {
       "upsell1_heading": "Fully packed",
-      "upsell1_description": "Be the king or queen of the playground with this super cool range of school supplies. Unique lunch boxes, crazy water bottles, personalised key rings, cool gym bags, the most beautiful filled pencil cases, you name it! Take a quick look at our full range. Do you prefer everything assorted or are you a fan of mix & match? It's entirely up to you!",
+      "upsell1_description": "Be the king or queen of the playground with this super cool range of school supplies. Take a quick look at our full range!",
       "upsell2_heading": "Your bag is unique, and so are you!",
       "upsell2_description": "It’s all in the details! Recognise your school supplies out of a thousand.  Pimp them with a matching name tag or hang your initials on them to proudly show everyone they're yours!",
       "upsell3_heading": "Stationery",

@@ -44,6 +44,21 @@ header {
   padding: 24px 0;
   display: flex;
   align-items: start;
+  width: 100%;
+}
+
+.header-content .header-right , .header-content .header-left , .header-content .header-right{
+  width: 100%;
+}
+
+@media screen and ( max-width: 989px ){
+  .header-content .mobile_icons {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .header-content .mobile-hamburger {
+    width: 100%;
+  }
 }
 
 .desktop-logo img{
@@ -84,12 +99,12 @@ header {
 }
 
 .header-upper-menu.new-left-menu {
-  width: 240px;
+  width: 100%;
   justify-content: start;
 }
 
 .header-upper-menu.new-right-menu {
-  width: 240px;
+  max-width: 240px;
   align-items: start;
 }
 
@@ -165,6 +180,13 @@ header {
   display: flex;
   padding-bottom: 24px;
   cursor: pointer;
+  width: 100%;
+  column-gap: 80px;
+}
+
+.header-lower-menu .menu-link-wrap  , .header-lower-menu .medium.flex-box {
+  width: fit-content;
+  justify-content: center;
 }
 
 .header-menu-dropdown {
@@ -185,10 +207,6 @@ header {
 
 .header-menu-dropdown.less-top {
   top: 108px;
-}
-
-.menu-link-wrap {
-  margin-right: 80px;
 }
 
 .menu-link-wrap span svg{
@@ -758,7 +776,7 @@ details:not([open])>.header__icon--menu .icon-close, details[open]>.header__icon
   }
   a.mobile-logo.no-d {
     display: flex;
-    margin-left: 50px;
+    justify-content: center;
   }
   a.mobile-logo.no-d img {
     height: 48px;

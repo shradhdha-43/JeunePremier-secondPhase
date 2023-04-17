@@ -1,0 +1,378 @@
+{
+  "sections": {
+    "bfe73b4d-cd28-4383-ab49-c5a2f5c81423": {
+      "type": "jack-piers-product",
+      "custom_css": [
+
+      ],
+      "settings": {
+        "free_shipping_from": "Kostenloser Versand vanaf 150€",
+        "show_payment_icons": true,
+        "icon_bancontact": false,
+        "icon_mastercard": true,
+        "icon_visa": true,
+        "icon_maestro": false,
+        "icon_americanexpress": false,
+        "icon_paypal": true,
+        "icon_ideal": true,
+        "icon_sofort": true,
+        "icon_klarna": true,
+        "icon_belfius": false,
+        "icon_kbc": false,
+        "icon_giropay": false,
+        "icon_cartebleue": false
+      }
+    },
+    "15de17c5-3131-47e5-8dad-c02616637a8a": {
+      "type": "Jack-piers-product-image-text",
+      "settings": {
+        "section_type": "img_txt",
+        "link_type": "link",
+        "btn_color": "black",
+        "img_aligment": "right",
+        "new_title": "",
+        "title": "About Jack Piers",
+        "sub_title": "",
+        "desc": "Street style on the playground <br> \n<br>Typically for little brothers, the Jack Piers collection is playful, daring, a bit rebellious, but above all unique! With cool hand-drawn prints, Jack Piers brings the cool Ostend street vibes straight to the classroom. <br> \n<br>The little brother of Jeune Premier combines the experience, product knowledge and eye for detail of his big brother with a refreshing, colorful approach and this in an affordable way.",
+        "link_txt": "",
+        "link_hover_txt": "",
+        "svg_icon": true,
+        "border-color": false,
+        "link": "",
+        "img": "shopify:\/\/shop_images\/142A6492_1400x_2x_3ed453ae-1b59-4eef-a8bf-1732e70d1cd3.jpg",
+        "product_video": "",
+        "video_link": "",
+        "marg_top": "false",
+        "remove_bottom_marg": false
+      }
+    },
+    "631da08d-fc43-4049-9cc9-f1a2f0d83d2e": {
+      "type": "jp-faq",
+      "blocks": {
+        "41093eef-d1c4-4c7b-aca1-f5f01a651bfb": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I return a product",
+            "answer": "Changed your mind and wish to return a product? No problem! From the day following the delivery of your purchase, you have 14 days to cancel your \n\norder. We will issue you a full refund, excluding the delivery charges your paid with your order. Our returns are not free and will be deducted from the amount to be refunded. This link provides an overview of the prices for a return shipment per country.\n\nThe return is not free of charge, these costs will be deducted from the amount to be refunded.\n\nThe procedure is as follows:\nKlicken Click on the Link below, OR go to your account page and click 'return an item'.\nCheck your mailbox and download the return form to slip into your package and a prepaid label to stick on your order.\nShip your package to us."
+          }
+        },
+        "b89f2607-0780-41c1-8fee-84cc0b7f7642": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I maintain my bag?",
+            "answer": "Certainly you can! Thanks to our collaboration with Klarna, you have the option to pay only when your order has been delivered and when you are completely satisfied. Your order will be shipped in the same way as with any other payment method. With Klarna you always have 0% interest and no extra costs if you pay on time within 35 days. And you only pay for the items you wish to keep, of course."
+          }
+        },
+        "43b3268b-974e-472f-8497-df2b93a28691": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I pay later?",
+            "answer": "Certainly you can! Thanks to our collaboration with Klarna, you have the option to pay only when your order has been delivered and when you are completely satisfied. Your order will be shipped in the same way as with any other payment method. With Klarna you always have 0% interest and no extra costs if you pay on time within 35 days. And you only pay for the items you wish to keep, of course.\n\nKlarna General Terms and Conditions"
+          }
+        },
+        "3127b251-a530-471a-9c61-66319039fd85": {
+          "type": "faq",
+          "settings": {
+            "question": "The item is defective - Legal warranty",
+            "answer": "Goods are considered defective if received damaged, or if a manufacturing defect occurs within two years of purchase. Please note that items damaged due to wear and tear, improper use, fall, fire or water damage are not considered defective. If you have received the goods damaged ('visible defect') Jeune Premier asks that you report this defect along with a photo of the defect and the proof of purchase within two months of delivery. Jeune Premier will then contact the Customer regarding the free replacement and\/or repair of the defective item. If a manufacturing defect occurs within two years of purchase that could not reasonably have been known at the time of delivery (\"hidden defect\"), Jeune Premier asks that this defect be reported as soon as possible, and at least within 2 months of its discovery, along with a photograph of the defect and proof of purchase. In such a case, the Customer may invoke our warranty policy and Jeune Premier will contact the Customer regarding the free replacement and\/or repair of the defective item.\n\nThe normal cost of return in these cases shall be borne by Jeune Premier.\"\n\nFor more information on exercising the legal right to warranty, please refer to our B2C general terms and conditions of sale.\""
+          }
+        },
+        "006b021e-db22-46cc-94bf-cd9af9404659": {
+          "type": "faq",
+          "settings": {
+            "question": "What happens if I'm not home during delivery",
+            "answer": "What happens if I'm not home during delivery\nThe delivery person of bpost, DPD, GLS or UPS will deliver the order to the indicated delivery address. If you are not at home during the first delivery attempt, you will receive a notice of absence. This may be in the form of a note in the letterbox, an email or a Track &amp; Trace link.\n\nWith this notice of absence, the delivery person inform you where your order is located, with the following three options:\n• A new delivery attempt will be made on the subsequent working day. During a second delivery attempt, your order may be delivered by a different courier;\n• The order has been delivered to one of your neighbours;\n• The order is waiting for you at a collection point."
+          }
+        },
+        "b33fdf05-ae62-4c17-b756-76b329617c37": {
+          "type": "faq",
+          "settings": {
+            "question": "Missing an item with your order?",
+            "answer": "In the event that you ordered one or more items, but have not received them, please contact our customer service as soon as possible. We will be happy to assist you.\n\nPlease contact info@jeunepremier.be"
+          }
+        }
+      },
+      "block_order": [
+        "41093eef-d1c4-4c7b-aca1-f5f01a651bfb",
+        "b89f2607-0780-41c1-8fee-84cc0b7f7642",
+        "43b3268b-974e-472f-8497-df2b93a28691",
+        "3127b251-a530-471a-9c61-66319039fd85",
+        "006b021e-db22-46cc-94bf-cd9af9404659",
+        "b33fdf05-ae62-4c17-b756-76b329617c37"
+      ],
+      "settings": {
+        "section_bg_color": "",
+        "open_gorgias": true,
+        "title": "FAQ",
+        "link_text": "Other questions",
+        "link": "shopify:\/\/pages\/faqs"
+      }
+    },
+    "main": {
+      "type": "jp-product",
+      "disabled": true,
+      "settings": {
+        "free_shipping_from": "Free totebag with every order",
+        "show_payment_icons": true,
+        "icon_bancontact": true,
+        "icon_mastercard": true,
+        "icon_visa": true,
+        "icon_maestro": false,
+        "icon_americanexpress": false,
+        "icon_paypal": true,
+        "icon_ideal": false,
+        "icon_sofort": false,
+        "icon_klarna": true,
+        "icon_belfius": false,
+        "icon_kbc": false,
+        "icon_giropay": false,
+        "icon_cartebleue": false
+      }
+    },
+    "1648025119633f453c": {
+      "type": "jp-product-cross-sell-options",
+      "settings": {
+        "cross_sell_header": "Fully Packed",
+        "more_info": "More info",
+        "cross_sell_add_to_cart": "SHOP NOW +",
+        "cross_sell_added_to_cart": "ADD TO SHOPPING CART ✔"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1646073797c5988fcf": {
+      "type": "jp-product-slider-2",
+      "disabled": true,
+      "settings": {
+        "bg_color": "white",
+        "title": "",
+        "desc": "",
+        "collection": "",
+        "btn_txt": "",
+        "btn_url": "",
+        "related": false,
+        "upsell_type": "bag"
+      }
+    },
+    "adb91f43-fda2-4779-8486-4a2a6aff28cf": {
+      "type": "jp-img-scribble-txt",
+      "disabled": true,
+      "settings": {
+        "link_type": "btn",
+        "img_aligment": "right",
+        "title": "EEN BLICKVANG OP DE STRAAT",
+        "desc": "CCCCCCCCCCCCCCCCCCCC",
+        "link_txt": "BUY HERE",
+        "link_hover_txt": "BUY HERE",
+        "link": "shopify:\/\/products\/set-led-lights",
+        "img": "shopify:\/\/shop_images\/stap_2_bis.jpg",
+        "img2": "shopify:\/\/shop_images\/stap_3_1f72d373-a60a-4d25-8be7-d9202aa8aaf5.jpg"
+      }
+    },
+    "164614191478238c86": {
+      "type": "jp-product-slider-4",
+      "disabled": true,
+      "settings": {
+        "bg_color": "white",
+        "title": "",
+        "desc": "",
+        "collection": "",
+        "btn_txt": "",
+        "btn_url": "",
+        "related": false,
+        "upsell_type": "bag"
+      }
+    },
+    "16454287984d026596": {
+      "type": "jp-img-scribble-txt",
+      "disabled": true,
+      "settings": {
+        "link_type": "btn",
+        "img_aligment": "left",
+        "title": "An eye-catcher on the street!",
+        "desc": "With the Jeune Premier Ergomaxx, reflection is part of the design. All parts of the satchel are edged with reflective piping and \/ or bands that provide optimal visibility in road traffic. See and be seen!",
+        "link_txt": "BUY SAFETY LIGHTS",
+        "link_hover_txt": "ADD TO CART",
+        "link": "",
+        "img2": "shopify:\/\/shop_images\/kerstbannerz.jpg"
+      }
+    },
+    "164607437737f92922": {
+      "type": "jp-product-slider-3",
+      "disabled": true,
+      "settings": {
+        "bg_color": "white",
+        "title": "",
+        "desc": "",
+        "collection": "",
+        "btn_txt": "",
+        "btn_url": "",
+        "related": false,
+        "upsell_type": "bag"
+      }
+    },
+    "1645352523c5f0e4b8": {
+      "type": "jp-product-info",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "164543171941402611": {
+      "type": "jp-img-txt-ergo",
+      "disabled": true,
+      "blocks": {
+        "9494620b-f4cb-4962-8306-3f277dfcad84": {
+          "type": "ergo",
+          "settings": {
+            "ergo_title": "Korbergroze instellen",
+            "ergo_desc": "Öffnen Sie den Klettverschluss und klappen Sie das Rückenteil auf."
+          }
+        },
+        "d9e247d0-910a-4287-aa27-1e4dd40822db": {
+          "type": "ergo",
+          "settings": {
+            "ergo_title": "So sitzt dein ergobag richtig",
+            "ergo_desc": "Stellen Sie die Rückengurte auf dem stabilisierenden Aluminiumrahmen auf die richtige Größe für Ihr Kind ein, indem Sie den schwarzen Pfeil bewegen. Entfernen Sie die Hinweiskarte und befestigen Sie die Rückengurte."
+          }
+        },
+        "c2300ed2-dca9-4ce4-9a3e-b457ac4549b2": {
+          "type": "ergo",
+          "settings": {
+            "ergo_title": "Korbergroze instellen",
+            "ergo_desc": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut"
+          }
+        },
+        "1aa2d00d-5f33-47f0-90af-f9d3b1c31352": {
+          "type": "ergo",
+          "settings": {
+            "ergo_title": "Korbergroze instellen",
+            "ergo_desc": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut"
+          }
+        }
+      },
+      "block_order": [
+        "9494620b-f4cb-4962-8306-3f277dfcad84",
+        "d9e247d0-910a-4287-aa27-1e4dd40822db",
+        "c2300ed2-dca9-4ce4-9a3e-b457ac4549b2",
+        "1aa2d00d-5f33-47f0-90af-f9d3b1c31352"
+      ],
+      "settings": {
+        "img_aligment": "left",
+        "title": "Ergonomics",
+        "desc": "To prevent back problems and guarantee maximum wearingcomfort, school backpacks must fit perfectly on your child's back. School backpacks are only good if they sit tightlyagainst your back. Always buy a school backpack that will fit your childnow, not one that will fit them later when they've grown.",
+        "text_over_img": "ONLY THE BEST FOR MY CHILD."
+      }
+    },
+    "16462080425b9e4234": {
+      "type": "jp-product-faq",
+      "disabled": true,
+      "settings": {
+        "faq_title": "FAQ",
+        "faq_link_text": "Other questions",
+        "faq_url": "shopify:\/\/pages\/faqs"
+      }
+    },
+    "1645442399a142c9b8": {
+      "type": "jp-instagram",
+      "disabled": true,
+      "blocks": {
+        "9cfd7868-4dd7-486f-8086-bbb8fe75a3d3": {
+          "type": "insta_img",
+          "settings": {
+            "in_img": "shopify:\/\/shop_images\/kerstbannerz.jpg",
+            "insta_url": "https:\/\/www.instagram.com\/p\/CZyTPFmOZ0T\/"
+          }
+        },
+        "f8ebaf8c-95ec-4908-a948-fe0c1addd4c8": {
+          "type": "insta_img",
+          "settings": {
+            "insta_url": "https:\/\/www.instagram.com\/p\/CZtJpO9O6pe\/"
+          }
+        },
+        "2ed9366f-6e89-4019-bad6-c5dd57d6d776": {
+          "type": "insta_img",
+          "settings": {
+            "in_img": "shopify:\/\/shop_images\/teqt.jpg",
+            "insta_url": "https:\/\/www.instagram.com\/p\/CZoADbdIFfk\/"
+          }
+        },
+        "f9862fb4-5a4f-4ee7-a03d-a273d7817b23": {
+          "type": "insta_img",
+          "settings": {
+            "in_img": "shopify:\/\/shop_images\/ultimate3.jpg",
+            "insta_url": "https:\/\/www.instagram.com\/p\/CZi2e6UIYqB\/"
+          }
+        },
+        "7277bb8a-4be0-43fc-bcf8-023435996f75": {
+          "type": "insta_img",
+          "settings": {
+            "in_img": "shopify:\/\/shop_images\/AOTS2.jpg",
+            "insta_url": "https:\/\/www.instagram.com\/p\/CZds25nOiHJ\/"
+          }
+        }
+      },
+      "block_order": [
+        "9cfd7868-4dd7-486f-8086-bbb8fe75a3d3",
+        "f8ebaf8c-95ec-4908-a948-fe0c1addd4c8",
+        "2ed9366f-6e89-4019-bad6-c5dd57d6d776",
+        "f9862fb4-5a4f-4ee7-a03d-a273d7817b23",
+        "7277bb8a-4be0-43fc-bcf8-023435996f75"
+      ],
+      "settings": {
+        "title": "Get inspired & shop the look",
+        "link_txt": "View more",
+        "link_url": "https:\/\/www.instagram.com\/jeunepremier_official\/",
+        "custom_review_bg": "#f9f7f3",
+        "get_carousel_widget": true,
+        "instagram_posts": 8,
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    },
+    "1645786214e1057d96": {
+      "type": "jp-reviews-product",
+      "settings": {
+      }
+    },
+    "16597120961a240424": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<script type=\"text\/javascript\">\nvar _learnq = _learnq || [];\nfunction addedToCart() {\n  fetch(`${window.location.origin}\/cart.js`)\n  .then(res => res.clone().json().then(data => {\n    var cart = {\n      total_price: data.total_price\/100,\n      $value: data.total_price\/100,\n      total_discount: data.total_discount,\n      original_total_price: data.original_total_price\/100,\n      items: data.items\n    }\n    if (item !== 'undefined') {\n      cart = Object.assign(cart, item)\n    }\n    _learnq.push(['track', 'Added to Cart', cart])\n  }))\n} \n(function (ns, fetch) {\n  ns.fetch = function() {\n    const response = fetch.apply(this, arguments);\n    response.then(res => {\n      if (`${window.location.origin}\/cart\/add.js`\n      \t.includes(res.url)) {\n        \taddedToCart()\n      }\n    });\n    return response\n  }\n}(window, window.fetch))\n$(document).ajaxComplete(function(event, request, settings){\n  if(settings.url == \"\/cart\/add.js\"){\n      addedToCart()\n  }\n})<\/script>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "bfe73b4d-cd28-4383-ab49-c5a2f5c81423",
+    "15de17c5-3131-47e5-8dad-c02616637a8a",
+    "631da08d-fc43-4049-9cc9-f1a2f0d83d2e",
+    "main",
+    "1648025119633f453c",
+    "product-recommendations",
+    "1646073797c5988fcf",
+    "adb91f43-fda2-4779-8486-4a2a6aff28cf",
+    "164614191478238c86",
+    "16454287984d026596",
+    "164607437737f92922",
+    "1645352523c5f0e4b8",
+    "164543171941402611",
+    "16462080425b9e4234",
+    "1645442399a142c9b8",
+    "1645786214e1057d96",
+    "16597120961a240424"
+  ]
+}

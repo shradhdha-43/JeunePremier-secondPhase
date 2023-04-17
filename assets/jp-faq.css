@@ -64,7 +64,14 @@
   cursor: pointer;
 }
 
+.font-cust{
+  font-size: 16px;
+}
 
+.custom-border{
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
 @media(max-width: 992px){
   .faq-wrap {
     width: 100%;
@@ -86,3 +93,6 @@
     margin-bottom: 80px;
 }
 }
+/* .bg-color{
+  background-color: aqua;
+} */
