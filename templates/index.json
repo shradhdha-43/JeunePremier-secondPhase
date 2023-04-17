@@ -3,12 +3,12 @@
     "164498287406219e49": {
       "type": "jp-hero",
       "settings": {
-        "image": "shopify:\/\/shop_images\/banner-com.jpg",
+        "image": "shopify:\/\/shop_images\/Cavalerie_1.jpg",
         "mob_image": "shopify:\/\/shop_images\/Cavalerie_1_moble.jpg",
         "heading": "",
         "text_align": "center",
         "heading_color": "#333333",
-        "desktop_allignment": "end",
+        "desktop_allignment": "center",
         "mobile_allignment": "center",
         "justify_allignment": "center",
         "headinglink": "shopify:\/\/collections\/school-accessories",
