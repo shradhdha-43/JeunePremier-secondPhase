@@ -30,11 +30,11 @@
       <div class="img-w-txt-image-wrap img-w-txt-video-wrap rel{% if section.settings.video_link != '' %} custom-video{% endif %}">
           <img  class="video-cover" src="{{ section.settings.cover_img | image_url: height: 600 }}" loading="lazy" alt="Video title">
         	{% if section.settings.video_link != '' %}
-              <video class="cust-video" width="100%" height="100%" controls>
-                <source src="{{ section.settings.video_link }}" type="video/mp4">
+              <video class="cust-video lozad" width="100%" height="100%" controls>
+                <source data-src="{{ section.settings.video_link }}" type="video/mp4">
               </video>
         	{% else %}
-          <iframe class="no-disp yt-video" width="100%" height="100%" src="https://www.youtube.com/embed/{{ section.settings.product_video.id }}" frameborder="0">
+          <iframe class="no-disp yt-video lozad" width="100%" height="100%" data-src="https://www.youtube.com/embed/{{ section.settings.product_video.id }}" frameborder="0">
 			</iframe>
           	{% endif %}
           <div id="play" class="play-btn">
@@ -51,9 +51,10 @@
 </div>
 
 <script>
-
- 
-  
+  $(document).ready(function() {
+    const observer = lozad();
+    observer.observe();
+  });
 </script>
 
 {% schema %}

@@ -43,7 +43,7 @@
     align-self: {{section.settings.mobile_allignment}};
     }
   }
-  
+
   @media screen and (max-width : 768px) {
     {% if section.settings.mob_image %}
       .hero{
@@ -64,8 +64,7 @@
 
 <div class="hero {% if section.settings.video_dsk != blank or section.settings.video_mob != blank %} video_added{% endif %}">
   {% if section.settings.video_dsk != blank or section.settings.video_mob != blank %}
-    <video class="hero-video" id="hero-video" width="100%" playsinline autoplay="true" muted="muted" loop>
-    </video>
+    <video class="hero-video" id="hero-video" width="100%" playsinline autoplay="true" muted="muted" loop></video>
     {% assign vid_img_d = section.settings.video_dsk.preview_image %}
     {% assign vid_img_m = section.settings.video_mob.preview_image %}
     {% if section.settings.video_dsk != blank %}
@@ -89,227 +88,242 @@
       >
     {% endif %}
   {% endif %}
-  <div class="container flex-box justify-end" style="justify-content : {{ section.settings.justify_allignment }} !important">
-    <span class="header-inner-wrapper" {% if section.settings.desktop_allignment == "baseline" or section.settings.mobile_allignment == "baseline" %} style="margin-top : 30px" {% endif %}>
-      <h1 class="hero-text" style="color:{{ section.settings.heading_color }}";>
+  <div
+    class="container flex-box justify-end"
+    style="justify-content : {{ section.settings.justify_allignment }} !important"
+  >
+    <span
+      class="header-inner-wrapper"
+      {% if section.settings.desktop_allignment == 'baseline' or section.settings.mobile_allignment == 'baseline' %}
+        style="margin-top : 30px"
+      {% endif %}
+    >
+      <h1 class="hero-text" style="color:{{ section.settings.heading_color }}" ;>
         <span>
-          {% if section.settings.design2 %}<span class="sub-head">{{ section.settings.subheading }}</span>{% endif %}
+          {% if section.settings.design2 -%}
+            <span class="sub-head">{{ section.settings.subheading }}</span>
+          {%- endif %}
           {{ section.settings.heading }}
         </span>
       </h1>
-      {% if section.settings.headinglink != blank %}<a class="btn hero-btn btn-center" href="{{ section.settings.headinglink }}">{{ section.settings.headinglinktext }}</a>{% endif %}
+      {% if section.settings.headinglink != blank -%}
+        <a class="btn hero-btn btn-center" href="{{ section.settings.headinglink }}">
+          {{- section.settings.headinglinktext -}}
+        </a>
+      {%- endif %}
     </span>
   </div>
 </div>
 <script>
-  const video = document.getElementById("hero-video");
-  const deskvideo = "{{ section.settings.video_dsk.sources[1].url }}";
-  const mobvideo = "{{ section.settings.video_mob.sources[1].url }}";
+  const video = document.getElementById('hero-video');
+  const deskvideo = '{{ section.settings.video_dsk.sources[1].url }}';
+  const mobvideo = '{{ section.settings.video_mob.sources[1].url }}';
   let prevWidth = window.innerWidth;
-  
-  
-  function changeVideoSource() {
-      if (Math.abs(window.innerWidth - prevWidth) >= 50) {
-          if (window.innerWidth >= 768) {
-              video.src = deskvideo;
-          } else {
-              video.src = mobvideo;
-          }
-          prevWidth = window.innerWidth;
-      }
-  }
-  
-  function FirstVideoSource() {
-      if (window.innerWidth >= 768) {
-          video.src = deskvideo;
-      } else {
-          video.src = mobvideo;
-      }
-  }
-  
-  
-  window.addEventListener("resize", changeVideoSource);
-  window.addEventListener("load", FirstVideoSource);
-  changeVideoSource();
 
+  function changeVideoSource() {
+    if (Math.abs(window.innerWidth - prevWidth) >= 50) {
+      if (video) {
+        if (window.innerWidth >= 768) {
+          video.src = deskvideo;
+        } else {
+          video.src = mobvideo;
+        }
+        prevWidth = window.innerWidth;
+      }
+    }
+  }
+
+  function FirstVideoSource() {
+    if (video) {
+      if (window.innerWidth >= 768) {
+        video.src = deskvideo;
+      } else {
+        video.src = mobvideo;
+      }
+    }
+  }
+
+  window.addEventListener('resize', changeVideoSource);
+  window.addEventListener('load', FirstVideoSource);
+  changeVideoSource();
 </script>
 {% schema %}
-  {
-    "name": "JP Hero",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Desktop Settings"
-      },
-	    {
-         "type":"image_picker",
-         "id":"image",
-         "label":"Desktop Image"
-      },
-      {
-        "type":"video",
-        "id":"video_dsk",
-        "label":"Desktop Video"
-      },
-      {
-        "type": "header",
-        "content": "Mobile Settings"
-      },
-      {
-        "type":"image_picker",
-        "id":"mob_image",
-        "label":"Mobile Image"
-      },
-      {
-        "type":"video",
-        "id":"video_mob",
-        "label":"Mobile Video"
-      },
-      {
+{
+  "name": "JP Hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Desktop Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "video",
+      "id": "video_dsk",
+      "label": "Desktop Video"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "mob_image",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "video",
+      "id": "video_mob",
+      "label": "Mobile Video"
+    },
+    {
       "type": "header",
       "content": "Heading"
-      },
-      {
-        "type": "html",
-        "id": "heading",
-        "label": "Heading",
-		    "default": "Welcome to store"
-      },
-      {
-        "type": "select",
-        "id": "text_align",
-        "label": "Heading alignment",
-        "options": [
-          {
-            "value": "center",
-            "label": "Center"
-          },
-          {
-            "value": "right",
-            "label": "Right"
-          },
-          {
-            "value": "left",
-            "label": "Left"
-          }
-        ],
-        "default": "left"
-      },
-      {
-        "type": "color",
-        "id": "heading_color",
-        "label": "Heading color",
-        "default" : "#ffffff"
-      },
-      {
-        "type": "header",
-        "content": "Content Allignment"
-      },
-      {
-        "type": "select",
-        "id": "desktop_allignment",
-        "label": "Desktop vertical alignment",
-        "options": [
-          {
-            "value": "baseline",
-            "label": "Top"
-          },
-          {
-            "value": "center",
-            "label": "center"
-          },
-          {
-            "value": "end",
-            "label": "Bottom"
-          }
-        ],
-        "default": "end"
-      },
-      {
-        "type": "select",
-        "id": "mobile_allignment",
-        "label": "Mobile vertical alignment",
-        "options": [
-          {
-            "value": "baseline",
-            "label": "Top"
-          },
-          {
-            "value": "center",
-            "label": "center"
-          },
-          {
-            "value": "end",
-            "label": "Bottom"
-          }
-        ],
-        "default": "end"
-      },
-      {
-        "type": "select",
-        "id": "justify_allignment",
-        "label": "Horizontal alignment",
-        "options": [
-          {
-            "value": "start",
-            "label": "left"
-          },
-          {
-            "value": "center",
-            "label": "center"
-          },
-          {
-            "value": "end",
-            "label": "Right"
-          }
-        ],
-        "default": "end"
-      },
-      {
+    },
+    {
+      "type": "html",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Welcome to store"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Heading alignment",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Content Allignment"
+    },
+    {
+      "type": "select",
+      "id": "desktop_allignment",
+      "label": "Desktop vertical alignment",
+      "options": [
+        {
+          "value": "baseline",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "center"
+        },
+        {
+          "value": "end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "end"
+    },
+    {
+      "type": "select",
+      "id": "mobile_allignment",
+      "label": "Mobile vertical alignment",
+      "options": [
+        {
+          "value": "baseline",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "center"
+        },
+        {
+          "value": "end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "end"
+    },
+    {
+      "type": "select",
+      "id": "justify_allignment",
+      "label": "Horizontal alignment",
+      "options": [
+        {
+          "value": "start",
+          "label": "left"
+        },
+        {
+          "value": "center",
+          "label": "center"
+        },
+        {
+          "value": "end",
+          "label": "Right"
+        }
+      ],
+      "default": "end"
+    },
+    {
       "type": "header",
       "content": "Button"
-     },
-      {
-        "type": "url",
-        "id": "headinglink",
-        "label": "Heading Button"
-      },
-      {
-        "type": "text",
-        "id": "headinglinktext",
-        "label": "Heading Button Text"
-      },
-      {
-        "type": "color",
-        "id": "hero_button_bg",
-        "label": "Background Color",
-        "default" : "#333333"
-      },
-      {
-        "type": "color",
-        "id": "hero_text_color",
-        "label": "Text Color",
-        "default" : "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "hero_button_hover_bg_color",
-        "label": "Hover Background Color",
-        "default" : "#c5af88"
-      },
-      {
-        "type": "color",
-        "id": "hero_button_hover_text_color",
-        "label": "Hover Text Color",
-        "default" : "#333333"
-      }
-	],
-   "presets":[
-      {
-         "name":"JP Hero"
-      }
-   ]
-  }
+    },
+    {
+      "type": "url",
+      "id": "headinglink",
+      "label": "Heading Button"
+    },
+    {
+      "type": "text",
+      "id": "headinglinktext",
+      "label": "Heading Button Text"
+    },
+    {
+      "type": "color",
+      "id": "hero_button_bg",
+      "label": "Background Color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "hero_text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "hero_button_hover_bg_color",
+      "label": "Hover Background Color",
+      "default": "#c5af88"
+    },
+    {
+      "type": "color",
+      "id": "hero_button_hover_text_color",
+      "label": "Hover Text Color",
+      "default": "#333333"
+    }
+  ],
+  "presets": [
+    {
+      "name": "JP Hero"
+    }
+  ]
+}
 {% endschema %}
 
 {% stylesheet %}

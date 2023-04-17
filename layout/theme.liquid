@@ -584,7 +584,7 @@
       }
     </script>
     
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    {% comment %} <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script> {% endcomment %}
     
     {% comment %}
     <script>
@@ -742,7 +742,7 @@
         CampaignStyle.textContent = '#chat-campaigns {left: 0px; transition: left 200ms ease;}';
         chatButtonHead.appendChild(buttonStyle);
         chatWindowHead.appendChild(WindowStyle);
-        chatCampaignHead.appendChild(CampaignStyle);
+        //chatCampaignHead.appendChild(CampaignStyle);
         }
 
         }, 800);
