@@ -9,8 +9,7 @@ html {
 
 @font-face {
   font-family: "Hero";
-  src: local("Hero"),
-    url(https://cdn.shopify.com/s/files/1/0077/6565/5629/t/86/assets/Hero-Regular.otf?v=23174963391193924801681796100) format("TrueType");
+  src: url({{ "Hero-Regular.otf" | asset_url }}) format("TrueType");
   font-display: swap;
 }
 
