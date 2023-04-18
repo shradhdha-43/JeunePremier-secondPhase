@@ -251,6 +251,7 @@
     },
     "16437127436c75ae35": {
       "type": "jp-image-with-text",
+      "disabled": true,
       "settings": {
         "section_type": "img_txt",
         "link_type": "link",
@@ -267,6 +268,132 @@
         "video_link": "",
         "marg_top": "false",
         "remove_bottom_marg": false
+      }
+    },
+    "e77b9618-5a5d-4df7-a559-b86dc47e612e": {
+      "type": "jp-be-sizechart",
+      "blocks": {
+        "template--14219369054285__e77b9618-5a5d-4df7-a559-b86dc47e612e-1681825717a7831484-0": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color1",
+            "product_name": "It Bag Mini",
+            "first_cell": true,
+            "second_cell": true,
+            "third_cell": false,
+            "fourth_cell": false,
+            "fifth_cell": false,
+            "sixth_cell": false,
+            "seventh_cell": false,
+            "eighth_cell": false,
+            "ninth_cell": false,
+            "tenth_cell": false
+          }
+        },
+        "template--14219369054285__e77b9618-5a5d-4df7-a559-b86dc47e612e-1681825717a7831484-1": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color1",
+            "product_name": "It Bag Mini",
+            "first_cell": true,
+            "second_cell": true,
+            "third_cell": false,
+            "fourth_cell": false,
+            "fifth_cell": false,
+            "sixth_cell": false,
+            "seventh_cell": false,
+            "eighth_cell": false,
+            "ninth_cell": false,
+            "tenth_cell": false
+          }
+        },
+        "template--14219369054285__e77b9618-5a5d-4df7-a559-b86dc47e612e-1681825717a7831484-2": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color1",
+            "product_name": "It Bag Mini",
+            "first_cell": true,
+            "second_cell": true,
+            "third_cell": false,
+            "fourth_cell": false,
+            "fifth_cell": false,
+            "sixth_cell": false,
+            "seventh_cell": false,
+            "eighth_cell": false,
+            "ninth_cell": false,
+            "tenth_cell": false
+          }
+        },
+        "template--14219369054285__e77b9618-5a5d-4df7-a559-b86dc47e612e-1681825717a7831484-3": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color1",
+            "product_name": "It Bag Mini",
+            "first_cell": true,
+            "second_cell": true,
+            "third_cell": false,
+            "fourth_cell": false,
+            "fifth_cell": false,
+            "sixth_cell": false,
+            "seventh_cell": false,
+            "eighth_cell": false,
+            "ninth_cell": false,
+            "tenth_cell": false
+          }
+        },
+        "template--14219369054285__e77b9618-5a5d-4df7-a559-b86dc47e612e-1681825717a7831484-4": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color1",
+            "product_name": "It Bag Mini",
+            "first_cell": true,
+            "second_cell": true,
+            "third_cell": false,
+            "fourth_cell": false,
+            "fifth_cell": false,
+            "sixth_cell": false,
+            "seventh_cell": false,
+            "eighth_cell": false,
+            "ninth_cell": false,
+            "tenth_cell": false
+          }
+        },
+        "template--14219369054285__e77b9618-5a5d-4df7-a559-b86dc47e612e-1681825717a7831484-5": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color1",
+            "product_name": "It Bag Mini",
+            "first_cell": true,
+            "second_cell": true,
+            "third_cell": false,
+            "fourth_cell": false,
+            "fifth_cell": false,
+            "sixth_cell": false,
+            "seventh_cell": false,
+            "eighth_cell": false,
+            "ninth_cell": false,
+            "tenth_cell": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14219369054285__e77b9618-5a5d-4df7-a559-b86dc47e612e-1681825717a7831484-0",
+        "template--14219369054285__e77b9618-5a5d-4df7-a559-b86dc47e612e-1681825717a7831484-1",
+        "template--14219369054285__e77b9618-5a5d-4df7-a559-b86dc47e612e-1681825717a7831484-2",
+        "template--14219369054285__e77b9618-5a5d-4df7-a559-b86dc47e612e-1681825717a7831484-3",
+        "template--14219369054285__e77b9618-5a5d-4df7-a559-b86dc47e612e-1681825717a7831484-4",
+        "template--14219369054285__e77b9618-5a5d-4df7-a559-b86dc47e612e-1681825717a7831484-5"
+      ],
+      "settings": {
+        "heading": "CHOOSE THE RIGHT ONE: A BAG FOR EACH AGE",
+        "maten_in_cm": "*Maten in cm",
+        "first_column_heading": "SCHOOL",
+        "first_column_2nd_cel": "Kleuterschool",
+        "first_column_3rd_cell": "Lagere school",
+        "second_column_heading": "LEEFTIJD",
+        "second_column_cell_entries": "2-3,4,5-6,6,7,8,9,10,11,12",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "1645637117415b621a": {
@@ -468,6 +595,7 @@
     "16469818107a071e93",
     "83ccac26-89e5-460a-a832-561580cd30c5",
     "16437127436c75ae35",
+    "e77b9618-5a5d-4df7-a559-b86dc47e612e",
     "1645637117415b621a",
     "164563766038f711c3",
     "16502824973f476e50",
