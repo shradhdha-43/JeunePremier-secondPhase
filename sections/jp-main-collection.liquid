@@ -261,9 +261,6 @@
 					{% render 'jack-piers-product-icon' %} 
 				</div>
 				{% endif %}
-			  {% comment %} {% if product.vendor == "Jack Piers" %}
-              {{ product.vendor }}
-				{% endif %} {% endcomment %}
               {% for image in product.images limit: 2 %}
               {% if forloop.first and forloop.last %}
               <img src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" class="" loading="lazy">
@@ -300,7 +297,6 @@
             <div class="product-price-col">
                <div class="product-sub-title light">
                  {{ product.title | split: " - " | last }}
-              	{% comment %}{{ product.metafields.descriptors.subtitle }}{% endcomment %}
               </div>
 			  <div class="vendor-wrap">
 				{% if product.vendor == "Jack Piers" %}

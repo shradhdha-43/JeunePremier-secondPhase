@@ -103,10 +103,6 @@
                   {%- else -%}
                     {{ current_variant_price | money_without_trailing_zeros }}
                   {%- endif -%}  
-                  {% comment %}
-                    HIDE TAX TEXT
-                  <span class="price-incl">{% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</span>
-                  {% endcomment %}
                 </span>
             </div> 
 
@@ -133,19 +129,6 @@
                 {% if product.metafields.stamped.reviews_count != blank %}{{ product.metafields.stamped.reviews_count }} {{ 'products.product.reviews' | t }}{% endif %}
               </a>
             </div>
-
-
-          {% comment %}
-            OLD PRODUCT PRICE
-            {% if product.compare_at_price_max > product.price %}
-            <span id="ProductPriceCompare" class="product-compare">
-              {{ product.compare_at_price_max | times: 1 | money_without_trailing_zeros }}
-            </span>
-            {% endif %}
-            <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
-              {{ current_variant_price | money_without_trailing_zeros }}  <span class="price-incl">{% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</span>
-            </span>
-          {% endcomment %}
 
           </div>
             <span class="product-wishlist"></span>
@@ -278,10 +261,6 @@
                       {% else %}
                         {{ current_variant_price | money_without_trailing_zeros  }} 
                       {% endif %}
-                      {% comment %}
-                        HIDE TAX TEXT
-                        <span class="price-incl">{% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</span>
-                      {% endcomment %}
                     </span>
                   </div>  
                   
@@ -307,17 +286,6 @@
                     </a>
                   </div>
                   
-                {% comment %}
-                  HIDE OLD PRICE
-                  {% if product.compare_at_price_max > product.price %}
-                  <span id="ProductPriceCompare" class="product-compare">
-                    {{ product.compare_at_price_max | times: 1 | money_without_trailing_zeros  }}
-                  </span>
-                  {% endif %}
-                  <span id="ProductPrice" class="product-variant-price" content="{{ current_variant_price | divided_by: 100.00 | round: 2 }}">
-                    {{ current_variant_price | money_without_trailing_zeros  }} <span class="price-incl">{% if localization.country.iso_code == 'CH' %}{{ 'products.product.exclude_taxes' | t }}{% else %}{{ 'products.product.include_taxes' | t }}{% endif %}</span>
-                  </span>
-                {% endcomment %}
 
                 </div>
                 
@@ -400,7 +368,7 @@
                 </div>
                 
                 {% if current_variant_price > 14900 %}
-                <span class="free-shipping no-t-m">{{ 'products.product.free_shipping' | t }} <img src="//cdn.shopify.com/s/files/1/0334/1100/6595/files/Check_gold_2x_999c4ca6-c15a-478a-8f63-31f5d4d14ccc_22x.png?v=1644228290" alt="tick" width="22" height="16">{% comment %}{% if section.settings.tick %}<img src="{{ section.settings.tick | img_url: "22x" }}" alt="tick" width="22" height="16">{% endif %}{% endcomment %}</span>
+                <span class="free-shipping no-t-m">{{ 'products.product.free_shipping' | t }} <img src="//cdn.shopify.com/s/files/1/0334/1100/6595/files/Check_gold_2x_999c4ca6-c15a-478a-8f63-31f5d4d14ccc_22x.png?v=1644228290" alt="tick" width="22" height="16"></span>
                 {% endif %}
                 
                 
@@ -550,32 +518,6 @@
                   </div>
                 </div>
                 
-				{% comment %}
-                <div class="product-services">
-                {%- for block in section.blocks -%}
-                  <div class="product-service">
-                    <div class="product-icon">
-                      {% if block.settings.listIcon == "returns" %}
-                      <img src="{{ "returns-icon.png" | asset_url }}">
-                      {% elsif block.settings.listIcon == "express" %}
-                      <img src="{{ "express-shipping-icon.png" | asset_url }}">
-                      {% else %}
-                      <img src="{{ "shipping-icon.png" | asset_url }}">
-                      {% endif %}
-                    </div>
-                    <div class="product-service-text">
-                      {{ block.settings.description }}
-
-                      {%- if block.settings.image != blank -%}
-                      <span class="product-service-image">
-                        <img src="{{ block.settings.image | img_url: "54x" }}" alt="courier">
-                      </span>
-                      {%- endif -%}
-                    </div>
-                  </div>
-                {%- endfor -%}
-                </div>
-                {% endcomment %}
 
               </div>
 
@@ -631,38 +573,9 @@
 
 <script>
   
-  {% comment %}
-  function checkHeaderCta() {
-    var y = $(document).scrollTop();
-    if (y < $(".product-wrapper").innerHeight()) {
-      $('.product-header-cta').removeClass('come-in');
-    } else {
-      $('.product-header-cta').addClass('come-in');
-    }
-  }
-  checkHeaderCta();
-  
-  $(document).scroll(function() {
-    checkHeaderCta();
-  });
-  
-  $(document).ready(function() {
-  });
-  {% endcomment %}
   
 $(document).ready(function(){
   
-  {% comment %} if(window.keep) {
-    $('.accessories').removeClass('no-disp');
-  } else {
-    $('.accessories').addClass('no-disp');
-  } {% endcomment %}
-
-  {% comment %} $('.accessories').click(function() {
-  	$(".drawer-cross-sell-cart").addClass("drawn");
-    $('.background-drawer-cross-sell').addClass('drawn');
-    $('body').addClass('no-scroll');
-  }); {% endcomment %}
   
   $(".js-product-preview-hover").mouseover(function(){
     $(".slider-product-hover").css("display", "block");
@@ -709,11 +622,6 @@ $(document).ready(function(){
         localStorage.setItem( "PrevLocation", url );
         $('.product-wrapper').last().parent().remove();
         
-        {% comment %} if(window.keep) {
-          $('.accessories').removeClass('no-disp');
-        } else {
-          $('.accessories').addClass('no-disp');
-        } {% endcomment %}
         $('.slider-for').slick({
           speed: 300,
           arrows: false,
@@ -1273,184 +1181,8 @@ $(document).ready(function(){
 });
 </script>
 
-{% comment %}
-<!-- Core CSS file -->
-<link rel="stylesheet" href="{{ "photoswipe.css" | asset_url }}"> 
 
-<!-- Skin CSS file (styling of UI - buttons, caption, etc.)
-     In the folder of skin CSS file there are also:
-     - .png and .svg icons sprite, 
-     - preloader.gif (for browsers that do not support CSS animations) -->
-<link rel="stylesheet" href="{{ "default-skin.css" | asset_url }}"> 
-
-<!-- Core JS file -->
-<script src="{{ "photoswipe.min.js" | asset_url }}"></script> 
-
-<!-- UI JS file -->
-<script src="{{ "photoswipe-ui-default.min.js" | asset_url }}"></script> 
-
-<script>
-$( document ).ready(function() {
-    // Init empty gallery array
-    var container = [];
-  var gallery;
-  
-    // Loop over gallery items and push it to the array
-    $('.for-lighthouse .for-light').each(function() {
-      if($(this).data('vid') == 'yes') {
-        var $link = $(this),
-            item = {
-              html: $link.html()
-            };
-        container.push(item);
-      } else {
-        var $link = $(this),
-            item = {
-              src: $link.attr('href'),
-              w: $link.data('width'),
-              h: $link.data('height'),
-              title: $link.data('caption')
-            };
-        container.push(item);
-      }
-    });
-  $('.size-chart').each(function() {
-        var $link = $(this),
-            item = {
-              src: $link.attr('href'),
-              w: $link.data('width'),
-              h: $link.data('height'),
-              title: $link.data('caption')
-            };
-        container.push(item);
-    });
-
-    // Define click event on gallery item
-    $('.slider-for .slider__slide,.slider-for-2 .slider__slide, .size-chart').click(function(event) {
-
-      // Prevent location change
-      event.preventDefault();
-
-      // Define object and gallery options
-      var $pswp = $('.pswp')[0],
-          options = {
-            index: $(this).data('index'),
-            bgOpacity: 0.85,
-            showHideOpacity: true
-          };
-
-      // Initialize PhotoSwipe
-      gallery = new PhotoSwipe($pswp, PhotoSwipeUI_Default, container, options);
-      gallery.init();
-    });
-});
-</script>
-
-{% include "photoswipe" %}
-{% endcomment %}
-
-
-<script>
-  {% comment %} $('.close-cross-sell-cart,.background-drawer-cross-sell').click(function() {
-    $('.drawer-cross-sell-cart').removeClass('drawn');
-    $('.background-drawer-cross-sell').removeClass('drawn');
-    $('body').removeClass('no-scroll');
-  }); {% endcomment %}
-
-  {% comment %} function storeInLocalStorage(item, key, value) {
-    console.log("storeLocal running");
-    var data = localStorage.getItem('deleted_slide');
-  
-    data = data ? JSON.parse(data) : {};
-  
-    data[key] = value;
-  
-    localStorage.setItem(item, JSON.stringify(data));
-  }
-    
-  {% comment %} $('.cross-sell-add-product:not(.added-product)').click(function() { {% endcomment %}
-  $('body').on("click", ".cross-sell-add-product:not(.added-product)", function() {
-  
-
-    var cross_variant_id = $(this).data('variant');
-
-    
-
-    var urls = $(this).data('url');
-    if($(this).data('variant')) {
-    var notAdded = false;
-    var formData;
-        formData = {
-          'items': [{
-            'id': parseInt($(this).data('variant')),
-            'quantity': 1
-          }]
-        };
-      $.ajax({
-        url: "/cart/add.js",
-        method: "POST",
-        dataType: "json",
-        data: formData,
-      })
-      .done(function( data ) {
-        checkFreeProduct();
-        $.ajax({
-          url: '{% unless routes.root_url == "/" %}{{ routes.root_url }}{% endunless %}/?sections=jp-cart',
-          method: "GET",
-          dataType: "json"
-        })
-        .done(function( data ) {
-          {% include "cart-done" %}
-        })
-        .fail(function(error) {
-          console.log( error );
-          $('.load-container').remove();
-        });
-        console.log("open cart");
-        $(".background-drawer-cart").addClass("drawn");
-        $(".drawer-cart").addClass("drawn");
-        $("body").addClass("no-scroll");
-      })
-      .fail(function(error) {
-        notAdded = true;
-        console.log( error );
-        $('.load-container').remove();
-      });
-      
-      if(notAdded != true) {
-        $(this).next().removeClass("no-disp");
-        $(this).addClass("no-disp");
-        var deleted_slide = $(this).closest(".slick-slide").html();
-        var crossObj = { id : cross_variant_id , htmlData : deleted_slide };
-        storeInLocalStorage('deleted_slide' , cross_variant_id , deleted_slide);
-        var removeslide = $(this).closest(".slick-slide").attr("data-slick-index");
-        $('.show-cross-upsell .cross-sell-body').slick('slickRemove', removeslide);
-        {% comment %} $('.show-cross-upsell .cross-sell-body')[0].slick.refresh(); {% endcomment %}
-      }
-
-      if($(".cross-sell-body .slick-track .slick-slide").length  == 0  ) {
-        $(".accessories").addClass("no-disp");
-      }
-    }
-
-    $.ajax({
-      url: $(this).data('urls')+'/?sections=jp-product-cross-sell-options',
-      method: "GET"
-    })
-    .done(function( data ) {
-      console.log(data);
-    })
-    .fail(function(error) {
-      console.log( error );
-    });
-  }); {% endcomment %}
-
-
-  
-
-
-
-  
+<script>  
   ///----- Auto-Close Accordion
   $(document).ready(function() {
     //--- initial state of elements

@@ -701,29 +701,6 @@
     {% endif %}
   </div>
 
-<script>
-  
-  {% comment %}
-  function checkHeaderCta() {
-    var y = $(document).scrollTop();
-    if (y < $(".product-wrapper").innerHeight()) {
-      $('.product-header-cta').removeClass('come-in');
-    } else {
-      $('.product-header-cta').addClass('come-in');
-    }
-  }
-  checkHeaderCta();
-
-  $(document).scroll(function() {
-    checkHeaderCta();
-  });
-  
-  $(document).ready(function() {
-  	
-  });
-  {% endcomment %}
-  
-</script>
 
 {% schema %}
   {

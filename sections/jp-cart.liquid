@@ -20,7 +20,6 @@
 {% assign keyChainLetter = 0 %}
 {% assign keyChainCharm = 0 %}
 
-{% comment %}{% endcomment %}
 {% if section.settings.free_product.id %}
   {% assign free_added = false %}
   <script>console.log("free added: "+{{ free_added }});</script>
@@ -168,14 +167,12 @@
               <div class="cart-qty" value="{{item.quantity}}">{{item.quantity}}</div>
               <div class="qty-manipulation-symbol plus-symbol cart-plus" data-variant="{{ item.variant.id }}" data-value="{{item.quantity}}">+</div>
             </div>
-            {% comment %}{% endcomment %}
           </div>
           <div class="cart-product-qty-del justify-between">
             {% comment %}{% if item.product.id != free_product_id %}{% endif %}{% endcomment %}
             <div class="delete-cart-product" data-cross-check="{{ item.product.first_available_variant.id }}" data-variant="{{ forloop.index }}">
               <div class="delete-text">{{ section.settings.delete_text }}</div>
             </div>
-            {% comment %}{% endcomment %}
             <div class="product-price">
               {% if item.variant.compare_at_price > item.variant.price %}
                 <span class="product-discount-price">
@@ -232,20 +229,6 @@
         
         <a {% if keyChainLetter == keyChainCharm %}href="{% unless routes.root_url == "/" %}{{ routes.root_url }}{% endunless %}/checkout"{% endif %} class="checkout-btn {% if keyChainLetter != keyChainCharm %}checkout-disabled {% endif %}">{{ section.settings.checkout_text }}</a>
         
-        {% comment %}
-        <a 
-           {% if free_product_id %}
-             {% if cart.item_count > 1 and keyChainLetter == keyChainCharm %}href="/checkout"{% endif %}
-           {% else %}
-             {% if keyChainLetter == keyChainCharm %}href="/checkout"{% endif %}
-           {% endif %} 
-           class="checkout-btn 
-           {% if free_product_id %}
-		   	 {% if cart.item_count <= 1 or keyChainLetter != keyChainCharm %}checkout-disabled {% endif %}
-           {% else %}
-             {% if keyChainLetter != keyChainCharm %}checkout-disabled {% endif %}
-		   {% endif %}">{{ section.settings.checkout_text }}</a>
-        {% endcomment %}
         
         <span class="cont-shopping">{{ section.settings.continue_text }}</span>
         {%- unless shop.enabled_payment_types == empty -%}
