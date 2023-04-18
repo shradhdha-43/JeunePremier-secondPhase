@@ -252,7 +252,6 @@
       dataType: 'json',
     })
       .done(function (data) {
-        console.log(data);
         var ru_redirect = localStorage.setItem('ruredirect', data.detected_values.country.handle);
         console.log('storeCountry : ' + storeCountry + ' storeLanguage : ' + storeLanguage);
 
@@ -342,9 +341,6 @@
               cont = '';
             }
 
-            console.log('if cont: ' + cont);
-            console.log('if lang: ' + lang);
-
             redirectUrl = lang + cont;
             $('#suggested').attr('data-redirect-url', redirectUrl);
             localStorage.setItem('cont', data.suggestions[0].parts.country.name);
@@ -418,9 +414,6 @@
               cont = '';
             }
 
-            console.log('else cont: ' + cont);
-            console.log('else lang: ' + lang);
-
             redirectUrl = lang + cont;
             $('#suggested').attr('data-redirect-url', redirectUrl);
             localStorage.setItem('cont', data.detected_values.country.name);
@@ -434,7 +427,6 @@
         console.log(error);
       });
   } else {
-    console.log('Inside else');
     $('.current-country').text(country);
     $('.current-lang').text(language);
     var langh = localStorage.getItem('langh');

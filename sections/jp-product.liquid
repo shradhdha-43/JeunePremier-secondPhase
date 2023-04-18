@@ -918,18 +918,14 @@ $(document).ready(function(){
          $('.jp-info-prod').after(data['jp-product-info']);        
         $('.jp-info-prod').first().remove();
         $('.play-btn:not(.added)').click(function(ev) {
-          console.log('click');
           $(this).addClass('no-disp');
           $(this).closest('.img-w-txt-video-wrap').find('.video-cover').hide();
            if($(this).parent().hasClass('custom-video')){
-             console.log('custom video');
              $(this).closest('.custom-video').find('.cust-video').trigger('play');
            }
            else{
              $(this).closest('.img-w-txt-video-wrap').find('.yt-video').removeClass('no-disp');
-             console.log($(this).closest('.img-w-txt-video-wrap').find(".yt-video")[0].src);
              var symbol = $(this).closest('.img-w-txt-video-wrap').find(".yt-video")[0].src.indexOf("?") > -1 ? "&" : "?";
-             console.log(symbol);
              $(this).closest('.img-w-txt-video-wrap').find(".yt-video")[0].src += symbol + "autoplay=1&mute=1&rel=0";
            }
         });
@@ -1060,7 +1056,6 @@ $(document).ready(function(){
         method: "GET"
       })
       .done(function( data ) {
-        console.log(data);
         $('.product-cross-sell').after(data['jp-product-cross-sell-options']);
         $('.product-cross-sell').first().remove();
       })
@@ -1477,13 +1472,11 @@ $( document ).ready(function() {
 <script>
 
   $(document).ready(function() {
-    console.log("load accessories");
 
     $(".cross-sell-product").each(function( index ) {
       if($(this).hasClass("ids_matched")){
       $(this).addClass("hideme");
       $(this).parent().parent().addClass("slick-hide");
-      console.log($(this).parent());
 
 
       var removeslides = $(this).closest(".slick-slide.slick-hide").attr("data-slick-index");

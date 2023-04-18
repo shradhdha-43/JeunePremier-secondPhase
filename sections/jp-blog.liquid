@@ -73,14 +73,12 @@
       $('.blog-card').removeClass('selected-blog');
       $(".blog-card").hide();
       $(".blog-card:lt(6)").show();
-      console.log('has');
     }
     else{
       $('.blog-filter').removeClass('selected-filter');
       $(this).addClass('selected-filter');
       var selected_tag = $(this).data('tag');
       $('.blog-card').addClass('no-disp');
-      console.log(selected_tag);
       $('.blog-card').each(function() {
         if($(this).hasClass(selected_tag)){
           $(this).addClass('selected-blog');
@@ -89,7 +87,6 @@
       });
       $(".blog-card").hide();
       $(".blog-card.selected-blog:lt(6)").show();
-      console.log('dont');
     } 
     
   });

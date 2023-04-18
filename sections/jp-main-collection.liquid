@@ -439,7 +439,7 @@ $(document).ready(function() {
       });
     }
   var collex = window.location.href.split('/').pop().split('?')[0];
-  $('.filter-type.collection').each(function() {console.log($(this).data('value'));console.log(collex);
+  $('.filter-type.collection').each(function() {
     if($(this).data('value') == collex) {
       $(this).addClass('medium');
     }
@@ -649,7 +649,6 @@ $(document).ready(function() {
   // disable those filters in which no products are shown 
   $(".color-filters .filter-type").each(function(){
     var filter_data_val = $(this).data("value");
-    // console.log(filter_data_val);
     if (!$(".product-card").hasClass(`tag-${filter_data_val}`)) {
       $(this).css({"pointer-events": "none", "opacity": ".5"});
     }

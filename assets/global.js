@@ -907,7 +907,6 @@ customElements.define('variant-radios', VariantRadios);
 
 function cartDone(data) {
   var $content = $(data["jp-cart"]);
-  console.log(data);
   if($('.cart-body').hasClass('c-empty') && !$content.find('.cart-body').hasClass('c-empty')) {
     $('.additional-checkout-buttons').appendTo($content.find('.cart-body'));
     $('.drawer-cart').html('');
@@ -956,7 +955,6 @@ function cartDone(data) {
 }
 
 function storeInLocalStorage(item, key, value) {
-  console.log("storeLocal running");
   var data = localStorage.getItem('deleted_slide');
 
   data = data ? JSON.parse(data) : {};
@@ -1008,7 +1006,6 @@ $('body').on("click", ".cross-sell-add-product:not(.added-product)", function() 
         console.log( error );
         $('.load-container').remove();
       });
-      console.log("open cart");
       $(".background-drawer-cart").addClass("drawn");
       $(".drawer-cart").addClass("drawn");
       $("body").addClass("no-scroll");

@@ -46,7 +46,6 @@
           'quantity': 1
         }]
       };
-    console.log(formData)
     $.ajax({
       url: "/cart/add.js",
       method: "POST",
@@ -73,10 +72,8 @@
   }
 
   function checkFreeProduct() {
-//     console.log("inside checkFreeProduct()");
     var isFreeProduct = false;
     var freeProdId = {{free_product_id}};
-//     console.log(freeProdId+" : "+isFreeProduct);
     $.ajax({
       url: "/cart.js",
       method: "GET",
@@ -343,22 +340,17 @@
 
 
       var cross_check_id = $(this).data("cross-check");
-      console.log(cross_check_id);
 
       var deleted_slide = JSON.parse(localStorage.getItem("deleted_slide"));
-      console.log(deleted_slide);
       if(deleted_slide) {
         if(deleted_slide[cross_check_id]){
           var TheDeletedCrossSell = deleted_slide[cross_check_id]['htmlData'];
           var main_product_url = deleted_slide[cross_check_id]['prevLoc'];
           var deleted_slide_index = deleted_slide[cross_check_id]['slideId']
-          console.log(deleted_slide[cross_check_id]['prevLoc']);
     
           var current_url = window.location.pathname;
-          console.log(current_url);
     
           if((main_product_url).includes(current_url)) {
-            console.log("urls matched");
             $('.show-cross-upsell .cross-sell-body').slick('slickAdd','<div>' + TheDeletedCrossSell + '</div>', 0 , true);
           }
       }
@@ -404,21 +396,16 @@
 
     if($(this).data('value') == 1){
       var cross_check_id = $(this).data("cross-check");
-      console.log(cross_check_id);
 
       var deleted_slide = JSON.parse(localStorage.getItem("deleted_slide"));
-      console.log(deleted_slide);
       if(deleted_slide[cross_check_id]){
           var TheDeletedCrossSell = deleted_slide[cross_check_id]['htmlData'];
           var main_product_url = deleted_slide[cross_check_id]['prevLoc'];
           var deleted_slide_index = deleted_slide[cross_check_id]['slideId']
-          console.log(deleted_slide[cross_check_id]['prevLoc']);
     
           var current_url = window.location.pathname;
-          console.log(current_url);
     
           if((main_product_url).includes(current_url)) {
-            console.log("urls matched");
             $('.show-cross-upsell .cross-sell-body').slick('slickAdd','<div>' + TheDeletedCrossSell + '</div>', 0 , true);
           }
       }
