@@ -18,7 +18,7 @@
       </div>
       
       <div class="img-w-txt-image-wrap rel">
-      	<img src="{{ product.metafields.my_fields.product_info_upsell_image | img_url: "600x" }}" loading="lazy">
+      	<img alt="product-image" src="{{ product.metafields.my_fields.product_info_upsell_image | img_url: "600x" }}" loading="lazy">
         {% if product.metafields.my_fields.product_info_upsell_prod != blank %}
         <div class="scrib-img"><img class="metafield-product_reference" src="{{ product.metafields.my_fields.product_info_upsell_image_2 | img_url: "300x" }}" loading="lazy"></div>
         {% endif %}

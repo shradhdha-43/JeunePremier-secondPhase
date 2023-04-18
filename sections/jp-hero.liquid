@@ -32,7 +32,7 @@
   @media screen and (min-width : 769px) {
     {% if section.settings.image %}
       .hero{
-        background-image: url({{ section.settings.image | img_url: "2000x" }});
+        background-image: url({{ section.settings.image | image_url: width: 1200 }});
       }
     {% endif %}
 
@@ -47,7 +47,7 @@
   @media screen and (max-width : 768px) {
     {% if section.settings.mob_image %}
       .hero{
-        background-image: url({{ section.settings.mob_image | img_url: "2000x" }});
+        background-image: url({{ section.settings.mob_image | image_url: width: 800 }});
       }
     {% endif %}
 

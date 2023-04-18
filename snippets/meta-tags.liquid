@@ -39,3 +39,62 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ og_title | escape }}">
 <meta name="twitter:description" content="{{ og_description | escape }}">
+
+
+<!--  Meta tags from theme.liquid file -->
+
+
+{% if request.host contains 'jeunepremier.be' %}
+  <meta name="google-site-verification" content="oW_0CkI6sel1EFcjIKfR5qBjtusE6W2hYIdH3Ka672U">
+  <!-- TODO: google site verification needed voor .se -->
+{% elsif request.host contains 'jeunepremier.de' or request.host contains 'jeunepremier.dk' %}
+  <meta name="google-site-verification" content="3VzTooUakbd07aSgOC9QLF-Nt17GTJbasyu1ONEQTjs">
+{% elsif request.host contains 'jeunepremier.ch' %}
+  <meta name="google-site-verification" content="2wlL8akOrD0Su7TeGF8SMbOi7jL9a42haNZC8lKBDXA">
+{%- elsif request.host contains 'jeunepremier.at' -%}
+  <meta name="google-site-verification" content="u8ePTUdbb-iwpQsto1SNYiHW2p2ABSjznWqocX9iOoQ">
+{%- elsif request.host contains 'jeunepremier.fr' -%}
+  <meta name="google-site-verification" content="-jBFGKCniVR8nSCC_b-SexXigTLPXRojA8xiJ5bczbY">
+{%- elsif request.host contains 'jeunepremier.nl' -%}
+  <meta name="google-site-verification" content="-Buq4XtAeuAWc7uCXOgxo4tsEdsCSzw-57jP8u1SFjI">
+{%- elsif request.host contains 'jeunepremier.it' -%}
+  <meta name="google-site-verification" content="wNyrwR-0idzVONcZgx7eehaHCt_OEhX1NJSZtID2hCk">
+{%- elsif request.host contains 'jeunepremier.pl' -%}
+  <meta name="google-site-verification" content="2Nns3-Gjw4RD0FTkVYZJHHjSYNYk1vzVLnukOTtVJKM">
+{%- elsif request.host contains 'jeunepremier.cz' -%}
+  <meta name="google-site-verification" content="uAlvNFyCaasf3wqoKLqAE0Ryyj1C1dYMK7YtnzqRYik">
+{% elsif request.host contains 'jeune-premier.ru' %}
+  <meta name="google-site-verification" content="rQTS6axdZczeqybRsMzFzMyEsnGxaBxcA-AFefY4Y9o">
+{% elsif request.host contains 'jeunepremier.com' %}
+  <meta name="google-site-verification" content="nuhCCr8cH1_igrpYECd5grYLNA9ritj2WAKcPeJJ3gc">
+{% elsif request.host contains 'jeunepremier.lu' %}
+  <meta name="google-site-verification" content="MgUVexdrE0sxBVwTXLfZ5i_hlzw_pwkhFPYwMYPWix4">
+{% else %}
+  <meta name="google-site-verification" content="72JfgNU124OjrfS7bwXc7BZj2QbCo3SZSFUUG51MYqI">
+{% endif %}
+
+<!-- TODO: facebook domain verification needed voor .se -->
+{%- if request.host contains 'jeunepremier.de' -%}
+  <meta name="facebook-domain-verification" content="mcyqazk3ndxusykuv3rn1f0al9hp4g">
+{%- elsif request.host contains 'jeunepremier.at' -%}
+  <meta name="facebook-domain-verification" content="vp2llvkueckcf9vw97ijf6r37m5h8r">
+{%- elsif request.host contains 'jeunepremier.ch' -%}
+  <meta name="facebook-domain-verification" content="1z1wrh8q743krzhdu89wa5kt3zpj29">
+{%- elsif request.host contains 'jeunepremier.be' -%}
+  <meta name="facebook-domain-verification" content="r3jfe2fvsztzlkc9btvx4zqk8fzlz1">
+{%- elsif request.host contains 'jeunepremier.com' -%}
+  {% comment %}
+    <meta name="facebook-domain-verification" content="4aa4wss1pncl7vq1v5ykhftw3lpa1c" />
+  {% endcomment %}
+  <meta name="facebook-domain-verification" content="r3jfe2fvsztzlkc9btvx4zqk8fzlz1">
+{%- elsif request.host contains 'jeunepremier.fr' -%}
+  <meta name="facebook-domain-verification" content="5wg2dobhutxxsc7gb2pj3lmklx850x">
+{%- elsif request.host contains 'jeunepremier.it' -%}
+  <meta name="facebook-domain-verification" content="3lfco5t6excqcnhql2urgw1sdofgqt">
+{%- elsif request.host contains 'jeunepremier.pl' -%}
+  <meta name="facebook-domain-verification" content="ga608dyi6g0x8nyh352cuq9b8mjp84">
+{%- elsif request.host contains 'jeunepremier.cz' -%}
+  <meta name="facebook-domain-verification" content="vjnxnqqhuxxrtph31lqq8zltq9o1y2">
+{%- elsif request.host contains 'jeunepremier.lu' -%}
+  <meta name="facebook-domain-verification" content="ezfbigy4ti279yof6by8kevi8roqnj">
+{%- endif -%}

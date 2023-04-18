@@ -170,7 +170,7 @@
           </div>
       	{% else %}
           <div class="img-w-txt-image-wrap">
-            <img src="{% if product.metafields.my_fields.product_info_block_image != blank %}{{ product.metafields.my_fields.product_info_block_image | img_url: '600x' }}{% else %}{{ product.featured_image | img_url: '600x' }}{% endif %}" loading="lazy">
+            <img alt="product-image" src="{% if product.metafields.my_fields.product_info_block_image != blank %}{{ product.metafields.my_fields.product_info_block_image | img_url: '600x' }}{% else %}{{ product.featured_image | img_url: '600x' }}{% endif %}" loading="lazy">
           </div>
 		{% endif %}
 
