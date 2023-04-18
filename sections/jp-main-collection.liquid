@@ -13,14 +13,20 @@
 				
 				{% if collection.metafields.custom.collection_banner_video.value != blank %}
 					{% if media.media_type == 'video' %}
-						{{ media | video_tag: image_size: '1000x', controls: false, autoplay: true , loop: true }}
+						{{ media | video_tag: image_size: '600x', controls: false, autoplay: true , loop: true }}
 					{% else %}
-						<img  class="banner_image" src="{{ collection.metafields.custom.collection_banner_video.value | image_url: height: 2000 }}" loading="lazy" alt="Banner Image">
+						<img  class="banner_image" src="{{ collection.metafields.custom.collection_banner_video.value | image_url: width: 600 }}" loading="lazy" alt="Banner Image"
+						 width="600"
+						 height="600">
 				{% endif %}
 					{% elsif collection.image != blank %}
-					<img  class="banner_image" src="{{ collection.image | image_url: height: 2000 }}" loading="lazy" alt="Banner Image">
+					<img  class="banner_image" src="{{ collection.image | image_url: width: 600 }}" alt="Banner Image"
+					 width="600"
+					 height="600">
 				{% else %}
-                	<img  class="banner_image" src="{{ collection.products.first | image_url: height: 2000 }}" loading="lazy" alt="Banner Image">
+                	<img  class="banner_image" src="{{ collection.products.first | image_url: width: 600 }}" alt="Banner Image"
+					 width="600"
+					 height="600">
 				{% endif %}
             </div>
         </div>
@@ -222,7 +228,7 @@
         </div>
       </div>
       <div class="collection-products flex-box prod-coll-page">
-        {% paginate collection.products by 500 %}
+        {% paginate collection.products by 20 %}
         {% for product in collection.products %}
         {% if product.id != 7381981921448 %}
         <div class="product-card{% for tag in product.tags %} tag-{{ tag }}{% endfor %}">
@@ -263,9 +269,13 @@
 				{% endif %}
               {% for image in product.images limit: 2 %}
               {% if forloop.first and forloop.last %}
-              <img src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" class="" loading="lazy">
+              <img src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" class="" loading="lazy"                 
+				width="400"
+                height="400">
               {% endif %}
-              <img class="{% if forloop.last %}no-t-m{% endif %}" src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy">
+              <img class="{% if forloop.last %}no-t-m{% endif %}" src="{{ image | img_url: "x400" }}" alt="{{ product.title }}" loading="lazy"
+				width="400"
+                height="400">
               {% endfor %}  
             </a>
               {% assign noAddToCartFromCollection = false %}
