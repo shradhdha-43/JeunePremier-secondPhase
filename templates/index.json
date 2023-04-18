@@ -380,6 +380,24 @@
             "ninth_cell": true,
             "tenth_cell": true
           }
+        },
+        "3f3ec792-cc0c-45d6-898c-aa71f5346714": {
+          "type": "product_grid",
+          "settings": {
+            "background_color": "color1",
+            "product_image": "shopify:\/\/shop_images\/City_bag.svg",
+            "product_name": "City Bag",
+            "first_cell": true,
+            "second_cell": true,
+            "third_cell": true,
+            "fourth_cell": true,
+            "fifth_cell": true,
+            "sixth_cell": true,
+            "seventh_cell": true,
+            "eighth_cell": true,
+            "ninth_cell": true,
+            "tenth_cell": true
+          }
         }
       },
       "block_order": [
@@ -388,7 +406,8 @@
         "template--14219369054285__e77b9618-5a5d-4df7-a559-b86dc47e612e-1681825717a7831484-2",
         "template--14219369054285__e77b9618-5a5d-4df7-a559-b86dc47e612e-1681825717a7831484-3",
         "template--14219369054285__e77b9618-5a5d-4df7-a559-b86dc47e612e-1681825717a7831484-4",
-        "template--14219369054285__e77b9618-5a5d-4df7-a559-b86dc47e612e-1681825717a7831484-5"
+        "template--14219369054285__e77b9618-5a5d-4df7-a559-b86dc47e612e-1681825717a7831484-5",
+        "3f3ec792-cc0c-45d6-898c-aa71f5346714"
       ],
       "settings": {
         "heading": "CHOOSE THE RIGHT ONE: A BAG FOR EACH AGE",
