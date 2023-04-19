@@ -22,7 +22,7 @@
     top: 58%;
     transform: translateY(-50%);
     width: 100%;
-    z-index: -1;
+    z-index: 0;
 } 
 .progress {
     background-color: var(--line-border-color);
@@ -33,7 +33,7 @@
     transform: translateY(-50%);
     transition: 0.4s ease;
     width: 0%;
-    z-index: -1;
+    z-index: 0;
 } 
 .circle {
     align-items: center;
@@ -46,6 +46,7 @@
     justify-content: center;
     transition: 0.4s ease;
     width: 3rem;
+    z-index: 1;
 } 
 .circle.active {
     border-color: var(--line-border-color);
@@ -85,4 +86,7 @@
 }
 .content.active_cont{
     display: block;
+}
+.jp_sl_main_wrapper {
+    background-color: var(--dd-color-fourth);
 }

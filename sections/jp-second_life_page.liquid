@@ -72,7 +72,7 @@ const circles = document.querySelectorAll(".circle");
 const contents = document.querySelectorAll(".content");
 
 $(".content").each(function(i, val){  
-  $(val).find(next).on("click", function(){
+  $(val).find('.next_btn').on("click", function(){
     currActive++; 
     er = $(this).closest('.content');  
     if(er.hasClass('active_cont')){ 
@@ -80,7 +80,7 @@ $(".content").each(function(i, val){
       $(this).closest('.content').removeClass('active_cont');
       next_fs.addClass('active_cont');  
     } 
-
+ 
     if (currActive > circles.length) {
         currActive = circles.length;
     }
@@ -88,13 +88,15 @@ $(".content").each(function(i, val){
   }); 
 }); 
 
-$(prev).on("click", function(){
+ $('#prev').on("click", function(){
   var ss = $(this).parents('.jp_sl_bottom_part').find('.jp_sl_step_content .content');
-  if(ss.hasClass('active_cont')){
-    ss.removeClass('active_cont');
-    ss.prev().addClass('active_cont');
-  }
-
+  console.log(ss);
+  $(ss).each(function(i, val){  
+    if($(val).hasClass('active_cont')){
+      $(val).removeClass('active_cont');
+      $(val).prev().addClass('active_cont');
+    }
+  });
   currActive--; 
     if (currActive < 1) {
         currActive = 1;
