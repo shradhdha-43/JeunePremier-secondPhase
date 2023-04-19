@@ -421,6 +421,7 @@
           },
           "ae3bd7ec-ca7f-4f28-bfa8-faaf5db92c62": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "announcement_text": "<p><strong>Subscribe<\/strong> to our newsletter!<\/p>",
               "announcement_url": ""
@@ -428,6 +429,7 @@
           },
           "7dc4e1ac-d6ec-403f-81d8-c8c87dcee4f5": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "announcement_text": "<p>New drop<strong> Cavalerie Florale 🐎<\/strong> & <strong>Pearly Swans 🦢<\/strong> Now online! <\/p>",
               "announcement_url": ""
@@ -435,6 +437,7 @@
           },
           "4d0fc4b4-3b8e-44f2-ba8d-043ee9a034a6": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "announcement_text": "<p>Coming soon on May 10th 💖 New AW23\/24 Love Collection. <\/p>",
               "announcement_url": ""
