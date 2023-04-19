@@ -4,10 +4,10 @@
       "type": "jp-product",
       "settings": {
         "free_shipping_from": "Free totebag with every order",
-        "show_payment_icons": true,
+        "show_payment_icons": false,
         "icon_bancontact": true,
-        "icon_mastercard": true,
-        "icon_visa": true,
+        "icon_mastercard": false,
+        "icon_visa": false,
         "icon_maestro": false,
         "icon_americanexpress": false,
         "icon_paypal": true,
