@@ -1,16 +1,133 @@
 {{ 'jp-second_life_page.css' | asset_url | stylesheet_tag }}
 
+<div class="jp_sl_main_wrapper">
+  <div class="container">
+    <div class="jp_sl_main_wrap">
+      <div class="jp_sl_top_part"> 
+        <div class="jp_sl_logo">
+          <a href="{{ routes.root_url }}" class="mobile-logo no-d"><img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/logo_1.svg?v=1645594157" alt="jeune premier" width="56px" height="48px"></a>
+        </div>
+        <div class="jp_sl_close">
+          {% render 'close-icon' %}
+        </div>  
+      </div>
+      <div class="jp_sl_bottom_part"> 
+        <div class="jp_sl_back" id="prev" disabled>
+          {% render 'svg-arrow' %} <span class="back">back</span>
+        </div>
+        <div class="progress-container">
+            <div class="progress" id="progress"></div>
+            <div class="circle active">1</div>
+            <div class="circle">2</div>
+            <div class="circle">3</div>
+            <div class="circle">4</div>
+        </div>  
+        <div class="jp_sl_step_content">
+          <div class="content active_cont">
+            <h3>Second life conditions</h3> 
+            <p>Jeune Premier has now spread the school fashion all over the world: from France to Russia and from the Emirates to South Korea. Today, the brand's proud distributors include 1000 retail outlets in 37 countries. Not bad at all for a craft that began at the kitchen table</p>
+            <button class="btn next_btn title_capitlize" id="next">Agree</button> 
+          </div>
+          <div class="content">
+            <h3 class="title_capitlize">What type of bag Do you have?</h3>
+            <p>Check what type of bag it is</p>
+            <div class="product_data_wrap">
+              <div class="white_background_wrapper">
+                <div class="image_wrapp">
+                  <img src="">
+                  <p>James</p>
+                </div>
+              </div>
+              <div class="white_background_wrapper">
+                <div class="image_wrapp">
+                  <img src="">
+                  <p>James</p>
+                </div>
+              </div>
+            </div>
+            <button class="btn next_btn title_capitlize" id="next">Next</button> 
+          </div>
+          <div class="content">
+            <p>I wanted to creat s small as it all started, Ralph and I were very pleased with the result</p>
+            <button class="btn next_btn title_capitlize" id="next">Next</button> 
+          </div>
+          <div class="content">
+            <p>o creat s small as it all st, Ralph and I were very pleased with the result</p>
+            <button class="btn next_btn title_capitlize" id="next">Nextsds</button> 
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script> 
+let currActive = 1;
+var next_fs, er;
+const progress = document.querySelector("#progress");
+const prev = document.querySelector("#prev");
+const next = document.querySelector(".next_btn");
+const circles = document.querySelectorAll(".circle");
+const contents = document.querySelectorAll(".content");
+
+$(".content").each(function(i, val){  
+  $(val).find(next).on("click", function(){
+    currActive++; 
+    er = $(this).closest('.content');  
+    if(er.hasClass('active_cont')){ 
+      next_fs = $(this).closest('.content').next();
+      $(this).closest('.content').removeClass('active_cont');
+      next_fs.addClass('active_cont');  
+    } 
+
+    if (currActive > circles.length) {
+        currActive = circles.length;
+    }
+    update();
+  }); 
+}); 
+
+$(prev).on("click", function(){
+  var ss = $(this).parents('.jp_sl_bottom_part').find('.jp_sl_step_content .content');
+  if(ss.hasClass('active_cont')){
+    ss.removeClass('active_cont');
+    ss.prev().addClass('active_cont');
+  }
+
+  currActive--; 
+    if (currActive < 1) {
+        currActive = 1;
+    }
+    update();
+});
+ 
+const update = () => {
+    circles.forEach((circle, i) => {
+        i < currActive
+            ? circle.classList.add("active")
+            : circle.classList.remove("active");
+    });  
+    const actives = document.querySelectorAll(".active");
+    const width = ((actives.length - 1) / (circles.length - 1)) * 100;
+    progress.style.width = `${width}%`; 
+    if (currActive === 1) { 
+        prev.disabled = true;
+    } else if (currActive === circles.length) { 
+        next.disabled = true;
+    } else {
+      console.log("sdhjksdgfksdgf");
+        prev.disabled = false;
+        next.disabled = false;
+    }
+};
+ 
+</script>
 
 
 {% schema %}
   {
-    "name": "Section name",
+    "name": "JP Second Life Page",
     "settings": []
   }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
