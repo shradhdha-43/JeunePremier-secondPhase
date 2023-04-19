@@ -258,53 +258,8 @@
   </div>
 </div>
 
-<script>
-  $(function () {
-    function JpSizeChartFr() {
-      $('.slider-fr').slick({
-        dots: true,
-        slidesToShow: 5.5,
-        slidesToScroll: 1,
-        autoplay: false,
-        infinite: false,
-        arrows: true,
-        variableWidth: false,
-        appendDots: $('.slick-slider-dots-fr'),
-        prevArrow: $('.prev-fr'),
-        nextArrow: $('.next-fr'),
-        responsive: [
-          {
-            breakpoint: 1299,
-            settings: {
-              slidesToShow: 4,
-            },
-          },
-          {
-            breakpoint: 1025,
-            settings: {
-              slidesToShow: 3,
-            },
-          },
-          {
-            breakpoint: 568,
-            settings: {
-              variableWidth: true,
-              slidesToShow: 1.1,
-            },
-          },
-        ],
-      });
-    }
-    JpSizeChartFr();
-
-    if (Shopify.designMode) {
-      document.addEventListener('shopify:section:load', () => {
-        JpSizeChartFr();
-      });
-    }
-  });
-</script>
 {%- endif -%}
+
 {% schema %}
 {
   "name": "JP fr sizechart",

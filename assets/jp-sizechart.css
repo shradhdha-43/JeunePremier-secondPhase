@@ -41,25 +41,22 @@
 .right-cell {
   border-top: 0.5px solid #aa8e62;
   height: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   font-size: 0px;
 }
 .right-cell-fr {
   border-top: 0.5px solid #aa8e62;
   height: 32px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  display: block;
   font-size: 12px;
   padding-left: 8px;
 }
 
 .right-cell img {
-  height: 16px;
+  height: 100%;
   width: 20px;
   object-fit: contain;
+  margin: 0 auto;
 }
 .col-wrapper {
   width: 100%;

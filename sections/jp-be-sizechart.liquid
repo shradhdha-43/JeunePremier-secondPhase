@@ -213,53 +213,6 @@
     </div>
   </div>
 </div>
-
-<script>
-  $(function () {
-    function JpSizeChartBe() {
-      $('.slider-be').slick({
-        dots: true,
-        slidesToShow: 5.5,
-        slidesToScroll: 1,
-        autoplay: false,
-        infinite: false,
-        arrows: true,
-        variableWidth: false,
-        appendDots: $('.slick-slider-dots-be'),
-        prevArrow: $('.prev-be'),
-        nextArrow: $('.next-be'),
-        responsive: [
-          {
-            breakpoint: 1299,
-            settings: {
-              slidesToShow: 4,
-            },
-          },
-          {
-            breakpoint: 1025,
-            settings: {
-              slidesToShow: 3,
-            },
-          },
-          {
-            breakpoint: 568,
-            settings: {
-              variableWidth: true,
-              slidesToShow: 1.1,
-            },
-          },
-        ],
-      });
-    }
-    JpSizeChartBe();
-
-    if (Shopify.designMode) {
-      document.addEventListener('shopify:section:load', () => {
-        JpSizeChartBe();
-      });
-    }
-  });
-</script>
 {%- endunless -%}
 {% schema %}
 {
