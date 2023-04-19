@@ -7,12 +7,12 @@
         <div class="jp_sl_logo">
           <a href="{{ routes.root_url }}" class="mobile-logo no-d"><img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/logo_1.svg?v=1645594157" alt="jeune premier" width="56px" height="48px"></a>
         </div>
-        <div class="jp_sl_close">
+        <div class="jp_sl_close light">
           {% render 'close-icon' %}
         </div>  
       </div>
       <div class="jp_sl_bottom_part"> 
-        <div class="jp_sl_back" id="prev" disabled>
+        <div class="jp_sl_back light" id="prev" disabled>
           {% render 'svg-arrow' %} <span class="back">back</span>
         </div>
         <div class="progress-container">
@@ -24,28 +24,39 @@
         </div>  
         <div class="jp_sl_step_content">
           <div class="content active_cont">
-            <h3>Second life conditions</h3> 
-            <p>Jeune Premier has now spread the school fashion all over the world: from France to Russia and from the Emirates to South Korea. Today, the brand's proud distributors include 1000 retail outlets in 37 countries. Not bad at all for a craft that began at the kitchen table</p>
+            <h3 class="main_title medium">Second life conditions</h3> 
+            <p class="light">Jeune Premier has now spread the school fashion all over the world: from France to Russia and from the Emirates to South Korea. Today, the brand's proud distributors include 1000 retail outlets in 37 countries. Not bad at all for a craft that began at the kitchen table</p>
             <button class="btn next_btn title_capitlize" id="next">Agree</button> 
           </div>
           <div class="content">
-            <h3 class="title_capitlize">What type of bag Do you have?</h3>
-            <p>Check what type of bag it is</p>
+            <h3 class="main_title medium title_capitlize">What type of bag Do you have?</h3>
+            <p class="light sub_title">Check what type of bag it is</p>
             <div class="product_data_wrap">
               <div class="white_background_wrapper">
                 <div class="image_wrapp">
-                  <img src="">
-                  <p>James</p>
+                  <img src="//cdn.shopify.com/s/files/1/0077/6565/5629/products/5668633c5ca34ebb5a180e01180590d1_590x.png?v=1669110060"> 
                 </div>
+                <p class="image_text">James</p>
               </div>
               <div class="white_background_wrapper">
                 <div class="image_wrapp">
-                  <img src="">
-                  <p>James</p>
+                  <img src="//cdn.shopify.com/s/files/1/0077/6565/5629/products/5668633c5ca34ebb5a180e01180590d1_590x.png?v=1669110060"> 
                 </div>
+                <p class="image_text">James</p>
+              </div>
+              <div class="white_background_wrapper">
+                <div class="image_wrapp">
+                  <img src="//cdn.shopify.com/s/files/1/0077/6565/5629/products/5668633c5ca34ebb5a180e01180590d1_590x.png?v=1669110060"> 
+                </div>
+                <p class="image_text">James</p>
               </div>
             </div>
-            <button class="btn next_btn title_capitlize" id="next">Next</button> 
+            <button class="btn next_btn title_capitlize black_next" id="next">Next</button> 
+
+             <h3 class="main_title medium title_capitlize">Your Bag is Eligable for second life</h3>
+             <p class="light sub_title">confrim your submission and sed diam nounmy</p>
+             
+
           </div>
           <div class="content">
             <p>I wanted to creat s small as it all started, Ralph and I were very pleased with the result</p>
@@ -90,7 +101,6 @@ $(".content").each(function(i, val){
 
  $('#prev').on("click", function(){
   var ss = $(this).parents('.jp_sl_bottom_part').find('.jp_sl_step_content .content');
-  console.log(ss);
   $(ss).each(function(i, val){  
     if($(val).hasClass('active_cont')){
       $(val).removeClass('active_cont');
@@ -118,7 +128,6 @@ const update = () => {
     } else if (currActive === circles.length) { 
         next.disabled = true;
     } else {
-      console.log("sdhjksdgfksdgf");
         prev.disabled = false;
         next.disabled = false;
     }
