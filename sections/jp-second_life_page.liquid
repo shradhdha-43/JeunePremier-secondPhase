@@ -1,16 +1,737 @@
 {{ 'jp-second_life_page.css' | asset_url | stylesheet_tag }}
+ {{ 'customer.css' | asset_url | stylesheet_tag }}
 
+<div class="jp_sl_main_wrapper">
+  <div class="container">
+    <div class="jp_sl_main_wrap">
+      <div class="jp_sl_top_part"> 
+        <div class="jp_sl_logo">
+          <a href="{{ routes.root_url }}" class="mobile-logo no-d"><img src="https://cdn.shopify.com/s/files/1/0334/1100/6595/files/logo_1.svg?v=1645594157" alt="jeune premier" width="56px" height="48px"></a>
+        </div>
+        <div class="jp_sl_close light">
+          {% render 'close-icon' %}
+        </div>  
+      </div>
+      <div class="jp_sl_bottom_part"> 
+        <div class="jp_sl_back light" id="prev" disabled>
+          {% render 'svg-arrow' %} <span class="back">back</span>
+        </div>
+        <div class="progress-container">
+            <div class="progress" id="progress"></div>
+            <div class="circle active">1</div>
+            <div class="circle">2</div>
+            <div class="circle">3</div>
+            <div class="circle">4</div>
+        </div>  
+        <div class="jp_sl_step_content">
+          <div class="content active_cont">
+            <h3 class="main_title medium">Second life conditions</h3> 
+            <p class="light">Jeune Premier has now spread the school fashion all over the world: from France to Russia and from the Emirates to South Korea. Today, the brand's proud distributors include 1000 retail outlets in 37 countries. Not bad at all for a craft that began at the kitchen table</p>
+            <button class="btn next_btn title_capitlize" id="next">Agree</button> 
+          </div>
+          <div class="content">
+            <div class="account_content">
+              <h3 class="main_title medium title_capitlize">What type of bag Do you have?</h3>
+              <p class="light sub_title">Check what type of bag it is</p>
+              <div class="product_data_wrap">
+                <div class="white_background_wrapper">
+                  <div class="image_wrapp">
+                    <img src="//cdn.shopify.com/s/files/1/0077/6565/5629/products/5668633c5ca34ebb5a180e01180590d1_590x.png?v=1669110060"> 
+                  </div>
+                  <p class="image_text">James</p>
+                </div>
+                <div class="white_background_wrapper">
+                  <div class="image_wrapp">
+                    <img src="//cdn.shopify.com/s/files/1/0077/6565/5629/products/5668633c5ca34ebb5a180e01180590d1_590x.png?v=1669110060"> 
+                  </div>
+                  <p class="image_text">James</p>
+                </div>
+                <div class="white_background_wrapper">
+                  <div class="image_wrapp">
+                    <img src="//cdn.shopify.com/s/files/1/0077/6565/5629/products/5668633c5ca34ebb5a180e01180590d1_590x.png?v=1669110060"> 
+                  </div>
+                  <p class="image_text">James</p>
+                </div>
+              </div>
+              <button class="btn title_capitlize black_next" id="next">Next</button> 
+            </div>
+ 
+            <div class="customer-wrapper-login" style="display: none;">
+              <div class="customer-wrapper" >
+                <div class="customer login">
+                  <h3 id="recover" tabindex="-1">
+                    {{ 'customer.recover_password.title' | t }}
+                  </h3>
+                  <div>
+                    <p>
+                      {{ 'customer.recover_password.subtext' | t }}
+                    </p>
+
+                    {%- form 'recover_customer_password' -%}
+                    {% assign recover_success = form.posted_successfully? %}
+                    <div class="field">
+                      <label for="RecoverEmail">
+                        {{ 'customer.login_page.email' | t }}
+                      </label>
+                      <input type="email"
+                            value=""
+                            name="email"
+                            id="RecoverEmail"
+                            autocorrect="off"
+                            autocapitalize="off"
+                            autocomplete="email"
+                            {% if form.errors %}
+                            aria-invalid="true"
+                            aria-describedby="RecoverEmail-email-error"
+                            autofocus
+                            {% endif %}
+                            placeholder="{{ 'customer.login_page.email' | t }}"
+                            >
+
+                    </div>
+                    {%- if form.errors -%}
+                    <small id="RecoverEmail-email-error" class="form__message">
+                      {{ form.errors.messages['form'] }}
+                    </small>
+                    {%- endif -%}
+
+                    <button>
+                      {{ 'customer.login_page.submit' | t }}
+                    </button>
+
+                    <a href="#login">
+                      {{ 'customer.login_page.cancel' | t }}
+                    </a>
+                    {%- endform -%}
+                  </div>
+
+                  <h2 id="login" tabindex="-1" class="main_title medium title_capitlize">
+                      Your Bag is Eligable for second life 
+                  </h2>
+                  <p class="light sub_title">confrim your submission and sed diam nounmy</p> 
+                  <div>
+                    {%- if recover_success == true -%}
+                    <h3 class="form__message" tabindex="-1" autofocus>
+                      {{ 'customer.recover_password.success' | t }}
+                    </h3>
+                    {%- endif -%}
+                    {%- form 'customer_login', novalidate: 'novalidate' -%}
+                    {%- if form.errors -%}
+                    <h3 class="form__message" tabindex="-1" autofocus>
+                      <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>
+                      {{ 'templates.contact.form.error_heading' | t }}
+                    </h3>
+                    {{ form.errors | default_errors }}
+                    {%- endif -%}
+
+                    <div class="field">  
+                      <label for="CustomerEmail">
+                        email
+                      </label>
+                      <input
+                            type="email"
+                            name="customer[email]"
+                            id="CustomerEmail"
+                            autocomplete="email"
+                            autocorrect="off"
+                            autocapitalize="off"
+                            {% if form.errors contains 'form' %}
+                            aria-invalid="true"
+                            {% endif %}
+                            placeholder="Email"
+                            >
+
+                    </div>
+
+                    {%- if form.password_needed -%}
+                    <div class="field pwd-field rel">
+                      <label for="CustomerPassword">
+                        password
+                      </label>
+                      <input
+                            class="pwd-input"
+                            type="password"
+                            value=""
+                            name="customer[password]"
+                            id="CustomerPassword"
+                            autocomplete="current-password"
+                            {% if form.errors contains 'form' %}
+                            aria-invalid="true"
+                            {% endif %}
+                            placeholder="password"
+                            >
+                      <div class="show-pwd">show</div>
+                    </div>
+
+                    <a href="#recover">
+                      {{ 'customer.login_page.forgot_password' | t }}
+                    </a>
+                    {%- endif -%}
+
+                    <button>
+                      LOG IN
+                    </button>
+
+                    <a href="{{ routes.account_register_url }}">
+                      {{ 'customer.login_page.create_account' | t }}
+                    </a>
+
+                    {%- endform -%}
+                  </div>
+
+                  {%- if shop.checkout.guest_login -%}
+                  <div>
+                    <hr>
+                    <h2>{{ 'customer.login_page.guest_title' | t }}</h2>
+
+                    {%- form 'guest_login' -%}
+                    <button>
+                      {{ 'customer.login_page.guest_continue' | t }}
+                    </button>
+                    {%- endform -%}
+                  </div>
+                  {%- endif -%}
+                </div>
+              </div>    
+              <button class="btn next_btn title_capitlize" id="next">Next</button> 
+            </div>
+
+            <div class="customer-wrapper-register" style="display: none;"> 
+              <div class="customer-wrapper" >
+                <div class="customer register">
+                  <h2 id="register" class="register-heading main_title medium title_capitlize">
+                      Create account
+                  </h2>
+                  <p class="light sub_title">confrim your submission and sed diam nounmy</p> 
+                  {%- form 'create_customer', novalidate: 'novalidate' -%}
+                  {%- if form.errors -%}
+                  <h3 class="form__message" tabindex="-1" autofocus>
+                    {{ 'templates.contact.form.error_heading' | t }}
+                  </h3>
+                  <ul> 
+                    {%- for field in form.errors -%}
+                    <li>
+                      {%- if field == 'form' -%}
+                      {{ form.errors.messages[field] }}
+                      {%- else -%}
+                      <a href="#RegisterForm-{{ field }}">
+                        {{ form.errors.translated_fields[field] | capitalize }}
+                        {{ form.errors.messages[field] }}
+                      </a>
+                      {%- endif -%}
+                    </li>
+                    {%- endfor -%}
+                  </ul>
+                  {%- endif -%}
+                  <div class="field">      
+                    <label for="RegisterForm-FirstName">
+                      Full name
+                    </label>
+                    <input
+                          type="text"
+                          name="customer[name]"
+                          id="RegisterForm-FirstName"
+                          {% if form.first_name %}value="{{ form.first_name }}"{% endif %}
+                          autocomplete="given-name"
+                          placeholder="First & last name"
+                          >
+
+                  </div>
+                  <div class="field"> 
+                    <label for="RegisterForm-email">
+                      email
+                    </label>
+                    <input
+                          type="email"
+                          name="customer[email]"
+                          id="RegisterForm-email"
+                          {% if form.email %} value="{{ form.email }}"{% endif %}
+                          spellcheck="false"
+                          autocapitalize="off"
+                          autocomplete="email"
+                          aria-required="true"
+                          {% if form.errors contains 'email' %}
+                          aria-invalid="true"
+                          aria-describedby="RegisterForm-email-error"
+                          {% endif %}
+                          placeholder="Email"
+                          >
+
+                  </div>
+                  {%- if form.errors contains 'email' -%}
+                  <span id="RegisterForm-email-error" class="form__message">
+                    {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.
+                  </span>
+                  {%- endif -%}
+                  <div class="field pwd-field rel">
+                    <label for="RegisterForm-password">
+                      Password
+                    </label>
+                    <input
+                          class="pwd-input"
+                          type="password"
+                          name="customer[password]"
+                          id="RegisterForm-password"
+                          aria-required="true"
+                          {% if form.errors contains 'password' %}
+                          aria-invalid="true"
+                          aria-describedby="RegisterForm-password-error"
+                          {% endif %}
+                          placeholder="password"
+                          >
+                    <div class="show-pwd">show</div>
+                  </div>
+                  {%- if form.errors contains 'password' -%}
+                  <span id="RegisterForm-password-error" class="form__message">
+                    {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}.
+                  </span>
+                  {%- endif -%}
+                  <button>
+                    CREATE ACCOUNT
+                  </button>
+                  {%- endform -%}
+                  <a class="under_line" href="{{ routes.account_login_url }}">Log in</a>
+                </div>
+              </div>
+            </div> 
+
+          </div>
+          <div class="content">
+            <div class="image_content">
+              <h3 class="main_title medium title_capitlize">Images</h3>
+              <p class="light sub_title">Jeune Premier has now spread the school fashion all over the world: from France to Russia and from the Emirates to South Korea. Today, the brand's proud distributors include 1000 retail.</p>
+              <div class="product_data_wrap">
+                <div class="white_background_wrapper">
+                  <div class="image_wrapp">
+                    <img src="//cdn.shopify.com/s/files/1/0077/6565/5629/products/5668633c5ca34ebb5a180e01180590d1_590x.png?v=1669110060"> 
+                  </div>
+                  <p class="image_text">James</p>
+                </div>
+                <div class="white_background_wrapper">
+                  <div class="image_wrapp">
+                    <img src="//cdn.shopify.com/s/files/1/0077/6565/5629/products/5668633c5ca34ebb5a180e01180590d1_590x.png?v=1669110060"> 
+                  </div>
+                  <p class="image_text">James</p>
+                </div>
+                <div class="white_background_wrapper">
+                  <div class="image_wrapp">
+                    <img src="//cdn.shopify.com/s/files/1/0077/6565/5629/products/5668633c5ca34ebb5a180e01180590d1_590x.png?v=1669110060"> 
+                  </div>
+                  <p class="image_text">James</p>
+                </div>
+              </div>
+              <button class="btn title_capitlize black_next" id="next">choose images</button> 
+              <button class="btn title_capitlize next_btn black_next" id="next">Next</button> 
+            </div>
+            
+          </div>
+          <div class="content">
+
+            <div class="customer-wrapper-address" style="display: none;">
+              <div class="account-wrapper">
+                <div class="container">
+                  <div class="customer addresses" data-customer-addresses>
+                    
+                    <div class="text-center rel">
+                      <h3 class="main_title medium title_capitlize">Shipping Label</h3>
+                      <p>creat s small as it all st, Ralph and I were very pleased with the result</p>
+                    </div>
+                    <div class="text-center big-btn-wrapper no-t-m">
+                      <a class="big-btn" href="{{ routes.account_url }}">{{ 'customer.custom.orders' | t }}</a>
+                      <a class="big-btn active" href="#">{{ 'customer.custom.info' | t }}</a>
+                    </div> 
+                    
+                    <div class="address-info flex-box" style="padding-top: 40px;">
+                      <div class="personal-info">
+                        <div class="address-title medium">
+                          <div class="block-info">{{ 'customer.custom.personal_info' | t }}</div>
+                          <a href="#EditAddress_{{ customer.default_address.id }}" class="change-details" data-address-id="{{ customer.default_address.id }}">{{ 'customer.custom.change' | t }}</a>
+                        </div>
+                        <div class="block-details">
+                          <p>{{ customer.default_address.name }}</p>
+                          <p>{{ customer.email }}</p>
+                          <p>{{ customer.default_address.phone }}</p>
+                        </div>
+                      </div>
+                      {% for address in customer.addresses %}
+                        <div class="shipping-address">
+                          <div class="address-title medium">
+                            <div class="block-info">{{ 'customer.custom.shipping' | t }} {% if address == customer.default_address %}({{ 'customer.addresses.default' | t }}){% endif %}</div>
+                            <a href="#EditAddress_{{ address.id }}" class="change-details" data-address-id="{{ address.id }}">{{ 'customer.custom.change' | t }}</a>
+                          </div>
+                          <div class="block-details">
+                            <p>{{ address | format_address }}</p>
+                          </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                    
+                    <a class="add-address under_line" href="#">Use another adrress</a>
+                    
+                    <div class="Add-New-Address" style="max-width: 792px; margin: 0 auto;">
+                      {% form 'customer_address', customer.new_address %}
+                      <div id="AddAddress" class="form-vertical" style="display:none;">
+                        <h2>{{ 'customer.addresses.add_new' | t }}</h2>
+                        <div class="address-row">
+                          <div class="field address-cols">
+                            <input type="text" id="AddressFirstName_{{ form.id }}" name="address[first_name]" value="{{ form.first_name }}" autocomplete="given-name" placeholder="{{ 'customer.addresses.first_name' | t }}">
+                            <label for="AddressFirstName_{{ form.id }}">{{ 'customer.addresses.first_name' | t }}</label>
+                          </div>
+                          <div class="field address-cols">
+                            <input type="text" id="AddressLastName_{{ form.id }}" name="address[last_name]" value="{{ form.last_name }}" autocomplete="family-name" placeholder="{{ 'customer.addresses.last_name' | t }}">
+                            <label for="AddressLastName_{{ form.id }}">{{ 'customer.addresses.last_name' | t }}</label>
+                          </div>
+                        </div>
+                        <div class="field">
+                          <input type="text" id="AddressCompany_{{ form.id }}" name="address[company]" value="{{ form.company }}" autocomplete="organization" placeholder="{{ 'customer.addresses.company' | t }}">
+                          <label for="AddressCompany_{{ form.id }}">{{ 'customer.addresses.company' | t }}</label>
+                        </div>
+                        <div class="field">
+                          <input type="text" id="AddressAddress1_{{ form.id }}" name="address[address1]" value="{{ form.address1 }}" autocomplete="address-line1" placeholder="{{ 'customer.addresses.address1' | t }}">
+                          <label for="AddressAddress1_{{ form.id }}">{{ 'customer.addresses.address1' | t }}</label>
+                        </div>
+                        <div class="field">
+                          <input type="text" id="AddressAddress2_{{ form.id }}" name="address[address2]" value="{{ form.address2 }}" autocomplete="address-line2" placeholder="{{ 'customer.addresses.address2' | t }}">
+                          <label for="AddressAddress2_{{ form.id }}">{{ 'customer.addresses.address2' | t }}</label>
+                        </div>
+                        <div class="field">
+                          <input type="text" id="AddressCity_{{ form.id }}" name="address[city]" value="{{ form.city }}" autocomplete="address-level2" placeholder="{{ 'customer.addresses.city' | t }}">
+                          <label for="AddressCity_{{ form.id }}">{{ 'customer.addresses.city' | t }}</label>
+                        </div>
+                        <div class="field">
+                          <div class="select">
+                            <select id="AddressCountry_{{ form.id }}" name="address[country]" data-address-country-select data-default="{{ form.country }}" data-form-id="{{ form.id }}" autocomplete="country">
+                              {{ all_country_option_tags }}
+                            </select>
+                          </div>
+                          <label for="AddressCountry_{{ form.id }}">
+                            {{ 'customer.addresses.country' | t }}
+                          </label>
+                        </div>
+                        <div class="field" id="AddressProvinceContainer_{{ form.id }}" style="display:none;">
+                          <div class="select">
+                            <select id="AddressProvince_{{ form.id }}" name="address[province]" data-default="{{ form.province }}" autocomplete="address-level1"></select>
+                          </div>
+                          <label for="AddressProvince_{{ form.id }}">
+                            {{ 'customer.addresses.province' | t }}
+                          </label>
+                        </div>
+                        <div class="field">
+                          <input type="text" id="AddressZip_{{ form.id }}" name="address[zip]" value="{{ form.zip }}" autocapitalize="characters" autocomplete="postal-code" placeholder="{{ 'customer.addresses.zip' | t }}">
+                          <label for="AddressZip_{{ form.id }}">{{ 'customer.addresses.zip' | t }}</label>
+                        </div>
+                        <div class="field">
+                          <input type="tel" id="AddressPhone_{{ form.id }}"  name="address[phone]" value="{{ form.phone }}" autocomplete="tel" placeholder="{{ 'customer.addresses.phone' | t }}">
+                          <label for="AddressPhone_{{ form.id }}">{{ 'customer.addresses.phone' | t }}</label>
+                        </div>
+                        <div class="field setDefault">
+                          {{ form.set_as_default_checkbox }}
+                          <label for="address_default_address_{{ form.id }}">
+                            {{ 'customer.addresses.set_default' | t }}
+                          </label>
+                        </div>
+                        <div>
+                          <button class="btn addAddress">{{ 'customer.addresses.add' | t }}</button>
+                          <button type="reset" id="cancelAdd">{{ 'customer.addresses.cancel' | t }}</button>
+                        </div>
+                      </div>
+                      {% endform %}
+                    </div>
+                    
+                    <ul role="list">
+                      {%- for address in customer.addresses -%}
+                      <li data-address>
+
+                        {% comment %}
+                        <h2>
+                          {{ address.first_name | capitalize }} {{ address.last_name | capitalize }}
+                          {% if address == customer.default_address %}({{ 'customer.addresses.default' | t }}){% endif %}
+                        </h2>
+
+                        <p>
+                          {{ address.address1 }}<br>
+                          {{ address.address2 }}<br>
+                          {% if address.province_code %}
+                          {{ address.province_code | upcase }}<br>
+                          {% endif %}
+                          {{ address.zip | upcase }} {{ address.city | capitalize }}<br>
+                          {{ address.country }}<br>
+                          {{ address.phone }}
+                        </p>
+
+                        <p>
+                          <span class="edit_Address" data-form-id ="{{address.id }}">Edit</span> |
+                          <span class="delete_Address" data-form-id ="{{address.id }}">Delete</span>
+                        </p>
+                        {% endcomment %}
+
+                        {%- form 'customer_address', address -%}
+                        <div id="EditAddress_{{ address.id }}" style="display:none;margin-top: 1.5rem;">
+                          <h2>{{ 'customer.addresses.edit_address' | t }}</h2>
+                          <div class="address-row">
+                            <div class="field address-cols">
+                              <input type="text" id="AddressFirstName_{{ form.id }}" name="address[first_name]" value="{{ form.first_name }}" autocomplete="given-name" placeholder="{{ 'customer.addresses.first_name' | t }}">
+                              <label for="AddressFirstName_{{ form.id }}">{{ 'customer.addresses.first_name' | t }}</label>
+                            </div>
+                            <div class="field address-cols">
+                              <input type="text" id="AddressLastName_{{ form.id }}" name="address[last_name]" value="{{ form.last_name }}" autocomplete="family-name" placeholder="{{ 'customer.addresses.last_name' | t }}">
+                              <label for="AddressLastName_{{ form.id }}">{{ 'customer.addresses.last_name' | t }}</label>
+                            </div>
+                          </div>
+                          <div class="field">
+                            <input type="text" id="AddressCompany_{{ form.id }}" name="address[company]" value="{{ form.company }}" autocomplete="organization" placeholder="{{ 'customer.addresses.company' | t }}">
+                            <label for="AddressCompany_{{ form.id }}">{{ 'customer.addresses.company' | t }}</label>
+                          </div>
+                          <div class="field">
+                            <input type="text" id="AddressAddress1_{{ form.id }}" name="address[address1]" value="{{ form.address1 }}" autocomplete="address-line1" placeholder="{{ 'customer.addresses.address1' | t }}">
+                            <label for="AddressAddress1_{{ form.id }}">{{ 'customer.addresses.address1' | t }}</label>
+                          </div>
+                          <div class="field">
+                            <input type="text" id="AddressAddress2_{{ form.id }}" name="address[address2]" value="{{ form.address2 }}" autocomplete="address-line2" placeholder="{{ 'customer.addresses.address2' | t }}">
+                            <label for="AddressAddress2_{{ form.id }}">{{ 'customer.addresses.address2' | t }}</label>
+                          </div>
+                          <div class="field">
+                            <input type="text" id="AddressCity_{{ form.id }}" name="address[city]" value="{{ form.city }}" autocomplete="address-level2" placeholder="{{ 'customer.addresses.city' | t }}">
+                            <label for="AddressCity_{{ form.id }}">{{ 'customer.addresses.city' | t }}</label>
+                          </div>
+                          <div class="field">
+                            <div class="select">
+                              <select id="AddressCountry_{{ form.id }}" name="address[country]" data-address-country-select data-default="{{ form.country }}" data-form-id="{{ form.id }}" autocomplete="country">
+                                {{ all_country_option_tags }}
+                              </select>
+                            </div>
+                            <label for="AddressCountry_{{ form.id }}">
+                              {{ 'customer.addresses.country' | t }}
+                            </label>
+                          </div>
+                          <div class="field" id="AddressProvinceContainer_{{ form.id }}" style="display:none;">
+                            <div class="select">
+                              <select id="AddressProvince_{{ form.id }}" name="address[province]" data-default="{{ form.province }}" autocomplete="address-level1"></select>
+                            </div>
+                            <label for="AddressProvince_{{ form.id }}">
+                              {{ 'customer.addresses.province' | t }}
+                            </label>
+                          </div>
+                          <div class="field">
+                            <input type="text" id="AddressZip_{{ form.id }}" name="address[zip]" value="{{ form.zip }}" autocapitalize="characters" autocomplete="postal-code" placeholder="{{ 'customer.addresses.zip' | t }}">
+                            <label for="AddressZip_{{ form.id }}">{{ 'customer.addresses.zip' | t }}</label>
+                          </div>
+                          <div class="field">
+                            <input type="tel" id="AddressPhone_{{ form.id }}"  name="address[phone]" value="{{ form.phone }}" autocomplete="tel" placeholder="{{ 'customer.addresses.phone' | t }}">
+                            <label for="AddressPhone_{{ form.id }}">{{ 'customer.addresses.phone' | t }}</label>
+                          </div>
+                          <div class="field setDefault">
+                            {{ form.set_as_default_checkbox }}
+                            <label for="address_default_address_{{ form.id }}">
+                              {{ 'customer.addresses.set_default' | t }}
+                            </label>
+                          </div>
+                          <div>
+                            <button class="editAddress" data-form-id="{{form.id}}">{{ 'customer.addresses.update' | t }}</button>
+                            <button type="reset" class="cancelEdit" data-form-id="{{form.id}}">{{ 'customer.addresses.cancel' | t }}</button>
+                          </div>
+                        </div>
+                        {%- endform -%}
+                      </li>
+                      {%- endfor -%}
+                    </ul> 
+                  </div>  
+                </div>
+              </div>
+              <button class="btn title_capitlize black_next" id="next">Next</button> 
+            </div>
+
+            <div class="final_submit_content">
+              <h3 class="main_title medium title_capitlize">Submit</h3>
+              <p>creat s small as it all st, Ralph and I were very pleased with the result</p>
+              <div class="submit_content">
+
+                <div class="white_background_wrapper selected_bag">
+                  <div class="image_wrapp">
+                    <img src="//cdn.shopify.com/s/files/1/0077/6565/5629/products/5668633c5ca34ebb5a180e01180590d1_590x.png?v=1669110060"> 
+                  </div>
+                  <p class="image_text">James</p>
+                </div>
+
+                <div class="choosen_images">
+                  <div class="white_background_wrapper">
+                    <div class="image_wrapp">
+                      <img src="//cdn.shopify.com/s/files/1/0077/6565/5629/products/5668633c5ca34ebb5a180e01180590d1_590x.png?v=1669110060"> 
+                    </div>
+                    <p class="image_text">James</p>
+                  </div>
+                  <div class="white_background_wrapper">
+                    <div class="image_wrapp">
+                      <img src="//cdn.shopify.com/s/files/1/0077/6565/5629/products/5668633c5ca34ebb5a180e01180590d1_590x.png?v=1669110060"> 
+                    </div>
+                    <p class="image_text">James</p>
+                  </div>
+                  <div class="white_background_wrapper">
+                    <div class="image_wrapp">
+                      <img src="//cdn.shopify.com/s/files/1/0077/6565/5629/products/5668633c5ca34ebb5a180e01180590d1_590x.png?v=1669110060"> 
+                    </div>
+                    <p class="image_text">James</p>
+                  </div>
+                </div>
+
+                <div class="shipping-address">
+                  <div class="address-title medium">
+                    <div class="block-info">Shipping Address (Standard)</div>
+                    <a href="#EditAddress_9527617388879" class="change-details" data-address-id="9527617388879">Change</a>
+                  </div>
+                  <div class="block-details">
+                    <p></p><p>India</p><p></p>
+                  </div>
+                </div> 
+
+                <button class="btn title_capitlize next_btn" id="next">Confrim</button> 
+              </div>
+            </div>
+            
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script> 
+let currActive = 1;
+var next_fs, er;
+const progress = document.querySelector("#progress");
+const prev = document.querySelector("#prev");
+const next = document.querySelector(".next_btn");
+const circles = document.querySelectorAll(".circle");
+const contents = document.querySelectorAll(".content");
+
+$(".content").each(function(i, val){  
+  $(val).find('.next_btn').on("click", function(){
+    currActive++; 
+    er = $(this).closest('.content');  
+    if(er.hasClass('active_cont')){ 
+      next_fs = $(this).closest('.content').next();
+      $(this).closest('.content').removeClass('active_cont');
+      next_fs.addClass('active_cont');  
+    } 
+ 
+    if (currActive > circles.length) {
+        currActive = circles.length;
+    }
+    update();
+  }); 
+}); 
+
+ $('#prev').on("click", function(){
+  var ss = $(this).parents('.jp_sl_bottom_part').find('.jp_sl_step_content .content');
+  $(ss).each(function(i, val){  
+    if($(val).hasClass('active_cont')){
+      $(val).removeClass('active_cont');
+      $(val).prev().addClass('active_cont');
+    }
+  });
+  currActive--; 
+    if (currActive < 1) {
+        currActive = 1;
+    }
+    update();
+});
+ 
+const update = () => {
+    circles.forEach((circle, i) => {
+        i < currActive
+            ? circle.classList.add("active")
+            : circle.classList.remove("active");
+    });  
+    const actives = document.querySelectorAll(".active");
+    const width = ((actives.length - 1) / (circles.length - 1)) * 100;
+    progress.style.width = `${width}%`; 
+    if (currActive === 1) { 
+        prev.disabled = true;
+    } else if (currActive === circles.length) { 
+        next.disabled = true;
+    } else {
+        prev.disabled = false;
+        next.disabled = false;
+    }
+};
+ 
+
+ $('.show-pwd').click(function(){
+    if('password' == $('.pwd-input').attr('type')){
+      $('.pwd-input').prop('type', 'text');
+      $(this).text('hide');
+    }else{
+      $('.pwd-input').prop('type', 'password');
+      $(this).text('show');
+    }
+  }); 
+
+  $('.black_next').on('click', function(){ 
+    $('.customer-wrapper-login').show();
+    $('.account_content').hide();
+  });
+
+
+  $(".change-details").click(function() {
+    var addressId = $(this).data("address-id");
+  	$("#EditAddress_"+addressId).css('display','block');
+  });
+  
+  $(".add-address").click(function() {
+  	$("#AddAddress").css('display','block');
+  });
+  
+  $("#cancelAdd").click(function() {
+  	$("#AddAddress").css('display','none');
+  });
+  
+  $(".edit_Address").click(function() {
+  	var formId = $(this).data('form-id');
+    $("#EditAddress_"+formId).css('display','block');
+  });
+  
+  $(".delete_Address").click(function() {
+  	var formId = $(this).data('form-id');
+    Shopify.postLink('/account/addresses/'+formId, {'parameters': {'_method': 'delete'}});
+  });
+  
+  $(".cancelEdit").click(function() {
+  	var addressId = $(this).data('form-id');
+    $("#EditAddress_"+addressId).css('display','none');
+  });
+
+  ///----- Auto-Close Accordion
+  $(document).ready(function() {
+    //--- initial state of elements
+    $('.account-panel').hide()
+    //----- click function
+    $(".account-accordion").click(function() { //---- tabs or buttons
+      //---- active class
+      $(".account-accordion").removeClass('active');
+      $('.account-panel').slideUp();
+      var selected = $(this).next('.account-panel');
+      if (selected.is(":hidden")) {
+        $(this).next('.account-panel').slideDown();
+        $(this).toggleClass('active');
+      }
+    });
+  });
+
+$('.choosen_images').slick({ 
+    slidesToShow: 2,
+    slidesToScroll: 1, 
+    dots: true,
+    arrows: true,
+    centerMode: true,
+    focusOnSelect: true
+  });
+</script>
 
 
 {% schema %}
   {
-    "name": "Section name",
+    "name": "JP Second Life Page",
     "settings": []
   }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
