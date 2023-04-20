@@ -172,3 +172,13 @@
     background: #333 !important;
     color: #fff !important;
 }
+.under_line{
+    text-decoration: underline;
+}
+.image_content .white_background_wrapper{
+    opacity: 0.5;
+}
+.submit_content .white_background_wrapper.selected_bag{
+    margin: 20px auto 30px;
+    border: 4px solid var(--dd-color-second);
+}
